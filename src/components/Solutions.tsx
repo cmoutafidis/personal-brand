@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Clock, Buildings } from 'lucide-react';
+import { Zap, Clock, Building as Buildings } from 'lucide-react';
 
 const Solutions: React.FC = () => {
   const solutions = [
