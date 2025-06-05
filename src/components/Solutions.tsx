@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Clock, Building as Buildings } from 'lucide-react';
-import { Link } from 'react-scroll';
 
 const Solutions: React.FC = () => {
   const solutions = [
