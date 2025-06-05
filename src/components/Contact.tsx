@@ -1,14 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, Twitter, Linkedin, Github } from 'lucide-react';
+import {Mail, MapPin, Send, Linkedin, Github, createLucideIcon} from 'lucide-react';
 
 const Contact: React.FC = () => {
+
+  const XIcon = createLucideIcon("X", [
+    [
+      "path",
+      {
+        d: "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z",
+        stroke: "none",
+        fill: "currentColor",
+      },
+    ],
+  ]);
+
   return (
     <section id="contact" className="section bg-white dark:bg-gray-900 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-96 h-96 bg-primary-100 dark:bg-primary-900/20 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-96 h-96 bg-secondary-100 dark:bg-secondary-900/20 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
-      
+
       <div className="container-custom relative z-10">
         <div className="section-title">
           <h2 className="mb-2">Get In Touch</h2>
@@ -25,7 +37,7 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.5 }}
           >
             <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Contact Information</h3>
-            
+
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400">
@@ -33,8 +45,8 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">Email</h4>
-                  <a 
-                    href="mailto:contact@fijisolutions.net" 
+                  <a
+                    href="mailto:contact@fijisolutions.net"
                     className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                   >
                     contact@fijisolutions.net
@@ -56,13 +68,13 @@ const Contact: React.FC = () => {
 
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400">
-                  <Twitter className="h-6 w-6" />
+                  <XIcon className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">Twitter/X</h4>
-                  <a 
-                    href="https://x.com/fiji_solutions" 
-                    target="_blank" 
+                  <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">X</h4>
+                  <a
+                    href="https://x.com/fiji_solutions"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                   >
@@ -98,9 +110,9 @@ const Contact: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900/30 dark:hover:text-primary-400 transition-colors"
-                  aria-label="Twitter"
+                  aria-label="X"
                 >
-                  <Twitter className="h-5 w-5" />
+                  <XIcon className="h-5 w-5" />
                 </a>
               </div>
             </div>
@@ -114,7 +126,7 @@ const Contact: React.FC = () => {
           >
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
               <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Send a Message</h3>
-              
+
               <form className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
@@ -127,7 +139,7 @@ const Contact: React.FC = () => {
                     placeholder="John Doe"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Email Address
@@ -139,7 +151,7 @@ const Contact: React.FC = () => {
                     placeholder="john.doe@example.com"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Your Message
@@ -151,7 +163,7 @@ const Contact: React.FC = () => {
                     placeholder="How can I help you?"
                   ></textarea>
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full btn btn-primary flex items-center justify-center"

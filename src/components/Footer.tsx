@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronUp, Waves, Github, Twitter, Linkedin } from 'lucide-react';
+import {ChevronUp, Waves, Github, Linkedin, createLucideIcon} from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -8,6 +8,17 @@ const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const XIcon = createLucideIcon("X", [
+    [
+      "path",
+      {
+        d: "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z",
+        stroke: "none",
+        fill: "currentColor",
+      },
+    ],
+  ]);
 
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
@@ -29,30 +40,30 @@ const Footer: React.FC = () => {
               <span className="text-xl font-display font-bold">Fiji Solutions</span>
             </div>
             <p className="text-gray-400 mb-4">
-              Software engineer specializing in web2 and web3 technologies. Creating innovative solutions for the digital world.
+              We deliver IT solutions tailored to your unique business needs, helping you thrive in the digital world. Our approaches are designed to ensure the growth and long-term success of your business.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="https://github.com/fiji" 
-                target="_blank" 
+              <a
+                href="https://github.com/fiji"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="h-5 w-5" />
               </a>
-              <a 
-                href="https://x.com/fiji_solutions" 
-                target="_blank" 
+              <a
+                href="https://x.com/fiji_solutions"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Twitter"
               >
-                <Twitter className="h-5 w-5" />
+                <XIcon className="h-5 w-5" />
               </a>
-              <a 
-                href="https://www.linkedin.com/in/charalampos-moutafidis-71330414a/" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/in/charalampos-moutafidis-71330414a/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="LinkedIn"
