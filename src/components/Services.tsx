@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Cloud, Bot, LineChart, Cpu, Lightbulb } from 'lucide-react';
+import { Code2, Cloud, Bot, CreditCard, Cpu, Lightbulb } from 'lucide-react';
 
 const Services: React.FC = () => {
   const services = [
@@ -23,10 +23,10 @@ const Services: React.FC = () => {
       features: ['AI Chat Agents', 'Voice Assistants', 'Custom AI Models', 'Process Automation']
     },
     {
-      icon: <LineChart className="h-8 w-8" />,
-      title: 'Trading Solutions',
-      description: 'Advanced trading tools and indicators for financial market analysis.',
-      features: ['Custom Indicators', 'Trading Strategies', 'Market Analysis Tools', 'Automation Scripts']
+      icon: <CreditCard className="h-8 w-8" />,
+      title: 'Payment Integration',
+      description: 'Comprehensive payment solutions to enable seamless transactions across multiple payment methods.',
+      features: ['Crypto Payments', 'Credit Card Processing', 'Digital Wallets', 'Payment Gateway Integration']
     },
     {
       icon: <Cpu className="h-8 w-8" />,

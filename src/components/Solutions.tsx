@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Clock, Building2 } from 'lucide-react';
+import { Zap, Clock, Building2, CreditCard } from 'lucide-react';
 import {Link} from "react-scroll";
 
 const Solutions: React.FC = () => {
@@ -19,6 +19,11 @@ const Solutions: React.FC = () => {
       icon: <Building2 className="h-12 w-12" />,
       title: "Industry Experience",
       description: "With experience across multiple sectors, we understand your market and deliver solutions that address specific industry needs."
+    },
+    {
+      icon: <CreditCard className="h-12 w-12" />,
+      title: "Complete Payment Solutions",
+      description: "Seamlessly integrate any payment method into your business - from traditional card payments to cutting-edge cryptocurrency solutions."
     }
   ];
 
@@ -32,7 +37,7 @@ const Solutions: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {solutions.map((solution, index) => (
             <motion.div
               key={index}
