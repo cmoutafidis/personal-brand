@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Clock, Buildings } from 'lucide-react';
+import { Zap, Clock, Building2 } from 'lucide-react';
+import {Link} from "react-scroll";
 
 const Solutions: React.FC = () => {
   const solutions = [
@@ -15,7 +16,7 @@ const Solutions: React.FC = () => {
       description: "We pride ourselves on swift implementation without compromising on quality - that's our unique advantage."
     },
     {
-      icon: <Buildings className="h-12 w-12" />,
+      icon: <Building2 className="h-12 w-12" />,
       title: "Industry Experience",
       description: "With experience across multiple sectors, we understand your market and deliver solutions that address specific industry needs."
     }
@@ -54,7 +55,7 @@ const Solutions: React.FC = () => {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
