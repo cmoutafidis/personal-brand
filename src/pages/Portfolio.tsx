@@ -1,16 +1,16 @@
 import React from 'react';
-import About from '../components/About';
-import Skills from '../components/Skills';
+import Services from '../components/Services';
+import Industries from '../components/Industries';
+import Technologies from '../components/Technologies';
 import Projects from '../components/Projects';
-import Certifications from '../components/Certifications';
 
 const Portfolio: React.FC = () => {
   return (
     <>
-      <About />
-      <Skills />
+      <Services />
+      <Technologies />
+      <Industries />
       <Projects />
-      <Certifications />
     </>
   );
 };
