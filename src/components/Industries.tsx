@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Landmark, Rocket, Plane, Link, Buildings } from 'lucide-react';
+import { Building2, Landmark, Rocket, Plane, Link, Building as Buildings } from 'lucide-react';
 
 const Industries: React.FC = () => {
   const industries = [
