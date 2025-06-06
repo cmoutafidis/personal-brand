@@ -31,7 +31,7 @@ const Projects: React.FC = () => {
       title: 'DeFi Dashboard',
       description: 'Comprehensive dashboard for tracking DeFi investments across multiple protocols and chains.',
       image: 'https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      technologies: ['Vue.js', 'Web3.js', 'GraphQL'],
+      technologies: ['Next.js', 'Web3.js', 'GraphQL'],
       liveUrl: '#',
       repoUrl: '#',
     },
@@ -67,9 +67,9 @@ const Projects: React.FC = () => {
             >
               <div className="relative h-52 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
+                <img
+                  src={project.image}
+                  alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute bottom-4 left-4 right-4 z-20">
@@ -80,8 +80,8 @@ const Projects: React.FC = () => {
                 <p className="text-gray-700 dark:text-gray-300 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, i) => (
-                    <span 
-                      key={i} 
+                    <span
+                      key={i}
                       className="px-2 py-1 text-xs rounded-md bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300"
                     >
                       {tech}
@@ -89,9 +89,9 @@ const Projects: React.FC = () => {
                   ))}
                 </div>
                 <div className="flex space-x-3">
-                  <a 
-                    href={project.liveUrl} 
-                    target="_blank" 
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium"
                   >
@@ -99,9 +99,9 @@ const Projects: React.FC = () => {
                     Live Demo
                   </a>
                   {project.repoUrl && (
-                    <a 
-                      href={project.repoUrl} 
-                      target="_blank" 
+                    <a
+                      href={project.repoUrl}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 font-medium"
                     >

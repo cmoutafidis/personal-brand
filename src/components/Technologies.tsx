@@ -5,7 +5,7 @@ const Technologies: React.FC = () => {
   const techCategories = [
     {
       name: 'Frontend',
-      technologies: ['React', 'Angular', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Vue.js']
+      technologies: ['React', 'Angular', 'TypeScript', 'Tailwind CSS', 'Next.js']
     },
     {
       name: 'Backend',
@@ -17,7 +17,7 @@ const Technologies: React.FC = () => {
     },
     {
       name: 'AI & Data',
-      technologies: ['TensorFlow', 'PyTorch', 'OpenAI', 'Natural Language Processing', 'Machine Learning']
+      technologies: ['Voiceflow', 'Salesforce', 'OpenAI', 'Make', 'Bolt', 'Vapi']
     },
     {
       name: 'Blockchain',
@@ -35,7 +35,7 @@ const Technologies: React.FC = () => {
         <div className="section-title">
           <h2 className="mb-2">Technology Stack</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Leveraging modern technologies to deliver exceptional solutions
+            Leveraging the power of technologies to deliver exceptional solutions
           </p>
         </div>
 

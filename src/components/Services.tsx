@@ -14,30 +14,30 @@ const Services: React.FC = () => {
       icon: <Cloud className="h-8 w-8" />,
       title: 'Cloud Services',
       description: 'Expert consulting and implementation of cloud solutions across major platforms.',
-      features: ['AWS Solutions', 'Azure Architecture', 'Cloud Migration', 'Infrastructure Optimization']
+      features: ['AWS & Azure Solutions', 'Cloud Architectural design', 'Cloud Migration', 'Infrastructure Optimization']
     },
     {
       icon: <Bot className="h-8 w-8" />,
       title: 'AI Solutions',
-      description: 'Cutting-edge AI implementations to enhance business operations and customer experience.',
-      features: ['AI Chat Agents', 'Voice Assistants', 'Custom AI Models', 'Process Automation']
+      description: 'AI implementations and Integrations that save you money and will bring you more customers.',
+      features: ['AI Chat Agents', 'AI Voice Assistants', 'AI Service Desk', 'Process Automation']
     },
     {
       icon: <CreditCard className="h-8 w-8" />,
       title: 'Payment Integration',
-      description: 'Comprehensive payment solutions to enable seamless transactions across multiple payment methods.',
+      description: 'Money is the oxygen of your company. We make the process simple, and allow your customers to pay you with a variety of payment methods.',
       features: ['Crypto Payments', 'Credit Card Processing', 'Digital Wallets', 'Payment Gateway Integration']
     },
     {
       icon: <Cpu className="h-8 w-8" />,
       title: 'Blockchain Development',
       description: 'Specialized blockchain solutions and smart contract development.',
-      features: ['Smart Contracts', 'DeFi Applications', 'Web3 Integration', 'Token Development']
+      features: ['Solana Programs', 'DeFi Applications', 'Web3 Integration', 'Blockchain Data Analysis']
     },
     {
       icon: <Lightbulb className="h-8 w-8" />,
       title: 'IT Consulting',
-      description: 'Strategic technology consulting to drive business growth and innovation.',
+      description: 'We make sure that your business is running smoothly and efficiently. This is very important for your business to grow.',
       features: ['Architecture Design', 'Technology Strategy', 'Digital Transformation', 'Security Planning']
     }
   ];
@@ -46,9 +46,9 @@ const Services: React.FC = () => {
     <section id="services" className="section bg-white dark:bg-gray-900">
       <div className="container-custom">
         <div className="section-title">
-          <h2 className="mb-2">Our Services</h2>
+          <h2 className="mb-2">Our Portfolio</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Comprehensive technology solutions for modern business challenges
+            Technology solution tailored to your business needs.
           </p>
         </div>
 

@@ -32,7 +32,7 @@ const Industries: React.FC = () => {
     {
       icon: <Link className="h-12 w-12" />,
       name: 'Blockchain',
-      description: 'Cutting-edge blockchain solutions for various industries.'
+      description: 'Modern blockchain solutions for various industries.'
     }
   ];
 
@@ -42,7 +42,7 @@ const Industries: React.FC = () => {
         <div className="section-title">
           <h2 className="mb-2">Industries We Serve</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Delivering expertise across diverse sectors
+            Delivering expertise across multiple sectors
           </p>
         </div>
 
