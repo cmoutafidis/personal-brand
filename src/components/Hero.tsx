@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-900 dark:to-gray-800 -z-10"></div>
       <div className="container-custom pt-20">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.h1 
+          <motion.h1
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
           >
             Transform Your Business with Modern Technology Solutions
           </motion.h1>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -28,22 +28,22 @@ const Hero: React.FC = () => {
               to="contact"
               smooth={true}
               offset={-70}
-              duration={800}
-              className="btn btn-primary text-lg px-8 py-4"
+              duration={100}
+              className="btn btn-primary text-lg px-8 py-4 cursor-pointer"
             >
               Yes, I Want That
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </motion.div>
 
-          <motion.p 
+          <motion.p
             className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            Leverage cutting-edge AI and modern technologies to outperform your competition
-            and reduce operational costs.
+            Your business needs AI and modern technologies to outperform the competition
+            and reduce its operational costs.
           </motion.p>
         </div>
       </div>

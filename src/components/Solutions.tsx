@@ -7,13 +7,13 @@ const Solutions: React.FC = () => {
   const solutions = [
     {
       icon: <Zap className="h-12 w-12" />,
-      title: "Cutting-Edge Expertise",
+      title: "Expertise",
       description: "Our engineers and consultants stay ahead of market trends, specializing in the latest technologies and AI products."
     },
     {
       icon: <Clock className="h-12 w-12" />,
-      title: "Rapid, Quality Delivery",
-      description: "We pride ourselves on swift implementation without compromising on quality - that's our unique advantage."
+      title: "Fast, Quality Delivery",
+      description: "We deliver high quality products, and we deliver them fast. There is no such thing as 'It can either be fast, or it can be good'. We do both."
     },
     {
       icon: <Building2 className="h-12 w-12" />,
@@ -23,7 +23,7 @@ const Solutions: React.FC = () => {
     {
       icon: <CreditCard className="h-12 w-12" />,
       title: "Complete Payment Solutions",
-      description: "Seamlessly integrate any payment method into your business - from traditional card payments to cutting-edge cryptocurrency solutions."
+      description: "We help you seamlessly integrate any payment method into your business, from traditional card payments to even cryptocurrency solutions."
     }
   ];
 
@@ -33,7 +33,7 @@ const Solutions: React.FC = () => {
         <div className="section-title">
           <h2 className="mb-2">How We Help</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Transform your business with our expertise
+            Here is what separates us from the competition.
           </p>
         </div>
 
@@ -79,8 +79,8 @@ const Solutions: React.FC = () => {
               to="contact"
               smooth={true}
               offset={-70}
-              duration={800}
-              className="btn bg-white text-primary-600 hover:bg-gray-100"
+              duration={100}
+              className="btn bg-white text-primary-600 hover:bg-gray-100 cursor-pointer"
             >
               Contact Us Now
             </Link>

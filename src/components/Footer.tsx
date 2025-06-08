@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {ChevronUp, Waves, Github, Linkedin, createLucideIcon} from 'lucide-react';
+import {ChevronUp, Github, Linkedin, createLucideIcon} from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -36,11 +36,15 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <Waves className="h-8 w-8 text-primary-400" />
+              <img
+                src="/fiji_solutions.png"
+                alt="Fiji Solutions Logo"
+                className="h-8 w-8 object-contain"
+              />
               <span className="text-xl font-display font-bold">Fiji Solutions</span>
             </div>
             <p className="text-gray-400 mb-4">
-              We deliver IT solutions tailored to your unique business needs, helping you thrive in the digital world. Our approaches are designed to ensure the growth and long-term success of your business.
+              We provide IT solutions customized to fit your business, helping you succeed in the digital world. Our strategies focus on supporting your growth and ensuring your success.
             </p>
             <div className="flex space-x-4">
               <a

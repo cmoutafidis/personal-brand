@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon, Waves } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 
 interface NavbarProps {
@@ -36,7 +36,11 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
             to="/"
             className="flex items-center space-x-2 cursor-pointer"
           >
-            <Waves className="h-8 w-8 text-primary-600 dark:text-primary-400" />
+            <img
+              src="/fiji_solutions.png"
+              alt="Fiji Solutions Logo"
+              className="h-8 w-8 object-contain"
+            />
             <span className="text-xl font-display font-bold text-gray-900 dark:text-white">
               Fiji Solutions
             </span>

@@ -7,7 +7,7 @@ const Challenges: React.FC = () => {
     {
       icon: <Binary className="h-12 w-12" />,
       title: "Falling Behind in Technology",
-      description: "Businesses struggle to compete using outdated technologies, missing opportunities to leverage AI and modern solutions."
+      description: "Businesses struggle to compete using outdated technologies, missing opportunities to automate processes and scale."
     },
     {
       icon: <Clock className="h-12 w-12" />,
@@ -27,7 +27,7 @@ const Challenges: React.FC = () => {
         <div className="section-title">
           <h2 className="mb-2">Common Business Challenges</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Are you facing any of these obstacles in your business?
+            All tradinional businesses face the same challenges.
           </p>
         </div>
 
