@@ -52,7 +52,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            However, even with the promise of innovation, many companies encounter persistent obstacles when trying to adopt new solutions. Understanding the root causes of these challenges is the first step toward transforming your organization and unlocking its full potential.
+            But in reality, keeping up with the latest technologies can be overwhelming, especially when you already have so much on your plate.
           </motion.p>
         </div>
       </div>
