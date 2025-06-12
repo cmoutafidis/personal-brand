@@ -22,7 +22,7 @@ const Solutions: React.FC = () => {
     },
     {
       icon: <CreditCard className="h-12 w-12" />,
-      title: "Complete Payment Solutions",
+      title: "Payment Solutions",
       description: "We help you seamlessly integrate any payment method into your business, from traditional card payments to even cryptocurrency solutions."
     }
   ];
