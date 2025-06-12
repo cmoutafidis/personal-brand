@@ -23,9 +23,15 @@ const Contact: React.FC = () => {
 
       <div className="container-custom relative z-10">
         <div className="section-title">
-          <h2 className="mb-2">Get In Touch</h2>
+          <h2 className="mb-2">Get A Free Consultation</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Let's connect and discuss how we can work together
+            Would you like to know what we can do for you?
+          </p>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            Fill out the form below and we will contact you within 48 hours for a free consultation.
+          </p>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            No costs, no obligations, no annoying sales pitch.
           </p>
         </div>
 
@@ -86,10 +92,10 @@ const Contact: React.FC = () => {
             </div>
 
             <div className="mt-8">
-              <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Connect With Me</h4>
+              <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Connect With Us</h4>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/fiji"
+                  href="https://github.com/cmoutafidis"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900/30 dark:hover:text-primary-400 transition-colors"
@@ -155,13 +161,25 @@ const Contact: React.FC = () => {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    Question
+                  </label>
+                  <textarea
+                    id="message"
+                    rows={1}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    placeholder="What is your most important question?"
+                  ></textarea>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Your Message
                   </label>
                   <textarea
                     id="message"
                     rows={4}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    placeholder="How can I help you?"
+                    placeholder="How can we help you?"
                   ></textarea>
                 </div>
 

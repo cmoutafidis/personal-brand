@@ -37,13 +37,22 @@ const Hero: React.FC = () => {
           </motion.div>
 
           <motion.p
-            className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto"
+            className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
             Your business needs AI and modern technologies to outperform the competition
             and reduce its operational costs.
+          </motion.p>
+
+          <motion.p
+            className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            However, even with the promise of innovation, many companies encounter persistent obstacles when trying to adopt new solutions. Understanding the root causes of these challenges is the first step toward transforming your organization and unlocking its full potential.
           </motion.p>
         </div>
       </div>

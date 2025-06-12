@@ -13,7 +13,7 @@ const Solutions: React.FC = () => {
     {
       icon: <Clock className="h-12 w-12" />,
       title: "Fast, Quality Delivery",
-      description: "We deliver high quality products, and we deliver them fast. There is no such thing as 'It can either be fast, or it can be good'. We do both."
+      description: "We deliver high quality products, and we deliver them fast. There is no such thing as \"It can either be fast, or it can be good\". We do both."
     },
     {
       icon: <Building2 className="h-12 w-12" />,

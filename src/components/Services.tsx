@@ -7,7 +7,7 @@ const Services: React.FC = () => {
     {
       icon: <Code2 className="h-8 w-8" />,
       title: 'Custom Development',
-      description: 'End-to-end development of web applications, mobile solutions, and enterprise software tailored to specific business needs.',
+      description: 'End-to-end development of web applications, mobile solutions, and enterprise software that fit to specific business needs.',
       features: ['Frontend Applications', 'Backend Systems', 'API Integration', 'Mobile Solutions']
     },
     {
@@ -48,7 +48,7 @@ const Services: React.FC = () => {
         <div className="section-title">
           <h2 className="mb-2">Our Portfolio</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Technology solution tailored to your business needs.
+            Technology solution that fit your business needs.
           </p>
         </div>
 
