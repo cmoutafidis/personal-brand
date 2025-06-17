@@ -89,7 +89,7 @@ const Legal: React.FC = () => {
                           Corporate Capital
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
-                          2.000 ευρώ
+                          2.000 euro
                         </p>
                       </div>
                     </div>
