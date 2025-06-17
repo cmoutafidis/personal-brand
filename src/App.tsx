@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
+import Legal from './pages/Legal';
 import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/legal" element={<Legal />} />
             </Routes>
           </main>
           <Footer />

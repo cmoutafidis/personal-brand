@@ -104,6 +104,14 @@ const Footer: React.FC = () => {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/legal"
+                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+                >
+                  Legal
+                </Link>
+              </li>
             </ul>
           </div>
 
