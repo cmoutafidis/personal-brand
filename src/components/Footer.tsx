@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {ChevronUp, Github, Linkedin, createLucideIcon} from 'lucide-react';
+import { ChevronUp, Github, Linkedin, LucideIceCream as createLucideIcon } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
