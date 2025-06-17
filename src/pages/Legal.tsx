@@ -135,7 +135,7 @@ const Legal: React.FC = () => {
                         </h3>
                       </div>
                       <div className="space-y-2 text-gray-700 dark:text-gray-300">
-                        <p><strong>Όνομα:</strong> CHARALAMPOS MOUTAFIDIS</p>
+                        <p><strong>Name:</strong> CHARALAMPOS MOUTAFIDIS</p>
                         <p><strong>Identity Card Number:</strong> ΑΟ1277016</p>
                         <p><strong>Tax Identification Number:</strong> 167515853</p>
                       </div>
