@@ -30,7 +30,7 @@ const Legal: React.FC = () => {
               </div>
 
               <h2 className="text-2xl font-semibold text-center mb-8 text-gray-900 dark:text-white">
-                ΣΤΟΙΧΕΙΑ ΔΗΜΟΣΙΟΤΗΤΑΣ SITE
+                WEBSITE PUBLICITY INFORMATION
               </h2>
 
               <div className="space-y-8">
@@ -42,10 +42,10 @@ const Legal: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                          Επωνυμία
+                          Company Name
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
-                          Fiji Solutions ΜΟΝΟΠΡΟΣΩΠΗ ΙΚΕ
+                          Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE)
                         </p>
                       </div>
                     </div>
@@ -56,10 +56,10 @@ const Legal: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                          Διεύθυνση
+                          Address
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
-                          ΜΑΡΙΝΟΥ ΑΝΤΥΠΑ 40, 57001, ΠΥΛΑΙΑ, ΘΕΣΣΑΛΟΝΙΚΗ
+                          MARINOU ANTYPA 40, 57001, PYLAIA, THESSALONIKI
                         </p>
                       </div>
                     </div>
@@ -70,7 +70,7 @@ const Legal: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                          Αριθμός ΓΕΜΗ
+                          GEMI Number
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
                           185101306000
@@ -86,7 +86,7 @@ const Legal: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                          Εταιρικό Κεφάλαιο
+                          Corporate Capital
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
                           2.000 ευρώ
@@ -100,10 +100,10 @@ const Legal: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                          Εταιρικά Μερίδια
+                          Corporate Shares
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
-                          2.000 κεφαλαιακά εταιρικά μερίδια ονομαστικής αξίας 1,00 ευρώ έκαστο
+                          2.000 capital corporate shares with a nominal value of 1.00 euro each
                         </p>
                       </div>
                     </div>
@@ -116,14 +116,14 @@ const Legal: React.FC = () => {
                       <div className="flex items-center space-x-3 mb-4">
                         <User className="h-6 w-6 text-primary-600 dark:text-primary-400" />
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                          Εταίρος
+                          Partner
                         </h3>
                       </div>
                       <div className="space-y-2 text-gray-700 dark:text-gray-300">
-                        <p><strong>Όνομα:</strong> ΧΑΡΑΛΑΜΠΟΣ ΜΟΥΤΑΦΙΔΗΣ</p>
-                        <p><strong>Όνομα πατρός:</strong> ΧΡΗΣΤΟΣ</p>
-                        <p><strong>Α.Φ.Μ.:</strong> 167515853</p>
-                        <p><strong>Διεύθυνση:</strong> ΕΛΛΗΣ 5, 56625, ΣΥΚΙΕΣ</p>
+                        <p><strong>Name:</strong> CHARALAMPOS MOUTAFIDIS</p>
+                        <p><strong>Father’s Name:</strong> CHRISTOS</p>
+                        <p><strong>Tax Identification Number:</strong> 167515853</p>
+                        <p><strong>Address:</strong> ELLIS 5, 56625, SIKIES</p>
                       </div>
                     </div>
 
@@ -131,13 +131,13 @@ const Legal: React.FC = () => {
                       <div className="flex items-center space-x-3 mb-4">
                         <Shield className="h-6 w-6 text-primary-600 dark:text-primary-400" />
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                          Διαχειριστής
+                          Administrator
                         </h3>
                       </div>
                       <div className="space-y-2 text-gray-700 dark:text-gray-300">
-                        <p><strong>Όνομα:</strong> ΧΑΡΑΛΑΜΠΟΣ ΜΟΥΤΑΦΙΔΗΣ</p>
-                        <p><strong>Α.Δ.Τ.:</strong> ΑΟ1277016</p>
-                        <p><strong>Α.Φ.Μ.:</strong> 167515853</p>
+                        <p><strong>Όνομα:</strong> CHARALAMPOS MOUTAFIDIS</p>
+                        <p><strong>Identity Card Number:</strong> ΑΟ1277016</p>
+                        <p><strong>Tax Identification Number:</strong> 167515853</p>
                       </div>
                     </div>
                   </div>
