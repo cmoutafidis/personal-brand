@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, Linkedin, Github, LucideIceCream as createLucideIcon, CheckCircle, AlertCircle } from 'lucide-react';
+import {Mail, MapPin, Send, Linkedin, Github, createLucideIcon, CheckCircle, AlertCircle} from 'lucide-react';
 
 const Contact: React.FC = () => {
   // Form state
@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
       ...prev,
       [name]: value
     }));
-    
+
     // Clear error when user starts typing
     if (submitError) {
       setSubmitError('');
@@ -45,73 +45,73 @@ const Contact: React.FC = () => {
   // Validate form
   const validateForm = () => {
     const { name, email, company, question, message } = formData;
-    
+
     if (!name.trim()) {
       setSubmitError('Please enter your name');
       return false;
     }
-    
+
     if (!email.trim()) {
       setSubmitError('Please enter your email address');
       return false;
     }
-    
+
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       setSubmitError('Please enter a valid email address');
       return false;
     }
-    
+
     if (!company.trim()) {
       setSubmitError('Please enter your company name');
       return false;
     }
-    
+
     if (!question.trim()) {
       setSubmitError('Please enter your question');
       return false;
     }
-    
+
     if (!message.trim()) {
       setSubmitError('Please enter your message');
       return false;
     }
-    
+
     return true;
   };
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Reset states
     setSubmitError('');
     setSubmitSuccess(false);
-    
+
     // Validate form
     if (!validateForm()) {
       return;
     }
-    
+
     setIsSubmitting(true);
-    
+
     try {
       // API call - replace with your actual endpoint
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://np40nkw6be.execute-api.us-east-1.amazonaws.com/Prod/personal-brand/form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
-      
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
-      const result = await response.json();
-      
+
+      await response.json();
+
       // Success
       setSubmitSuccess(true);
       setFormData({
@@ -121,12 +121,12 @@ const Contact: React.FC = () => {
         question: '',
         message: ''
       });
-      
+
       // Auto-hide success message after 5 seconds
       setTimeout(() => {
         setSubmitSuccess(false);
       }, 5000);
-      
+
     } catch (error) {
       console.error('Form submission error:', error);
       setSubmitError('Failed to send message. Please try again or contact us directly.');
