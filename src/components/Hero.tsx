@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Transform Your Business with Modern Technology Solutions
+            We help your business grow online
           </motion.h1>
 
           <motion.div
@@ -42,8 +42,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            Your business needs AI and modern technologies to outperform the competition
-            and reduce its operational costs.
+            It is important for your business to win the competition.
           </motion.p>
 
           <motion.p
@@ -52,7 +51,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            But in reality, keeping up with the latest technologies can be overwhelming, especially when you already have so much on your plate.
+            But in reality, you already have a lot of important stuff on your plate.
           </motion.p>
         </div>
       </div>

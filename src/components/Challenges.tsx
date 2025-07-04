@@ -6,18 +6,18 @@ const Challenges: React.FC = () => {
   const challenges = [
     {
       icon: <Binary className="h-12 w-12" />,
-      title: "Falling Behind in Technology",
-      description: "Businesses struggle to compete using outdated technologies, missing opportunities to automate processes and scale."
+      title: "Old Technologies",
+      description: "It is very hard to compete using old technologies. You are missing opportunities, while it is hard to automate processes and scale."
     },
     {
       icon: <Clock className="h-12 w-12" />,
-      title: "Development Bottlenecks",
-      description: "Traditional agencies are slow and expensive, while in-house development lacks the expertise for rapid implementation."
+      title: "Everyone is slow",
+      description: "Traditional agencies work very slow and are expensive, while hiring good stuff is difficult. And even if you find someone good, the might leave."
     },
     {
       icon: <DollarSign className="h-12 w-12" />,
-      title: "Inefficient Resource Allocation",
-      description: "Companies waste resources on manual tasks that AI agents can handle more efficiently, faster, and at a lower cost."
+      title: "Money wasted",
+      description: "A lot of manual tasks that stuff have been doing for years can now be automated. This will save you tons money and time."
     }
   ];
 
@@ -27,7 +27,7 @@ const Challenges: React.FC = () => {
         <div className="section-title">
           <h2 className="mb-2">Common Business Challenges</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            All tradinional businesses face the same challenges.
+            All traditional businesses face the same problems.
           </p>
         </div>
 

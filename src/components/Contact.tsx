@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import {Mail, MapPin, Send, Linkedin, Github, createLucideIcon, CheckCircle, AlertCircle} from 'lucide-react';
+import {Mail, MapPin, Send, Github, createLucideIcon, CheckCircle, AlertCircle} from 'lucide-react';
 
 const Contact: React.FC = () => {
   // Form state
@@ -175,7 +175,7 @@ const Contact: React.FC = () => {
                     href="mailto:contact@fijisolutions.net"
                     className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                   >
-                    contact@fijisolutions.net
+                    info@fijisolutions.net
                   </a>
                 </div>
               </div>
@@ -192,23 +192,6 @@ const Contact: React.FC = () => {
                   </p>
                 </div>
               </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400">
-                  <XIcon className="h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">X</h4>
-                  <a
-                    href="https://x.com/fiji_solutions"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                  >
-                    @fiji_solutions
-                  </a>
-                </div>
-              </div>
             </div>
 
             <div className="mt-8">
@@ -222,15 +205,6 @@ const Contact: React.FC = () => {
                   aria-label="GitHub"
                 >
                   <Github className="h-5 w-5" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/charalampos-moutafidis-71330414a/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900/30 dark:hover:text-primary-400 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="h-5 w-5" />
                 </a>
                 <a
                   href="https://x.com/fiji_solutions"

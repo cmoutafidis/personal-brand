@@ -7,23 +7,23 @@ const Solutions: React.FC = () => {
   const solutions = [
     {
       icon: <Zap className="h-12 w-12" />,
-      title: "Expertise",
+      title: "We are experts",
       description: "Our engineers and consultants stay ahead of market trends, specializing in the latest technologies and AI products."
     },
     {
       icon: <Clock className="h-12 w-12" />,
-      title: "Fast, Quality Delivery",
+      title: "Fast and Good",
       description: "We deliver high quality products, and we deliver them fast. There is no such thing as \"It can either be fast, or it can be good\". We do both."
     },
     {
       icon: <Building2 className="h-12 w-12" />,
-      title: "Industry Experience",
+      title: "Industry Knowledge",
       description: "With experience across multiple sectors, we understand your market and deliver solutions that address specific industry needs."
     },
     {
       icon: <CreditCard className="h-12 w-12" />,
       title: "Payment Solutions",
-      description: "We help you seamlessly integrate any payment method into your business, from traditional card payments to even cryptocurrency solutions."
+      description: "We help you integrate any payment method into your business, from traditional card payments to even cryptocurrency solutions."
     }
   ];
 
@@ -33,7 +33,7 @@ const Solutions: React.FC = () => {
         <div className="section-title">
           <h2 className="mb-2">How We Help</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Here is what separates us from the competition.
+            Here is what we can do for you.
           </p>
         </div>
 
@@ -73,7 +73,7 @@ const Solutions: React.FC = () => {
             </h3>
             <p className="mb-6">
               The AI revolution is happening now. Companies that adapt early will lead their industries.
-              Don't wait until it's too late - start your transformation today.
+              Don't wait until it's too late. Start your transformation today.
             </p>
             <Link
               to="contact"

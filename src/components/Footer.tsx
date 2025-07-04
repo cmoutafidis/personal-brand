@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronUp, Github, Linkedin, createLucideIcon } from 'lucide-react';
+import { ChevronUp, Github, createLucideIcon } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
               <span className="text-xl font-display font-bold">Fiji Solutions</span>
             </div>
             <p className="text-gray-400 mb-4">
-              We provide IT solutions customized to fit your business, helping you succeed in the digital world. Our strategies focus on supporting your growth and ensuring your success.
+              We help your business grow online. Our strategies ensure your growth and success.
             </p>
             <div className="flex space-x-4">
               <a
@@ -64,15 +64,6 @@ const Footer: React.FC = () => {
                 aria-label="Twitter"
               >
                 <XIcon className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/charalampos-moutafidis-71330414a/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -138,8 +129,6 @@ const Footer: React.FC = () => {
                   Catalytics Pro
                 </a>
               </li>
-              <li className="text-gray-400">DeFi Dashboard</li>
-              <li className="text-gray-400">Blockchain Explorer</li>
             </ul>
           </div>
         </div>

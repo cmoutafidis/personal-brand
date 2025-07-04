@@ -26,7 +26,7 @@ const Services: React.FC = () => {
       icon: <CreditCard className="h-8 w-8" />,
       title: 'Payment Integration',
       description: 'Money is the oxygen of your company. We make the process simple, and allow your customers to pay you with a variety of payment methods.',
-      features: ['Crypto Payments', 'Credit Card Processing', 'Digital Wallets', 'Payment Gateway Integration']
+      features: ['Credit Card Processing', 'Payment Gateway Integration', 'Digital Wallets', 'Crypto Payments']
     },
     {
       icon: <Cpu className="h-8 w-8" />,
@@ -46,9 +46,9 @@ const Services: React.FC = () => {
     <section id="services" className="section bg-white dark:bg-gray-900">
       <div className="container-custom">
         <div className="section-title">
-          <h2 className="mb-2">Our Portfolio</h2>
+          <h2 className="mb-2">Our Work</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Technology solution that fit your business needs.
+            Projects we have done with our existing clients.
           </p>
         </div>
 

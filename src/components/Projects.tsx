@@ -16,32 +16,16 @@ const Projects: React.FC = () => {
     {
       title: 'TLX Finance Analytics',
       description: 'Platform for tracking Fed net liquidity and Toros leverage tokens performance. Provides comprehensive financial analytics for investors.',
-      image: 'https://images.pexels.com/photos/186461/pexels-photo-186461.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: '/tlx2.png',
       technologies: ['React', 'TypeScript', 'Chart.js', 'API Integration'],
       liveUrl: 'https://tlx.fijisolutions.net/',
     },
     {
       title: 'Catalytics Pro',
       description: 'Community project for Jupiter Exchange. Provides real-time analytics and insights for traders and investors in the ecosystem.',
-      image: 'https://images.pexels.com/photos/6801647/pexels-photo-6801647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: '/catalytics2.png',
       technologies: ['React', 'TypeScript', 'Web3', 'Blockchain'],
       liveUrl: 'https://catalytics.pro/',
-    },
-    {
-      title: 'DeFi Dashboard',
-      description: 'Comprehensive dashboard for tracking DeFi investments across multiple protocols and chains.',
-      image: 'https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      technologies: ['Next.js', 'Web3.js', 'GraphQL'],
-      liveUrl: '#',
-      repoUrl: '#',
-    },
-    {
-      title: 'Blockchain Explorer',
-      description: 'Custom blockchain explorer for viewing transactions, blocks, and smart contracts on a specific network.',
-      image: 'https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
-      technologies: ['React', 'Node.js', 'Ethers.js'],
-      liveUrl: '#',
-      repoUrl: '#',
     }
   ];
 
@@ -96,7 +80,7 @@ const Projects: React.FC = () => {
                     className="inline-flex items-center text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium"
                   >
                     <ExternalLink className="h-4 w-4 mr-1" />
-                    Live Demo
+                    Check it out
                   </a>
                   {project.repoUrl && (
                     <a
