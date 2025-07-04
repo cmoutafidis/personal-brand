@@ -16,14 +16,14 @@ const Projects: React.FC = () => {
     {
       title: 'TLX Finance Analytics',
       description: 'Platform for tracking Fed net liquidity and Toros leverage tokens performance. Provides comprehensive financial analytics for investors.',
-      image: '/tlx2.png',
+      image: '/tlx.png',
       technologies: ['React', 'TypeScript', 'Chart.js', 'API Integration'],
       liveUrl: 'https://tlx.fijisolutions.net/',
     },
     {
       title: 'Catalytics Pro',
       description: 'Community project for Jupiter Exchange. Provides real-time analytics and insights for traders and investors in the ecosystem.',
-      image: '/catalytics2.png',
+      image: '/catalytics.png',
       technologies: ['React', 'TypeScript', 'Web3', 'Blockchain'],
       liveUrl: 'https://catalytics.pro/',
     }
