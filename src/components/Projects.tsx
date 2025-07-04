@@ -14,7 +14,7 @@ interface Project {
 const Projects: React.FC = () => {
   const projects: Project[] = [
     {
-      title: 'TLX Finance Analytics',
+      title: 'Finance Analytics',
       description: 'Platform for tracking Fed net liquidity and Toros leverage tokens performance. Provides comprehensive financial analytics for investors.',
       image: '/tlx.png',
       technologies: ['React', 'TypeScript', 'Chart.js', 'API Integration'],
