@@ -24,7 +24,7 @@ const Projects: React.FC = () => {
       title: 'Catalytics Pro',
       description: 'Community project for Jupiter Exchange. Provides real-time analytics and insights for traders and investors in the ecosystem.',
       image: '/catalytics.png',
-      technologies: ['React', 'TypeScript', 'Web3', 'Blockchain'],
+      technologies: ['Angular', 'TypeScript', 'Web3', 'Blockchain', 'Python'],
       liveUrl: 'https://catalytics.pro/',
     }
   ];
