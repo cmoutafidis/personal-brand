@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import VapiWidget from './VapiWidget';
 
 const Hero: React.FC = () => {
-  const assistantId = "d6683411-62fe-42cb-ad6f-54dc1eb9eeb7"; // Your existing Riley assistant
+  const assistantId = "d6683411-62fe-42cb-ad6f-54dc1eb9eeb7";
   const vapiApiKey = "4fb313ff-b3ca-4e50-869f-2a28d0939c6f";
 
   return (
