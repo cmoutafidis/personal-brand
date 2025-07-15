@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Vapi from '@vapi-ai/web';
-import { Phone, PhoneOff, Mic, MicOff } from 'lucide-react';
+import { PhoneOff, Mic } from 'lucide-react';
 
 interface VapiWidgetProps {
   apiKey: string;
@@ -8,10 +8,10 @@ interface VapiWidgetProps {
   className?: string;
 }
 
-const VapiWidget: React.FC<VapiWidgetProps> = ({ 
-  apiKey, 
-  assistantId, 
-  className = '' 
+const VapiWidget: React.FC<VapiWidgetProps> = ({
+  apiKey,
+  assistantId,
+  className = ''
 }) => {
   const [vapi, setVapi] = useState<Vapi | null>(null);
   const [isConnected, setIsConnected] = useState(false);
@@ -110,10 +110,10 @@ const VapiWidget: React.FC<VapiWidgetProps> = ({
   return (
     <button
       onClick={startCall}
-      className={`btn bg-green-600 hover:bg-green-700 text-white focus:ring-green-500 flex items-center justify-center ${className}`}
+      className={`btn bg-sky-600 hover:bg-sky-700 text-white focus:ring-sky-500 flex items-center justify-center ${className}`}
     >
-      <Phone className="h-4 w-4 mr-2" />
-      Talk to Assistant
+    <Mic className="h-4 w-4 mr-2" />
+      Let's talk now
     </button>
   );
 };

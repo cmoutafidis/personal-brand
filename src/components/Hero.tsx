@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import VapiWidget from './VapiWidget';
 
 const Hero: React.FC = () => {
@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
               className="btn btn-primary text-lg px-8 py-4 cursor-pointer"
             >
               Yes, I Want That
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <ArrowDown className="ml-2 h-5 w-5" />
             </Link>
             <VapiWidget
               apiKey={vapiApiKey}
