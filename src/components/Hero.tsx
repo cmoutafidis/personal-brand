@@ -5,8 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import VapiWidget from './VapiWidget';
 
 const Hero: React.FC = () => {
-  // Assistant configuration for Fiji Solutions front-desk assistant
-  const assistantId = "asst_fiji_solutions_frontdesk"; // You'll need to create this assistant in Vapi dashboard
+  const assistantId = "d6683411-62fe-42cb-ad6f-54dc1eb9eeb7";
   const vapiApiKey = "4fb313ff-b3ca-4e50-869f-2a28d0939c6f";
 
   return (
@@ -39,7 +38,7 @@ const Hero: React.FC = () => {
               Yes, I Want That
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
-            <VapiWidget 
+            <VapiWidget
               apiKey={vapiApiKey}
               assistantId={assistantId}
               className="text-lg px-8 py-4"
