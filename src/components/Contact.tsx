@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import {Mail, MapPin, Send, Github, createLucideIcon, CheckCircle, AlertCircle} from 'lucide-react';
+import { Mail, MapPin, Send, Github, LucideIceCream as createLucideIcon, CheckCircle, AlertCircle } from 'lucide-react';
 
 const Contact: React.FC = () => {
   // Form state
