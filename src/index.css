@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Critical CSS for above-the-fold content */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -9,10 +16,12 @@
 
   body {
     @apply antialiased text-base;
+    font-display: swap;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display font-bold;
+    font-display: swap;
   }
 
   h1 {
@@ -29,6 +38,17 @@
 
   p {
     @apply leading-relaxed;
+  }
+
+  /* Improve font loading performance */
+  @font-face {
+    font-family: 'Inter';
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Plus Jakarta Sans';
+    font-display: swap;
   }
 }
 
