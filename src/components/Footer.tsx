@@ -92,6 +92,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/"
+                  onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
                   Home
@@ -100,6 +101,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/portfolio"
+                  onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
                   Portfolio
@@ -108,6 +110,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/contact"
+                  onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
                   Contact
@@ -116,6 +119,7 @@ const Footer: React.FC = () => {
               <li>
                 <Link
                   to="/legal"
+                  onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
                   Legal

@@ -22,6 +22,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -34,6 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
         <div className="flex items-center justify-between">
           <Link
             to="/"
+            onClick={scrollToTop}
             className="flex items-center space-x-2 cursor-pointer"
           >
             <img
@@ -52,6 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
+                  onClick={scrollToTop}
                   to={link.to}
                   className={`text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 font-medium transition-colors ${
                     location.pathname === link.to ? 'text-primary-600 dark:text-primary-400' : ''
