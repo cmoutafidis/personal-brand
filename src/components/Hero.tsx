@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            It is important for your business to win the competition.
+            New technologies are very important for your business.
           </motion.p>
 
           <motion.p
@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            But in reality, you already have a lot of important stuff on your plate.
+            However, there are already 101 things on your to-do list. And they are all important!
           </motion.p>
         </div>
       </div>

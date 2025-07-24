@@ -7,12 +7,12 @@ const Challenges: React.FC = () => {
     {
       icon: <Binary className="h-12 w-12" />,
       title: "Old Technologies",
-      description: "It is very hard to compete using old technologies. You are missing opportunities, while it is hard to automate processes and scale."
+      description: "It is very hard to compete using old technologies. You are missing opportunities and it is hard to automate processes and scale."
     },
     {
       icon: <Clock className="h-12 w-12" />,
       title: "Everyone is slow",
-      description: "Traditional agencies work very slow and are expensive, while hiring good stuff is difficult. And even if you find someone good, the might leave."
+      description: "Traditional agencies work slow and are very expensive. Hiring good stuff is difficult. And even if you find someone good, the might leave."
     },
     {
       icon: <DollarSign className="h-12 w-12" />,
