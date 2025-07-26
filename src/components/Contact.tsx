@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import {Mail, MapPin, Send, Github, createLucideIcon, CheckCircle, AlertCircle} from 'lucide-react';
+import {Mail, MapPin, Send, Github, CheckCircle, AlertCircle} from 'lucide-react';
 
 const Contact: React.FC = () => {
   // Form state
@@ -17,16 +17,26 @@ const Contact: React.FC = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
-  const XIcon = createLucideIcon("X", [
-    [
-      "path",
-      {
-        d: "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z",
-        stroke: "none",
-        fill: "currentColor",
-      },
-    ],
-  ]);
+  const XIcon = (props) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path
+        d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+        stroke="none"
+        fill="currentColor"
+      />
+    </svg>
+  );
 
   // Handle input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
