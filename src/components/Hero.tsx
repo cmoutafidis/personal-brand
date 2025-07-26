@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
           </motion.p>
         </div>
       </div>
-      
+
       {/* Chat Widget */}
       <VapiChatWidget
         apiKey={vapiApiKey}

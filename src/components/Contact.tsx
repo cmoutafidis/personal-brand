@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import {Mail, MapPin, Send, Github, CheckCircle, AlertCircle} from 'lucide-react';
+import {Mail, MapPin, Send, Github, CheckCircle, AlertCircle, Facebook, Linkedin} from 'lucide-react';
 
 const Contact: React.FC = () => {
   // Form state
@@ -214,7 +214,7 @@ const Contact: React.FC = () => {
                   href="https://github.com/cmoutafidis"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900/30 dark:hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-white transition-colors"
                   aria-label="GitHub"
                 >
                   <Github className="h-5 w-5" />
@@ -223,10 +223,28 @@ const Contact: React.FC = () => {
                   href="https://x.com/fiji_solutions"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-700 dark:text-gray-300 hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900/30 dark:hover:text-primary-400 transition-colors"
-                  aria-label="X"
+                  className="text-gray-400 hover:text-white transition-colors"
+                  aria-label="Twitter"
                 >
                   <XIcon className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61578271845868"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="h-5 w-5" />
+                </a>
+                <a
+                  href="https://linkedin.com/company/fijisolutionsnet"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5" />
                 </a>
               </div>
             </div>
