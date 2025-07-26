@@ -3,7 +3,6 @@ import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import VapiWidget from './VapiWidget';
-import VapiChatWidget from './VapiChatWidget';
 
 const Hero: React.FC = () => {
   const assistantId = "d6683411-62fe-42cb-ad6f-54dc1eb9eeb7";
@@ -68,12 +67,6 @@ const Hero: React.FC = () => {
           </motion.p>
         </div>
       </div>
-      
-      {/* Chat Widget */}
-      <VapiChatWidget
-        apiKey={vapiApiKey}
-        assistantId={assistantId}
-      />
     </section>
   );
 };

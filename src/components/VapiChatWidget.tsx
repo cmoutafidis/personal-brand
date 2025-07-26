@@ -1,5 +1,6 @@
 import React from 'react';
 import { VapiWidget } from '@vapi-ai/client-sdk-react';
+import { MessageCircle } from 'lucide-react';
 
 interface VapiChatWidgetProps {
   apiKey: string;
@@ -38,7 +39,7 @@ const VapiChatWidget: React.FC<VapiChatWidgetProps> = ({
       accentColor="#0086ff"
       buttonBaseColor="#0086ff"
       buttonAccentColor="#FFFFFF"
-      mainLabel="Chat with AI Assistant"
+      mainLabel={<MessageCircle className="h-6 w-6" />}
       emptyChatMessage="Hi! How can I help you today?"
       onCallStart={handleCallStart}
       onCallEnd={handleCallEnd}
