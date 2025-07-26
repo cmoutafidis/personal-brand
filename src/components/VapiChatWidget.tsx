@@ -19,7 +19,12 @@ const VapiChatWidget: React.FC<VapiChatWidgetProps> = ({
   };
 
   const handleMessage = (message: any) => {
-    console.log('Message received:', message);
+    console.log('Message received:', {
+      role: message.role,
+      content: message.content,
+      fullContent: message.transcript || message.content,
+      timestamp: message.timestamp
+    });
   };
 
   const handleError = (error: Error) => {
@@ -33,13 +38,16 @@ const VapiChatWidget: React.FC<VapiChatWidgetProps> = ({
       mode="chat"
       theme="light"
       position="bottom-right"
-      size="full"
+      size="large"
       radius="medium"
       accentColor="#0086ff"
       buttonBaseColor="#0086ff"
       buttonAccentColor="#FFFFFF"
       mainLabel="Chat with Support"
       emptyChatMessage="Hey, what brings you here today?"
+      showTranscript={true}
+      maxWidth="400px"
+      maxHeight="600px"
       onCallStart={handleCallStart}
       onCallEnd={handleCallEnd}
       onMessage={handleMessage}
