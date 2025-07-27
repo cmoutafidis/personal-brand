@@ -17,7 +17,7 @@ const Challenges: React.FC = () => {
     {
       icon: <DollarSign className="h-12 w-12" />,
       title: "Money wasted",
-      description: "A lot of manual tasks that stuff have been doing for years can now be automated. This will save you tons money and time."
+      description: "A lot of manual tasks that stuff have been doing for years can now be automated. This costs you tons of money and time."
     }
   ];
 
