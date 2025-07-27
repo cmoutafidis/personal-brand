@@ -31,8 +31,6 @@ const Contact: React.FC = () => {
     }
   };
 
-  return <ContactComponent />;
-
   return (
     <>
       <SEOHead
