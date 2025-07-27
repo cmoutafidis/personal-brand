@@ -8,10 +8,11 @@ import Contact from './pages/Contact';
 import Legal from './pages/Legal';
 import { ThemeProvider } from './context/ThemeContext';
 import VapiChatWidget from './components/VapiChatWidget';
+import {Analytics} from "@vercel/analytics/react";
 
 function App() {
   const [scrolling, setScrolling] = useState(false);
-  
+
   // VAPI configuration
   const assistantId = "d6683411-62fe-42cb-ad6f-54dc1eb9eeb7";
   const vapiApiKey = "4fb313ff-b3ca-4e50-869f-2a28d0939c6f";
@@ -45,12 +46,14 @@ function App() {
             </Routes>
           </main>
           <Footer />
-          
+
           {/* Global Chat Widget - visible on all pages */}
           <VapiChatWidget
             apiKey={vapiApiKey}
             assistantId={assistantId}
           />
+
+          <Analytics />
         </div>
       </Router>
     </ThemeProvider>
