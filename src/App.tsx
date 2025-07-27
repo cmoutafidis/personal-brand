@@ -9,6 +9,7 @@ import Legal from './pages/Legal';
 import { ThemeProvider } from './context/ThemeContext';
 import VapiChatWidget from './components/VapiChatWidget';
 import {Analytics} from "@vercel/analytics/react";
+import {SpeedInsights} from "@vercel/speed-insights/react";
 
 function App() {
   const [scrolling, setScrolling] = useState(false);
@@ -54,6 +55,7 @@ function App() {
           />
 
           <Analytics />
+          <SpeedInsights />
         </div>
       </Router>
     </ThemeProvider>
