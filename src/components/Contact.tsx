@@ -182,7 +182,7 @@ const Contact: React.FC = () => {
                 <div>
                   <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">Email</h4>
                   <a
-                    href="mailto:contact@fijisolutions.net"
+                    href="mailto:info@fijisolutions.net"
                     className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                     itemProp="email"
                   >
