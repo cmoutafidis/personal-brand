@@ -24,12 +24,12 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Fiji Solutions",
-    "description": "IT solutions that fit to your business needs, designed to guarantee your business success.",
+    "description": "We help your business grow online. Our strategies ensure your growth and success.",
     "url": "https://fijisolutions.net",
     "logo": "https://fijisolutions.net/fiji_solutions.png",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+41-XXX-XXX-XXXX",
+      "telephone": "+41-76-622-6200",
       "contactType": "customer service",
       "email": "info@fijisolutions.net"
     },
@@ -50,9 +50,11 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     ],
     "sameAs": [
       "https://github.com/cmoutafidis",
-      "https://x.com/fiji_solutions"
+      "https://x.com/fiji_solutions",
+      "https://www.facebook.com/profile.php?id=61578271845868",
+      "https://linkedin.com/company/fijisolutionsnet",
     ],
-    "foundingDate": "2024",
+    "foundingDate": "2025",
     "founder": {
       "@type": "Person",
       "name": "Charalampos Moutafidis"
@@ -73,7 +75,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <link rel="canonical" href={canonicalUrl} />
-      
+
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonicalUrl} />
@@ -81,7 +83,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:site_name" content="Fiji Solutions" />
-      
+
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={canonicalUrl} />
@@ -89,13 +91,13 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={ogImage} />
       <meta property="twitter:site" content="@fiji_solutions" />
-      
+
       {/* Additional SEO meta tags */}
       <meta name="robots" content="index, follow" />
       <meta name="author" content="Fiji Solutions" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="Content-Language" content="en" />
-      
+
       {/* Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify(structuredData || defaultStructuredData)}

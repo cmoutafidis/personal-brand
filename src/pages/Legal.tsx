@@ -4,22 +4,14 @@ import SEOHead from '../components/SEOHead';
 import { Building, MapPin, Hash, Euro, User, Shield } from 'lucide-react';
 
 const Legal: React.FC = () => {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Legal Information - Fiji Solutions Company Details",
-    "description": "Legal information and company registration details for Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE).",
-    "url": "https://fijisolutions.net/legal"
-  };
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <SEOHead
-        title="Legal Information | Fiji Solutions Company Details"
-        description="Legal information and company registration details for Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE). GEMI Number: 185101306000, based in Thessaloniki, Greece."
+        title="Company Information & Legal Details | Fiji Solutions"
+        description="Legal information and company registration details for Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE), based in Thessaloniki, Greece."
         keywords="legal information, company registration, GEMI number, Fiji Solutions IKE, Thessaloniki Greece, business registration"
         canonicalUrl="https://fijisolutions.net/legal"
-        structuredData={structuredData}
       />
       <section className="section">
         <div className="container-custom">
