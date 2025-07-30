@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
     <>
       <SEOHead
         title="Contact Us for Free IT Consultation | Fiji Solutions"
-        description="Contact Fiji Solutions in Thessaloniki, Greece for expert IT consulting and custom software development. Call +30 698 322 6200 or fill out our form for a free consultation."
+        description="Contact Fiji Solutions in Thessaloniki, Greece for expert IT consulting and custom software development. Fill out our form for a free consultation."
         keywords="contact, free consultation, IT consulting, software development consultation, mobile app development, big data consulting, Thessaloniki Greece"
         canonicalUrl="https://fijisolutions.net/contact"
       />

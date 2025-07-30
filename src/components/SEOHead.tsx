@@ -59,6 +59,10 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       "Data Quality Management",
       "Enterprise Software Development",
       "IT Consulting",
+      "AI Solutions",
+      "Cloud Services",
+      "Blockchain Development",
+      "Payment Integration",
       "Mobile App Development",
       "Software Consulting",
       "Solution Consulting"
