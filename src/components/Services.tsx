@@ -6,15 +6,15 @@ const Services: React.FC = () => {
   const services = [
     {
       icon: <Code2 className="h-8 w-8" />,
-      title: 'Custom Development',
+      title: 'Software Development',
       description: 'End-to-end development of web applications, mobile solutions, and enterprise software that fit to specific business needs.',
-      features: ['Frontend Applications', 'Backend Systems', 'API Integration', 'Mobile Solutions']
+      features: ['Custom Software Applications', 'Web Applications', 'Desktop Applications', 'System Integration']
     },
     {
       icon: <Cloud className="h-8 w-8" />,
-      title: 'Cloud Services',
+      title: 'Enterprise Software Development',
       description: 'Expert consulting and implementation of cloud solutions across major platforms.',
-      features: ['AWS & Azure Solutions', 'Cloud Architectural design', 'Cloud Migration', 'Infrastructure Optimization']
+      features: ['Large-scale Software Systems', 'Business Process Integration', 'Scalable Architecture', 'Enterprise Solutions']
     },
     {
       icon: <Bot className="h-8 w-8" />,
@@ -29,16 +29,16 @@ const Services: React.FC = () => {
       features: ['Credit Card Processing', 'Payment Gateway Integration', 'Digital Wallets', 'Crypto Payments']
     },
     {
-      icon: <Cpu className="h-8 w-8" />,
-      title: 'Blockchain Development',
-      description: 'Specialized blockchain solutions and smart contract development.',
-      features: ['Solana Programs', 'DeFi Applications', 'Web3 Integration', 'Blockchain Data Analysis']
+      icon: <Lightbulb className="h-8 w-8" />,
+      title: 'Mobile App Development',
+      description: 'Expert consulting and implementation of cloud solutions across major platforms.',
+      features: ['iOS Applications', 'Android Applications', 'Cross-platform Development', 'Mobile UI/UX Design']
     },
     {
-      icon: <Lightbulb className="h-8 w-8" />,
+      icon: <Cpu className="h-8 w-8" />,
       title: 'IT Consulting',
       description: 'We make sure that your business is running smoothly and efficiently. This is very important for your business to grow.',
-      features: ['Architecture Design', 'Technology Strategy', 'Digital Transformation', 'Security Planning']
+      features: ['Technology Strategy', 'Infrastructure Optimization', 'Digital Transformation', 'IT Strategy Alignment']
     }
   ];
 
