@@ -12,12 +12,12 @@ const Challenges: React.FC = () => {
     {
       icon: <Clock className="h-12 w-12" />,
       title: "Everyone is slow",
-      description: "Traditional agencies work slow and are very expensive. On the other hand, hiring good stuff is difficult. And even if you find someone good, one day they might leave."
+      description: "Traditional agencies work slowly and are very expensive. On the other hand, hiring good staff is difficult. And even if you find someone good, one day they might leave."
     },
     {
       icon: <DollarSign className="h-12 w-12" />,
       title: "Money wasted",
-      description: "A lot of manual tasks that stuff have been doing for years can now be automated. This costs you tons of money and time."
+      description: "A lot of manual tasks that staff has been doing for years can now be automated. This costs you tons of money and time."
     }
   ];
 

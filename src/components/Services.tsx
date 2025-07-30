@@ -19,13 +19,13 @@ const Services: React.FC = () => {
     {
       icon: <Bot className="h-8 w-8" />,
       title: 'AI Solutions',
-      description: 'AI implementations and Integrations that save you money and will bring you more customers.',
+      description: 'AI implementations and integrations that save you money and will bring you more customers.',
       features: ['AI Chat Agents', 'AI Voice Assistants', 'AI-Powered Service Desk', 'Process Automations']
     },
     {
       icon: <CreditCard className="h-8 w-8" />,
       title: 'Payment Integration',
-      description: 'Money is the oxygen of your company. We make the process simple, and allow your customers to pay you with a variety of payment methods.',
+      description: 'Money is the oxygen of your company. We make the process simple and allow your customers to pay you with a variety of payment methods.',
       features: ['Credit Card Processing', 'Payment Gateway Integration', 'Digital Wallets', 'Crypto Payments']
     },
     {
@@ -37,7 +37,7 @@ const Services: React.FC = () => {
     {
       icon: <Lightbulb className="h-8 w-8" />,
       title: 'IT Consulting',
-      description: 'We make sure that your business is running smoothly and efficiently. This is very important for your business to grow.',
+      description: 'We make sure that your business runs smoothly and efficiently. This is very important for your business to grow.',
       features: ['Technology Strategy', 'Infrastructure Optimization', 'Digital Transformation', 'IT Strategy Alignment']
     }
   ];
