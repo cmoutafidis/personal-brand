@@ -8,7 +8,7 @@ const Services: React.FC = () => {
       icon: <Code2 className="h-8 w-8" />,
       title: 'Software Development',
       description: 'End-to-end development of web applications, mobile solutions, and enterprise software that fit to specific business needs.',
-      features: ['Custom Software Applications', 'Web Applications', 'Desktop Applications', 'System Integration']
+      features: ['Custom Software Applications', 'Web Applications', 'Mobile Applications', 'System Integration']
     },
     {
       icon: <Cloud className="h-8 w-8" />,
@@ -29,22 +29,16 @@ const Services: React.FC = () => {
       features: ['Credit Card Processing', 'Payment Gateway Integration', 'Digital Wallets', 'Crypto Payments']
     },
     {
-      icon: <Lightbulb className="h-8 w-8" />,
-      title: 'Mobile App Development',
-      description: 'Expert consulting and implementation of cloud solutions across major platforms.',
-      features: ['iOS Applications', 'Android Applications', 'Cross-platform Development', 'Mobile UI/UX Design']
-    },
-    {
-      icon: <Cpu className="h-8 w-8" />,
-      title: 'IT Consulting',
-      description: 'We make sure that your business is running smoothly and efficiently. This is very important for your business to grow.',
-      features: ['Technology Strategy', 'Infrastructure Optimization', 'Digital Transformation', 'IT Strategy Alignment']
-    },
-    {
       icon: <Cpu className="h-8 w-8" />,
       title: 'Blockchain Development',
       description: 'Modern blockchain solutions for various industries and use cases.',
       features: ['Smart Contract Development', 'DeFi Applications', 'Token Development', 'Blockchain Integration']
+    },
+    {
+      icon: <Lightbulb className="h-8 w-8" />,
+      title: 'IT Consulting',
+      description: 'We make sure that your business is running smoothly and efficiently. This is very important for your business to grow.',
+      features: ['Technology Strategy', 'Infrastructure Optimization', 'Digital Transformation', 'IT Strategy Alignment']
     }
   ];
 
