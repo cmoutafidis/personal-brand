@@ -40,6 +40,12 @@ const Services: React.FC = () => {
       description: 'We make sure that your business is running smoothly and efficiently. This is very important for your business to grow.',
       features: ['Technology Strategy', 'Infrastructure Optimization', 'Digital Transformation', 'IT Strategy Alignment']
     }
+    },
+    {
+      icon: <Cpu className="h-8 w-8" />,
+      title: 'Blockchain Development',
+      description: 'Modern blockchain solutions for various industries and use cases.',
+      features: ['Smart Contract Development', 'DeFi Applications', 'Token Development', 'Blockchain Integration']
   ];
 
   return (
