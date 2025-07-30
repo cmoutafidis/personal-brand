@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
               <span className="text-xl font-display font-bold">Fiji Solutions</span>
             </div>
             <p className="text-gray-400 mb-4">
-              We help your business grow online. Our strategies ensure your growth and success.
+              Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.
             </p>
             <div className="flex space-x-4">
               <a

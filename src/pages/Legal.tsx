@@ -67,7 +67,7 @@ const Legal: React.FC = () => {
                           Address
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
-                          MARINOU ANTYPA 40, 57001, PYLAIA, THESSALONIKI
+                          MARINOU ANTIPA 40, 570 01, PILEA, THESSALONIKI
                         </p>
                       </div>
                     </div>

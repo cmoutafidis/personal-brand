@@ -6,39 +6,39 @@ const Services: React.FC = () => {
   const services = [
     {
       icon: <Code2 className="h-8 w-8" />,
-      title: 'Custom Development',
-      description: 'End-to-end development of web applications, mobile solutions, and enterprise software that fit to specific business needs.',
-      features: ['Frontend Applications', 'Backend Systems', 'API Integration', 'Mobile Solutions']
+      title: 'Software Development',
+      description: 'Building custom software solutions, including applications and systems, to address specific business challenges, enhance operations, or deliver innovative products.',
+      features: ['Application Development', 'Enterprise Software Development', 'Mobile App Development', 'Custom Software Solutions']
     },
     {
       icon: <Cloud className="h-8 w-8" />,
-      title: 'Cloud Services',
-      description: 'Expert consulting and implementation of cloud solutions across major platforms.',
-      features: ['AWS & Azure Solutions', 'Cloud Architectural design', 'Cloud Migration', 'Infrastructure Optimization']
+      title: 'Big Data Consulting & Implementation',
+      description: 'Providing expert guidance and solutions for managing, analyzing, and leveraging large datasets to drive business insights, including data architecture design and implementation.',
+      features: ['Data Architecture Design', 'Data Quality Management', 'Business Intelligence', 'Analytics Solutions']
     },
     {
       icon: <Bot className="h-8 w-8" />,
-      title: 'AI Solutions',
-      description: 'AI implementations and Integrations that save you money and will bring you more customers.',
-      features: ['AI Chat Agents', 'AI Voice Assistants', 'AI-Powered Service Desk', 'Process Automations']
+      title: 'IT Consulting',
+      description: 'Offering strategic advice on technology adoption, infrastructure optimization, and IT strategy to improve business efficiency and align technology with organizational goals.',
+      features: ['Technology Strategy', 'Infrastructure Optimization', 'Digital Transformation', 'IT Strategy Alignment']
     },
     {
       icon: <CreditCard className="h-8 w-8" />,
-      title: 'Payment Integration',
-      description: 'Money is the oxygen of your company. We make the process simple, and allow your customers to pay you with a variety of payment methods.',
-      features: ['Credit Card Processing', 'Payment Gateway Integration', 'Digital Wallets', 'Crypto Payments']
+      title: 'Solution Consulting',
+      description: 'Offering tailored guidance to identify, design, and implement technology solutions that address specific business problems, ensuring alignment with client goals and operational needs.',
+      features: ['Business Analysis', 'Solution Design', 'Implementation Planning', 'Technology Alignment']
     },
     {
       icon: <Cpu className="h-8 w-8" />,
-      title: 'Blockchain Development',
-      description: 'Specialized blockchain solutions and smart contract development.',
-      features: ['Solana Programs', 'DeFi Applications', 'Web3 Integration', 'Blockchain Data Analysis']
+      title: 'Software Consulting',
+      description: 'Providing expert advice on software selection, development methodologies, and technology strategies to help businesses optimize their software solutions and workflows.',
+      features: ['Software Selection', 'Development Methodologies', 'Technology Strategies', 'Workflow Optimization']
     },
     {
       icon: <Lightbulb className="h-8 w-8" />,
-      title: 'IT Consulting',
-      description: 'We make sure that your business is running smoothly and efficiently. This is very important for your business to grow.',
-      features: ['Architecture Design', 'Technology Strategy', 'Digital Transformation', 'Security Planning']
+      title: 'Mobile App Development',
+      description: 'Creating applications specifically for mobile devices, such as smartphones and tablets, with a focus on performance, usability, and platform-specific features (e.g., iOS, Android).',
+      features: ['iOS Development', 'Android Development', 'Cross-Platform Apps', 'Mobile UI/UX Design']
     }
   ];
 
