@@ -204,17 +204,15 @@ const Contact: React.FC = () => {
                     </span>
                   </p>
                   <div className="mt-4">
-                    <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.7687006238666!2d22.981762299999996!3d40.568784799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a83f09c19d1e8b%3A0x12d99215fbf8399e!2sFiji%20Solutions!5e0!3m2!1sen!2sgr!4v1753898022338!5m2!1sen!2sgr" 
-                      width="100%" 
-                      height="200" 
-                      style={{ border: 0 }} 
-                      allowFullScreen 
-                      loading="lazy" 
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="rounded-lg shadow-sm"
-                      title="Fiji Solutions Location"
-                    />
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.7687006238666!2d22.981762299999996!3d40.568784799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a83f09c19d1e8b%3A0x12d99215fbf8399e!2sFiji%20Solutions!5e0!3m2!1sen!2sgr!4v1753898022338!5m2!1sen!2sgr"
+                      width="400"
+                      height="300"
+                      style={{"border": "0"}}
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade">
+                    </iframe>
                   </div>
                 </div>
               </div>
