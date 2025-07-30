@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            New technologies are very important for your business.
+            New technology in very important for your business.
           </motion.p>
 
           <motion.p

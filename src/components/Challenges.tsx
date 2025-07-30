@@ -6,8 +6,8 @@ const Challenges: React.FC = () => {
   const challenges = [
     {
       icon: <Binary className="h-12 w-12" />,
-      title: "Old Technologies",
-      description: "It is very hard to compete using old technologies. You are missing opportunities and it is hard to automate processes and scale."
+      title: "Old Technology",
+      description: "It is very hard to compete using outdated technology. You are missing opportunities and it is hard to automate processes and scale."
     },
     {
       icon: <Clock className="h-12 w-12" />,
