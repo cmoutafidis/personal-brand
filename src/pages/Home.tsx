@@ -11,8 +11,8 @@ const Home: React.FC = () => {
     <>
       <SEOHead
         title="We help your business grow online | Fiji Solutions"
-        description="IT solutions that fit to your business needs, designed to guarantee your business success. Expert web development, AI integration, cloud services, and blockchain solutions in Greece and Switzerland."
-        keywords="web development, AI solutions, cloud services, blockchain development, IT consulting, business automation, custom software, software company, payment integration, Thessaloniki Greece, Aarau Switzerland"
+        description="Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative web development, AI solutions, cloud services, mobile app development, and blockchain technology to help businesses grow online."
+        keywords="software development, IT consulting, custom software development, mobile app development, big data consulting, enterprise software development, solution consulting, software consulting, Thessaloniki Greece"
         canonicalUrl="https://fijisolutions.net"
       />
       <Hero />

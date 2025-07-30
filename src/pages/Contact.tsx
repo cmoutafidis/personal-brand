@@ -7,8 +7,8 @@ const Contact: React.FC = () => {
     <>
       <SEOHead
         title="Contact Us for Free IT Consultation | Fiji Solutions"
-        description="Fill out the form below and we will contact you within 48 hours for a free consultation. No costs, no obligations, no annoying sales pitch."
-        keywords="contact, free consultation, IT consultation, web development consultation, AI solutions consultation, cloud services, business automation"
+        description="Contact Fiji Solutions in Thessaloniki, Greece for expert IT consulting and custom software development. Fill out our form for a free consultation."
+        keywords="contact, free consultation, IT consulting, software development consultation, mobile app development, big data consulting, Thessaloniki Greece"
         canonicalUrl="https://fijisolutions.net/contact"
       />
       <ContactComponent />

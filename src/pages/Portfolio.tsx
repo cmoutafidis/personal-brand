@@ -11,8 +11,8 @@ const Portfolio: React.FC = () => {
     <>
       <SEOHead
         title="Our Portfolio | Fiji Solutions"
-        description="Here you can see the projects we have done for our existing clients and all the services that we can offer you."
-        keywords="portfolio, projects, finance analytics, catalytics pro, web development projects, blockchain applications, IT services, custom software development"
+        description="Explore Fiji Solutions' portfolio showcasing our software development, IT consulting, mobile app development, and enterprise software solutions for clients in Thessaloniki, Greece."
+        keywords="portfolio, software development projects, IT consulting projects, mobile app development, enterprise software development, custom software solutions, Thessaloniki Greece"
         canonicalUrl="https://fijisolutions.net/portfolio"
       />
       <Services />

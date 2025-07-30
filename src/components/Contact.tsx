@@ -199,8 +199,8 @@ const Contact: React.FC = () => {
                   <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">Location</h4>
                   <p className="text-gray-700 dark:text-gray-300">
                     <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-                    Aarau, Switzerland<br />
-                    Pylaia, Greece
+                    <span itemProp="streetAddress">Marinou Antipa 40</span><br />
+                    <span itemProp="addressLocality">Pilea</span> <span itemProp="postalCode">570 01</span>, <span itemProp="addressCountry">Greece</span>
                     </span>
                   </p>
                 </div>

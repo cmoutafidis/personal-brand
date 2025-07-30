@@ -13,8 +13,8 @@ interface SEOHeadProps {
 
 const SEOHead: React.FC<SEOHeadProps> = ({
   title = "Fiji Solutions | We help your business grow online",
-  description = "IT solutions that fit to your business needs, designed to guarantee your business success. Expert web development, AI integration, cloud services, and blockchain solutions.",
-  keywords = "web development, AI solutions, cloud services, blockchain development, IT consulting, business automation, custom software, payment integration, Thessaloniki, Greece, Switzerland",
+  description = "Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative web development, AI solutions, cloud services, mobile app development, and blockchain technology to help businesses grow online.",
+  keywords = "software development, IT consulting, custom software development, mobile app development, big data consulting, enterprise software development, solution consulting, software consulting, Thessaloniki, Greece",
   canonicalUrl = "https://fijisolutions.net",
   ogImage = "https://fijisolutions.net/fiji_solutions.png",
   ogType = "website",
@@ -24,30 +24,23 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Fiji Solutions",
-    "description": "We help your business grow online. Our strategies ensure your growth and success.",
+    "description": "Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative web development, AI solutions, cloud services, mobile app development, and blockchain technology to help businesses grow online.",
     "url": "https://fijisolutions.net",
     "logo": "https://fijisolutions.net/fiji_solutions.png",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+41-76-622-6200",
+      "telephone": "+30-698-322-6200",
       "contactType": "customer service",
       "email": "info@fijisolutions.net"
     },
-    "address": [
-      {
+    "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Aarau",
-        "addressCountry": "Switzerland"
-      },
-      {
-        "@type": "PostalAddress",
-        "streetAddress": "MARINOU ANTYPA 40",
-        "addressLocality": "PYLAIA",
+        "streetAddress": "MARINOU ANTIPA 40",
+        "addressLocality": "PILEA",
         "addressRegion": "THESSALONIKI",
-        "postalCode": "57001",
+        "postalCode": "570 01",
         "addressCountry": "Greece"
-      }
-    ],
+    },
     "sameAs": [
       "https://github.com/cmoutafidis",
       "https://x.com/fiji_solutions",
@@ -60,12 +53,19 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       "name": "Charalampos Moutafidis"
     },
     "services": [
-      "Web Development",
+      "Software Development",
+      "Application Development",
+      "Big Data Consulting & Implementation",
+      "Data Quality Management",
+      "Enterprise Software Development",
+      "IT Consulting",
       "AI Solutions",
       "Cloud Services",
       "Blockchain Development",
-      "IT Consulting",
-      "Payment Integration"
+      "Payment Integration",
+      "Mobile App Development",
+      "Software Consulting",
+      "Solution Consulting"
     ]
   };
 
