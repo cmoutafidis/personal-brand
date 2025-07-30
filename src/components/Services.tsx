@@ -20,7 +20,7 @@ const Services: React.FC = () => {
       icon: <Bot className="h-8 w-8" />,
       title: 'AI Solutions',
       description: 'AI implementations and Integrations that save you money and will bring you more customers.',
-      features: ['AI Chat Agents', 'AI Voice Assistants', 'AI Service Desk', 'Process Automation']
+      features: ['AI Chat Agents', 'AI Voice Assistants', 'AI Service Desk', 'Process Automations']
     },
     {
       icon: <CreditCard className="h-8 w-8" />,
