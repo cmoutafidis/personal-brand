@@ -17,9 +17,9 @@ const Projects: React.FC = () => {
     {
       title: 'Finance Analytics',
       description: 'Platform for tracking Fed net liquidity and Toros leverage tokens performance. Provides comprehensive financial analytics for investors.',
-      image: '/tlx.png',
+      image: '/dashboard.png',
       technologies: ['React', 'TypeScript', 'Chart.js', 'API Integration'],
-      liveUrl: 'https://tlx.fijisolutions.net/',
+      liveUrl: 'https://finance.fijisolutions.net/',
     },
     {
       title: 'Catalytics Pro',

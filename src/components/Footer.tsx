@@ -143,12 +143,12 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="https://tlx.fijisolutions.net/"
+                  href="https://finance.fijisolutions.net/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Finance Analytics
+                  Fiji Financial Dashboard
                 </a>
               </li>
               <li>
