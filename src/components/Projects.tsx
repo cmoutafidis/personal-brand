@@ -15,7 +15,7 @@ interface Project {
 const Projects: React.FC = () => {
   const projects: Project[] = [
     {
-      title: 'Finance Analytics',
+      title: 'Fiji Financial Dashboard',
       description: 'Platform for tracking Fed net liquidity and Toros leverage tokens performance. Provides comprehensive financial analytics for investors.',
       image: '/dashboard.png',
       technologies: ['React', 'TypeScript', 'Chart.js', 'API Integration'],
