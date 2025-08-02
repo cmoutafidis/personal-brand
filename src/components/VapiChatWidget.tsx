@@ -19,8 +19,8 @@ const VapiChatWidget: React.FC<VapiChatWidgetProps> = ({
       emptyChatMessage: "Hey, what brings you here today?"
     },
     el: {
-      mainLabel: "Ας συνομιλήσουμε",
-      emptyChatMessage: "Γεια σας, τι σας φέρνει εδώ σήμερα;"
+      mainLabel: "Ας μιλήσουμε",
+      emptyChatMessage: "Γεια σου, τι σε φέρνει εδώ σήμερα;"
     }
   };
 
