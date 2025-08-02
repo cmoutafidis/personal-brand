@@ -156,9 +156,11 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="Content-Language" content={language} />
       
-      {/* Prerender.io meta tags */}
+      {/* Prerender.io meta tags - Enhanced for latest version */}
       <meta name="prerender-status-code" content="200" />
       <meta name="prerender-header" content="X-Prerender-Token: Zjxzv77aqcTA6Qw9ro89" />
+      <meta name="prerender-spa-wait" content="true" />
+      <meta name="fragment" content="!" />
 
       {/* Structured Data */}
       <script type="application/ld+json">
