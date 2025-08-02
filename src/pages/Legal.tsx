@@ -2,16 +2,20 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SEOHead from '../components/SEOHead';
 import { Building, MapPin, Hash, Euro, User, Shield } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Legal: React.FC = () => {
+  const { language, t } = useLanguage();
+
+  const canonicalUrl = language === 'en' ? 'https://fijisolutions.net/en/legal' : 'https://fijisolutions.net/el/legal';
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <SEOHead
-        title="Company Information & Legal Details | Fiji Solutions"
-        description="Legal information and company registration details for Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE), based in Thessaloniki, Greece."
-        keywords="legal information, company registration, GEMI number, Fiji Solutions IKE, Thessaloniki Greece, business registration"
-        canonicalUrl="https://fijisolutions.net/legal"
+        title={t('seo.legal.title')}
+        description={t('seo.legal.description')}
+        keywords={t('seo.legal.keywords')}
+        canonicalUrl={canonicalUrl}
       />
       <section className="section">
         <div className="container-custom">
@@ -23,10 +27,10 @@ const Legal: React.FC = () => {
           >
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
-                Legal Information
+                {t('legal.title')}
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400">
-                Company registration and legal details
+                {t('legal.subtitle')}
               </p>
             </div>
 
@@ -38,7 +42,7 @@ const Legal: React.FC = () => {
               </div>
 
               <h2 className="text-2xl font-semibold text-center mb-8 text-gray-900 dark:text-white">
-                WEBSITE PUBLICITY INFORMATION
+                {t('legal.website_publicity')}
               </h2>
 
               <div className="space-y-8">
@@ -50,10 +54,10 @@ const Legal: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                          Company Name
+                          {t('legal.company_name')}
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
-                          Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE)
+                          {t('legal.data.company_full_name')}
                         </p>
                       </div>
                     </div>
@@ -64,10 +68,10 @@ const Legal: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                          Address
+                          {t('legal.address')}
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
-                          MARINOU ANTIPA 40, 570 01, PILEA, THESSALONIKI
+                          {t('legal.data.company_address')}
                         </p>
                       </div>
                     </div>
@@ -78,10 +82,10 @@ const Legal: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                          GEMI Number
+                          {t('legal.gemi_number')}
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
-                          185101306000
+                          {t('legal.data.gemi_number')}
                         </p>
                       </div>
                     </div>
@@ -94,10 +98,10 @@ const Legal: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                          Corporate Capital
+                          {t('legal.corporate_capital')}
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
-                          2.000 euro
+                          {t('legal.data.corporate_capital')}
                         </p>
                       </div>
                     </div>
@@ -108,10 +112,10 @@ const Legal: React.FC = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
-                          Corporate Shares
+                          {t('legal.corporate_shares')}
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
-                          2.000 capital corporate shares with a nominal value of 1.00 euro each
+                          {t('legal.corporate_shares_description')}
                         </p>
                       </div>
                     </div>
@@ -124,14 +128,14 @@ const Legal: React.FC = () => {
                       <div className="flex items-center space-x-3 mb-4">
                         <User className="h-6 w-6 text-primary-600 dark:text-primary-400" />
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                          Partner
+                          {t('legal.partner')}
                         </h3>
                       </div>
                       <div className="space-y-2 text-gray-700 dark:text-gray-300">
-                        <p><strong>Name:</strong> CHARALAMPOS MOUTAFIDIS</p>
-                        <p><strong>Father’s Name:</strong> CHRISTOS</p>
-                        <p><strong>Tax Identification Number:</strong> 167515853</p>
-                        <p><strong>Address:</strong> ELLIS 5, 56625, SIKIES</p>
+                        <p><strong>{t('legal.name')}:</strong> {t('legal.data.partner_name')}</p>
+                        <p><strong>{t('legal.fathers_name')}:</strong> {t('legal.data.partner_father')}</p>
+                        <p><strong>{t('legal.tax_id')}:</strong> {t('legal.data.partner_tax_id')}</p>
+                        <p><strong>{t('legal.address')}:</strong> {t('legal.data.partner_address')}</p>
                       </div>
                     </div>
 
@@ -139,13 +143,13 @@ const Legal: React.FC = () => {
                       <div className="flex items-center space-x-3 mb-4">
                         <Shield className="h-6 w-6 text-primary-600 dark:text-primary-400" />
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                          Administrator
+                          {t('legal.administrator')}
                         </h3>
                       </div>
                       <div className="space-y-2 text-gray-700 dark:text-gray-300">
-                        <p><strong>Name:</strong> CHARALAMPOS MOUTAFIDIS</p>
-                        <p><strong>Identity Card Number:</strong> ΑΟ1277016</p>
-                        <p><strong>Tax Identification Number:</strong> 167515853</p>
+                        <p><strong>{t('legal.name')}:</strong> {t('legal.data.admin_name')}</p>
+                        <p><strong>{t('legal.identity_card')}:</strong> {t('legal.data.admin_identity')}</p>
+                        <p><strong>{t('legal.tax_id')}:</strong> {t('legal.data.admin_tax_id')}</p>
                       </div>
                     </div>
                   </div>

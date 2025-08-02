@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -36,27 +37,39 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
-        <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
-          <Navbar scrolling={scrolling} />
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/legal" element={<Legal />} />
-            </Routes>
-          </main>
-          <Footer />
+        <LanguageProvider>
+          <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+            <Navbar scrolling={scrolling} />
+            <main>
+              <Routes>
+                {/* Redirect root to Greek homepage */}
+                <Route path="/" element={<Navigate to="/el" replace />} />
 
-          {/* Global Chat Widget - visible on all pages */}
-          <VapiChatWidget
-            apiKey={vapiApiKey}
-            assistantId={assistantId}
-          />
+                {/* English routes */}
+                <Route path="/en" element={<Home />} />
+                <Route path="/en/portfolio" element={<Portfolio />} />
+                <Route path="/en/contact" element={<Contact />} />
+                <Route path="/en/legal" element={<Legal />} />
 
-          <Analytics />
-          <SpeedInsights />
-        </div>
+                {/* Greek routes */}
+                <Route path="/el" element={<Home />} />
+                <Route path="/el/portfolio" element={<Portfolio />} />
+                <Route path="/el/contact" element={<Contact />} />
+                <Route path="/el/legal" element={<Legal />} />
+              </Routes>
+            </main>
+            <Footer />
+
+            {/* Global Chat Widget - visible on all pages */}
+            <VapiChatWidget
+              apiKey={vapiApiKey}
+              assistantId={assistantId}
+            />
+
+            <Analytics />
+            <SpeedInsights />
+          </div>
+        </LanguageProvider>
       </Router>
     </ThemeProvider>
   );

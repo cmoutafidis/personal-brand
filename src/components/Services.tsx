@@ -1,44 +1,47 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Cloud, Bot, CreditCard, Cpu, Lightbulb } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Services: React.FC = () => {
+  const { t } = useLanguage();
+
   const services = [
     {
       icon: <Code2 className="h-8 w-8" />,
-      title: 'Software Development',
-      description: 'End-to-end development of web applications, mobile solutions, and enterprise software that fit to specific business needs.',
-      features: ['Custom Software Applications', 'Web Applications', 'Mobile Applications', 'System Integration']
+      title: t('services.software.title'),
+      description: t('services.software.description'),
+      features: [t('services.software.feature1'), t('services.software.feature2'), t('services.software.feature3'), t('services.software.feature4')]
     },
     {
       icon: <Cloud className="h-8 w-8" />,
-      title: 'Enterprise Software Development',
-      description: 'Expert consulting and implementation of cloud solutions across major platforms.',
-      features: ['Large-scale Software Systems', 'Business Process Integration', 'Scalable Architecture', 'Enterprise Solutions']
+      title: t('services.enterprise.title'),
+      description: t('services.enterprise.description'),
+      features: [t('services.enterprise.feature1'), t('services.enterprise.feature2'), t('services.enterprise.feature3'), t('services.enterprise.feature4')]
     },
     {
       icon: <Bot className="h-8 w-8" />,
-      title: 'AI Solutions',
-      description: 'AI implementations and integrations that save you money and will bring you more customers.',
-      features: ['AI Chat Agents', 'AI Voice Assistants', 'AI-Powered Service Desk', 'Process Automations']
+      title: t('services.ai.title'),
+      description: t('services.ai.description'),
+      features: [t('services.ai.feature1'), t('services.ai.feature2'), t('services.ai.feature3'), t('services.ai.feature4')]
     },
     {
       icon: <CreditCard className="h-8 w-8" />,
-      title: 'Payment Integration',
-      description: 'Money is the oxygen of your company. We make the process simple and allow your customers to pay you with a variety of payment methods.',
-      features: ['Credit Card Processing', 'Payment Gateway Integration', 'Digital Wallets', 'Crypto Payments']
+      title: t('services.payment.title'),
+      description: t('services.payment.description'),
+      features: [t('services.payment.feature1'), t('services.payment.feature2'), t('services.payment.feature3'), t('services.payment.feature4')]
     },
     {
       icon: <Cpu className="h-8 w-8" />,
-      title: 'Blockchain Development',
-      description: 'Modern blockchain solutions for various industries and use cases.',
-      features: ['Smart Contract Development', 'DeFi Applications', 'Token Development', 'Blockchain Integration']
+      title: t('services.blockchain.title'),
+      description: t('services.blockchain.description'),
+      features: [t('services.blockchain.feature1'), t('services.blockchain.feature2'), t('services.blockchain.feature3')]
     },
     {
       icon: <Lightbulb className="h-8 w-8" />,
-      title: 'IT Consulting',
-      description: 'We make sure that your business runs smoothly and efficiently. This is very important for your business to grow.',
-      features: ['Technology Strategy', 'Infrastructure Optimization', 'Digital Transformation', 'IT Strategy Alignment']
+      title: t('services.consulting.title'),
+      description: t('services.consulting.description'),
+      features: [t('services.consulting.feature1'), t('services.consulting.feature2'), t('services.consulting.feature3'), t('services.consulting.feature4')]
     }
   ];
 
@@ -46,9 +49,9 @@ const Services: React.FC = () => {
     <section id="services" className="section bg-white dark:bg-gray-900">
       <div className="container-custom">
         <div className="section-title">
-          <h2 className="mb-2">Our Work</h2>
+          <h2 className="mb-2">{t('services.title')}</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Projects we have done with our existing clients.
+            {t('services.subtitle')}
           </p>
         </div>
 

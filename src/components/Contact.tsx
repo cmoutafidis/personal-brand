@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {Mail, MapPin, Send, Github, CheckCircle, AlertCircle, Facebook, Linkedin} from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Contact: React.FC = () => {
+  const { t } = useLanguage();
+
   // Form state
   const [formData, setFormData] = useState({
     name: '',
@@ -57,34 +60,34 @@ const Contact: React.FC = () => {
     const { name, email, company, question, message } = formData;
 
     if (!name.trim()) {
-      setSubmitError('Please enter your name');
+      setSubmitError(t('contact.form.name') + ' ' + t('contact.form.error.required'));
       return false;
     }
 
     if (!email.trim()) {
-      setSubmitError('Please enter your email address');
+      setSubmitError(t('contact.form.email') + ' ' + t('contact.form.error.required'));
       return false;
     }
 
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setSubmitError('Please enter a valid email address');
+      setSubmitError(t('contact.form.error.email'));
       return false;
     }
 
     if (!company.trim()) {
-      setSubmitError('Please enter your company name');
+      setSubmitError(t('contact.form.company') + ' ' + t('contact.form.error.required'));
       return false;
     }
 
     if (!question.trim()) {
-      setSubmitError('Please enter your question');
+      setSubmitError(t('contact.form.question') + ' ' + t('contact.form.error.required'));
       return false;
     }
 
     if (!message.trim()) {
-      setSubmitError('Please enter your message');
+      setSubmitError(t('contact.form.message') + ' ' + t('contact.form.error.required'));
       return false;
     }
 
@@ -139,7 +142,7 @@ const Contact: React.FC = () => {
 
     } catch (error) {
       console.error('Form submission error:', error);
-      setSubmitError('Failed to send message. Please try again or contact us directly.');
+      setSubmitError(t('contact.form.error.failed'));
     } finally {
       setIsSubmitting(false);
     }
@@ -153,15 +156,15 @@ const Contact: React.FC = () => {
 
       <div className="container-custom relative z-10">
         <div className="section-title">
-          <h2 className="mb-2" itemProp="name">Get A Free Consultation</h2>
+          <h2 className="mb-2" itemProp="name">{t('contact.title')}</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Would you like to know what we can do for you?
+            {t('contact.subtitle1')}
           </p>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Fill out the form below and we will contact you within 48 hours for a free consultation.
+            {t('contact.subtitle2')}
           </p>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            No costs, no obligations, no annoying sales pitch.
+            {t('contact.subtitle3')}
           </p>
         </div>
 
@@ -172,7 +175,7 @@ const Contact: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Contact Information</h3>
+            <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">{t('contact.info.title')}</h3>
 
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
@@ -196,30 +199,30 @@ const Contact: React.FC = () => {
                   <MapPin className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">Location</h4>
                   <p className="text-gray-700 dark:text-gray-300">
-                    <span itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
-                    <span itemProp="streetAddress">Marinou Antipa 40</span><br />
-                    <span itemProp="addressLocality">Pilea</span> <span itemProp="postalCode">570 01</span>, <span itemProp="addressCountry">Greece</span>
-                    </span>
+                    <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">{t('contact.location')}</h4>
+                    <p className="text-gray-700 dark:text-gray-300">
+                      {t('contact.address.street')}<br />
+                      {t('contact.address.city')}
+                    </p>
+                    <div className="mt-4">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.7687006238666!2d22.981762299999996!3d40.568784799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a83f09c19d1e8b%3A0x12d99215fbf8399e!2sFiji%20Solutions!5e0!3m2!1sen!2sgr!4v1753898022338!5m2!1sen!2sgr"
+                        width="400"
+                        height="300"
+                        style={{"border": "0"}}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade">
+                      </iframe>
+                    </div>
                   </p>
-                  <div className="mt-4">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.7687006238666!2d22.981762299999996!3d40.568784799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a83f09c19d1e8b%3A0x12d99215fbf8399e!2sFiji%20Solutions!5e0!3m2!1sen!2sgr!4v1753898022338!5m2!1sen!2sgr"
-                      width="400"
-                      height="300"
-                      style={{"border": "0"}}
-                      allowFullScreen=""
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade">
-                    </iframe>
-                  </div>
                 </div>
               </div>
             </div>
 
             <div className="mt-8">
-              <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-4">Connect With Us</h4>
+              <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-4">{t('contact.connect')}</h4>
               <div className="flex space-x-4">
                 <a
                   href="https://github.com/cmoutafidis"
@@ -268,7 +271,7 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
-              <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Send a Message</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">{t('contact.form.title')}</h3>
 
               {/* Success Message */}
               {submitSuccess && (
@@ -279,7 +282,7 @@ const Contact: React.FC = () => {
                 >
                   <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0" />
                   <p className="text-green-800 dark:text-green-200">
-                    Thank you! Your message has been sent successfully. We'll get back to you within 48 hours.
+                    {t('contact.form.success')}
                   </p>
                 </motion.div>
               )}
@@ -299,7 +302,7 @@ const Contact: React.FC = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Your Name *
+                    {t('contact.form.name')} *
                   </label>
                   <input
                     type="text"
@@ -308,14 +311,14 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    placeholder="John Doe"
+                    placeholder={t('contact.form.name.placeholder')}
                     disabled={isSubmitting}
                   />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Email Address *
+                    {t('contact.form.email')} *
                   </label>
                   <input
                     type="email"
@@ -324,14 +327,14 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    placeholder="john.doe@example.com"
+                    placeholder={t('contact.form.email.placeholder')}
                     disabled={isSubmitting}
                   />
                 </div>
 
                 <div>
                   <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Company *
+                    {t('contact.form.company')} *
                   </label>
                   <input
                     type="text"
@@ -340,14 +343,14 @@ const Contact: React.FC = () => {
                     value={formData.company}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    placeholder="Your Company Name"
+                    placeholder={t('contact.form.company.placeholder')}
                     disabled={isSubmitting}
                   />
                 </div>
 
                 <div>
                   <label htmlFor="question" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Question *
+                    {t('contact.form.question')} *
                   </label>
                   <textarea
                     id="question"
@@ -356,14 +359,14 @@ const Contact: React.FC = () => {
                     value={formData.question}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    placeholder="What is your most important question?"
+                    placeholder={t('contact.form.question.placeholder')}
                     disabled={isSubmitting}
                   ></textarea>
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                    Your Message *
+                    {t('contact.form.message')} *
                   </label>
                   <textarea
                     id="message"
@@ -372,7 +375,7 @@ const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    placeholder="How can we help you?"
+                    placeholder={t('contact.form.message.placeholder')}
                     disabled={isSubmitting}
                   ></textarea>
                 </div>
@@ -385,12 +388,12 @@ const Contact: React.FC = () => {
                   {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      Sending...
+                      {t('contact.form.sending')}
                     </>
                   ) : (
                     <>
                       <Send className="h-4 w-4 mr-2" />
-                      Send Message
+                      {t('contact.form.send')}
                     </>
                   )}
                 </button>

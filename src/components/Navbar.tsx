@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { useLanguage } from '../context/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 interface NavbarProps {
   scrolling: boolean;
@@ -10,12 +12,13 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { darkMode, toggleDarkMode } = useTheme();
+  const { t, language } = useLanguage();
   const location = useLocation();
 
   const navLinks = [
-    { name: 'Home', to: '/' },
-    { name: 'Portfolio', to: '/portfolio' },
-    { name: 'Contact', to: '/contact' },
+    { name: t('nav.home'), to: language === 'el' ? '/el' : '/en' },
+    { name: t('nav.portfolio'), to: language === 'el' ? '/el/portfolio' : '/en/portfolio' },
+    { name: t('nav.contact'), to: language === 'el' ? '/el/contact' : '/en/contact' },
   ];
 
   const toggleMobileMenu = () => {
@@ -37,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
       <nav className="container-custom py-4">
         <div className="flex items-center justify-between">
           <Link
-            to="/"
+            to={language === 'el' ? '/el' : '/en'}
             onClick={scrollToTop}
             className="flex items-center space-x-2 cursor-pointer"
           >
@@ -67,6 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
                 </Link>
               ))}
             </div>
+            <LanguageSwitcher />
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
@@ -81,7 +85,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center space-x-2 md:hidden">
+          <div className="flex items-center md:hidden">
+            <LanguageSwitcher />
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"

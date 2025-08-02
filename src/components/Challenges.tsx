@@ -1,23 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Clock, DollarSign, Binary } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Challenges: React.FC = () => {
+  const { t } = useLanguage();
+
   const challenges = [
     {
       icon: <Binary className="h-12 w-12" />,
-      title: "Old Technology",
-      description: "It is very hard to compete using outdated technology. You are missing opportunities and it is hard to automate processes and scale."
+      title: t('challenges.old_tech.title'),
+      description: t('challenges.old_tech.description')
     },
     {
       icon: <Clock className="h-12 w-12" />,
-      title: "Everyone is slow",
-      description: "Traditional agencies work slowly and are very expensive. On the other hand, hiring good staff is difficult. And even if you find someone good, one day they might leave."
+      title: t('challenges.slow.title'),
+      description: t('challenges.slow.description')
     },
     {
       icon: <DollarSign className="h-12 w-12" />,
-      title: "Money wasted",
-      description: "A lot of manual tasks that staff has been doing for years can now be automated. This costs you tons of money and time."
+      title: t('challenges.money.title'),
+      description: t('challenges.money.description')
     }
   ];
 
@@ -25,9 +28,9 @@ const Challenges: React.FC = () => {
     <section className="section bg-white dark:bg-gray-900">
       <div className="container-custom">
         <div className="section-title">
-          <h2 className="mb-2">Common Business Challenges</h2>
+          <h2 className="mb-2">{t('challenges.title')}</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            All traditional businesses face the same problems.
+            {t('challenges.subtitle')}
           </p>
         </div>
 

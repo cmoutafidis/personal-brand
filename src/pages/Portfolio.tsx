@@ -4,16 +4,20 @@ import Services from '../components/Services';
 import Industries from '../components/Industries';
 import Technologies from '../components/Technologies';
 import Projects from '../components/Projects';
+import { useLanguage } from '../context/LanguageContext';
 
 const Portfolio: React.FC = () => {
+  const { language, t } = useLanguage();
+
+  const canonicalUrl = language === 'en' ? 'https://fijisolutions.net/en/portfolio' : 'https://fijisolutions.net/el/portfolio';
 
   return (
     <>
       <SEOHead
-        title="Our Portfolio | Fiji Solutions"
-        description="Explore Fiji Solutions' portfolio showcasing our software development, IT consulting, mobile app development, and enterprise software solutions for clients in Thessaloniki, Greece."
-        keywords="portfolio, software development projects, IT consulting projects, mobile app development, enterprise software development, custom software solutions, Thessaloniki Greece"
-        canonicalUrl="https://fijisolutions.net/portfolio"
+        title={t('seo.portfolio.title')}
+        description={t('seo.portfolio.description')}
+        keywords={t('seo.portfolio.keywords')}
+        canonicalUrl={canonicalUrl}
       />
       <Services />
       <Technologies />

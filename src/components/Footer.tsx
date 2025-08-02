@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {ChevronUp, Github, Facebook, Linkedin} from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Footer: React.FC = () => {
+  const { t, language } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const scrollToTop = () => {
@@ -54,7 +56,7 @@ const Footer: React.FC = () => {
               <span className="text-xl font-display font-bold">Fiji Solutions</span>
             </div>
             <p className="text-gray-400 mb-4">
-              Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               <a
@@ -97,49 +99,49 @@ const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.links')}</h3>
             <ul className="space-y-2">
               <li>
                 <Link
-                  to="/"
+                  to={language === 'el' ? '/el' : '/en'}
                   onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
-                  Home
+                  {t('nav.home')}
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/portfolio"
+                  to={language === 'el' ? '/el/portfolio' : '/en/portfolio'}
                   onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
-                  Portfolio
+                  {t('nav.portfolio')}
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/contact"
+                  to={language === 'el' ? '/el/contact' : '/en/contact'}
                   onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
-                  Contact
+                  {t('nav.contact')}
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/legal"
+                  to={language === 'el' ? '/el/legal' : '/en/legal'}
                   onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
-                  Legal
+                  {t('nav.legal')}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold mb-4">Projects</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.projects')}</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -167,7 +169,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-500">
-            &copy; {currentYear} Fiji Solutions. All rights reserved.
+            &copy; {currentYear} Fiji Solutions. {t('footer.rights')}
           </p>
         </div>
       </div>

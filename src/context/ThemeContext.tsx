@@ -17,8 +17,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
 
   useEffect(() => {
     // Check system preference or stored preference
-    const isDark = localStorage.getItem('darkMode') === 'true' || 
-                  (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const isDark = localStorage.getItem('darkMode') === 'true' ||
+      (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
     setDarkMode(isDark);
   }, []);
 
