@@ -17,7 +17,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   description,
   keywords,
   canonicalUrl,
-  ogImage = "https://fijisolutions.net/fiji_solutions.png",
+  ogImage = "https://fijisolutions.net/fijisolutions.png",
   ogType = "website",
   structuredData
 }) => {
@@ -49,7 +49,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     if (!finalCanonicalUrl) return '';
 
     const baseUrl = 'https://fijisolutions.net';
-    let currentPath = finalCanonicalUrl.replace(baseUrl, '');
+    const currentPath = finalCanonicalUrl.replace(baseUrl, '');
 
     if (lang === 'en') {
       if (currentPath.startsWith('/el')) {
@@ -78,7 +78,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     "name": "Fiji Solutions",
     "description": "Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative web development, AI solutions, cloud services, mobile app development, and blockchain technology to help businesses grow online.",
     "url": "https://fijisolutions.net",
-    "logo": "https://fijisolutions.net/fiji_solutions.png",
+    "logo": "https://fijisolutions.net/fijisolutions.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+30-698-322-6200",
