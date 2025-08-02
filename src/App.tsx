@@ -11,6 +11,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import VapiChatWidget from './components/VapiChatWidget';
 import {Analytics} from "@vercel/analytics/react";
 import {SpeedInsights} from "@vercel/speed-insights/react";
+import PrerenderDetector from './components/PrerenderDetector';
 
 function App() {
   const [scrolling, setScrolling] = useState(false);
@@ -39,6 +40,7 @@ function App() {
       <Router>
         <LanguageProvider>
           <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+            <PrerenderDetector />
             <Navbar scrolling={scrolling} />
             <main>
               <Routes>

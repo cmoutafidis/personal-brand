@@ -5,11 +5,17 @@ import { ArrowDown } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import VapiWidget from './VapiWidget';
 import VapiChatWidget from './VapiChatWidget';
+import { waitForPrerender } from '../utils/prerender';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
   const assistantId = "d6683411-62fe-42cb-ad6f-54dc1eb9eeb7";
   const vapiApiKey = "4fb313ff-b3ca-4e50-869f-2a28d0939c6f";
+
+  React.useEffect(() => {
+    // Ensure prerender waits for hero content to load
+    waitForPrerender();
+  }, []);
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center" itemScope itemType="https://schema.org/Organization">

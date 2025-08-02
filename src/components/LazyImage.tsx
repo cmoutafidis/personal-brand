@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { isPrerendering } from '../utils/prerender';
 
 interface LazyImageProps {
   src: string;
@@ -18,6 +19,12 @@ const LazyImage: React.FC<LazyImageProps> = ({
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
+    // Skip lazy loading for prerender
+    if (isPrerendering()) {
+      setIsInView(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

@@ -1,0 +1,7 @@
+# Prerender.io configuration for Netlify
+/*    /index.html   200
+
+# Prerender.io rules - redirect crawlers to prerendered pages
+/en/*  https://service.prerender.io/https://fijisolutions.net/en/:splat  200!  User-Agent:*bot*,*crawler*,*spider*,*crawling*,facebookexternalhit*,*Prerender*
+/el/*  https://service.prerender.io/https://fijisolutions.net/el/:splat  200!  User-Agent:*bot*,*crawler*,*spider*,*crawling*,facebookexternalhit*,*Prerender*
+/      https://service.prerender.io/https://fijisolutions.net/           200!  User-Agent:*bot*,*crawler*,*spider*,*crawling*,facebookexternalhit*,*Prerender*
