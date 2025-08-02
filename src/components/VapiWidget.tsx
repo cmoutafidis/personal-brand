@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Vapi from '@vapi-ai/web';
 import { PhoneOff, Mic } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface VapiWidgetProps {
   apiKey: string;
@@ -15,6 +16,7 @@ const VapiWidget: React.FC<VapiWidgetProps> = ({
   className = '',
   buttonText = "Let's talk now"
 }) => {
+  const { t } = useLanguage();
   const [vapi, setVapi] = useState<Vapi | null>(null);
   const [isConnected, setIsConnected] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
@@ -85,7 +87,7 @@ const VapiWidget: React.FC<VapiWidgetProps> = ({
         className={`btn btn-secondary flex items-center justify-center ${className}`}
       >
         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-600 mr-2"></div>
-        Connecting...
+        {t('vapi.connecting')}
       </button>
     );
   }
@@ -97,7 +99,7 @@ const VapiWidget: React.FC<VapiWidgetProps> = ({
         className={`btn bg-red-600 hover:bg-red-700 text-white focus:ring-red-500 flex items-center justify-center ${className}`}
       >
         <PhoneOff className="h-4 w-4 mr-2" />
-        End Call
+        {t('vapi.end_call')}
         {isSpeaking && (
           <div className="ml-2 flex space-x-1">
             <div className="w-1 h-1 bg-white rounded-full animate-pulse"></div>

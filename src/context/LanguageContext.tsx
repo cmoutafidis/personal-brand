@@ -160,6 +160,23 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'footer.links': 'Quick Links',
         'footer.projects': 'Projects',
         'footer.rights': 'All rights reserved.',
+
+        // SEO Content
+        'seo.home.title': 'We help your business grow online | Fiji Solutions',
+        'seo.home.description': 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative web development, AI solutions, cloud services, mobile app development, and blockchain technology to help businesses grow online.',
+        'seo.home.keywords': 'software development, IT consulting, custom software development, mobile app development, big data consulting, enterprise software development, solution consulting, software consulting, Thessaloniki Greece',
+        
+        'seo.portfolio.title': 'Our Portfolio | Fiji Solutions',
+        'seo.portfolio.description': 'Explore Fiji Solutions\' portfolio showcasing our software development, IT consulting, mobile app development, and enterprise software solutions for clients in Thessaloniki, Greece.',
+        'seo.portfolio.keywords': 'portfolio, software development projects, IT consulting projects, mobile app development, enterprise software development, custom software solutions, Thessaloniki Greece',
+        
+        'seo.contact.title': 'Contact Us for Free IT Consultation | Fiji Solutions',
+        'seo.contact.description': 'Contact Fiji Solutions in Thessaloniki, Greece for expert IT consulting and custom software development. Fill out our form for a free consultation.',
+        'seo.contact.keywords': 'contact, free consultation, IT consulting, software development consultation, mobile app development, big data consulting, Thessaloniki Greece',
+        
+        'seo.legal.title': 'Company Information & Legal Details | Fiji Solutions',
+        'seo.legal.description': 'Legal information and company registration details for Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE), based in Thessaloniki, Greece.',
+        'seo.legal.keywords': 'legal information, company registration, GEMI number, Fiji Solutions IKE, Thessaloniki Greece, business registration',
       },
       el: {
         // Navigation
@@ -249,6 +266,23 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'footer.links': 'Γρήγοροι Σύνδεσμοι',
         'footer.projects': 'Έργα',
         'footer.rights': 'Όλα τα δικαιώματα διατηρούνται.',
+
+        // SEO Content
+        'seo.home.title': 'Βοηθάμε την επιχείρησή σας να αναπτυχθεί διαδικτυακά | Fiji Solutions',
+        'seo.home.description': 'Η Fiji Solutions είναι μια εταιρεία λογισμικού στη Θεσσαλονίκη, Ελλάδα, που ειδικεύεται σε συμβουλευτικές υπηρεσίες IT και ανάπτυξη προσαρμοσμένου λογισμικού. Παραδίδουμε καινοτόμες λύσεις ανάπτυξης ιστού, λύσεις AI, υπηρεσίες cloud, ανάπτυξη εφαρμογών κινητών και τεχνολογία blockchain για να βοηθήσουμε τις επιχειρήσεις να αναπτυχθούν διαδικτυακά.',
+        'seo.home.keywords': 'ανάπτυξη λογισμικού Θεσσαλονίκη, συμβουλευτικές υπηρεσίες IT, ανάπτυξη προσαρμοσμένου λογισμικού, ανάπτυξη εφαρμογών κινητών, συμβουλευτική big data, ανάπτυξη εταιρικού λογισμικού, συμβουλευτική λύσεων, συμβουλευτική λογισμικού, Θεσσαλονίκη Ελλάδα, εταιρεία τεχνολογίας Θεσσαλονίκη',
+        
+        'seo.portfolio.title': 'Το Χαρτοφυλάκιό μας | Fiji Solutions',
+        'seo.portfolio.description': 'Εξερευνήστε το χαρτοφυλάκιο της Fiji Solutions που παρουσιάζει την ανάπτυξη λογισμικού, τις συμβουλευτικές υπηρεσίες IT, την ανάπτυξη εφαρμογών κινητών και τις λύσεις εταιρικού λογισμικού για πελάτες στη Θεσσαλονίκη, Ελλάδα.',
+        'seo.portfolio.keywords': 'χαρτοφυλάκιο, έργα ανάπτυξης λογισμικού, έργα συμβουλευτικής IT, ανάπτυξη εφαρμογών κινητών, ανάπτυξη εταιρικού λογισμικού, προσαρμοσμένες λύσεις λογισμικού, Θεσσαλονίκη Ελλάδα',
+        
+        'seo.contact.title': 'Επικοινωνήστε μαζί μας για Δωρεάν Συμβουλευτική IT | Fiji Solutions',
+        'seo.contact.description': 'Επικοινωνήστε με τη Fiji Solutions στη Θεσσαλονίκη, Ελλάδα για εξειδικευμένες συμβουλευτικές υπηρεσίες IT και ανάπτυξη προσαρμοσμένου λογισμικού. Συμπληρώστε τη φόρμα μας για δωρεάν συμβουλευτική.',
+        'seo.contact.keywords': 'επικοινωνία, δωρεάν συμβουλευτική, συμβουλευτικές υπηρεσίες IT, συμβουλευτική ανάπτυξης λογισμικού, ανάπτυξη εφαρμογών κινητών, συμβουλευτική big data, Θεσσαλονίκη Ελλάδα',
+        
+        'seo.legal.title': 'Στοιχεία Εταιρείας & Νομικές Πληροφορίες | Fiji Solutions',
+        'seo.legal.description': 'Νομικές πληροφορίες και στοιχεία εταιρικής εγγραφής για τη Fiji Solutions ΜΟΝΟΠΡΟΣΩΠΗ ΙΔΙΩΤΙΚΗ ΚΕΦΑΛΑΙΟΥΧΙΚΗ ΕΤΑΙΡΕΙΑ (ΙΚΕ), με έδρα τη Θεσσαλονίκη, Ελλάδα.',
+        'seo.legal.keywords': 'νομικές πληροφορίες, εταιρική εγγραφή, αριθμός ΓΕΜΗ, Fiji Solutions ΙΚΕ, Θεσσαλονίκη Ελλάδα, επιχειρηματική εγγραφή',
 
         // Services - detailed content
         'services.software.title': 'Ανάπτυξη Λογισμικού',
