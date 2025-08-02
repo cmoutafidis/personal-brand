@@ -1,7 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import {useLanguage} from "../context/LanguageContext.tsx";
 
 const Technologies: React.FC = () => {
+  const { t } = useLanguage();
+
   const techCategories = [
     {
       name: t('technologies.frontend'),

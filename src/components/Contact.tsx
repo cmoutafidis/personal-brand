@@ -199,7 +199,6 @@ const Contact: React.FC = () => {
                   <MapPin className="h-6 w-6" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">Location</h4>
                   <p className="text-gray-700 dark:text-gray-300">
                   <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">{t('contact.location')}</h4>
                   <p className="text-gray-700 dark:text-gray-300">
