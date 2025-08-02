@@ -262,6 +262,19 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'legal.fathers_name': "Father's Name",
         'legal.tax_id': 'Tax Identification Number',
         'legal.identity_card': 'Identity Card Number',
+
+        // Legal Data Values
+        'legal.data.company_full_name': 'Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE)',
+        'legal.data.company_address': 'MARINOU ANTIPA 40, 570 01, PILEA, THESSALONIKI',
+        'legal.data.gemi_number': '185101306000',
+        'legal.data.corporate_capital': '2.000 euro',
+        'legal.data.partner_name': 'CHARALAMPOS MOUTAFIDIS',
+        'legal.data.partner_father': 'CHRISTOS',
+        'legal.data.partner_tax_id': '167515853',
+        'legal.data.partner_address': 'ELLIS 5, 56625, SIKIES',
+        'legal.data.admin_name': 'CHARALAMPOS MOUTAFIDIS',
+        'legal.data.admin_identity': 'ΑΟ1277016',
+        'legal.data.admin_tax_id': '167515853',
       },
       el: {
         // Navigation
@@ -453,6 +466,19 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'legal.fathers_name': 'Πατρώνυμο',
         'legal.tax_id': 'Αριθμός Φορολογικού Μητρώου',
         'legal.identity_card': 'Αριθμός Ταυτότητας',
+
+        // Legal Data Values
+        'legal.data.company_full_name': 'Fiji Solutions ΜΟΝΟΠΡΟΣΩΠΗ ΙΔΙΩΤΙΚΗ ΚΕΦΑΛΑΙΟΥΧΙΚΗ ΕΤΑΙΡΕΙΑ (ΙΚΕ)',
+        'legal.data.company_address': 'ΜΑΡΙΝΟΥ ΑΝΤΥΠΑ 40, 570 01, ΠΥΛΑΙΑ, ΘΕΣΣΑΛΟΝΙΚΗ',
+        'legal.data.gemi_number': '185101306000',
+        'legal.data.corporate_capital': '2.000 ευρώ',
+        'legal.data.partner_name': 'ΧΑΡΑΛΑΜΠΟΣ ΜΟΥΤΑΦΙΔΗΣ',
+        'legal.data.partner_father': 'ΧΡΙΣΤΟΣ',
+        'legal.data.partner_tax_id': '167515853',
+        'legal.data.partner_address': 'ΕΛΛΗΣ 5, 56625, ΣΙΚΙΕΣ',
+        'legal.data.admin_name': 'ΧΑΡΑΛΑΜΠΟΣ ΜΟΥΤΑΦΙΔΗΣ',
+        'legal.data.admin_identity': 'ΑΟ1277016',
+        'legal.data.admin_tax_id': '167515853',
       }
     };
 

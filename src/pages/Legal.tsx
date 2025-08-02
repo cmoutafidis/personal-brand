@@ -57,7 +57,7 @@ const Legal: React.FC = () => {
                           {t('legal.company_name')}
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
-                          Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE)
+                          {t('legal.data.company_full_name')}
                         </p>
                       </div>
                     </div>
@@ -71,7 +71,7 @@ const Legal: React.FC = () => {
                           {t('legal.address')}
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
-                          MARINOU ANTIPA 40, 570 01, PILEA, THESSALONIKI
+                          {t('legal.data.company_address')}
                         </p>
                       </div>
                     </div>
@@ -85,7 +85,7 @@ const Legal: React.FC = () => {
                           {t('legal.gemi_number')}
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
-                          185101306000
+                          {t('legal.data.gemi_number')}
                         </p>
                       </div>
                     </div>
@@ -101,7 +101,7 @@ const Legal: React.FC = () => {
                           {t('legal.corporate_capital')}
                         </h3>
                         <p className="text-gray-700 dark:text-gray-300">
-                          2.000 euro
+                          {t('legal.data.corporate_capital')}
                         </p>
                       </div>
                     </div>
@@ -132,10 +132,10 @@ const Legal: React.FC = () => {
                         </h3>
                       </div>
                       <div className="space-y-2 text-gray-700 dark:text-gray-300">
-                        <p><strong>{t('legal.name')}:</strong> CHARALAMPOS MOUTAFIDIS</p>
-                        <p><strong>{t('legal.fathers_name')}:</strong> CHRISTOS</p>
-                        <p><strong>{t('legal.tax_id')}:</strong> 167515853</p>
-                        <p><strong>{t('legal.address')}:</strong> ELLIS 5, 56625, SIKIES</p>
+                        <p><strong>{t('legal.name')}:</strong> {t('legal.data.partner_name')}</p>
+                        <p><strong>{t('legal.fathers_name')}:</strong> {t('legal.data.partner_father')}</p>
+                        <p><strong>{t('legal.tax_id')}:</strong> {t('legal.data.partner_tax_id')}</p>
+                        <p><strong>{t('legal.address')}:</strong> {t('legal.data.partner_address')}</p>
                       </div>
                     </div>
 
@@ -147,9 +147,9 @@ const Legal: React.FC = () => {
                         </h3>
                       </div>
                       <div className="space-y-2 text-gray-700 dark:text-gray-300">
-                        <p><strong>{t('legal.name')}:</strong> CHARALAMPOS MOUTAFIDIS</p>
-                        <p><strong>{t('legal.identity_card')}:</strong> ΑΟ1277016</p>
-                        <p><strong>{t('legal.tax_id')}:</strong> 167515853</p>
+                        <p><strong>{t('legal.name')}:</strong> {t('legal.data.admin_name')}</p>
+                        <p><strong>{t('legal.identity_card')}:</strong> {t('legal.data.admin_identity')}</p>
+                        <p><strong>{t('legal.tax_id')}:</strong> {t('legal.data.admin_tax_id')}</p>
                       </div>
                     </div>
                   </div>
