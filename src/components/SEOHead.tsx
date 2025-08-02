@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useLanguage } from '../context/LanguageContext';
 
 interface SEOHeadProps {
   title?: string;
@@ -12,14 +13,57 @@ interface SEOHeadProps {
 }
 
 const SEOHead: React.FC<SEOHeadProps> = ({
-  title = "Fiji Solutions | We help your business grow online",
-  description = "Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative web development, AI solutions, cloud services, mobile app development, and blockchain technology to help businesses grow online.",
-  keywords = "software development, IT consulting, custom software development, mobile app development, big data consulting, enterprise software development, solution consulting, software consulting, Thessaloniki, Greece",
-  canonicalUrl = "https://fijisolutions.net",
+  title,
+  description,
+  keywords,
+  canonicalUrl,
   ogImage = "https://fijisolutions.net/fiji_solutions.png",
   ogType = "website",
   structuredData
 }) => {
+  const { language } = useLanguage();
+  
+  // Default content based on language
+  const defaultContent = {
+    en: {
+      title: "Fiji Solutions | We help your business grow online",
+      description: "Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative web development, AI solutions, cloud services, mobile app development, and blockchain technology to help businesses grow online.",
+      keywords: "software development, IT consulting, custom software development, mobile app development, big data consulting, enterprise software development, solution consulting, software consulting, Thessaloniki, Greece",
+      canonicalUrl: "https://fijisolutions.net"
+    },
+    el: {
+      title: "Fiji Solutions | Βοηθάμε την επιχείρησή σας να αναπτυχθεί διαδικτυακά",
+      description: "Η Fiji Solutions είναι μια εταιρεία λογισμικού στη Θεσσαλονίκη, Ελλάδα, που ειδικεύεται σε συμβουλευτικές υπηρεσίες IT και ανάπτυξη προσαρμοσμένου λογισμικού. Παραδίδουμε καινοτόμες λύσεις ανάπτυξης ιστού, λύσεις AI, υπηρεσίες cloud, ανάπτυξη εφαρμογών κινητών και τεχνολογία blockchain για να βοηθήσουμε τις επιχειρήσεις να αναπτυχθούν διαδικτυακά.",
+      keywords: "ανάπτυξη λογισμικού, συμβουλευτικές υπηρεσίες IT, ανάπτυξη προσαρμοσμένου λογισμικού, ανάπτυξη εφαρμογών κινητών, συμβουλευτική big data, ανάπτυξη εταιρικού λογισμικού, συμβουλευτική λύσεων, συμβουλευτική λογισμικού, Θεσσαλονίκη, Ελλάδα",
+      canonicalUrl: "https://fijisolutions.net/el"
+    }
+  };
+  
+  const finalTitle = title || defaultContent[language].title;
+  const finalDescription = description || defaultContent[language].description;
+  const finalKeywords = keywords || defaultContent[language].keywords;
+  const finalCanonicalUrl = canonicalUrl || defaultContent[language].canonicalUrl;
+  
+  // Generate alternate URLs for hreflang
+  const getAlternateUrl = (lang: 'en' | 'el') => {
+    if (!finalCanonicalUrl) return '';
+    
+    const baseUrl = 'https://fijisolutions.net';
+    const currentPath = finalCanonicalUrl.replace(baseUrl, '');
+    
+    if (lang === 'el') {
+      if (currentPath === '' || currentPath === '/') {
+        return `${baseUrl}/el`;
+      }
+      return `${baseUrl}/el${currentPath}`;
+    } else {
+      if (currentPath.startsWith('/el')) {
+        return `${baseUrl}${currentPath.replace('/el', '') || '/'}`;
+      }
+      return finalCanonicalUrl;
+    }
+  };
+
   const defaultStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -71,24 +115,30 @@ const SEOHead: React.FC<SEOHeadProps> = ({
 
   return (
     <Helmet>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
-      <link rel="canonical" href={canonicalUrl} />
+      <html lang={language} />
+      <title>{finalTitle}</title>
+      <meta name="description" content={finalDescription} />
+      <meta name="keywords" content={finalKeywords} />
+      <link rel="canonical" href={finalCanonicalUrl} />
+      
+      {/* Hreflang tags */}
+      <link rel="alternate" hreflang="en" href={getAlternateUrl('en')} />
+      <link rel="alternate" hreflang="el" href={getAlternateUrl('el')} />
+      <link rel="alternate" hreflang="x-default" href={getAlternateUrl('en')} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:url" content={finalCanonicalUrl} />
+      <meta property="og:title" content={finalTitle} />
+      <meta property="og:description" content={finalDescription} />
       <meta property="og:image" content={ogImage} />
       <meta property="og:site_name" content="Fiji Solutions" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={canonicalUrl} />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
+      <meta property="twitter:url" content={finalCanonicalUrl} />
+      <meta property="twitter:title" content={finalTitle} />
+      <meta property="twitter:description" content={finalDescription} />
       <meta property="twitter:image" content={ogImage} />
       <meta property="twitter:site" content="@fiji_solutions" />
 
@@ -96,7 +146,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="robots" content="index, follow" />
       <meta name="author" content="Fiji Solutions" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta httpEquiv="Content-Language" content="en" />
+      <meta httpEquiv="Content-Language" content={language} />
 
       {/* Structured Data */}
       <script type="application/ld+json">

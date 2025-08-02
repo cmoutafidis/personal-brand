@@ -6,12 +6,14 @@ interface VapiWidgetProps {
   apiKey: string;
   assistantId: string;
   className?: string;
+  buttonText?: string;
 }
 
 const VapiWidget: React.FC<VapiWidgetProps> = ({
   apiKey,
   assistantId,
-  className = ''
+  className = '',
+  buttonText = "Let's talk now"
 }) => {
   const [vapi, setVapi] = useState<Vapi | null>(null);
   const [isConnected, setIsConnected] = useState(false);
@@ -113,7 +115,7 @@ const VapiWidget: React.FC<VapiWidgetProps> = ({
       className={`btn bg-sky-600 hover:bg-sky-700 text-white focus:ring-sky-500 flex items-center justify-center ${className}`}
     >
     <Mic className="h-4 w-4 mr-2" />
-      Let's talk now
+      {buttonText}
     </button>
   );
 };

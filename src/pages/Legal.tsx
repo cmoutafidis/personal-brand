@@ -2,16 +2,33 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SEOHead from '../components/SEOHead';
 import { Building, MapPin, Hash, Euro, User, Shield } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Legal: React.FC = () => {
+  const { language } = useLanguage();
+  
+  const seoData = {
+    en: {
+      title: "Company Information & Legal Details | Fiji Solutions",
+      description: "Legal information and company registration details for Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE), based in Thessaloniki, Greece.",
+      keywords: "legal information, company registration, GEMI number, Fiji Solutions IKE, Thessaloniki Greece, business registration",
+      canonicalUrl: "https://fijisolutions.net/legal"
+    },
+    el: {
+      title: "Στοιχεία Εταιρείας & Νομικές Πληροφορίες | Fiji Solutions",
+      description: "Νομικές πληροφορίες και στοιχεία εταιρικής εγγραφής για τη Fiji Solutions ΜΟΝΟΠΡΟΣΩΠΗ ΙΔΙΩΤΙΚΗ ΚΕΦΑΛΑΙΟΥΧΙΚΗ ΕΤΑΙΡΕΙΑ (ΙΚΕ), με έδρα τη Θεσσαλονίκη, Ελλάδα.",
+      keywords: "νομικές πληροφορίες, εταιρική εγγραφή, αριθμός ΓΕΜΗ, Fiji Solutions ΙΚΕ, Θεσσαλονίκη Ελλάδα, επιχειρηματική εγγραφή",
+      canonicalUrl: "https://fijisolutions.net/el/legal"
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <SEOHead
-        title="Company Information & Legal Details | Fiji Solutions"
-        description="Legal information and company registration details for Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE), based in Thessaloniki, Greece."
-        keywords="legal information, company registration, GEMI number, Fiji Solutions IKE, Thessaloniki Greece, business registration"
-        canonicalUrl="https://fijisolutions.net/legal"
+        title={seoData[language].title}
+        description={seoData[language].description}
+        keywords={seoData[language].keywords}
+        canonicalUrl={seoData[language].canonicalUrl}
       />
       <section className="section">
         <div className="container-custom">

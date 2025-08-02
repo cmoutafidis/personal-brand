@@ -1,31 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- English Pages -->
     <url>
         <loc>https://fijisolutions.net/</loc>
-        <lastmod>2025-07-27T11:51:02+00:00</lastmod>
+        <lastmod>2025-01-29T11:51:02+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="el" href="https://fijisolutions.net/el/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fijisolutions.net/" />
     </url>
     <url>
         <loc>https://fijisolutions.net/portfolio</loc>
-        <lastmod>2025-07-27T11:51:02+00:00</lastmod>
+        <lastmod>2025-01-29T11:51:02+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="el" href="https://fijisolutions.net/el/portfolio" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fijisolutions.net/portfolio" />
     </url>
     <url>
         <loc>https://fijisolutions.net/contact</loc>
-        <lastmod>2025-07-27T11:51:02+00:00</lastmod>
+        <lastmod>2025-01-29T11:51:02+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="el" href="https://fijisolutions.net/el/contact" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fijisolutions.net/contact" />
     </url>
     <url>
         <loc>https://fijisolutions.net/legal</loc>
-        <lastmod>2025-07-27T11:51:02+00:00</lastmod>
+        <lastmod>2025-01-29T11:51:02+00:00</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="el" href="https://fijisolutions.net/el/legal" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fijisolutions.net/legal" />
+    </url>
+    
+    <!-- Greek Pages -->
+    <url>
+        <loc>https://fijisolutions.net/el/</loc>
+        <lastmod>2025-01-29T11:51:02+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fijisolutions.net/" />
+        <xhtml:link rel="alternate" hreflang="el" href="https://fijisolutions.net/el/" />
+    </url>
+    <url>
+        <loc>https://fijisolutions.net/el/portfolio</loc>
+        <lastmod>2025-01-29T11:51:02+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fijisolutions.net/portfolio" />
+        <xhtml:link rel="alternate" hreflang="el" href="https://fijisolutions.net/el/portfolio" />
+    </url>
+    <url>
+        <loc>https://fijisolutions.net/el/contact</loc>
+        <lastmod>2025-01-29T11:51:02+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fijisolutions.net/contact" />
+        <xhtml:link rel="alternate" hreflang="el" href="https://fijisolutions.net/el/contact" />
+    </url>
+    <url>
+        <loc>https://fijisolutions.net/el/legal</loc>
+        <lastmod>2025-01-29T11:51:02+00:00</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://fijisolutions.net/legal" />
+        <xhtml:link rel="alternate" hreflang="el" href="https://fijisolutions.net/el/legal" />
     </url>
 </urlset>

@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Cloud, Bot, CreditCard, Cpu, Lightbulb } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Services: React.FC = () => {
+  const { t } = useLanguage();
+  
   const services = [
     {
       icon: <Code2 className="h-8 w-8" />,
@@ -46,9 +49,9 @@ const Services: React.FC = () => {
     <section id="services" className="section bg-white dark:bg-gray-900">
       <div className="container-custom">
         <div className="section-title">
-          <h2 className="mb-2">Our Work</h2>
+          <h2 className="mb-2">{t('services.title')}</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Projects we have done with our existing clients.
+            {t('services.subtitle')}
           </p>
         </div>
 

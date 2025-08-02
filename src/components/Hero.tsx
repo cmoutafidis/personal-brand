@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import VapiWidget from './VapiWidget';
 import VapiChatWidget from './VapiChatWidget';
 
 const Hero: React.FC = () => {
+  const { t } = useLanguage();
   const assistantId = "d6683411-62fe-42cb-ad6f-54dc1eb9eeb7";
   const vapiApiKey = "4fb313ff-b3ca-4e50-869f-2a28d0939c6f";
 
@@ -15,13 +17,13 @@ const Hero: React.FC = () => {
       <div className="container-custom pt-20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 dark:text-white"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white"
             itemProp="name"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            We help your business grow online
+            {t('hero.title')}
           </motion.h1>
 
           <motion.div
@@ -37,13 +39,14 @@ const Hero: React.FC = () => {
               duration={100}
               className="btn btn-primary text-lg px-8 py-4 cursor-pointer"
             >
-              Yes, I Want That
+              {t('hero.cta')}
               <ArrowDown className="ml-2 h-5 w-5" />
             </Link>
             <VapiWidget
               apiKey={vapiApiKey}
               assistantId={assistantId}
               className="text-lg px-8 py-4"
+              buttonText={t('hero.talk')}
             />
           </motion.div>
 
@@ -54,7 +57,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            New technology is very important for your business.
+            {t('hero.description1')}
           </motion.p>
 
           <motion.p
@@ -64,7 +67,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            However, there are already 101 things on your to-do list. And they are all important!
+            {t('hero.description2')}
           </motion.p>
         </div>
       </div>
