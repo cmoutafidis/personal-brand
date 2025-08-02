@@ -245,6 +245,23 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'industries.startups.description': 'Innovative solutions to drive startup growth and success.',
         'industries.blockchain.title': 'Blockchain',
         'industries.blockchain.description': 'Modern blockchain solutions for various industries.',
+
+        // Legal Page
+        'legal.title': 'Legal Information',
+        'legal.subtitle': 'Company registration and legal details',
+        'legal.website_publicity': 'WEBSITE PUBLICITY INFORMATION',
+        'legal.company_name': 'Company Name',
+        'legal.address': 'Address',
+        'legal.gemi_number': 'GEMI Number',
+        'legal.corporate_capital': 'Corporate Capital',
+        'legal.corporate_shares': 'Corporate Shares',
+        'legal.corporate_shares_description': '2.000 capital corporate shares with a nominal value of 1.00 euro each',
+        'legal.partner': 'Partner',
+        'legal.administrator': 'Administrator',
+        'legal.name': 'Name',
+        'legal.fathers_name': "Father's Name",
+        'legal.tax_id': 'Tax Identification Number',
+        'legal.identity_card': 'Identity Card Number',
       },
       el: {
         // Navigation
@@ -419,6 +436,23 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'industries.startups.description': 'Καινοτόμες λύσεις για να μεγαλώσει η startups σου.',
         'industries.blockchain.title': 'Blockchain',
         'industries.blockchain.description': 'Μοντέρνες λύσεις blockchain για κάθε κλάδο.'
+
+        // Legal Page
+        'legal.title': 'Νομικές Πληροφορίες',
+        'legal.subtitle': 'Στοιχεία εγγραφής και νομικές λεπτομέρειες εταιρείας',
+        'legal.website_publicity': 'ΣΤΟΙΧΕΙΑ ΔΗΜΟΣΙΟΤΗΤΑΣ ΙΣΤΟΣΕΛΙΔΑΣ',
+        'legal.company_name': 'Επωνυμία Εταιρείας',
+        'legal.address': 'Διεύθυνση',
+        'legal.gemi_number': 'Αριθμός ΓΕΜΗ',
+        'legal.corporate_capital': 'Εταιρικό Κεφάλαιο',
+        'legal.corporate_shares': 'Εταιρικές Μερίδες',
+        'legal.corporate_shares_description': '2.000 εταιρικές μερίδες κεφαλαίου με ονομαστική αξία 1,00 ευρώ η κάθε μία',
+        'legal.partner': 'Εταίρος',
+        'legal.administrator': 'Διαχειριστής',
+        'legal.name': 'Όνομα',
+        'legal.fathers_name': 'Πατρώνυμο',
+        'legal.tax_id': 'Αριθμός Φορολογικού Μητρώου',
+        'legal.identity_card': 'Αριθμός Ταυτότητας',
       }
     };
 
