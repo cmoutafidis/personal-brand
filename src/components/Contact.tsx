@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
-  
+
   // Form state
   const [formData, setFormData] = useState({
     name: '',
@@ -311,7 +311,7 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    placeholder="John Doe"
+                    placeholder={t('contact.form.name.placeholder')}
                     disabled={isSubmitting}
                   />
                 </div>
@@ -327,7 +327,7 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    placeholder="john.doe@example.com"
+                    placeholder={t('contact.form.email.placeholder')}
                     disabled={isSubmitting}
                   />
                 </div>
@@ -343,7 +343,7 @@ const Contact: React.FC = () => {
                     value={formData.company}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    placeholder="Your Company Name"
+                    placeholder={t('contact.form.company.placeholder')}
                     disabled={isSubmitting}
                   />
                 </div>

@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center" itemScope itemType="https://schema.org/Organization">
       <div className="absolute inset-0 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-gray-900 dark:to-gray-800 -z-10"></div>
-      <div className="container-custom pt-20">
+      <div className="container-custom pt-10 md:pt-20">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h1
             className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-gray-900 dark:text-white"

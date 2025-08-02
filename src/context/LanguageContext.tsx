@@ -34,11 +34,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem('language', lang);
-    
+
     // Update URL without reload
     const currentPath = location.pathname;
-    let newPath = '';
-    
+    let newPath;
+
     if (lang === 'el') {
       if (currentPath.startsWith('/el/')) {
         newPath = currentPath;
@@ -56,7 +56,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         newPath = currentPath;
       }
     }
-    
+
     if (newPath !== currentPath) {
       navigate(newPath, { replace: true });
     }
@@ -71,14 +71,14 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'nav.portfolio': 'Portfolio',
         'nav.contact': 'Contact',
         'nav.legal': 'Legal',
-        
+
         // Hero Section
         'hero.title': 'We help your business grow online',
         'hero.cta': 'Yes, I Want That',
         'hero.talk': "Let's talk now",
         'hero.description1': 'New technology is very important for your business.',
         'hero.description2': 'However, there are already 101 things on your to-do list. And they are all important!',
-        
+
         // Challenges
         'challenges.title': 'Common Business Challenges',
         'challenges.subtitle': 'All traditional businesses face the same problems.',
@@ -88,7 +88,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'challenges.slow.description': 'Traditional agencies work slowly and are very expensive. On the other hand, hiring good staff is difficult. And even if you find someone good, one day they might leave.',
         'challenges.money.title': 'Money wasted',
         'challenges.money.description': 'A lot of manual tasks that staff has been doing for years can now be automated. This costs you tons of money and time.',
-        
+
         // Solutions
         'solutions.title': 'How We Help',
         'solutions.subtitle': 'Here is what we can do for you.',
@@ -103,7 +103,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'solutions.cta.title': "Don't Let Your Competition Get Ahead",
         'solutions.cta.description': "The AI revolution is happening now. Companies that adapt early will lead their industries. Don't wait until it's too late. Start your transformation today.",
         'solutions.cta.button': 'Contact Us Now',
-        
+
         // Contact
         'contact.title': 'Get A Free Consultation',
         'contact.subtitle1': 'Would you like to know what we can do for you?',
@@ -112,8 +112,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'contact.info.title': 'Contact Information',
         'contact.form.title': 'Send a Message',
         'contact.form.name': 'Your Name',
+        'contact.form.name.placeholder': 'John Doe',
         'contact.form.email': 'Email Address',
+        'contact.form.email.placeholder': 'john.doe@example.com',
         'contact.form.company': 'Company',
+        'contact.form.company.placeholder': 'Your Company Name',
         'contact.form.question': 'Question',
         'contact.form.question.placeholder': 'What is your most important question?',
         'contact.form.message': 'Your Message',
@@ -122,11 +125,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'contact.form.sending': 'Sending...',
         'contact.form.success': 'Thank you! Your message has been sent successfully. We\'ll get back to you within 48 hours.',
         'contact.connect': 'Connect With Us',
-        
+
         // Services
         'services.title': 'Our Work',
         'services.subtitle': 'Projects we have done with our existing clients.',
-        
+
         // Footer
         'footer.description': 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
         'footer.links': 'Quick Links',
@@ -139,14 +142,14 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'nav.portfolio': 'Χαρτοφυλάκιο',
         'nav.contact': 'Επικοινωνία',
         'nav.legal': 'Νομικά',
-        
+
         // Hero Section
         'hero.title': 'Βοηθάμε την επιχείρησή σας να αναπτυχθεί διαδικτυακά',
         'hero.cta': 'Ναι, το θέλω αυτό',
         'hero.talk': 'Ας μιλήσουμε τώρα',
         'hero.description1': 'Η νέα τεχνολογία είναι πολύ σημαντική για την επιχείρησή σας.',
         'hero.description2': 'Ωστόσο, υπάρχουν ήδη 101 πράγματα στη λίστα εργασιών σας. Και όλα είναι σημαντικά!',
-        
+
         // Challenges
         'challenges.title': 'Κοινές Επιχειρηματικές Προκλήσεις',
         'challenges.subtitle': 'Όλες οι παραδοσιακές επιχειρήσεις αντιμετωπίζουν τα ίδια προβλήματα.',
@@ -156,7 +159,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'challenges.slow.description': 'Οι παραδοσιακές εταιρείες εργάζονται αργά και είναι πολύ ακριβές. Από την άλλη, η πρόσληψη καλού προσωπικού είναι δύσκολη. Και ακόμα κι αν βρείτε κάποιον καλό, μια μέρα μπορεί να φύγει.',
         'challenges.money.title': 'Χαμένα χρήματα',
         'challenges.money.description': 'Πολλές χειροκίνητες εργασίες που το προσωπικό κάνει εδώ και χρόνια μπορούν τώρα να αυτοματοποιηθούν. Αυτό σας κοστίζει τόνους χρημάτων και χρόνου.',
-        
+
         // Solutions
         'solutions.title': 'Πώς Βοηθάμε',
         'solutions.subtitle': 'Ιδού τι μπορούμε να κάνουμε για εσάς.',
@@ -171,7 +174,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'solutions.cta.title': 'Μην αφήσετε τον ανταγωνισμό να προηγηθεί',
         'solutions.cta.description': 'Η επανάσταση του AI συμβαίνει τώρα. Οι εταιρείες που προσαρμόζονται νωρίς θα ηγηθούν των κλάδων τους. Μην περιμένετε μέχρι να είναι πολύ αργά. Ξεκινήστε τη μεταμόρφωσή σας σήμερα.',
         'solutions.cta.button': 'Επικοινωνήστε μαζί μας τώρα',
-        
+
         // Contact
         'contact.title': 'Λάβετε Δωρεάν Συμβουλευτική',
         'contact.subtitle1': 'Θα θέλατε να μάθετε τι μπορούμε να κάνουμε για εσάς;',
@@ -180,8 +183,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'contact.info.title': 'Στοιχεία Επικοινωνίας',
         'contact.form.title': 'Στείλτε Μήνυμα',
         'contact.form.name': 'Το Όνομά σας',
+        'contact.form.name.placeholder': 'Γιάννης Παπαδόπουλος',
         'contact.form.email': 'Διεύθυνση Email',
+        'contact.form.email.placeholder': 'giannis.papadopoulos@example.com',
         'contact.form.company': 'Εταιρεία',
+        'contact.form.company.placeholder': 'Το όνομα της εταιρίας σου',
         'contact.form.question': 'Ερώτηση',
         'contact.form.question.placeholder': 'Ποια είναι η πιο σημαντική ερώτησή σας;',
         'contact.form.message': 'Το Μήνυμά σας',
@@ -190,11 +196,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'contact.form.sending': 'Αποστολή...',
         'contact.form.success': 'Ευχαριστούμε! Το μήνυμά σας στάλθηκε επιτυχώς. Θα επικοινωνήσουμε μαζί σας εντός 48 ωρών.',
         'contact.connect': 'Συνδεθείτε μαζί μας',
-        
+
         // Services
         'services.title': 'Η Δουλειά μας',
         'services.subtitle': 'Έργα που έχουμε κάνει με τους υπάρχοντες πελάτες μας.',
-        
+
         // Footer
         'footer.description': 'Η Fiji Solutions είναι μια εταιρεία λογισμικού στη Θεσσαλονίκη, Ελλάδα, που ειδικεύεται σε συμβουλευτικές υπηρεσίες IT και ανάπτυξη προσαρμοσμένου λογισμικού.',
         'footer.links': 'Γρήγοροι Σύνδεσμοι',
@@ -202,7 +208,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'footer.rights': 'Όλα τα δικαιώματα διατηρούνται.',
       }
     };
-    
+
     return translations[language][key] || key;
   };
 
