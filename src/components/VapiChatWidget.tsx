@@ -1,5 +1,6 @@
 import React from 'react';
 import { VapiWidget } from '@vapi-ai/client-sdk-react';
+import { useLanguage } from '../context/LanguageContext';
 
 interface VapiChatWidgetProps {
   apiKey: string;
@@ -10,6 +11,18 @@ const VapiChatWidget: React.FC<VapiChatWidgetProps> = ({
   apiKey,
   assistantId
 }) => {
+  const { language } = useLanguage();
+
+  const texts = {
+    en: {
+      mainLabel: "Let's chat",
+      emptyChatMessage: "Hey, what brings you here today?"
+    },
+    el: {
+      mainLabel: "Ας συνομιλήσουμε",
+      emptyChatMessage: "Γεια σας, τι σας φέρνει εδώ σήμερα;"
+    }
+  };
 
   return (
     <VapiWidget
@@ -23,8 +36,8 @@ const VapiChatWidget: React.FC<VapiChatWidgetProps> = ({
       accentColor="#000000"
       buttonBaseColor="#0086ff"
       buttonAccentColor="#FFFFFF"
-      mainLabel="Let's chat"
-      emptyChatMessage="Hey, what brings you here today?"
+      mainLabel={texts[language].mainLabel}
+      emptyChatMessage={texts[language].emptyChatMessage}
     />
   );
 };
