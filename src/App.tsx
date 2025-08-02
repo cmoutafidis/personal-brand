@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -7,7 +8,6 @@ import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import Legal from './pages/Legal';
 import { ThemeProvider } from './context/ThemeContext';
-import { LanguageProvider } from './context/LanguageContext';
 import VapiChatWidget from './components/VapiChatWidget';
 import {Analytics} from "@vercel/analytics/react";
 import {SpeedInsights} from "@vercel/speed-insights/react";
@@ -36,8 +36,8 @@ function App() {
 
   return (
     <ThemeProvider>
-      <LanguageProvider>
-        <Router>
+      <Router>
+        <LanguageProvider>
           <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
             <Navbar scrolling={scrolling} />
             <main>
@@ -66,8 +66,8 @@ function App() {
             <Analytics />
             <SpeedInsights />
           </div>
-        </Router>
-      </LanguageProvider>
+        </LanguageProvider>
+      </Router>
     </ThemeProvider>
   );
 }

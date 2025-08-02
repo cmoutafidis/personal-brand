@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Language } from '../types/language';
 
 type LanguageContextType = {
@@ -17,6 +18,8 @@ export const useLanguage = () => useContext(LanguageContext);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>('en');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     // Check URL path for language
@@ -32,8 +35,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setLanguageState(lang);
     localStorage.setItem('language', lang);
     
-    // Update URL
-    const currentPath = window.location.pathname;
+    // Update URL without reload
+    const currentPath = location.pathname;
     let newPath = '';
     
     if (lang === 'el') {
@@ -55,8 +58,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     }
     
     if (newPath !== currentPath) {
-      window.history.pushState({}, '', newPath);
-      window.location.reload();
+      navigate(newPath, { replace: true });
     }
   };
 
