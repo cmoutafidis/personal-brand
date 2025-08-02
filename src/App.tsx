@@ -44,13 +44,13 @@ function App() {
               <Routes>
                 {/* Redirect root to Greek homepage */}
                 <Route path="/" element={<Navigate to="/el" replace />} />
-                
+
                 {/* English routes */}
                 <Route path="/en" element={<Home />} />
                 <Route path="/en/portfolio" element={<Portfolio />} />
                 <Route path="/en/contact" element={<Contact />} />
                 <Route path="/en/legal" element={<Legal />} />
-                
+
                 {/* Greek routes */}
                 <Route path="/el" element={<Home />} />
                 <Route path="/el/portfolio" element={<Portfolio />} />

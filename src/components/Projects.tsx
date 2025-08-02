@@ -15,7 +15,7 @@ interface Project {
 
 const Projects: React.FC = () => {
   const { t } = useLanguage();
-  
+
   const projects: Project[] = [
     {
       title: 'Fiji Financial Dashboard',

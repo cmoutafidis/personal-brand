@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 const Challenges: React.FC = () => {
   const { t } = useLanguage();
-  
+
   const challenges = [
     {
       icon: <Binary className="h-12 w-12" />,

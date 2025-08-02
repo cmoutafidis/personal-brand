@@ -51,7 +51,7 @@ const Skills: React.FC = () => {
             <h3 className="text-xl font-semibold mb-6 text-center">Technical Proficiency</h3>
             <div className="space-y-6">
               {skills.map((skill, index) => (
-                <motion.div 
+                <motion.div
                   key={index}
                   initial={{ width: 0 }}
                   whileInView={{ width: '100%' }}
@@ -63,12 +63,12 @@ const Skills: React.FC = () => {
                     <span className="text-sm text-gray-500 dark:text-gray-400">{skill.level}%</span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-                    <div 
+                    <div
                       className={`h-2.5 rounded-full ${
-                        skill.category === 'frontend' ? 'bg-primary-500' : 
-                        skill.category === 'backend' ? 'bg-secondary-500' : 
-                        skill.category === 'blockchain' ? 'bg-accent-500' : 
-                        'bg-yellow-500'
+                        skill.category === 'frontend' ? 'bg-primary-500' :
+                          skill.category === 'backend' ? 'bg-secondary-500' :
+                            skill.category === 'blockchain' ? 'bg-accent-500' :
+                              'bg-yellow-500'
                       }`}
                       style={{ width: `${skill.level}%` }}
                     ></div>
@@ -97,10 +97,10 @@ const Skills: React.FC = () => {
                         key={i}
                         whileHover={{ scale: 1.05 }}
                         className={`px-3 py-1 rounded-full text-sm font-medium ${
-                          category.id === 'frontend' ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300' : 
-                          category.id === 'backend' ? 'bg-secondary-100 text-secondary-700 dark:bg-secondary-900/30 dark:text-secondary-300' : 
-                          category.id === 'blockchain' ? 'bg-accent-100 text-accent-700 dark:bg-accent-900/30 dark:text-accent-300' : 
-                          'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300'
+                          category.id === 'frontend' ? 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300' :
+                            category.id === 'backend' ? 'bg-secondary-100 text-secondary-700 dark:bg-secondary-900/30 dark:text-secondary-300' :
+                              category.id === 'blockchain' ? 'bg-accent-100 text-accent-700 dark:bg-accent-900/30 dark:text-accent-300' :
+                                'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300'
                         }`}
                       >
                         {skill.name}

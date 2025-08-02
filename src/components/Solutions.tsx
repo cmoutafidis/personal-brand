@@ -6,7 +6,7 @@ import {Link} from "react-scroll";
 
 const Solutions: React.FC = () => {
   const { t } = useLanguage();
-  
+
   const solutions = [
     {
       icon: <Zap className="h-12 w-12" />,

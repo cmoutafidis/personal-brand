@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 const Services: React.FC = () => {
   const { t } = useLanguage();
-  
+
   const services = [
     {
       icon: <Code2 className="h-8 w-8" />,

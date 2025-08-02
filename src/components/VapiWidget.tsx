@@ -114,7 +114,7 @@ const VapiWidget: React.FC<VapiWidgetProps> = ({
       onClick={startCall}
       className={`btn bg-sky-600 hover:bg-sky-700 text-white focus:ring-sky-500 flex items-center justify-center ${className}`}
     >
-    <Mic className="h-4 w-4 mr-2" />
+      <Mic className="h-4 w-4 mr-2" />
       {buttonText}
     </button>
   );

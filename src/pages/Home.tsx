@@ -8,7 +8,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 const Home: React.FC = () => {
   const { language } = useLanguage();
-  
+
   const seoData = {
     en: {
       title: "We help your business grow online | Fiji Solutions",

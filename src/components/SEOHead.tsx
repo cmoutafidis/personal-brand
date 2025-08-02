@@ -22,7 +22,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   structuredData
 }) => {
   const { language } = useLanguage();
-  
+
   // Default content based on language
   const defaultContent = {
     en: {
@@ -38,19 +38,19 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       canonicalUrl: "https://fijisolutions.net/el"
     }
   };
-  
+
   const finalTitle = title || defaultContent[language].title;
   const finalDescription = description || defaultContent[language].description;
   const finalKeywords = keywords || defaultContent[language].keywords;
   const finalCanonicalUrl = canonicalUrl || defaultContent[language].canonicalUrl;
-  
+
   // Generate alternate URLs for hreflang
   const getAlternateUrl = (lang: 'en' | 'el') => {
     if (!finalCanonicalUrl) return '';
-    
+
     const baseUrl = 'https://fijisolutions.net';
     let currentPath = finalCanonicalUrl.replace(baseUrl, '');
-    
+
     if (lang === 'en') {
       if (currentPath.startsWith('/el')) {
         return `${baseUrl}${currentPath.replace('/el', '/en')}`;
@@ -86,12 +86,12 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       "email": "info@fijisolutions.net"
     },
     "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "MARINOU ANTIPA 40",
-        "addressLocality": "PILEA",
-        "addressRegion": "THESSALONIKI",
-        "postalCode": "570 01",
-        "addressCountry": "Greece"
+      "@type": "PostalAddress",
+      "streetAddress": "MARINOU ANTIPA 40",
+      "addressLocality": "PILEA",
+      "addressRegion": "THESSALONIKI",
+      "postalCode": "570 01",
+      "addressCountry": "Greece"
     },
     "sameAs": [
       "https://github.com/cmoutafidis",
@@ -128,7 +128,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="description" content={finalDescription} />
       <meta name="keywords" content={finalKeywords} />
       <link rel="canonical" href={finalCanonicalUrl} />
-      
+
       {/* Hreflang tags */}
       <link rel="alternate" hreflang="en" href={getAlternateUrl('en')} />
       <link rel="alternate" hreflang="el" href={getAlternateUrl('el')} />

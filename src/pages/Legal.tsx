@@ -6,7 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 const Legal: React.FC = () => {
   const { language } = useLanguage();
-  
+
   const seoData = {
     en: {
       title: "Company Information & Legal Details | Fiji Solutions",

@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 const Contact: React.FC = () => {
   const { language } = useLanguage();
-  
+
   const seoData = {
     en: {
       title: "Contact Us for Free IT Consultation | Fiji Solutions",
@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
       canonicalUrl: "https://fijisolutions.net/el/contact"
     }
   };
-  
+
   return (
     <>
       <SEOHead

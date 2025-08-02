@@ -77,7 +77,7 @@ const Certifications: React.FC = () => {
           </p>
         </div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -110,7 +110,7 @@ const Certifications: React.FC = () => {
           ))}
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

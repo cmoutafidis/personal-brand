@@ -8,7 +8,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 const Portfolio: React.FC = () => {
   const { language } = useLanguage();
-  
+
   const seoData = {
     en: {
       title: "Our Portfolio | Fiji Solutions",

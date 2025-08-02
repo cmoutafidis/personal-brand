@@ -5,7 +5,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 const Industries: React.FC = () => {
   const { t } = useLanguage();
-  
+
   const industries = [
     {
       icon: <Building2 className="h-12 w-12" />,
