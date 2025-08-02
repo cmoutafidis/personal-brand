@@ -1,38 +1,41 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Landmark, Rocket, Plane, Link, Building as Buildings } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 const Industries: React.FC = () => {
+  const { t } = useLanguage();
+  
   const industries = [
     {
       icon: <Building2 className="h-12 w-12" />,
-      name: 'Telecommunications',
-      description: 'Advanced solutions for modern communication infrastructure and services.'
+      name: t('industries.telecom.title'),
+      description: t('industries.telecom.description')
     },
     {
       icon: <Landmark className="h-12 w-12" />,
-      name: 'Banking & Finance',
-      description: 'Secure and efficient systems for financial institutions and services.'
+      name: t('industries.banking.title'),
+      description: t('industries.banking.description')
     },
     {
       icon: <Buildings className="h-12 w-12" />,
-      name: 'Consulting',
-      description: 'Strategic technology consulting for business transformation.'
+      name: t('industries.consulting.title'),
+      description: t('industries.consulting.description')
     },
     {
       icon: <Plane className="h-12 w-12" />,
-      name: 'Travel & Tourism',
-      description: 'Digital solutions for enhanced travel experiences and operations.'
+      name: t('industries.travel.title'),
+      description: t('industries.travel.description')
     },
     {
       icon: <Rocket className="h-12 w-12" />,
-      name: 'Startups',
-      description: 'Innovative solutions to drive startup growth and success.'
+      name: t('industries.startups.title'),
+      description: t('industries.startups.description')
     },
     {
       icon: <Link className="h-12 w-12" />,
-      name: 'Blockchain',
-      description: 'Modern blockchain solutions for various industries.'
+      name: t('industries.blockchain.title'),
+      description: t('industries.blockchain.description')
     }
   ];
 
@@ -40,9 +43,9 @@ const Industries: React.FC = () => {
     <section id="industries" className="section bg-gray-50 dark:bg-gray-800">
       <div className="container-custom">
         <div className="section-title">
-          <h2 className="mb-2">Industries We Serve</h2>
+          <h2 className="mb-2">{t('industries.title')}</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Delivering expertise across multiple sectors
+            {t('industries.subtitle')}
           </p>
         </div>
 

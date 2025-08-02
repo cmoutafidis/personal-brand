@@ -232,6 +232,75 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'footer.links': 'Γρήγοροι Σύνδεσμοι',
         'footer.projects': 'Έργα',
         'footer.rights': 'Όλα τα δικαιώματα διατηρούνται.',
+
+        // Services - detailed content
+        'services.software.title': 'Ανάπτυξη Λογισμικού',
+        'services.software.description': 'Ολοκληρωμένη ανάπτυξη εφαρμογών ιστού, λύσεων κινητών και εταιρικού λογισμικού που ταιριάζουν στις συγκεκριμένες επιχειρηματικές ανάγκες.',
+        'services.software.feature1': 'Προσαρμοσμένες Εφαρμογές Λογισμικού',
+        'services.software.feature2': 'Εφαρμογές Ιστού',
+        'services.software.feature3': 'Εφαρμογές Κινητών',
+        'services.software.feature4': 'Ενσωμάτωση Συστημάτων',
+
+        'services.enterprise.title': 'Ανάπτυξη Εταιρικού Λογισμικού',
+        'services.enterprise.description': 'Εξειδικευμένες συμβουλευτικές υπηρεσίες και υλοποίηση λύσεων cloud σε μεγάλες πλατφόρμες.',
+        'services.enterprise.feature1': 'Συστήματα Λογισμικού Μεγάλης Κλίμακας',
+        'services.enterprise.feature2': 'Ενσωμάτωση Επιχειρηματικών Διαδικασιών',
+        'services.enterprise.feature3': 'Κλιμακώσιμη Αρχιτεκτονική',
+        'services.enterprise.feature4': 'Εταιρικές Λύσεις',
+
+        'services.ai.title': 'Λύσεις AI',
+        'services.ai.description': 'Υλοποιήσεις και ενσωματώσεις AI που σας εξοικονομούν χρήματα και θα σας φέρουν περισσότερους πελάτες.',
+        'services.ai.feature1': 'AI Chat Agents',
+        'services.ai.feature2': 'AI Voice Assistants',
+        'services.ai.feature3': 'Service Desk με AI',
+        'services.ai.feature4': 'Αυτοματισμοί Διαδικασιών',
+
+        'services.payment.title': 'Ενσωμάτωση Πληρωμών',
+        'services.payment.description': 'Τα χρήματα είναι το οξυγόνο της εταιρείας σας. Κάνουμε τη διαδικασία απλή και επιτρέπουμε στους πελάτες σας να πληρώνουν με ποικιλία μεθόδων πληρωμής.',
+        'services.payment.feature1': 'Επεξεργασία Πιστωτικών Καρτών',
+        'services.payment.feature2': 'Ενσωμάτωση Payment Gateway',
+        'services.payment.feature3': 'Ψηφιακά Πορτοφόλια',
+        'services.payment.feature4': 'Πληρωμές Κρυπτονομισμάτων',
+
+        'services.blockchain.title': 'Ανάπτυξη Blockchain',
+        'services.blockchain.description': 'Σύγχρονες λύσεις blockchain για διάφορους κλάδους και περιπτώσεις χρήσης.',
+        'services.blockchain.feature1': 'Ανάπτυξη Smart Contracts',
+        'services.blockchain.feature2': 'DeFi Εφαρμογές',
+        'services.blockchain.feature3': 'Ανάπτυξη Tokens',
+        'services.blockchain.feature4': 'Ενσωμάτωση Blockchain',
+
+        'services.consulting.title': 'Συμβουλευτικές Υπηρεσίες IT',
+        'services.consulting.description': 'Διασφαλίζουμε ότι η επιχείρησή σας λειτουργεί ομαλά και αποδοτικά. Αυτό είναι πολύ σημαντικό για την ανάπτυξη της επιχείρησής σας.',
+        'services.consulting.feature1': 'Στρατηγική Τεχνολογίας',
+        'services.consulting.feature2': 'Βελτιστοποίηση Υποδομής',
+        'services.consulting.feature3': 'Ψηφιακός Μετασχηματισμός',
+        'services.consulting.feature4': 'Ευθυγράμμιση Στρατηγικής IT',
+
+        // Technologies
+        'technologies.title': 'Τεχνολογικό Stack',
+        'technologies.subtitle': 'Αξιοποιώντας τη δύναμη των τεχνολογιών για να παραδώσουμε εξαιρετικές λύσεις',
+        'technologies.frontend': 'Frontend',
+        'technologies.backend': 'Backend',
+        'technologies.cloud': 'Cloud & DevOps',
+        'technologies.ai': 'AI & Δεδομένα',
+        'technologies.blockchain': 'Blockchain',
+        'technologies.trading': 'Trading',
+
+        // Industries
+        'industries.title': 'Κλάδοι που Εξυπηρετούμε',
+        'industries.subtitle': 'Παραδίδοντας εξειδίκευση σε πολλούς τομείς',
+        'industries.telecom.title': 'Τηλεπικοινωνίες',
+        'industries.telecom.description': 'Προηγμένες λύσεις για σύγχρονη υποδομή και υπηρεσίες επικοινωνίας.',
+        'industries.banking.title': 'Τραπεζικά & Χρηματοοικονομικά',
+        'industries.banking.description': 'Ασφαλή και αποδοτικά συστήματα για χρηματοπιστωτικά ιδρύματα και υπηρεσίες.',
+        'industries.consulting.title': 'Συμβουλευτικές Υπηρεσίες',
+        'industries.consulting.description': 'Στρατηγικές συμβουλευτικές υπηρεσίες τεχνολογίας για επιχειρηματικό μετασχηματισμό.',
+        'industries.travel.title': 'Ταξίδια & Τουρισμός',
+        'industries.travel.description': 'Ψηφιακές λύσεις για βελτιωμένες εμπειρίες ταξιδιού και λειτουργίες.',
+        'industries.startups.title': 'Startups',
+        'industries.startups.description': 'Καινοτόμες λύσεις για την προώθηση της ανάπτυξης και επιτυχίας των startups.',
+        'industries.blockchain.title': 'Blockchain',
+        'industries.blockchain.description': 'Σύγχρονες λύσεις blockchain για διάφορους κλάδους.',
       }
     };
 

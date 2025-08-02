@@ -4,27 +4,27 @@ import { motion } from 'framer-motion';
 const Technologies: React.FC = () => {
   const techCategories = [
     {
-      name: 'Frontend',
+      name: t('technologies.frontend'),
       technologies: ['React', 'Angular', 'TypeScript', 'Tailwind CSS', 'Next.js']
     },
     {
-      name: 'Backend',
+      name: t('technologies.backend'),
       technologies: ['Java', 'Rust', 'Python', 'Node.js', 'Express', 'Spring Boot']
     },
     {
-      name: 'Cloud & DevOps',
+      name: t('technologies.cloud'),
       technologies: ['AWS', 'Azure', 'Docker', 'Kubernetes', 'CI/CD', 'Terraform']
     },
     {
-      name: 'AI & Data',
+      name: t('technologies.ai'),
       technologies: ['Voiceflow', 'Salesforce', 'OpenAI', 'Make', 'Bolt', 'Vapi']
     },
     {
-      name: 'Blockchain',
+      name: t('technologies.blockchain'),
       technologies: ['Solana', 'Web3.js', 'Smart Contracts', 'DeFi Protocols', 'Token Standards']
     },
     {
-      name: 'Trading',
+      name: t('technologies.trading'),
       technologies: ['PineScript', 'Technical Analysis', 'Trading View', 'Market Data Integration']
     }
   ];
@@ -33,9 +33,9 @@ const Technologies: React.FC = () => {
     <section id="technologies" className="section bg-white dark:bg-gray-900">
       <div className="container-custom">
         <div className="section-title">
-          <h2 className="mb-2">Technology Stack</h2>
+          <h2 className="mb-2">{t('technologies.title')}</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Leveraging the power of technologies to deliver exceptional solutions
+            {t('technologies.subtitle')}
           </p>
         </div>
 
