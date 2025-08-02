@@ -41,7 +41,9 @@ const LanguageSwitcher: React.FC = () => {
               <button
                 key={lang.code}
                 onClick={() => {
-                  setLanguage(lang.code);
+                  if (language !== lang.code) {
+                    setLanguage(lang.code);
+                  }
                   setIsOpen(false);
                 }}
                 className={`block w-full text-left px-4 py-2 text-sm transition-colors ${
