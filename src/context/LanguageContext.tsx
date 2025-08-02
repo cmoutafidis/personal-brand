@@ -131,6 +131,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'contact.form.send': 'Send Message',
         'contact.form.sending': 'Sending...',
         'contact.form.success': 'Thank you! Your message has been sent successfully. We\'ll get back to you within 48 hours.',
+        'contact.form.error.failed': 'Failed to send message. Please try again or contact us directly.',
+        'contact.form.error.required': 'is required',
+        'contact.form.error.email': 'Please enter a valid email address',
         'contact.connect': 'Connect With Us',
 
         // Contact Location
@@ -145,7 +148,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         // Portfolio/Projects
         'projects.title': 'Projects',
         'projects.subtitle': 'Featured work and contributions',
+        'projects.fiji.title': 'Fiji Financial Dashboard',
         'projects.fiji.description': 'Platform for tracking Fed net liquidity and Toros leverage tokens performance. Provides comprehensive financial analytics for investors.',
+        'projects.catalytics.title': 'Catalytics Pro',
         'projects.catalytics.description': 'Community project for Jupiter Exchange. Provides real-time analytics and insights for traders and investors in the ecosystem.',
         'projects.checkitout': 'Check it out',
         'projects.code': 'Code',
@@ -215,6 +220,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'contact.form.send': 'Αποστολή Μηνύματος',
         'contact.form.sending': 'Αποστολή...',
         'contact.form.success': 'Ευχαριστούμε! Το μήνυμά σας στάλθηκε επιτυχώς. Θα επικοινωνήσουμε μαζί σας εντός 48 ωρών.',
+        'contact.form.error.failed': 'Αποτυχία αποστολής μηνύματος. Παρακαλώ δοκιμάστε ξανά ή επικοινωνήστε μαζί μας απευθείας.',
+        'contact.form.error.required': 'είναι υποχρεωτικό',
+        'contact.form.error.email': 'Παρακαλώ εισάγετε μια έγκυρη διεύθυνση email',
         'contact.connect': 'Συνδεθείτε μαζί μας',
 
         // Contact Location
@@ -229,7 +237,9 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         // Portfolio/Projects
         'projects.title': 'Έργα',
         'projects.subtitle': 'Επιλεγμένα έργα και συνεισφορές',
+        'projects.fiji.title': 'Fiji Financial Dashboard',
         'projects.fiji.description': 'Πλατφόρμα για την παρακολούθηση της καθαρής ρευστότητας της Fed και της απόδοσης των leverage tokens της Toros. Παρέχει ολοκληρωμένες χρηματοοικονομικές αναλύσεις για επενδυτές.',
+        'projects.catalytics.title': 'Catalytics Pro',
         'projects.catalytics.description': 'Κοινοτικό έργο για το Jupiter Exchange. Παρέχει αναλύσεις και πληροφορίες σε πραγματικό χρόνο για traders και επενδυτές στο οικοσύστημα.',
         'projects.checkitout': 'Δείτε το',
         'projects.code': 'Κώδικας',

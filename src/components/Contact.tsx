@@ -60,34 +60,34 @@ const Contact: React.FC = () => {
     const { name, email, company, question, message } = formData;
 
     if (!name.trim()) {
-      setSubmitError(t('contact.form.name') + ' is required');
+      setSubmitError(t('contact.form.name') + ' ' + t('contact.form.error.required'));
       return false;
     }
 
     if (!email.trim()) {
-      setSubmitError(t('contact.form.email') + ' is required');
+      setSubmitError(t('contact.form.email') + ' ' + t('contact.form.error.required'));
       return false;
     }
 
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      setSubmitError('Please enter a valid email address');
+      setSubmitError(t('contact.form.error.email'));
       return false;
     }
 
     if (!company.trim()) {
-      setSubmitError(t('contact.form.company') + ' is required');
+      setSubmitError(t('contact.form.company') + ' ' + t('contact.form.error.required'));
       return false;
     }
 
     if (!question.trim()) {
-      setSubmitError(t('contact.form.question') + ' is required');
+      setSubmitError(t('contact.form.question') + ' ' + t('contact.form.error.required'));
       return false;
     }
 
     if (!message.trim()) {
-      setSubmitError(t('contact.form.message') + ' is required');
+      setSubmitError(t('contact.form.message') + ' ' + t('contact.form.error.required'));
       return false;
     }
 
@@ -142,7 +142,7 @@ const Contact: React.FC = () => {
 
     } catch (error) {
       console.error('Form submission error:', error);
-      setSubmitError('Failed to send message. Please try again or contact us directly.');
+      setSubmitError(t('contact.form.error.failed'));
     } finally {
       setIsSubmitting(false);
     }

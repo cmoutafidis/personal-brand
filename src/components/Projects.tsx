@@ -18,15 +18,15 @@ const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
-      title: 'Fiji Financial Dashboard',
-      description: 'Platform for tracking Fed net liquidity and Toros leverage tokens performance. Provides comprehensive financial analytics for investors.',
+      title: t('projects.fiji.title'),
+      description: t('projects.fiji.description'),
       image: '/dashboard.png',
       technologies: ['React', 'TypeScript', 'Chart.js', 'API Integration'],
       liveUrl: 'https://finance.fijisolutions.net/',
     },
     {
-      title: 'Catalytics Pro',
-      description: 'Community project for Jupiter Exchange. Provides real-time analytics and insights for traders and investors in the ecosystem.',
+      title: t('projects.catalytics.title'),
+      description: t('projects.catalytics.description'),
       image: '/catalytics.png',
       technologies: ['Angular', 'TypeScript', 'Web3', 'Blockchain', 'Python'],
       liveUrl: 'https://catalytics.pro/',
@@ -66,7 +66,7 @@ const Projects: React.FC = () => {
               </div>
               <div className="p-6">
                 <p className="text-gray-700 dark:text-gray-300 mb-4" itemProp="description">
-                  {index === 0 ? t('projects.fiji.description') : t('projects.catalytics.description')}
+                  {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, i) => (
