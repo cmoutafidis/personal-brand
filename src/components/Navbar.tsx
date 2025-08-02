@@ -56,7 +56,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <LanguageSwitcher />
             <div className="flex space-x-6">
               {navLinks.map((link) => (
                 <Link
@@ -71,6 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
                 </Link>
               ))}
             </div>
+            <LanguageSwitcher />
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
@@ -86,7 +86,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
 
           {/* Mobile Menu Button */}
           <div className="flex items-center space-x-2 md:hidden">
-            <LanguageSwitcher />
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
@@ -98,6 +97,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
                 <Moon className="h-5 w-5 text-gray-700" />
               )}
             </button>
+            <LanguageSwitcher />
             <button
               onClick={toggleMobileMenu}
               className="p-2 rounded-lg text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
