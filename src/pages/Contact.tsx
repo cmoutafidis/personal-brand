@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
       title: "Contact Us for Free IT Consultation | Fiji Solutions",
       description: "Contact Fiji Solutions in Thessaloniki, Greece for expert IT consulting and custom software development. Fill out our form for a free consultation.",
       keywords: "contact, free consultation, IT consulting, software development consultation, mobile app development, big data consulting, Thessaloniki Greece",
-      canonicalUrl: "https://fijisolutions.net/contact"
+      canonicalUrl: "https://fijisolutions.net/en/contact"
     },
     el: {
       title: "Επικοινωνήστε μαζί μας για Δωρεάν Συμβουλευτική IT | Fiji Solutions",

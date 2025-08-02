@@ -14,7 +14,7 @@ const Portfolio: React.FC = () => {
       title: "Our Portfolio | Fiji Solutions",
       description: "Explore Fiji Solutions' portfolio showcasing our software development, IT consulting, mobile app development, and enterprise software solutions for clients in Thessaloniki, Greece.",
       keywords: "portfolio, software development projects, IT consulting projects, mobile app development, enterprise software development, custom software solutions, Thessaloniki Greece",
-      canonicalUrl: "https://fijisolutions.net/portfolio"
+      canonicalUrl: "https://fijisolutions.net/en/portfolio"
     },
     el: {
       title: "Το Χαρτοφυλάκιό μας | Fiji Solutions",

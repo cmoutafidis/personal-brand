@@ -12,7 +12,7 @@ const Legal: React.FC = () => {
       title: "Company Information & Legal Details | Fiji Solutions",
       description: "Legal information and company registration details for Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE), based in Thessaloniki, Greece.",
       keywords: "legal information, company registration, GEMI number, Fiji Solutions IKE, Thessaloniki Greece, business registration",
-      canonicalUrl: "https://fijisolutions.net/legal"
+      canonicalUrl: "https://fijisolutions.net/en/legal"
     },
     el: {
       title: "Στοιχεία Εταιρείας & Νομικές Πληροφορίες | Fiji Solutions",

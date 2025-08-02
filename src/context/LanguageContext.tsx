@@ -17,17 +17,20 @@ const LanguageContext = createContext<LanguageContextType>({
 export const useLanguage = () => useContext(LanguageContext);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>('el');
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
     // Check URL path for language
     const path = window.location.pathname;
-    if (path.startsWith('/el/') || path === '/el') {
+    if (path.startsWith('/en/') || path === '/en') {
+      setLanguageState('en');
+    } else if (path.startsWith('/el/') || path === '/el') {
       setLanguageState('el');
     } else {
-      setLanguageState('en');
+      // Default to Greek for any other path
+      setLanguageState('el');
     }
   }, []);
 
@@ -39,21 +42,25 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     const currentPath = location.pathname;
     let newPath;
 
-    if (lang === 'el') {
-      if (currentPath.startsWith('/el/')) {
+    if (lang === 'en') {
+      if (currentPath.startsWith('/en/')) {
         newPath = currentPath;
-      } else if (currentPath === '/') {
-        newPath = '/el';
+      } else if (currentPath.startsWith('/el/')) {
+        newPath = currentPath.replace('/el', '/en');
+      } else if (currentPath === '/el') {
+        newPath = '/en';
       } else {
-        newPath = `/el${currentPath}`;
+        newPath = `/en${currentPath === '/' ? '' : currentPath}`;
       }
     } else {
       if (currentPath.startsWith('/el/')) {
-        newPath = currentPath.replace('/el', '') || '/';
-      } else if (currentPath === '/el') {
-        newPath = '/';
-      } else {
         newPath = currentPath;
+      } else if (currentPath.startsWith('/en/')) {
+        newPath = currentPath.replace('/en', '/el');
+      } else if (currentPath === '/en') {
+        newPath = '/el';
+      } else {
+        newPath = `/el${currentPath === '/' ? '' : currentPath}`;
       }
     }
 
