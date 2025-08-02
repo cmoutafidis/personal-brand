@@ -35,7 +35,7 @@ const Services: React.FC = () => {
       icon: <Cpu className="h-8 w-8" />,
       title: t('services.blockchain.title'),
       description: t('services.blockchain.description'),
-      features: [t('services.blockchain.feature1'), t('services.blockchain.feature2'), t('services.blockchain.feature3'), t('services.blockchain.feature4')]
+      features: [t('services.blockchain.feature1'), t('services.blockchain.feature2'), t('services.blockchain.feature3')]
     },
     {
       icon: <Lightbulb className="h-8 w-8" />,
