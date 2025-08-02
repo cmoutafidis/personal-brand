@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  to={language === 'en' ? '/' : '/el'}
+                  to={language === 'en' ? '/en' : '/el'}
                   onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to={language === 'en' ? '/portfolio' : '/el/portfolio'}
+                  to={language === 'en' ? '/en/portfolio' : '/el/portfolio'}
                   onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
@@ -121,7 +121,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to={language === 'en' ? '/contact' : '/el/contact'}
+                  to={language === 'en' ? '/en/contact' : '/el/contact'}
                   onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
@@ -130,7 +130,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to={language === 'en' ? '/legal' : '/el/legal'}
+                  to={language === 'en' ? '/en/legal' : '/el/legal'}
                   onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >

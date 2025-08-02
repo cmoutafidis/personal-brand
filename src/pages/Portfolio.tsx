@@ -9,7 +9,7 @@ import { useLanguage } from '../context/LanguageContext';
 const Portfolio: React.FC = () => {
   const { language, t } = useLanguage();
 
-  const canonicalUrl = language === 'en' ? 'https://fijisolutions.net/portfolio' : 'https://fijisolutions.net/el/portfolio';
+  const canonicalUrl = language === 'en' ? 'https://fijisolutions.net/en/portfolio' : 'https://fijisolutions.net/el/portfolio';
 
   return (
     <>
