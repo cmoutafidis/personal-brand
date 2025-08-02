@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import LazyImage from './LazyImage';
 
 interface Project {
@@ -13,6 +14,8 @@ interface Project {
 }
 
 const Projects: React.FC = () => {
+  const { t } = useLanguage();
+  
   const projects: Project[] = [
     {
       title: 'Fiji Financial Dashboard',
@@ -34,9 +37,9 @@ const Projects: React.FC = () => {
     <section id="projects" className="section bg-white dark:bg-gray-900" itemScope itemType="https://schema.org/ItemList">
       <div className="container-custom">
         <div className="section-title">
-          <h2 className="mb-2" itemProp="name">Projects</h2>
+          <h2 className="mb-2" itemProp="name">{t('projects.title')}</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Featured work and contributions
+            {t('projects.subtitle')}
           </p>
         </div>
 
@@ -62,7 +65,9 @@ const Projects: React.FC = () => {
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-gray-700 dark:text-gray-300 mb-4" itemProp="description">{project.description}</p>
+                <p className="text-gray-700 dark:text-gray-300 mb-4" itemProp="description">
+                  {index === 0 ? t('projects.fiji.description') : t('projects.catalytics.description')}
+                </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, i) => (
                     <span
@@ -82,7 +87,7 @@ const Projects: React.FC = () => {
                     className="inline-flex items-center text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium"
                   >
                     <ExternalLink className="h-4 w-4 mr-1" />
-                    Check it out
+                    {t('projects.checkitout')}
                   </a>
                   {project.repoUrl && (
                     <a
@@ -92,7 +97,7 @@ const Projects: React.FC = () => {
                       className="inline-flex items-center text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 font-medium"
                     >
                       <Github className="h-4 w-4 mr-1" />
-                      Code
+                      {t('projects.code')}
                     </a>
                   )}
                 </div>

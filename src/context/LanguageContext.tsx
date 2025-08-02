@@ -126,9 +126,22 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'contact.form.success': 'Thank you! Your message has been sent successfully. We\'ll get back to you within 48 hours.',
         'contact.connect': 'Connect With Us',
 
+        // Contact Location
+        'contact.location': 'Location',
+        'contact.address.street': 'Marinou Antipa 40',
+        'contact.address.city': 'Pilea 570 01, Greece',
+
         // Services
         'services.title': 'Our Work',
         'services.subtitle': 'Projects we have done with our existing clients.',
+
+        // Portfolio/Projects
+        'projects.title': 'Projects',
+        'projects.subtitle': 'Featured work and contributions',
+        'projects.fiji.description': 'Platform for tracking Fed net liquidity and Toros leverage tokens performance. Provides comprehensive financial analytics for investors.',
+        'projects.catalytics.description': 'Community project for Jupiter Exchange. Provides real-time analytics and insights for traders and investors in the ecosystem.',
+        'projects.checkitout': 'Check it out',
+        'projects.code': 'Code',
 
         // Footer
         'footer.description': 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
@@ -197,9 +210,22 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'contact.form.success': 'Ευχαριστούμε! Το μήνυμά σας στάλθηκε επιτυχώς. Θα επικοινωνήσουμε μαζί σας εντός 48 ωρών.',
         'contact.connect': 'Συνδεθείτε μαζί μας',
 
+        // Contact Location
+        'contact.location': 'Τοποθεσία',
+        'contact.address.street': 'Μαρίνου Αντύπα 40',
+        'contact.address.city': '57001 Πυλαία, Ελλάδα',
+
         // Services
         'services.title': 'Η Δουλειά μας',
         'services.subtitle': 'Έργα που έχουμε κάνει με τους υπάρχοντες πελάτες μας.',
+
+        // Portfolio/Projects
+        'projects.title': 'Έργα',
+        'projects.subtitle': 'Επιλεγμένα έργα και συνεισφορές',
+        'projects.fiji.description': 'Πλατφόρμα για την παρακολούθηση της καθαρής ρευστότητας της Fed και της απόδοσης των leverage tokens της Toros. Παρέχει ολοκληρωμένες χρηματοοικονομικές αναλύσεις για επενδυτές.',
+        'projects.catalytics.description': 'Κοινοτικό έργο για το Jupiter Exchange. Παρέχει αναλύσεις και πληροφορίες σε πραγματικό χρόνο για traders και επενδυτές στο οικοσύστημα.',
+        'projects.checkitout': 'Δείτε το',
+        'projects.code': 'Κώδικας',
 
         // Footer
         'footer.description': 'Η Fiji Solutions είναι μια εταιρεία λογισμικού στη Θεσσαλονίκη, Ελλάδα, που ειδικεύεται σε συμβουλευτικές υπηρεσίες IT και ανάπτυξη προσαρμοσμένου λογισμικού.',
