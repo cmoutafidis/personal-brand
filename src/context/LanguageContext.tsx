@@ -17,7 +17,7 @@ const LanguageContext = createContext<LanguageContextType>({
 export const useLanguage = () => useContext(LanguageContext);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>('el');
+  const [language, setLanguageState] = useState<Language>('en');
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -29,8 +29,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     } else if (path.startsWith('/el/') || path === '/el') {
       setLanguageState('el');
     } else {
-      // Default to Greek for any other path
-      setLanguageState('el');
+      // Default to English for any other path
+      setLanguageState('en');
     }
   }, []);
 

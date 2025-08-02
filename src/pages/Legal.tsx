@@ -7,7 +7,7 @@ import { useLanguage } from '../context/LanguageContext';
 const Legal: React.FC = () => {
   const { language, t } = useLanguage();
 
-  const canonicalUrl = language === 'en' ? 'https://fijisolutions.net/en/legal' : 'https://fijisolutions.net/el/legal';
+  const canonicalUrl = language === 'en' ? 'https://fijisolutions.net/legal' : 'https://fijisolutions.net/el/legal';
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">

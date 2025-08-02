@@ -16,9 +16,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
   const location = useLocation();
 
   const navLinks = [
-    { name: t('nav.home'), to: language === 'el' ? '/el' : '/en' },
-    { name: t('nav.portfolio'), to: language === 'el' ? '/el/portfolio' : '/en/portfolio' },
-    { name: t('nav.contact'), to: language === 'el' ? '/el/contact' : '/en/contact' },
+    { name: t('nav.home'), to: language === 'en' ? '/' : '/el' },
+    { name: t('nav.portfolio'), to: language === 'en' ? '/portfolio' : '/el/portfolio' },
+    { name: t('nav.contact'), to: language === 'en' ? '/contact' : '/el/contact' },
   ];
 
   const toggleMobileMenu = () => {

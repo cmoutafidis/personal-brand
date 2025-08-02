@@ -6,7 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 const Contact: React.FC = () => {
   const { language, t } = useLanguage();
 
-  const canonicalUrl = language === 'en' ? 'https://fijisolutions.net/en/contact' : 'https://fijisolutions.net/el/contact';
+  const canonicalUrl = language === 'en' ? 'https://fijisolutions.net/contact' : 'https://fijisolutions.net/el/contact';
 
   return (
     <>

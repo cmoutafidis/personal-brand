@@ -29,7 +29,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       title: "Fiji Solutions | We help your business grow online",
       description: "Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative web development, AI solutions, cloud services, mobile app development, and blockchain technology to help businesses grow online.",
       keywords: "software development, IT consulting, custom software development, mobile app development, big data consulting, enterprise software development, solution consulting, software consulting, Thessaloniki, Greece",
-      canonicalUrl: "https://fijisolutions.net/en"
+      canonicalUrl: "https://fijisolutions.net"
     },
     el: {
       title: "Fiji Solutions | Βοηθάμε την επιχείρησή σας να αναπτυχθεί διαδικτυακά",
@@ -54,8 +54,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     if (lang === 'en') {
       if (currentPath.startsWith('/el')) {
         return `${baseUrl}${currentPath.replace('/el', '/en')}`;
-      } else if (currentPath === '' || currentPath === '/') {
-        return `${baseUrl}/en`;
+      } else if (currentPath === '' || currentPath === '/' || currentPath === '/en') {
+        return `${baseUrl}`;
       } else if (!currentPath.startsWith('/en')) {
         return `${baseUrl}/en${currentPath}`;
       }
@@ -63,10 +63,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
     } else {
       if (currentPath.startsWith('/en')) {
         return `${baseUrl}${currentPath.replace('/en', '/el')}`;
-      } else if (currentPath === '' || currentPath === '/') {
+      } else if (currentPath === '' || currentPath === '/' || !currentPath.startsWith('/el')) {
         return `${baseUrl}/el`;
-      } else if (!currentPath.startsWith('/el')) {
-        return `${baseUrl}/el${currentPath}`;
       }
       return finalCanonicalUrl;
     }
@@ -132,7 +130,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       {/* Hreflang tags */}
       <link rel="alternate" hreflang="en" href={getAlternateUrl('en')} />
       <link rel="alternate" hreflang="el" href={getAlternateUrl('el')} />
-      <link rel="alternate" hreflang="x-default" href={getAlternateUrl('el')} />
+      <link rel="alternate" hreflang="x-default" href={getAlternateUrl('en')} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
