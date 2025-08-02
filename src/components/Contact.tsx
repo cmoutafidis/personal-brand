@@ -217,6 +217,7 @@ const Contact: React.FC = () => {
                       referrerPolicy="no-referrer-when-downgrade">
                     </iframe>
                   </div>
+                  </p>
                 </div>
               </div>
             </div>
