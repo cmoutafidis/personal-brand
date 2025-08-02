@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+import { Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   scrolling: boolean;
@@ -9,7 +8,6 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { darkMode, toggleDarkMode } = useTheme();
   const location = useLocation();
 
   const navLinks = [
@@ -67,32 +65,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
                 </Link>
               ))}
             </div>
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-              aria-label="Toggle Dark Mode"
-            >
-              {darkMode ? (
-                <Sun className="h-5 w-5 text-yellow-400" />
-              ) : (
-                <Moon className="h-5 w-5 text-gray-700" />
-              )}
-            </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center space-x-2 md:hidden">
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-              aria-label="Toggle Dark Mode"
-            >
-              {darkMode ? (
-                <Sun className="h-5 w-5 text-yellow-400" />
-              ) : (
-                <Moon className="h-5 w-5 text-gray-700" />
-              )}
-            </button>
+          <div className="md:hidden">
             <button
               onClick={toggleMobileMenu}
               className="p-2 rounded-lg text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
