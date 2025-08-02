@@ -108,7 +108,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'solutions.payment.title': 'Payment Solutions',
         'solutions.payment.description': 'Money keeps your business alive. We make payments super easy, so your customers can pay any way they want.',
         'solutions.cta.title': "Don't Let Your Competition Get Ahead",
-        'solutions.cta.description': "The AI revolution is happening now. Companies that adapted them are leading their industries. Don't wait until it's too late. Start today.",
+        'solutions.cta.description': "The AI revolution is happening now. Companies that adapted are leading their industries. Don't wait until it's too late. Start today.",
         'solutions.cta.button': 'Contact Us Now',
 
         // Contact
