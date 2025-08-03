@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -42,10 +42,8 @@ function App() {
             <Navbar scrolling={scrolling} />
             <main>
               <Routes>
-                {/* Redirect root to Greek homepage */}
-                <Route path="/" element={<Navigate to="/en" replace />} />
-
                 {/* English routes */}
+                <Route path="/" element={<Home />} />
                 <Route path="/en" element={<Home />} />
                 <Route path="/en/portfolio" element={<Portfolio />} />
                 <Route path="/en/contact" element={<Contact />} />
