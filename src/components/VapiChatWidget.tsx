@@ -1,6 +1,12 @@
 import React from 'react';
-import { VapiWidget } from '@vapi-ai/client-sdk-react';
+import dynamic from 'next/dynamic';
 import { useLanguage } from '../context/LanguageContext';
+
+// Dynamically import VapiWidget with no SSR
+const VapiWidget = dynamic(
+  () => import('@vapi-ai/client-sdk-react').then(mod => ({ default: mod.VapiWidget })),
+  { ssr: false }
+);
 
 interface VapiChatWidgetProps {
   apiKey: string;
