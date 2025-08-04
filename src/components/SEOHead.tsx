@@ -44,34 +44,6 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   const finalKeywords = keywords || defaultContent[language].keywords;
   const finalCanonicalUrl = canonicalUrl || defaultContent[language].canonicalUrl;
 
-  // Generate alternate URLs for hreflang
-  const getAlternateUrl = (lang: 'en' | 'el') => {
-    if (!finalCanonicalUrl) return '';
-
-    const baseUrl = 'https://fijisolutions.net';
-    const currentPath = finalCanonicalUrl.replace(baseUrl, '');
-
-    if (lang === 'en') {
-      if (currentPath.startsWith('/el')) {
-        return `${baseUrl}${currentPath.replace('/el', '/en')}`;
-      } else if (currentPath === '' || currentPath === '/') {
-        return `${baseUrl}/en`;
-      } else if (!currentPath.startsWith('/en')) {
-        return `${baseUrl}/en${currentPath}`;
-      }
-      return finalCanonicalUrl;
-    } else {
-      if (currentPath.startsWith('/en')) {
-        return `${baseUrl}${currentPath.replace('/en', '/el')}`;
-      } else if (currentPath === '' || currentPath === '/') {
-        return `${baseUrl}/en`;
-      } else if (!currentPath.startsWith('/el')) {
-        return `${baseUrl}/el${currentPath}`;
-      }
-      return finalCanonicalUrl;
-    }
-  };
-
   const defaultStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -128,11 +100,6 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       <meta name="description" content={finalDescription} />
       <meta name="keywords" content={finalKeywords} />
       <link rel="canonical" href={finalCanonicalUrl} />
-
-      {/* Hreflang tags */}
-      <link rel="alternate" hreflang="en" href={getAlternateUrl('en')} />
-      <link rel="alternate" hreflang="el" href={getAlternateUrl('el')} />
-      <link rel="alternate" hreflang="x-default" href={getAlternateUrl('en')} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />

@@ -40,11 +40,6 @@ export default function RootLayout({
         content="Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development."/>
         <meta property="linkedin:image" content="https://fijisolutions.net/fijisolutions.png"/>
 
-        {/*Language alternates*/}
-        <link rel="alternate" hrefLang="en" href="https://fijisolutions.net/en"/>
-        <link rel="alternate" hrefLang="el" href="https://fijisolutions.net/el"/>
-        <link rel="alternate" hrefLang="x-default" href="https://fijisolutions.net/en"/>
-
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com"/>
         <link
