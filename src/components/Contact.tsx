@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
-  const XIcon = (props) => (
+  const XIcon = (props: { className?: string; }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
