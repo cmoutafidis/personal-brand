@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
+import Vapi from '@vapi-ai/web';
 import { PhoneOff, Mic } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-
-// Dynamically import Vapi with no SSR
-const VapiImport = dynamic(
-  () => import('@vapi-ai/web'),
-  { ssr: false }
-);
 
 interface VapiWidgetProps {
   apiKey: string;
@@ -23,75 +17,55 @@ const VapiWidget: React.FC<VapiWidgetProps> = ({
   buttonText = "Let's talk now"
 }) => {
   const { t } = useLanguage();
-  const [vapi, setVapi] = useState<any>(null);
+  const [vapi, setVapi] = useState<Vapi | null>(null);
   const [isConnected, setIsConnected] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [VapiClass, setVapiClass] = useState<any>(null);
 
   useEffect(() => {
-    // Import Vapi class dynamically on client side
-    import('@vapi-ai/web').then((VapiModule) => {
-      const VapiClass = VapiModule.default;
-      setVapiClass(VapiClass);
-      
-      const vapiInstance = new VapiClass(apiKey);
-      setVapi(vapiInstance);
+    const vapiInstance = new Vapi(apiKey);
+    setVapi(vapiInstance);
 
-      // Event listeners
-      vapiInstance.on('call-start', () => {
-        console.log('Call started');
-        setIsConnected(true);
-        setIsLoading(false);
-      });
+    // Event listeners
+    vapiInstance.on('call-start', () => {
+      console.log('Call started');
+      setIsConnected(true);
+      setIsLoading(false);
+    });
 
-      vapiInstance.on('call-end', () => {
-        console.log('Call ended');
-        setIsConnected(false);
-        setIsSpeaking(false);
-        setIsLoading(false);
-      });
+    vapiInstance.on('call-end', () => {
+      console.log('Call ended');
+      setIsConnected(false);
+      setIsSpeaking(false);
+      setIsLoading(false);
+    });
 
-      vapiInstance.on('speech-start', () => {
-        console.log('Assistant started speaking');
-        setIsSpeaking(true);
-      });
+    vapiInstance.on('speech-start', () => {
+      console.log('Assistant started speaking');
+      setIsSpeaking(true);
+    });
 
-      vapiInstance.on('speech-end', () => {
-        console.log('Assistant stopped speaking');
-        setIsSpeaking(false);
-      });
+    vapiInstance.on('speech-end', () => {
+      console.log('Assistant stopped speaking');
+      setIsSpeaking(false);
+    });
 
-      vapiInstance.on('message', (message) => {
-        if (message.type === 'transcript') {
-          console.log(`${message.role}: ${message.transcript}`);
-        }
-      });
+    vapiInstance.on('message', (message) => {
+      if (message.type === 'transcript') {
+        console.log(`${message.role}: ${message.transcript}`);
+      }
+    });
 
-      vapiInstance.on('error', (error) => {
-        console.error('Vapi error:', error);
-        setIsLoading(false);
-        setIsConnected(false);
-      });
+    vapiInstance.on('error', (error) => {
+      console.error('Vapi error:', error);
+      setIsLoading(false);
+      setIsConnected(false);
     });
 
     return () => {
       vapiInstance?.stop();
     };
   }, [apiKey]);
-
-  // Don't render anything until Vapi is loaded
-  if (!VapiClass || !vapi) {
-    return (
-      <button
-        disabled
-        className={`btn btn-secondary flex items-center justify-center ${className}`}
-      >
-        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-600 mr-2"></div>
-        Loading...
-      </button>
-    );
-  }
 
   const startCall = () => {
     if (vapi) {

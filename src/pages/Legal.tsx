@@ -1,22 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import SEOHead from '../components/SEOHead';
 import { Building, MapPin, Hash, Euro, User, Shield } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 const Legal: React.FC = () => {
-  const { language, t } = useLanguage();
-
-  const canonicalUrl = language === 'en' ? 'https://fijisolutions.net/en/legal' : 'https://fijisolutions.net/el/legal';
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
-      <SEOHead
-        title={t('seo.legal.title')}
-        description={t('seo.legal.description')}
-        keywords={t('seo.legal.keywords')}
-        canonicalUrl={canonicalUrl}
-      />
       <section className="section">
         <div className="container-custom">
           <motion.div

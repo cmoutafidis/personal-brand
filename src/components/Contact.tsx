@@ -199,7 +199,7 @@ const Contact: React.FC = () => {
                   <MapPin className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <div className="text-gray-700 dark:text-gray-300">
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">{t('contact.location')}</h4>
                     <p className="text-gray-700 dark:text-gray-300">
                       {t('contact.address.street')}<br />
@@ -216,7 +216,7 @@ const Contact: React.FC = () => {
                         referrerPolicy="no-referrer-when-downgrade">
                       </iframe>
                     </div>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
