@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const XIcon = (props) => (
+  const XIcon = (props: { className?: string; }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"

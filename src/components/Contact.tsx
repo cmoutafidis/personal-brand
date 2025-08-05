@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
-  const XIcon = (props) => (
+  const XIcon = (props: { className?: string; }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -199,7 +199,7 @@ const Contact: React.FC = () => {
                   <MapPin className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-gray-700 dark:text-gray-300">
+                  <div className="text-gray-700 dark:text-gray-300">
                     <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">{t('contact.location')}</h4>
                     <p className="text-gray-700 dark:text-gray-300">
                       {t('contact.address.street')}<br />
@@ -211,12 +211,12 @@ const Contact: React.FC = () => {
                         width="400"
                         height="300"
                         style={{"border": "0"}}
-                        allowFullScreen=""
+                        allowFullScreen={false}
                         loading="lazy"
                         referrerPolicy="no-referrer-when-downgrade">
                       </iframe>
                     </div>
-                  </p>
+                  </div>
                 </div>
               </div>
             </div>
