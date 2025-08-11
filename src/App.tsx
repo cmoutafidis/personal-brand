@@ -42,8 +42,13 @@ function App() {
             <Navbar scrolling={scrolling} />
             <main>
               <Routes>
-                {/* English routes */}
+                {/* No language routes */}
                 <Route path="/" element={<Home />} />
+                <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/legal" element={<Legal />} />
+
+                {/* English routes */}
                 <Route path="/en" element={<Home />} />
                 <Route path="/en/portfolio" element={<Portfolio />} />
                 <Route path="/en/contact" element={<Contact />} />
