@@ -1,4 +1,5 @@
-import type { Metadata' from 'next';
+import type { Metadata' from \'next';
+}
 import Contact from '../../../components/Contact';
 
 export const metadata: Metadata = {
