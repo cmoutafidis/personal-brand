@@ -32,12 +32,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    url: 'https://fijisolutions.net/en',
+    url: 'https://www.fijisolutions.net/en',
     title: 'Fiji Solutions | We help your business grow online',
     description: 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
     images: [
       {
-        url: 'https://fijisolutions.net/fijisolutions.png',
+        url: '/fijisolutions.png',
         width: 1200,
         height: 630,
         alt: 'Fiji Solutions',
@@ -50,20 +50,20 @@ export const metadata: Metadata = {
     site: '@fiji_solutions',
     title: 'Fiji Solutions | We help your business grow online',
     description: 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
-    images: ['https://fijisolutions.net/fijisolutions.png'],
+    images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
   alternates: {
-    canonical: 'https://fijisolutions.net/en',
+    canonical: 'https://www.fijisolutions.net/en',
     languages: {
-      'en': 'https://fijisolutions.net/en',
-      'el': 'https://fijisolutions.net/el',
-      'x-default': 'https://fijisolutions.net/en',
+      'en': 'https://www.fijisolutions.net/en',
+      'el': 'https://www.fijisolutions.net/el',
+      'x-default': 'https://www.fijisolutions.net/en',
     },
   },
   other: {
     'linkedin:title': 'Fiji Solutions | We help your business grow online',
     'linkedin:description': 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
-    'linkedin:image': 'https://fijisolutions.net/fijisolutions.png',
+    'linkedin:image': 'https://www.fijisolutions.net/fijisolutions.png',
     'msapplication-TileColor': '#0086ff',
   },
 };

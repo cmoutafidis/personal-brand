@@ -8,15 +8,15 @@ export const metadata: Metadata = {
   title: 'Η Δουλειά μας | Fiji Solutions',
   description: 'Η δουλειά μας - Πράγματα που φτιάξαμε για τους πελάτες μας. Ανάπτυξη λογισμικού, λύσεις AI και εταιρική συμβουλευτική.',
   alternates: {
-    canonical: 'https://fijisolutions.net/el/portfolio',
+    canonical: 'https://www.fijisolutions.net/el/portfolio',
   },
   openGraph: {
-    url: 'https://fijisolutions.net/el/portfolio',
+    url: 'https://www.fijisolutions.net/el/portfolio',
     title: 'Η Δουλειά μας | Fiji Solutions',
     description: 'Η δουλειά μας - Πράγματα που φτιάξαμε για τους πελάτες μας. Ανάπτυξη λογισμικού, λύσεις AI και εταιρική συμβουλευτική.',
     images: [
       {
-        url: 'https://fijisolutions.net/fijisolutions.png',
+        url: '/fijisolutions.png',
         width: 1200,
         height: 630,
         alt: 'Fiji Solutions',

@@ -8,15 +8,15 @@ export const metadata: Metadata = {
   title: 'Portfolio | Fiji Solutions',
   description: 'Our work - Projects we have done with our existing clients. Software development, AI solutions, and enterprise consulting.',
   alternates: {
-    canonical: 'https://fijisolutions.net/en/portfolio',
+    canonical: 'https://www.fijisolutions.net/en/portfolio',
   },
   openGraph: {
-    url: 'https://fijisolutions.net/en/portfolio',
+    url: 'https://www.fijisolutions.net/en/portfolio',
     title: 'Portfolio | Fiji Solutions',
     description: 'Our work - Projects we have done with our existing clients. Software development, AI solutions, and enterprise consulting.',
     images: [
       {
-        url: 'https://fijisolutions.net/fijisolutions.png',
+        url: '/fijisolutions.png',
         width: 1200,
         height: 630,
         alt: 'Fiji Solutions',

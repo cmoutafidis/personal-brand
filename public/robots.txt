@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fijisolutions.net/sitemap.xml
+Sitemap: https://www.fijisolutions.net/sitemap.xml

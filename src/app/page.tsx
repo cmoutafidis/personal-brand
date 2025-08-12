@@ -8,13 +8,13 @@ export const metadata: Metadata = {
   title: 'Fiji Solutions | We help your business grow online',
   description: 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
   alternates: {
-    canonical: 'https://fijisolutions.net/',
+    canonical: 'https://www.fijisolutions.net/',
   },
   openGraph: {
-    url: 'https://fijisolutions.net/',
+    url: 'https://www.fijisolutions.net/',
     images: [
       {
-        url: 'https://fijisolutions.net/fijisolutions.png',
+        url: '/fijisolutions.png',
         width: 1200,
         height: 630,
         alt: 'Fiji Solutions',
