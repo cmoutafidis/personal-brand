@@ -24,8 +24,11 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
+    card: 'summary_large_image',
+    site: '@fiji_solutions',
     title: 'Fiji Solutions | Βοηθάμε την επιχείρησή σου να μεγαλώσει online',
     description: 'Η Fiji Solutions είναι εταιρεία λογισμικού στη Θεσσαλονίκη που φτιάχνει λογισμικό και σου δίνει συμβουλές για την επιχείρησή σου.',
+    images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };
 

@@ -21,9 +21,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    site: '@fiji_solutions',
-  },
 };
 
 export default function HomePage() {
