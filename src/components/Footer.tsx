@@ -1,7 +1,9 @@
+'use client';
+
 import React from 'react';
-import { Link } from 'react-router-dom';
-import {ChevronUp, Github, Facebook, Linkedin} from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import Link from 'next/link';
+import { ChevronUp, Github, Facebook, Linkedin } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Footer: React.FC = () => {
   const { t, language } = useLanguage();
@@ -11,7 +13,7 @@ const Footer: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const XIcon = (props) => (
+  const XIcon = (props: {className?: string | undefined}) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -22,7 +24,7 @@ const Footer: React.FC = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      {...props}
+      className={props.className}
     >
       <path
         d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
@@ -34,7 +36,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
-      <div className="container-custom">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center mb-10">
           <button
             onClick={scrollToTop}
@@ -53,7 +55,7 @@ const Footer: React.FC = () => {
                 alt="Fiji Solutions Logo"
                 className="h-8 w-8 object-contain"
               />
-              <span className="text-xl font-display font-bold">Fiji Solutions</span>
+              <span className="text-xl font-bold">Fiji Solutions</span>
             </div>
             <p className="text-gray-400 mb-4">
               {t('footer.description')}
@@ -103,7 +105,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  to={language === 'en' ? '/en' : '/el'}
+                  href={language === 'en' ? '/en' : '/el'}
                   onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
@@ -112,7 +114,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to={language === 'en' ? '/en/portfolio' : '/el/portfolio'}
+                  href={language === 'en' ? '/en/portfolio' : '/el/portfolio'}
                   onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
@@ -121,7 +123,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to={language === 'en' ? '/en/contact' : '/el/contact'}
+                  href={language === 'en' ? '/en/contact' : '/el/contact'}
                   onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >
@@ -130,7 +132,7 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to={language === 'en' ? '/en/legal' : '/el/legal'}
+                  href={language === 'en' ? '/en/legal' : '/el/legal'}
                   onClick={scrollToTop}
                   className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                 >

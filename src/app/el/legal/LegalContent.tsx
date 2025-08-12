@@ -1,24 +1,17 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import SEOHead from '../components/SEOHead';
 import { Building, MapPin, Hash, Euro, User, Shield } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '@/context/LanguageContext';
 
-const Legal: React.FC = () => {
-  const { language, t } = useLanguage();
-
-  const canonicalUrl = language === 'en' ? 'https://fijisolutions.net/en/legal' : 'https://fijisolutions.net/el/legal';
+export default function LegalContent() {
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
-      <SEOHead
-        title={t('seo.legal.title')}
-        description={t('seo.legal.description')}
-        keywords={t('seo.legal.keywords')}
-        canonicalUrl={canonicalUrl}
-      />
-      <section className="section">
-        <div className="container-custom">
+      <section className="py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -161,6 +154,4 @@ const Legal: React.FC = () => {
       </section>
     </div>
   );
-};
-
-export default Legal;
+}

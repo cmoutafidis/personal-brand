@@ -1,8 +1,9 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Clock, Building2, CreditCard } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
-import {Link} from "react-scroll";
+import { useLanguage } from '@/context/LanguageContext';
 
 const Solutions: React.FC = () => {
   const { t } = useLanguage();
@@ -30,11 +31,20 @@ const Solutions: React.FC = () => {
     }
   ];
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="section bg-gray-50 dark:bg-gray-800">
-      <div className="container-custom">
-        <div className="section-title">
-          <h2 className="mb-2">{t('solutions.title')}</h2>
+    <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-primary-600 dark:text-primary-400">
+            {t('solutions.title')}
+          </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             {t('solutions.subtitle')}
           </p>
@@ -48,7 +58,7 @@ const Solutions: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card p-6 text-center"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg p-6 text-center"
             >
               <div className="inline-block p-4 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400 mb-4">
                 {solution.icon}
@@ -77,15 +87,12 @@ const Solutions: React.FC = () => {
             <p className="mb-6">
               {t('solutions.cta.description')}
             </p>
-            <Link
-              to="contact"
-              smooth={true}
-              offset={-70}
-              duration={100}
-              className="btn bg-white text-primary-600 hover:bg-gray-100 cursor-pointer"
+            <button
+              onClick={scrollToContact}
+              className="inline-flex items-center justify-center px-6 py-3 bg-white text-primary-600 hover:bg-gray-100 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer"
             >
               {t('solutions.cta.button')}
-            </Link>
+            </button>
           </div>
         </motion.div>
       </div>

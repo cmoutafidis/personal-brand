@@ -1,32 +1,43 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, Sun, Moon } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
-import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '@/context/ThemeContext';
+import { useLanguage } from '@/context/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 
-interface NavbarProps {
-  scrolling: boolean;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
+const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
   const { darkMode, toggleDarkMode } = useTheme();
   const { t, language } = useLanguage();
-  const location = useLocation();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const navLinks = [
-    { name: t('nav.home'), to: language === 'en' ? '/en' : '/el' },
-    { name: t('nav.portfolio'), to: language === 'en' ? '/en/portfolio' : '/el/portfolio' },
-    { name: t('nav.contact'), to: language === 'en' ? '/en/contact' : '/el/contact' },
+    { name: t('nav.home'), href: language === 'en' ? '/en' : '/el' },
+    { name: t('nav.portfolio'), href: language === 'en' ? '/en/portfolio' : '/el/portfolio' },
+    { name: t('nav.contact'), href: language === 'en' ? '/en/contact' : '/el/contact' },
   ];
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   return (
@@ -37,19 +48,18 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
           : 'bg-transparent'
       }`}
     >
-      <nav className="container-custom py-4">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           <Link
-            to={language === 'el' ? '/el' : '/en'}
-            onClick={scrollToTop}
-            className="flex items-center space-x-2 cursor-pointer"
+            href={language === 'el' ? '/el' : '/en'}
+            className="flex items-center space-x-2"
           >
             <img
               src="/fiji_solutions.png"
               alt="Fiji Solutions Logo"
               className="h-8 w-8 object-contain"
             />
-            <span className="text-xl font-display font-bold text-gray-900 dark:text-white">
+            <span className="text-xl font-bold text-gray-900 dark:text-white">
               Fiji Solutions
             </span>
           </Link>
@@ -60,10 +70,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
-                  onClick={scrollToTop}
-                  to={link.to}
+                  href={link.href}
                   className={`text-gray-700 hover:text-primary-600 dark:text-gray-300 dark:hover:text-primary-400 font-medium transition-colors ${
-                    location.pathname === link.to ? 'text-primary-600 dark:text-primary-400' : ''
+                    pathname === link.href ? 'text-primary-600 dark:text-primary-400' : ''
                   }`}
                 >
                   {link.name}
@@ -118,10 +127,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrolling }) => {
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
-                  to={link.to}
+                  href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-primary-400 dark:hover:bg-gray-800 ${
-                    location.pathname === link.to ? 'text-primary-600 dark:text-primary-400' : ''
+                    pathname === link.href ? 'text-primary-600 dark:text-primary-400' : ''
                   }`}
                 >
                   {link.name}

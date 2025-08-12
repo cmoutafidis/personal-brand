@@ -1,6 +1,8 @@
+'use client';
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { Language } from '../types/language';
+import { useRouter, usePathname } from 'next/navigation';
+import { Language } from '@/types/language';
 
 type LanguageContextType = {
   language: Language;
@@ -18,58 +20,56 @@ export const useLanguage = () => useContext(LanguageContext);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>('en');
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     // Check URL path for language
-    const path = window.location.pathname;
-    if (path.startsWith('/en/') || path === '/en') {
+    if (pathname.startsWith('/en/') || pathname === '/en') {
       setLanguageState('en');
-    } else if (path.startsWith('/el/') || path === '/el') {
+    } else if (pathname.startsWith('/el/') || pathname === '/el') {
       setLanguageState('el');
     } else {
       // Default to English for any other path
       setLanguageState('en');
     }
-  }, []);
+  }, [pathname]);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem('language', lang);
 
     // Update URL without reload
-    const currentPath = location.pathname;
     let newPath;
 
     if (lang === 'en') {
-      if (currentPath.startsWith('/en/')) {
-        newPath = currentPath;
-      } else if (currentPath.startsWith('/el/')) {
-        newPath = currentPath.replace('/el', '/en');
-      } else if (currentPath === '/el') {
+      if (pathname.startsWith('/en/')) {
+        newPath = pathname;
+      } else if (pathname.startsWith('/el/')) {
+        newPath = pathname.replace('/el', '/en');
+      } else if (pathname === '/el') {
         newPath = '/en';
       } else {
-        newPath = `/en${currentPath === '/' ? '' : currentPath}`;
+        newPath = `/en${pathname === '/' ? '' : pathname}`;
       }
     } else {
-      if (currentPath.startsWith('/el/')) {
-        newPath = currentPath;
-      } else if (currentPath.startsWith('/en/')) {
-        newPath = currentPath.replace('/en', '/el');
-      } else if (currentPath === '/en') {
+      if (pathname.startsWith('/el/')) {
+        newPath = pathname;
+      } else if (pathname.startsWith('/en/')) {
+        newPath = pathname.replace('/en', '/el');
+      } else if (pathname === '/en') {
         newPath = '/el';
       } else {
-        newPath = `/el${currentPath === '/' ? '' : currentPath}`;
+        newPath = `/el${pathname === '/' ? '' : pathname}`;
       }
     }
 
-    if (newPath !== currentPath) {
-      navigate(newPath, { replace: true });
+    if (newPath !== pathname) {
+      router.push(newPath);
     }
   };
 
-  // Simple translation function - in a real app, you'd use a proper i18n library
+  // Translation function
   const t = (key: string): string => {
     const translations: Record<Language, Record<string, string>> = {
       en: {
@@ -141,10 +141,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'contact.address.street': 'Marinou Antipa 40',
         'contact.address.city': 'Pilea 570 01, Greece',
 
-        // Services
-        'services.title': 'Our Work',
-        'services.subtitle': 'Projects we have done with our existing clients.',
-
         // Portfolio/Projects
         'projects.title': 'Projects',
         'projects.subtitle': 'Featured work and contributions',
@@ -155,64 +151,38 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'projects.checkitout': 'Check it out',
         'projects.code': 'Source Code',
 
-        // Footer
-        'footer.description': 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
-        'footer.links': 'Quick Links',
-        'footer.projects': 'Projects',
-        'footer.rights': 'All rights reserved.',
-
-        // SEO Content
-        'seo.home.title': 'We help your business grow online | Fiji Solutions',
-        'seo.home.description': 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative web development, AI solutions, cloud services, mobile app development, and blockchain technology to help businesses grow online.',
-        'seo.home.keywords': 'software development, IT consulting, custom software development, mobile app development, big data consulting, enterprise software development, solution consulting, software consulting, Thessaloniki Greece',
-
-        'seo.portfolio.title': 'Our Portfolio | Fiji Solutions',
-        'seo.portfolio.description': 'Explore Fiji Solutions\' portfolio showcasing our software development, IT consulting, mobile app development, and enterprise software solutions for clients in Thessaloniki, Greece.',
-        'seo.portfolio.keywords': 'portfolio, software development projects, IT consulting projects, mobile app development, enterprise software development, custom software solutions, Thessaloniki Greece',
-
-        'seo.contact.title': 'Contact Us for Free IT Consultation | Fiji Solutions',
-        'seo.contact.description': 'Contact Fiji Solutions in Thessaloniki, Greece for expert IT consulting and custom software development. Fill out our form for a free consultation.',
-        'seo.contact.keywords': 'contact, free consultation, IT consulting, software development consultation, mobile app development, big data consulting, Thessaloniki Greece',
-
-        'seo.legal.title': 'Company Information & Legal Details | Fiji Solutions',
-        'seo.legal.description': 'Legal information and company registration details for Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE), based in Thessaloniki, Greece.',
-        'seo.legal.keywords': 'legal information, company registration, GEMI number, Fiji Solutions IKE, Thessaloniki Greece, business registration',
-
-        // Services - detailed content
+        // Services
+        'services.title': 'Our Work',
+        'services.subtitle': 'Projects we have done with our existing clients.',
         'services.software.title': 'Software Development',
         'services.software.description': 'End-to-end development of web applications, mobile solutions, and enterprise software that fit to specific business needs.',
         'services.software.feature1': 'Custom Software Applications',
         'services.software.feature2': 'Web Applications',
         'services.software.feature3': 'Mobile Applications',
         'services.software.feature4': 'System Integration',
-
         'services.enterprise.title': 'Enterprise Software Development',
         'services.enterprise.description': 'Expert consulting and implementation of cloud solutions across major platforms.',
         'services.enterprise.feature1': 'Large-scale Software Systems',
         'services.enterprise.feature2': 'Business Process Integration',
         'services.enterprise.feature3': 'Scalable Architecture',
         'services.enterprise.feature4': 'Enterprise Solutions',
-
         'services.ai.title': 'AI Solutions',
         'services.ai.description': 'AI implementations and integrations that save you money and will bring you more customers.',
         'services.ai.feature1': 'AI Chat Agents',
         'services.ai.feature2': 'AI Voice Assistants',
         'services.ai.feature3': 'AI-Powered Service Desk',
         'services.ai.feature4': 'Process Automations',
-
         'services.payment.title': 'Payment Integration',
         'services.payment.description': 'Money is the oxygen of your company. We make the process simple and allow your customers to pay you with a variety of payment methods.',
         'services.payment.feature1': 'Credit Card Processing',
         'services.payment.feature2': 'Payment Gateway Integration',
         'services.payment.feature3': 'Digital Wallets',
         'services.payment.feature4': 'Crypto Payments',
-
         'services.blockchain.title': 'Blockchain Development',
         'services.blockchain.description': 'Modern blockchain solutions for various industries and use cases.',
         'services.blockchain.feature1': 'Smart Contract Development',
         'services.blockchain.feature2': 'DeFi Applications',
         'services.blockchain.feature3': 'Blockchain Integration',
-
         'services.consulting.title': 'IT Consulting',
         'services.consulting.description': 'We make sure that your business runs smoothly and efficiently. This is very important for your business to grow.',
         'services.consulting.feature1': 'Technology Strategy',
@@ -245,6 +215,16 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'industries.startups.description': 'Innovative solutions to drive startup growth and success.',
         'industries.blockchain.title': 'Blockchain',
         'industries.blockchain.description': 'Modern blockchain solutions for various industries.',
+
+        // Footer
+        'footer.description': 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
+        'footer.links': 'Quick Links',
+        'footer.projects': 'Projects',
+        'footer.rights': 'All rights reserved.',
+
+        // Vapi
+        'vapi.connecting': 'Connecting...',
+        'vapi.end_call': 'End Call',
 
         // Legal Page
         'legal.title': 'Legal Information',
@@ -345,10 +325,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'contact.address.street': 'Μαρίνου Αντύπα 40',
         'contact.address.city': 'Πυλαία 57001, Ελλάδα',
 
-        // Services
-        'services.title': 'Η δουλειά μας',
-        'services.subtitle': 'Πράγματα που φτιάξαμε για τους πελάτες μας.',
-
         // Portfolio/Projects
         'projects.title': 'Έργα μας',
         'projects.subtitle': 'Έργα και δουλειές για την κοινότητα',
@@ -359,96 +335,80 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'projects.checkitout': 'Δες το',
         'projects.code': 'Ανοιχτός κώδικας',
 
+        // Services
+        'services.title': 'Η δουλειά μας',
+        'services.subtitle': 'Πράγματα που φτιάξαμε για τους πελάτες μας.',
+        'services.software.title': 'Ανάπτυξη Λογισμικού',
+        'services.software.description': 'Ολοκληρωμένη ανάπτυξη web εφαρμογών, mobile λύσεων και εταιρικού λογισμικού που ταιριάζει στις συγκεκριμένες επιχειρηματικές ανάγκες.',
+        'services.software.feature1': 'Προσαρμοσμένες Εφαρμογές Λογισμικού',
+        'services.software.feature2': 'Web Εφαρμογές',
+        'services.software.feature3': 'Mobile Εφαρμογές',
+        'services.software.feature4': 'Ενσωμάτωση Συστημάτων',
+        'services.enterprise.title': 'Εταιρικό Λογισμικό',
+        'services.enterprise.description': 'Εξειδικευμένη συμβουλευτική και υλοποίηση cloud λύσεων σε μεγάλες πλατφόρμες.',
+        'services.enterprise.feature1': 'Μεγάλα Συστήματα Λογισμικού',
+        'services.enterprise.feature2': 'Ενσωμάτωση Επιχειρηματικών Διαδικασιών',
+        'services.enterprise.feature3': 'Επεκτάσιμη Αρχιτεκτονική',
+        'services.enterprise.feature4': 'Εταιρικές Λύσεις',
+        'services.ai.title': 'Λύσεις AI',
+        'services.ai.description': 'Υλοποιήσεις και ενσωματώσεις AI που σου εξοικονομούν χρήματα και θα σου φέρουν περισσότερους πελάτες.',
+        'services.ai.feature1': 'AI Chat Agents',
+        'services.ai.feature2': 'AI Φωνητικοί Βοηθοί',
+        'services.ai.feature3': 'AI Service Desk',
+        'services.ai.feature4': 'Αυτοματοποιήσεις Διαδικασιών',
+        'services.payment.title': 'Ενσωμάτωση Πληρωμών',
+        'services.payment.description': 'Τα λεφτά είναι το οξυγόνο της εταιρείας σου. Κάνουμε τη διαδικασία απλή και αφήνουμε τους πελάτες σου να πληρώνουν με διάφορους τρόπους.',
+        'services.payment.feature1': 'Επεξεργασία Πιστωτικών Καρτών',
+        'services.payment.feature2': 'Ενσωμάτωση Payment Gateway',
+        'services.payment.feature3': 'Ψηφιακά Πορτοφόλια',
+        'services.payment.feature4': 'Crypto Πληρωμές',
+        'services.blockchain.title': 'Ανάπτυξη Blockchain',
+        'services.blockchain.description': 'Σύγχρονες blockchain λύσεις για διάφορους κλάδους και περιπτώσεις χρήσης.',
+        'services.blockchain.feature1': 'Ανάπτυξη Smart Contracts',
+        'services.blockchain.feature2': 'DeFi Εφαρμογές',
+        'services.blockchain.feature3': 'Ενσωμάτωση Blockchain',
+        'services.consulting.title': 'IT Συμβουλευτική',
+        'services.consulting.description': 'Φροντίζουμε η επιχείρησή σου να λειτουργεί ομαλά και αποδοτικά. Αυτό είναι πολύ σημαντικό για να μεγαλώσει η επιχείρησή σου.',
+        'services.consulting.feature1': 'Στρατηγική Τεχνολογίας',
+        'services.consulting.feature2': 'Βελτιστοποίηση Υποδομής',
+        'services.consulting.feature3': 'Ψηφιακός Μετασχηματισμός',
+        'services.consulting.feature4': 'Ευθυγράμμιση IT Στρατηγικής',
+
+        // Technologies
+        'technologies.title': 'Τεχνολογίες',
+        'technologies.subtitle': 'Αξιοποιώντας τη δύναμη των τεχνολογιών για εξαιρετικές λύσεις',
+        'technologies.frontend': 'Frontend',
+        'technologies.backend': 'Backend',
+        'technologies.cloud': 'Cloud & DevOps',
+        'technologies.ai': 'AI & Data',
+        'technologies.blockchain': 'Blockchain',
+        'technologies.trading': 'Trading',
+
+        // Industries
+        'industries.title': 'Κλάδοι που Εξυπηρετούμε',
+        'industries.subtitle': 'Παρέχοντας εξειδίκευση σε πολλούς τομείς',
+        'industries.telecom.title': 'Τηλεπικοινωνίες',
+        'industries.telecom.description': 'Προηγμένες λύσεις για σύγχρονη υποδομή και υπηρεσίες επικοινωνίας.',
+        'industries.banking.title': 'Τραπεζικά & Χρηματοοικονομικά',
+        'industries.banking.description': 'Ασφαλή και αποδοτικά συστήματα για χρηματοπιστωτικά ιδρύματα και υπηρεσίες.',
+        'industries.consulting.title': 'Συμβουλευτική',
+        'industries.consulting.description': 'Στρατηγική τεχνολογική συμβουλευτική για επιχειρηματικό μετασχηματισμό.',
+        'industries.travel.title': 'Ταξίδια & Τουρισμός',
+        'industries.travel.description': 'Ψηφιακές λύσεις για βελτιωμένες ταξιδιωτικές εμπειρίες και λειτουργίες.',
+        'industries.startups.title': 'Startups',
+        'industries.startups.description': 'Καινοτόμες λύσεις για να οδηγήσουν την ανάπτυξη και επιτυχία των startups.',
+        'industries.blockchain.title': 'Blockchain',
+        'industries.blockchain.description': 'Σύγχρονες blockchain λύσεις για διάφορους κλάδους.',
+
         // Footer
         'footer.description': 'Η Fiji Solutions είναι εταιρεία λογισμικού στη Θεσσαλονίκη, που φτιάχνει λογισμικό και σου δίνει συμβουλές για την επιχείρησή σου.',
         'footer.links': 'Γρήγοροι σύνδεσμοι',
         'footer.projects': 'Έργα',
         'footer.rights': 'Όλα τα δικαιώματα δικά μας.',
 
-        // SEO Content
-        'seo.home.title': 'Βοηθάμε την επιχείρησή σου να μεγαλώσει online | Fiji Solutions',
-        'seo.home.description': 'Η Fiji Solutions είναι εταιρεία λογισμικού στη Θεσσαλονίκη, που φτιάχνει κορυφαίο λογισμικό και δίνει συμβουλές για να μεγαλώσει η επιχείρησή σου online. Από ιστοσελίδες και AI μέχρι εφαρμογές κινητών και blockchain, τα έχουμε όλα.',
-        'seo.home.keywords': 'λογισμικό Θεσσαλονίκη, συμβουλές IT, προσαρμοσμένο λογισμικό, εφαρμογές κινητών, big data, εταιρικό λογισμικό, λύσεις τεχνολογίας, Θεσσαλονίκη Ελλάδα',
-
-        'seo.portfolio.title': 'Η δουλειά μας | Fiji Solutions',
-        'seo.portfolio.description': 'Δες τη δουλειά της Fiji Solutions, με λογισμικό, συμβουλές IT, εφαρμογές κινητών και λύσεις για επιχειρήσεις στη Θεσσαλονίκη.',
-        'seo.portfolio.keywords': 'δουλειά, έργα λογισμικού, συμβουλές IT, εφαρμογές κινητών, εταιρικό λογισμικό, λύσεις λογισμικού, Θεσσαλονίκη Ελλάδα',
-
-        'seo.contact.title': 'Μίλα μαζί μας για δωρεάν συμβουλές IT | Fiji Solutions',
-        'seo.contact.description': 'Μίλα με τη Fiji Solutions στη Θεσσαλονίκη για συμβουλές IT και λογισμικό. Συμπλήρωσε τη φόρμα για μια δωρεάν κουβέντα.',
-        'seo.contact.keywords': 'επικοινωνία, δωρεάν συμβουλές, συμβουλές IT, λογισμικό, εφαρμογές κινητών, big data, Θεσσαλονίκη Ελλάδα',
-
-        'seo.legal.title': 'Πληροφορίες εταιρείας | Fiji Solutions',
-        'seo.legal.description': 'Όλα τα νομικά και τα στοιχεία της Fiji Solutions ΙΚΕ, με έδρα στη Θεσσαλονίκη.',
-        'seo.legal.keywords': 'νομικά, στοιχεία εταιρείας, ΓΕΜΗ, Fiji Solutions ΙΚΕ, Θεσσαλονίκη Ελλάδα',
-
-        // Services - detailed content
-        'services.software.title': 'Φτιάχνουμε λογισμικό',
-        'services.software.description': 'Φτιάχνουμε εφαρμογές για web, κινητά και επιχειρήσεις, κομμένες και ραμμένες για σένα.',
-        'services.software.feature1': 'Εφαρμογές στα μέτρα σου',
-        'services.software.feature2': 'Web εφαρμογές',
-        'services.software.feature3': 'Εφαρμογές για κινητά',
-        'services.software.feature4': 'Σύνδεση συστημάτων',
-
-        'services.enterprise.title': 'Λογισμικό για μεγάλες επιχειρήσεις',
-        'services.enterprise.description': 'Συμβουλές και λύσεις cloud για μεγάλες δουλειές.',
-        'services.enterprise.feature1': 'Μεγάλα συστήματα λογισμικού',
-        'services.enterprise.feature2': 'Σύνδεση διαδικασιών',
-        'services.enterprise.feature3': 'Αρχιτεκτονική που μεγαλώνει',
-        'services.enterprise.feature4': 'Εταιρικές λύσεις',
-
-        'services.ai.title': 'AI λύσεις',
-        'services.ai.description': 'AI λύσεις που σου γλιτώνουν λεφτά και σου φέρνουν περισσότερους πελάτες.',
-        'services.ai.feature1': 'AI για συνομιλίες',
-        'services.ai.feature2': 'AI φωνητικοί βοηθοί',
-        'services.ai.feature3': 'Service Desk με AI',
-        'services.ai.feature4': 'Αυτοματισμοί',
-
-        'services.payment.title': 'Πληρωμές',
-        'services.payment.description': 'Τα λεφτά κρατάνε την επιχείρησή σου ζωντανή. Κάνουμε τις πληρωμές απλές και αφήνουμε τους πελάτες σου να πληρώνουν όπως θέλουν.',
-        'services.payment.feature1': 'Πιστωτικές κάρτες',
-        'services.payment.feature2': 'Σύνδεση με payment gateways',
-        'services.payment.feature3': 'Ψηφιακά πορτοφόλια',
-        'services.payment.feature4': 'Πληρωμές με κρυπτονομίσματα',
-
-        'services.blockchain.title': 'Blockchain ανάπτυξη',
-        'services.blockchain.description': 'Καινούργιες λύσεις blockchain για κάθε κλάδο.',
-        'services.blockchain.feature1': 'Smart Contracts',
-        'services.blockchain.feature2': 'DeFi εφαρμογές',
-        'services.blockchain.feature3': 'Σύνδεση blockchain',
-
-        'services.consulting.title': 'Συμβουλές IT',
-        'services.consulting.description': 'Κάνουμε την επιχείρησή σου να τρέχει ομαλά και γρήγορα. Αυτό είναι το κλειδί για να μεγαλώσεις.',
-        'services.consulting.feature1': 'Στρατηγική τεχνολογίας',
-        'services.consulting.feature2': 'Βελτίωση υποδομών',
-        'services.consulting.feature3': 'Ψηφιακός μετασχηματισμός',
-        'services.consulting.feature4': 'Στρατιγική IT με στόχους',
-
-        // Technologies
-        'technologies.title': 'Οι Τεχνολογίες μας',
-        'technologies.subtitle': 'Χρησιμοποιούμε κορυφαίες τεχνολογίες για να σου δώσουμε τις καλύτερες λύσεις',
-        'technologies.frontend': 'Frontend',
-        'technologies.backend': 'Backend',
-        'technologies.cloud': 'Cloud & DevOps',
-        'technologies.ai': 'AI & Δεδομένα',
-        'technologies.blockchain': 'Blockchain',
-        'technologies.trading': 'Trading',
-
-        // Industries
-        'industries.title': 'Κλάδοι που δουλεύουμε',
-        'industries.subtitle': 'Έχουμε εμπειρία σε πολλούς τομείς',
-        'industries.telecom.title': 'Τηλεπικοινωνίες',
-        'industries.telecom.description': 'Λύσεις για σύγχρονες επικοινωνίες και υποδομές.',
-        'industries.banking.title': 'Τράπεζες & Χρηματοοικονομικά',
-        'industries.banking.description': 'Ασφαλή και γρήγορα συστήματα για τράπεζες και χρηματοοικονομικές υπηρεσίες.',
-        'industries.consulting.title': 'Συμβουλευτικές υπηρεσίες',
-        'industries.consulting.description': 'Συμβουλές τεχνολογίας για να αλλάξεις την επιχείρησή σου.',
-        'industries.travel.title': 'Ταξίδια & Τουρισμός',
-        'industries.travel.description': 'Ψηφιακές λύσεις για καλύτερη εμπειρία ταξίδιού και λειτουργίες.',
-        'industries.startups.title': 'Startups',
-        'industries.startups.description': 'Καινοτόμες λύσεις για να μεγαλώσει η startups σου.',
-        'industries.blockchain.title': 'Blockchain',
-        'industries.blockchain.description': 'Μοντέρνες λύσεις blockchain για κάθε κλάδο.',
+        // Vapi
+        'vapi.connecting': 'Συνδέεται...',
+        'vapi.end_call': 'Τέλος κλήσης',
 
         // Legal Page
         'legal.title': 'Νομικές Πληροφορίες',

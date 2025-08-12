@@ -1,7 +1,9 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Landmark, Rocket, Plane, Link, Building as Buildings } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { Building2, Landmark, Rocket, Plane, Link, Building } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Industries: React.FC = () => {
   const { t } = useLanguage();
@@ -18,7 +20,7 @@ const Industries: React.FC = () => {
       description: t('industries.banking.description')
     },
     {
-      icon: <Buildings className="h-12 w-12" />,
+      icon: <Building className="h-12 w-12" />,
       name: t('industries.consulting.title'),
       description: t('industries.consulting.description')
     },
@@ -40,10 +42,12 @@ const Industries: React.FC = () => {
   ];
 
   return (
-    <section id="industries" className="section bg-gray-50 dark:bg-gray-800">
-      <div className="container-custom">
-        <div className="section-title">
-          <h2 className="mb-2">{t('industries.title')}</h2>
+    <section id="industries" className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-primary-600 dark:text-primary-400">
+            {t('industries.title')}
+          </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             {t('industries.subtitle')}
           </p>

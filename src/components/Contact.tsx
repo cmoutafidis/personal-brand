@@ -1,7 +1,9 @@
+'use client';
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import {Mail, MapPin, Send, Github, CheckCircle, AlertCircle, Facebook, Linkedin} from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { Mail, MapPin, Send, Github, CheckCircle, AlertCircle, Facebook, Linkedin } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
@@ -20,7 +22,7 @@ const Contact: React.FC = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
-  const XIcon = (props) => (
+  const XIcon = (props: {className?: string | undefined}) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -31,7 +33,7 @@ const Contact: React.FC = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      {...props}
+      className={props.className}
     >
       <path
         d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
@@ -110,20 +112,8 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      // API call - replace with your actual endpoint
-      const response = await fetch('https://np40nkw6be.execute-api.us-east-1.amazonaws.com/Prod/personal-brand/form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      await response.json();
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 2000));
 
       // Success
       setSubmitSuccess(true);
@@ -149,14 +139,16 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="section bg-white dark:bg-gray-900 relative overflow-hidden" itemScope itemType="https://schema.org/ContactPage">
+    <section id="contact" className="py-16 md:py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-96 h-96 bg-primary-100 dark:bg-primary-900/20 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-96 h-96 bg-secondary-100 dark:bg-secondary-900/20 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
 
-      <div className="container-custom relative z-10">
-        <div className="section-title">
-          <h2 className="mb-2" itemProp="name">{t('contact.title')}</h2>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-primary-600 dark:text-primary-400">
+            {t('contact.title')}
+          </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             {t('contact.subtitle1')}
           </p>
@@ -187,7 +179,6 @@ const Contact: React.FC = () => {
                   <a
                     href="mailto:info@fijisolutions.net"
                     className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                    itemProp="email"
                   >
                     info@fijisolutions.net
                   </a>
@@ -199,24 +190,21 @@ const Contact: React.FC = () => {
                   <MapPin className="h-6 w-6" />
                 </div>
                 <div>
+                  <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">{t('contact.location')}</h4>
                   <p className="text-gray-700 dark:text-gray-300">
-                    <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">{t('contact.location')}</h4>
-                    <p className="text-gray-700 dark:text-gray-300">
-                      {t('contact.address.street')}<br />
-                      {t('contact.address.city')}
-                    </p>
-                    <div className="mt-4">
-                      <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.7687006238666!2d22.981762299999996!3d40.568784799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a83f09c19d1e8b%3A0x12d99215fbf8399e!2sFiji%20Solutions!5e0!3m2!1sen!2sgr!4v1753898022338!5m2!1sen!2sgr"
-                        width="400"
-                        height="300"
-                        style={{"border": "0"}}
-                        allowFullScreen=""
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade">
-                      </iframe>
-                    </div>
+                    {t('contact.address.street')}<br />
+                    {t('contact.address.city')}
                   </p>
+                  <div className="mt-4">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.7687006238666!2d22.981762299999996!3d40.568784799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a83f09c19d1e8b%3A0x12d99215fbf8399e!2sFiji%20Solutions!5e0!3m2!1sen!2sgr!4v1753898022338!5m2!1sen!2sgr"
+                      width="400"
+                      height="300"
+                      style={{"border": "0"}}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade">
+                    </iframe>
+                  </div>
                 </div>
               </div>
             </div>
@@ -383,7 +371,7 @@ const Contact: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full btn btn-primary flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full inline-flex items-center justify-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>

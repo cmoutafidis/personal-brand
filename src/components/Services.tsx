@@ -1,7 +1,9 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Cloud, Bot, CreditCard, Cpu, Lightbulb } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Services: React.FC = () => {
   const { t } = useLanguage();
@@ -46,10 +48,12 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="section bg-white dark:bg-gray-900">
-      <div className="container-custom">
-        <div className="section-title">
-          <h2 className="mb-2">{t('services.title')}</h2>
+    <section id="services" className="py-16 md:py-24 bg-white dark:bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-primary-600 dark:text-primary-400">
+            {t('services.title')}
+          </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             {t('services.subtitle')}
           </p>
@@ -63,7 +67,7 @@ const Services: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card p-6 hover:shadow-xl transition-shadow"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden duration-300 p-6 hover:shadow-xl transition-shadow"
             >
               <div className="text-primary-600 dark:text-primary-400 mb-4">
                 {service.icon}
