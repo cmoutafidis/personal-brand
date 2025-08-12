@@ -1,15 +1,30 @@
-'use client';
+import type { Metadata } from 'next';
+import Hero from '../components/Hero';
+import Challenges from '../components/Challenges';
+import Solutions from '../components/Solutions';
+import Contact from '../components/Contact';
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+export const metadata: Metadata = {
+  title: 'Fiji Solutions | We help your business grow online',
+  description: 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
+  alternates: {
+    canonical: 'https://fijisolutions.net/',
+  },
+  openGraph: {
+    url: 'https://fijisolutions.net/',
+  },
+  twitter: {
+    site: '@fiji_solutions',
+  },
+};
 
 export default function HomePage() {
-  const router = useRouter();
-
-  useEffect(() => {
-    // Redirect to /en by default
-    router.replace('/en');
-  }, [router]);
-
-  return null;
+  return (
+    <>
+      <Hero />
+      <Challenges />
+      <Solutions />
+      <Contact />
+    </>
+  );
 }
