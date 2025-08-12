@@ -1,9 +1,12 @@
 'use client';
 
 import React from 'react';
+import type { Metadata } from 'next';
 import { motion } from 'framer-motion';
 import { Building, MapPin, Hash, Euro, User, Shield } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+
+// Note: Since this is a client component, metadata should be handled by parent or converted to server component
 
 export default function GreekLegalPage() {
   const { t } = useLanguage();
