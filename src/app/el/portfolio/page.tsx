@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     url: 'https://fijisolutions.net/el/portfolio',
     title: 'Η Δουλειά μας | Fiji Solutions',
     description: 'Η δουλειά μας - Πράγματα που φτιάξαμε για τους πελάτες μας. Ανάπτυξη λογισμικού, λύσεις AI και εταιρική συμβουλευτική.',
+    images: [
+      {
+        url: 'https://fijisolutions.net/fijisolutions.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fiji Solutions',
+      },
+    ],
   },
 };
 

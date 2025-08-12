@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     url: 'https://fijisolutions.net/el/contact',
     title: 'Επικοινωνία | Fiji Solutions',
     description: 'Επικοινώνησε με τη Fiji Solutions για δωρεάν συνομιλία. Βοηθάμε επιχειρήσεις να μεγαλώσουν online με ανάπτυξη λογισμικού και IT συμβουλευτική.',
+    images: [
+      {
+        url: 'https://fijisolutions.net/fijisolutions.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fiji Solutions',
+      },
+    ],
   },
 };
 

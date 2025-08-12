@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     url: 'https://fijisolutions.net/el',
     title: 'Fiji Solutions | Βοηθάμε την επιχείρησή σου να μεγαλώσει online',
     description: 'Η Fiji Solutions είναι εταιρεία λογισμικού στη Θεσσαλονίκη που φτιάχνει λογισμικό και σου δίνει συμβουλές για την επιχείρησή σου.',
+    images: [
+      {
+        url: 'https://fijisolutions.net/fijisolutions.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fiji Solutions',
+      },
+    ],
   },
   twitter: {
     title: 'Fiji Solutions | Βοηθάμε την επιχείρησή σου να μεγαλώσει online',

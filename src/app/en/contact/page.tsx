@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     url: 'https://fijisolutions.net/en/contact',
     title: 'Contact Us | Fiji Solutions',
     description: 'Get in touch with Fiji Solutions for a free consultation. We help businesses grow online with custom software development and IT consulting.',
+    images: [
+      {
+        url: 'https://fijisolutions.net/fijisolutions.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fiji Solutions',
+      },
+    ],
   },
 };
 

@@ -14,6 +14,14 @@ export const metadata: Metadata = {
     url: 'https://fijisolutions.net/en/portfolio',
     title: 'Portfolio | Fiji Solutions',
     description: 'Our work - Projects we have done with our existing clients. Software development, AI solutions, and enterprise consulting.',
+    images: [
+      {
+        url: 'https://fijisolutions.net/fijisolutions.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fiji Solutions',
+      },
+    ],
   },
 };
 

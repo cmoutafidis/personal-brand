@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: 'https://fijisolutions.net/en',
+    images: [
+      {
+        url: 'https://fijisolutions.net/fijisolutions.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fiji Solutions',
+      },
+    ],
   },
   twitter: {
     site: '@fiji_solutions',
