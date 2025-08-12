@@ -6,7 +6,6 @@ import { LanguageProvider } from '@/context/LanguageContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Script from 'next/script';
-import VapiChatWidget from '../components/VapiChatWidget';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -75,10 +74,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // VAPI configuration
-  const assistantId = "d6683411-62fe-42cb-ad6f-54dc1eb9eeb7";
-  const vapiApiKey = "4fb313ff-b3ca-4e50-869f-2a28d0939c6f";
-
   return (
     <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`}>
       <head>
@@ -87,12 +82,6 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <ThemeProvider>
-          <LanguageProvider>
-            <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
-              <Navbar />
-              <main>
-                {children}
-              </main>
               <Footer />
               
               {/* Global Chat Widget - visible on all pages */}
@@ -105,13 +94,6 @@ export default function RootLayout({
         </ThemeProvider>
         
         {/* Leadsy AI Script */}
-        <Script
-          id="vtag-ai-js"
-          src="https://r2.leadsy.ai/tag.js"
-          data-pid="18ImLiEFzTBP83210"
-          data-version="062024"
-          strategy="afterInteractive"
-        />
       </body>
     </html>
   );
