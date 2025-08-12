@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/context/ThemeContext';
 import { LanguageProvider } from '@/context/LanguageContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import VapiChatWidget from '../components/VapiChatWidget';
 import Script from 'next/script';
 
 const inter = Inter({
@@ -74,6 +75,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // VAPI configuration
+  const assistantId = "d6683411-62fe-42cb-ad6f-54dc1eb9eeb7";
+  const vapiApiKey = "4fb313ff-b3ca-4e50-869f-2a28d0939c6f";
+
   return (
     <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`}>
       <head>
@@ -89,6 +94,12 @@ export default function RootLayout({
                 {children}
               </main>
               <Footer />
+              
+              {/* Global Chat Widget - visible on all pages */}
+              <VapiChatWidget
+                apiKey={vapiApiKey}
+                assistantId={assistantId}
+              />
             </div>
           </LanguageProvider>
         </ThemeProvider>

@@ -82,6 +82,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         // Hero Section
         'hero.title': 'We help your business grow online',
         'hero.cta': 'Yes, I Want That',
+        'hero.talk': "Let's talk now",
         'hero.description1': 'New technology is very important for your business.',
         'hero.description2': 'However, there are already 101 things on your to-do list. And they are all important!',
 
@@ -221,6 +222,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'footer.projects': 'Projects',
         'footer.rights': 'All rights reserved.',
 
+        // Vapi
+        'vapi.connecting': 'Connecting...',
+        'vapi.end_call': 'End Call',
+
         // Legal Page
         'legal.title': 'Legal Information',
         'legal.subtitle': 'Company registration and legal details',
@@ -261,6 +266,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         // Hero Section
         'hero.title': 'Βοηθάμε την επιχείρησή σου να μεγαλώσει online',
         'hero.cta': 'Ναι, αυτό θέλω',
+        'hero.talk': 'Ας μιλήσουμε τώρα',
         'hero.description1': 'Οι νέες τεχνολογίες είναι πολύ σημαντικές για την επιχείρησή σου.',
         'hero.description2': 'Αλλά έχεις ήδη ένα σωρό πράγματα να κάνεις. Και είναι όλα επίσης σημαντικά!',
 
@@ -399,6 +405,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'footer.links': 'Γρήγοροι σύνδεσμοι',
         'footer.projects': 'Έργα',
         'footer.rights': 'Όλα τα δικαιώματα δικά μας.',
+
+        // Vapi
+        'vapi.connecting': 'Συνδέεται...',
+        'vapi.end_call': 'Τέλος κλήσης',
 
         // Legal Page
         'legal.title': 'Νομικές Πληροφορίες',
