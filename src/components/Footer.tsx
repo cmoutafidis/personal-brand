@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ChevronUp, Github, Facebook, Linkedin } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Footer: React.FC = () => {
   const { t, language } = useLanguage();
@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const XIcon = (props: any) => (
+  const XIcon = (props: {className?: string | undefined}) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      {...props}
+      className={props.className}
     >
       <path
         d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
@@ -50,6 +50,11 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div>
             <div className="flex items-center space-x-2 mb-4">
+              <img
+                src="/fiji_solutions.png"
+                alt="Fiji Solutions Logo"
+                className="h-8 w-8 object-contain"
+              />
               <span className="text-xl font-bold">Fiji Solutions</span>
             </div>
             <p className="text-gray-400 mb-4">

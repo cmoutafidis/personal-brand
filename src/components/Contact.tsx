@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Send, Github, CheckCircle, AlertCircle, Facebook, Linkedin } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '@/context/LanguageContext';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
-  const XIcon = (props: any) => (
+  const XIcon = (props: {className?: string | undefined}) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      {...props}
+      className={props.className}
     >
       <path
         d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
@@ -195,6 +195,16 @@ const Contact: React.FC = () => {
                     {t('contact.address.street')}<br />
                     {t('contact.address.city')}
                   </p>
+                  <div className="mt-4">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3030.7687006238666!2d22.981762299999996!3d40.568784799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a83f09c19d1e8b%3A0x12d99215fbf8399e!2sFiji%20Solutions!5e0!3m2!1sen!2sgr!4v1753898022338!5m2!1sen!2sgr"
+                      width="400"
+                      height="300"
+                      style={{"border": "0"}}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade">
+                    </iframe>
+                  </div>
                 </div>
               </div>
             </div>

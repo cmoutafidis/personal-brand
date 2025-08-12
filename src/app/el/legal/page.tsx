@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Building, MapPin, Hash, Euro, User, Shield } from 'lucide-react';
-import { useLanguage } from '../../../context/LanguageContext';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function GreekLegalPage() {
   const { t } = useLanguage();

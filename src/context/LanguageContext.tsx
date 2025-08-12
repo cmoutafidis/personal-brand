@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { Language } from '../types/language';
+import { Language } from '@/types/language';
 
 type LanguageContextType = {
   language: Language;
@@ -139,10 +139,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'contact.location': 'Location',
         'contact.address.street': 'Marinou Antipa 40',
         'contact.address.city': 'Pilea 570 01, Greece',
-
-        // Services
-        'services.title': 'Our Work',
-        'services.subtitle': 'Projects we have done with our existing clients.',
 
         // Portfolio/Projects
         'projects.title': 'Projects',
@@ -322,10 +318,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         'contact.location': 'Πού είμαστε',
         'contact.address.street': 'Μαρίνου Αντύπα 40',
         'contact.address.city': 'Πυλαία 57001, Ελλάδα',
-
-        // Services
-        'services.title': 'Η δουλειά μας',
-        'services.subtitle': 'Πράγματα που φτιάξαμε για τους πελάτες μας.',
 
         // Portfolio/Projects
         'projects.title': 'Έργα μας',

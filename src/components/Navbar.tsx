@@ -4,8 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Sun, Moon } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
-import { useLanguage } from '../context/LanguageContext';
+import { useTheme } from '@/context/ThemeContext';
+import { useLanguage } from '@/context/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar: React.FC = () => {
@@ -54,6 +54,11 @@ const Navbar: React.FC = () => {
             href={language === 'el' ? '/el' : '/en'}
             className="flex items-center space-x-2"
           >
+            <img
+              src="/fiji_solutions.png"
+              alt="Fiji Solutions Logo"
+              className="h-8 w-8 object-contain"
+            />
             <span className="text-xl font-bold text-gray-900 dark:text-white">
               Fiji Solutions
             </span>

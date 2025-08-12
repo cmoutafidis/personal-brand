@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import { useLanguage } from '@/context/LanguageContext';
 
 interface Project {
   title: string;
@@ -21,14 +21,14 @@ const Projects: React.FC = () => {
     {
       title: t('projects.fiji.title'),
       description: t('projects.fiji.description'),
-      image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/dashboard.png',
       technologies: ['React', 'TypeScript', 'Chart.js', 'API Integration'],
       liveUrl: 'https://finance.fijisolutions.net/',
     },
     {
       title: t('projects.catalytics.title'),
       description: t('projects.catalytics.description'),
-      image: 'https://images.pexels.com/photos/159888/pexels-photo-159888.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: '/catalytics.png',
       technologies: ['Angular', 'TypeScript', 'Web3', 'Blockchain', 'Python'],
       liveUrl: 'https://catalytics.pro/',
     }
