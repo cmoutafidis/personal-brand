@@ -5,7 +5,6 @@ import { ThemeProvider } from '@/context/ThemeContext';
 import { LanguageProvider } from '@/context/LanguageContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import Script from 'next/script';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -82,18 +81,16 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <ThemeProvider>
+          <LanguageProvider>
+            <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+              <Navbar />
+              <main>
+                {children}
+              </main>
               <Footer />
-              
-              {/* Global Chat Widget - visible on all pages */}
-              <VapiChatWidget
-                apiKey={vapiApiKey}
-                assistantId={assistantId}
-              />
             </div>
           </LanguageProvider>
         </ThemeProvider>
-        
-        {/* Leadsy AI Script */}
       </body>
     </html>
   );

@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Content-Security-Policy',
-            value: "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://r2.leadsy.ai; object-src 'none';",
+            value: "script-src 'self' 'unsafe-inline' 'unsafe-eval'; object-src 'none';",
           },
         ],
       },
