@@ -5,8 +5,8 @@ import { ThemeProvider } from '@/context/ThemeContext';
 import { LanguageProvider } from '@/context/LanguageContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import VapiChatWidget from '../components/VapiChatWidget';
 import Script from 'next/script';
+import VapiChatWidget from '../components/VapiChatWidget';
 
 const inter = Inter({
   subsets: ['latin'],
