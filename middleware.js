@@ -127,11 +127,14 @@ export async function middleware(request) {
                 const { readable, writable } = new TransformStream();
                 res.body.pipeTo(writable);
 
-                return new NextResponse(readable, {
+                const response = new NextResponse(readable, {
                     status: res.status,
                     statusText: res.statusText,
                     headers: responseHeaders,
                 });
+
+
+                return response;
             } catch (error) {
 
                 return NextResponse.next();
