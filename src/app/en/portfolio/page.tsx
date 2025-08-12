@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Our work - Projects we have done with our existing clients. Software development, AI solutions, and enterprise consulting.',
   alternates: {
     canonical: 'https://fijisolutions.net/en/portfolio',
-  }
+  },
   openGraph: {
     url: 'https://fijisolutions.net/en/portfolio',
     title: 'Portfolio | Fiji Solutions',

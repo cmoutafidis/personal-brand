@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Η δουλειά μας - Πράγματα που φτιάξαμε για τους πελάτες μας. Ανάπτυξη λογισμικού, λύσεις AI και εταιρική συμβουλευτική.',
   alternates: {
     canonical: 'https://fijisolutions.net/el/portfolio',
-  }
+  },
   openGraph: {
     url: 'https://fijisolutions.net/el/portfolio',
     title: 'Η Δουλειά μας | Fiji Solutions',
