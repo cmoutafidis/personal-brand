@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Στοιχεία εγγραφής και νομικές λεπτομέρειες εταιρείας για τη Fiji Solutions - εταιρεία λογισμικού στη Θεσσαλονίκη.',
     images: [
       {
-        url: '/fijisolutions.png',
+        url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
         alt: 'Fiji Solutions',

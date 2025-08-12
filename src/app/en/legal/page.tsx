@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Company registration and legal details for Fiji Solutions - software company in Thessaloniki, Greece.',
     images: [
       {
-        url: '/fijisolutions.png',
+        url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
         alt: 'Fiji Solutions',

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: 'Η Fiji Solutions είναι εταιρεία λογισμικού στη Θεσσαλονίκη που φτιάχνει λογισμικό και σου δίνει συμβουλές για την επιχείρησή σου.',
     images: [
       {
-        url: '/fijisolutions.png',
+        url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
         alt: 'Fiji Solutions',

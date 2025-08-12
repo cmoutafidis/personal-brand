@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     description: 'Our work - Projects we have done with our existing clients. Software development, AI solutions, and enterprise consulting.',
     images: [
       {
-        url: '/fijisolutions.png',
+        url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
         alt: 'Fiji Solutions',
