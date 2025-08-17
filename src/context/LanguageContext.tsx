@@ -139,7 +139,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         // Contact Location
         'contact.location': 'Location',
         'contact.address.street': 'Marinou Antipa 40',
-        'contact.address.city': 'Pilea 570 01, Greece',
+        'contact.address.city': 'Thessaloniki 570 01, Greece',
 
         // Portfolio/Projects
         'projects.title': 'Projects',
@@ -323,7 +323,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         // Contact Location
         'contact.location': 'Πού είμαστε',
         'contact.address.street': 'Μαρίνου Αντύπα 40',
-        'contact.address.city': 'Πυλαία 57001, Ελλάδα',
+        'contact.address.city': 'Θεσσαλονίκη 57001, Ελλάδα',
 
         // Portfolio/Projects
         'projects.title': 'Έργα μας',
