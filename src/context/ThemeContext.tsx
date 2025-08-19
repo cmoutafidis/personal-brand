@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, {createContext, useContext, useEffect, useState} from 'react';
 
 type ThemeContextType = {
   darkMode: boolean;
@@ -9,12 +9,13 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType>({
   darkMode: false,
-  toggleDarkMode: () => {},
+  toggleDarkMode: () => {
+  },
 });
 
 export const useTheme = () => useContext(ThemeContext);
 
-export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({children}) => {
   const [darkMode, setDarkMode] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -48,7 +49,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   }
 
   return (
-    <ThemeContext.Provider value={{ darkMode, toggleDarkMode }}>
+    <ThemeContext.Provider value={{darkMode, toggleDarkMode}}>
       {children}
     </ThemeContext.Provider>
   );

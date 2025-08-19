@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import {NextResponse} from "next/server";
 
 export async function middleware(request) {
 
@@ -124,7 +124,7 @@ export async function middleware(request) {
                 responseHeaders.set("X-Redirected-From", request.url);
 
                 // Create a ReadableStream from the response body
-                const { readable, writable } = new TransformStream();
+                const {readable, writable} = new TransformStream();
                 res.body.pipeTo(writable);
 
                 const response = new NextResponse(readable, {

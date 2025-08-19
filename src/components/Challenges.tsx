@@ -1,26 +1,25 @@
-'use client';
-
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Clock, DollarSign, Binary } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import {Binary, Clock, DollarSign} from 'lucide-react';
 
-const Challenges: React.FC = () => {
-  const { t } = useLanguage();
+interface ChallengesProps {
+  t: (key: string) => string;
+}
+
+const Challenges: React.FC<ChallengesProps> = ({t}) => {
 
   const challenges = [
     {
-      icon: <Binary className="h-12 w-12" />,
+      icon: <Binary className="h-12 w-12"/>,
       title: t('challenges.old_tech.title'),
       description: t('challenges.old_tech.description')
     },
     {
-      icon: <Clock className="h-12 w-12" />,
+      icon: <Clock className="h-12 w-12"/>,
       title: t('challenges.slow.title'),
       description: t('challenges.slow.description')
     },
     {
-      icon: <DollarSign className="h-12 w-12" />,
+      icon: <DollarSign className="h-12 w-12"/>,
       title: t('challenges.money.title'),
       description: t('challenges.money.description')
     }
@@ -40,15 +39,10 @@ const Challenges: React.FC = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {challenges.map((challenge, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg p-6 text-center"
-            >
-              <div className="inline-block p-4 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400 mb-4">
+            <div key={index}
+                 className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg p-6 text-center">
+              <div
+                className="inline-block p-4 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400 mb-4">
                 {challenge.icon}
               </div>
               <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
@@ -57,7 +51,7 @@ const Challenges: React.FC = () => {
               <p className="text-gray-600 dark:text-gray-400">
                 {challenge.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

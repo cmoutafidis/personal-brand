@@ -1,46 +1,45 @@
-'use client';
-
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Code2, Cloud, Bot, CreditCard, Cpu, Lightbulb } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import {Bot, Cloud, Code2, Cpu, CreditCard, Lightbulb} from 'lucide-react';
 
-const Services: React.FC = () => {
-  const { t } = useLanguage();
+interface ServicesProps {
+  t: (key: string) => string;
+}
+
+const Services: React.FC<ServicesProps> = ({t}) => {
 
   const services = [
     {
-      icon: <Code2 className="h-8 w-8" />,
+      icon: <Code2 className="h-8 w-8"/>,
       title: t('services.software.title'),
       description: t('services.software.description'),
       features: [t('services.software.feature1'), t('services.software.feature2'), t('services.software.feature3'), t('services.software.feature4')]
     },
     {
-      icon: <Cloud className="h-8 w-8" />,
+      icon: <Cloud className="h-8 w-8"/>,
       title: t('services.enterprise.title'),
       description: t('services.enterprise.description'),
       features: [t('services.enterprise.feature1'), t('services.enterprise.feature2'), t('services.enterprise.feature3'), t('services.enterprise.feature4')]
     },
     {
-      icon: <Bot className="h-8 w-8" />,
+      icon: <Bot className="h-8 w-8"/>,
       title: t('services.ai.title'),
       description: t('services.ai.description'),
       features: [t('services.ai.feature1'), t('services.ai.feature2'), t('services.ai.feature3'), t('services.ai.feature4')]
     },
     {
-      icon: <CreditCard className="h-8 w-8" />,
+      icon: <CreditCard className="h-8 w-8"/>,
       title: t('services.payment.title'),
       description: t('services.payment.description'),
       features: [t('services.payment.feature1'), t('services.payment.feature2'), t('services.payment.feature3'), t('services.payment.feature4')]
     },
     {
-      icon: <Cpu className="h-8 w-8" />,
+      icon: <Cpu className="h-8 w-8"/>,
       title: t('services.blockchain.title'),
       description: t('services.blockchain.description'),
       features: [t('services.blockchain.feature1'), t('services.blockchain.feature2'), t('services.blockchain.feature3')]
     },
     {
-      icon: <Lightbulb className="h-8 w-8" />,
+      icon: <Lightbulb className="h-8 w-8"/>,
       title: t('services.consulting.title'),
       description: t('services.consulting.description'),
       features: [t('services.consulting.feature1'), t('services.consulting.feature2'), t('services.consulting.feature3'), t('services.consulting.feature4')]
@@ -61,14 +60,8 @@ const Services: React.FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden duration-300 p-6 hover:shadow-xl transition-shadow"
-            >
+            <div key={index}
+                 className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden duration-300 p-6 hover:shadow-xl transition-shadow">
               <div className="text-primary-600 dark:text-primary-400 mb-4">
                 {service.icon}
               </div>
@@ -86,7 +79,7 @@ const Services: React.FC = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,19 +1,16 @@
-'use client';
-
 import React from 'react';
-import Link from 'next/link';
-import { ChevronUp, Github, Facebook, Linkedin } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import {Facebook, Github, Linkedin} from 'lucide-react';
+import FooterButton from "@/components/FooterButton";
+import QuickLinks from "@/components/QuickLinks";
 
-const Footer: React.FC = () => {
-  const { t, language } = useLanguage();
+interface FooterProps {
+  t: (key: string) => string;
+}
+
+export default function Footer({t}: FooterProps) {
   const currentYear = new Date().getFullYear();
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const XIcon = (props: {className?: string | undefined}) => (
+  const XIcon = (props: { className?: string | undefined }) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -38,13 +35,7 @@ const Footer: React.FC = () => {
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center mb-10">
-          <button
-            onClick={scrollToTop}
-            className="p-4 bg-primary-600 hover:bg-primary-700 rounded-full transition-colors cursor-pointer"
-            aria-label="Back to top"
-          >
-            <ChevronUp className="h-6 w-6" />
-          </button>
+          <FooterButton/>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -68,7 +59,7 @@ const Footer: React.FC = () => {
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="GitHub"
               >
-                <Github className="h-5 w-5" />
+                <Github className="h-5 w-5"/>
               </a>
               <a
                 href="https://x.com/fiji_solutions"
@@ -77,7 +68,7 @@ const Footer: React.FC = () => {
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Twitter"
               >
-                <XIcon className="h-5 w-5" />
+                <XIcon className="h-5 w-5"/>
               </a>
               <a
                 href="https://www.facebook.com/profile.php?id=61578271845868"
@@ -86,7 +77,7 @@ const Footer: React.FC = () => {
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Facebook"
               >
-                <Facebook className="h-5 w-5" />
+                <Facebook className="h-5 w-5"/>
               </a>
               <a
                 href="https://linkedin.com/company/fijisolutionsnet"
@@ -95,51 +86,14 @@ const Footer: React.FC = () => {
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-5 w-5"/>
               </a>
             </div>
           </div>
 
           <div>
             <h3 className="text-lg font-semibold mb-4">{t('footer.links')}</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href={language === 'en' ? '/en' : '/el'}
-                  onClick={scrollToTop}
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
-                >
-                  {t('nav.home')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={language === 'en' ? '/en/portfolio' : '/el/portfolio'}
-                  onClick={scrollToTop}
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
-                >
-                  {t('nav.portfolio')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={language === 'en' ? '/en/contact' : '/el/contact'}
-                  onClick={scrollToTop}
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
-                >
-                  {t('nav.contact')}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={language === 'en' ? '/en/legal' : '/el/legal'}
-                  onClick={scrollToTop}
-                  className="text-gray-400 hover:text-white transition-colors cursor-pointer"
-                >
-                  {t('nav.legal')}
-                </Link>
-              </li>
-            </ul>
+            <QuickLinks/>
           </div>
 
           <div>
@@ -178,5 +132,3 @@ const Footer: React.FC = () => {
     </footer>
   );
 };
-
-export default Footer;

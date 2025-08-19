@@ -1,23 +1,17 @@
-'use client';
-
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Building, MapPin, Hash, Euro, User, Shield } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import {Building, Euro, Hash, MapPin, Shield, User} from 'lucide-react';
 
-export default function LegalContent() {
-  const { t } = useLanguage();
+interface LegalContentProps {
+  t: (key: string) => string;
+}
+
+export default function LegalContent({t}: LegalContentProps) {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-4xl mx-auto"
-          >
+          <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
                 {t('legal.title')}
@@ -30,7 +24,7 @@ export default function LegalContent() {
             <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 md:p-12">
               <div className="flex items-center justify-center mb-8">
                 <div className="p-4 bg-primary-100 dark:bg-primary-900/30 rounded-full">
-                  <Shield className="h-12 w-12 text-primary-600 dark:text-primary-400" />
+                  <Shield className="h-12 w-12 text-primary-600 dark:text-primary-400"/>
                 </div>
               </div>
 
@@ -43,7 +37,7 @@ export default function LegalContent() {
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0 p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full">
-                        <Building className="h-6 w-6 text-primary-600 dark:text-primary-400" />
+                        <Building className="h-6 w-6 text-primary-600 dark:text-primary-400"/>
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
@@ -57,7 +51,7 @@ export default function LegalContent() {
 
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0 p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full">
-                        <MapPin className="h-6 w-6 text-primary-600 dark:text-primary-400" />
+                        <MapPin className="h-6 w-6 text-primary-600 dark:text-primary-400"/>
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
@@ -71,7 +65,7 @@ export default function LegalContent() {
 
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0 p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full">
-                        <Hash className="h-6 w-6 text-primary-600 dark:text-primary-400" />
+                        <Hash className="h-6 w-6 text-primary-600 dark:text-primary-400"/>
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
@@ -87,7 +81,7 @@ export default function LegalContent() {
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0 p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full">
-                        <Euro className="h-6 w-6 text-primary-600 dark:text-primary-400" />
+                        <Euro className="h-6 w-6 text-primary-600 dark:text-primary-400"/>
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
@@ -101,7 +95,7 @@ export default function LegalContent() {
 
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0 p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full">
-                        <Building className="h-6 w-6 text-primary-600 dark:text-primary-400" />
+                        <Building className="h-6 w-6 text-primary-600 dark:text-primary-400"/>
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
@@ -119,7 +113,7 @@ export default function LegalContent() {
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
                       <div className="flex items-center space-x-3 mb-4">
-                        <User className="h-6 w-6 text-primary-600 dark:text-primary-400" />
+                        <User className="h-6 w-6 text-primary-600 dark:text-primary-400"/>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                           {t('legal.partner')}
                         </h3>
@@ -134,7 +128,7 @@ export default function LegalContent() {
 
                     <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-6">
                       <div className="flex items-center space-x-3 mb-4">
-                        <Shield className="h-6 w-6 text-primary-600 dark:text-primary-400" />
+                        <Shield className="h-6 w-6 text-primary-600 dark:text-primary-400"/>
                         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                           {t('legal.administrator')}
                         </h3>
@@ -149,7 +143,7 @@ export default function LegalContent() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     </div>

@@ -7,6 +7,6 @@ export interface LanguageConfig {
 }
 
 export const languages: LanguageConfig[] = [
-  { code: 'en', name: 'EN', flag: '🇺🇸' },
-  { code: 'el', name: 'ΕΛ', flag: '🇬🇷' }
+  {code: 'en', name: 'EN', flag: '🇺🇸'},
+  {code: 'el', name: 'ΕΛ', flag: '🇬🇷'}
 ];

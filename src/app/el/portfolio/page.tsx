@@ -1,8 +1,10 @@
-import type { Metadata } from 'next';
+import type {Metadata} from 'next';
+import {createTranslationFunction} from '@/translations';
 import Services from '../../../components/Services';
 import Technologies from '../../../components/Technologies';
 import Industries from '../../../components/Industries';
 import Projects from '../../../components/Projects';
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Η Δουλειά μας | Fiji Solutions',
@@ -26,12 +28,16 @@ export const metadata: Metadata = {
 };
 
 export default function GreekPortfolioPage() {
+  const language = 'el';
+  const t = createTranslationFunction(language);
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
-      <Services />
-      <Technologies />
-      <Industries />
-      <Projects />
+      <Services t={t}/>
+      <Technologies t={t}/>
+      <Industries t={t}/>
+      <Projects t={t}/>
+      <Footer t={t} language={language}/>
     </div>
   );
 }
