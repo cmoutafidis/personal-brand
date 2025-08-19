@@ -14,11 +14,11 @@ interface VapiWidgetProps {
 }
 
 const VapiWidget: React.FC<VapiWidgetProps> = ({
-                                                 apiKey,
-                                                 assistantId,
-                                                 className = '',
-                                                 buttonText = "Let's talk now"
-                                               }) => {
+  apiKey,
+  assistantId,
+  className = '',
+  buttonText = "Let's talk now"
+}) => {
   const {language} = useLanguage();
 
   const t = createTranslationFunction(language);
