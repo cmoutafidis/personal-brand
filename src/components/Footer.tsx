@@ -5,15 +5,10 @@ import QuickLinks from "@/components/QuickLinks";
 
 interface FooterProps {
   t: (key: string) => string;
-  language: string;
 }
 
-export default function Footer({t, language}: FooterProps) {
+export default function Footer({t}: FooterProps) {
   const currentYear = new Date().getFullYear();
-
-  const scrollToTop = () => {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  };
 
   const XIcon = (props: { className?: string | undefined }) => (
     <svg

@@ -10,13 +10,6 @@ const Hero: React.FC<HeroProps> = ({t}) => {
   const assistantId = "d6683411-62fe-42cb-ad6f-54dc1eb9eeb7";
   const vapiApiKey = "4fb313ff-b3ca-4e50-869f-2a28d0939c6f";
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({behavior: 'smooth'});
-    }
-  };
-
   return (
     <section id="hero" className="relative min-h-screen flex items-center">
       <div

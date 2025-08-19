@@ -3,7 +3,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {ChevronDown} from 'lucide-react';
 import {useLanguage} from '@/context/LanguageContext';
-import {languages} from '../types/language';
+import {languages} from '@/types/language';
 
 const LanguageSwitcher: React.FC = () => {
   const {language, setLanguage} = useLanguage();
