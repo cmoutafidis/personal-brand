@@ -4,7 +4,7 @@ import React from 'react';
 import {useLanguage} from "@/context/LanguageContext";
 import {createTranslationFunction} from "@/translations";
 
-const ContactButton2: React.FC<ContactButtonProps2> = () => {
+const ContactButton2: React.FC = () => {
   const {language} = useLanguage();
 
   const t = createTranslationFunction(language);

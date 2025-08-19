@@ -31,7 +31,7 @@ export default function GreekLegalPage() {
   return (
     <>
       <LegalContent t={t}/>
-      <Footer t={t} language={language}/>
+      <Footer t={t}/>
     </>
   );
 }

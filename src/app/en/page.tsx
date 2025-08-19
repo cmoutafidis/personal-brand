@@ -35,7 +35,7 @@ export default function EnglishHomePage() {
       <Challenges t={t}/>
       <Solutions t={t}/>
       <Contact t={t}/>
-      <Footer t={t} language={language}/>
+      <Footer t={t}/>
     </>
   );
 }

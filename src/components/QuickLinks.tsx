@@ -5,7 +5,7 @@ import Link from 'next/link';
 import {useLanguage} from "@/context/LanguageContext";
 import {createTranslationFunction} from "@/translations";
 
-const QuickLinks: React.FC<QuickLinksProps> = () => {
+const QuickLinks: React.FC = () => {
   const {language} = useLanguage();
 
   const t = createTranslationFunction(language);

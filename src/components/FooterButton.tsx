@@ -3,7 +3,7 @@
 import React from 'react';
 import {ChevronUp} from 'lucide-react';
 
-const FooterButton: React.FC<FooterButtonProps> = () => {
+const FooterButton: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({top: 0, behavior: 'smooth'});
   };

@@ -37,7 +37,7 @@ export default function EnglishPortfolioPage() {
       <Technologies t={t}/>
       <Industries t={t}/>
       <Projects t={t}/>
-      <Footer t={t} language={language}/>
+      <Footer t={t}/>
     </div>
   );
 }
