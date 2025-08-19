@@ -6,14 +6,17 @@ import { usePathname } from 'next/navigation';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
 import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/translations';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
   const { darkMode, toggleDarkMode } = useTheme();
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const pathname = usePathname();
+
+  const t = (key: string) => translations[language][key] || key;
 
   useEffect(() => {
     const handleScroll = () => {

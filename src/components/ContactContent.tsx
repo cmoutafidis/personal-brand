@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Github, Facebook, Linkedin } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
 
 const XIcon = (props: {className?: string | undefined}) => (
   <svg
@@ -23,8 +22,11 @@ const XIcon = (props: {className?: string | undefined}) => (
   </svg>
 );
 
-export default function ContactContent() {
-  const { t } = useLanguage();
+interface ContactContentProps {
+  t: (key: string) => string;
+}
+
+export default function ContactContent({ t }: ContactContentProps) {
 
   return (
     <>

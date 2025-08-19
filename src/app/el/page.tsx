@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { createTranslationFunction } from '@/translations';
 import Hero from '../../components/Hero';
 import Challenges from '../../components/Challenges';
 import Solutions from '../../components/Solutions';
@@ -33,12 +34,14 @@ export const metadata: Metadata = {
 };
 
 export default function GreekHomePage() {
+  const t = createTranslationFunction('el');
+
   return (
     <>
-      <Hero />
-      <Challenges />
-      <Solutions />
-      <Contact />
+      <Hero t={t} />
+      <Challenges t={t} />
+      <Solutions t={t} />
+      <Contact t={t} />
     </>
   );
 }

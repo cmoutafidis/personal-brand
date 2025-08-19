@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { createTranslationFunction } from '@/translations';
 import LegalContent from './LegalContent';
 
 export const metadata: Metadata = {
@@ -23,5 +24,7 @@ export const metadata: Metadata = {
 };
 
 export default function GreekLegalPage() {
-  return <LegalContent />;
+  const t = createTranslationFunction('el');
+
+  return <LegalContent t={t} />;
 }

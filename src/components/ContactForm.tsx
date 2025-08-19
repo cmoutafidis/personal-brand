@@ -3,10 +3,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle, AlertCircle } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
 
-export default function ContactForm() {
-  const { t } = useLanguage();
+interface ContactFormProps {
+  t: (key: string) => string;
+}
+
+export default function ContactForm({ t }: ContactFormProps) {
 
   // Form state
   const [formData, setFormData] = useState({

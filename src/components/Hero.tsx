@@ -1,11 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
 import VapiWidget from './VapiWidget';
 
-const Hero: React.FC = () => {
-  const { t } = useLanguage();
+interface HeroProps {
+  t: (key: string) => string;
+}
+
+const Hero: React.FC<HeroProps> = ({ t }) => {
   const assistantId = "d6683411-62fe-42cb-ad6f-54dc1eb9eeb7";
   const vapiApiKey = "4fb313ff-b3ca-4e50-869f-2a28d0939c6f";
 

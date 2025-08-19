@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Zap, Clock, Building2, CreditCard } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
 
-const Solutions: React.FC = () => {
-  const { t } = useLanguage();
+interface SolutionsProps {
+  t: (key: string) => string;
+}
+
+const Solutions: React.FC<SolutionsProps> = ({ t }) => {
 
   const solutions = [
     {

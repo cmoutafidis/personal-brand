@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Building, MapPin, Hash, Euro, User, Shield } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
 
-export default function LegalContent() {
-  const { t } = useLanguage();
+interface LegalContentProps {
+  t: (key: string) => string;
+}
+
+export default function LegalContent({ t }: LegalContentProps) {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">

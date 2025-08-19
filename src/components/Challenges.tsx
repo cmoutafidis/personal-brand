@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Clock, DollarSign, Binary } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
 
-const Challenges: React.FC = () => {
-  const { t } = useLanguage();
+interface ChallengesProps {
+  t: (key: string) => string;
+}
+
+const Challenges: React.FC<ChallengesProps> = ({ t }) => {
 
   const challenges = [
     {

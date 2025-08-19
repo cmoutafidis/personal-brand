@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { createTranslationFunction } from '@/translations';
 import Contact from '../../../components/Contact';
 
 export const metadata: Metadata = {
@@ -23,9 +24,11 @@ export const metadata: Metadata = {
 };
 
 export default function EnglishContactPage() {
+  const t = createTranslationFunction('en');
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
-      <Contact />
+      <Contact t={t} />
     </div>
   );
 }

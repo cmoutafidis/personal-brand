@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { createTranslationFunction } from '@/translations';
 import Services from '../../../components/Services';
 import Technologies from '../../../components/Technologies';
 import Industries from '../../../components/Industries';
@@ -26,12 +27,14 @@ export const metadata: Metadata = {
 };
 
 export default function GreekPortfolioPage() {
+  const t = createTranslationFunction('el');
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
-      <Services />
-      <Technologies />
-      <Industries />
-      <Projects />
+      <Services t={t} />
+      <Technologies t={t} />
+      <Industries t={t} />
+      <Projects t={t} />
     </div>
   );
 }

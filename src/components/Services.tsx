@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Cloud, Bot, CreditCard, Cpu, Lightbulb } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
 
-const Services: React.FC = () => {
-  const { t } = useLanguage();
+interface ServicesProps {
+  t: (key: string) => string;
+}
+
+const Services: React.FC<ServicesProps> = ({ t }) => {
 
   const services = [
     {

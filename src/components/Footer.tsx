@@ -2,10 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import { ChevronUp, Github, Facebook, Linkedin } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/translations';
 
 const Footer: React.FC = () => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
   const currentYear = new Date().getFullYear();
+
+  const t = (key: string) => translations[language][key] || key;
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });

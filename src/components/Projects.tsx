@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
 
 interface Project {
   title: string;
@@ -12,8 +11,11 @@ interface Project {
   repoUrl?: string;
 }
 
-const Projects: React.FC = () => {
-  const { t } = useLanguage();
+interface ProjectsProps {
+  t: (key: string) => string;
+}
+
+const Projects: React.FC<ProjectsProps> = ({ t }) => {
 
   const projects: Project[] = [
     {

@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useLanguage } from '@/context/LanguageContext';
 
-const Technologies: React.FC = () => {
-  const { t } = useLanguage();
+interface TechnologiesProps {
+  t: (key: string) => string;
+}
+
+const Technologies: React.FC<TechnologiesProps> = ({ t }) => {
 
   const techCategories = [
     {
