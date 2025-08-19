@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Landmark, Rocket, Plane, Link, Building } from 'lucide-react';

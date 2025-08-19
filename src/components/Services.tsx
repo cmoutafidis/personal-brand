@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Cloud, Bot, CreditCard, Cpu, Lightbulb } from 'lucide-react';
