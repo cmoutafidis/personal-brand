@@ -1,41 +1,40 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Building2, Landmark, Rocket, Plane, Link, Building } from 'lucide-react';
+import {Building, Building2, Landmark, Link, Plane, Rocket} from 'lucide-react';
 
 interface IndustriesProps {
   t: (key: string) => string;
 }
 
-const Industries: React.FC<IndustriesProps> = ({ t }) => {
+const Industries: React.FC<IndustriesProps> = ({t}) => {
 
   const industries = [
     {
-      icon: <Building2 className="h-12 w-12" />,
+      icon: <Building2 className="h-12 w-12"/>,
       name: t('industries.telecom.title'),
       description: t('industries.telecom.description')
     },
     {
-      icon: <Landmark className="h-12 w-12" />,
+      icon: <Landmark className="h-12 w-12"/>,
       name: t('industries.banking.title'),
       description: t('industries.banking.description')
     },
     {
-      icon: <Building className="h-12 w-12" />,
+      icon: <Building className="h-12 w-12"/>,
       name: t('industries.consulting.title'),
       description: t('industries.consulting.description')
     },
     {
-      icon: <Plane className="h-12 w-12" />,
+      icon: <Plane className="h-12 w-12"/>,
       name: t('industries.travel.title'),
       description: t('industries.travel.description')
     },
     {
-      icon: <Rocket className="h-12 w-12" />,
+      icon: <Rocket className="h-12 w-12"/>,
       name: t('industries.startups.title'),
       description: t('industries.startups.description')
     },
     {
-      icon: <Link className="h-12 w-12" />,
+      icon: <Link className="h-12 w-12"/>,
       name: t('industries.blockchain.title'),
       description: t('industries.blockchain.description')
     }
@@ -55,16 +54,10 @@ const Industries: React.FC<IndustriesProps> = ({ t }) => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {industries.map((industry, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center"
-            >
+            <div key={index} className="text-center">
               <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="inline-block p-4 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400 mb-4">
+                <div
+                  className="inline-block p-4 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400 mb-4">
                   {industry.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">
@@ -74,7 +67,7 @@ const Industries: React.FC<IndustriesProps> = ({ t }) => {
                   {industry.description}
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

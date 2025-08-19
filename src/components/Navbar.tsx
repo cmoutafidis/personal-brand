@@ -1,19 +1,19 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Menu, X, Sun, Moon } from 'lucide-react';
-import { useTheme } from '@/context/ThemeContext';
-import { useLanguage } from '@/context/LanguageContext';
-import { translations } from '@/translations';
+import {usePathname} from 'next/navigation';
+import {Menu, Moon, Sun, X} from 'lucide-react';
+import {useTheme} from '@/context/ThemeContext';
+import {useLanguage} from '@/context/LanguageContext';
+import {translations} from '@/translations';
 import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
-  const { darkMode, toggleDarkMode } = useTheme();
-  const { language } = useLanguage();
+  const {darkMode, toggleDarkMode} = useTheme();
+  const {language} = useLanguage();
   const pathname = usePathname();
 
   const t = (key: string) => translations[language][key] || key;
@@ -34,9 +34,9 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: t('nav.home'), href: language === 'en' ? '/en' : '/el' },
-    { name: t('nav.portfolio'), href: language === 'en' ? '/en/portfolio' : '/el/portfolio' },
-    { name: t('nav.contact'), href: language === 'en' ? '/en/contact' : '/el/contact' },
+    {name: t('nav.home'), href: language === 'en' ? '/en' : '/el'},
+    {name: t('nav.portfolio'), href: language === 'en' ? '/en/portfolio' : '/el/portfolio'},
+    {name: t('nav.contact'), href: language === 'en' ? '/en/contact' : '/el/contact'},
   ];
 
   const toggleMobileMenu = () => {
@@ -82,32 +82,32 @@ const Navbar: React.FC = () => {
                 </Link>
               ))}
             </div>
-            <LanguageSwitcher />
+            <LanguageSwitcher/>
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               aria-label="Toggle Dark Mode"
             >
               {darkMode ? (
-                <Sun className="h-5 w-5 text-yellow-400" />
+                <Sun className="h-5 w-5 text-yellow-400"/>
               ) : (
-                <Moon className="h-5 w-5 text-gray-700" />
+                <Moon className="h-5 w-5 text-gray-700"/>
               )}
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center md:hidden">
-            <LanguageSwitcher />
+            <LanguageSwitcher/>
             <button
               onClick={toggleDarkMode}
               className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               aria-label="Toggle Dark Mode"
             >
               {darkMode ? (
-                <Sun className="h-5 w-5 text-yellow-400" />
+                <Sun className="h-5 w-5 text-yellow-400"/>
               ) : (
-                <Moon className="h-5 w-5 text-gray-700" />
+                <Moon className="h-5 w-5 text-gray-700"/>
               )}
             </button>
             <button
@@ -115,9 +115,9 @@ const Navbar: React.FC = () => {
               className="p-2 rounded-lg text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
             >
               {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-6 w-6"/>
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6"/>
               )}
             </button>
           </div>

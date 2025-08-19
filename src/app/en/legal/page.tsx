@@ -1,6 +1,7 @@
-import type { Metadata } from 'next';
-import { createTranslationFunction } from '@/translations';
+import type {Metadata} from 'next';
+import {createTranslationFunction} from '@/translations';
 import LegalContent from './LegalContent';
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Legal Information | Fiji Solutions',
@@ -24,7 +25,13 @@ export const metadata: Metadata = {
 };
 
 export default function EnglishLegalPage() {
-  const t = createTranslationFunction('en');
+  const language = 'en';
+  const t = createTranslationFunction(language);
 
-  return <LegalContent t={t} />;
+  return (
+    <>
+      <LegalContent t={t}/>
+      <Footer t={t} language={language}/>
+    </>
+  );
 }

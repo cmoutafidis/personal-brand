@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import React, {useState} from 'react';
+import {AlertCircle, CheckCircle, Send} from 'lucide-react';
+import {useLanguage} from '@/context/LanguageContext';
+import {createTranslationFunction} from "@/translations";
 
-interface ContactFormProps {
-  t: (key: string) => string;
-}
+export default function ContactForm() {
+  const {language} = useLanguage();
 
-export default function ContactForm({ t }: ContactFormProps) {
+  const t = createTranslationFunction(language);
 
   // Form state
   const [formData, setFormData] = useState({
@@ -26,7 +26,7 @@ export default function ContactForm({ t }: ContactFormProps) {
 
   // Handle input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
+    const {name, value} = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -40,7 +40,7 @@ export default function ContactForm({ t }: ContactFormProps) {
 
   // Validate form
   const validateForm = () => {
-    const { name, email, company, question, message } = formData;
+    const {name, email, company, question, message} = formData;
 
     if (!name.trim()) {
       setSubmitError(t('contact.form.name') + ' ' + t('contact.form.error.required'));
@@ -120,39 +120,28 @@ export default function ContactForm({ t }: ContactFormProps) {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.2 }}
-    >
+    <div>
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
         <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">{t('contact.form.title')}</h3>
 
         {/* Success Message */}
         {submitSuccess && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-6 p-4 bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-lg flex items-center space-x-3"
-          >
-            <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0" />
+          <div
+            className="mb-6 p-4 bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-lg flex items-center space-x-3">
+            <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0"/>
             <p className="text-green-800 dark:text-green-200">
               {t('contact.form.success')}
             </p>
-          </motion.div>
+          </div>
         )}
 
         {/* Error Message */}
         {submitError && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="mb-6 p-4 bg-red-100 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg flex items-center space-x-3"
-          >
-            <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400 flex-shrink-0" />
+          <div
+            className="mb-6 p-4 bg-red-100 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg flex items-center space-x-3">
+            <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400 flex-shrink-0"/>
             <p className="text-red-800 dark:text-red-200">{submitError}</p>
-          </motion.div>
+          </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -248,13 +237,13 @@ export default function ContactForm({ t }: ContactFormProps) {
               </>
             ) : (
               <>
-                <Send className="h-4 w-4 mr-2" />
+                <Send className="h-4 w-4 mr-2"/>
                 {t('contact.form.send')}
               </>
             )}
           </button>
         </form>
       </div>
-    </motion.div>
+    </div>
   );
 }

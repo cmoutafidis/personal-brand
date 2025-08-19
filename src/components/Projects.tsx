@@ -1,6 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import {ExternalLink, Github} from 'lucide-react';
 
 interface Project {
   title: string;
@@ -15,7 +14,7 @@ interface ProjectsProps {
   t: (key: string) => string;
 }
 
-const Projects: React.FC<ProjectsProps> = ({ t }) => {
+const Projects: React.FC<ProjectsProps> = ({t}) => {
 
   const projects: Project[] = [
     {
@@ -48,14 +47,8 @@ const Projects: React.FC<ProjectsProps> = ({ t }) => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg group"
-            >
+            <div key={index}
+                 className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg group">
               <div className="relative h-52 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
                 <img
@@ -88,7 +81,7 @@ const Projects: React.FC<ProjectsProps> = ({ t }) => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium"
                   >
-                    <ExternalLink className="h-4 w-4 mr-1" />
+                    <ExternalLink className="h-4 w-4 mr-1"/>
                     {t('projects.checkitout')}
                   </a>
                   {project.repoUrl && (
@@ -98,13 +91,13 @@ const Projects: React.FC<ProjectsProps> = ({ t }) => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200 font-medium"
                     >
-                      <Github className="h-4 w-4 mr-1" />
+                      <Github className="h-4 w-4 mr-1"/>
                       {t('projects.code')}
                     </a>
                   )}
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

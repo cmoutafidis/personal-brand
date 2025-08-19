@@ -1,11 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 interface TechnologiesProps {
   t: (key: string) => string;
 }
 
-const Technologies: React.FC<TechnologiesProps> = ({ t }) => {
+const Technologies: React.FC<TechnologiesProps> = ({t}) => {
 
   const techCategories = [
     {
@@ -48,14 +47,8 @@ const Technologies: React.FC<TechnologiesProps> = ({ t }) => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {techCategories.map((category, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg p-6"
-            >
+            <div key={index}
+                 className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg p-6">
               <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
                 {category.name}
               </h3>
@@ -69,7 +62,7 @@ const Technologies: React.FC<TechnologiesProps> = ({ t }) => {
                   </span>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

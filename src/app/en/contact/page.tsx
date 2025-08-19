@@ -1,6 +1,7 @@
-import type { Metadata } from 'next';
-import { createTranslationFunction } from '@/translations';
+import type {Metadata} from 'next';
+import {createTranslationFunction} from '@/translations';
 import Contact from '../../../components/Contact';
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Contact Us | Fiji Solutions',
@@ -24,11 +25,13 @@ export const metadata: Metadata = {
 };
 
 export default function EnglishContactPage() {
-  const t = createTranslationFunction('en');
+  const language = 'en';
+  const t = createTranslationFunction(language);
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
-      <Contact t={t} />
+      <Contact t={t}/>
+      <Footer t={t} language={language}/>
     </div>
   );
 }

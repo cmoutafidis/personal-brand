@@ -1,7 +1,6 @@
-import { motion } from 'framer-motion';
-import { Mail, MapPin, Github, Facebook, Linkedin } from 'lucide-react';
+import {Facebook, Github, Linkedin, Mail, MapPin} from 'lucide-react';
 
-const XIcon = (props: {className?: string | undefined}) => (
+const XIcon = (props: { className?: string | undefined }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -26,7 +25,7 @@ interface ContactContentProps {
   t: (key: string) => string;
 }
 
-export default function ContactContent({ t }: ContactContentProps) {
+export default function ContactContent({t}: ContactContentProps) {
 
   return (
     <>
@@ -45,18 +44,14 @@ export default function ContactContent({ t }: ContactContentProps) {
         </p>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
+      <div>
         <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">{t('contact.info.title')}</h3>
 
         <div className="space-y-6">
           <div className="flex items-start space-x-4">
-            <div className="flex-shrink-0 p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400">
-              <Mail className="h-6 w-6" />
+            <div
+              className="flex-shrink-0 p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400">
+              <Mail className="h-6 w-6"/>
             </div>
             <div>
               <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">Email</h4>
@@ -70,13 +65,14 @@ export default function ContactContent({ t }: ContactContentProps) {
           </div>
 
           <div className="flex items-start space-x-4">
-            <div className="flex-shrink-0 p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400">
-              <MapPin className="h-6 w-6" />
+            <div
+              className="flex-shrink-0 p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400">
+              <MapPin className="h-6 w-6"/>
             </div>
             <div>
               <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-1">{t('contact.location')}</h4>
               <p className="text-gray-700 dark:text-gray-300">
-                {t('contact.address.street')}<br />
+                {t('contact.address.street')}<br/>
                 {t('contact.address.city')}
               </p>
               <div className="mt-4">
@@ -103,7 +99,7 @@ export default function ContactContent({ t }: ContactContentProps) {
               className="text-gray-400 hover:text-white transition-colors"
               aria-label="GitHub"
             >
-              <Github className="h-5 w-5" />
+              <Github className="h-5 w-5"/>
             </a>
             <a
               href="https://x.com/fiji_solutions"
@@ -112,7 +108,7 @@ export default function ContactContent({ t }: ContactContentProps) {
               className="text-gray-400 hover:text-white transition-colors"
               aria-label="Twitter"
             >
-              <XIcon className="h-5 w-5" />
+              <XIcon className="h-5 w-5"/>
             </a>
             <a
               href="https://www.facebook.com/profile.php?id=61578271845868"
@@ -121,7 +117,7 @@ export default function ContactContent({ t }: ContactContentProps) {
               className="text-gray-400 hover:text-white transition-colors"
               aria-label="Facebook"
             >
-              <Facebook className="h-5 w-5" />
+              <Facebook className="h-5 w-5"/>
             </a>
             <a
               href="https://linkedin.com/company/fijisolutionsnet"
@@ -130,11 +126,11 @@ export default function ContactContent({ t }: ContactContentProps) {
               className="text-gray-400 hover:text-white transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin className="h-5 w-5" />
+              <Linkedin className="h-5 w-5"/>
             </a>
           </div>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 }

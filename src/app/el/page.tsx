@@ -1,9 +1,10 @@
-import type { Metadata } from 'next';
-import { createTranslationFunction } from '@/translations';
+import type {Metadata} from 'next';
+import {createTranslationFunction} from '@/translations';
 import Hero from '../../components/Hero';
 import Challenges from '../../components/Challenges';
 import Solutions from '../../components/Solutions';
 import Contact from '../../components/Contact';
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Fiji Solutions | Βοηθάμε την επιχείρησή σου να μεγαλώσει online',
@@ -34,14 +35,16 @@ export const metadata: Metadata = {
 };
 
 export default function GreekHomePage() {
-  const t = createTranslationFunction('el');
+  const language = 'el';
+  const t = createTranslationFunction(language);
 
   return (
     <>
-      <Hero t={t} />
-      <Challenges t={t} />
-      <Solutions t={t} />
-      <Contact t={t} />
+      <Hero t={t}/>
+      <Challenges t={t}/>
+      <Solutions t={t}/>
+      <Contact t={t}/>
+      <Footer t={t} language={language}/>
     </>
   );
 }

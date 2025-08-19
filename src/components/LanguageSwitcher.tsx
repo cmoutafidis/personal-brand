@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
-import { languages } from '../types/language';
+import React, {useEffect, useRef, useState} from 'react';
+import {ChevronDown} from 'lucide-react';
+import {useLanguage} from '@/context/LanguageContext';
+import {languages} from '../types/language';
 
 const LanguageSwitcher: React.FC = () => {
-  const { language, setLanguage } = useLanguage();
+  const {language, setLanguage} = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -33,11 +33,12 @@ const LanguageSwitcher: React.FC = () => {
       >
         <span className="mr-1">{currentLanguage?.flag}</span>
         <span>{currentLanguage?.name}</span>
-        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`}/>
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 z-50">
+        <div
+          className="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded-md shadow-lg border border-gray-200 dark:border-gray-700 z-50">
           <div className="py-1">
             {languages.map((lang) => (
               <button

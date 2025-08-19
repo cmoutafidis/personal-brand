@@ -1,4 +1,4 @@
-import { Language } from '@/types/language';
+import {Language} from '@/types/language';
 
 export const translations: Record<Language, Record<string, string>> = {
   en: {
