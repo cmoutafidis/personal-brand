@@ -90,3 +90,21 @@
         @apply bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
     }
 }
+
+.desktop-nav {
+    display: none;
+}
+
+.mobile-nav {
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .desktop-nav {
+        display: flex;
+    }
+
+    .mobile-nav {
+        display: none;
+    }
+}

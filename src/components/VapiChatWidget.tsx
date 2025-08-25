@@ -60,8 +60,8 @@ const VapiChatWidget: React.FC<VapiChatWidgetProps> = ({
         vapiWidget.setAttribute('accent-color', '#000000');
         vapiWidget.setAttribute('button-base-color', '#0086ff');
         vapiWidget.setAttribute('button-accent-color', '#FFFFFF');
-        vapiWidget.setAttribute('main-label', t('vapi.chat1') || 'Chat with AI');
-        vapiWidget.setAttribute('empty-chat-message', t('vapi.chat2') || 'Hi! How can I help you today?');
+        vapiWidget.setAttribute('main-label', t('vapi.chat1'));
+        vapiWidget.setAttribute('empty-chat-message', t('vapi.chat2'));
 
         // Add event listeners
         vapiWidget.addEventListener('call-start', (event) => {

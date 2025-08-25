@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="desktop-nav items-center space-x-8">
             <div className="flex space-x-6">
               {navLinks.map((link) => (
                 <Link
@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center md:hidden">
+          <div className="mobile-nav items-center">
             <LanguageSwitcher/>
             <button
               onClick={toggleDarkMode}

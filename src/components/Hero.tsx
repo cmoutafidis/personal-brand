@@ -1,14 +1,13 @@
 import React from 'react';
 import VapiWidget from './VapiWidget';
 import ContactButton from "@/components/ContactButton";
+import {assistantId, vapiApiKey} from "@/types/language";
 
 interface HeroProps {
   t: (key: string) => string;
 }
 
 const Hero: React.FC<HeroProps> = ({t}) => {
-  const assistantId = "d6683411-62fe-42cb-ad6f-54dc1eb9eeb7";
-  const vapiApiKey = "4fb313ff-b3ca-4e50-869f-2a28d0939c6f";
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center">
