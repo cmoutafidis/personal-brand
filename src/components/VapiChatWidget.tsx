@@ -1,9 +1,19 @@
 'use client';
 
 import React from 'react';
-import { VapiWidget } from '@vapi-ai/client-sdk-react';
 import {useLanguage} from "@/context/LanguageContext";
 import {createTranslationFunction} from "@/translations";
+import dynamic from "next/dynamic";
+
+// Dynamically import VapiWidget with no SSR
+const VapiWidget = dynamic(
+  () => import('@vapi-ai/client-sdk-react').then(mod => ({ default: mod.VapiWidget })),
+  {
+    ssr: false,
+    loading: () => <div>Loading chat...</div>
+  }
+);
+
 
 interface VapiChatWidgetProps {
   apiKey: string;
