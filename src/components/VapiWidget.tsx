@@ -1,16 +1,16 @@
 'use client';
 
-import React, {useEffect, useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import Vapi from '@vapi-ai/web';
-import {Mic, PhoneOff} from 'lucide-react';
-import {useLanguage} from '@/context/LanguageContext';
+import { PhoneOff, Mic } from 'lucide-react';
+import {useLanguage} from "@/context/LanguageContext";
 import {createTranslationFunction} from "@/translations";
 
 interface VapiWidgetProps {
   apiKey: string;
   assistantId: string;
   className?: string;
-  buttonText?: string;
+  buttonText: string;
 }
 
 const VapiWidget: React.FC<VapiWidgetProps> = ({
@@ -89,7 +89,7 @@ const VapiWidget: React.FC<VapiWidgetProps> = ({
     return (
       <button
         disabled
-        className={`inline-flex items-center justify-center px-6 py-3 bg-white hover:bg-gray-100 text-primary-600 border border-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-primary-400 dark:border-gray-700 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 ${className}`}
+        className={`btn btn-secondary flex items-center justify-center ${className}`}
       >
         <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-600 mr-2"></div>
         {t('vapi.connecting')}
@@ -101,15 +101,15 @@ const VapiWidget: React.FC<VapiWidgetProps> = ({
     return (
       <button
         onClick={endCall}
-        className={`inline-flex items-center justify-center px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 ${className}`}
+        className={`btn bg-red-600 hover:bg-red-700 text-white focus:ring-red-500 flex items-center justify-center ${className}`}
       >
-        <PhoneOff className="h-4 w-4 mr-2"/>
+        <PhoneOff className="h-4 w-4 mr-2" />
         {t('vapi.end_call')}
         {isSpeaking && (
           <div className="ml-2 flex space-x-1">
             <div className="w-1 h-1 bg-white rounded-full animate-pulse"></div>
-            <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-            <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+            <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+            <div className="w-1 h-1 bg-white rounded-full animate-pulse" style={{ animationDelay: '0.4s' }}></div>
           </div>
         )}
       </button>
@@ -119,9 +119,9 @@ const VapiWidget: React.FC<VapiWidgetProps> = ({
   return (
     <button
       onClick={startCall}
-      className={`inline-flex items-center justify-center px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 ${className}`}
+      className={`btn bg-sky-600 hover:bg-sky-700 text-white focus:ring-sky-500 flex items-center justify-center ${className}`}
     >
-      <Mic className="h-4 w-4 mr-2"/>
+      <Mic className="h-4 w-4 mr-2" />
       {buttonText}
     </button>
   );

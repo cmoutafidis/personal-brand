@@ -154,6 +154,8 @@ export const translations: Record<Language, Record<string, string>> = {
     // Vapi
     'vapi.connecting': 'Connecting...',
     'vapi.end_call': 'End Call',
+    'vapi.chat1': 'Let\'s chat',
+    'vapi.chat2': 'Hey, what brings you here today?',
 
     // Legal Page
     'legal.title': 'Legal Information',
@@ -338,6 +340,8 @@ export const translations: Record<Language, Record<string, string>> = {
     // Vapi
     'vapi.connecting': 'Συνδέεται...',
     'vapi.end_call': 'Τέλος κλήσης',
+    'vapi.chat1': 'Ας κουβεντιάσουμε',
+    'vapi.chat2': 'Γεια σου, τι σε φέρνει εδώ σήμερα;',
 
     // Legal Page
     'legal.title': 'Νομικές Πληροφορίες',
