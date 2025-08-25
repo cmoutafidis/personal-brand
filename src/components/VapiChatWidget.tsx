@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { useLanguage } from "@/context/LanguageContext";
 import { createTranslationFunction } from "@/translations";
 
@@ -13,6 +13,7 @@ const VapiChatWidget: React.FC<VapiChatWidgetProps> = ({
   apiKey,
   assistantId
 }) => {
+  const [loaded, setLoaded] = useState(false);
   const { language } = useLanguage();
   const t = createTranslationFunction(language);
   const widgetRef = useRef<HTMLDivElement>(null);
@@ -20,6 +21,10 @@ const VapiChatWidget: React.FC<VapiChatWidgetProps> = ({
   useEffect(() => {
     // Load the Vapi widget script dynamically
     const loadVapiScript = () => {
+      setLoaded(true);
+      if (loaded) {
+        return;
+      }
       // Check if script is already loaded
       if (document.querySelector('script[src*="vapi-ai/client-sdk-react"]')) {
         initializeWidget();
