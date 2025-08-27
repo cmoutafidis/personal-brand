@@ -143,6 +143,14 @@ export default function RootLayout({
               },
               {
                 "@type": "Place",
+                "name": "Pilea"
+              },
+              {
+                "@type": "Place",
+                "name": "Thessaloniki"
+              },
+              {
+                "@type": "Place",
                 "name": "Europe"
               },
               {
