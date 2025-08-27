@@ -4,8 +4,8 @@ import LegalContent from './LegalContent';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Legal Information | Fiji Solutions | Software Company Registration Details Thessaloniki, Greece',
-  description: 'Official legal information and company registration details for Fiji Solutions, a software company in Thessaloniki, Greece specializing in IT consulting and custom software development. GEMI number, corporate details, and business registration information.',
+  title: 'Legal Information | Fiji Solutions Thessaloniki',
+  description: 'Official legal information & company registration details for Fiji Solutions. GEMI number, corporate details & business registration info.',
   keywords: 'Fiji Solutions legal, Fiji Solutions company registration, software company Thessaloniki legal, GEMI registration Greece, business registration Thessaloniki, legal information software company, corporate details Fiji Solutions, IT consulting legal details, custom software development legal, company law Greece',
   alternates: {
     canonical: 'https://www.fijisolutions.net/en/legal',
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/legal',
-    title: 'Legal Information | Fiji Solutions | Software Company Registration Thessaloniki',
-    description: 'Official legal information and company registration details for Fiji Solutions, a software company in Thessaloniki, Greece specializing in IT consulting and custom software development.',
+    title: 'Legal Information | Fiji Solutions Thessaloniki',
+    description: 'Official legal information & company registration details for Fiji Solutions. GEMI number, corporate details & business registration info.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Legal Information | Fiji Solutions | Software Company Registration Thessaloniki',
-    description: 'Official legal information and company registration details for Fiji Solutions, a software company in Thessaloniki, Greece specializing in IT consulting and custom software development.',
+    title: 'Legal Information | Fiji Solutions Thessaloniki',
+    description: 'Official legal information & company registration details for Fiji Solutions. GEMI number, corporate details & business registration info.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

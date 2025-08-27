@@ -7,8 +7,8 @@ import Contact from '../../components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Fiji Solutions | Εταιρεία Λογισμικού στη Θεσσαλονίκη | IT Συμβουλευτική & Ανάπτυξη Λογισμικού',
-  description: 'Η Fiji Solutions είναι εταιρεία λογισμικού στη Θεσσαλονίκη, Ελλάδα, που ειδικεύεται στην IT συμβουλευτική και ανάπτυξη προσαρμοσμένου λογισμικού. Παραδίδουμε καινοτόμες λύσεις web development, AI, cloud υπηρεσίες, mobile εφαρμογές και blockchain τεχνολογία.',
+  title: 'Fiji Solutions | Εταιρεία Λογισμικού Θεσσαλονίκη',
+  description: 'Fiji Solutions: IT συμβουλευτική & ανάπτυξη λογισμικού στη Θεσσαλονίκη. Web development, AI λύσεις, cloud υπηρεσίες & blockchain.',
   keywords: 'Fiji Solutions, Fiji Solutions Θεσσαλονίκη, Fiji Solutions Ελλάδα, εταιρεία λογισμικού Θεσσαλονίκη, IT συμβουλευτική, ανάπτυξη λογισμικού, web development, λύσεις AI, cloud υπηρεσίες, mobile εφαρμογές, blockchain τεχνολογία, αυτοματοποίηση διαδικασιών, συστήματα πληρωμών, ψηφιακή επιτυχία, δωρεάν συνομιλία',
   alternates: {
     canonical: 'https://www.fijisolutions.net/el',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el',
-    title: 'Fiji Solutions | Εταιρεία Λογισμικού στη Θεσσαλονίκη, Ελλάδα',
-    description: 'Η Fiji Solutions είναι εταιρεία λογισμικού στη Θεσσαλονίκη, Ελλάδα, που ειδικεύεται στην IT συμβουλευτική και ανάπτυξη προσαρμοσμένου λογισμικού. Παραδίδουμε καινοτόμες λύσεις για να βοηθήσουμε τις επιχειρήσεις να αναπτυχθούν online.',
+    title: 'Fiji Solutions | Εταιρεία Λογισμικού Θεσσαλονίκη',
+    description: 'Fiji Solutions: IT συμβουλευτική & ανάπτυξη λογισμικού στη Θεσσαλονίκη. Web development, AI λύσεις, cloud υπηρεσίες & blockchain.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Fiji Solutions | Εταιρεία Λογισμικού στη Θεσσαλονίκη, Ελλάδα',
-    description: 'Η Fiji Solutions είναι εταιρεία λογισμικού στη Θεσσαλονίκη, Ελλάδα, που ειδικεύεται στην IT συμβουλευτική και ανάπτυξη προσαρμοσμένου λογισμικού. Παραδίδουμε καινοτόμες λύσεις για να βοηθήσουμε τις επιχειρήσεις να αναπτυχθούν online.',
+    title: 'Fiji Solutions | Εταιρεία Λογισμικού Θεσσαλονίκη',
+    description: 'Fiji Solutions: IT συμβουλευτική & ανάπτυξη λογισμικού στη Θεσσαλονίκη. Web development, AI λύσεις, cloud υπηρεσίες & blockchain.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

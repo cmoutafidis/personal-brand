@@ -7,8 +7,8 @@ import Projects from '../../../components/Projects';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Η Δουλειά μας & Έργα | Fiji Solutions | Τα Έργα μας στη Θεσσαλονίκη',
-  description: 'Δείτε το portfolio της Fiji Solutions που παρουσιάζει τις καινοτόμες λύσεις web development, AI, cloud υπηρεσίες, mobile εφαρμογές και blockchain τεχνολογία. Δείτε πώς η ομάδα μας στη Θεσσαλονίκη παραδίδει προσαρμοσμένες, επεκτάσιμες λύσεις.',
+  title: 'Η Δουλειά μας & Έργα | Fiji Solutions Θεσσαλονίκη',
+  description: 'Δείτε το portfolio της Fiji Solutions: καινοτόμες λύσεις web development, AI, cloud υπηρεσίες & blockchain από την ομάδα μας στη Θεσσαλονίκη.',
   keywords: 'Fiji Solutions portfolio, Fiji Solutions έργα, εταιρεία λογισμικού Θεσσαλονίκη portfolio, web development έργα, λύσεις AI portfolio, cloud υπηρεσίες έργα, mobile εφαρμογές, blockchain τεχνολογία έργα, ανάπτυξη λογισμικού, IT συμβουλευτική Θεσσαλονίκη, επεκτάσιμες λύσεις, προσαρμοσμένες λύσεις',
   alternates: {
     canonical: 'https://www.fijisolutions.net/el/portfolio',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/portfolio',
-    title: 'Η Δουλειά μας & Έργα | Fiji Solutions | Τα Έργα μας στη Θεσσαλονίκη',
-    description: 'Δείτε το portfolio της Fiji Solutions που παρουσιάζει τις καινοτόμες λύσεις web development, AI, cloud υπηρεσίες, mobile εφαρμογές και blockchain τεχνολογία από την ομάδα μας στη Θεσσαλονίκη.',
+    title: 'Η Δουλειά μας & Έργα | Fiji Solutions Θεσσαλονίκη',
+    description: 'Δείτε το portfolio της Fiji Solutions: καινοτόμες λύσεις web development, AI, cloud υπηρεσίες & blockchain από την ομάδα μας στη Θεσσαλονίκη.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Η Δουλειά μας & Έργα | Fiji Solutions | Τα Έργα μας στη Θεσσαλονίκη',
-    description: 'Δείτε το portfolio της Fiji Solutions που παρουσιάζει τις καινοτόμες λύσεις web development, AI, cloud υπηρεσίες, mobile εφαρμογές και blockchain τεχνολογία από την ομάδα μας στη Θεσσαλονίκη.',
+    title: 'Η Δουλειά μας & Έργα | Fiji Solutions Θεσσαλονίκη',
+    description: 'Δείτε το portfolio της Fiji Solutions: καινοτόμες λύσεις web development, AI, cloud υπηρεσίες & blockchain από την ομάδα μας στη Θεσσαλονίκη.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

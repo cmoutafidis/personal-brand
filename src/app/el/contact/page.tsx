@@ -4,8 +4,8 @@ import Contact from '../../../components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Επικοινωνία με τη Fiji Solutions | Εταιρεία Λογισμικού στη Θεσσαλονίκη | Δωρεάν Συνομιλία',
-  description: 'Επικοινωνήστε με τη Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη, Ελλάδα που ειδικεύεται στην IT συμβουλευτική και ανάπτυξη προσαρμοσμένου λογισμικού. Λάβετε δωρεάν συνομιλία για web development, λύσεις AI, cloud υπηρεσίες, mobile εφαρμογές και blockchain τεχνολογία. Βρισκόμαστε στη Μαρίνου Αντύπα 40, Θεσσαλονίκη.',
+  title: 'Επικοινωνία Fiji Solutions | Δωρεάν Συνομιλία Θεσσαλονίκη',
+  description: 'Επικοινωνήστε με τη Fiji Solutions για δωρεάν συνομιλία. IT συμβουλευτική & ανάπτυξη λογισμικού στη Θεσσαλονίκη. Web development, AI λύσεις.',
   keywords: 'επικοινωνία Fiji Solutions, Fiji Solutions Θεσσαλονίκη επικοινωνία, εταιρεία λογισμικού Θεσσαλονίκη επικοινωνία, δωρεάν συνομιλία, IT συμβουλευτική συνομιλία, ανάπτυξη λογισμικού συνομιλία, web development συνομιλία, λύσεις AI συνομιλία, cloud υπηρεσίες συνομιλία, mobile εφαρμογές συνομιλία, blockchain τεχνολογία συνομιλία, Μαρίνου Αντύπα 40 Θεσσαλονίκη',
   alternates: {
     canonical: 'https://www.fijisolutions.net/el/contact',
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/contact',
-    title: 'Επικοινωνία με τη Fiji Solutions | Εταιρεία Λογισμικού στη Θεσσαλονίκη',
-    description: 'Επικοινωνήστε με τη Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη, Ελλάδα που ειδικεύεται στην IT συμβουλευτική και ανάπτυξη προσαρμοσμένου λογισμικού. Λάβετε δωρεάν συνομιλία για καινοτόμες λύσεις που βοηθούν την επιχείρησή σας να αναπτυχθεί online.',
+    title: 'Επικοινωνία Fiji Solutions | Δωρεάν Συνομιλία Θεσσαλονίκη',
+    description: 'Επικοινωνήστε με τη Fiji Solutions για δωρεάν συνομιλία. IT συμβουλευτική & ανάπτυξη λογισμικού στη Θεσσαλονίκη. Web development, AI λύσεις.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Επικοινωνία με τη Fiji Solutions | Εταιρεία Λογισμικού στη Θεσσαλονίκη',
-    description: 'Επικοινωνήστε με τη Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη, Ελλάδα που ειδικεύεται στην IT συμβουλευτική και ανάπτυξη προσαρμοσμένου λογισμικού. Λάβετε δωρεάν συνομιλία για καινοτόμες λύσεις που βοηθούν την επιχείρησή σας να αναπτυχθεί online.',
+    title: 'Επικοινωνία Fiji Solutions | Δωρεάν Συνομιλία Θεσσαλονίκη',
+    description: 'Επικοινωνήστε με τη Fiji Solutions για δωρεάν συνομιλία. IT συμβουλευτική & ανάπτυξη λογισμικού στη Θεσσαλονίκη. Web development, AI λύσεις.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };
