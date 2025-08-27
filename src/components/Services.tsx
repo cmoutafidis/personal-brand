@@ -50,9 +50,9 @@ const Services: React.FC<ServicesProps> = ({t}) => {
     <section id="services" className="py-16 md:py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-primary-600 dark:text-primary-400">
+          <h1 className="text-3xl md:text-4xl font-bold mb-2 text-primary-600 dark:text-primary-400">
             {t('services.title')}
-          </h2>
+          </h1>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             {t('services.subtitle')}
           </p>
@@ -65,9 +65,9 @@ const Services: React.FC<ServicesProps> = ({t}) => {
               <div className="text-primary-600 dark:text-primary-400 mb-4">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+              <h2 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
                 {service.title}
-              </h3>
+              </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
                 {service.description}
               </p>

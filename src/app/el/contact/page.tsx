@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.fijisolutions.net/el/contact',
   },
   openGraph: {
+    type: 'website',
     url: 'https://www.fijisolutions.net/el/contact',
     title: 'Επικοινωνία με τη Fiji Solutions | Εταιρεία Λογισμικού στη Θεσσαλονίκη',
     description: 'Επικοινωνήστε με τη Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη, Ελλάδα που ειδικεύεται στην IT συμβουλευτική και ανάπτυξη προσαρμοσμένου λογισμικού. Λάβετε δωρεάν συνομιλία για καινοτόμες λύσεις που βοηθούν την επιχείρησή σας να αναπτυχθεί online.',

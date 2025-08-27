@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.fijisolutions.net/el/portfolio',
   },
   openGraph: {
+    type: 'website',
     url: 'https://www.fijisolutions.net/el/portfolio',
     title: 'Η Δουλειά μας & Έργα | Fiji Solutions | Τα Έργα μας στη Θεσσαλονίκη',
     description: 'Δείτε το portfolio της Fiji Solutions που παρουσιάζει τις καινοτόμες λύσεις web development, AI, cloud υπηρεσίες, mobile εφαρμογές και blockchain τεχνολογία από την ομάδα μας στη Θεσσαλονίκη.',
