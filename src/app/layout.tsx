@@ -81,6 +81,15 @@ export default function RootLayout({
     <head>
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
+
+      {/* Leadsy Tracking Script */}
+      <script
+        id="vtag-ai-js"
+        async
+        src="https://r2.leadsy.ai/tag.js"
+        data-pid="18ImLiEFzTBP83210"
+        data-version="062024"
+      />
       
       {/* Local Business Schema Markup */}
       <script
