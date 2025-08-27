@@ -20,9 +20,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Fiji Solutions | Leading Software Company in Thessaloniki, Greece | Custom Development & IT Consulting',
-  description: 'Fiji Solutions is the leading software company in Thessaloniki, Greece, specializing in custom software development, AI solutions, mobile applications, web development, and comprehensive IT consulting services for businesses across Greece and internationally.',
-  keywords: 'Fiji Solutions, Fiji Solutions Thessaloniki, Fiji Solutions Greece, software company Thessaloniki, IT consulting Greece, custom software development, mobile app development Thessaloniki, web development Greece, AI solutions, enterprise software development, blockchain development, payment integration, digital transformation Greece, software consulting Thessaloniki, IT services Greece',
+  title: 'Fiji Solutions | Software Company in Thessaloniki, Greece | IT Consulting & Custom Software Development',
+  description: 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative web development, AI solutions, cloud services, mobile app development, and blockchain technology to help businesses grow online.',
+  keywords: 'Fiji Solutions, Fiji Solutions Thessaloniki, Fiji Solutions Greece, software company Thessaloniki, IT consulting Greece, custom software development, web development, AI solutions, cloud services, mobile app development, blockchain technology, process automation, payment systems, digital success, free consultation, Thessaloniki-based team',
   authors: [{name: 'Fiji Solutions'}],
   robots: 'index, follow',
   themeColor: '#0086ff',
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en',
-    title: 'Fiji Solutions | Leading Software Company in Thessaloniki, Greece',
-    description: 'Leading software company in Thessaloniki specializing in custom software development, AI solutions, mobile applications, and IT consulting services.',
+    title: 'Fiji Solutions | Software Company in Thessaloniki, Greece',
+    description: 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative solutions to help businesses grow online.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Fiji Solutions | Leading Software Company in Thessaloniki, Greece',
-    description: 'Leading software company in Thessaloniki specializing in custom software development, AI solutions, mobile applications, and IT consulting services.',
+    title: 'Fiji Solutions | Software Company in Thessaloniki, Greece',
+    description: 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative solutions to help businesses grow online.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
   alternates: {
@@ -62,8 +62,8 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    'linkedin:title': 'Fiji Solutions | We help your business grow online',
-    'linkedin:description': 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
+    'linkedin:title': 'Fiji Solutions | Software Company in Thessaloniki, Greece',
+    'linkedin:description': 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative solutions to help businesses grow online.',
     'linkedin:image': 'https://www.fijisolutions.net/fijisolutions.png',
     'msapplication-TileColor': '#0086ff',
   },

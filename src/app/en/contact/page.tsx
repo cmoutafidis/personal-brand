@@ -5,21 +5,21 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Contact Fiji Solutions | Software Company in Thessaloniki, Greece | Free Consultation',
-  description: 'Contact Fiji Solutions, the leading software company in Thessaloniki, Greece. Get a free consultation for custom software development, AI solutions, mobile apps, web development, and IT consulting services. Located at Marinou Antipa 40, Thessaloniki.',
-  keywords: 'contact Fiji Solutions, Fiji Solutions Thessaloniki contact, software company contact Greece, free consultation Thessaloniki, custom software development consultation, IT consulting Thessaloniki, Marinou Antipa 40 Thessaloniki, software development quote Greece, AI solutions consultation',
+  description: 'Contact Fiji Solutions, a software company in Thessaloniki, Greece specializing in IT consulting and custom software development. Get a free consultation for web development, AI solutions, cloud services, mobile apps, and blockchain technology. Located at Marinou Antipa 40, Thessaloniki.',
+  keywords: 'contact Fiji Solutions, Fiji Solutions Thessaloniki contact, software company Thessaloniki contact, free consultation, IT consulting consultation, custom software development consultation, web development consultation, AI solutions consultation, cloud services consultation, mobile app development consultation, blockchain technology consultation, Marinou Antipa 40 Thessaloniki',
   alternates: {
     canonical: 'https://www.fijisolutions.net/en/contact',
   },
   openGraph: {
     url: 'https://www.fijisolutions.net/en/contact',
     title: 'Contact Fiji Solutions | Software Company in Thessaloniki, Greece',
-    description: 'Contact the leading software company in Thessaloniki for a free consultation on custom development, AI solutions, and IT consulting.',
+    description: 'Contact Fiji Solutions, a software company in Thessaloniki, Greece specializing in IT consulting and custom software development. Get a free consultation for innovative solutions to help your business grow online.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
-        alt: 'Contact Fiji Solutions - Software Company in Thessaloniki, Greece',
+        alt: 'Contact Fiji Solutions - Software Company in Thessaloniki, Greece specializing in IT consulting and custom software development',
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Contact Fiji Solutions | Software Company in Thessaloniki, Greece',
-    description: 'Contact the leading software company in Thessaloniki for a free consultation on custom development, AI solutions, and IT consulting.',
+    description: 'Contact Fiji Solutions, a software company in Thessaloniki, Greece specializing in IT consulting and custom software development. Get a free consultation for innovative solutions to help your business grow online.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };
