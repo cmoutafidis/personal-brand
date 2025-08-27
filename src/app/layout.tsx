@@ -20,9 +20,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Fiji Solutions | We help your business grow online',
-  description: 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
-  keywords: 'software development, IT consulting, custom software development, mobile app development, big data consulting, enterprise software development, solution consulting, software consulting, Thessaloniki Greece',
+  title: 'Fiji Solutions | Leading Software Company in Thessaloniki, Greece | Custom Development & IT Consulting',
+  description: 'Fiji Solutions is the leading software company in Thessaloniki, Greece, specializing in custom software development, AI solutions, mobile applications, web development, and comprehensive IT consulting services for businesses across Greece and internationally.',
+  keywords: 'Fiji Solutions, Fiji Solutions Thessaloniki, Fiji Solutions Greece, software company Thessaloniki, IT consulting Greece, custom software development, mobile app development Thessaloniki, web development Greece, AI solutions, enterprise software development, blockchain development, payment integration, digital transformation Greece, software consulting Thessaloniki, IT services Greece',
   authors: [{name: 'Fiji Solutions'}],
   robots: 'index, follow',
   themeColor: '#0086ff',
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en',
-    title: 'Fiji Solutions | We help your business grow online',
-    description: 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
+    title: 'Fiji Solutions | Leading Software Company in Thessaloniki, Greece',
+    description: 'Leading software company in Thessaloniki specializing in custom software development, AI solutions, mobile applications, and IT consulting services.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Fiji Solutions | We help your business grow online',
-    description: 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
+    title: 'Fiji Solutions | Leading Software Company in Thessaloniki, Greece',
+    description: 'Leading software company in Thessaloniki specializing in custom software development, AI solutions, mobile applications, and IT consulting services.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
   alternates: {

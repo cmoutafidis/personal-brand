@@ -7,21 +7,31 @@ import Contact from '../../components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Fiji Solutions | We help your business grow online',
-  description: 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
+  title: 'Fiji Solutions | Premier Software Company in Thessaloniki, Greece | Custom Development & IT Consulting',
+  description: 'Fiji Solutions is a premier software company based in Thessaloniki, Greece. We deliver cutting-edge custom software development, AI solutions, mobile applications, web development, and comprehensive IT consulting services to businesses throughout Greece and beyond.',
+  keywords: 'Fiji Solutions, Fiji Solutions Thessaloniki, Fiji Solutions Greece, software company Thessaloniki, IT consulting Greece, custom software development, mobile app development Thessaloniki, web development Greece, AI solutions, enterprise software development, blockchain development Greece, payment integration, digital transformation, software consulting Thessaloniki',
   alternates: {
     canonical: 'https://www.fijisolutions.net/en',
   },
   openGraph: {
+    title: 'Fiji Solutions | Premier Software Company in Thessaloniki, Greece',
+    description: 'Premier software company in Thessaloniki delivering custom development, AI solutions, and IT consulting services across Greece.',
     url: 'https://www.fijisolutions.net/en',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
-        alt: 'Fiji Solutions',
+        alt: 'Fiji Solutions - Premier Software Company in Thessaloniki, Greece',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@fiji_solutions',
+    title: 'Fiji Solutions | Premier Software Company in Thessaloniki, Greece',
+    description: 'Premier software company in Thessaloniki delivering custom development, AI solutions, and IT consulting services across Greece.',
+    images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };
 
