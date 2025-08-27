@@ -81,6 +81,103 @@ export default function RootLayout({
     <head>
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
+      
+      {/* Local Business Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareCompany",
+            "name": "Fiji Solutions",
+            "alternateName": "Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE)",
+            "description": "Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative web development, AI solutions, cloud services, mobile app development, and blockchain technology to help businesses grow online.",
+            "url": "https://www.fijisolutions.net/",
+            "logo": "https://www.fijisolutions.net/fijisolutions.png",
+            "image": "https://www.fijisolutions.net/fijisolutions.png",
+            "telephone": "+30 698 322 6200",
+            "email": "info@fijisolutions.net",
+            "priceRange": "$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Marinou Antipa 40",
+              "addressLocality": "Thessaloniki",
+              "postalCode": "57001",
+              "addressRegion": "Central Macedonia",
+              "addressCountry": "GR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "40.568785",
+              "longitude": "22.981762"
+            },
+            "openingHours": "Mo-Su 00:00-23:59",
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday", 
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "00:00",
+              "closes": "23:59"
+            },
+            "sameAs": [
+              "https://x.com/fiji_solutions",
+              "https://www.facebook.com/profile.php?id=61578271845868",
+              "https://www.linkedin.com/company/fijisolutionsnet/",
+              "https://github.com/cmoutafidis"
+            ],
+            "founder": {
+              "@type": "Person",
+              "name": "Charalampos Moutafidis"
+            },
+            "areaServed": [
+              {
+                "@type": "Country",
+                "name": "Greece"
+              },
+              {
+                "@type": "Place",
+                "name": "Europe"
+              },
+              {
+                "@type": "Place", 
+                "name": "Worldwide"
+              }
+            ],
+            "serviceType": [
+              "Custom Software Development",
+              "Web Development",
+              "Mobile App Development",
+              "AI Solutions",
+              "Cloud Services",
+              "Blockchain Technology",
+              "IT Consulting",
+              "Payment Integration",
+              "Process Automation"
+            ],
+            "knowsAbout": [
+              "React",
+              "Angular",
+              "TypeScript",
+              "Java",
+              "Python",
+              "Node.js",
+              "AWS",
+              "Azure",
+              "Artificial Intelligence",
+              "Blockchain",
+              "Solana",
+              "Web3"
+            ]
+          })
+        }}
+      />
     </head>
     <body className="antialiased">
     <ThemeProvider>
