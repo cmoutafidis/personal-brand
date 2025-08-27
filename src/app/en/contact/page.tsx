@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.fijisolutions.net/en/contact',
   },
   openGraph: {
+    type: 'website',
     url: 'https://www.fijisolutions.net/en/contact',
     title: 'Contact Fiji Solutions | Software Company in Thessaloniki, Greece',
     description: 'Contact Fiji Solutions, a software company in Thessaloniki, Greece specializing in IT consulting and custom software development. Get a free consultation for innovative solutions to help your business grow online.',
