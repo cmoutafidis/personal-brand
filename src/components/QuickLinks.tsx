@@ -36,6 +36,15 @@ const QuickLinks: React.FC = () => {
       </li>
       <li>
         <Link
+          href={language === 'en' ? '/en/blog' : '/el/blog'}
+          onClick={scrollToTop}
+          className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+        >
+          {t('nav.blog')}
+        </Link>
+      </li>
+      <li>
+        <Link
           href={language === 'en' ? '/en/contact' : '/el/contact'}
           onClick={scrollToTop}
           className="text-gray-400 hover:text-white transition-colors cursor-pointer"

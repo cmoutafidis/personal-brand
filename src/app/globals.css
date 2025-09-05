@@ -108,3 +108,26 @@
         display: none;
     }
 }
+
+/* Blog content styling */
+.prose p {
+    margin-bottom: 1.5rem;
+}
+
+.prose a {
+    color: rgb(var(--color-primary-600));
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.prose a:hover {
+    color: rgb(var(--color-primary-700));
+}
+
+.dark .prose a {
+    color: rgb(var(--color-primary-400));
+}
+
+.dark .prose a:hover {
+    color: rgb(var(--color-primary-300));
+}
