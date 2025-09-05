@@ -52,7 +52,7 @@ export default function GreekBlogPage() {
             </p>
           </div>
 
-          <BlogList posts={posts} t={t} />
+          <BlogList posts={posts} t={t} language={language} />
         </div>
       </section>
       <Footer t={t} />

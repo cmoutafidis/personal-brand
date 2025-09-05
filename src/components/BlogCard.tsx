@@ -2,16 +2,15 @@ import React from 'react';
 import Link from 'next/link';
 import { Calendar, Clock, Tag } from 'lucide-react';
 import { BlogPost } from '@/types/blog';
-import { useLanguage } from '@/context/LanguageContext';
-import { createTranslationFunction } from '@/translations';
+import {Language} from "@/types/language";
 
 interface BlogCardProps {
   post: BlogPost;
+  t: (key: string) => string;
+  language: Language;
 }
 
-const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
-  const { language } = useLanguage();
-  const t = createTranslationFunction(language);
+const BlogCard: React.FC<BlogCardProps> = ({ post, t, language }) => {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);

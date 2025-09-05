@@ -162,7 +162,6 @@ export const translations: Record<Language, Record<string, string>> = {
     'blog.tags': 'Tags',
     'blog.related_posts': 'Related Posts',
     'blog.no_posts': 'No blog posts available yet.',
-    'blog.share': 'Share this post',
 
     // Vapi
     'vapi.connecting': 'Connecting...',
@@ -361,7 +360,6 @@ export const translations: Record<Language, Record<string, string>> = {
     'blog.tags': 'Ετικέτες',
     'blog.related_posts': 'Σχετικά άρθρα',
     'blog.no_posts': 'Δεν υπάρχουν άρθρα blog ακόμα.',
-    'blog.share': 'Μοιράσου αυτό το άρθρο',
 
     // Vapi
     'vapi.connecting': 'Συνδέεται...',

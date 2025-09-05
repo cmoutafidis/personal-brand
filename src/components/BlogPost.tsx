@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Calendar, Clock, Tag, Share2 } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react';
 import { BlogPost as BlogPostType } from '@/types/blog';
 import { Language } from '@/types/language';
 
@@ -23,19 +23,6 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, t, language }) => {
   const formatContent = (content: string) => {
     // Convert markdown-style links to HTML
     return content.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-primary-600 dark:text-primary-400 hover:underline" target="_blank" rel="noopener noreferrer">$1</a>');
-  };
-
-  const sharePost = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: post.title,
-        text: post.excerpt,
-        url: window.location.href,
-      });
-    } else {
-      // Fallback: copy to clipboard
-      navigator.clipboard.writeText(window.location.href);
-    }
   };
 
   return (
@@ -65,13 +52,6 @@ const BlogPost: React.FC<BlogPostProps> = ({ post, t, language }) => {
               <Clock className="h-4 w-4" />
               <span>{post.readingTime} {t('blog.reading_time')}</span>
             </div>
-            <button
-              onClick={sharePost}
-              className="flex items-center space-x-2 text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 transition-colors"
-            >
-              <Share2 className="h-4 w-4" />
-              <span>{t('blog.share')}</span>
-            </button>
           </div>
 
           {/* Tags */}
