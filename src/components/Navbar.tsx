@@ -35,6 +35,7 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     {name: t('nav.home'), href: language === 'en' ? '/en' : '/el'},
+    {name: t('nav.blog'), href: language === 'en' ? '/en/blog' : '/el/blog'},
     {name: t('nav.portfolio'), href: language === 'en' ? '/en/portfolio' : '/el/portfolio'},
     {name: t('nav.contact'), href: language === 'en' ? '/en/contact' : '/el/contact'},
   ];

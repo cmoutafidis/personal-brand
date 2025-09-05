@@ -151,6 +151,19 @@ export const translations: Record<Language, Record<string, string>> = {
     'footer.projects': 'Projects',
     'footer.rights': 'All rights reserved.',
 
+    // Blog
+    'nav.blog': 'Blog',
+    'blog.title': 'Blog',
+    'blog.subtitle': 'Insights, tips, and stories from our team',
+    'blog.read_more': 'Read More',
+    'blog.back_to_blog': 'Back to Blog',
+    'blog.reading_time': 'min read',
+    'blog.published_on': 'Published on',
+    'blog.tags': 'Tags',
+    'blog.related_posts': 'Related Posts',
+    'blog.no_posts': 'No blog posts available yet.',
+    'blog.share': 'Share this post',
+
     // Vapi
     'vapi.connecting': 'Connecting...',
     'vapi.end_call': 'End Call',
@@ -336,6 +349,19 @@ export const translations: Record<Language, Record<string, string>> = {
     'footer.links': 'Γρήγοροι σύνδεσμοι',
     'footer.projects': 'Έργα',
     'footer.rights': 'Όλα τα δικαιώματα δικά μας.',
+
+    // Blog
+    'nav.blog': 'Blog',
+    'blog.title': 'Blog',
+    'blog.subtitle': 'Ιδέες, συμβουλές και ιστορίες από την ομάδα μας',
+    'blog.read_more': 'Διάβασε περισσότερα',
+    'blog.back_to_blog': 'Πίσω στο Blog',
+    'blog.reading_time': 'λεπτά ανάγνωσης',
+    'blog.published_on': 'Δημοσιεύτηκε στις',
+    'blog.tags': 'Ετικέτες',
+    'blog.related_posts': 'Σχετικά άρθρα',
+    'blog.no_posts': 'Δεν υπάρχουν άρθρα blog ακόμα.',
+    'blog.share': 'Μοιράσου αυτό το άρθρο',
 
     // Vapi
     'vapi.connecting': 'Συνδέεται...',
