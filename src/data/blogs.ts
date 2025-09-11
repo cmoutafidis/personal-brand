@@ -44,7 +44,7 @@ All you have to do to achieve this is set up your Google Business Profile and co
 
 Keep up the effort by keeping your profile up to date, and you'll easily end up in the top 10 Google results in no time. That will give you a much higher chance of landing a client compared to being at the 84th rank.
 
-And if all this sounds confusing, you have nothing to worry about. I can take care of this for you. With a one-time payment of €150, I'll make sure to set up everything for you, keep track of results, and provide weekly reports so we can monitor our progress. In no time, I guarantee you'll reach the top 10 Google ranking results.
+And if all this sounds confusing, you have nothing to worry about. I can take care of this for you. With a one-time payment of €100, I'll make sure to set up everything for you, keep track of results, and provide weekly reports so we can monitor our progress. In no time, I guarantee you'll reach the top 10 Google ranking results.
 
 Don't wait any longer. [Book a free consultation](https://calendly.com/charis-fijisolutions/30min), or fill out our [contact form](https://www.fijisolutions.net/en/contact), and we'll reach out to you in less than 48 hours. This is costing you much more money than you think.`,
       excerpt: 'A local accountant in Thessaloniki spent 6 months building a beautiful website but landed zero clients. Here\'s why your business might be making the same costly mistake.',
@@ -96,7 +96,7 @@ Don't wait any longer. [Book a free consultation](https://calendly.com/charis-fi
 
 Συνέχισε την προσπάθεια κρατώντας το προφίλ σου ενημερωμένο, και θα φτάσεις εύκολα στα πρώτα 10 αποτελέσματα του Google σε ελάχιστο χρόνο. Αυτό θα σου δώσει πολύ μεγαλύτερες πιθανότητες να κερδίσεις έναν πελάτη σε σχέση με το να είσαι στην 84η θέση.
 
-Και αν όλα αυτά σου ακούγονται μπερδευτικά, μην ανησυχείς. Μπορώ να το αναλάβω εγώ για σένα. Με μια εφάπαξ πληρωμή 150€, θα φροντίσω να ρυθμίσω τα πάντα για σένα, να παρακολουθώ τα αποτελέσματα, και να σου παρέχω εβδομαδιαίες αναφορές ώστε να βλέπουμε την πρόοδο. Σε ελάχιστο χρόνο, σου εγγυώμαι ότι θα φτάσεις στα πρώτα 10 αποτελέσματα κατάταξης στο Google.
+Και αν όλα αυτά σου ακούγονται μπερδευτικά, μην ανησυχείς. Μπορώ να το αναλάβω εγώ για σένα. Με μια εφάπαξ πληρωμή 100€, θα φροντίσω να ρυθμίσω τα πάντα για σένα, να παρακολουθώ τα αποτελέσματα, και να σου παρέχω εβδομαδιαίες αναφορές ώστε να βλέπουμε την πρόοδο. Σε ελάχιστο χρόνο, σου εγγυώμαι ότι θα φτάσεις στα πρώτα 10 αποτελέσματα κατάταξης στο Google.
 
 Μην περιμένεις άλλο. [Κλείσε μια δωρεάν συνομιλία](https://calendly.com/charis-fijisolutions/30min), ή συμπλήρωσε τη [φόρμα επικοινωνίας](https://www.fijisolutions.net/el/contact) μας, και θα επικοινωνήσουμε μαζί σου σε λιγότερο από 48 ώρες. Αυτό σου κοστίζει πολύ περισσότερα χρήματα από όσα νομίζεις.`,
       excerpt: 'Ένας τοπικός λογιστής στη Θεσσαλονίκη πέρασε 6 μήνες φτιάχνοντας μια όμορφη ιστοσελίδα αλλά δεν κέρδισε κανέναν πελάτη. Δες γιατί η επιχείρησή σου μπορεί να κάνει το ίδιο κοστοβόρο λάθος.',
