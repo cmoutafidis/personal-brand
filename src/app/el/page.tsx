@@ -7,9 +7,9 @@ import Contact from '../../components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Fiji Solutions | Εταιρεία Λογισμικού Θεσσαλονίκη',
-  description: 'Fiji Solutions: IT συμβουλευτική & ανάπτυξη λογισμικού στη Θεσσαλονίκη. Web development, AI λύσεις, cloud υπηρεσίες & blockchain.',
-  keywords: 'Fiji Solutions, Fiji Solutions Θεσσαλονίκη, Fiji Solutions Ελλάδα, εταιρεία λογισμικού Θεσσαλονίκη, IT συμβουλευτική, ανάπτυξη λογισμικού, web development, λύσεις AI, cloud υπηρεσίες, mobile εφαρμογές, blockchain τεχνολογία, αυτοματοποίηση διαδικασιών, συστήματα πληρωμών, ψηφιακή επιτυχία, δωρεάν συνομιλία',
+  title: 'Fiji Solutions | Κορυφαία Εταιρεία Λογισμικού Θεσσαλονίκη',
+  description: 'Κορυφαία εταιρεία ανάπτυξης λογισμικού στη Θεσσαλονίκη. Custom software, κατασκευή ιστοσελίδων, ανάπτυξη εφαρμογών & υποστήριξη IT.',
+  keywords: 'εταιρείες λογισμικού Θεσσαλονίκη, κορυφαίες εταιρείες λογισμικού Θεσσαλονίκη, εταιρεία ανάπτυξης λογισμικού Θεσσαλονίκη, custom software Ελλάδα, εταιρεία κατασκευής ιστοσελίδων Θεσσαλονίκη, mobile apps Ελλάδα, εταιρία πληροφορικής Θεσσαλονίκη, διαχείριση IT συστημάτων Ελλάδα, προγραμματιστές λογισμικού Ελλάδα, ανάπτυξη λογισμικού, λογισμικό επιχειρήσεων',
   alternates: {
     canonical: 'https://www.fijisolutions.net/el',
   },

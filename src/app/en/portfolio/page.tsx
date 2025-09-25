@@ -7,9 +7,9 @@ import Projects from '../../../components/Projects';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Portfolio & Projects | Fiji Solutions Thessaloniki',
-  description: 'Explore Fiji Solutions portfolio: innovative web development, AI solutions, cloud services & blockchain projects from our Thessaloniki team.',
-  keywords: 'Fiji Solutions portfolio, Fiji Solutions projects, software company Thessaloniki portfolio, web development projects, AI solutions portfolio, cloud services projects, mobile app development, blockchain technology projects, custom software development, IT consulting Thessaloniki, scalable solutions, tailored solutions',
+  title: 'Software Development Portfolio | Custom Software Company Thessaloniki',
+  description: 'View our custom software development portfolio. Web development, mobile app development & IT consulting projects from top software company in Thessaloniki.',
+  keywords: 'custom software development company Thessaloniki, software development services Greece, web development company Thessaloniki, mobile app development Greece, software company Thessaloniki portfolio, IT consulting Thessaloniki projects, custom software projects, ERP implementation Thessaloniki, custom CRM solutions Greece',
   alternates: {
     canonical: 'https://www.fijisolutions.net/en/portfolio',
   },

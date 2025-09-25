@@ -100,7 +100,7 @@ export default function RootLayout({
             "@type": "SoftwareCompany",
             "name": "Fiji Solutions",
             "alternateName": "Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE)",
-            "description": "Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development. We deliver innovative web development, AI solutions, cloud services, mobile app development, and blockchain technology to help businesses grow online.",
+            "description": "Fiji Solutions is a leading custom software development company in Thessaloniki, Greece, specializing in software development services, web development, mobile app development, IT consulting, managed IT services, ERP implementation, and custom CRM solutions to help businesses grow.",
             "url": "https://www.fijisolutions.net/",
             "logo": "https://www.fijisolutions.net/fijisolutions.png",
             "image": "https://www.fijisolutions.net/fijisolutions.png",
@@ -168,17 +168,28 @@ export default function RootLayout({
               }
             ],
             "serviceType": [
-              "Custom Software Development",
+              "Custom Software Development Company",
+              "Software Development Services",
               "Web Development",
+              "Web Development Company",
               "Mobile App Development",
-              "AI Solutions",
-              "Cloud Services",
-              "Blockchain Technology",
               "IT Consulting",
-              "Payment Integration",
-              "Process Automation"
+              "Managed IT Services",
+              "ERP Software",
+              "CRM Software",
+              "ERP Implementation",
+              "Custom CRM Solutions",
+              "IT Support",
+              "Software Company"
             ],
             "knowsAbout": [
+              "Software Development",
+              "Custom Software",
+              "Web Development",
+              "Mobile App Development",
+              "IT Consulting",
+              "ERP Software",
+              "CRM Software",
               "React",
               "Angular",
               "TypeScript",
@@ -186,11 +197,7 @@ export default function RootLayout({
               "Python",
               "Node.js",
               "AWS",
-              "Azure",
-              "Artificial Intelligence",
-              "Blockchain",
-              "Solana",
-              "Web3"
+              "Azure"
             ]
           })
         }}

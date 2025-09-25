@@ -7,9 +7,9 @@ import Contact from '../components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Fiji Solutions | Software Company Thessaloniki Greece',
-  description: 'Fiji Solutions: IT consulting & custom software development in Thessaloniki. Web development, AI solutions, cloud services & blockchain technology.',
-  keywords: 'Fiji Solutions, Fiji Solutions Thessaloniki, Fiji Solutions Greece, software company Thessaloniki, IT consulting Greece, custom software development, web development, AI solutions, cloud services, mobile app development, blockchain technology, process automation, payment systems, digital success, free consultation',
+  title: 'Fiji Solutions | Top Software Company Thessaloniki Greece',
+  description: 'Leading software development company in Thessaloniki. Custom software development, web development, mobile app development & IT consulting services in Greece.',
+  keywords: 'software company Thessaloniki, top software companies in Thessaloniki, custom software development company Thessaloniki, software development services Greece, web development company Thessaloniki, mobile app development Greece, IT consulting Thessaloniki, software developers Greece, IT company, custom software, software development',
   alternates: {
     canonical: 'https://www.fijisolutions.net/',
   },
