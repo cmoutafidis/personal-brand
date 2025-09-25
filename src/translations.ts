@@ -207,7 +207,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.legal': 'Νομικά',
 
     // Hero Section
-    'hero.title': 'Κορυφαία Εταιρεία Ανάπτυξης Λογισμικού Θεσσαλονίκη',
+    'hero.title': 'Κορυφαία Εταιρεία Ανάπτυξης Λογισμικού στην Θεσσαλονίκη',
     'hero.cta': 'Ναι, αυτό θέλω',
     'hero.talk': 'Ας μιλήσουμε τώρα',
     'hero.description1': 'Custom software, κατασκευή ιστοσελίδων και ανάπτυξη εφαρμογών στην Ελλάδα.',
