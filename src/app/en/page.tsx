@@ -7,7 +7,7 @@ import Contact from '../../components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Fiji Solutions | Custom Software Development Company Thessaloniki',
+  title: 'Custom Software Development Company Thessaloniki',
   description: 'Premier custom software development company in Thessaloniki, Greece. Web development, mobile app development, IT consulting & managed IT services.',
   keywords: 'custom software development company Thessaloniki, software development services Greece, web development company Thessaloniki, mobile app development Greece, IT consulting Thessaloniki, managed IT services Greece, software company Thessaloniki, top software companies in Thessaloniki, software developers Greece, custom software, ERP software, CRM software',
   alternates: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    title: 'Fiji Solutions | Software Company Thessaloniki Greece',
+    title: 'Software Company Thessaloniki Greece',
     description: 'Fiji Solutions: IT consulting & custom software development in Thessaloniki. Web development, AI solutions, cloud services & blockchain.',
     url: 'https://www.fijisolutions.net/en',
     images: [
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Fiji Solutions | Software Company Thessaloniki Greece',
+    title: 'Software Company Thessaloniki Greece',
     description: 'Fiji Solutions: IT consulting & custom software development in Thessaloniki. Web development, AI solutions, cloud services & blockchain.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },

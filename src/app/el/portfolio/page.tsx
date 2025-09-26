@@ -7,7 +7,7 @@ import Projects from '../../../components/Projects';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Portfolio Ανάπτυξης Λογισμικού | Εταιρεία Custom Software Θεσσαλονίκη',
+  title: 'Portfolio Ανάπτυξης Λογισμικού',
   description: 'Δείτε το portfolio μας: custom software, κατασκευή ιστοσελίδων, ανάπτυξη εφαρμογών από κορυφαία εταιρεία λογισμικού Θεσσαλονίκη.',
   keywords: 'εταιρεία ανάπτυξης λογισμικού Θεσσαλονίκη, custom software Ελλάδα, εταιρεία κατασκευής ιστοσελίδων Θεσσαλονίκη, mobile apps Ελλάδα, εταιρείες λογισμικού Θεσσαλονίκη portfolio, εγκατάσταση ERP Θεσσαλονίκη, custom CRM λύσεις Ελλάδα, προγραμματιστές λογισμικού Ελλάδα',
   alternates: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/portfolio',
-    title: 'Η Δουλειά μας & Έργα | Fiji Solutions Θεσσαλονίκη',
+    title: 'Η Δουλειά μας & Έργα',
     description: 'Δείτε το portfolio της Fiji Solutions: καινοτόμες λύσεις web development, AI, cloud υπηρεσίες & blockchain από την ομάδα μας στη Θεσσαλονίκη.',
     images: [
       {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Η Δουλειά μας & Έργα | Fiji Solutions Θεσσαλονίκη',
+    title: 'Η Δουλειά μας & Έργα',
     description: 'Δείτε το portfolio της Fiji Solutions: καινοτόμες λύσεις web development, AI, cloud υπηρεσίες & blockchain από την ομάδα μας στη Θεσσαλονίκη.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },

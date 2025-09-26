@@ -21,12 +21,12 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   if (!post) {
     return {
-      title: 'Post Not Found | Fiji Solutions',
+      title: 'Post Not Found',
     };
   }
 
   return {
-    title: `${post.title} | Fiji Solutions Blog`,
+    title: post.title,
     description: post.excerpt,
     keywords: `${post.tags.join(', ')}, Fiji Solutions, software development, Thessaloniki`,
     alternates: {

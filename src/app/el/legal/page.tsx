@@ -4,7 +4,7 @@ import LegalContent from './LegalContent';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Νομικές Πληροφορίες | Fiji Solutions Θεσσαλονίκη',
+  title: 'Νομικές Πληροφορίες',
   description: 'Επίσημες νομικές πληροφορίες & στοιχεία εγγραφής εταιρείας για τη Fiji Solutions. Αριθμός ΓΕΜΗ, εταιρικά στοιχεία & πληροφορίες εγγραφής.',
   keywords: 'Fiji Solutions νομικά, Fiji Solutions εγγραφή εταιρείας, εταιρεία λογισμικού Θεσσαλονίκη νομικά, ΓΕΜΗ εγγραφή Ελλάδα, επιχειρηματική εγγραφή Θεσσαλονίκη, νομικές πληροφορίες εταιρεία λογισμικού, εταιρικά στοιχεία Fiji Solutions, IT συμβουλευτική νομικά στοιχεία, ανάπτυξη λογισμικού νομικά',
   alternates: {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/legal',
-    title: 'Νομικές Πληροφορίες | Fiji Solutions Θεσσαλονίκη',
+    title: 'Νομικές Πληροφορίες',
     description: 'Επίσημες νομικές πληροφορίες & στοιχεία εγγραφής εταιρείας για τη Fiji Solutions. Αριθμός ΓΕΜΗ, εταιρικά στοιχεία & πληροφορίες εγγραφής.',
     images: [
       {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Νομικές Πληροφορίες | Fiji Solutions Θεσσαλονίκη',
+    title: 'Νομικές Πληροφορίες',
     description: 'Επίσημες νομικές πληροφορίες & στοιχεία εγγραφής εταιρείας για τη Fiji Solutions. Αριθμός ΓΕΜΗ, εταιρικά στοιχεία & πληροφορίες εγγραφής.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },

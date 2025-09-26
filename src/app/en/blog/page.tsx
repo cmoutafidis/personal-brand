@@ -5,7 +5,7 @@ import BlogList from '@/components/BlogList';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Blog | Fiji Solutions Thessaloniki',
+  title: 'Blog',
   description: 'Read insights, tips, and stories from Fiji Solutions. Learn about web development, AI solutions, digital marketing, and business growth strategies.',
   keywords: 'Fiji Solutions blog, software development blog, web development tips, AI solutions insights, digital marketing strategies, business growth, Thessaloniki tech blog, IT consulting advice',
   alternates: {
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/blog',
-    title: 'Blog | Fiji Solutions Thessaloniki',
+    title: 'Blog',
     description: 'Read insights, tips, and stories from Fiji Solutions. Learn about web development, AI solutions, digital marketing, and business growth strategies.',
     images: [
       {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Blog | Fiji Solutions Thessaloniki',
+    title: 'Blog',
     description: 'Read insights, tips, and stories from Fiji Solutions. Learn about web development, AI solutions, digital marketing, and business growth strategies.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },

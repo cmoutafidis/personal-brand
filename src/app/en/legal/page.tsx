@@ -4,7 +4,7 @@ import LegalContent from './LegalContent';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Legal Information | Fiji Solutions Thessaloniki',
+  title: 'Legal Information',
   description: 'Official legal information & company registration details for Fiji Solutions. GEMI number, corporate details & business registration info.',
   keywords: 'Fiji Solutions legal, Fiji Solutions company registration, software company Thessaloniki legal, GEMI registration Greece, business registration Thessaloniki, legal information software company, corporate details Fiji Solutions, IT consulting legal details, custom software development legal, company law Greece',
   alternates: {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/legal',
-    title: 'Legal Information | Fiji Solutions Thessaloniki',
+    title: 'Legal Information',
     description: 'Official legal information & company registration details for Fiji Solutions. GEMI number, corporate details & business registration info.',
     images: [
       {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Legal Information | Fiji Solutions Thessaloniki',
+    title: 'Legal Information',
     description: 'Official legal information & company registration details for Fiji Solutions. GEMI number, corporate details & business registration info.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },

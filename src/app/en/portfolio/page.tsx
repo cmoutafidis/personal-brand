@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/portfolio',
-    title: 'Portfolio & Projects | Fiji Solutions Thessaloniki',
+    title: 'Portfolio & Projects',
     description: 'Explore Fiji Solutions portfolio: innovative web development, AI solutions, cloud services & blockchain projects from our Thessaloniki team.',
     images: [
       {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Portfolio & Projects | Fiji Solutions Thessaloniki',
+    title: 'Portfolio & Projects',
     description: 'Explore Fiji Solutions portfolio: innovative web development, AI solutions, cloud services & blockchain projects from our Thessaloniki team.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
