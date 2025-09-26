@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Top Software Company Thessaloniki Greece',
-  description: 'Leading software development company in Thessaloniki. Custom software development, web development, mobile app development & IT consulting services in Greece.',
+  description: 'Leading software development company in Thessaloniki. Software development, web development, mobile app development & IT consulting services in Greece.',
   keywords: 'software company Thessaloniki, top software companies in Thessaloniki, custom software development company Thessaloniki, software development services Greece, web development company Thessaloniki, mobile app development Greece, IT consulting Thessaloniki, software developers Greece, IT company, custom software, software development',
   alternates: {
     canonical: 'https://www.fijisolutions.net/',
