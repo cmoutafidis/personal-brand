@@ -3,9 +3,10 @@ import ContactForm from './ContactForm';
 
 interface ContactProps {
   t: (key: string) => string;
+  element: string;
 }
 
-export default function Contact({t}: ContactProps) {
+export default function Contact({t, element}: ContactProps) {
   return (
     <section id="contact" className="py-16 md:py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
       {/* Background decoration */}
@@ -16,7 +17,7 @@ export default function Contact({t}: ContactProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-12">
-          <ContactContent t={t}/>
+          <ContactContent t={t} element={element ?? "h1"}/>
           <ContactForm/>
         </div>
       </div>
