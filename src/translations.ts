@@ -9,11 +9,11 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.legal': 'Legal',
 
     // Hero Section
-    'hero.title': 'Leading Software Development Company in Thessaloniki',
+    'hero.title': 'We help your business grow online',
     'hero.cta': 'Yes, I Want That',
     'hero.talk': "Let's talk now",
-    'hero.description1': 'Custom software development, web development, and mobile app development services in Greece.',
-    'hero.description2': 'We are the top software company in Thessaloniki providing IT consulting and managed IT services.',
+    'hero.description1': 'New technology is very important for your business.',
+    'hero.description2': 'However, there are already 101 things on your to-do list. And they are all important!',
 
     // Challenges
     'challenges.title': 'Common Challenges Businesses Face',
@@ -81,20 +81,20 @@ export const translations: Record<Language, Record<string, string>> = {
     'projects.code': 'Source Code',
 
     // Services
-    'services.title': 'Software Development Services',
-    'services.subtitle': 'Professional custom software development and IT consulting services in Thessaloniki, Greece.',
-    'services.software.title': 'Custom Software Development Company',
-    'services.software.description': 'Leading custom software development company in Thessaloniki offering end-to-end web development, mobile app development, and enterprise software solutions.',
+    'services.title': 'Our Work',
+    'services.subtitle': 'Custom software development projects we have done with our existing clients.',
+    'services.software.title': 'Custom Software Development',
+    'services.software.description': 'End-to-end development of web applications, mobile solutions, and enterprise software that fit to specific business needs.',
     'services.software.feature1': 'Custom Software Applications',
-    'services.software.feature2': 'Web Development Services',
-    'services.software.feature3': 'Mobile App Development',
+    'services.software.feature2': 'Web Applications',
+    'services.software.feature3': 'Mobile Applications',
     'services.software.feature4': 'System Integration',
-    'services.enterprise.title': 'ERP & CRM Software Solutions',
-    'services.enterprise.description': 'Professional ERP implementation and custom CRM solutions in Thessaloniki. Expert IT consulting and managed IT services.',
+    'services.enterprise.title': 'Enterprise Software Development',
+    'services.enterprise.description': 'Expert IT consulting and implementation of cloud solutions across major platforms.',
     'services.enterprise.feature1': 'Large-scale Software Systems',
-    'services.enterprise.feature2': 'ERP Implementation Thessaloniki',
+    'services.enterprise.feature2': 'Business Process Integration',
     'services.enterprise.feature3': 'Scalable Architecture',
-    'services.enterprise.feature4': 'Custom CRM Solutions Greece',
+    'services.enterprise.feature4': 'Enterprise Solutions',
     'services.ai.title': 'AI Solutions',
     'services.ai.description': 'AI implementations and integrations that save you money and will bring you more customers.',
     'services.ai.feature1': 'AI Chat Agents',
@@ -113,11 +113,11 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.blockchain.feature2': 'DeFi Applications',
     'services.blockchain.feature3': 'Blockchain Integration',
     'services.consulting.title': 'IT Consulting',
-    'services.consulting.description': 'Professional IT consulting Thessaloniki and managed IT services Greece. We ensure your business technology runs smoothly and efficiently.',
+    'services.consulting.description': 'We make sure that your business runs smoothly and efficiently. This is very important for your business to grow.',
     'services.consulting.feature1': 'Technology Strategy',
     'services.consulting.feature2': 'Infrastructure Optimization',
     'services.consulting.feature3': 'Digital Transformation',
-    'services.consulting.feature4': 'Managed IT Services Greece',
+    'services.consulting.feature4': 'IT Strategy Alignment',
 
     // Technologies
     'technologies.title': 'Technology Stack',
@@ -146,7 +146,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'industries.blockchain.description': 'Modern blockchain solutions for various industries.',
 
     // Footer
-    'footer.description': 'Fiji Solutions is a leading software development company in Thessaloniki, Greece, specializing in custom software development, web development, mobile app development, and IT consulting services.',
+    'footer.description': 'Fiji Solutions is a software company in Thessaloniki, Greece, specializing in IT consulting and custom software development.',
     'footer.links': 'Quick Links',
     'footer.projects': 'Projects',
     'footer.rights': 'All rights reserved.',
@@ -207,11 +207,11 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.legal': 'Νομικά',
 
     // Hero Section
-    'hero.title': 'Κορυφαία Εταιρεία Ανάπτυξης Λογισμικού στην Θεσσαλονίκη',
+    'hero.title': 'Βοηθάμε την επιχείρησή σου να μεγαλώσει online',
     'hero.cta': 'Ναι, αυτό θέλω',
     'hero.talk': 'Ας μιλήσουμε τώρα',
-    'hero.description1': 'Custom software, κατασκευή ιστοσελίδων και ανάπτυξη εφαρμογών στην Ελλάδα.',
-    'hero.description2': 'Είμαστε από τις κορυφαίες εταιρείες λογισμικού Θεσσαλονίκη με υποστήριξη IT και διαχείριση συστημάτων.',
+    'hero.description1': 'Οι νέες τεχνολογίες είναι πολύ σημαντικές για την επιχείρησή σου στην Ελλάδα.',
+    'hero.description2': 'Αλλά έχεις ήδη ένα σωρό πράγματα να κάνεις. Και είναι όλα επίσης σημαντικά!',
 
     // Challenges
     'challenges.title': 'Κοινές Προκλήσεις Επιχειρήσεων',
@@ -279,20 +279,20 @@ export const translations: Record<Language, Record<string, string>> = {
     'projects.code': 'Ανοιχτός κώδικας',
 
     // Services
-    'services.title': 'Υπηρεσίες Ανάπτυξης Λογισμικού',
-    'services.subtitle': 'Επαγγελματικές υπηρεσίες custom software και υποστήριξη IT στη Θεσσαλονίκη, Ελλάδα.',
-    'services.software.title': 'Εταιρεία Custom Software',
-    'services.software.description': 'Κορυφαία εταιρεία ανάπτυξης λογισμικού Θεσσαλονίκη που προσφέρει κατασκευή ιστοσελίδων, ανάπτυξη εφαρμογών και λογισμικό επιχειρήσεων.',
+    'services.title': 'Η δουλειά μας',
+    'services.subtitle': 'Έργα εξατομικευμένης ανάπτυξης λογισμικού που φτιάξαμε για τους πελάτες μας.',
+    'services.software.title': 'Εξατομικευμένη Ανάπτυξη Λογισμικού',
+    'services.software.description': 'Ολοκληρωμένη ανάπτυξη web εφαρμογών, mobile λύσεων και εταιρικού λογισμικού που ταιριάζει στις συγκεκριμένες επιχειρηματικές ανάγκες στην Ελλάδα.',
     'services.software.feature1': 'Προσαρμοσμένες Εφαρμογές Λογισμικού',
-    'services.software.feature2': 'Κατασκευή Ιστοσελίδων',
-    'services.software.feature3': 'Ανάπτυξη Εφαρμογών',
+    'services.software.feature2': 'Web Εφαρμογές',
+    'services.software.feature3': 'Mobile Εφαρμογές',
     'services.software.feature4': 'Ενσωμάτωση Συστημάτων',
-    'services.enterprise.title': 'ERP & CRM Λογισμικό',
-    'services.enterprise.description': 'Επαγγελματική εγκατάσταση ERP και custom CRM λύσεις στη Θεσσαλονίκη. Εξειδικευμένη υποστήριξη IT και διαχείριση συστημάτων.',
+    'services.enterprise.title': 'Εταιρικό Λογισμικό',
+    'services.enterprise.description': 'Εξειδικευμένη IT συμβουλευτική και υλοποίηση cloud λύσεων σε μεγάλες πλατφόρμες.',
     'services.enterprise.feature1': 'Μεγάλα Συστήματα Λογισμικού',
-    'services.enterprise.feature2': 'Εγκατάσταση ERP Θεσσαλονίκη',
+    'services.enterprise.feature2': 'Ενσωμάτωση Επιχειρηματικών Διαδικασιών',
     'services.enterprise.feature3': 'Επεκτάσιμη Αρχιτεκτονική',
-    'services.enterprise.feature4': 'Custom CRM Λύσεις Ελλάδα',
+    'services.enterprise.feature4': 'Εταιρικές Λύσεις',
     'services.ai.title': 'Λύσεις AI',
     'services.ai.description': 'Υλοποιήσεις και ενσωματώσεις AI που σου εξοικονομούν χρήματα και θα σου φέρουν περισσότερους πελάτες.',
     'services.ai.feature1': 'AI Chat Agents',
@@ -311,11 +311,11 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.blockchain.feature2': 'DeFi Εφαρμογές',
     'services.blockchain.feature3': 'Ενσωμάτωση Blockchain',
     'services.consulting.title': 'IT Συμβουλευτική Θεσσαλονίκη',
-    'services.consulting.description': 'Επαγγελματική εταιρία πληροφορικής Θεσσαλονίκη και διαχείριση IT συστημάτων Ελλάδα. Φροντίζουμε η τεχνολογία της επιχείρησής σου να λειτουργεί άψογα.',
+    'services.consulting.description': 'Φροντίζουμε η επιχείρησή σου να λειτουργεί ομαλά και αποδοτικά. Αυτό είναι πολύ σημαντικό για να μεγαλώσει η επιχείρησή σου στην Ελλάδα.',
     'services.consulting.feature1': 'Στρατηγική Τεχνολογίας',
     'services.consulting.feature2': 'Βελτιστοποίηση Υποδομής',
     'services.consulting.feature3': 'Ψηφιακός Μετασχηματισμός',
-    'services.consulting.feature4': 'Διαχείριση IT Συστημάτων Ελλάδα',
+    'services.consulting.feature4': 'Ευθυγράμμιση IT Στρατηγικής',
 
     // Technologies
     'technologies.title': 'Τεχνολογίες',
@@ -344,7 +344,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'industries.blockchain.description': 'Σύγχρονες blockchain λύσεις για διάφορους κλάδους.',
 
     // Footer
-    'footer.description': 'Η Fiji Solutions είναι κορυφαία εταιρεία ανάπτυξης λογισμικού στη Θεσσαλονίκη, που ειδικεύεται σε custom software, κατασκευή ιστοσελίδων, ανάπτυξη εφαρμογών και υποστήριξη IT.',
+    'footer.description': 'Η Fiji Solutions είναι εταιρεία λογισμικού στη Θεσσαλονίκη, που ειδικεύεται στην IT συμβουλευτική και εξατομικευμένη ανάπτυξη λογισμικού.',
     'footer.links': 'Γρήγοροι σύνδεσμοι',
     'footer.projects': 'Έργα',
     'footer.rights': 'Όλα τα δικαιώματα δικά μας.',
