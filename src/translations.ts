@@ -125,7 +125,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'technologies.frontend': 'Frontend',
     'technologies.backend': 'Backend',
     'technologies.cloud': 'Cloud & DevOps',
-    'technologies.ai': 'AI & Data',
+    'technologies.ai': 'AI & Data Integration',
     'technologies.blockchain': 'Blockchain',
     'technologies.trading': 'Trading',
 
@@ -323,7 +323,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'technologies.frontend': 'Frontend',
     'technologies.backend': 'Backend',
     'technologies.cloud': 'Cloud & DevOps',
-    'technologies.ai': 'AI & Data',
+    'technologies.ai': 'AI & Data Integration',
     'technologies.blockchain': 'Blockchain',
     'technologies.trading': 'Trading',
 
