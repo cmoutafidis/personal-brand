@@ -5,17 +5,17 @@ import BlogList from '@/components/BlogList';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Διαβάστε ιδέες, συμβουλές και ιστορίες από τη Fiji Solutions. Μάθετε για web development, λύσεις AI, ψηφιακό μάρκετινγκ και στρατηγικές ανάπτυξης επιχειρήσεων.',
-  keywords: 'Fiji Solutions blog, blog ανάπτυξης λογισμικού, συμβουλές web development, ιδέες λύσεων AI, στρατηγικές ψηφιακού μάρκετινγκ, ανάπτυξη επιχειρήσεων, τεχνολογικό blog Θεσσαλονίκη, συμβουλές IT συμβουλευτικής',
+  title: 'Blog Εταιρεία Λογισμικού Θεσσαλονίκη | Συμβουλές IT & Ανάπτυξης',
+  description: 'Διαβάστε ιδέες, συμβουλές και ιστορίες από τη Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη. Μάθετε για web development, λύσεις AI, ψηφιακό μάρκετινγκ και στρατηγικές ανάπτυξης επιχειρήσεων.',
+  keywords: 'Fiji Solutions blog, εταιρεία λογισμικού blog, εταιρεία λογισμικού Θεσσαλονίκη blog, blog ανάπτυξης λογισμικού, συμβουλές web development, ιδέες λύσεων AI, στρατηγικές ψηφιακού μάρκετινγκ, ανάπτυξη επιχειρήσεων, τεχνολογικό blog Θεσσαλονίκη, συμβουλές IT συμβουλευτικής',
   alternates: {
     canonical: 'https://www.fijisolutions.net/el/blog',
   },
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/blog',
-    title: 'Blog',
-    description: 'Διαβάστε ιδέες, συμβουλές και ιστορίες από τη Fiji Solutions. Μάθετε για web development, λύσεις AI, ψηφιακό μάρκετινγκ και στρατηγικές ανάπτυξης επιχειρήσεων.',
+    title: 'Blog Εταιρεία Λογισμικού Θεσσαλονίκη | Συμβουλές IT & Ανάπτυξης',
+    description: 'Διαβάστε ιδέες, συμβουλές και ιστορίες από τη Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη. Μάθετε για web development, λύσεις AI, ψηφιακό μάρκετινγκ και στρατηγικές ανάπτυξης επιχειρήσεων.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Blog',
-    description: 'Διαβάστε ιδέες, συμβουλές και ιστορίες από τη Fiji Solutions. Μάθετε για web development, λύσεις AI, ψηφιακό μάρκετινγκ και στρατηγικές ανάπτυξης επιχειρήσεων.',
+    title: 'Blog Εταιρεία Λογισμικού Θεσσαλονίκη | Συμβουλές IT & Ανάπτυξης',
+    description: 'Διαβάστε ιδέες, συμβουλές και ιστορίες από τη Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη. Μάθετε για web development, λύσεις AI, ψηφιακό μάρκετινγκ και στρατηγικές ανάπτυξης επιχειρήσεων.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

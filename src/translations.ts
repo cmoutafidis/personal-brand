@@ -9,7 +9,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.legal': 'Legal',
 
     // Hero Section
-    'hero.title': 'We help your business grow online',
+    'hero.title': 'Software Development that solves your Business needs',
     'hero.cta': 'Yes, I Want That',
     'hero.talk': "Let's talk now",
     'hero.description1': 'New technology is very important for your business.',
@@ -207,7 +207,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.legal': 'Νομικά',
 
     // Hero Section
-    'hero.title': 'Βοηθάμε την επιχείρησή σου να μεγαλώσει online',
+    'hero.title': 'Ανάπτυξη Λογισμικού για τις ανάγκες της Επιχείρησης σου',
     'hero.cta': 'Ναι, αυτό θέλω',
     'hero.talk': 'Ας μιλήσουμε τώρα',
     'hero.description1': 'Οι νέες τεχνολογίες είναι πολύ σημαντικές για την επιχείρησή σου στην Ελλάδα.',
@@ -225,9 +225,9 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Solutions
     'solutions.title': 'Πώς βοηθάμε εμείς',
-    'solutions.subtitle': 'Να τι μπορούμε να κάνουμε για σένα.',
+    'solutions.subtitle': 'Η εταιρεία λογισμικού μας στη Θεσσαλονίκη προσφέρει ολοκληρωμένες λύσεις.',
     'solutions.experts.title': 'Είμαστε ειδικοί',
-    'solutions.experts.description': 'Η ομάδα μας στην Θεσσαλονίκη ξέρει καλά τις τελευταίες τεχνολογίες και τα προϊόντα AI.',
+    'solutions.experts.description': 'Ως εμπειρογνώμονες εταιρεία λογισμικού Θεσσαλονίκη, η ομάδα μας ξέρει καλά τις τελευταίες τεχνολογίες και τα προϊόντα AI.',
     'solutions.fast.title': 'Γρήγορα και καλά',
     'solutions.fast.description': 'Κάνουμε κορυφαία εξατομικευμένη ανάπτυξη λογισμικού, και την παραδίδουμε γρήγορα.',
     'solutions.industry.title': 'Ξέρουμε τον κλάδο σου',
@@ -282,7 +282,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.title': 'Η δουλειά μας',
     'services.subtitle': 'Έργα εξατομικευμένης ανάπτυξης λογισμικού που φτιάξαμε για τους πελάτες μας.',
     'services.software.title': 'Εξατομικευμένη Ανάπτυξη Λογισμικού',
-    'services.software.description': 'Ολοκληρωμένη ανάπτυξη web εφαρμογών, mobile λύσεων και εταιρικού λογισμικού που ταιριάζει στις συγκεκριμένες επιχειρηματικές ανάγκες στην Ελλάδα.',
+    'services.software.description': 'Ως εταιρεία λογισμικού Θεσσαλονίκη, παρέχουμε ολοκληρωμένη ανάπτυξη web εφαρμογών, mobile λύσεων και εταιρικού λογισμικού που ταιριάζει στις συγκεκριμένες επιχειρηματικές ανάγκες.',
     'services.software.feature1': 'Προσαρμοσμένες Εφαρμογές Λογισμικού',
     'services.software.feature2': 'Web Εφαρμογές',
     'services.software.feature3': 'Mobile Εφαρμογές',
@@ -311,7 +311,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.blockchain.feature2': 'DeFi Εφαρμογές',
     'services.blockchain.feature3': 'Ενσωμάτωση Blockchain',
     'services.consulting.title': 'IT Συμβουλευτική Θεσσαλονίκη',
-    'services.consulting.description': 'Φροντίζουμε η επιχείρησή σου να λειτουργεί ομαλά και αποδοτικά. Αυτό είναι πολύ σημαντικό για να μεγαλώσει η επιχείρησή σου στην Ελλάδα.',
+    'services.consulting.description': 'Ως εταιρεία λογισμικού με εδρά τη Θεσσαλονίκη, φροντίζουμε η επιχείρησή σου να λειτουργεί ομαλά και αποδοτικά. Αυτό είναι πολύ σημαντικό για να μεγαλώσει η επιχείρησή σου.',
     'services.consulting.feature1': 'Στρατηγική Τεχνολογίας',
     'services.consulting.feature2': 'Βελτιστοποίηση Υποδομής',
     'services.consulting.feature3': 'Ψηφιακός Μετασχηματισμός',
@@ -344,7 +344,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'industries.blockchain.description': 'Σύγχρονες blockchain λύσεις για διάφορους κλάδους.',
 
     // Footer
-    'footer.description': 'Η Fiji Solutions είναι εταιρεία λογισμικού στη Θεσσαλονίκη, που ειδικεύεται στην IT συμβουλευτική και εξατομικευμένη ανάπτυξη λογισμικού.',
+    'footer.description': 'Η Fiji Solutions είναι κορυφαία εταιρεία λογισμικού στη Θεσσαλονίκη, που ειδικεύεται στην IT συμβουλευτική και εξατομικευμένη ανάπτυξη λογισμικού για επιχειρήσεις.',
     'footer.links': 'Γρήγοροι σύνδεσμοι',
     'footer.projects': 'Έργα',
     'footer.rights': 'Όλα τα δικαιώματα δικά μας.',

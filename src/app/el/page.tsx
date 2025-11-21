@@ -7,17 +7,17 @@ import Contact from '../../components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Fiji Solutions | Κορυφαία Εταιρεία Λογισμικού Θεσσαλονίκη',
-  description: 'Κορυφαία εταιρεία ανάπτυξης λογισμικού στη Θεσσαλονίκη. Custom software, κατασκευή ιστοσελίδων, ανάπτυξη εφαρμογών & υποστήριξη IT.',
-  keywords: 'εταιρείες λογισμικού Θεσσαλονίκη, κορυφαίες εταιρείες λογισμικού Θεσσαλονίκη, εταιρεία ανάπτυξης λογισμικού Θεσσαλονίκη, custom software Ελλάδα, εταιρεία κατασκευής ιστοσελίδων Θεσσαλονίκη, mobile apps Ελλάδα, εταιρία πληροφορικής Θεσσαλονίκη, διαχείριση IT συστημάτων Ελλάδα, προγραμματιστές λογισμικού Ελλάδα, ανάπτυξη λογισμικού, λογισμικό επιχειρήσεων',
+  title: 'Εταιρεία Λογισμικού Θεσσαλονίκη | Fiji Solutions IT Consulting',
+  description: 'Κορυφαία εταιρεία λογισμικού στη Θεσσαλονίκη. Εξειδικευμένη στην ανάπτυξη λογισμικού, web development, IT συμβουλευτική & AI λύσεις για επιχειρήσεις.',
+  keywords: 'εταιρεία λογισμικού, εταιρεία λογισμικού Θεσσαλονίκη, εταιρείες λογισμικού Θεσσαλονίκη, κορυφαίες εταιρείες λογισμικού Θεσσαλονίκη, εταιρεία ανάπτυξης λογισμικού Θεσσαλονίκη, custom software Ελλάδα, εταιρεία κατασκευής ιστοσελίδων Θεσσαλονίκη, mobile apps Ελλάδα, εταιρία πληροφορικής Θεσσαλονίκη, διαχείριση IT συστημάτων Ελλάδα, προγραμματιστές λογισμικού Ελλάδα, ανάπτυξη λογισμικού, λογισμικό επιχειρήσεων',
   alternates: {
     canonical: 'https://www.fijisolutions.net/el',
   },
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el',
-    title: 'Fiji Solutions | Εταιρεία Λογισμικού Θεσσαλονίκη',
-    description: 'Fiji Solutions: IT συμβουλευτική & ανάπτυξη λογισμικού στη Θεσσαλονίκη. Web development, AI λύσεις, cloud υπηρεσίες & blockchain.',
+    title: 'Εταιρεία Λογισμικού Θεσσαλονίκη | Fiji Solutions IT Consulting',
+    description: 'Κορυφαία εταιρεία λογισμικού Θεσσαλονίκη. Εξειδικευμένη στην ανάπτυξη λογισμικού, web development, IT συμβουλευτική & AI λύσεις για επιχειρήσεις.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Fiji Solutions | Εταιρεία Λογισμικού Θεσσαλονίκη',
-    description: 'Fiji Solutions: IT συμβουλευτική & ανάπτυξη λογισμικού στη Θεσσαλονίκη. Web development, AI λύσεις, cloud υπηρεσίες & blockchain.',
+    title: 'Εταιρεία Λογισμικού Θεσσαλονίκη | Fiji Solutions IT Consulting',
+    description: 'Κορυφαία εταιρεία λογισμικού Θεσσαλονίκη. Εξειδικευμένη στην ανάπτυξη λογισμικού, web development, IT συμβουλευτική & AI λύσεις για επιχειρήσεις.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };
@@ -40,8 +40,63 @@ export default function GreekHomePage() {
   const language = 'el';
   const t = createTranslationFunction(language);
 
+  const greekSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareCompany",
+    "name": "Fiji Solutions",
+    "alternateName": "Εταιρεία Λογισμικού Θεσσαλονίκη Fiji Solutions",
+    "description": "Κορυφαία εταιρεία λογισμικού στη Θεσσαλονίκη. Εξειδικευμένη στην ανάπτυξη λογισμικού, web development, IT συμβουλευτική & AI λύσεις για επιχειρήσεις.",
+    "url": "https://www.fijisolutions.net/el",
+    "logo": "https://www.fijisolutions.net/fijisolutions.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Μαρίνου Αντύπα 40",
+      "addressLocality": "Θεσσαλονίκη",
+      "postalCode": "57001",
+      "addressRegion": "Κεντρική Μακεδονία",
+      "addressCountry": "GR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "40.568785",
+      "longitude": "22.981762"
+    },
+    "areaServed": [
+      "Θεσσαλονίκη",
+      "Ελλάδα",
+      "Πυλαία",
+      "Κεντρική Μακεδονία"
+    ],
+    "serviceType": [
+      "Εταιρεία Λογισμικού",
+      "Εταιρεία Λογισμικού Θεσσαλονίκη",
+      "Ανάπτυξη Λογισμικού", 
+      "IT Συμβουλευτική Θεσσαλονίκη",
+      "Web Development",
+      "Mobile App Development"
+    ],
+    "knowsAbout": [
+      "Εταιρεία Λογισμικού",
+      "Εταιρεία Λογισμικού Θεσσαλονίκη",
+      "Ανάπτυξη Λογισμικού",
+      "IT Συμβουλευτική"
+    ],
+    "telephone": "+30 698 322 6200",
+    "email": "info@fijisolutions.net",
+    "sameAs": [
+      "https://x.com/fiji_solutions",
+      "https://www.facebook.com/profile.php?id=61578271845868",
+      "https://www.linkedin.com/company/fijisolutionsnet/",
+      "https://github.com/cmoutafidis"
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(greekSchema) }}
+      />
       <Hero t={t}/>
       <Challenges t={t}/>
       <Solutions t={t}/>

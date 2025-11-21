@@ -7,9 +7,9 @@ import Projects from '../../../components/Projects';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Portfolio Ανάπτυξης Λογισμικού',
-  description: 'Δείτε το portfolio μας: custom software, κατασκευή ιστοσελίδων, ανάπτυξη εφαρμογών από κορυφαία εταιρεία λογισμικού Θεσσαλονίκη.',
-  keywords: 'εταιρεία ανάπτυξης λογισμικού Θεσσαλονίκη, custom software Ελλάδα, εταιρεία κατασκευής ιστοσελίδων Θεσσαλονίκη, mobile apps Ελλάδα, εταιρείες λογισμικού Θεσσαλονίκη portfolio, εγκατάσταση ERP Θεσσαλονίκη, custom CRM λύσεις Ελλάδα, προγραμματιστές λογισμικού Ελλάδα',
+  title: 'Portfolio Εταιρεία Λογισμικού Θεσσαλονίκη | Έργα Ανάπτυξης',
+  description: 'Δείτε το portfolio της Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη: custom software, κατασκευή ιστοσελίδων, ανάπτυξη εφαρμογών από κορυφαία εταιρεία λογισμικού.',
+  keywords: 'εταιρεία λογισμικού portfolio, εταιρεία λογισμικού Θεσσαλονίκη portfolio, εταιρεία ανάπτυξης λογισμικού Θεσσαλονίκη, custom software Ελλάδα, εταιρεία κατασκευής ιστοσελίδων Θεσσαλονίκη, mobile apps Ελλάδα, εταιρείες λογισμικού Θεσσαλονίκη, εγκατάσταση ERP Θεσσαλονίκη, custom CRM λύσεις Ελλάδα, προγραμματιστές λογισμικού Ελλάδα',
   alternates: {
     canonical: 'https://www.fijisolutions.net/el/portfolio',
   },
