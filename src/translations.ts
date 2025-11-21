@@ -9,7 +9,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.legal': 'Legal',
 
     // Hero Section
-    'hero.title': 'Software Development that solves your Business needs',
+    'hero.title': 'Software Development for your Business needs',
     'hero.cta': 'Yes, I Want That',
     'hero.talk': "Let's talk now",
     'hero.description1': 'New technology is very important for your business.',
