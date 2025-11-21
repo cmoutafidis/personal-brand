@@ -93,8 +93,23 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const response = await fetch('https://np40nkw6be.execute-api.us-east-1.amazonaws.com/Prod/personal-brand/form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          company: formData.company.trim(),
+          message: formData.message.trim(),
+          question: formData.question.trim()
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
       // Success
       setSubmitSuccess(true);
@@ -113,7 +128,11 @@ export default function ContactForm() {
 
     } catch (error) {
       console.error('Form submission error:', error);
-      setSubmitError(t('contact.form.error.failed'));
+      if (error instanceof Error) {
+        setSubmitError(`${t('contact.form.error.failed')}: ${error.message}`);
+      } else {
+        setSubmitError(t('contact.form.error.failed'));
+      }
     } finally {
       setIsSubmitting(false);
     }
