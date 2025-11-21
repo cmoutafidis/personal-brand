@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import {AlertCircle, CheckCircle, Send} from 'lucide-react';
 import {useLanguage} from '@/context/LanguageContext';
 import {createTranslationFunction} from "@/translations";
+import { reportConversion } from '@/utils/gtag';
 
 export default function ContactForm() {
   const {language} = useLanguage();
@@ -113,6 +114,7 @@ export default function ContactForm() {
 
       // Success
       setSubmitSuccess(true);
+      reportConversion();
       setFormData({
         name: '',
         email: '',
