@@ -104,7 +104,7 @@ export default function RootLayout({
             "url": "https://www.fijisolutions.net/",
             "logo": "https://www.fijisolutions.net/fijisolutions.png",
             "image": "https://www.fijisolutions.net/fijisolutions.png",
-            "telephone": "+30 698 322 6200",
+            "telephone": "+30 231 107 0108",
             "email": "info@fijisolutions.net",
             "priceRange": "$",
             "address": {

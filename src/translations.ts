@@ -64,6 +64,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.form.error.required': 'is required',
     'contact.form.error.email': 'Please enter a valid email address',
     'contact.connect': 'Connect With Us',
+    'contact.phone': 'Phone',
 
     // Contact Location
     'contact.location': 'Location',
@@ -262,6 +263,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.form.error.required': 'είναι υποχρεωτικό',
     'contact.form.error.email': 'Βάλε ένα κανονικό email',
     'contact.connect': 'Βρες μας online',
+    'contact.phone': 'Τηλέφωνο',
 
     // Contact Location
     'contact.location': 'Πού είμαστε',
