@@ -29,7 +29,7 @@
     </url>
     <url>
         <loc>https://www.fijisolutions.net/en/blog</loc>
-        <lastmod>2025-09-25T20:20:02+00:00</lastmod>
+        <lastmod>2025-01-30T12:00:00+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.fijisolutions.net/en/blog" />
@@ -43,6 +43,15 @@
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.fijisolutions.net/en/blog/this-is-costing-you-more-money-than-you-think" />
         <xhtml:link rel="alternate" hreflang="el" href="https://www.fijisolutions.net/el/blog/auto-sou-kostizei-perissotera-xrimata-apo-osa-nomizeis" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fijisolutions.net" />
+    </url>
+    <url>
+        <loc>https://www.fijisolutions.net/en/blog/your-business-is-losing-customers-without-google-visibility</loc>
+        <lastmod>2025-01-30T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.fijisolutions.net/en/blog/your-business-is-losing-customers-without-google-visibility" />
+        <xhtml:link rel="alternate" hreflang="el" href="https://www.fijisolutions.net/el/blog/i-epichirisi-sou-chanei-pelates-choris-google-prototipa" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fijisolutions.net" />
     </url>
     <url>
@@ -85,7 +94,7 @@
     </url>
     <url>
         <loc>https://www.fijisolutions.net/el/blog</loc>
-        <lastmod>2025-09-25T20:20:02+00:00</lastmod>
+        <lastmod>2025-01-30T12:00:00+00:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.fijisolutions.net/en/blog" />
@@ -99,6 +108,15 @@
         <priority>0.6</priority>
         <xhtml:link rel="alternate" hreflang="en" href="https://www.fijisolutions.net/en/blog/this-is-costing-you-more-money-than-you-think" />
         <xhtml:link rel="alternate" hreflang="el" href="https://www.fijisolutions.net/el/blog/auto-sou-kostizei-perissotera-xrimata-apo-osa-nomizeis" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fijisolutions.net" />
+    </url>
+    <url>
+        <loc>https://www.fijisolutions.net/el/blog/i-epichirisi-sou-chanei-pelates-choris-google-prototipa</loc>
+        <lastmod>2025-01-30T12:00:00+00:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.fijisolutions.net/en/blog/your-business-is-losing-customers-without-google-visibility" />
+        <xhtml:link rel="alternate" hreflang="el" href="https://www.fijisolutions.net/el/blog/i-epichirisi-sou-chanei-pelates-choris-google-prototipa" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://www.fijisolutions.net" />
     </url>
     <url>

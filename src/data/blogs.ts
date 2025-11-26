@@ -48,9 +48,29 @@ And if all this sounds confusing, you have nothing to worry about. I can take ca
 
 Don't wait any longer. [Book a free consultation](https://calendly.com/charis-fijisolutions/30min), or fill out our [contact form](https://www.fijisolutions.net/en/contact), and we'll reach out to you in less than 48 hours. This is costing you much more money than you think.`,
       excerpt: 'A local accountant in Thessaloniki spent 6 months building a beautiful website but landed zero clients. Here\'s why your business might be making the same costly mistake.',
-      publishedAt: '2025-01-29',
+      publishedAt: '2025-09-06',
       readingTime: 5,
       tags: ['SEO', 'Local Business', 'Google Business Profile', 'Digital Marketing']
+    },
+    {
+      id: '2',
+      slug: 'your-business-is-losing-customers-without-google-visibility',
+      title: 'Your business is losing customers if it\'s not in the top Google results',
+      content: `Your business is losing customers if it's not in the top Google results.
+
+One of our clients in Thessaloniki spent 6 months building his website, but it didn't bring in even a single customer. Why? His business was ranked 47th in the search results.
+
+With a properly optimized Google Business Profile, you can easily reach the top 10 results. That means more customers – without wasting months or thousands of euros.
+
+At Fiji Solutions, we can do it for you for just €100. We set up and optimize your profile, monitor the progress, and send you weekly reports.
+
+Don't lose any more time and money. Contact us for a free consultation and watch your business skyrocket online.
+
+[Book now](https://www.fijisolutions.net/en/contact).`,
+      excerpt: 'Don\'t let your business stay invisible online. Learn how a properly optimized Google Business Profile can bring you to the top 10 search results and attract more customers.',
+      publishedAt: '2025-11-26',
+      readingTime: 2,
+      tags: ['SEO', 'Local Business', 'Google Business Profile', 'Lead Generation']
     }
   ],
   el: [
@@ -100,9 +120,29 @@ Don't wait any longer. [Book a free consultation](https://calendly.com/charis-fi
 
 Μην περιμένεις άλλο. [Κλείσε μια δωρεάν συνομιλία](https://calendly.com/charis-fijisolutions/30min), ή συμπλήρωσε τη [φόρμα επικοινωνίας](https://www.fijisolutions.net/el/contact) μας, και θα επικοινωνήσουμε μαζί σου σε λιγότερο από 48 ώρες. Αυτό σου κοστίζει πολύ περισσότερα χρήματα από όσα νομίζεις.`,
       excerpt: 'Ένας τοπικός λογιστής στη Θεσσαλονίκη πέρασε 6 μήνες φτιάχνοντας μια όμορφη ιστοσελίδα αλλά δεν κέρδισε κανέναν πελάτη. Δες γιατί η επιχείρησή σου μπορεί να κάνει το ίδιο κοστοβόρο λάθος.',
-      publishedAt: '2025-01-29',
+      publishedAt: '2025-09-06',
       readingTime: 5,
       tags: ['SEO', 'Τοπικές Επιχειρήσεις', 'Google Business Profile', 'Ψηφιακό Μάρκετινγκ']
+    },
+    {
+      id: '2',
+      slug: 'i-epichirisi-sou-chanei-pelates-choris-google-prototipa',
+      title: 'Η επιχείρησή σου χάνει πελάτες αν δεν είναι στα πρώτα αποτελέσματα της Google',
+      content: `Η επιχείρησή σου χάνει πελάτες αν δεν είναι στα πρώτα αποτελέσματα της Google.
+
+Ένας πελάτης μας στη Θεσσαλονίκη ξόδεψε 6 μήνες για να φτιάξει την ιστοσελίδα του, αλλά δεν έφερε ούτε έναν πελάτη. Γιατί; Η επιχείρησή του ήταν στην 47η θέση στα αποτελέσματα αναζήτησης.
+
+Με ένα σωστά ρυθμισμένο Google Business Profile, μπορείς να φτάσεις στα πρώτα 10 αποτελέσματα εύκολα. Αυτό σημαίνει περισσότερους πελάτες, χωρίς να ξοδεύεις μήνες ή χιλιάδες ευρώ.
+
+Στη Fiji Solutions, μπορούμε να το κάνουμε για σένα με μόνο 100€. Ρυθμίζουμε το προφίλ σου, παρακολουθούμε την πρόοδο και σου στέλνουμε εβδομαδιαίες αναφορές.
+
+Μην χάνεις άλλο χρόνο και χρήμα. Επικοινώνησε μαζί μας για μια δωρεάν συνομιλία και δες την επιχείρησή σου να εκτοξεύεται online.
+
+[Κλείσε τώρα](https://www.fijisolutions.net/el/contact).`,
+      excerpt: 'Μην αφήνεις την επιχείρησή σου να παραμένει αόρατη online. Μάθε πώς ένα σωστά ρυθμισμένο Google Business Profile μπορεί να σε φέρει στα πρώτα 10 αποτελέσματα αναζήτησης.',
+      publishedAt: '2025-11-26',
+      readingTime: 2,
+      tags: ['SEO', 'Τοπικές Επιχειρήσεις', 'Google Business Profile', 'Παραγωγή Leads']
     }
   ]
 };
