@@ -24,12 +24,12 @@ const Technologies: React.FC<TechnologiesProps> = ({t}) => {
       technologies: ['Voiceflow', 'Salesforce', 'OpenAI', 'Make', 'Bolt', 'Vapi']
     },
     {
-      name: t('technologies.blockchain'),
-      technologies: ['Solana', 'Web3.js', 'Smart Contracts', 'DeFi Protocols', 'Token Standards']
+      name: t('technologies.data'),
+      technologies: ['Snowflake', 'dbt', 'Airflow', 'Data Pipelines', 'Data Warehousing']
     },
     {
-      name: t('technologies.trading'),
-      technologies: ['PineScript', 'Technical Analysis', 'Trading View', 'Market Data Integration']
+      name: t('technologies.analytics'),
+      technologies: ['Power BI', 'Tableau', 'Looker', 'SQL', 'Python Analytics']
     }
   ];
 

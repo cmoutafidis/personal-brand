@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/portfolio',
     title: 'Portfolio & Projects',
-    description: 'Explore Fiji Solutions portfolio: innovative web development, AI solutions, cloud services & blockchain projects from our Thessaloniki team.',
+    description: 'Explore Fiji Solutions portfolio: innovative web development, AI solutions, cloud services & Snowflake data engineering projects from our Thessaloniki team.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
-        alt: 'Fiji Solutions Portfolio - Innovative software development projects from Thessaloniki specializing in web development, AI solutions, and blockchain technology',
+        alt: 'Fiji Solutions Portfolio - Innovative software development projects from Thessaloniki specializing in web development, AI solutions, and Snowflake data engineering',
       },
     ],
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Portfolio & Projects',
-    description: 'Explore Fiji Solutions portfolio: innovative web development, AI solutions, cloud services & blockchain projects from our Thessaloniki team.',
+    description: 'Explore Fiji Solutions portfolio: innovative web development, AI solutions, cloud services & Snowflake data engineering projects from our Thessaloniki team.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

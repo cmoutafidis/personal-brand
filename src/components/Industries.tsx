@@ -1,5 +1,5 @@
 import React from 'react';
-import {Building, Building2, Landmark, Link, Plane, Rocket} from 'lucide-react';
+import {Building, Building2, Landmark, Snowflake, Plane, Rocket} from 'lucide-react';
 
 interface IndustriesProps {
   t: (key: string) => string;
@@ -34,9 +34,9 @@ const Industries: React.FC<IndustriesProps> = ({t}) => {
       description: t('industries.startups.description')
     },
     {
-      icon: <Link className="h-12 w-12"/>,
-      name: t('industries.blockchain.title'),
-      description: t('industries.blockchain.description')
+      icon: <Snowflake className="h-12 w-12"/>,
+      name: t('industries.data.title'),
+      description: t('industries.data.description')
     }
   ];
 

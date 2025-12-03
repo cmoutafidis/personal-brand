@@ -21,8 +21,8 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: 'Software Company Thessaloniki Greece',
-  description: 'Fiji Solutions: IT consulting & custom software development in Thessaloniki. Web development, AI solutions, cloud services & blockchain technology.',
-  keywords: 'Fiji Solutions, Fiji Solutions Thessaloniki, Fiji Solutions Greece, software company Thessaloniki, IT consulting Greece, custom software development, web development, AI solutions, cloud services, mobile app development, blockchain technology, process automation, payment systems, digital success, free consultation, Thessaloniki-based team',
+  description: 'Fiji Solutions: Snowflake partner for data engineering & custom software development in Thessaloniki. Web development, AI solutions, cloud services & advanced analytics.',
+  keywords: 'Fiji Solutions, Fiji Solutions Thessaloniki, Fiji Solutions Greece, software company Thessaloniki, IT consulting Greece, custom software development, web development, AI solutions, cloud services, mobile app development, Snowflake partner, data engineering, data analytics, process automation, payment systems, digital success, free consultation, Thessaloniki-based team',
   authors: [{name: 'Fiji Solutions'}],
   robots: 'index, follow',
   themeColor: '#0086ff',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.fijisolutions.net/en',
     title: 'Software Company Thessaloniki Greece',
-    description: 'Fiji Solutions: IT consulting & custom software development in Thessaloniki. Web development, AI solutions, cloud services & blockchain.',
+    description: 'Fiji Solutions: Snowflake partner for data engineering & custom software development in Thessaloniki. Web development, AI solutions, cloud services & advanced analytics.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Software Company Thessaloniki Greece',
-    description: 'Fiji Solutions: IT consulting & custom software development in Thessaloniki. Web development, AI solutions, cloud services & blockchain.',
+    description: 'Fiji Solutions: Snowflake partner for data engineering & custom software development in Thessaloniki. Web development, AI solutions, cloud services & advanced analytics.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
   alternates: {

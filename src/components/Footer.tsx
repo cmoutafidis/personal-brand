@@ -51,6 +51,14 @@ export default function Footer({t}: FooterProps) {
             <p className="text-gray-400 mb-4">
               {t('footer.description')}
             </p>
+            <div className="mb-4">
+              <p className="text-sm text-gray-500 mb-2">{t('footer.partnership')}</p>
+              <img
+                src="/Services_Partner_Badge_Select.svg"
+                alt="Snowflake Select Partner Badge"
+                className="h-16 w-auto"
+              />
+            </div>
             <div className="flex space-x-4">
               <a
                 href="https://github.com/cmoutafidis"

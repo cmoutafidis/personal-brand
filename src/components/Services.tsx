@@ -1,5 +1,5 @@
 import React from 'react';
-import {Bot, Cloud, Code2, Cpu, CreditCard, Lightbulb} from 'lucide-react';
+import {Bot, Cloud, Code2, Snowflake, CreditCard, Lightbulb} from 'lucide-react';
 
 interface ServicesProps {
   t: (key: string) => string;
@@ -33,10 +33,10 @@ const Services: React.FC<ServicesProps> = ({t}) => {
       features: [t('services.payment.feature1'), t('services.payment.feature2'), t('services.payment.feature3'), t('services.payment.feature4')]
     },
     {
-      icon: <Cpu className="h-8 w-8"/>,
-      title: t('services.blockchain.title'),
-      description: t('services.blockchain.description'),
-      features: [t('services.blockchain.feature1'), t('services.blockchain.feature2'), t('services.blockchain.feature3')]
+      icon: <Snowflake className="h-8 w-8"/>,
+      title: t('services.snowflake.title'),
+      description: t('services.snowflake.description'),
+      features: [t('services.snowflake.feature1'), t('services.snowflake.feature2'), t('services.snowflake.feature3'), t('services.snowflake.feature4')]
     },
     {
       icon: <Lightbulb className="h-8 w-8"/>,
