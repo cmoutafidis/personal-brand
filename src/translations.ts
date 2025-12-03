@@ -109,7 +109,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.payment.feature3': 'Digital Wallets',
     'services.payment.feature4': 'Crypto Payments',
     'services.snowflake.title': 'Snowflake Data Engineering',
-    'services.snowflake.description': 'Advanced data engineering and analytics solutions using Snowflake cloud data platform. As a Snowflake partner, we deliver comprehensive data strategies.',
+    'services.snowflake.description': 'Advanced data engineering and analytics solutions using Snowflake Cloud Data Platform. As a Snowflake partner, we deliver comprehensive data strategies.',
     'services.snowflake.feature1': 'Data Warehouse Development',
     'services.snowflake.feature2': 'ETL/ELT Pipeline Creation',
     'services.snowflake.feature3': 'Advanced Analytics & BI',
