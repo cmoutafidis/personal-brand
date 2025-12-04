@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'Software Company Thessaloniki Greece',
-    description: 'Fiji Solutions: Snowflake partner for data engineering & custom software development in Thessaloniki. Web development, AI solutions, cloud services & advanced analytics.',
+    description: 'Fiji Solutions: Snowflake AI Data Cloud partner for data engineering & custom software development in Thessaloniki. Web development, AI solutions, cloud services & advanced analytics.',
     url: 'https://www.fijisolutions.net/en',
     images: [
       {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Software Company Thessaloniki Greece',
-    description: 'Fiji Solutions: Snowflake partner for data engineering & custom software development in Thessaloniki. Web development, AI solutions, cloud services & advanced analytics.',
+    description: 'Fiji Solutions: Snowflake AI Data Cloud partner for data engineering & custom software development in Thessaloniki. Web development, AI solutions, cloud services & advanced analytics.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/portfolio',
     title: 'Η Δουλειά μας & Έργα',
-    description: 'Δείτε το portfolio της Fiji Solutions: καινοτόμες λύσεις web development, AI, cloud υπηρεσίες & Snowflake data engineering από την ομάδα μας στη Θεσσαλονίκη.',
+    description: 'Δείτε το portfolio της Fiji Solutions: καινοτόμες λύσεις web development, AI, cloud υπηρεσίες & Snowflake AI Data Cloud data engineering από την ομάδα μας στη Θεσσαλονίκη.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
-        alt: 'Fiji Solutions Portfolio - Καινοτόμα έργα ανάπτυξης λογισμικού από τη Θεσσαλονίκη που ειδικεύεται σε web development, λύσεις AI και Snowflake data engineering',
+        alt: 'Fiji Solutions Portfolio - Καινοτόμα έργα ανάπτυξης λογισμικού από τη Θεσσαλονίκη που ειδικεύεται σε web development, λύσεις AI και Snowflake AI Data Cloud data engineering',
       },
     ],
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Η Δουλειά μας & Έργα',
-    description: 'Δείτε το portfolio της Fiji Solutions: καινοτόμες λύσεις web development, AI, cloud υπηρεσίες & Snowflake data engineering από την ομάδα μας στη Θεσσαλονίκη.',
+    description: 'Δείτε το portfolio της Fiji Solutions: καινοτόμες λύσεις web development, AI, cloud υπηρεσίες & Snowflake AI Data Cloud data engineering από την ομάδα μας στη Θεσσαλονίκη.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

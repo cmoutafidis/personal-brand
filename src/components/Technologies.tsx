@@ -25,7 +25,7 @@ const Technologies: React.FC<TechnologiesProps> = ({t}) => {
     },
     {
       name: t('technologies.data'),
-      technologies: ['Snowflake', 'dbt', 'Airflow', 'Data Pipelines', 'Data Warehousing']
+      technologies: ['Snowflake AI Data Cloud', 'dbt', 'Airflow', 'Data Pipelines', 'Data Warehousing']
     },
     {
       name: t('technologies.analytics'),

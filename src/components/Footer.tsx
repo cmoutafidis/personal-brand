@@ -55,7 +55,7 @@ export default function Footer({t}: FooterProps) {
               <p className="text-sm text-gray-500 mb-2">{t('footer.partnership')}</p>
               <img
                 src="/Services_Partner_Badge_Select.svg"
-                alt="Snowflake Select Partner Badge"
+                alt="Snowflake AI Data Cloud Select Partner Badge"
                 className="h-16 w-auto"
               />
             </div>
