@@ -5,17 +5,17 @@ import BlogList from '@/components/BlogList';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Blog Εταιρεία Λογισμικού Θεσσαλονίκη | Συμβουλές IT & Ανάπτυξης',
-  description: 'Διαβάστε ιδέες, συμβουλές και ιστορίες από τη Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη. Μάθετε για web development, λύσεις AI, ψηφιακό μάρκετινγκ και στρατηγικές ανάπτυξης επιχειρήσεων.',
-  keywords: 'Fiji Solutions blog, εταιρεία λογισμικού blog, εταιρεία λογισμικού Θεσσαλονίκη blog, blog ανάπτυξης λογισμικού, συμβουλές web development, ιδέες λύσεων AI, στρατηγικές ψηφιακού μάρκετινγκ, ανάπτυξη επιχειρήσεων, τεχνολογικό blog Θεσσαλονίκη, συμβουλές IT συμβουλευτικής',
+  title: 'Software, Data & Snowflake Insights | Fiji Solutions',
+  description: 'Διαβάστε άρθρα της Fiji Solutions για εξατομικευμένο λογισμικό, ανάλυση δεδομένων, Snowflake, business intelligence, αυτοματοποίηση και digital growth στην Ελλάδα.',
+  keywords: 'Fiji Solutions blog, εξατομικευμένο λογισμικό Ελλάδα blog, ανάλυση δεδομένων Ελλάδα, Snowflake consulting Ελλάδα, business intelligence Ελλάδα, blog ανάπτυξης λογισμικού',
   alternates: {
     canonical: 'https://www.fijisolutions.net/el/blog',
   },
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/blog',
-    title: 'Blog Εταιρεία Λογισμικού Θεσσαλονίκη | Συμβουλές IT & Ανάπτυξης',
-    description: 'Διαβάστε ιδέες, συμβουλές και ιστορίες από τη Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη. Μάθετε για web development, λύσεις AI, ψηφιακό μάρκετινγκ και στρατηγικές ανάπτυξης επιχειρήσεων.',
+    title: 'Software, Data & Snowflake Insights | Fiji Solutions',
+    description: 'Άρθρα για εξατομικευμένο λογισμικό, ανάλυση δεδομένων, Snowflake, BI, αυτοματοποίηση και digital growth στην Ελλάδα.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Blog Εταιρεία Λογισμικού Θεσσαλονίκη | Συμβουλές IT & Ανάπτυξης',
-    description: 'Διαβάστε ιδέες, συμβουλές και ιστορίες από τη Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη. Μάθετε για web development, λύσεις AI, ψηφιακό μάρκετινγκ και στρατηγικές ανάπτυξης επιχειρήσεων.',
+    title: 'Software, Data & Snowflake Insights | Fiji Solutions',
+    description: 'Άρθρα για εξατομικευμένο λογισμικό, ανάλυση δεδομένων, Snowflake, BI, αυτοματοποίηση και digital growth στην Ελλάδα.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

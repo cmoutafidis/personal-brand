@@ -7,17 +7,17 @@ import Projects from '../../../components/Projects';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Portfolio Εταιρεία Λογισμικού Θεσσαλονίκη | Έργα Ανάπτυξης',
-  description: 'Δείτε το portfolio της Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη: custom software, κατασκευή ιστοσελίδων, ανάπτυξη εφαρμογών από κορυφαία εταιρεία λογισμικού.',
-  keywords: 'εταιρεία λογισμικού portfolio, εταιρεία λογισμικού Θεσσαλονίκη portfolio, εταιρεία ανάπτυξης λογισμικού Θεσσαλονίκη, custom software Ελλάδα, εταιρεία κατασκευής ιστοσελίδων Θεσσαλονίκη, mobile apps Ελλάδα, εταιρείες λογισμικού Θεσσαλονίκη, εγκατάσταση ERP Θεσσαλονίκη, custom CRM λύσεις Ελλάδα, προγραμματιστές λογισμικού Ελλάδα',
+  title: 'Υπηρεσίες - Λογισμικό, Ανάλυση Δεδομένων & Snowflake Ελλάδα',
+  description: 'Υπηρεσίες Fiji Solutions για ελληνικές επιχειρήσεις: εξατομικευμένο λογισμικό, ανάλυση δεδομένων, BI dashboards, Snowflake consulting, AI αυτοματοποίηση και integrations.',
+  keywords: 'υπηρεσίες λογισμικού Ελλάδα, ανάλυση δεδομένων Ελλάδα, Snowflake consulting Ελλάδα, business intelligence Ελλάδα, εταιρεία λογισμικού Θεσσαλονίκη, data engineering Ελλάδα',
   alternates: {
     canonical: 'https://www.fijisolutions.net/el/portfolio',
   },
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/portfolio',
-    title: 'Η Δουλειά μας & Έργα',
-    description: 'Δείτε το portfolio της Fiji Solutions: καινοτόμες λύσεις web development, AI, cloud υπηρεσίες & Snowflake AI Data Cloud data engineering από την ομάδα μας στη Θεσσαλονίκη.',
+    title: 'Υπηρεσίες - Fiji Solutions',
+    description: 'Εξατομικευμένο λογισμικό, ανάλυση δεδομένων, BI dashboards, Snowflake consulting και data engineering στην Ελλάδα.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Η Δουλειά μας & Έργα',
-    description: 'Δείτε το portfolio της Fiji Solutions: καινοτόμες λύσεις web development, AI, cloud υπηρεσίες & Snowflake AI Data Cloud data engineering από την ομάδα μας στη Θεσσαλονίκη.',
+    title: 'Υπηρεσίες - Fiji Solutions',
+    description: 'Εξατομικευμένο λογισμικό, ανάλυση δεδομένων, BI dashboards, Snowflake consulting και data engineering στην Ελλάδα.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

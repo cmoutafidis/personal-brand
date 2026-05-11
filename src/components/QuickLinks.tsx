@@ -36,6 +36,33 @@ const QuickLinks: React.FC = () => {
       </li>
       <li>
         <Link
+          href={language === 'en' ? '/en/services/custom-software-development-greece' : '/el/services/custom-software-development-greece'}
+          onClick={scrollToTop}
+          className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+        >
+          {language === 'en' ? 'Custom Software' : 'Εξατομικευμένο Λογισμικό'}
+        </Link>
+      </li>
+      <li>
+        <Link
+          href={language === 'en' ? '/en/services/data-analysis-greece' : '/el/services/data-analysis-greece'}
+          onClick={scrollToTop}
+          className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+        >
+          {language === 'en' ? 'Data Analysis' : 'Ανάλυση Δεδομένων'}
+        </Link>
+      </li>
+      <li>
+        <Link
+          href={language === 'en' ? '/en/services/snowflake-consulting-greece' : '/el/services/snowflake-consulting-greece'}
+          onClick={scrollToTop}
+          className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+        >
+          Snowflake
+        </Link>
+      </li>
+      <li>
+        <Link
           href={language === 'en' ? '/en/blog' : '/el/blog'}
           onClick={scrollToTop}
           className="text-gray-400 hover:text-white transition-colors cursor-pointer"

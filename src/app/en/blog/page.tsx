@@ -5,17 +5,17 @@ import BlogList from '@/components/BlogList';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Blog',
-  description: 'Read insights, tips, and stories from Fiji Solutions. Learn about web development, AI solutions, digital marketing, and business growth strategies.',
-  keywords: 'Fiji Solutions blog, software development blog, web development tips, AI solutions insights, digital marketing strategies, business growth, Thessaloniki tech blog, IT consulting advice',
+  title: 'Software, Data & Snowflake Insights | Fiji Solutions',
+  description: 'Read Fiji Solutions insights about custom software development, data analysis, Snowflake, business intelligence, automation, and digital growth in Greece.',
+  keywords: 'Fiji Solutions blog, custom software Greece blog, data analysis Greece, Snowflake consulting Greece, business intelligence Greece, software development blog',
   alternates: {
     canonical: 'https://www.fijisolutions.net/en/blog',
   },
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/blog',
-    title: 'Blog',
-    description: 'Read insights, tips, and stories from Fiji Solutions. Learn about web development, AI solutions, digital marketing, and business growth strategies.',
+    title: 'Software, Data & Snowflake Insights | Fiji Solutions',
+    description: 'Insights about custom software, data analysis, Snowflake, BI, automation, and digital growth in Greece.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Blog',
-    description: 'Read insights, tips, and stories from Fiji Solutions. Learn about web development, AI solutions, digital marketing, and business growth strategies.',
+    title: 'Software, Data & Snowflake Insights | Fiji Solutions',
+    description: 'Insights about custom software, data analysis, Snowflake, BI, automation, and digital growth in Greece.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

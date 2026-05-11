@@ -7,17 +7,17 @@ import Contact from '../../components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Η ΚΑΛΥΤΕΡΗ Εταιρεία Λογισμικού στη Θεσσαλονίκη - Ανάπτυξη Επαγγελματικού Λογισμικού - Ανάπτυξη Εφαρμογών - Συμβουλευτικές Υπηρεσίες IT',
-  description: 'Κορυφαία εταιρεία λογισμικού στη Θεσσαλονίκη. Εξειδικευμένη στην ανάπτυξη λογισμικού, web development, IT συμβουλευτική & AI λύσεις για επιχειρήσεις.',
-  keywords: 'εταιρεία λογισμικού, εταιρεία λογισμικού Θεσσαλονίκη, εταιρείες λογισμικού Θεσσαλονίκη, κορυφαίες εταιρείες λογισμικού Θεσσαλονίκη, εταιρεία ανάπτυξης λογισμικού Θεσσαλονίκη, custom software Ελλάδα, εταιρεία κατασκευής ιστοσελίδων Θεσσαλονίκη, mobile apps Ελλάδα, εταιρεία πληροφορικής Θεσσαλονίκη, διαχείριση IT συστημάτων Ελλάδα, προγραμματιστές λογισμικού Ελλάδα, ανάπτυξη λογισμικού, λογισμικό επιχειρήσεων',
+  title: 'Εξατομικευμένο Λογισμικό, Ανάλυση Δεδομένων & Snowflake Ελλάδα | Fiji Solutions',
+  description: 'Η Fiji Solutions αναπτύσσει εξατομικευμένο λογισμικό στην Ελλάδα και βοηθά επιχειρήσεις με ανάλυση δεδομένων, BI dashboards, data engineering και Snowflake AI Data Cloud.',
+  keywords: 'εξατομικευμένο λογισμικό Ελλάδα, εταιρεία λογισμικού Θεσσαλονίκη, ανάλυση δεδομένων Ελλάδα, Snowflake consulting Ελλάδα, business intelligence Ελλάδα, data engineering Ελλάδα, custom software Ελλάδα',
   alternates: {
     canonical: 'https://www.fijisolutions.net/el',
   },
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el',
-    title: 'Η ΚΑΛΥΤΕΡΗ Εταιρεία Λογισμικού στη Θεσσαλονίκη - Ανάπτυξη Επαγγελματικού Λογισμικού - Ανάπτυξη Εφαρμογών - Συμβουλευτικές Υπηρεσίες IT',
-    description: 'Κορυφαία εταιρεία λογισμικού Θεσσαλονίκη. Εξειδικευμένη στην ανάπτυξη λογισμικού, web development, IT συμβουλευτική & AI λύσεις για επιχειρήσεις.',
+    title: 'Εξατομικευμένο Λογισμικό, Ανάλυση Δεδομένων & Snowflake Ελλάδα | Fiji Solutions',
+    description: 'Εξατομικευμένο λογισμικό, ανάλυση δεδομένων, BI dashboards και Snowflake AI Data Cloud consulting για επιχειρήσεις στην Ελλάδα.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Η ΚΑΛΥΤΕΡΗ Εταιρεία Λογισμικού στη Θεσσαλονίκη - Ανάπτυξη Επαγγελματικού Λογισμικού - Ανάπτυξη Εφαρμογών - Συμβουλευτικές Υπηρεσίες IT',
-    description: 'Κορυφαία εταιρεία λογισμικού Θεσσαλονίκη. Εξειδικευμένη στην ανάπτυξη λογισμικού, web development, IT συμβουλευτική & AI λύσεις για επιχειρήσεις.',
+    title: 'Εξατομικευμένο Λογισμικό, Ανάλυση Δεδομένων & Snowflake Ελλάδα | Fiji Solutions',
+    description: 'Εξατομικευμένο λογισμικό, ανάλυση δεδομένων, BI dashboards και Snowflake AI Data Cloud consulting για επιχειρήσεις στην Ελλάδα.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };
@@ -42,10 +42,10 @@ export default function GreekHomePage() {
 
   const greekSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareCompany",
+    "@type": "ProfessionalService",
     "name": "Fiji Solutions",
     "alternateName": "Εταιρεία Λογισμικού Θεσσαλονίκη Fiji Solutions",
-    "description": "Κορυφαία εταιρεία λογισμικού στη Θεσσαλονίκη. Εξειδικευμένη στην ανάπτυξη λογισμικού, web development, IT συμβουλευτική & AI λύσεις για επιχειρήσεις.",
+    "description": "Η Fiji Solutions είναι εταιρεία εξατομικευμένου λογισμικού, ανάλυσης δεδομένων και Snowflake AI Data Cloud consulting στη Θεσσαλονίκη.",
     "url": "https://www.fijisolutions.net/el",
     "logo": "https://www.fijisolutions.net/fijisolutions.png",
     "address": {
@@ -71,6 +71,9 @@ export default function GreekHomePage() {
       "Εταιρεία Λογισμικού",
       "Εταιρεία Λογισμικού Θεσσαλονίκη",
       "Ανάπτυξη Λογισμικού", 
+      "Ανάλυση Δεδομένων",
+      "Business Intelligence",
+      "Snowflake Consulting",
       "IT Συμβουλευτική Θεσσαλονίκη",
       "Web Development",
       "Mobile App Development"

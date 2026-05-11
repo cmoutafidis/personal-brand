@@ -7,17 +7,17 @@ import Projects from '../../../components/Projects';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Software Development Portfolio | Custom Software Company Thessaloniki',
-  description: 'View our custom software development portfolio. Web development, mobile app development & IT consulting projects from top software company in Thessaloniki.',
-  keywords: 'custom software development company Thessaloniki, software development services Greece, web development company Thessaloniki, mobile app development Greece, software company Thessaloniki portfolio, IT consulting Thessaloniki projects, custom software projects, ERP implementation Thessaloniki, custom CRM solutions Greece',
+  title: 'Services - Custom Software, Data Analysis & Snowflake Greece',
+  description: 'Fiji Solutions services for Greek businesses: custom software development, data analysis, BI dashboards, Snowflake consulting, AI automation, and systems integration.',
+  keywords: 'custom software services Greece, data analysis services Greece, Snowflake consulting Greece, business intelligence Greece, software company Thessaloniki, data engineering Greece',
   alternates: {
     canonical: 'https://www.fijisolutions.net/en/portfolio',
   },
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/portfolio',
-    title: 'Portfolio & Projects',
-    description: 'Explore Fiji Solutions portfolio: innovative web development, AI solutions, cloud services & Snowflake AI Data Cloud data engineering projects from our Thessaloniki team.',
+    title: 'Services - Fiji Solutions',
+    description: 'Custom software, data analysis, BI dashboards, Snowflake consulting, and data engineering services in Greece.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Portfolio & Projects',
-    description: 'Explore Fiji Solutions portfolio: innovative web development, AI solutions, cloud services & Snowflake AI Data Cloud data engineering projects from our Thessaloniki team.',
+    title: 'Services - Fiji Solutions',
+    description: 'Custom software, data analysis, BI dashboards, Snowflake consulting, and data engineering services in Greece.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

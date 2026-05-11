@@ -4,16 +4,17 @@ export const translations: Record<Language, Record<string, string>> = {
   en: {
     // Navigation
     'nav.home': 'Home',
-    'nav.portfolio': 'Portfolio',
+    'nav.portfolio': 'Services',
+    'nav.snowflake': 'Snowflake',
     'nav.contact': 'Contact',
     'nav.legal': 'Legal',
 
     // Hero Section
-    'hero.title': 'Software Development for your Business needs',
-    'hero.cta': 'Yes, I Want That',
+    'hero.title': 'Custom Software Solutions, Data Analysis & Snowflake Consulting in Greece',
+    'hero.cta': 'Book a Free Consultation',
     'hero.talk': "Let's talk now",
-    'hero.description1': 'New technology is very important for your business.',
-    'hero.description2': 'However, there are already 101 things on your to-do list. And they are all important!',
+    'hero.description1': 'Fiji Solutions builds business software, analytics dashboards, and data platforms for companies in Greece.',
+    'hero.description2': 'As a Snowflake AI Data Cloud Select Partner, we help teams turn operational data into clear decisions and reliable automation.',
 
     // Challenges
     'challenges.title': 'Common Challenges Businesses Face',
@@ -27,11 +28,11 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Solutions
     'solutions.title': 'How We Help You',
-    'solutions.subtitle': 'Here is what we can do for you.',
+    'solutions.subtitle': 'Focused delivery for software, data, and automation projects.',
     'solutions.experts.title': 'We are experts',
-    'solutions.experts.description': 'Our IT consulting team in Thessaloniki specializes in the latest technologies and AI products.',
+    'solutions.experts.description': 'Our team in Thessaloniki specializes in custom software, data engineering, and Snowflake AI Data Cloud implementations.',
     'solutions.fast.title': 'Fast and Good',
-    'solutions.fast.description': 'We deliver high quality custom software development, and we deliver them fast.',
+    'solutions.fast.description': 'We deliver maintainable business applications, dashboards, integrations, and automation with clear milestones.',
     'solutions.industry.title': 'Industry Knowledge',
     'solutions.industry.description': 'We understand your market and deliver solutions that address specific industry needs.',
     'solutions.payment.title': 'Payment Solutions',
@@ -82,10 +83,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'projects.code': 'Source Code',
 
     // Services
-    'services.title': 'Our Work',
-    'services.subtitle': 'Custom software development projects we have done with our existing clients.',
+    'services.title': 'Custom Software, Data Analysis & Snowflake Services',
+    'services.subtitle': 'Services for Greek businesses that need reliable software, better reporting, and modern data infrastructure.',
     'services.software.title': 'Custom Software Development',
-    'services.software.description': 'End-to-end development of web applications, mobile solutions, and enterprise software that fit to specific business needs.',
+    'services.software.description': 'End-to-end development of web applications, internal tools, integrations, and enterprise software that fit specific business needs.',
     'services.software.feature1': 'Custom Software Applications',
     'services.software.feature2': 'Web Applications',
     'services.software.feature3': 'Mobile Applications',
@@ -108,8 +109,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.payment.feature2': 'Payment Gateway Integration',
     'services.payment.feature3': 'Digital Wallets',
     'services.payment.feature4': 'Crypto Payments',
-    'services.snowflake.title': 'Snowflake Data Engineering',
-    'services.snowflake.description': 'We help customers implement or migrate to the Snowflake AI Data Cloud. As a Snowflake AI Data Cloud partner, we deliver comprehensive data strategies.',
+    'services.snowflake.title': 'Snowflake Consulting & Data Engineering',
+    'services.snowflake.description': 'We help customers implement, optimize, or migrate to Snowflake AI Data Cloud. As a Snowflake AI Data Cloud Select Partner, we deliver practical data strategies and pipelines.',
     'services.snowflake.feature1': 'Data Warehouse Development',
     'services.snowflake.feature2': 'ETL/ELT Pipeline Creation',
     'services.snowflake.feature3': 'Advanced Analytics & BI',
@@ -156,8 +157,8 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Blog
     'nav.blog': 'Blog',
-    'blog.title': 'Blog',
-    'blog.subtitle': 'Insights, tips, and stories from our team',
+    'blog.title': 'Software, Data & Snowflake Insights',
+    'blog.subtitle': 'Practical articles about custom software, data analysis, Snowflake, automation, and digital growth in Greece.',
     'blog.read_more': 'Read More',
     'blog.back_to_blog': 'Back to Blog',
     'blog.reading_time': 'min read',
@@ -205,16 +206,17 @@ export const translations: Record<Language, Record<string, string>> = {
   el: {
     // Navigation
     'nav.home': 'Αρχική',
-    'nav.portfolio': 'Η Δουλειά μας',
+    'nav.portfolio': 'Υπηρεσίες',
+    'nav.snowflake': 'Snowflake',
     'nav.contact': 'Επικοινωνία',
     'nav.legal': 'Νομικά',
 
     // Hero Section
-    'hero.title': 'Ανάπτυξη Λογισμικού για τις ανάγκες της Επιχείρησης σου',
-    'hero.cta': 'Ναι, αυτό θέλω',
+    'hero.title': 'Εξατομικευμένο Λογισμικό, Ανάλυση Δεδομένων & Snowflake Consulting στην Ελλάδα',
+    'hero.cta': 'Κλείσε δωρεάν συζήτηση',
     'hero.talk': 'Ας μιλήσουμε τώρα',
-    'hero.description1': 'Οι νέες τεχνολογίες είναι πολύ σημαντικές για την επιχείρησή σου στην Ελλάδα.',
-    'hero.description2': 'Αλλά έχεις ήδη ένα σωρό πράγματα να κάνεις. Και είναι όλα επίσης σημαντικά!',
+    'hero.description1': 'Η Fiji Solutions αναπτύσσει επιχειρησιακό λογισμικό, analytics dashboards και data platforms για επιχειρήσεις στην Ελλάδα.',
+    'hero.description2': 'Ως Snowflake AI Data Cloud Select Partner, βοηθάμε ομάδες να μετατρέψουν τα επιχειρησιακά δεδομένα σε αποφάσεις και αξιόπιστη αυτοματοποίηση.',
 
     // Challenges
     'challenges.title': 'Κοινές Προκλήσεις Επιχειρήσεων',
@@ -228,11 +230,11 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Solutions
     'solutions.title': 'Πώς βοηθάμε εμείς',
-    'solutions.subtitle': 'Η εταιρεία λογισμικού μας στη Θεσσαλονίκη προσφέρει ολοκληρωμένες λύσεις.',
+    'solutions.subtitle': 'Στοχευμένη υλοποίηση για έργα λογισμικού, δεδομένων και αυτοματοποίησης.',
     'solutions.experts.title': 'Είμαστε ειδικοί',
-    'solutions.experts.description': 'Ως εμπειρογνώμονες εταιρεία λογισμικού Θεσσαλονίκη, η ομάδα μας ξέρει καλά τις τελευταίες τεχνολογίες και τα προϊόντα AI.',
+    'solutions.experts.description': 'Η ομάδα μας στη Θεσσαλονίκη ειδικεύεται σε εξατομικευμένο λογισμικό, data engineering και Snowflake AI Data Cloud υλοποιήσεις.',
     'solutions.fast.title': 'Γρήγορα και καλά',
-    'solutions.fast.description': 'Κάνουμε κορυφαία εξατομικευμένη ανάπτυξη λογισμικού, και την παραδίδουμε γρήγορα.',
+    'solutions.fast.description': 'Παραδίδουμε συντηρήσιμες εφαρμογές, dashboards, integrations και αυτοματισμούς με ξεκάθαρα milestones.',
     'solutions.industry.title': 'Ξέρουμε τον κλάδο σου',
     'solutions.industry.description': 'Καταλαβαίνουμε την αγορά σου και φτιάχνουμε λύσεις που λύνουν τα προβλήματά της.',
     'solutions.payment.title': 'Λύσεις για πληρωμές',
@@ -283,8 +285,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'projects.code': 'Ανοιχτός κώδικας',
 
     // Services
-    'services.title': 'Η δουλειά μας',
-    'services.subtitle': 'Έργα εξατομικευμένης ανάπτυξης λογισμικού που φτιάξαμε για τους πελάτες μας.',
+    'services.title': 'Εξατομικευμένο Λογισμικό, Ανάλυση Δεδομένων & Snowflake Υπηρεσίες',
+    'services.subtitle': 'Υπηρεσίες για ελληνικές επιχειρήσεις που χρειάζονται αξιόπιστο λογισμικό, καλύτερο reporting και σύγχρονη data υποδομή.',
     'services.software.title': 'Εξατομικευμένη Ανάπτυξη Λογισμικού',
     'services.software.description': 'Ως εταιρεία λογισμικού Θεσσαλονίκη, παρέχουμε ολοκληρωμένη ανάπτυξη web εφαρμογών, mobile λύσεων και εταιρικού λογισμικού που ταιριάζει στις συγκεκριμένες επιχειρηματικές ανάγκες.',
     'services.software.feature1': 'Προσαρμοσμένες Εφαρμογές Λογισμικού',
@@ -309,8 +311,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.payment.feature2': 'Ενσωμάτωση Payment Gateway',
     'services.payment.feature3': 'Ψηφιακά Πορτοφόλια',
     'services.payment.feature4': 'Crypto Πληρωμές',
-    'services.snowflake.title': 'Snowflake Data Engineering',
-    'services.snowflake.description': 'Βοηθάμε πελάτες να υλοποιήσουν ή να μεταναστεύσουν στο Snowflake AI Data Cloud. Ως εταίροι του Snowflake AI Data Cloud, παρέχουμε ολοκληρωμένες στρατηγικές δεδομένων.',
+    'services.snowflake.title': 'Snowflake Consulting & Data Engineering',
+    'services.snowflake.description': 'Βοηθάμε πελάτες να υλοποιήσουν, να βελτιστοποιήσουν ή να μεταναστεύσουν στο Snowflake AI Data Cloud. Ως Snowflake AI Data Cloud Select Partner, παρέχουμε πρακτικές στρατηγικές δεδομένων και pipelines.',
     'services.snowflake.feature1': 'Ανάπτυξη Data Warehouse',
     'services.snowflake.feature2': 'Δημιουργία ETL/ELT Pipelines',
     'services.snowflake.feature3': 'Προχωρημένα Analytics & BI',
@@ -357,8 +359,8 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Blog
     'nav.blog': 'Blog',
-    'blog.title': 'Blog',
-    'blog.subtitle': 'Ιδέες, συμβουλές και ιστορίες από την ομάδα μας',
+    'blog.title': 'Software, Data & Snowflake Insights',
+    'blog.subtitle': 'Πρακτικά άρθρα για custom software, ανάλυση δεδομένων, Snowflake, αυτοματοποίηση και digital growth στην Ελλάδα.',
     'blog.read_more': 'Διάβασε περισσότερα',
     'blog.back_to_blog': 'Πίσω στο Blog',
     'blog.reading_time': 'λεπτά ανάγνωσης',
