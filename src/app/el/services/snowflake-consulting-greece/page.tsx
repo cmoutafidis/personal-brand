@@ -72,17 +72,14 @@ export default function SnowflakeConsultingGreecePageEL() {
 
       <section className="bg-gray-50 py-16 dark:bg-gray-800 md:py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Από raw data σε επιχειρησιακές αποφάσεις</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Χρειάζεσαι πιο ασφαλές Snowflake πλάνο;</h2>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-            Το Snowflake γίνεται πιο χρήσιμο όταν συνδέεται με το λογισμικό, τα dashboards και τις διαδικασίες που χρησιμοποιούν καθημερινά οι ομάδες σας.
+            Πες μας πού βρίσκονται σήμερα τα δεδομένα σου και ποιες αποφάσεις δεν μπορεί να πάρει γρήγορα η ομάδα σου. Θα σου προτείνουμε πρακτικό επόμενο βήμα σε 48 ώρες.
           </p>
-          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <Link href="/el/services/data-analysis-greece" className="rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition hover:bg-primary-700">Ανάλυση Δεδομένων</Link>
-            <Link href="/el/services/custom-software-development-greece" className="rounded-lg border border-gray-300 px-6 py-3 font-semibold text-gray-900 transition hover:bg-white dark:border-gray-600 dark:text-white dark:hover:bg-gray-900">Custom Software</Link>
-          </div>
+          <Link href="/el/contact" className="mt-8 inline-block rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition hover:bg-primary-700">Κλείσε δωρεάν συζήτηση</Link>
         </div>
       </section>
-      <Footer t={t} />
+      <Footer t={t} minimal />
     </div>
   );
 }

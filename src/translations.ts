@@ -10,7 +10,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.legal': 'Legal',
 
     // Hero Section
-    'hero.title': 'Custom Software Solutions, Data Analysis & Snowflake Consulting in Greece',
+    'hero.title': 'Turn manual work and messy data into software your team actually uses',
     'hero.cta': 'Book a Free Consultation',
     'hero.talk': "Let's talk now",
     'hero.description1': 'Fiji Solutions builds business software, analytics dashboards, and data platforms for companies in Greece.',
@@ -18,28 +18,28 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Challenges
     'challenges.title': 'Common Challenges Businesses Face',
-    'challenges.subtitle': 'All traditional businesses face the same problems.',
+    'challenges.subtitle': 'The same bottlenecks slow down growing teams every week.',
     'challenges.old_tech.title': 'Old Technology',
-    'challenges.old_tech.description': 'It is very hard to compete using outdated technology. You are missing opportunities and it is hard to automate processes and scale.',
-    'challenges.slow.title': 'Everyone is slow',
-    'challenges.slow.description': 'You could hire a traditional agency, but they all work slowly and are very expensive. On the other hand, hiring good staff is difficult. And even if you find someone good, one day they might leave.',
+    'challenges.old_tech.description': 'Outdated systems make every change harder. Automation waits, reporting stays manual, and good opportunities get missed.',
+    'challenges.slow.title': 'Delivery is slow',
+    'challenges.slow.description': 'Agencies move slowly, hiring takes time, and one key developer leaving can freeze progress.',
     'challenges.money.title': 'Money wasted',
-    'challenges.money.description': 'A lot of everyday tasks that your staff has been doing for years can now be automated. This costs you tons of money and time.',
+    'challenges.money.description': 'Manual work in spreadsheets, emails, approvals, and reporting quietly burns hours every week.',
 
     // Solutions
     'solutions.title': 'How We Help You',
     'solutions.subtitle': 'Focused delivery for software, data, and automation projects.',
-    'solutions.experts.title': 'We are experts',
+    'solutions.experts.title': 'Software that fits your work',
     'solutions.experts.description': 'Our team in Thessaloniki specializes in custom software, data engineering, and Snowflake AI Data Cloud implementations.',
-    'solutions.fast.title': 'Fast and Good',
+    'solutions.fast.title': 'Clear delivery',
     'solutions.fast.description': 'We deliver maintainable business applications, dashboards, integrations, and automation with clear milestones.',
     'solutions.industry.title': 'Industry Knowledge',
     'solutions.industry.description': 'We understand your market and deliver solutions that address specific industry needs.',
     'solutions.payment.title': 'Payment Solutions',
     'solutions.payment.description': 'Money keeps your business alive. We make payments super easy, so your customers can pay any way they want.',
-    'solutions.cta.title': "Don't Let Your Competition Get Ahead",
-    'solutions.cta.description': "The AI revolution is happening now. Companies that adapted are leading their industries. Don't wait until it's too late. Start today.",
-    'solutions.cta.button': 'Contact Us Now',
+    'solutions.cta.title': 'See where automation can save your team time',
+    'solutions.cta.description': 'We will review your software, reporting, and manual workflows, then show the fastest practical improvements.',
+    'solutions.cta.button': 'Book a Free Consultation',
 
     // Contact
     'contact.title': 'Get A Free Consultation',
@@ -212,7 +212,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.legal': 'Νομικά',
 
     // Hero Section
-    'hero.title': 'Εξατομικευμένο Λογισμικό, Ανάλυση Δεδομένων & Snowflake Consulting στην Ελλάδα',
+    'hero.title': 'Μετέτρεψε χειροκίνητη δουλειά και χαοτικά δεδομένα σε λογισμικό που χρησιμοποιεί η ομάδα σου',
     'hero.cta': 'Κλείσε δωρεάν συζήτηση',
     'hero.talk': 'Ας μιλήσουμε τώρα',
     'hero.description1': 'Η Fiji Solutions αναπτύσσει επιχειρησιακό λογισμικό, analytics dashboards και data platforms για επιχειρήσεις στην Ελλάδα.',
@@ -220,28 +220,28 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Challenges
     'challenges.title': 'Κοινές Προκλήσεις Επιχειρήσεων',
-    'challenges.subtitle': 'Όλες οι παραδοσιακές επιχειρήσεις έχουν παρόμοιες προκλήσεις.',
+    'challenges.subtitle': 'Τα ίδια bottlenecks καθυστερούν τις ομάδες που μεγαλώνουν.',
     'challenges.old_tech.title': 'Παλιές Τεχνολογίες',
-    'challenges.old_tech.description': 'Είναι δύσκολο να τα βάλεις με τον ανταγωνισμό με ξεπερασμένες τεχνολογίες. Χάνεις ευκαιρίες και δεν μπορείς εύκολα να αυτοματοποιήσεις διαδικασίες ή να μεγαλώσεις.',
-    'challenges.slow.title': 'Όλοι είναι αργοί',
-    'challenges.slow.description': 'Μπορείς να προσλάβεις μια εταιρεία, αλλά όλες είναι αργές και πανάκριβες. Επίσης, το να βρεις καλό προσωπικό είναι δύσκολο. Και ακόμα κι αν βρεις κάποιον καλό, μπορεί να την κάνει μια μέρα.',
+    'challenges.old_tech.description': 'Τα παλιά συστήματα κάνουν κάθε αλλαγή πιο δύσκολη. Η αυτοματοποίηση μένει πίσω, το reporting γίνεται χειροκίνητα και χάνονται ευκαιρίες.',
+    'challenges.slow.title': 'Η υλοποίηση αργεί',
+    'challenges.slow.description': 'Οι εταιρείες συχνά κινούνται αργά, οι προσλήψεις θέλουν χρόνο και αν φύγει ένας βασικός developer, η πρόοδος μπορεί να παγώσει.',
     'challenges.money.title': 'Χαμένα λεφτά',
-    'challenges.money.description': 'Πολλές δουλειές που κάνει το προσωπικό σου εδώ και χρόνια γίνονται πλέον αυτόματα. Αυτό σου κοστίζει ένα σωρό λεφτά και χρόνο.',
+    'challenges.money.description': 'Χειροκίνητες δουλειές σε spreadsheets, emails, εγκρίσεις και reports καίνε ώρες κάθε εβδομάδα χωρίς να φαίνεται.',
 
     // Solutions
     'solutions.title': 'Πώς βοηθάμε εμείς',
     'solutions.subtitle': 'Στοχευμένη υλοποίηση για έργα λογισμικού, δεδομένων και αυτοματοποίησης.',
-    'solutions.experts.title': 'Είμαστε ειδικοί',
+    'solutions.experts.title': 'Λογισμικό που ταιριάζει στη δουλειά σου',
     'solutions.experts.description': 'Η ομάδα μας στη Θεσσαλονίκη ειδικεύεται σε εξατομικευμένο λογισμικό, data engineering και Snowflake AI Data Cloud υλοποιήσεις.',
-    'solutions.fast.title': 'Γρήγορα και καλά',
+    'solutions.fast.title': 'Καθαρή υλοποίηση',
     'solutions.fast.description': 'Παραδίδουμε συντηρήσιμες εφαρμογές, dashboards, integrations και αυτοματισμούς με ξεκάθαρα milestones.',
     'solutions.industry.title': 'Ξέρουμε τον κλάδο σου',
     'solutions.industry.description': 'Καταλαβαίνουμε την αγορά σου και φτιάχνουμε λύσεις που λύνουν τα προβλήματά της.',
     'solutions.payment.title': 'Λύσεις για πληρωμές',
     'solutions.payment.description': 'Τα λεφτά κρατάνε την επιχείρησή σου ζωντανή. Κάνουμε τις πληρωμές απλές και αφήνουμε τους πελάτες σου να πληρώνουν όπως θέλουν.',
-    'solutions.cta.title': 'Μην αφήνεις τον ανταγωνισμό να σε περάσει',
-    'solutions.cta.description': 'Η επανάσταση του AI γίνεται τώρα. Όσοι το χρησιμοποιούν είναι μπροστά στον κλάδο τους. Μην περιμένεις να είναι αργά. Ξεκίνα σήμερα.',
-    'solutions.cta.button': 'Μίλα μαζί μας τώρα',
+    'solutions.cta.title': 'Δες πού μπορεί η αυτοματοποίηση να σου γλιτώσει χρόνο',
+    'solutions.cta.description': 'Θα δούμε το λογισμικό, το reporting και τις χειροκίνητες διαδικασίες σου και θα σου δείξουμε τις πιο πρακτικές βελτιώσεις.',
+    'solutions.cta.button': 'Κλείσε δωρεάν συζήτηση',
 
     // Contact
     'contact.title': 'Δωρεάν συνομιλία',

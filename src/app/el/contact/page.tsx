@@ -40,7 +40,7 @@ export default function GreekContactPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <Contact t={t} element={"h1"}/>
-      <Footer t={t}/>
+      <Footer t={t} minimal/>
     </div>
   );
 }

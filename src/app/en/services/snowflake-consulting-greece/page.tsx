@@ -72,17 +72,14 @@ export default function SnowflakeConsultingGreecePage() {
 
       <section className="bg-gray-50 py-16 dark:bg-gray-800 md:py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">From raw data to business decisions</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Need a safer Snowflake plan?</h2>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-            Snowflake becomes more valuable when it is connected to the software, dashboards, and processes your teams use daily.
+            Tell us where your data is today and what decisions your team cannot make fast enough. We will suggest a practical next step within 48 hours.
           </p>
-          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <Link href="/en/services/data-analysis-greece" className="rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition hover:bg-primary-700">Data Analysis</Link>
-            <Link href="/en/services/custom-software-development-greece" className="rounded-lg border border-gray-300 px-6 py-3 font-semibold text-gray-900 transition hover:bg-white dark:border-gray-600 dark:text-white dark:hover:bg-gray-900">Custom Software</Link>
-          </div>
+          <Link href="/en/contact" className="mt-8 inline-block rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition hover:bg-primary-700">Book a free consultation</Link>
         </div>
       </section>
-      <Footer t={t} />
+      <Footer t={t} minimal />
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Services from '../../../components/Services';
 import Technologies from '../../../components/Technologies';
 import Industries from '../../../components/Industries';
 import Projects from '../../../components/Projects';
+import Contact from '../../../components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -46,7 +47,8 @@ export default function EnglishPortfolioPage() {
       <Technologies t={t}/>
       <Industries t={t}/>
       <Projects t={t}/>
-      <Footer t={t}/>
+      <Contact t={t} element={"h2"}/>
+      <Footer t={t} minimal/>
     </div>
   );
 }

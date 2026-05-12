@@ -104,7 +104,7 @@ export default function GreekHomePage() {
       <Challenges t={t}/>
       <Solutions t={t}/>
       <Contact t={t} element={"h2"}/>
-      <Footer t={t}/>
+      <Footer t={t} minimal/>
     </>
   );
 }

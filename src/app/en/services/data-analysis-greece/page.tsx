@@ -72,14 +72,14 @@ export default function DataAnalysisGreecePage() {
 
       <section className="bg-gray-50 py-16 dark:bg-gray-800 md:py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Planning a modern data platform?</h2>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">Want clearer reporting without more spreadsheet work?</h2>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-            As a Snowflake AI Data Cloud Select Partner, Fiji Solutions can help you move from scattered reporting to a scalable data warehouse and analytics foundation.
+            Share the reports your team prepares manually. We will show where automation or a dashboard can create the fastest improvement.
           </p>
-          <Link href="/en/services/snowflake-consulting-greece" className="mt-8 inline-block rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition hover:bg-primary-700">Explore Snowflake consulting</Link>
+          <Link href="/en/contact" className="mt-8 inline-block rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition hover:bg-primary-700">Book a free consultation</Link>
         </div>
       </section>
-      <Footer t={t} />
+      <Footer t={t} minimal />
     </div>
   );
 }
