@@ -5,6 +5,7 @@ import {ThemeProvider} from '@/context/ThemeContext';
 import {LanguageProvider} from '@/context/LanguageContext';
 import Navbar from '../components/Navbar';
 import React from "react";
+import VapiChatWidget from "@/components/VapiChatWidget";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -77,6 +78,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const assistantId = "d6683411-62fe-42cb-ad6f-54dc1eb9eeb7";
+  const vapiApiKey = "4fb313ff-b3ca-4e50-869f-2a28d0939c6f";
   return (
     <html lang="en" className={`${inter.variable} ${plusJakartaSans.variable}`}>
     <head>
@@ -265,6 +268,12 @@ export default function RootLayout({
           <Navbar/>
           <main>
             {children}
+
+            {/* Global Chat Widget - visible on all pages */}
+            <VapiChatWidget
+              apiKey={vapiApiKey}
+              assistantId={assistantId}
+            />
           </main>
         </div>
       </LanguageProvider>
