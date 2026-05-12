@@ -91,7 +91,7 @@ export default function CustomSoftwareDevelopmentGreecePage() {
           <Link href="/en/contact" className="mt-8 inline-block rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition hover:bg-primary-700">Book a free consultation</Link>
         </div>
       </section>
-      <Footer t={t} minimal />
+      <Footer t={t} />
     </div>
   );
 }

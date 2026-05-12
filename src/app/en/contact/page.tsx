@@ -40,7 +40,7 @@ export default function EnglishContactPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <Contact t={t} element={"h1"}/>
-      <Footer t={t} minimal/>
+      <Footer t={t}/>
     </div>
   );
 }

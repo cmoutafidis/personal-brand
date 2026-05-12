@@ -48,7 +48,7 @@ export default function EnglishPortfolioPage() {
       <Industries t={t}/>
       <Projects t={t}/>
       <Contact t={t} element={"h2"}/>
-      <Footer t={t} minimal/>
+      <Footer t={t}/>
     </div>
   );
 }

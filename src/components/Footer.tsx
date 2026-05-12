@@ -5,10 +5,9 @@ import QuickLinks from "@/components/QuickLinks";
 
 interface FooterProps {
   t: (key: string) => string;
-  minimal?: boolean;
 }
 
-export default function Footer({t, minimal = false}: FooterProps) {
+export default function Footer({t}: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   const XIcon = (props: { className?: string | undefined }) => (
@@ -31,16 +30,6 @@ export default function Footer({t, minimal = false}: FooterProps) {
       />
     </svg>
   );
-
-  if (minimal) {
-    return (
-      <footer className="bg-gray-900 py-6 text-center text-sm text-gray-500">
-        <p>
-          &copy; {currentYear} Fiji Solutions. {t('footer.rights')}
-        </p>
-      </footer>
-    );
-  }
 
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">

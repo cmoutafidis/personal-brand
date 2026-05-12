@@ -79,7 +79,7 @@ export default function DataAnalysisGreecePageEL() {
           <Link href="/el/contact" className="mt-8 inline-block rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition hover:bg-primary-700">Κλείσε δωρεάν συζήτηση</Link>
         </div>
       </section>
-      <Footer t={t} minimal />
+      <Footer t={t} />
     </div>
   );
 }

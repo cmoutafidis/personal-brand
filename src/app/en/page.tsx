@@ -46,7 +46,7 @@ export default function EnglishHomePage() {
       <Challenges t={t}/>
       <Solutions t={t}/>
       <Contact t={t} element={"h2"}/>
-      <Footer t={t} minimal/>
+      <Footer t={t}/>
     </>
   );
 }
