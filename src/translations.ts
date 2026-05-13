@@ -11,7 +11,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Hero Section
     'hero.title': 'Stop losing time to manual work and broken processes',
-    'hero.cta': 'Book a Free Operations Review',
+    'hero.cta': 'Book a Free Consultation',
     'hero.talk': "Let's talk now",
     'hero.description1': 'Fiji Solutions looks at how your business runs day to day, finds what is slowing you down or costing you money, and builds software to fix it.',
     'hero.description2': 'From internal tools and automations to reporting, data analysis, and Snowflake-backed data systems, we build practical solutions your team can actually use.',
@@ -39,10 +39,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'solutions.payment.description': 'We help you see whether the fix is saving time, reducing errors, or making decisions faster.',
     'solutions.cta.title': 'Show us one process that feels slower than it should',
     'solutions.cta.description': 'We will review the task, spreadsheet, report, or workflow that creates the most friction and suggest the first practical software fix.',
-    'solutions.cta.button': 'Book a Free Operations Review',
+    'solutions.cta.button': 'Book a Free Consultation',
 
     // Contact
-    'contact.title': 'Book a Free Operations Review',
+    'contact.title': 'Book a Free Consultation',
     'contact.subtitle1': 'Tell us what is slowing your business down or costing you money.',
     'contact.subtitle2': 'Fill out the form below and we will reply within 48 hours with a practical next step.',
     'contact.subtitle3': 'No costs, no obligations, no annoying sales pitch.',
