@@ -7,17 +7,17 @@ import Contact from '../../components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Εξατομικευμένο Λογισμικό, Ανάλυση Δεδομένων & Snowflake Ελλάδα | Fiji Solutions',
-  description: 'Η Fiji Solutions αναπτύσσει εξατομικευμένο λογισμικό στην Ελλάδα και βοηθά επιχειρήσεις με ανάλυση δεδομένων, BI dashboards, data engineering και Snowflake AI Data Cloud.',
-  keywords: 'εξατομικευμένο λογισμικό Ελλάδα, εταιρεία λογισμικού Θεσσαλονίκη, ανάλυση δεδομένων Ελλάδα, Snowflake consulting Ελλάδα, business intelligence Ελλάδα, data engineering Ελλάδα, custom software Ελλάδα',
+  title: 'Λογισμικό, Αυτοματισμοί & Snowflake Ελλάδα | Fiji Solutions',
+  description: 'Η Fiji Solutions βοηθά επιχειρήσεις στην Ελλάδα να βρίσκουν αργές χειροκίνητες διαδικασίες και να τις λύνουν με custom software, αυτοματισμούς, reporting, data analysis και Snowflake.',
+  keywords: 'λογισμικό επιχειρήσεων Ελλάδα, αυτοματοποίηση διαδικασιών Ελλάδα, εξατομικευμένο λογισμικό Ελλάδα, εταιρεία λογισμικού Θεσσαλονίκη, ανάλυση δεδομένων Ελλάδα, Snowflake consulting Ελλάδα, business intelligence Ελλάδα, custom software Ελλάδα',
   alternates: {
     canonical: 'https://www.fijisolutions.net/el',
   },
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el',
-    title: 'Εξατομικευμένο Λογισμικό, Ανάλυση Δεδομένων & Snowflake Ελλάδα | Fiji Solutions',
-    description: 'Εξατομικευμένο λογισμικό, ανάλυση δεδομένων, BI dashboards και Snowflake AI Data Cloud consulting για επιχειρήσεις στην Ελλάδα.',
+    title: 'Λογισμικό, Αυτοματισμοί & Snowflake Ελλάδα | Fiji Solutions',
+    description: 'Custom software, αυτοματισμοί, reporting και Snowflake data systems που λύνουν λειτουργικά bottlenecks για επιχειρήσεις στην Ελλάδα.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Εξατομικευμένο Λογισμικό, Ανάλυση Δεδομένων & Snowflake Ελλάδα | Fiji Solutions',
-    description: 'Εξατομικευμένο λογισμικό, ανάλυση δεδομένων, BI dashboards και Snowflake AI Data Cloud consulting για επιχειρήσεις στην Ελλάδα.',
+    title: 'Λογισμικό, Αυτοματισμοί & Snowflake Ελλάδα | Fiji Solutions',
+    description: 'Custom software, αυτοματισμοί, reporting και Snowflake data systems που λύνουν λειτουργικά bottlenecks για επιχειρήσεις στην Ελλάδα.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };
@@ -45,7 +45,7 @@ export default function GreekHomePage() {
     "@type": "ProfessionalService",
     "name": "Fiji Solutions",
     "alternateName": "Εταιρεία Λογισμικού Θεσσαλονίκη Fiji Solutions",
-    "description": "Η Fiji Solutions είναι εταιρεία εξατομικευμένου λογισμικού, ανάλυσης δεδομένων και Snowflake AI Data Cloud consulting στη Θεσσαλονίκη.",
+    "description": "Η Fiji Solutions βοηθά επιχειρήσεις να βρίσκουν αργές χειροκίνητες διαδικασίες και να τις λύνουν με custom software, αυτοματισμούς, ανάλυση δεδομένων και Snowflake AI Data Cloud consulting.",
     "url": "https://www.fijisolutions.net/el",
     "logo": "https://www.fijisolutions.net/fijisolutions.png",
     "address": {

@@ -7,16 +7,16 @@ import Contact from '../../components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Custom Software, Data Analysis & Snowflake Consulting Greece | Fiji Solutions',
-  description: 'Fiji Solutions builds custom software solutions in Greece and helps companies with data analysis, BI dashboards, data engineering, and Snowflake AI Data Cloud consulting.',
-  keywords: 'custom software development Greece, custom software solutions Greece, data analysis services Greece, Snowflake consulting Greece, Snowflake partner Greece, software company Thessaloniki, business intelligence Greece, data engineering Greece',
+  title: 'Operational Software, Automation & Snowflake Greece | Fiji Solutions',
+  description: 'Fiji Solutions helps businesses in Greece find slow manual processes and build custom software, automations, reporting tools, data analysis workflows, and Snowflake data systems.',
+  keywords: 'operational software Greece, business process automation Greece, custom software development Greece, workflow automation Greece, data analysis services Greece, Snowflake consulting Greece, software company Thessaloniki, business intelligence Greece',
   alternates: {
     canonical: 'https://www.fijisolutions.net/en',
   },
   openGraph: {
     type: 'website',
-    title: 'Custom Software, Data Analysis & Snowflake Consulting Greece | Fiji Solutions',
-    description: 'Custom software development, data analysis, BI dashboards, and Snowflake AI Data Cloud consulting for businesses in Greece.',
+    title: 'Operational Software, Automation & Snowflake Greece | Fiji Solutions',
+    description: 'Custom software, automations, reporting tools, and Snowflake data systems that remove operational bottlenecks for businesses in Greece.',
     url: 'https://www.fijisolutions.net/en',
     images: [
       {
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Custom Software, Data Analysis & Snowflake Consulting Greece | Fiji Solutions',
-    description: 'Custom software development, data analysis, BI dashboards, and Snowflake AI Data Cloud consulting for businesses in Greece.',
+    title: 'Operational Software, Automation & Snowflake Greece | Fiji Solutions',
+    description: 'Custom software, automations, reporting tools, and Snowflake data systems that remove operational bottlenecks for businesses in Greece.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };
