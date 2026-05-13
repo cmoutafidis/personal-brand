@@ -22,7 +22,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.fijisolutions.net'),
   title: 'Fiji Solutions - Operational Software, Automation & Snowflake Greece',
-  description: 'Fiji Solutions helps businesses in Greece fix slow manual processes with custom software, workflow automation, reporting, data analysis, and Snowflake AI Data Cloud consulting.',
+  description: 'We help businesses in Greece fix slow manual processes with custom software, workflow automation, reporting, data analysis, and Snowflake AI Data Cloud consulting.',
   keywords: 'Fiji Solutions, operational software Greece, business process automation Greece, workflow automation Greece, custom software development Greece, software company Greece, software company Thessaloniki, data analysis services Greece, business intelligence Greece, Snowflake partner Greece, Snowflake consulting Greece, data engineering Greece, IT consulting Greece',
   authors: [{name: 'Fiji Solutions'}],
   robots: 'index, follow',
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   },
   other: {
     'linkedin:title': 'Software Company in Thessaloniki, Greece',
-    'linkedin:description': 'Fiji Solutions is a software company in Thessaloniki, Greece, helping businesses remove operational bottlenecks with custom software, automation, reporting, and data systems.',
+    'linkedin:description': 'We are a software company in Thessaloniki, Greece, helping businesses remove operational bottlenecks with custom software, automation, reporting, and data systems.',
     'linkedin:image': 'https://www.fijisolutions.net/fijisolutions.png',
     'msapplication-TileColor': '#0086ff',
   },
@@ -104,7 +104,7 @@ export default function RootLayout({
             "@type": "ProfessionalService",
             "name": "Fiji Solutions",
             "alternateName": "Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE)",
-            "description": "Fiji Solutions helps businesses in Greece remove slow manual processes with custom software, workflow automation, reporting, data analysis, and Snowflake AI Data Cloud consulting.",
+            "description": "We help businesses in Greece remove slow manual processes with custom software, workflow automation, reporting, data analysis, and Snowflake AI Data Cloud consulting.",
             "url": "https://www.fijisolutions.net/",
             "logo": "https://www.fijisolutions.net/fijisolutions.png",
             "image": "https://www.fijisolutions.net/fijisolutions.png",
@@ -141,7 +141,7 @@ export default function RootLayout({
             },
             "sameAs": [
               "https://x.com/fiji_solutions",
-              "https://www.facebook.com/profile.php?id=61578271845868",
+              "https://www.facebook.com/fijisolutions/",
               "https://www.linkedin.com/company/fijisolutionsnet/",
               "https://github.com/cmoutafidis"
             ],

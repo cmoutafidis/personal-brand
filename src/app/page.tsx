@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Custom Software, Data Analysis & Snowflake Consulting Greece | Fiji Solutions',
-  description: 'Fiji Solutions builds custom software and data analysis solutions in Greece, including Snowflake AI Data Cloud consulting, BI dashboards, and business applications.',
+  description: 'We build custom software and data analysis solutions in Greece, including Snowflake AI Data Cloud consulting, BI dashboards, and business applications.',
   keywords: 'custom software development Greece, data analysis services Greece, Snowflake consulting Greece, software company Thessaloniki, business intelligence Greece, data engineering Greece, custom software solutions Greece',
   alternates: {
     canonical: 'https://www.fijisolutions.net/en',

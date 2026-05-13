@@ -79,7 +79,7 @@ export default function Footer({t}: FooterProps) {
                 <XIcon className="h-5 w-5"/>
               </a>
               <a
-                href="https://www.facebook.com/profile.php?id=61578271845868"
+                href="https://www.facebook.com/fijisolutions/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"

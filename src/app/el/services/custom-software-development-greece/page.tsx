@@ -53,7 +53,7 @@ export default function CustomSoftwareDevelopmentGreecePageEL() {
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-primary-600 dark:text-primary-400">Custom Software Ελλάδα</p>
           <h1 className="max-w-4xl text-4xl font-bold leading-tight text-gray-900 dark:text-white md:text-6xl">Εξατομικευμένες λύσεις λογισμικού για ελληνικές επιχειρήσεις</h1>
           <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
-            Η Fiji Solutions σχεδιάζει και υλοποιεί λογισμικό γύρω από τη λειτουργία της επιχείρησής σας: εσωτερικά εργαλεία, customer portals, integrations, reporting και αυτοματοποίηση.
+            Σχεδιάζουμε και υλοποιούμε λογισμικό γύρω από τη λειτουργία της επιχείρησής σας: εσωτερικά εργαλεία, customer portals, integrations, reporting και αυτοματοποίηση.
           </p>
           <Link href="/el/contact" className="mt-8 inline-block rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition hover:bg-primary-700">
             Συζήτηση για το έργο σας

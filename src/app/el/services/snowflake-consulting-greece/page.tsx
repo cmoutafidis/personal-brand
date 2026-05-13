@@ -7,7 +7,7 @@ const siteUrl = 'https://www.fijisolutions.net';
 
 export const metadata: Metadata = {
   title: 'Snowflake Consulting Ελλάδα | Snowflake Partner | Fiji Solutions',
-  description: 'Snowflake consulting στην Ελλάδα από τη Fiji Solutions, Snowflake AI Data Cloud Select Partner. Data warehouse design, migration, ETL/ELT pipelines, BI και analytics.',
+  description: 'Παρέχουμε Snowflake consulting στην Ελλάδα ως Snowflake AI Data Cloud Select Partner. Data warehouse design, migration, ETL/ELT pipelines, BI και analytics.',
   keywords: 'Snowflake consulting Ελλάδα, Snowflake partner Ελλάδα, Snowflake AI Data Cloud Ελλάδα, Snowflake data engineering Ελλάδα, Snowflake migration Ελλάδα, data warehouse Ελλάδα',
   alternates: {
     canonical: `${siteUrl}/el/services/snowflake-consulting-greece`,
@@ -48,7 +48,7 @@ export default function SnowflakeConsultingGreecePageEL() {
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-primary-600 dark:text-primary-400">Snowflake AI Data Cloud Select Partner</p>
           <h1 className="max-w-4xl text-4xl font-bold leading-tight text-gray-900 dark:text-white md:text-6xl">Snowflake consulting και data engineering στην Ελλάδα</h1>
           <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
-            Η Fiji Solutions βοηθά επιχειρήσεις να υλοποιήσουν, να μεταναστεύσουν ή να βελτιστοποιήσουν Snowflake AI Data Cloud, ώστε οι ομάδες να δουλεύουν με αξιόπιστα δεδομένα, scalable pipelines και BI dashboards.
+            Βοηθάμε επιχειρήσεις να υλοποιήσουν, να μεταναστεύσουν ή να βελτιστοποιήσουν Snowflake AI Data Cloud, ώστε οι ομάδες να δουλεύουν με αξιόπιστα δεδομένα, scalable pipelines και BI dashboards.
           </p>
           <Link href="/el/contact" className="mt-8 inline-block rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition hover:bg-primary-700">
             Συζήτηση για Snowflake

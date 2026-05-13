@@ -60,7 +60,7 @@ export default function CustomSoftwareDevelopmentGreecePage() {
           <p className="mb-4 text-sm font-semibold uppercase tracking-[0.3em] text-primary-600 dark:text-primary-400">Custom Software Greece</p>
           <h1 className="max-w-4xl text-4xl font-bold leading-tight text-gray-900 dark:text-white md:text-6xl">Custom software solutions for Greek businesses</h1>
           <p className="mt-6 max-w-3xl text-xl text-gray-700 dark:text-gray-300">
-            Fiji Solutions designs and builds software around your operations: internal tools, customer portals, integrations, reporting, and automation that fit your business instead of forcing your team into generic tools.
+            We design and build software around your operations: internal tools, customer portals, integrations, reporting, and automation that fit your business instead of forcing your team into generic tools.
           </p>
           <Link href="/en/contact" className="mt-8 inline-block rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition hover:bg-primary-700">
             Discuss your project

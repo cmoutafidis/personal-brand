@@ -13,7 +13,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'hero.title': 'Stop losing time to manual work and broken processes',
     'hero.cta': 'Book a Free Consultation',
     'hero.talk': "Let's talk now",
-    'hero.description1': 'Fiji Solutions looks at how your business runs day to day, finds what is slowing you down or costing you money, and builds software to fix it.',
+    'hero.description1': 'We look at how your business runs day to day, find what is slowing you down or costing you money, and build software to fix it.',
     'hero.description2': 'From internal tools and automations to reporting, data analysis, and Snowflake-backed data systems, we build practical solutions your team can actually use.',
 
     // Challenges
@@ -149,7 +149,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'industries.data.description': 'Snowflake AI Data Cloud-powered data engineering and analytics solutions for modern businesses.',
 
     // Footer
-    'footer.description': 'Fiji Solutions is a Snowflake AI Data Cloud Select Partner and software company in Thessaloniki, Greece, specializing in data engineering, analytics, and custom software development.',
+    'footer.description': 'We are a Snowflake AI Data Cloud Select Partner and software company in Thessaloniki, Greece, specializing in data engineering, analytics, and custom software development.',
     'footer.partnership': 'Trusted Partnerships',
     'footer.links': 'Quick Links',
     'footer.projects': 'Projects',
@@ -215,7 +215,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'hero.title': 'Σταμάτα να χάνεις χρόνο σε χειροκίνητες εργασίες και αργές διαδικασίες',
     'hero.cta': 'Κλείσε δωρεάν έλεγχο διαδικασιών',
     'hero.talk': 'Ας μιλήσουμε τώρα',
-    'hero.description1': 'Η Fiji Solutions βλέπει πώς λειτουργεί η επιχείρησή σου καθημερινά, βρίσκει τι σε καθυστερεί ή σου κοστίζει χρήματα και φτιάχνει λογισμικό για να το λύσει.',
+    'hero.description1': 'Βλέπουμε πώς λειτουργεί η επιχείρησή σου καθημερινά, βρίσκουμε τι σε καθυστερεί ή σου κοστίζει χρήματα και φτιάχνουμε λογισμικό για να το λύσουμε.',
     'hero.description2': 'Από εσωτερικά εργαλεία και αυτοματισμούς μέχρι reporting, ανάλυση δεδομένων και Snowflake-backed data systems, φτιάχνουμε πρακτικές λύσεις που η ομάδα σου όντως χρησιμοποιεί.',
 
     // Challenges
@@ -351,7 +351,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'industries.data.description': 'Λύσεις data engineering και analytics με τη δύναμη του Snowflake AI Data Cloud για σύγχρονες επιχειρήσεις.',
 
     // Footer
-    'footer.description': 'Η Fiji Solutions είναι Snowflake AI Data Cloud Select Partner και κορυφαία εταιρεία λογισμικού στη Θεσσαλονίκη, που ειδικεύεται στο data engineering, analytics και εξατομικευμένη ανάπτυξη λογισμικού.',
+    'footer.description': 'Είμαστε Snowflake AI Data Cloud Select Partner και εταιρεία λογισμικού στη Θεσσαλονίκη, με εξειδίκευση στο data engineering, analytics και εξατομικευμένη ανάπτυξη λογισμικού.',
     'footer.partnership': 'Αξιόπιστες Συνεργασίες',
     'footer.links': 'Γρήγοροι σύνδεσμοι',
     'footer.projects': 'Έργα',

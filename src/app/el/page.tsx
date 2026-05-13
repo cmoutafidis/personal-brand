@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Λογισμικό, Αυτοματισμοί & Snowflake Ελλάδα | Fiji Solutions',
-  description: 'Η Fiji Solutions βοηθά επιχειρήσεις στην Ελλάδα να βρίσκουν αργές χειροκίνητες διαδικασίες και να τις λύνουν με custom software, αυτοματισμούς, reporting, data analysis και Snowflake.',
+  description: 'Βοηθάμε επιχειρήσεις στην Ελλάδα να βρίσκουν αργές χειροκίνητες διαδικασίες και να τις λύνουν με custom software, αυτοματισμούς, reporting, data analysis και Snowflake.',
   keywords: 'λογισμικό επιχειρήσεων Ελλάδα, αυτοματοποίηση διαδικασιών Ελλάδα, εξατομικευμένο λογισμικό Ελλάδα, εταιρεία λογισμικού Θεσσαλονίκη, ανάλυση δεδομένων Ελλάδα, Snowflake consulting Ελλάδα, business intelligence Ελλάδα, custom software Ελλάδα',
   alternates: {
     canonical: 'https://www.fijisolutions.net/el',
@@ -45,7 +45,7 @@ export default function GreekHomePage() {
     "@type": "ProfessionalService",
     "name": "Fiji Solutions",
     "alternateName": "Εταιρεία Λογισμικού Θεσσαλονίκη Fiji Solutions",
-    "description": "Η Fiji Solutions βοηθά επιχειρήσεις να βρίσκουν αργές χειροκίνητες διαδικασίες και να τις λύνουν με custom software, αυτοματισμούς, ανάλυση δεδομένων και Snowflake AI Data Cloud consulting.",
+    "description": "Βοηθάμε επιχειρήσεις να βρίσκουν αργές χειροκίνητες διαδικασίες και να τις λύνουν με custom software, αυτοματισμούς, ανάλυση δεδομένων και Snowflake AI Data Cloud consulting.",
     "url": "https://www.fijisolutions.net/el",
     "logo": "https://www.fijisolutions.net/fijisolutions.png",
     "address": {
@@ -88,7 +88,7 @@ export default function GreekHomePage() {
     "email": "info@fijisolutions.net",
     "sameAs": [
       "https://x.com/fiji_solutions",
-      "https://www.facebook.com/profile.php?id=61578271845868",
+      "https://www.facebook.com/fijisolutions/",
       "https://www.linkedin.com/company/fijisolutionsnet/",
       "https://github.com/cmoutafidis"
     ]

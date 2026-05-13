@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/contact',
     title: 'Επικοινωνία Fiji Solutions | Δωρεάν Συνομιλία Θεσσαλονίκη',
-    description: 'Επικοινωνήστε με τη Fiji Solutions για δωρεάν συνομιλία. IT συμβουλευτική & ανάπτυξη λογισμικού στη Θεσσαλονίκη. Web development, AI λύσεις.',
+    description: 'Επικοινωνήστε μαζί μας για δωρεάν συνομιλία. IT συμβουλευτική & ανάπτυξη λογισμικού στη Θεσσαλονίκη. Web development, AI λύσεις.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Επικοινωνία Fiji Solutions | Δωρεάν Συνομιλία Θεσσαλονίκη',
-    description: 'Επικοινωνήστε με τη Fiji Solutions για δωρεάν συνομιλία. IT συμβουλευτική & ανάπτυξη λογισμικού στη Θεσσαλονίκη. Web development, AI λύσεις.',
+    description: 'Επικοινωνήστε μαζί μας για δωρεάν συνομιλία. IT συμβουλευτική & ανάπτυξη λογισμικού στη Θεσσαλονίκη. Web development, AI λύσεις.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };
