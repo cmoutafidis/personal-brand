@@ -140,7 +140,7 @@ export default function PrivacyPolicyContent() {
                       </p>
                       <p className="flex items-start space-x-2">
                         <MapPin className="h-4 w-4 mt-1"/>
-                        <span>Μαρίνου Αντύπα 40<br/>Θεσσαλονίκη 570 01, Ελλάδα</span>
+                        <span>Νικηφόρου Ουρανού 15 και Μινώταυρου<br/>Κτίριο Γ1, Porto Center, 3ος όροφος<br/>Θεσσαλονίκη 54627, Ελλάδα</span>
                       </p>
                       <p className="flex items-center space-x-2">
                         <Globe className="h-4 w-4"/>

@@ -69,8 +69,8 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Contact Location
     'contact.location': 'Location',
-    'contact.address.street': 'Marinou Antipa 40',
-    'contact.address.city': 'Thessaloniki 570 01, Greece',
+    'contact.address.street': 'Nikiforou Ouranou & Minotavrou 15, Building G1, Porto Center, 3rd Floor',
+    'contact.address.city': 'Thessaloniki 54627, Greece',
 
     // Portfolio/Projects
     'projects.title': 'Projects',
@@ -192,7 +192,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Legal Data Values
     'legal.data.company_full_name': 'Fiji Solutions SINGLE MEMBER PRIVATE COMPANY (IKE)',
-    'legal.data.company_address': 'MARINOU ANTIPA 40, 570 01, PILEA, THESSALONIKI',
+    'legal.data.company_address': 'NIKIFOROU OURANOU & MINOTAVROU 15, BUILDING G1, PORTO CENTER, 3RD FLOOR, THESSALONIKI 54627',
     'legal.data.gemi_number': '185101306000',
     'legal.data.corporate_capital': '2.000 euro',
     'legal.data.partner_name': 'CHARALAMPOS MOUTAFIDIS',
@@ -271,8 +271,8 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Contact Location
     'contact.location': 'Πού είμαστε',
-    'contact.address.street': 'Μαρίνου Αντύπα 40',
-    'contact.address.city': 'Θεσσαλονίκη 57001, Ελλάδα',
+    'contact.address.street': 'Νικηφόρου Ουρανού 15 και Μινώταυρου, Κτίριο Γ1, Porto Center, 3ος όροφος',
+    'contact.address.city': 'Θεσσαλονίκη 54627, Ελλάδα',
 
     // Portfolio/Projects
     'projects.title': 'Έργα μας',
@@ -394,7 +394,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Legal Data Values
     'legal.data.company_full_name': 'Fiji Solutions ΜΟΝΟΠΡΟΣΩΠΗ ΙΚΕ',
-    'legal.data.company_address': 'ΜΑΡΙΝΟΥ ΑΝΤΥΠΑ 40, 57001, ΠΥΛΑΙΑ, ΘΕΣΣΑΛΟΝΙΚΗ',
+    'legal.data.company_address': 'ΝΙΚΗΦΟΡΟΥ ΟΥΡΑΝΟΥ 15 ΚΑΙ ΜΙΝΩΤΑΥΡΟΥ, ΚΤΙΡΙΟ Γ1, PORTO CENTER, 3ος ΟΡΟΦΟΣ, ΘΕΣΣΑΛΟΝΙΚΗ 54627',
     'legal.data.gemi_number': '185101306000',
     'legal.data.corporate_capital': '2.000 ευρώ',
     'legal.data.partner_name': 'ΧΑΡΑΛΑΜΠΟΣ ΜΟΥΤΑΦΙΔΗΣ',

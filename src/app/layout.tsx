@@ -113,9 +113,9 @@ export default function RootLayout({
             "priceRange": "$",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "Marinou Antipa 40",
+              "streetAddress": "Nikiforou Ouranou & Minotavrou 15, Building G1, Porto Center, 3rd Floor",
               "addressLocality": "Thessaloniki",
-              "postalCode": "57001",
+              "postalCode": "54627",
               "addressRegion": "Central Macedonia",
               "addressCountry": "GR"
             },

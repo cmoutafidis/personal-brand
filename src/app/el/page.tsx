@@ -50,9 +50,9 @@ export default function GreekHomePage() {
     "logo": "https://www.fijisolutions.net/fijisolutions.png",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Μαρίνου Αντύπα 40",
+      "streetAddress": "Νικηφόρου Ουρανού 15 και Μινώταυρου, Κτίριο Γ1, Porto Center, 3ος όροφος",
       "addressLocality": "Θεσσαλονίκη",
-      "postalCode": "57001",
+      "postalCode": "54627",
       "addressRegion": "Κεντρική Μακεδονία",
       "addressCountry": "GR"
     },
