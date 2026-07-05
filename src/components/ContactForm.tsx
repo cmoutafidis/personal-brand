@@ -9,9 +9,10 @@ import {Language} from '@/types/language';
 
 interface ContactFormProps {
   languageOverride?: Language;
+  hideTitle?: boolean;
 }
 
-export default function ContactForm({languageOverride}: ContactFormProps = {}) {
+export default function ContactForm({languageOverride, hideTitle = false}: ContactFormProps = {}) {
   const {language: contextLanguage} = useLanguage();
   const language = languageOverride ?? contextLanguage;
 
@@ -149,7 +150,9 @@ export default function ContactForm({languageOverride}: ContactFormProps = {}) {
   return (
     <div>
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
-        <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">{t('contact.form.title')}</h3>
+        {!hideTitle && (
+          <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">{t('contact.form.title')}</h3>
+        )}
 
         {/* Success Message */}
         {submitSuccess && (
