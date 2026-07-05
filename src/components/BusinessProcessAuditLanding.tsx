@@ -5,6 +5,7 @@ type LandingCopy = {
   heroTitle: string;
   intro: string[];
   cta: string;
+  insightTitle: string;
   proofParagraphs: string[];
   finalCta: string;
   urgency: string;
@@ -12,7 +13,7 @@ type LandingCopy = {
 
 const copy: Record<Language, LandingCopy> = {
   en: {
-    heroTitle: 'Are your business processes losing you money?',
+    heroTitle: 'Your business processes are losing you money',
     intro: [
       'We will analyse your business processes and workflows for free.',
       'We will find the bottlenecks that cause you to leave money on the table.',
@@ -20,14 +21,15 @@ const copy: Record<Language, LandingCopy> = {
       "If these solutions don't pay for themselves in 3 to 6 months, we will give you your money back."
     ],
     cta: 'Book a Free Consultation',
+    insightTitle: 'Did you know...',
     proofParagraphs: [
       'Companies are losing 17-32% of revenue because of unoptimised workflows, manual processes, and late follow-ups with clients.',
       'They rely on outdated software or on employees doing manual work. This is a recipe for disaster.',
       'Or they try to buy software and services that are available in the market, but they quickly realise that they are too complicated to use or too generic and they are not a good fit for them.',
       "We don't do that here.",
       'We will create custom software that is built only for you and specifically to solve your business needs.',
-      'And to show how confident we are, we put our money where our mouth is.',
-      "We are so confident that this solution will make you money, that we are willing to take 100% of the risk.",
+      'And to show how confident we are in our solutions, we put our money where our mouth is.',
+      'We are willing to take 100% of the risk.',
       "If our software doesn't earn it's money back by increasing your revenue in three to six months, we will give you your money back.",
       'This is our guarantee to you.'
     ],
@@ -35,7 +37,7 @@ const copy: Record<Language, LandingCopy> = {
     urgency: 'Every day you wait, you are leaving free money to the table.'
   },
   el: {
-    heroTitle: 'Σου κοστίζουν χρήματα οι διαδικασίες της επιχείρησής σου;',
+    heroTitle: 'Οι διαδικασίες της επιχείρησής σου σου κοστίζουν χρήματα',
     intro: [
       'Θα αναλύσουμε δωρεάν τις επιχειρηματικές διαδικασίες και τα workflows σου.',
       'Θα βρούμε τα bottlenecks που σε κάνουν να αφήνεις χρήματα στο τραπέζι.',
@@ -43,14 +45,15 @@ const copy: Record<Language, LandingCopy> = {
       'Αν αυτές οι λύσεις δεν αποσβέσουν το κόστος τους σε 3 έως 6 μήνες, θα σου επιστρέψουμε τα χρήματά σου.'
     ],
     cta: 'Κλείσε Δωρεάν Συμβουλευτική',
+    insightTitle: 'Το ήξερες;',
     proofParagraphs: [
       'Οι εταιρείες χάνουν 17-32% των εσόδων τους εξαιτίας μη βελτιστοποιημένων workflows, χειροκίνητων διαδικασιών και καθυστερημένων follow-ups με πελάτες.',
       'Βασίζονται σε παλιό λογισμικό ή σε εργαζόμενους που κάνουν χειροκίνητη δουλειά. Αυτό είναι συνταγή για καταστροφή.',
       'Ή προσπαθούν να αγοράσουν λογισμικό και υπηρεσίες που υπάρχουν ήδη στην αγορά, αλλά γρήγορα καταλαβαίνουν ότι είναι πολύ περίπλοκα στη χρήση ή πολύ γενικά και δεν ταιριάζουν στις ανάγκες τους.',
       'Εμείς δεν λειτουργούμε έτσι.',
       'Θα δημιουργήσουμε custom software που χτίζεται μόνο για εσένα και συγκεκριμένα για να λύσει τις επιχειρηματικές σου ανάγκες.',
-      'Και για να δείξουμε πόσο σίγουροι είμαστε, βάζουμε τα χρήματά μας εκεί που είναι τα λόγια μας.',
-      'Είμαστε τόσο σίγουροι ότι αυτή η λύση θα σου βγάλει χρήματα, που είμαστε διατεθειμένοι να πάρουμε το 100% του ρίσκου.',
+      'Και για να δείξουμε πόσο σίγουροι είμαστε για τις λύσεις μας, βάζουμε τα χρήματά μας εκεί που είναι τα λόγια μας.',
+      'Είμαστε διατεθειμένοι να πάρουμε το 100% του ρίσκου.',
       'Αν το λογισμικό μας δεν αποσβέσει το κόστος του αυξάνοντας τα έσοδά σου μέσα σε τρεις έως έξι μήνες, θα σου επιστρέψουμε τα χρήματά σου.',
       'Αυτή είναι η εγγύησή μας προς εσένα.'
     ],
@@ -95,6 +98,9 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
       <section className="bg-white py-16 dark:bg-gray-900 md:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-5 text-lg leading-8 text-gray-700 dark:text-gray-300">
+            <h2 className="text-3xl font-bold text-gray-950 dark:text-white md:text-5xl">
+              {pageCopy.insightTitle}
+            </h2>
             {pageCopy.proofParagraphs.map((paragraph, index) => (
               <p
                 key={paragraph}
@@ -103,18 +109,21 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
                 {paragraph}
               </p>
             ))}
-            <p className="text-xl font-semibold text-primary-600 dark:text-primary-400">
-              {pageCopy.finalCta}
-            </p>
-            <p className="text-xl font-semibold text-gray-950 dark:text-white">
-              {pageCopy.urgency}
-            </p>
           </div>
         </div>
       </section>
 
       <section id="consultation-form" className="scroll-mt-24 bg-gray-50 py-16 dark:bg-gray-950 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <p className="mb-3 text-xl font-semibold text-primary-600 dark:text-primary-400">
+              {pageCopy.finalCta}
+            </p>
+            <p className="text-xl font-semibold text-gray-950 dark:text-white">
+              {pageCopy.urgency}
+            </p>
+          </div>
+
           <div className="mx-auto max-w-2xl">
             <ContactForm languageOverride={language} hideTitle />
           </div>
