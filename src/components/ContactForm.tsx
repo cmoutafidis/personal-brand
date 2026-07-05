@@ -5,9 +5,15 @@ import {AlertCircle, CheckCircle, Send} from 'lucide-react';
 import {useLanguage} from '@/context/LanguageContext';
 import {createTranslationFunction} from "@/translations";
 import { reportConversion } from '@/utils/gtag';
+import {Language} from '@/types/language';
 
-export default function ContactForm() {
-  const {language} = useLanguage();
+interface ContactFormProps {
+  languageOverride?: Language;
+}
+
+export default function ContactForm({languageOverride}: ContactFormProps = {}) {
+  const {language: contextLanguage} = useLanguage();
+  const language = languageOverride ?? contextLanguage;
 
   const t = createTranslationFunction(language);
 
