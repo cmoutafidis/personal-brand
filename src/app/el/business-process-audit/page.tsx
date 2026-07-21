@@ -3,7 +3,7 @@ import BusinessProcessAuditLanding from '@/components/BusinessProcessAuditLandin
 
 export const metadata: Metadata = {
   title: 'Δωρεάν Ανάλυση Επιχειρηματικών Διαδικασιών | Fiji Solutions',
-  description: 'Κλείσε ένα δωρεάν Process Audit: γραπτός χάρτης με τα bottlenecks που σου κοστίζουν χρήματα και custom λογισμικό με την Εγγύηση Απόσβεσης — απόσβεση σε 6 μήνες από το go-live ή σου επιστρέφουμε την αμοιβή υλοποίησης.',
+  description: 'Κλείσε ένα δωρεάν Process Audit: γραπτός χάρτης με τα bottlenecks που σου κοστίζουν χρήματα και custom λογισμικό με την Εγγύηση Απόσβεσης. Απόσβεση σε 6 μήνες από το go-live ή σου επιστρέφουμε την αμοιβή υλοποίησης.',
   keywords: 'δωρεάν ανάλυση διαδικασιών, βελτιστοποίηση workflows Ελλάδα, αυτοματοποίηση διαδικασιών, custom software Ελλάδα, internal operations fix, AI λογισμικό',
   alternates: {
     canonical: 'https://www.fijisolutions.net/el/business-process-audit',

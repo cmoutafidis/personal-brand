@@ -3,7 +3,7 @@ import BusinessProcessAuditLanding from '@/components/BusinessProcessAuditLandin
 
 export const metadata: Metadata = {
   title: 'Free Business Process Audit | Fiji Solutions',
-  description: 'Get a free Process Audit: a written map of the bottlenecks costing you money, then custom software backed by the Pays-For-Itself Guarantee — payback within 6 months of go-live or your build fee back.',
+  description: 'Get a free Process Audit: a written map of the bottlenecks costing you money, then custom software backed by the Pays-For-Itself Guarantee. Payback within 6 months of go-live or your build fee back.',
   keywords: 'free business process audit, workflow optimisation Greece, business process automation, custom software Greece, internal operations fix, AI software solutions',
   alternates: {
     canonical: 'https://www.fijisolutions.net/en/business-process-audit',
