@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {AlertCircle, CheckCircle, Send} from 'lucide-react';
 import {useLanguage} from '@/context/LanguageContext';
 import {createTranslationFunction} from "@/translations";
@@ -10,9 +10,26 @@ import {Language} from '@/types/language';
 interface ContactFormProps {
   languageOverride?: Language;
   hideTitle?: boolean;
+  /** When set, the question field is hidden and this value is sent as `question` (lead-source marker). */
+  presetQuestion?: string;
+  /** When true, the message field is optional and skipped during validation. */
+  messageOptional?: boolean;
+  messageLabelOverride?: string;
+  messagePlaceholderOverride?: string;
+  submitLabelOverride?: string;
+  successMessageOverride?: string;
 }
 
-export default function ContactForm({languageOverride, hideTitle = false}: ContactFormProps = {}) {
+export default function ContactForm({
+  languageOverride,
+  hideTitle = false,
+  presetQuestion,
+  messageOptional = false,
+  messageLabelOverride,
+  messagePlaceholderOverride,
+  submitLabelOverride,
+  successMessageOverride
+}: ContactFormProps = {}) {
   const {language: contextLanguage} = useLanguage();
   const language = languageOverride ?? contextLanguage;
 
@@ -31,6 +48,13 @@ export default function ContactForm({languageOverride, hideTitle = false}: Conta
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
+  const hideTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  useEffect(() => () => {
+    if (hideTimer.current) {
+      clearTimeout(hideTimer.current);
+    }
+  }, []);
 
   // Handle input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -72,12 +96,12 @@ export default function ContactForm({languageOverride, hideTitle = false}: Conta
       return false;
     }
 
-    if (!question.trim()) {
+    if (!presetQuestion && !question.trim()) {
       setSubmitError(t('contact.form.question') + ' ' + t('contact.form.error.required'));
       return false;
     }
 
-    if (!message.trim()) {
+    if (!messageOptional && !message.trim()) {
       setSubmitError(t('contact.form.message') + ' ' + t('contact.form.error.required'));
       return false;
     }
@@ -111,7 +135,7 @@ export default function ContactForm({languageOverride, hideTitle = false}: Conta
           email: formData.email.trim(),
           company: formData.company.trim(),
           message: formData.message.trim(),
-          question: formData.question.trim()
+          question: presetQuestion || formData.question.trim()
         })
       });
 
@@ -131,7 +155,10 @@ export default function ContactForm({languageOverride, hideTitle = false}: Conta
       });
 
       // Auto-hide success message after 5 seconds
-      setTimeout(() => {
+      if (hideTimer.current) {
+        clearTimeout(hideTimer.current);
+      }
+      hideTimer.current = setTimeout(() => {
         setSubmitSuccess(false);
       }, 5000);
 
@@ -157,10 +184,11 @@ export default function ContactForm({languageOverride, hideTitle = false}: Conta
         {/* Success Message */}
         {submitSuccess && (
           <div
+            role="status"
             className="mb-6 p-4 bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-lg flex items-center space-x-3">
             <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0"/>
             <p className="text-green-800 dark:text-green-200">
-              {t('contact.form.success')}
+              {successMessageOverride ?? t('contact.form.success')}
             </p>
           </div>
         )}
@@ -168,6 +196,7 @@ export default function ContactForm({languageOverride, hideTitle = false}: Conta
         {/* Error Message */}
         {submitError && (
           <div
+            role="alert"
             className="mb-6 p-4 bg-red-100 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg flex items-center space-x-3">
             <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-400 flex-shrink-0"/>
             <p className="text-red-800 dark:text-red-200">{submitError}</p>
@@ -223,25 +252,27 @@ export default function ContactForm({languageOverride, hideTitle = false}: Conta
             />
           </div>
 
-          <div>
-            <label htmlFor="question" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              {t('contact.form.question')} *
-            </label>
-            <textarea
-              id="question"
-              name="question"
-              rows={1}
-              value={formData.question}
-              onChange={handleInputChange}
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-              placeholder={t('contact.form.question.placeholder')}
-              disabled={isSubmitting}
-            ></textarea>
-          </div>
+          {!presetQuestion && (
+            <div>
+              <label htmlFor="question" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                {t('contact.form.question')} *
+              </label>
+              <textarea
+                id="question"
+                name="question"
+                rows={1}
+                value={formData.question}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+                placeholder={t('contact.form.question.placeholder')}
+                disabled={isSubmitting}
+              ></textarea>
+            </div>
+          )}
 
           <div>
             <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              {t('contact.form.message')} *
+              {messageLabelOverride ?? t('contact.form.message')}{!messageOptional && ' *'}
             </label>
             <textarea
               id="message"
@@ -250,7 +281,7 @@ export default function ContactForm({languageOverride, hideTitle = false}: Conta
               value={formData.message}
               onChange={handleInputChange}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-              placeholder={t('contact.form.message.placeholder')}
+              placeholder={messagePlaceholderOverride ?? t('contact.form.message.placeholder')}
               disabled={isSubmitting}
             ></textarea>
           </div>
@@ -258,7 +289,7 @@ export default function ContactForm({languageOverride, hideTitle = false}: Conta
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full inline-flex items-center justify-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full inline-flex items-center justify-center px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:focus:ring-offset-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <>
@@ -268,7 +299,7 @@ export default function ContactForm({languageOverride, hideTitle = false}: Conta
             ) : (
               <>
                 <Send className="h-4 w-4 mr-2"/>
-                {t('contact.form.send')}
+                {submitLabelOverride ?? t('contact.form.send')}
               </>
             )}
           </button>

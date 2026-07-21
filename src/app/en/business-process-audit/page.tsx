@@ -3,8 +3,8 @@ import BusinessProcessAuditLanding from '@/components/BusinessProcessAuditLandin
 
 export const metadata: Metadata = {
   title: 'Free Business Process Audit | Fiji Solutions',
-  description: 'We analyse your workflows for free, find bottlenecks that cost money, and build custom AI-based software with a 3 to 6 month payback guarantee.',
-  keywords: 'free business process audit, workflow optimisation Greece, AI software solutions, business process automation, custom software Greece, revenue optimisation',
+  description: 'Get a free Process Audit: a written map of the bottlenecks costing you money, then custom software backed by the Pays-For-Itself Guarantee — payback within 6 months of go-live or your build fee back.',
+  keywords: 'free business process audit, workflow optimisation Greece, business process automation, custom software Greece, internal operations fix, AI software solutions',
   alternates: {
     canonical: 'https://www.fijisolutions.net/en/business-process-audit',
     languages: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'Free Business Process Audit | Fiji Solutions',
-    description: 'Find the workflow bottlenecks costing your business money and get custom AI-based software backed by a 3 to 6 month payback guarantee.',
+    description: 'Find the workflow bottlenecks costing your business money and fix them with custom software backed by the Pays-For-Itself Guarantee.',
     url: 'https://www.fijisolutions.net/en/business-process-audit',
     images: [
       {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Free Business Process Audit | Fiji Solutions',
-    description: 'Find revenue leaks in your workflows and fix them with custom AI-based software backed by a payback guarantee.',
+    description: 'Find the money leaks in your workflows and fix them with custom software backed by the Pays-For-Itself Guarantee.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

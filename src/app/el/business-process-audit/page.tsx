@@ -3,8 +3,8 @@ import BusinessProcessAuditLanding from '@/components/BusinessProcessAuditLandin
 
 export const metadata: Metadata = {
   title: 'Δωρεάν Ανάλυση Επιχειρηματικών Διαδικασιών | Fiji Solutions',
-  description: 'Αναλύουμε δωρεάν τα workflows σου, βρίσκουμε bottlenecks που κοστίζουν χρήματα και φτιάχνουμε custom AI-based λογισμικό με εγγύηση απόσβεσης σε 3 έως 6 μήνες.',
-  keywords: 'δωρεάν ανάλυση διαδικασιών, βελτιστοποίηση workflows Ελλάδα, AI λογισμικό, αυτοματοποίηση διαδικασιών, custom software Ελλάδα, αύξηση εσόδων',
+  description: 'Κλείσε ένα δωρεάν Process Audit: γραπτός χάρτης με τα bottlenecks που σου κοστίζουν χρήματα και custom λογισμικό με την Εγγύηση Απόσβεσης — απόσβεση σε 6 μήνες από το go-live ή σου επιστρέφουμε την αμοιβή υλοποίησης.',
+  keywords: 'δωρεάν ανάλυση διαδικασιών, βελτιστοποίηση workflows Ελλάδα, αυτοματοποίηση διαδικασιών, custom software Ελλάδα, internal operations fix, AI λογισμικό',
   alternates: {
     canonical: 'https://www.fijisolutions.net/el/business-process-audit',
     languages: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'Δωρεάν Ανάλυση Επιχειρηματικών Διαδικασιών | Fiji Solutions',
-    description: 'Βρες τα workflow bottlenecks που κοστίζουν χρήματα στην επιχείρησή σου και λύσε τα με custom AI-based software με εγγύηση απόσβεσης.',
+    description: 'Βρες τα workflow bottlenecks που κοστίζουν χρήματα στην επιχείρησή σου και λύσε τα με custom λογισμικό που καλύπτεται από την Εγγύηση Απόσβεσης.',
     url: 'https://www.fijisolutions.net/el/business-process-audit',
     images: [
       {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Δωρεάν Ανάλυση Επιχειρηματικών Διαδικασιών | Fiji Solutions',
-    description: 'Βρες revenue leaks στα workflows σου και λύσε τα με custom AI-based software με εγγύηση απόσβεσης.',
+    description: 'Βρες τις διαρροές χρήματος στα workflows σου και λύσε τες με custom λογισμικό που καλύπτεται από την Εγγύηση Απόσβεσης.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };
