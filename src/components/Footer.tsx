@@ -53,11 +53,19 @@ export default function Footer({t}: FooterProps) {
             </p>
             <div className="mb-4">
               <p className="text-sm text-gray-500 mb-2">{t('footer.partnership')}</p>
-              <img
-                src="/Services_Partner_Badge_Select.svg"
-                alt="Snowflake AI Data Cloud Select Partner Badge"
-                className="h-16 w-auto"
-              />
+              <a
+                href="https://www.snowflake.com/en/why-snowflake/partners/all-partners/fiji-solutions/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+                aria-label="Verify this partnership in Snowflake's partner directory"
+              >
+                <img
+                  src="/Services_Partner_Badge_Select.svg"
+                  alt="Snowflake AI Data Cloud Select Partner Badge"
+                  className="h-16 w-auto"
+                />
+              </a>
             </div>
             <div className="flex space-x-4">
               <a

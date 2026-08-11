@@ -181,7 +181,13 @@ const copy: Record<Language, LandingCopy> = {
       {
         title: 'Snowflake AI Data Cloud Select Partner',
         body: 'A vetted partnership with one of the world’s leading data platforms.',
-        badge: true
+        badge: true,
+        links: [
+          {
+            label: 'Our listing in Snowflake’s partner directory',
+            href: 'https://www.snowflake.com/en/why-snowflake/partners/all-partners/fiji-solutions/'
+          }
+        ]
       },
       {
         title: 'Software you can click',
@@ -474,7 +480,13 @@ const copy: Record<Language, LandingCopy> = {
       {
         title: 'Snowflake AI Data Cloud Select Partner',
         body: 'Πιστοποιημένη συνεργασία με μία από τις κορυφαίες πλατφόρμες δεδομένων παγκοσμίως.',
-        badge: true
+        badge: true,
+        links: [
+          {
+            label: 'Η καταχώρισή μας στον κατάλογο συνεργατών της Snowflake',
+            href: 'https://www.snowflake.com/en/why-snowflake/partners/all-partners/fiji-solutions/'
+          }
+        ]
       },
       {
         title: 'Λογισμικό που μπορείς να δοκιμάσεις',
