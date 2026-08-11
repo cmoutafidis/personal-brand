@@ -58,6 +58,12 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.form.question.placeholder': 'What is your most important question?',
     'contact.form.message': 'Your Message',
     'contact.form.message.placeholder': 'How can we help you?',
+    // Required attribution question. It gets its own error string rather than reusing the
+    // "<label> is required" pattern, because that pattern would read "How did you hear about
+    // us? is required".
+    'contact.form.heardAbout': 'How did you hear about us?',
+    'contact.form.heardAbout.placeholder': 'LinkedIn, a search, a colleague, a conference...',
+    'contact.form.heardAbout.error': 'Please tell us how you heard about us',
     'contact.form.send': 'Send Message',
     'contact.form.sending': 'Sending...',
     'contact.form.success': 'Thank you! Your message has been sent successfully. We\'ll get back to you within 48 hours.',
@@ -260,6 +266,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.form.question.placeholder': 'Ποια είναι η μεγαλύτερη απορία σου;',
     'contact.form.message': 'Το μήνυμά σου',
     'contact.form.message.placeholder': 'Πώς μπορούμε να σε βοηθήσουμε;',
+    'contact.form.heardAbout': 'Πώς έμαθες για εμάς;',
+    'contact.form.heardAbout.placeholder': 'LinkedIn, Google, σύσταση, συνέδριο...',
+    'contact.form.heardAbout.error': 'Πες μας πώς έμαθες για εμάς',
     'contact.form.send': 'Στείλε το μήνυμα',
     'contact.form.sending': 'Στέλνουμε...',
     'contact.form.success': 'Ευχαριστούμε! Το μήνυμά σου στάλθηκε. Θα σου απαντήσουμε σε 48 ώρες.',

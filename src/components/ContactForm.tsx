@@ -35,13 +35,21 @@ export default function ContactForm({
 
   const t = createTranslationFunction(language);
 
-  // Form state
+  // Form state.
+  //
+  // `heardAbout` is state only and is NOT a sixth key in the request body. The endpoint accepts
+  // exactly name, email, company, question and message and 500s on anything else, so the answer
+  // rides at the end of `message`. It is asked because roughly 70-80% of B2B journeys strip
+  // referrer data: someone who sees a post, searches the name days later and fills this form
+  // arrives in analytics as "direct", and the content programme then gets judged on numbers that
+  // cannot tell it apart from luck.
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     question: '',
-    message: ''
+    message: '',
+    heardAbout: ''
   });
 
   // Submission state
@@ -72,7 +80,7 @@ export default function ContactForm({
 
   // Validate form
   const validateForm = () => {
-    const {name, email, company, question, message} = formData;
+    const {name, email, company, question, message, heardAbout} = formData;
 
     if (!name.trim()) {
       setSubmitError(t('contact.form.name') + ' ' + t('contact.form.error.required'));
@@ -106,6 +114,14 @@ export default function ContactForm({
       return false;
     }
 
+    // Required on every caller, including the ones that relax `message` and preset `question`.
+    // There is deliberately no prop to switch it off: an opt-out is the hole through which this
+    // measurement quietly stops covering the surfaces that matter most.
+    if (!heardAbout.trim()) {
+      setSubmitError(t('contact.form.heardAbout.error'));
+      return false;
+    }
+
     return true;
   };
 
@@ -124,6 +140,15 @@ export default function ContactForm({
 
     setIsSubmitting(true);
 
+    // The attribution answer is appended to `message` rather than sent as its own key, and the
+    // label is English on both locales so every submission reads the same way in one inbox.
+    // Joined through filter(Boolean) because `messageOptional` callers can leave the message
+    // empty, and a body that opens with two blank lines is a worse record than a short one.
+    const messageWithAttribution = [
+      formData.message.trim(),
+      `How did you hear about us: ${formData.heardAbout.trim()}`
+    ].filter(Boolean).join('\n\n');
+
     try {
       const response = await fetch('https://np40nkw6be.execute-api.us-east-1.amazonaws.com/Prod/personal-brand/form', {
         method: 'POST',
@@ -134,7 +159,7 @@ export default function ContactForm({
           name: formData.name.trim(),
           email: formData.email.trim(),
           company: formData.company.trim(),
-          message: formData.message.trim(),
+          message: messageWithAttribution,
           question: presetQuestion || formData.question.trim()
         })
       });
@@ -151,7 +176,8 @@ export default function ContactForm({
         email: '',
         company: '',
         question: '',
-        message: ''
+        message: '',
+        heardAbout: ''
       });
 
       // Auto-hide success message after 5 seconds
@@ -284,6 +310,26 @@ export default function ContactForm({
               placeholder={messagePlaceholderOverride ?? t('contact.form.message.placeholder')}
               disabled={isSubmitting}
             ></textarea>
+          </div>
+
+          {/* Last on the form on purpose. It is the one question here that serves us rather than
+              the reader, so it does not stand between them and the message they came to write.
+              Free text rather than a dropdown: a fixed list of channels only ever answers which
+              of the ones we thought of it was, and this exists to catch the ones we did not. */}
+          <div>
+            <label htmlFor="heardAbout" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              {t('contact.form.heardAbout')} *
+            </label>
+            <input
+              type="text"
+              id="heardAbout"
+              name="heardAbout"
+              value={formData.heardAbout}
+              onChange={handleInputChange}
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+              placeholder={t('contact.form.heardAbout.placeholder')}
+              disabled={isSubmitting}
+            />
           </div>
 
           <button
