@@ -5,14 +5,14 @@ import {createTranslationFunction} from '@/translations';
 import {buildAlternates} from '@/lib/alternates';
 
 export const metadata: Metadata = {
-  title: 'Δωρεάν Ανάλυση Επιχειρηματικών Διαδικασιών | Fiji Solutions',
-  description: 'Κλείσε ένα δωρεάν Process Audit: γραπτός χάρτης με τα bottlenecks που σου κοστίζουν χρήματα και custom λογισμικό με την Εγγύηση Απόσβεσης. Απόσβεση σε 6 μήνες από το go-live ή σου επιστρέφουμε την αμοιβή υλοποίησης.',
-  keywords: 'δωρεάν ανάλυση διαδικασιών, βελτιστοποίηση workflows Ελλάδα, αυτοματοποίηση διαδικασιών, custom software Ελλάδα, internal operations fix, AI λογισμικό',
+  title: 'Δωρεάν έλεγχος διαδικασιών | Fiji Solutions',
+  description: 'Κλείσε δωρεάν έλεγχο διαδικασιών: γραπτός χάρτης με τα τρία σημεία που σου κοστίζουν χρήματα, και μετά εξατομικευμένο λογισμικό με Εγγύηση Απόσβεσης. Απόσβεση σε 6 μήνες από τη θέση σε λειτουργία, αλλιώς επιστρέφουμε την αμοιβή υλοποίησης.',
+  keywords: 'δωρεάν έλεγχος διαδικασιών, βελτιστοποίηση διαδικασιών, αυτοματοποίηση διαδικασιών, εξατομικευμένο λογισμικό Ελλάδα, εγγύηση απόσβεσης',
   alternates: buildAlternates('/business-process-audit', 'el'),
   openGraph: {
     type: 'website',
-    title: 'Δωρεάν Ανάλυση Επιχειρηματικών Διαδικασιών | Fiji Solutions',
-    description: 'Βρες τα workflow bottlenecks που κοστίζουν χρήματα στην επιχείρησή σου και λύσε τα με custom λογισμικό που καλύπτεται από την Εγγύηση Απόσβεσης.',
+    title: 'Δωρεάν έλεγχος διαδικασιών | Fiji Solutions',
+    description: 'Βρες τα σημεία που σου κοστίζουν χρήματα και λύσε τα με εξατομικευμένο λογισμικό που καλύπτεται από την Εγγύηση Απόσβεσης.',
     url: 'https://www.fijisolutions.net/el/business-process-audit',
     images: [
       {
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Δωρεάν Ανάλυση Επιχειρηματικών Διαδικασιών | Fiji Solutions',
-    description: 'Βρες τις διαρροές χρήματος στα workflows σου και λύσε τες με custom λογισμικό που καλύπτεται από την Εγγύηση Απόσβεσης.',
+    title: 'Δωρεάν έλεγχος διαδικασιών | Fiji Solutions',
+    description: 'Βρες από πού φεύγουν τα χρήματα στις διαδικασίες σου και κλείσε τη διαρροή, με Εγγύηση Απόσβεσης.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

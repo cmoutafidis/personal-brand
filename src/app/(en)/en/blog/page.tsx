@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import {buildAlternates} from '@/lib/alternates';
 import { createTranslationFunction } from '@/translations';
 import { blogData } from '@/data/blogs';
 import BlogList from '@/components/BlogList';
@@ -8,9 +9,7 @@ export const metadata: Metadata = {
   title: 'Software, Data & Snowflake Insights | Fiji Solutions',
   description: 'Read Fiji Solutions insights about custom software development, data analysis, Snowflake, business intelligence, automation, and digital growth in Greece.',
   keywords: 'Fiji Solutions blog, custom software Greece blog, data analysis Greece, Snowflake consulting Greece, business intelligence Greece, software development blog',
-  alternates: {
-    canonical: 'https://www.fijisolutions.net/en/blog',
-  },
+  alternates: buildAlternates('/blog'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/blog',

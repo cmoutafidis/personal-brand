@@ -1,4 +1,5 @@
 import type {Metadata} from 'next';
+import {buildAlternates} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 import Contact from '@/components/Contact';
 import Footer from "@/components/Footer";
@@ -7,9 +8,7 @@ export const metadata: Metadata = {
   title: 'Contact Software Company Thessaloniki | IT Consulting Services',
   description: 'Contact top software development company in Thessaloniki for custom software, web development, mobile apps & IT consulting services in Greece.',
   keywords: 'software company Thessaloniki contact, IT consulting Thessaloniki, custom software development company Thessaloniki, web development company Thessaloniki, mobile app development Greece, managed IT services Greece, software development services Greece, ERP implementation Thessaloniki, custom CRM solutions Greece',
-  alternates: {
-    canonical: 'https://www.fijisolutions.net/en/contact',
-  },
+  alternates: buildAlternates('/contact'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/contact',

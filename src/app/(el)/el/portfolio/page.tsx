@@ -1,4 +1,5 @@
 import type {Metadata} from 'next';
+import {buildAlternates} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 import Services from '@/components/Services';
 import Projects from '@/components/Projects';
@@ -7,16 +8,14 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Υπηρεσίες - Λογισμικό, Ανάλυση Δεδομένων & Snowflake Ελλάδα',
-  description: 'Υπηρεσίες Fiji Solutions για ελληνικές επιχειρήσεις: εξατομικευμένο λογισμικό, ανάλυση δεδομένων, BI dashboards, Snowflake consulting, AI αυτοματοποίηση και integrations.',
+  description: 'Τι φτιάχνουμε μόλις ετοιμαστεί ο χάρτης: αυτοματοποίηση διαδικασιών και εσωτερικά εργαλεία, αναφορές και ανάλυση δεδομένων, πλατφόρμα δεδομένων Snowflake.',
   keywords: 'υπηρεσίες λογισμικού Ελλάδα, ανάλυση δεδομένων Ελλάδα, Snowflake consulting Ελλάδα, business intelligence Ελλάδα, εταιρεία λογισμικού Θεσσαλονίκη, data engineering Ελλάδα',
-  alternates: {
-    canonical: 'https://www.fijisolutions.net/el/portfolio',
-  },
+  alternates: buildAlternates('/portfolio', 'el'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/portfolio',
     title: 'Υπηρεσίες - Fiji Solutions',
-    description: 'Εξατομικευμένο λογισμικό, ανάλυση δεδομένων, BI dashboards, Snowflake consulting και data engineering στην Ελλάδα.',
+    description: 'Αυτοματοποίηση διαδικασιών, αναφορές και ανάλυση δεδομένων, πλατφόρμα Snowflake.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Υπηρεσίες - Fiji Solutions',
-    description: 'Εξατομικευμένο λογισμικό, ανάλυση δεδομένων, BI dashboards, Snowflake consulting και data engineering στην Ελλάδα.',
+    description: 'Αυτοματοποίηση διαδικασιών, αναφορές και ανάλυση δεδομένων, πλατφόρμα Snowflake.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

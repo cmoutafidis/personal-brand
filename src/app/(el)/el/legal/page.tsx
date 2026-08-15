@@ -1,4 +1,5 @@
 import type {Metadata} from 'next';
+import {buildAlternates} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 import LegalContent from './LegalContent';
 import Footer from "@/components/Footer";
@@ -7,9 +8,7 @@ export const metadata: Metadata = {
   title: 'Νομικές Πληροφορίες Εταιρεία Λογισμικού Θεσσαλονίκη | Fiji Solutions',
   description: 'Επίσημες νομικές πληροφορίες εταιρεία λογισμικού Θεσσαλονίκη Fiji Solutions. Αριθμός ΓΕΜΗ, εταιρικά στοιχεία & πληροφορίες εγγραφής IT συμβουλευτικής.',
   keywords: 'εταιρεία λογισμικού, εταιρεία λογισμικού Θεσσαλονίκη, Fiji Solutions νομικά, Fiji Solutions εγγραφή εταιρείας, εταιρεία λογισμικού Θεσσαλονίκη νομικά, ΓΕΜΗ εγγραφή Ελλάδα, επιχειρηματική εγγραφή Θεσσαλονίκη, νομικές πληροφορίες εταιρεία λογισμικού, εταιρικά στοιχεία Fiji Solutions, IT συμβουλευτική νομικά στοιχεία, ανάπτυξη λογισμικού νομικά',
-  alternates: {
-    canonical: 'https://www.fijisolutions.net/el/legal',
-  },
+  alternates: buildAlternates('/legal', 'el'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/legal',

@@ -1,4 +1,5 @@
 import type {Metadata} from 'next';
+import {buildAlternates} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 import Hero from '@/components/Hero';
 import Challenges from '@/components/Challenges';
@@ -7,17 +8,15 @@ import Contact from '@/components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Λογισμικό, Αυτοματισμοί & Snowflake Ελλάδα | Fiji Solutions',
-  description: 'Βοηθάμε επιχειρήσεις στην Ελλάδα να βρίσκουν αργές χειροκίνητες διαδικασίες και να τις λύνουν με custom software, αυτοματισμούς, reporting, data analysis και Snowflake.',
+  title: 'Μία διαδικασία αυτοματοποιημένη σε 30 μέρες | Fiji Solutions',
+  description: 'Χαρτογραφούμε πώς δουλεύει πραγματικά η επιχείρησή σου, βάζουμε νούμερο σε ευρώ στα τρία σημεία που σου κοστίζουν περισσότερο και αυτοματοποιούμε το πρώτο μέσα σε 30 μέρες.',
   keywords: 'λογισμικό επιχειρήσεων Ελλάδα, αυτοματοποίηση διαδικασιών Ελλάδα, εξατομικευμένο λογισμικό Ελλάδα, εταιρεία λογισμικού Θεσσαλονίκη, ανάλυση δεδομένων Ελλάδα, Snowflake consulting Ελλάδα, business intelligence Ελλάδα, custom software Ελλάδα',
-  alternates: {
-    canonical: 'https://www.fijisolutions.net/el',
-  },
+  alternates: buildAlternates('', 'el'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el',
-    title: 'Λογισμικό, Αυτοματισμοί & Snowflake Ελλάδα | Fiji Solutions',
-    description: 'Custom software, αυτοματισμοί, reporting και Snowflake data systems που λύνουν λειτουργικά bottlenecks για επιχειρήσεις στην Ελλάδα.',
+    title: 'Μία διαδικασία αυτοματοποιημένη σε 30 μέρες | Fiji Solutions',
+    description: 'Γραπτός χάρτης με τα τρία σημεία που σου κοστίζουν χρήματα, και το πρώτο αυτοματοποιημένο σε 30 μέρες.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -30,8 +29,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Λογισμικό, Αυτοματισμοί & Snowflake Ελλάδα | Fiji Solutions',
-    description: 'Custom software, αυτοματισμοί, reporting και Snowflake data systems που λύνουν λειτουργικά bottlenecks για επιχειρήσεις στην Ελλάδα.',
+    title: 'Μία διαδικασία αυτοματοποιημένη σε 30 μέρες | Fiji Solutions',
+    description: 'Γραπτός χάρτης με τα τρία σημεία που σου κοστίζουν χρήματα, και το πρώτο αυτοματοποιημένο σε 30 μέρες.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };
@@ -40,66 +39,9 @@ export default function GreekHomePage() {
   const language = 'el';
   const t = createTranslationFunction(language);
 
-  const greekSchema = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Fiji Solutions",
-    "alternateName": "Εταιρεία Λογισμικού Θεσσαλονίκη Fiji Solutions",
-    "description": "Βοηθάμε επιχειρήσεις να βρίσκουν αργές χειροκίνητες διαδικασίες και να τις λύνουν με custom software, αυτοματισμούς, ανάλυση δεδομένων και Snowflake AI Data Cloud consulting.",
-    "url": "https://www.fijisolutions.net/el",
-    "logo": "https://www.fijisolutions.net/fijisolutions.png",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Νικηφόρου Ουρανού 15 και Μινώταυρου, Κτίριο Γ1, Porto Center, 3ος όροφος",
-      "addressLocality": "Θεσσαλονίκη",
-      "postalCode": "54627",
-      "addressRegion": "Κεντρική Μακεδονία",
-      "addressCountry": "GR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "40.568785",
-      "longitude": "22.981762"
-    },
-    "areaServed": [
-      "Θεσσαλονίκη",
-      "Ελλάδα",
-      "Πυλαία",
-      "Κεντρική Μακεδονία"
-    ],
-    "serviceType": [
-      "Εταιρεία Λογισμικού",
-      "Εταιρεία Λογισμικού Θεσσαλονίκη",
-      "Ανάπτυξη Λογισμικού", 
-      "Ανάλυση Δεδομένων",
-      "Business Intelligence",
-      "Snowflake Consulting",
-      "IT Συμβουλευτική Θεσσαλονίκη",
-      "Web Development",
-      "Mobile App Development"
-    ],
-    "knowsAbout": [
-      "Εταιρεία Λογισμικού",
-      "Εταιρεία Λογισμικού Θεσσαλονίκη",
-      "Ανάπτυξη Λογισμικού",
-      "IT Συμβουλευτική"
-    ],
-    "telephone": "+30 231 107 0108",
-    "email": "info@fijisolutions.net",
-    "sameAs": [
-      "https://x.com/fiji_solutions",
-      "https://www.facebook.com/fijisolutions/",
-      "https://www.linkedin.com/company/fijisolutionsnet/",
-      "https://github.com/cmoutafidis"
-    ]
-  };
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(greekSchema) }}
-      />
       <Hero t={t}/>
       <Challenges t={t}/>
       <Solutions t={t}/>

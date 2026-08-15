@@ -1,4 +1,5 @@
 import type {Metadata} from 'next';
+import {buildAlternates} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 import Services from '@/components/Services';
 import Projects from '@/components/Projects';
@@ -9,9 +10,7 @@ export const metadata: Metadata = {
   title: 'Services - Custom Software, Data Analysis & Snowflake Greece',
   description: 'Fiji Solutions services for Greek businesses: custom software development, data analysis, BI dashboards, Snowflake consulting, AI automation, and systems integration.',
   keywords: 'custom software services Greece, data analysis services Greece, Snowflake consulting Greece, business intelligence Greece, software company Thessaloniki, data engineering Greece',
-  alternates: {
-    canonical: 'https://www.fijisolutions.net/en/portfolio',
-  },
+  alternates: buildAlternates('/portfolio'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/portfolio',
