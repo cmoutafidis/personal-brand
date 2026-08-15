@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import {createTranslationFunction} from '@/translations';
-import Contact from '../../../components/Contact';
+import Contact from '@/components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {

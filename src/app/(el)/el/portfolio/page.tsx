@@ -1,10 +1,10 @@
 import type {Metadata} from 'next';
 import {createTranslationFunction} from '@/translations';
-import Services from '../../../components/Services';
-import Technologies from '../../../components/Technologies';
-import Industries from '../../../components/Industries';
-import Projects from '../../../components/Projects';
-import Contact from '../../../components/Contact';
+import Services from '@/components/Services';
+import Technologies from '@/components/Technologies';
+import Industries from '@/components/Industries';
+import Projects from '@/components/Projects';
+import Contact from '@/components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {

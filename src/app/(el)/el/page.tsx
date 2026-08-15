@@ -1,9 +1,9 @@
 import type {Metadata} from 'next';
 import {createTranslationFunction} from '@/translations';
-import Hero from '../../components/Hero';
-import Challenges from '../../components/Challenges';
-import Solutions from '../../components/Solutions';
-import Contact from '../../components/Contact';
+import Hero from '@/components/Hero';
+import Challenges from '@/components/Challenges';
+import Solutions from '@/components/Solutions';
+import Contact from '@/components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {

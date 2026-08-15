@@ -1,6 +1,6 @@
 'use client';
 
-import React, {createContext, useContext, useEffect, useState} from 'react';
+import React, {createContext, useContext} from 'react';
 import {usePathname, useRouter} from 'next/navigation';
 import {Language} from '@/types/language';
 import {blogData} from '@/data/blogs';
@@ -19,25 +19,22 @@ const LanguageContext = createContext<LanguageContextType>({
 export const useLanguage = () => useContext(LanguageContext);
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({children}) => {
-  const [language, setLanguageState] = useState<Language>('en');
   const router = useRouter();
   const pathname = usePathname();
 
-  useEffect(() => {
-    // Check URL path for language
-    if (pathname.startsWith('/en/') || pathname === '/en') {
-      setLanguageState('en');
-    } else if (pathname.startsWith('/el/') || pathname === '/el') {
-      setLanguageState('el');
-    } else {
-      // Default to English for any other path
-      setLanguageState('en');
-    }
-  }, [pathname]);
+  // Derived during render, NOT held in state and corrected in an effect.
+  //
+  // It used to be `useState('en')` plus a `useEffect`, which meant the server — and any crawler
+  // that does not execute JS — saw an English navbar on every Greek page, with every href
+  // pointing at /en. The URL is the only source of truth for the locale; read it directly.
+  const language: Language = pathname?.startsWith('/el') ? 'el' : 'en';
 
   const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
-    localStorage.setItem('language', lang);
+    try {
+      localStorage.setItem('language', lang);
+    } catch {
+      /* private mode */
+    }
 
     // Check if current path is a blog post
     const blogPostMatch = pathname.match(/^\/(en|el)\/blog\/(.+)$/);
