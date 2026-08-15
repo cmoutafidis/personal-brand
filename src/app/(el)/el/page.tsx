@@ -4,7 +4,6 @@ import {createTranslationFunction} from '@/translations';
 import Hero from '@/components/Hero';
 import Challenges from '@/components/Challenges';
 import Solutions from '@/components/Solutions';
-import Contact from '@/components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -45,7 +44,6 @@ export default function GreekHomePage() {
       <Hero t={t}/>
       <Challenges t={t}/>
       <Solutions t={t}/>
-      <Contact t={t} element={"h2"}/>
       <Footer t={t}/>
     </>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import React, {useEffect, useRef, useState} from 'react';
+import Link from 'next/link';
 import {AlertCircle, CheckCircle, Send} from 'lucide-react';
 import {useLanguage} from '@/context/LanguageContext';
 import {createTranslationFunction} from "@/translations";
@@ -349,6 +350,18 @@ export default function ContactForm({
               </>
             )}
           </button>
+
+          {/* Added 2026-08-15: this form sends a name, an email and a company name to a
+              third-party endpoint. The page it sits on now says so and links to the policy. */}
+          <p className="mt-3 text-center text-xs text-gray-500 dark:text-gray-400">
+            {t('contact.form.consent')}{' '}
+            <Link
+              href={`/${language}/privacy-policy`}
+              className="underline underline-offset-2 hover:text-gray-700 dark:hover:text-gray-200"
+            >
+              {t('contact.form.consent.link')}
+            </Link>
+          </p>
         </form>
       </div>
     </div>

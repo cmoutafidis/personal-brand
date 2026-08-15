@@ -3,7 +3,6 @@ import {buildAlternates} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 import Services from '@/components/Services';
 import Projects from '@/components/Projects';
-import Contact from '@/components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -42,7 +41,6 @@ export default function GreekPortfolioPage() {
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <Services t={t}/>
       <Projects t={t}/>
-      <Contact t={t} element={"h2"}/>
       <Footer t={t}/>
     </div>
   );

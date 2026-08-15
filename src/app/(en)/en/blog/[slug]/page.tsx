@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { createTranslationFunction } from '@/translations';
 import { blogData } from '@/data/blogs';
+import { buildBlogAlternates } from '@/lib/alternates';
 import BlogPost from '@/components/BlogPost';
 import Footer from '@/components/Footer';
 
@@ -29,9 +30,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     title: post.title,
     description: post.excerpt,
     keywords: `${post.tags.join(', ')}, Fiji Solutions, software development, Thessaloniki`,
-    alternates: {
-      canonical: `https://www.fijisolutions.net/en/blog/${post.slug}`,
-    },
+    alternates: buildBlogAlternates('en', post.slug, blogData),
     openGraph: {
       type: 'article',
       url: `https://www.fijisolutions.net/en/blog/${post.slug}`,
