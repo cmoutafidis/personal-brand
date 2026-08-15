@@ -33,12 +33,16 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
+  // `nav.audit` was added 2026-08-15. Until then /business-process-audit — the only page on this
+  // site with a named offer, a named deliverable, a guarantee and a booking link — had ZERO
+  // internal links pointing at it and was reachable only by typing the URL. Snowflake moved out
+  // to make room for it; it is still linked from Services and from the footer's Quick Links.
   const navLinks = [
-    {name: t('nav.home'), href: language === 'en' ? '/en' : '/el'},
-    {name: t('nav.portfolio'), href: language === 'en' ? '/en/portfolio' : '/el/portfolio'},
-    {name: t('nav.snowflake'), href: language === 'en' ? '/en/services/snowflake-consulting-greece' : '/el/services/snowflake-consulting-greece'},
-    {name: t('nav.blog'), href: language === 'en' ? '/en/blog' : '/el/blog'},
-    {name: t('nav.contact'), href: language === 'en' ? '/en/contact' : '/el/contact'},
+    {name: t('nav.home'), href: `/${language}`},
+    {name: t('nav.audit'), href: `/${language}/business-process-audit`},
+    {name: t('nav.portfolio'), href: `/${language}/portfolio`},
+    {name: t('nav.blog'), href: `/${language}/blog`},
+    {name: t('nav.contact'), href: `/${language}/contact`},
   ];
 
   const toggleMobileMenu = () => {

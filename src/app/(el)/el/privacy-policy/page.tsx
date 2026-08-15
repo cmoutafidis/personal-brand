@@ -1,45 +1,36 @@
 import type {Metadata} from 'next';
 import {createTranslationFunction} from '@/translations';
-import PrivacyPolicyContent from './PrivacyPolicyContent';
-import Footer from "@/components/Footer";
+import PrivacyPolicyContent from '@/components/PrivacyPolicyContent';
+import Footer from '@/components/Footer';
+import {buildAlternates} from '@/lib/alternates';
+
+const DESC =
+  'Τι συλλέγει το www.fijisolutions.net, γιατί, με ποιους μοιράζεται και πώς αλλάζεις την επιλογή σου για τα cookies.';
 
 export const metadata: Metadata = {
   title: 'Πολιτική Απορρήτου',
-  description: 'Πολιτική Απορρήτου για τις εφαρμογές κινητών της Fiji Solutions. Μάθετε πώς χειριζόμαστε τις πληροφορίες σας και προστατεύουμε το απόρρητό σας.',
-  keywords: 'Fiji Solutions πολιτική απορρήτου, απόρρητο εφαρμογής κινητού, προστασία δεδομένων, απόρρητο χρήστη, πολιτική απορρήτου εφαρμογής, προστασία προσωπικών δεδομένων',
-  alternates: {
-    canonical: 'https://www.fijisolutions.net/el/privacy-policy',
-  },
+  description: DESC,
+  alternates: buildAlternates('/privacy-policy', 'el'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/privacy-policy',
     title: 'Πολιτική Απορρήτου',
-    description: 'Πολιτική Απορρήτου για τις εφαρμογές κινητών της Fiji Solutions. Μάθετε πώς χειριζόμαστε τις πληροφορίες σας και προστατεύουμε το απόρρητό σας.',
-    images: [
-      {
-        url: 'https://www.fijisolutions.net/fijisolutions.png',
-        width: 1200,
-        height: 630,
-        alt: 'Πολιτική Απορρήτου Fiji Solutions - Πληροφορίες Απορρήτου Εφαρμογής Κινητού',
-      },
-    ],
+    description: DESC,
   },
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Πολιτική Απορρήτου',
-    description: 'Πολιτική Απορρήτου για τις εφαρμογές κινητών της Fiji Solutions. Μάθετε πώς χειριζόμαστε τις πληροφορίες σας και προστατεύουμε το απόρρητό σας.',
-    images: ['https://www.fijisolutions.net/fijisolutions.png'],
+    description: DESC,
   },
 };
 
 export default function GreekPrivacyPolicyPage() {
-  const language = 'el';
-  const t = createTranslationFunction(language);
+  const t = createTranslationFunction('el');
 
   return (
     <>
-      <PrivacyPolicyContent/>
+      <PrivacyPolicyContent lang="el"/>
       <Footer t={t}/>
     </>
   );

@@ -1,45 +1,36 @@
 import type {Metadata} from 'next';
 import {createTranslationFunction} from '@/translations';
-import PrivacyPolicyContent from './PrivacyPolicyContent';
-import Footer from "@/components/Footer";
+import PrivacyPolicyContent from '@/components/PrivacyPolicyContent';
+import Footer from '@/components/Footer';
+import {buildAlternates} from '@/lib/alternates';
+
+const DESC =
+  'What www.fijisolutions.net collects, why, who it is shared with, and how to change your cookie choice.';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'Privacy Policy for Fiji Solutions mobile applications. Learn how we handle your information and protect your privacy.',
-  keywords: 'Fiji Solutions privacy policy, mobile app privacy, data protection, user privacy, app privacy policy, webview app privacy, personal data protection',
-  alternates: {
-    canonical: 'https://www.fijisolutions.net/en/privacy-policy',
-  },
+  description: DESC,
+  alternates: buildAlternates('/privacy-policy'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/privacy-policy',
     title: 'Privacy Policy',
-    description: 'Privacy Policy for Fiji Solutions mobile applications. Learn how we handle your information and protect your privacy.',
-    images: [
-      {
-        url: 'https://www.fijisolutions.net/fijisolutions.png',
-        width: 1200,
-        height: 630,
-        alt: 'Fiji Solutions Privacy Policy - Mobile Application Privacy Information',
-      },
-    ],
+    description: DESC,
   },
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Privacy Policy',
-    description: 'Privacy Policy for Fiji Solutions mobile applications. Learn how we handle your information and protect your privacy.',
-    images: ['https://www.fijisolutions.net/fijisolutions.png'],
+    description: DESC,
   },
 };
 
 export default function EnglishPrivacyPolicyPage() {
-  const language = 'en';
-  const t = createTranslationFunction(language);
+  const t = createTranslationFunction('en');
 
   return (
     <>
-      <PrivacyPolicyContent/>
+      <PrivacyPolicyContent lang="en"/>
       <Footer t={t}/>
     </>
   );

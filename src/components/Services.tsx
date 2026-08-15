@@ -1,5 +1,5 @@
 import React from 'react';
-import {Bot, Cloud, Code2, Snowflake, CreditCard, Lightbulb} from 'lucide-react';
+import {BarChart3, Code2, Snowflake} from 'lucide-react';
 
 interface ServicesProps {
   t: (key: string) => string;
@@ -7,6 +7,9 @@ interface ServicesProps {
 
 const Services: React.FC<ServicesProps> = ({t}) => {
 
+  // Three, not six. The six-card grid (custom software / enterprise / AI / payments /
+  // Snowflake / IT consulting) was the "belly shop" the audit flagged: it read as a list of
+  // categories rather than one thing worth buying. Each card now names the manual work it removes.
   const services = [
     {
       icon: <Code2 className="h-8 w-8"/>,
@@ -15,34 +18,16 @@ const Services: React.FC<ServicesProps> = ({t}) => {
       features: [t('services.software.feature1'), t('services.software.feature2'), t('services.software.feature3'), t('services.software.feature4')]
     },
     {
-      icon: <Cloud className="h-8 w-8"/>,
-      title: t('services.enterprise.title'),
-      description: t('services.enterprise.description'),
-      features: [t('services.enterprise.feature1'), t('services.enterprise.feature2'), t('services.enterprise.feature3'), t('services.enterprise.feature4')]
-    },
-    {
-      icon: <Bot className="h-8 w-8"/>,
-      title: t('services.ai.title'),
-      description: t('services.ai.description'),
-      features: [t('services.ai.feature1'), t('services.ai.feature2'), t('services.ai.feature3'), t('services.ai.feature4')]
-    },
-    {
-      icon: <CreditCard className="h-8 w-8"/>,
-      title: t('services.payment.title'),
-      description: t('services.payment.description'),
-      features: [t('services.payment.feature1'), t('services.payment.feature2'), t('services.payment.feature3'), t('services.payment.feature4')]
+      icon: <BarChart3 className="h-8 w-8"/>,
+      title: t('services.data.title'),
+      description: t('services.data.description'),
+      features: [t('services.data.feature1'), t('services.data.feature2'), t('services.data.feature3'), t('services.data.feature4')]
     },
     {
       icon: <Snowflake className="h-8 w-8"/>,
       title: t('services.snowflake.title'),
       description: t('services.snowflake.description'),
       features: [t('services.snowflake.feature1'), t('services.snowflake.feature2'), t('services.snowflake.feature3'), t('services.snowflake.feature4')]
-    },
-    {
-      icon: <Lightbulb className="h-8 w-8"/>,
-      title: t('services.consulting.title'),
-      description: t('services.consulting.description'),
-      features: [t('services.consulting.feature1'), t('services.consulting.feature2'), t('services.consulting.feature3'), t('services.consulting.feature4')]
     }
   ];
 

@@ -1,17 +1,14 @@
 import type {Metadata} from 'next';
 import BusinessProcessAuditLanding from '@/components/BusinessProcessAuditLanding';
+import Footer from '@/components/Footer';
+import {createTranslationFunction} from '@/translations';
+import {buildAlternates} from '@/lib/alternates';
 
 export const metadata: Metadata = {
   title: 'Free Business Process Audit | Fiji Solutions',
   description: 'Get a free Process Audit: a written map of the bottlenecks costing you money, then custom software backed by the Pays-For-Itself Guarantee. Payback within 6 months of go-live or your build fee back.',
   keywords: 'free business process audit, workflow optimisation Greece, business process automation, custom software Greece, internal operations fix, AI software solutions',
-  alternates: {
-    canonical: 'https://www.fijisolutions.net/en/business-process-audit',
-    languages: {
-      en: 'https://www.fijisolutions.net/en/business-process-audit',
-      el: 'https://www.fijisolutions.net/el/business-process-audit',
-    },
-  },
+  alternates: buildAlternates('/business-process-audit'),
   openGraph: {
     type: 'website',
     title: 'Free Business Process Audit | Fiji Solutions',
@@ -36,5 +33,15 @@ export const metadata: Metadata = {
 };
 
 export default function EnglishBusinessProcessAuditPage() {
-  return <BusinessProcessAuditLanding language="en" />;
+  const t = createTranslationFunction('en');
+
+  return (
+    <>
+      <BusinessProcessAuditLanding language="en"/>
+      {/* Added 2026-08-15. These two routes were the ONLY ones in the repo that did not
+          render a Footer, so the one page that collects a name and an email was also the
+          one page with no link to the privacy policy. */}
+      <Footer t={t}/>
+    </>
+  );
 }

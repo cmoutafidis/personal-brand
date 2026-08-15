@@ -1,8 +1,6 @@
 import type {Metadata} from 'next';
 import {createTranslationFunction} from '@/translations';
 import Services from '@/components/Services';
-import Technologies from '@/components/Technologies';
-import Industries from '@/components/Industries';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Footer from "@/components/Footer";
@@ -44,8 +42,6 @@ export default function EnglishPortfolioPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <Services t={t}/>
-      <Technologies t={t}/>
-      <Industries t={t}/>
       <Projects t={t}/>
       <Contact t={t} element={"h2"}/>
       <Footer t={t}/>
