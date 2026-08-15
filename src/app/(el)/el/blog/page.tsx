@@ -6,15 +6,15 @@ import BlogList from '@/components/BlogList';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Software, Data & Snowflake Insights | Fiji Solutions',
-  description: 'Διαβάστε άρθρα της Fiji Solutions για εξατομικευμένο λογισμικό, ανάλυση δεδομένων, Snowflake, business intelligence, αυτοματοποίηση και digital growth στην Ελλάδα.',
+  title: 'Άρθρα για λογισμικό, δεδομένα και Snowflake | Fiji Solutions',
+  description: 'Διάβασε πρακτικά άρθρα για εξατομικευμένο λογισμικό, ανάλυση δεδομένων, Snowflake και αυτοματοποίηση διαδικασιών στην Ελλάδα.',
   keywords: 'Fiji Solutions blog, εξατομικευμένο λογισμικό Ελλάδα blog, ανάλυση δεδομένων Ελλάδα, Snowflake consulting Ελλάδα, business intelligence Ελλάδα, blog ανάπτυξης λογισμικού',
   alternates: buildAlternates('/blog', 'el'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/blog',
-    title: 'Software, Data & Snowflake Insights | Fiji Solutions',
-    description: 'Άρθρα για εξατομικευμένο λογισμικό, ανάλυση δεδομένων, Snowflake, BI, αυτοματοποίηση και digital growth στην Ελλάδα.',
+    title: 'Άρθρα για λογισμικό, δεδομένα και Snowflake | Fiji Solutions',
+    description: 'Άρθρα για εξατομικευμένο λογισμικό, ανάλυση δεδομένων, Snowflake και αυτοματοποίηση διαδικασιών στην Ελλάδα.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Software, Data & Snowflake Insights | Fiji Solutions',
-    description: 'Άρθρα για εξατομικευμένο λογισμικό, ανάλυση δεδομένων, Snowflake, BI, αυτοματοποίηση και digital growth στην Ελλάδα.',
+    title: 'Άρθρα για λογισμικό, δεδομένα και Snowflake | Fiji Solutions',
+    description: 'Άρθρα για εξατομικευμένο λογισμικό, ανάλυση δεδομένων, Snowflake και αυτοματοποίηση διαδικασιών στην Ελλάδα.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

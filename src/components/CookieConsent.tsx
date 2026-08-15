@@ -7,13 +7,13 @@ import {readConsent, writeConsent} from '@/lib/useConsent';
 
 const TEXT = {
   en: {
-    body: 'We use analytics and advertising cookies to see which pages bring enquiries. Nothing loads until you choose.',
+    body: 'We use analytics and advertising cookies to see which pages bring enquiries. None of them load until you choose.',
     policy: 'Privacy policy',
     accept: 'Accept',
     decline: 'Decline',
   },
   el: {
-    body: 'Χρησιμοποιούμε cookies ανάλυσης και διαφήμισης για να βλέπουμε ποιες σελίδες φέρνουν αιτήματα. Τίποτα δεν φορτώνει πριν επιλέξεις.',
+    body: 'Χρησιμοποιούμε cookies ανάλυσης και διαφήμισης για να βλέπουμε ποιες σελίδες φέρνουν αιτήματα. Κανένα δεν φορτώνει πριν επιλέξεις.',
     policy: 'Πολιτική απορρήτου',
     accept: 'Αποδοχή',
     decline: 'Απόρριψη',

@@ -1,8 +1,8 @@
 'use client';
 
-import React, {useState} from 'react';
+import React from 'react';
 import {Language} from '@/types/language';
-import {CONSENT_KEY, CONSENT_EVENT, readConsent} from '@/lib/useConsent';
+import {CONSENT_KEY, CONSENT_EVENT, useConsent} from '@/lib/useConsent';
 
 // The website privacy policy.
 //
@@ -59,7 +59,7 @@ const CONTENT: Record<Language, {
       {
         h: 'Cookies and tracking',
         p: [
-          'Nothing that tracks you loads until you accept it. Before you choose, this site sets no analytics or advertising cookies and makes no request to Google or to Leadsy.',
+          'No analytics or advertising cookie loads until you accept it. Before you choose, this site sets none and makes no request to Google or to Leadsy. The chat and voice assistant described above is a separate, visible feature and loads regardless — it is not analytics and it sets no advertising cookie.',
           'If you accept, two things load. Google Ads tracks which advertisement led to an enquiry. Leadsy attempts to identify the company an anonymous visitor is browsing from, using your IP address. Both are used to work out which pages produce enquiries.',
           'If you decline, they never load and the site works exactly the same. You can change your answer at the bottom of this page at any time.',
           'The legal basis for both is your consent, Article 6(1)(a) GDPR.',
@@ -118,7 +118,7 @@ const CONTENT: Record<Language, {
       {
         h: 'Ποιος είναι υπεύθυνος',
         p: [
-          'Fiji Solutions Μονοπρόσωπη ΙΚΕ, ΓΕΜΗ 185101306000, Νικηφόρου Ουρανού & Μινωταύρου 15, Κτίριο G1, Porto Center, 3ος όροφος, Θεσσαλονίκη 54627.',
+          'Fiji Solutions Μονοπρόσωπη ΙΚΕ, ΓΕΜΗ 185101306000, Νικηφόρου Ουρανού 15 και Μινώταυρου, Κτίριο Γ1, Porto Center, 3ος όροφος, Θεσσαλονίκη 54627.',
           'Για οτιδήποτε αφορά αυτή την πολιτική, γράψε στο info@fijisolutions.net. Το διαβάζει άνθρωπος.',
         ],
       },
@@ -139,7 +139,7 @@ const CONTENT: Record<Language, {
       {
         h: 'Cookies και παρακολούθηση',
         p: [
-          'Τίποτα που σε παρακολουθεί δεν φορτώνει πριν το αποδεχτείς. Πριν επιλέξεις, ο ιστότοπος δεν βάζει cookies ανάλυσης ή διαφήμισης και δεν κάνει κανένα αίτημα προς την Google ή τη Leadsy.',
+          'Κανένα cookie ανάλυσης ή διαφήμισης δεν φορτώνει πριν το αποδεχτείς. Πριν επιλέξεις, ο ιστότοπος δεν βάζει κανένα και δεν κάνει κανένα αίτημα προς την Google ή τη Leadsy. Ο βοηθός συνομιλίας και φωνής που περιγράφεται παραπάνω είναι ξεχωριστό, ορατό χαρακτηριστικό και φορτώνει ανεξάρτητα — δεν είναι ανάλυση και δεν βάζει διαφημιστικό cookie.',
           'Αν αποδεχτείς, φορτώνουν δύο πράγματα. Το Google Ads καταγράφει ποια διαφήμιση οδήγησε σε αίτημα. Η Leadsy προσπαθεί να αναγνωρίσει από ποια εταιρεία περιηγείται ένας ανώνυμος επισκέπτης, με βάση τη διεύθυνση IP. Και τα δύο χρησιμεύουν στο να καταλάβουμε ποιες σελίδες φέρνουν αιτήματα.',
           'Αν αρνηθείς, δεν φορτώνουν ποτέ και ο ιστότοπος δουλεύει ακριβώς το ίδιο. Μπορείς να αλλάξεις την απάντησή σου στο τέλος αυτής της σελίδας όποτε θέλεις.',
           'Νομική βάση και για τα δύο είναι η συγκατάθεσή σου, άρθρο 6 παρ. 1 στοιχ. α΄ ΓΚΠΔ.',
@@ -193,9 +193,10 @@ const CONTENT: Record<Language, {
 
 export default function PrivacyPolicyContent({lang}: { lang: Language }) {
   const c = CONTENT[lang];
-  const [, force] = useState(0);
-
-  const state = readConsent();
+  // useConsent returns 'unknown' on the server and on the first client render, so the markup the
+  // server produced and the markup React hydrates are identical. Reading localStorage during
+  // render instead would make a returning visitor hydrate a different string than was prerendered.
+  const state = useConsent();
   const label = state === 'granted' ? c.granted : state === 'denied' ? c.denied : c.unknown;
 
   const clear = () => {
@@ -205,7 +206,6 @@ export default function PrivacyPolicyContent({lang}: { lang: Language }) {
       /* private mode */
     }
     window.dispatchEvent(new CustomEvent(CONSENT_EVENT));
-    force((n) => n + 1);
   };
 
   return (

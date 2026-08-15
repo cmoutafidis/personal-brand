@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import ContactForm from '@/components/ContactForm';
 import {Language} from '@/types/language';
-import {SPRINT_PRICE_EUR, SPRINT_DAYS} from '@/lib/offer';
+import {SPRINT_PRICE_EUR, SPRINT_DAYS, AUDIT_CALL_MINUTES} from '@/lib/offer';
 
 const CALENDLY_URL = 'https://calendly.com/charis-fijisolutions/30min';
 
@@ -319,7 +319,7 @@ const copy: Record<Language, LandingCopy> = {
         body: 'Care-plan clients jump the queue. When something needs attention, you’re first in line.'
       }
     ],
-    stackClosing: 'The worst realistic outcome of the audit: you spend one hour and learn precisely what your processes cost, for free.',
+    stackClosing: `The worst realistic outcome of the audit: you spend ${AUDIT_CALL_MINUTES} minutes and learn precisely what your processes cost, for free.`,
     faqTitle: 'Fair questions, straight answers',
     faqs: [
       {
@@ -340,7 +340,7 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         q: 'I don’t have time for an IT project.',
-        a: 'That’s the point. The audit takes about one hour of your time; during the build, we do the work and your team keeps doing their jobs. This is done-for-you from start to finish.'
+        a: `That’s the point. The audit takes ${AUDIT_CALL_MINUTES} minutes of your time; during the build, we do the work and your team keeps doing their jobs. This is done-for-you from start to finish.`
       },
       {
         q: 'Who maintains it after launch?',
@@ -522,7 +522,7 @@ const copy: Record<Language, LandingCopy> = {
       {
         step: 'Βήμα 2',
         title: `Το Discovery Sprint — €${SPRINT_PRICE_EUR.toLocaleString('en-US')}, ${SPRINT_DAYS} εργάσιμες μέρες`,
-        body: 'Αν ο χάρτης δείξει μια λύση που αξίζει να χτιστεί, τρέχουμε ένα εστιασμένο sprint με την ομάδα σου: αποτυπώνουμε τις ροές εργασίας βήμα βήμα, κατατάσσουμε κάθε πιθανή λύση με βάση την απόδοση της επένδυσης και συμφωνούμε γραπτά τον στόχο απόσβεσης. Εγκρίνεις το πλάνο, την τιμή και τον στόχο πριν γραφτεί έστω μία γραμμή κώδικα.'
+        body: 'Αν ο χάρτης δείξει μια λύση που αξίζει να χτιστεί, τρέχουμε ένα εστιασμένο sprint με την ομάδα σου: αποτυπώνουμε τις ροές εργασίας βήμα βήμα, κατατάσσουμε κάθε πιθανή λύση με βάση την απόδοση της επένδυσης και συμφωνούμε γραπτά τον στόχο απόσβεσης. Κρατάς το σχέδιο υλοποίησης ό,τι κι αν αποφασίσεις μετά, και το ποσό αφαιρείται από την τιμή της κατασκευής αν προχωρήσεις.'
       },
       {
         step: 'Βήμα 3',
@@ -602,7 +602,7 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         lead: 'Τον Χάρτη Διαρροών σου.',
-        body: 'Μια γραπτή, ιεραρχημένη λίστα με τα τρία πιο ακριβά σημεία συμφόρησης σου. Είναι το είδος του εγγράφου για το οποίο οι σύμβουλοι χρεώνουν κανονικά χρήματα. Δικός σου.'
+        body: 'Μια γραπτή, ιεραρχημένη λίστα με τα τρία πιο ακριβά σου σημεία συμφόρησης. Είναι το είδος του εγγράφου για το οποίο οι σύμβουλοι χρεώνουν κανονικά χρήματα. Δικός σου.'
       },
       {
         lead: 'Μια εκτίμηση απόδοσης για κάθε λύση.',
@@ -624,7 +624,7 @@ const copy: Record<Language, LandingCopy> = {
         body: 'Οι πελάτες του πλάνου φροντίδας περνούν μπροστά στη σειρά. Όταν κάτι χρειάζεται προσοχή, είσαι πρώτος.'
       }
     ],
-    stackClosing: 'Το χειρότερο ρεαλιστικό σενάριο του ελέγχου: ξοδεύεις μία ώρα και μαθαίνεις με ακρίβεια τι σου κοστίζουν οι διαδικασίες σου, δωρεάν.',
+    stackClosing: `Το χειρότερο ρεαλιστικό σενάριο του ελέγχου: ξοδεύεις ${AUDIT_CALL_MINUTES} λεπτά και μαθαίνεις με ακρίβεια τι σου κοστίζουν οι διαδικασίες σου, δωρεάν.`,
     faqTitle: 'Εύλογες ερωτήσεις, ευθείες απαντήσεις',
     faqs: [
       {
@@ -648,7 +648,7 @@ const copy: Record<Language, LandingCopy> = {
         a: 'Αυτό ακριβώς είναι το νόημα. Ο έλεγχος θέλει 30 λεπτά από τον χρόνο σου· κατά την υλοποίηση, τη δουλειά την κάνουμε εμείς και η ομάδα σου συνεχίζει κανονικά. Τη δουλειά τη σηκώνουμε εμείς, από την αρχή ως το τέλος.'
       },
       {
-        q: 'Ποιος το συντηρεί μετά το launch;',
+        q: 'Ποιος το συντηρεί αφού μπει σε λειτουργία;',
         a: 'Εμείς. Αυτό είναι το πλάνο φροντίδας: παρακολούθηση, διορθώσεις, ενημερώσεις και μηνιαία βελτιστοποίηση.'
       },
       {

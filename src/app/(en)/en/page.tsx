@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'One process automated in 30 days | Fiji Solutions',
-  description: 'We help businesses in Greece find slow manual processes and build custom software, automations, reporting tools, data analysis workflows, and Snowflake data systems.',
+  description: 'We map how your business runs, put a euro figure on the three bottlenecks costing you most, and automate the first one within 30 days of the build starting.',
   keywords: 'operational software Greece, business process automation Greece, custom software development Greece, workflow automation Greece, data analysis services Greece, Snowflake consulting Greece, software company Thessaloniki, business intelligence Greece',
   alternates: buildAlternates(''),
   openGraph: {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
-        alt: 'Fiji Solutions - Software Company in Thessaloniki, Greece specializing in IT consulting and custom software development',
+        alt: 'Fiji Solutions, Thessaloniki',
       },
     ],
   },

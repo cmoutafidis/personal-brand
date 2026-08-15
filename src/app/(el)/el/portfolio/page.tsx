@@ -39,7 +39,7 @@ export default function GreekPortfolioPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
-      <Services t={t}/>
+      <Services t={t} lang="el"/>
       <Projects t={t}/>
       <Footer t={t}/>
     </div>

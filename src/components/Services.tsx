@@ -1,11 +1,16 @@
 import React from 'react';
+import Link from 'next/link';
+import {Language} from '@/types/language';
 import {BarChart3, Code2, Snowflake} from 'lucide-react';
 
 interface ServicesProps {
   t: (key: string) => string;
+  // Passed in rather than read from context: this stays a server component, and the page that
+  // renders it already knows its locale.
+  lang: Language;
 }
 
-const Services: React.FC<ServicesProps> = ({t}) => {
+const Services: React.FC<ServicesProps> = ({t, lang}) => {
 
   // Three, not six. The six-card grid (custom software / enterprise / AI / payments /
   // Snowflake / IT consulting) was the "belly shop" the audit flagged: it read as a list of
@@ -13,18 +18,21 @@ const Services: React.FC<ServicesProps> = ({t}) => {
   const services = [
     {
       icon: <Code2 className="h-8 w-8"/>,
+      href: `/${lang}/services/custom-software-development-greece`,
       title: t('services.software.title'),
       description: t('services.software.description'),
       features: [t('services.software.feature1'), t('services.software.feature2'), t('services.software.feature3'), t('services.software.feature4')]
     },
     {
       icon: <BarChart3 className="h-8 w-8"/>,
+      href: `/${lang}/services/data-analysis-greece`,
       title: t('services.data.title'),
       description: t('services.data.description'),
       features: [t('services.data.feature1'), t('services.data.feature2'), t('services.data.feature3'), t('services.data.feature4')]
     },
     {
       icon: <Snowflake className="h-8 w-8"/>,
+      href: `/${lang}/services/snowflake-consulting-greece`,
       title: t('services.snowflake.title'),
       description: t('services.snowflake.description'),
       features: [t('services.snowflake.feature1'), t('services.snowflake.feature2'), t('services.snowflake.feature3'), t('services.snowflake.feature4')]
@@ -51,7 +59,9 @@ const Services: React.FC<ServicesProps> = ({t}) => {
                 {service.icon}
               </div>
               <h2 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
-                {service.title}
+                <Link href={service.href} className="hover:underline underline-offset-4">
+                  {service.title}
+                </Link>
               </h2>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
                 {service.description}

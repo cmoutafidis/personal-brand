@@ -1,46 +1,76 @@
-# CLAUDE.md
+# CLAUDE.md — Fiji Solutions website
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Next.js 15 App Router, Tailwind v3, TypeScript. Two locales, `en` and `el`, both fully
+prerendered. Deployed on Vercel.
+
+## The one thing this site sells
+
+A **free process audit** → a **priced Discovery Sprint** → **Build & Run** with a money-back
+guarantee. `/[locale]/business-process-audit` is the page that sells; every primary CTA points at
+it. The homepage's job is to hand the reader there, not to close them itself.
+
+Until 2026-08-15 that page had **zero internal links** and the site sold six service categories,
+six industries and thirty-two technologies. Do not re-add a service list.
+
+## Where things live
+
+| What | Where |
+|---|---|
+| Offer economics — price, durations, SLA | `src/lib/offer.ts`. **Change the number here, not in copy.** |
+| All UI copy, both locales | `src/translations.ts` (138 keys each, kept at exact parity) |
+| The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
+| Canonical + hreflang | `src/lib/alternates.ts` — `buildAlternates(path, lang)` |
+| Consent gate | `src/lib/useConsent.ts` + `src/components/Analytics.tsx` |
+| Sitemap | `src/app/sitemap.ts`, generated from a route list |
+
+## Rules that are load-bearing
+
+1. **Two root layouts, no `src/app/layout.tsx`.** `src/app/(en)/layout.tsx` and
+   `src/app/(el)/layout.tsx` both render `RootShell` with their own `lang`. This is the only way to
+   emit a correct `<html lang>` per locale while keeping every page static. Collapsing them back
+   into one re-breaks the bug where all 14 Greek URLs declared themselves English.
+   The 404 lives at `src/app/(en)/not-found.tsx` for the same reason — a root-level `not-found.tsx`
+   has no layout above it and the build refuses.
+
+2. **Never write a bare `canonical`.** Next merges `metadata` shallowly per key, so
+   `alternates: { canonical }` silently deletes the layout's hreflang map. Call `buildAlternates()`.
+   Blog posts use `buildBlogAlternates()` because the two locales do not share a slug.
+
+3. **Nothing that tracks loads before consent.** `Analytics.tsx` renders `null` until
+   `useConsent()` returns `granted`. There is no second path that loads Google Ads or Leadsy.
+   The Vapi chat/voice widget is *not* behind the gate — it is a visible feature, and the privacy
+   policy says so explicitly. Keep those two statements in sync.
+
+4. **Greek is written in Greek**, informal singular (εσύ), everywhere including metadata.
+   Technology proper nouns (Snowflake, ETL/ELT, BI, AI) and schema.org values stay English.
+   One name per thing: the audit is «έλεγχος διαδικασιών», the recurring service is
+   «πλάνο φροντίδας». Both had multiple names before.
+
+5. **No claim without arithmetic behind it.** `proof/` in the offer-os knowledge base is empty:
+   there are no case studies, no testimonials, no measured client results, no certifications.
+   Do not publish a percentage, an outcome figure, a client name or a capacity number that the
+   repo cannot back. A capacity claim and a "dated waitlist" were deleted on 2026-08-15 for
+   exactly this reason.
+
+6. **Speed claims carry their anchor.** The build delivers the first automation within
+   `FIRST_FIX_DAYS` days **of the build starting** — not of the reader's first contact, which is
+   at least an audit plus a five-day sprint earlier. Every headline that states the number must
+   state the anchor with it.
+
+## Open, and only Charis can close them
+
+- **The Discovery Sprint price and the guarantee's claim terms were chosen on his behalf** on
+  2026-08-15 and are flagged in `src/lib/offer.ts`. They are placeholders with a rationale, not
+  decisions he made.
+- No proof asset exists. One client willing to publish one measured before/after with a date is
+  the highest-value thing missing from every page.
+- The ICP is unnamed — the site is written for "businesses in Greece", which is nobody in
+  particular.
 
 ## Commands
 
-- `npm run dev` — dev server (Turbopack) at http://localhost:3000
-- `npm run build` — production build
-- `npm run lint` — ESLint (flat config extending next/core-web-vitals + next/typescript)
-
-There is no test infrastructure — no test runner, no test files. Verify changes with `npm run build` and `npm run lint`.
-
-## What this is
-
-Bilingual (English/Greek) marketing site for Fiji Solutions (fijisolutions.net): Next.js 15 App Router, React 19, TypeScript strict (`@/*` → `./src/*`), Tailwind CSS v3. There is no backend and no env vars anywhere: the contact form POSTs to an external AWS API Gateway URL hardcoded in `src/components/ContactForm.tsx`, and all IDs (Google Ads tag, Vapi keys, prerender token) are hardcoded in source.
-
-## i18n architecture (the load-bearing pattern)
-
-No i18n library, no `[lang]` segment. `src/app/en/**` and `src/app/el/**` are physically duplicated route trees; nothing enforces parity — every page addition or change must be made in both trees. `/` permanently redirects to `/en` (next.config.ts).
-
-Parallel page pairs are thin wrappers around shared server components in `src/components/`, differing only in a hardcoded `language` const and per-locale `export const metadata`. Three content patterns coexist:
-
-1. **translations.ts (most pages)**: pages call `createTranslationFunction(language)` from `src/translations.ts` (flat `Record<Language, Record<string, string>>` with dot-namespaced keys) and pass `t` down as a prop to server components. A key missing from one language silently renders the raw key string — always add keys under both `en:` and `el:`.
-2. **Component-internal copy**: `BusinessProcessAuditLanding.tsx` holds its own bilingual `copy[language]` object; its page.tsx wrappers just pass `language`.
-3. **Standalone per-locale copies**: legal/privacy pages have duplicated `LegalContent.tsx`/`PrivacyPolicyContent.tsx` per locale, and the `services/*` SEO pages are fully hardcoded per-language files (both locales share the English slug).
-
-Client components that need translations (Navbar, LanguageSwitcher, ContactForm, Vapi widgets, ContactButton2, QuickLinks) don't receive `t`; they call `useLanguage()` from `src/context/LanguageContext.tsx`, which derives the language from the URL prefix. (ContactButton instead takes a pre-translated `label` prop; FooterButton has no i18n.) `setLanguage` rewrites the prefix via router.push; blog slugs are specially remapped across languages by matching post `id` in `src/data/blogs.ts`.
-
-## Blog
-
-Posts are hardcoded TS objects in `src/data/blogs.ts` (`blogData.en` / `blogData.el`, types in `src/types/blog.ts`). Content strings support ONLY `[text](url)` links and `\n\n` paragraph breaks — `BlogPost.tsx` converts them via regex into `dangerouslySetInnerHTML`; any other markdown renders as literal text. Slugs are translated per language; posts pair across languages by `id`.
-
-To add a post: append matching-`id` objects to both arrays, then hand-add two `<url>` entries (with cross-language `xhtml:link` hreflang alternates) to `public/sitemap.xml`. The `[slug]` pages already handle `generateStaticParams`/`generateMetadata`.
-
-## SEO
-
-All metadata is hand-written per page (each page.tsx exports its own `metadata` with a per-locale canonical). `public/sitemap.xml` and `public/robots.txt` are static hand-maintained files — there is no `app/sitemap.ts`/`robots.ts` — so adding any page requires a manual sitemap entry (it is currently missing the business-process-audit pages). `src/middleware.js` proxies bot user-agents to prerender.io. The root layout hardcodes `<html lang="en">` even for Greek pages.
-
-## Gotchas
-
-- `tailwind.config.js` and `postcss.config.js` are the configs actually loaded; `tailwind.config.ts` and `postcss.config.mjs` are identical dead duplicates (`.js` wins config resolution) — editing only the `.ts`/`.mjs` silently does nothing.
-- `src/app/page.tsx` is a near-copy of the en homepage but unreachable (`/` redirects to `/en`) — edits there are dead.
-- Dark mode is `darkMode: 'class'`: `src/context/ThemeContext.tsx` toggles the `dark` class on `<html>` and persists to localStorage `darkMode`. Style with `dark:` variants throughout (`bg-white dark:bg-gray-900` pattern); shared `@apply` classes (`.btn`, `.btn-primary`, `.btn-secondary`, `.card`, `.section`, `.section-title`) live in `src/app/globals.css`; custom `primary`/`secondary`/`accent` color scales in tailwind.config.js.
-- Two Vapi integrations are both live and complementary, not duplicates: `VapiWidget.tsx` (npm `@vapi-ai/web` voice-call button in Hero) and `VapiChatWidget.tsx` (unpkg-injected chat bubble mounted globally in layout.tsx). The Vapi API key/assistant ID are hardcoded in both `src/app/layout.tsx` and `src/types/language.ts` — keep them in sync.
-- `ContactButton.tsx` and `ContactButton2.tsx` are both in use (Hero vs Solutions) despite the naming.
-- `framer-motion` is in package.json but never imported — all animation is Tailwind/CSS classes.
+```
+npm run dev     # turbopack
+npm run build   # must stay at 29 static routes
+npm run lint
+```

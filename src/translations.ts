@@ -1,5 +1,5 @@
 import {Language} from '@/types/language';
-import {SPRINT_DAYS, SPRINT_PRICE_EUR, FIRST_FIX_DAYS, AUDIT_CALL_MINUTES} from '@/lib/offer';
+import {SPRINT_DAYS, SPRINT_PRICE_EUR, FIRST_FIX_DAYS, AUDIT_CALL_MINUTES, REPLY_SLA} from '@/lib/offer';
 
 // Copy rules for this file, set 2026-08-15 after the site audit:
 //
@@ -30,7 +30,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.privacy': 'Privacy',
 
     // Hero Section
-    'hero.title': 'We automate one of your processes in 30 days',
+    'hero.title': `Your first process automated within ${FIRST_FIX_DAYS} days of the build starting`,
     'hero.cta': 'Get the free process audit',
     'hero.talk': "Let's talk now",
     'hero.description1': 'If someone in your business retypes the same data into two systems every week, chases approvals by email, or rebuilds the same report by hand, that is the process we start with.',
@@ -64,7 +64,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Contact
     'contact.title': 'Get the free process audit',
     'contact.subtitle1': 'Tell us which process is costing you the most.',
-    'contact.subtitle2': 'Fill in the form and we will reply within one business day with a practical first step.',
+    'contact.subtitle2': `Fill in the form and we will reply within ${REPLY_SLA.en} with a practical first step.`,
     'contact.subtitle3': 'No cost, no obligation.',
     'contact.info.title': 'Contact Information',
     'contact.form.title': 'Send a Message',
@@ -86,11 +86,11 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.form.heardAbout.error': 'Please tell us how you heard about us',
     'contact.form.send': 'Send Message',
     'contact.form.sending': 'Sending...',
-    'contact.form.success': 'Thank you. Your message is with us and we will reply within one business day.',
+    'contact.form.success': `Thank you. Your message is with us and we will reply within ${REPLY_SLA.en}.`,
     'contact.form.error.failed': 'Failed to send message. Please try again or contact us directly.',
     'contact.form.error.required': 'is required',
     'contact.form.error.email': 'Please enter a valid email address',
-    'contact.form.consent': 'What you send goes to us and nowhere else.',
+    'contact.form.consent': 'We use what you send to answer you. Nothing else.',
     'contact.form.consent.link': 'How we handle it',
     'contact.connect': 'Connect With Us',
     'contact.phone': 'Phone',
@@ -133,7 +133,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.snowflake.feature4': 'Cost and performance tuning',
 
     // Footer
-    'footer.description': 'We map how your business runs, put a euro figure on the three bottlenecks costing you most, and automate the first one within 30 days. Thessaloniki, Greece.',
+    'footer.description': `We map how your business runs, put a euro figure on the three bottlenecks costing you most, and automate the first one within ${FIRST_FIX_DAYS} days of the build starting. Thessaloniki, Greece.`,
     'footer.partnership': 'Trusted Partnerships',
     'footer.links': 'Quick Links',
     'footer.projects': 'Projects',
@@ -198,7 +198,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.privacy': 'Απόρρητο',
 
     // Hero Section
-    'hero.title': 'Αυτοματοποιούμε μία διαδικασία σου σε 30 μέρες',
+    'hero.title': `Η πρώτη σου διαδικασία αυτοματοποιημένη μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης`,
     'hero.cta': 'Κλείσε δωρεάν έλεγχο διαδικασιών',
     'hero.talk': 'Ας μιλήσουμε τώρα',
     'hero.description1': 'Αν κάποιος στην επιχείρησή σου ξαναγράφει τα ίδια στοιχεία σε δύο συστήματα κάθε βδομάδα, κυνηγά εγκρίσεις με email ή ξαναφτιάχνει την ίδια αναφορά στο χέρι, από εκεί ξεκινάμε.',
@@ -222,7 +222,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'solutions.fast.title': `Το Discovery Sprint — ${EUR}, ${SPRINT_DAYS} εργάσιμες μέρες`,
     'solutions.fast.description': 'Χαρτογραφούμε τη ροή βήμα προς βήμα, κατατάσσουμε κάθε πιθανή λύση με βάση το τι αποδίδει και συμφωνούμε γραπτώς τον στόχο απόσβεσης. Κρατάς το σχέδιο υλοποίησης. Το ποσό αφαιρείται από την τιμή της κατασκευής αν προχωρήσεις.',
     'solutions.industry.title': 'Υλοποίηση και λειτουργία',
-    'solutions.industry.description': `Φτιάχνουμε πρώτα τη λύση με τη μεγαλύτερη απόδοση και είναι σε λειτουργία μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη. Μετά αναλαμβάνει το μηνιαίο πλάνο συντήρησης.`,
+    'solutions.industry.description': `Φτιάχνουμε πρώτα τη λύση με τη μεγαλύτερη απόδοση και είναι σε λειτουργία μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη. Μετά αναλαμβάνει το μηνιαίο πλάνο φροντίδας.`,
     'solutions.payment.title': 'Η εγγύηση',
     'solutions.payment.description': 'Αν αυτό που φτιάξαμε δεν έχει αποσβεστεί μέσα σε έξι μήνες από τη θέση του σε λειτουργία, μετρημένο πάνω στη βάση του ελέγχου σου, επιστρέφουμε το κόστος κατασκευής. Οι πλήρεις όροι είναι στη σελίδα του ελέγχου.',
     'solutions.cta.title': 'Δείξε μας τη διαδικασία που τρώει τον περισσότερο χρόνο',
@@ -232,7 +232,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Contact
     'contact.title': 'Κλείσε δωρεάν έλεγχο διαδικασιών',
     'contact.subtitle1': 'Πες μας ποια διαδικασία σου κοστίζει περισσότερο.',
-    'contact.subtitle2': 'Συμπλήρωσε τη φόρμα και θα σου απαντήσουμε μέσα σε μία εργάσιμη ημέρα με ένα πρακτικό πρώτο βήμα.',
+    'contact.subtitle2': `Συμπλήρωσε τη φόρμα και θα σου απαντήσουμε μέσα σε ${REPLY_SLA.el} με ένα πρακτικό πρώτο βήμα.`,
     'contact.subtitle3': 'Χωρίς κόστος, χωρίς δέσμευση.',
     'contact.info.title': 'Πώς να μας βρεις',
     'contact.form.title': 'Στείλε μας μήνυμα',
@@ -251,11 +251,11 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.form.heardAbout.error': 'Πες μας πώς έμαθες για εμάς',
     'contact.form.send': 'Στείλε το μήνυμα',
     'contact.form.sending': 'Στέλνουμε...',
-    'contact.form.success': 'Ευχαριστούμε. Το μήνυμά σου έφτασε και θα σου απαντήσουμε μέσα σε μία εργάσιμη ημέρα.',
+    'contact.form.success': `Ευχαριστούμε. Το μήνυμά σου έφτασε και θα σου απαντήσουμε μέσα σε ${REPLY_SLA.el}.`,
     'contact.form.error.failed': 'Κάτι πήγε στραβά. Δοκίμασε ξανά ή επικοινώνησε μαζί μας κατευθείαν.',
     'contact.form.error.required': 'είναι υποχρεωτικό',
     'contact.form.error.email': 'Βάλε ένα κανονικό email',
-    'contact.form.consent': 'Ό,τι στέλνεις έρχεται σε εμάς και πουθενά αλλού.',
+    'contact.form.consent': 'Ό,τι στέλνεις το χρησιμοποιούμε για να σου απαντήσουμε. Τίποτα άλλο.',
     'contact.form.consent.link': 'Πώς τα διαχειριζόμαστε',
     'contact.connect': 'Βρες μας online',
     'contact.phone': 'Τηλέφωνο',
@@ -291,14 +291,14 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.data.feature3': 'Ειδοποιήσεις πριν σου κοστίσει',
     'services.data.feature4': 'Ιστορικό που μπορείς να ρωτήσεις',
     'services.snowflake.title': 'Πλατφόρμα δεδομένων Snowflake',
-    'services.snowflake.description': 'Όταν τα δεδομένα ξεπερνούν τα υπολογιστικά φύλλα: υλοποιούμε, βελτιστοποιούμε ή μεταφέρουμε στο Snowflake AI Data Cloud. Είμαστε Snowflake AI Data Cloud Select Partner.',
-    'services.snowflake.feature1': 'Κατασκευή data warehouse',
+    'services.snowflake.description': 'Όταν τα δεδομένα ξεπερνούν τα υπολογιστικά φύλλα: υλοποιούμε το Snowflake AI Data Cloud, το βελτιστοποιούμε ή μεταφέρουμε πάνω του τα δεδομένα σου. Είμαστε Snowflake AI Data Cloud Select Partner.',
+    'services.snowflake.feature1': 'Κατασκευή αποθήκης δεδομένων',
     'services.snowflake.feature2': 'Διοχετεύσεις ETL/ELT',
     'services.snowflake.feature3': 'Μετάβαση στο Snowflake',
     'services.snowflake.feature4': 'Ρύθμιση κόστους και απόδοσης',
 
     // Footer
-    'footer.description': 'Χαρτογραφούμε πώς δουλεύει η επιχείρησή σου, βάζουμε νούμερο σε ευρώ στα τρία σημεία που σου κοστίζουν περισσότερο και αυτοματοποιούμε το πρώτο μέσα σε 30 μέρες. Θεσσαλονίκη.',
+    'footer.description': `Χαρτογραφούμε πώς δουλεύει η επιχείρησή σου, βάζουμε νούμερο σε ευρώ στα τρία σημεία που σου κοστίζουν περισσότερο και αυτοματοποιούμε το πρώτο μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης. Θεσσαλονίκη.`,
     'footer.partnership': 'Αξιόπιστες Συνεργασίες',
     'footer.links': 'Γρήγοροι σύνδεσμοι',
     'footer.projects': 'Έργα',

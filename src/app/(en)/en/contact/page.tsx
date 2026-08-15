@@ -6,20 +6,20 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Contact Software Company Thessaloniki | IT Consulting Services',
-  description: 'Contact top software development company in Thessaloniki for custom software, web development, mobile apps & IT consulting services in Greece.',
+  description: 'Tell us which process is costing you the most. We reply within one business day with a practical first step.',
   keywords: 'software company Thessaloniki contact, IT consulting Thessaloniki, custom software development company Thessaloniki, web development company Thessaloniki, mobile app development Greece, managed IT services Greece, software development services Greece, ERP implementation Thessaloniki, custom CRM solutions Greece',
   alternates: buildAlternates('/contact'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/contact',
     title: 'Contact Fiji Solutions | Free Consultation Thessaloniki',
-    description: 'Contact Fiji Solutions for free consultation. IT consulting & custom software development in Thessaloniki. Web development, AI solutions & more.',
+    description: 'Tell us which process is costing you the most. We reply within one business day.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
-        alt: 'Contact Fiji Solutions - Software Company in Thessaloniki, Greece specializing in IT consulting and custom software development',
+        alt: 'Contact Fiji Solutions, Thessaloniki',
       },
     ],
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Contact Fiji Solutions | Free Consultation Thessaloniki',
-    description: 'Contact Fiji Solutions for free consultation. IT consulting & custom software development in Thessaloniki. Web development, AI solutions & more.',
+    description: 'Tell us which process is costing you the most. We reply within one business day.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };
