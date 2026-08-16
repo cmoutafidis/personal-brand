@@ -14,7 +14,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'One process automated in 30 days | Fiji Solutions',
-    description: 'Custom software, automations, reporting tools, and Snowflake data systems that remove operational bottlenecks for businesses in Greece.',
+    // Audience, 2026-08-16: the buyer who signs is the owner. Named here by the symptom the
+    // audit page already describes him by, not by country — "businesses in Greece" was nobody
+    // in particular. Company size, sector and trigger event are still unstated, so nothing here
+    // implies one.
+    description: 'Custom software, automations, reporting tools, and Snowflake data systems for the owner whose business runs on retyped data, late follow-ups, and one person who knows how everything works.',
     url: 'https://www.fijisolutions.net/en',
     images: [
       {
@@ -29,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'One process automated in 30 days | Fiji Solutions',
-    description: 'Custom software, automations, reporting tools, and Snowflake data systems that remove operational bottlenecks for businesses in Greece.',
+    description: 'Custom software, automations, reporting tools, and Snowflake data systems for the owner whose business runs on retyped data, late follow-ups, and one person who knows how everything works.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

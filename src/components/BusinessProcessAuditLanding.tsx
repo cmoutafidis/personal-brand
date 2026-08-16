@@ -1,7 +1,15 @@
 import Image from 'next/image';
 import ContactForm from '@/components/ContactForm';
 import {Language} from '@/types/language';
-import {SPRINT_PRICE_EUR, SPRINT_DAYS, AUDIT_CALL_MINUTES} from '@/lib/offer';
+import {
+  SPRINT_DAYS,
+  AUDIT_CALL_MINUTES,
+  formatSprintPrice,
+  GUARANTEE_WINDOW_MONTHS,
+  GUARANTEE_CURE_DAYS,
+  GUARANTEE_CLAIM_DAYS,
+  GUARANTEE_ANSWER_WORKING_DAYS
+} from '@/lib/offer';
 
 const CALENDLY_URL = 'https://calendly.com/charis-fijisolutions/30min';
 
@@ -126,12 +134,12 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         lead: 'The Pays-For-Itself Guarantee.',
-        body: 'If the fix we build doesn’t pay for itself within 6 months of going live, we refund your build fee.'
+        body: `If the fix we build doesn’t pay for itself within ${GUARANTEE_WINDOW_MONTHS} months of going live, we refund your build fee.`
       }
     ],
     cta: {
       button: 'Get my free Process Audit',
-      callout: 'The audit is free, no obligation. Every fix we build is backed by the Pays-For-Itself Guarantee. If the fix we build doesn’t pay for itself within 6 months of going live, we refund your build fee.',
+      callout: `The audit is free, no obligation. Every fix we build is backed by the Pays-For-Itself Guarantee. If the fix we build doesn’t pay for itself within ${GUARANTEE_WINDOW_MONTHS} months of going live, we refund your build fee.`,
       microcopy: 'We reply within 1 business day.'
     },
     storyTitle: 'The most expensive employee in most Greek businesses is a spreadsheet',
@@ -216,7 +224,7 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         step: 'Step 2',
-        title: `The Discovery Sprint — €${SPRINT_PRICE_EUR.toLocaleString('en-US')}, ${SPRINT_DAYS} working days`,
+        title: `The Discovery Sprint — ${formatSprintPrice('en')}, ${SPRINT_DAYS} working days`,
         body: 'If the map shows a fix worth building, we run a focused sprint with your team: we map the exact workflows step by step, rank every possible fix by return on investment, and agree the payback target in writing. You keep the implementation plan whatever you decide next, and the fee comes off the build price if you go ahead.'
       },
       {
@@ -328,7 +336,7 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         q: 'And the fix: what does that cost?',
-        a: 'A one-time build fee plus a small monthly care plan. Exact numbers come after the audit, because they depend entirely on what we find. What’s fixed in advance is the guarantee. If the fix we build doesn’t pay for itself within 6 months of going live, we refund your build fee.'
+        a: `A one-time build fee plus a small monthly care plan. Exact numbers come after the audit, because they depend entirely on what we find. What’s fixed in advance is the guarantee. If the fix we build doesn’t pay for itself within ${GUARANTEE_WINDOW_MONTHS} months of going live, we refund your build fee.`
       },
       {
         q: 'How is “pays for itself” actually measured?',
@@ -372,7 +380,7 @@ const copy: Record<Language, LandingCopy> = {
     ],
     guaranteeTitle: 'The Pays-For-Itself Guarantee, in plain language',
     guaranteeIntro: 'Most agencies get paid whether their software works or not. We decided to make that impossible for ourselves.',
-    guaranteePromise: 'If the fix we build doesn’t pay for itself within 6 months of going live, we refund your build fee.',
+    guaranteePromise: `If the fix we build doesn’t pay for itself within ${GUARANTEE_WINDOW_MONTHS} months of going live, we refund your build fee.`,
     guaranteePointsTitle: 'What makes it real',
     guaranteePoints: [
       {
@@ -385,15 +393,15 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         lead: 'The clock starts at go-live.',
-        body: 'The 6-month window begins the day the software starts working for you.'
+        body: `The ${GUARANTEE_WINDOW_MONTHS}-month window begins the day the software starts working for you.`
       },
       {
         lead: 'What we ask of you.',
-        body: 'Use the software, let your team be trained, give us the access we need to measure, and keep the care plan running through the guarantee window. That’s how we measure the savings. If something is off-target, we get 30 days to fix it before any refund. Fixing beats refunding, for both of us.'
+        body: `Use the software, let your team be trained, give us the access we need to measure, and keep the care plan running through the guarantee window. That’s how we measure the savings. If something is off-target, we get ${GUARANTEE_CURE_DAYS} days to fix it before any refund. Fixing beats refunding, for both of us.`
       },
       {
         lead: 'How you claim.',
-        body: 'Email info@fijisolutions.net within 30 days of the window closing, with the measurement we agreed. We answer within 10 working days. The refund is the build fee — not the care-plan months, which bought you a service that ran.'
+        body: `Email info@fijisolutions.net within ${GUARANTEE_CLAIM_DAYS} days of the window closing, with the measurement we agreed. We answer within ${GUARANTEE_ANSWER_WORKING_DAYS} working days. The refund is the build fee — not the care-plan months, which bought you a service that ran.`
       },
       {
         lead: 'What voids it.',
@@ -431,12 +439,12 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         lead: 'Η Εγγύηση Απόσβεσης.',
-        body: 'Αν η λύση που χτίζουμε δεν αποσβέσει το κόστος της μέσα σε 6 μήνες από τη θέση της σε λειτουργία, σου επιστρέφουμε την αμοιβή υλοποίησης.'
+        body: `Αν η λύση που χτίζουμε δεν αποσβέσει το κόστος της μέσα σε ${GUARANTEE_WINDOW_MONTHS} μήνες από τη θέση της σε λειτουργία, σου επιστρέφουμε την αμοιβή υλοποίησης.`
       }
     ],
     cta: {
       button: 'Κλείσε τον δωρεάν έλεγχο διαδικασιών σου',
-      callout: 'Ο έλεγχος είναι δωρεάν, χωρίς καμία δέσμευση. Κάθε λύση που χτίζουμε καλύπτεται από την Εγγύηση Απόσβεσης. Αν η λύση που χτίζουμε δεν αποσβέσει το κόστος της μέσα σε 6 μήνες από τη θέση της σε λειτουργία, σου επιστρέφουμε την αμοιβή υλοποίησης.',
+      callout: `Ο έλεγχος είναι δωρεάν, χωρίς καμία δέσμευση. Κάθε λύση που χτίζουμε καλύπτεται από την Εγγύηση Απόσβεσης. Αν η λύση που χτίζουμε δεν αποσβέσει το κόστος της μέσα σε ${GUARANTEE_WINDOW_MONTHS} μήνες από τη θέση της σε λειτουργία, σου επιστρέφουμε την αμοιβή υλοποίησης.`,
       microcopy: 'Απαντάμε εντός 1 εργάσιμης ημέρας.'
     },
     storyTitle: 'Ο πιο ακριβός υπάλληλος στις περισσότερες ελληνικές επιχειρήσεις είναι ένα Excel',
@@ -521,7 +529,7 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         step: 'Βήμα 2',
-        title: `Το Discovery Sprint — €${SPRINT_PRICE_EUR.toLocaleString('en-US')}, ${SPRINT_DAYS} εργάσιμες μέρες`,
+        title: `Το Discovery Sprint — ${formatSprintPrice('el')}, ${SPRINT_DAYS} εργάσιμες μέρες`,
         body: 'Αν ο χάρτης δείξει μια λύση που αξίζει να χτιστεί, τρέχουμε ένα εστιασμένο sprint με την ομάδα σου: αποτυπώνουμε τις ροές εργασίας βήμα βήμα, κατατάσσουμε κάθε πιθανή λύση με βάση την απόδοση της επένδυσης και συμφωνούμε γραπτά τον στόχο απόσβεσης. Κρατάς το σχέδιο υλοποίησης ό,τι κι αν αποφασίσεις μετά, και το ποσό αφαιρείται από την τιμή της κατασκευής αν προχωρήσεις.'
       },
       {
@@ -633,7 +641,7 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         q: 'Και η λύση, τι κοστίζει;',
-        a: 'Μια εφάπαξ αμοιβή υλοποίησης και ένα μικρό μηνιαίο πλάνο φροντίδας. Τα ακριβή νούμερα έρχονται μετά τον έλεγχο, γιατί εξαρτώνται αποκλειστικά από το τι θα βρούμε. Αυτό που είναι δεσμευτικό από πριν είναι η εγγύηση. Αν η λύση που χτίζουμε δεν αποσβέσει το κόστος της μέσα σε 6 μήνες από τη θέση της σε λειτουργία, σου επιστρέφουμε την αμοιβή υλοποίησης.'
+        a: `Μια εφάπαξ αμοιβή υλοποίησης και ένα μικρό μηνιαίο πλάνο φροντίδας. Τα ακριβή νούμερα έρχονται μετά τον έλεγχο, γιατί εξαρτώνται αποκλειστικά από το τι θα βρούμε. Αυτό που είναι δεσμευτικό από πριν είναι η εγγύηση. Αν η λύση που χτίζουμε δεν αποσβέσει το κόστος της μέσα σε ${GUARANTEE_WINDOW_MONTHS} μήνες από τη θέση της σε λειτουργία, σου επιστρέφουμε την αμοιβή υλοποίησης.`
       },
       {
         q: 'Πώς μετριέται στην πράξη η «απόσβεση»;',
@@ -677,7 +685,7 @@ const copy: Record<Language, LandingCopy> = {
     ],
     guaranteeTitle: 'Η Εγγύηση Απόσβεσης, σε απλά ελληνικά',
     guaranteeIntro: 'Οι περισσότερες εταιρείες πληρώνονται είτε δουλέψει το λογισμικό τους είτε όχι. Εμείς αποφασίσαμε να μην αφήσουμε αυτό το περιθώριο στον εαυτό μας.',
-    guaranteePromise: 'Αν η λύση που χτίζουμε δεν αποσβέσει το κόστος της μέσα σε 6 μήνες από τη θέση της σε λειτουργία, σου επιστρέφουμε την αμοιβή υλοποίησης.',
+    guaranteePromise: `Αν η λύση που χτίζουμε δεν αποσβέσει το κόστος της μέσα σε ${GUARANTEE_WINDOW_MONTHS} μήνες από τη θέση της σε λειτουργία, σου επιστρέφουμε την αμοιβή υλοποίησης.`,
     guaranteePointsTitle: 'Τι την κάνει αληθινή',
     guaranteePoints: [
       {
@@ -690,15 +698,18 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         lead: 'Το ρολόι ξεκινά στη θέση σε λειτουργία.',
-        body: 'Το παράθυρο των 6 μηνών ξεκινά τη μέρα που το λογισμικό αρχίζει να δουλεύει για εσένα.'
+        body: `Το παράθυρο των ${GUARANTEE_WINDOW_MONTHS} μηνών ξεκινά τη μέρα που το λογισμικό αρχίζει να δουλεύει για εσένα.`
       },
       {
         lead: 'Τι ζητάμε από εσένα.',
-        body: 'Να χρησιμοποιείς το λογισμικό, να αφήσεις την ομάδα σου να εκπαιδευτεί, να μας δώσεις την πρόσβαση που χρειαζόμαστε για να μετράμε, και να κρατήσεις το πλάνο φροντίδας ενεργό στη διάρκεια της εγγύησης. Έτσι μετριέται η εξοικονόμηση. Κι αν κάτι είναι εκτός στόχου, έχουμε 30 ημέρες να το διορθώσουμε πριν από οποιαδήποτε επιστροφή. Η διόρθωση είναι καλύτερη από την επιστροφή, και για τους δυο μας.'
+        body: `Να χρησιμοποιείς το λογισμικό, να αφήσεις την ομάδα σου να εκπαιδευτεί, να μας δώσεις την πρόσβαση που χρειαζόμαστε για να μετράμε, και να κρατήσεις το πλάνο φροντίδας ενεργό στη διάρκεια της εγγύησης. Έτσι μετριέται η εξοικονόμηση. Κι αν κάτι είναι εκτός στόχου, έχουμε ${GUARANTEE_CURE_DAYS} ημέρες να το διορθώσουμε πριν από οποιαδήποτε επιστροφή. Η διόρθωση είναι καλύτερη από την επιστροφή, και για τους δυο μας.`
       },
       {
         lead: 'Πώς κάνεις χρήση της εγγύησης.',
-        body: 'Στέλνεις email στο info@fijisolutions.net μέσα σε 30 ημέρες από τη λήξη του εξαμήνου, με τη μέτρηση που συμφωνήσαμε. Απαντάμε μέσα σε 10 εργάσιμες ημέρες. Η επιστροφή αφορά την αμοιβή υλοποίησης — όχι τους μήνες του πλάνου φροντίδας, που αγόρασαν μια υπηρεσία που δούλεψε.'
+        // «εξαμήνου» spells the window out as a Greek noun, so it is the one place the number is
+        // not substitutable. Its English twin says only "the window". If GUARANTEE_WINDOW_MONTHS
+        // ever moves off 6, this word has to be rewritten by hand.
+        body: `Στέλνεις email στο info@fijisolutions.net μέσα σε ${GUARANTEE_CLAIM_DAYS} ημέρες από τη λήξη του εξαμήνου, με τη μέτρηση που συμφωνήσαμε. Απαντάμε μέσα σε ${GUARANTEE_ANSWER_WORKING_DAYS} εργάσιμες ημέρες. Η επιστροφή αφορά την αμοιβή υλοποίησης — όχι τους μήνες του πλάνου φροντίδας, που αγόρασαν μια υπηρεσία που δούλεψε.`
       },
       {
         lead: 'Τι την ακυρώνει.',

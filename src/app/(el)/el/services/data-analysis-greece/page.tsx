@@ -39,7 +39,7 @@ export default function Page() {
         serviceType: "Data analysis and business intelligence",
         provider: {'@type': 'ProfessionalService', name: 'Fiji Solutions', url: siteUrl},
         areaServed: {'@type': 'Country', name: 'Greece'},
-        description: "Αυτοματοποιημένες αναφορές, πίνακες BI και διοχετεύσεις δεδομένων για επιχειρήσεις στην Ελλάδα.",
+        description: "Αυτοματοποιημένες αναφορές, πίνακες BI και διοχετεύσεις δεδομένων για τον ιδιοκτήτη που η επιχείρησή του λειτουργεί με ξαναπληκτρολογημένα δεδομένα, καθυστερημένες υπενθυμίσεις και έναν άνθρωπο που ξέρει πώς δουλεύουν όλα.",
       }}
     />
   );

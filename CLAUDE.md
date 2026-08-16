@@ -16,7 +16,7 @@ six industries and thirty-two technologies. Do not re-add a service list.
 
 | What | Where |
 |---|---|
-| Offer economics — price, durations, SLA | `src/lib/offer.ts`. **Change the number here, not in copy.** |
+| Offer economics — price, durations, SLA, guarantee terms | `src/lib/offer.ts`. **Change the number here, not in copy.** The guarantee's four numbers (window, cure, claim window, answer deadline) live here too, and the sprint price is formatted per locale by `formatSprintPrice()` — €2,400 in English, 2.400€ in Greek. |
 | All UI copy, both locales | `src/translations.ts` (138 keys each, kept at exact parity) |
 | The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
 | Canonical + hreflang | `src/lib/alternates.ts` — `buildAlternates(path, lang)` |
@@ -57,15 +57,25 @@ six industries and thirty-two technologies. Do not re-add a service list.
    at least an audit plus a five-day sprint earlier. Every headline that states the number must
    state the anchor with it.
 
+## Settled — do not reopen casually
+
+- **The Discovery Sprint price and all six guarantee clauses are Charis's own decisions**,
+  ratified on 2026-08-16. €2,400, five working days, a six-month payback window, a 30-day cure
+  period, a 30-day claim window and a 10-working-day answer. They are no longer placeholders.
+  The rationale for each is recorded in `src/lib/offer.ts` and stays there, because it is the
+  reason the next person should not change one casually — the guarantee's numbers are contract
+  wording, quoted to the reader as "these terms go into the contract before we build, in these
+  words".
+
 ## Open, and only Charis can close them
 
-- **The Discovery Sprint price and the guarantee's claim terms were chosen on his behalf** on
-  2026-08-15 and are flagged in `src/lib/offer.ts`. They are placeholders with a rationale, not
-  decisions he made.
 - No proof asset exists. One client willing to publish one measured before/after with a date is
   the highest-value thing missing from every page.
-- The ICP is unnamed — the site is written for "businesses in Greece", which is nobody in
-  particular.
+- The ICP is **half named**. The buyer who signs is the owner/founder, and the site now says so
+  by symptom: the owner whose business runs on retyped data, late follow-ups, and one person who
+  knows how everything works. Company size, sector and trigger event are still unstated. Do not
+  invent them, and do not write a who-this-is-not-for section until they exist — an exclusion
+  list without a sector and a size is invented positioning.
 
 ## Commands
 

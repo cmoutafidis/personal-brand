@@ -39,7 +39,7 @@ export default function Page() {
         serviceType: "Custom software development and process automation",
         provider: {'@type': 'ProfessionalService', name: 'Fiji Solutions', url: siteUrl},
         areaServed: {'@type': 'Country', name: 'Greece'},
-        description: "Εσωτερικά εργαλεία, διασύνδεση συστημάτων και αυτοματοποίηση διαδικασιών για επιχειρήσεις στην Ελλάδα.",
+        description: "Εσωτερικά εργαλεία, διασύνδεση συστημάτων και αυτοματοποίηση διαδικασιών για τον ιδιοκτήτη που η επιχείρησή του λειτουργεί με ξαναπληκτρολογημένα δεδομένα, καθυστερημένες υπενθυμίσεις και έναν άνθρωπο που ξέρει πώς δουλεύουν όλα.",
       }}
     />
   );

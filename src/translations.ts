@@ -1,5 +1,12 @@
 import {Language} from '@/types/language';
-import {SPRINT_DAYS, SPRINT_PRICE_EUR, FIRST_FIX_DAYS, AUDIT_CALL_MINUTES, REPLY_SLA} from '@/lib/offer';
+import {
+  SPRINT_DAYS,
+  FIRST_FIX_DAYS,
+  AUDIT_CALL_MINUTES,
+  REPLY_SLA,
+  formatSprintPrice,
+  GUARANTEE_WINDOW_WORD
+} from '@/lib/offer';
 
 // Copy rules for this file, set 2026-08-15 after the site audit:
 //
@@ -15,8 +22,8 @@ import {SPRINT_DAYS, SPRINT_PRICE_EUR, FIRST_FIX_DAYS, AUDIT_CALL_MINUTES, REPLY
 //  5. Greek address form is informal singular (εσύ), everywhere, including metadata.
 //  6. One name per thing. The audit is "process audit" / «έλεγχος διαδικασιών» in every locale,
 //     every button, every page title. It had five different Greek names.
-
-const EUR = `€${SPRINT_PRICE_EUR.toLocaleString('en-US')}`;
+//  7. Every commercial number comes from `@/lib/offer` — the price, the durations, the SLA and
+//     the guarantee window. None of them is typed into a string here.
 
 export const translations: Record<Language, Record<string, string>> = {
   en: {
@@ -51,12 +58,12 @@ export const translations: Record<Language, Record<string, string>> = {
     'solutions.subtitle': 'Three steps. You approve the price and the target in writing before anything gets built.',
     'solutions.experts.title': 'The free process audit',
     'solutions.experts.description': `A ${AUDIT_CALL_MINUTES}-minute call about how work actually moves through your business, then a written one-page map of your three most expensive bottlenecks, with the hours and euros each one costs per month.`,
-    'solutions.fast.title': `The Discovery Sprint — ${EUR}, ${SPRINT_DAYS} working days`,
+    'solutions.fast.title': `The Discovery Sprint — ${formatSprintPrice('en')}, ${SPRINT_DAYS} working days`,
     'solutions.fast.description': `We map the exact workflow step by step, rank every possible fix by what it returns, and agree the payback target in writing. You keep the implementation plan. The fee comes off the build price if you go ahead.`,
     'solutions.industry.title': 'Build & Run',
     'solutions.industry.description': `We build the highest-return fix first and it is live within ${FIRST_FIX_DAYS} days of the build starting. Then a monthly care plan keeps it running, monitored and updated.`,
     'solutions.payment.title': 'The guarantee',
-    'solutions.payment.description': 'If what we build has not paid for itself within six months of going live, measured against the baseline in your audit, we refund the build fee. The full terms are on the audit page.',
+    'solutions.payment.description': `If what we build has not paid for itself within ${GUARANTEE_WINDOW_WORD.en} months of going live, measured against the baseline in your audit, we refund the build fee. The full terms are on the audit page.`,
     'solutions.cta.title': 'Show us the process that wastes the most time',
     'solutions.cta.description': 'Tell us which task, spreadsheet or report costs you the most, and we will put a number on it in writing.',
     'solutions.cta.button': 'Get the free process audit',
@@ -219,12 +226,12 @@ export const translations: Record<Language, Record<string, string>> = {
     'solutions.subtitle': 'Τρία βήματα. Εγκρίνεις γραπτώς την τιμή και τον στόχο πριν φτιαχτεί οτιδήποτε.',
     'solutions.experts.title': 'Ο δωρεάν έλεγχος διαδικασιών',
     'solutions.experts.description': `Μια κλήση ${AUDIT_CALL_MINUTES} λεπτών για το πώς κινείται πραγματικά η δουλειά στην επιχείρησή σου, και μετά ένας γραπτός χάρτης μιας σελίδας με τα τρία ακριβότερα σημεία, με τις ώρες και τα ευρώ που κοστίζει το καθένα τον μήνα.`,
-    'solutions.fast.title': `Το Discovery Sprint — ${EUR}, ${SPRINT_DAYS} εργάσιμες μέρες`,
+    'solutions.fast.title': `Το Discovery Sprint — ${formatSprintPrice('el')}, ${SPRINT_DAYS} εργάσιμες μέρες`,
     'solutions.fast.description': 'Χαρτογραφούμε τη ροή βήμα προς βήμα, κατατάσσουμε κάθε πιθανή λύση με βάση το τι αποδίδει και συμφωνούμε γραπτώς τον στόχο απόσβεσης. Κρατάς το σχέδιο υλοποίησης. Το ποσό αφαιρείται από την τιμή της κατασκευής αν προχωρήσεις.',
     'solutions.industry.title': 'Υλοποίηση και λειτουργία',
     'solutions.industry.description': `Φτιάχνουμε πρώτα τη λύση με τη μεγαλύτερη απόδοση και είναι σε λειτουργία μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη. Μετά αναλαμβάνει το μηνιαίο πλάνο φροντίδας.`,
     'solutions.payment.title': 'Η εγγύηση',
-    'solutions.payment.description': 'Αν αυτό που φτιάξαμε δεν έχει αποσβεστεί μέσα σε έξι μήνες από τη θέση του σε λειτουργία, μετρημένο πάνω στη βάση του ελέγχου σου, επιστρέφουμε το κόστος κατασκευής. Οι πλήρεις όροι είναι στη σελίδα του ελέγχου.',
+    'solutions.payment.description': `Αν αυτό που φτιάξαμε δεν έχει αποσβεστεί μέσα σε ${GUARANTEE_WINDOW_WORD.el} μήνες από τη θέση του σε λειτουργία, μετρημένο πάνω στη βάση του ελέγχου σου, επιστρέφουμε το κόστος κατασκευής. Οι πλήρεις όροι είναι στη σελίδα του ελέγχου.`,
     'solutions.cta.title': 'Δείξε μας τη διαδικασία που τρώει τον περισσότερο χρόνο',
     'solutions.cta.description': 'Πες μας ποια εργασία, ποιο υπολογιστικό φύλλο ή ποια αναφορά σου κοστίζει περισσότερο, και θα βάλουμε νούμερο πάνω της γραπτώς.',
     'solutions.cta.button': 'Κλείσε δωρεάν έλεγχο διαδικασιών',

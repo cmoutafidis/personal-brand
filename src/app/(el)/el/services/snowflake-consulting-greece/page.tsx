@@ -39,7 +39,7 @@ export default function Page() {
         serviceType: "Snowflake consulting and data engineering",
         provider: {'@type': 'ProfessionalService', name: 'Fiji Solutions', url: siteUrl},
         areaServed: {'@type': 'Country', name: 'Greece'},
-        description: "Υλοποίηση, μετάβαση, διοχετεύσεις και ρύθμιση κόστους Snowflake AI Data Cloud για επιχειρήσεις στην Ελλάδα.",
+        description: "Υλοποίηση, μετάβαση, διοχετεύσεις και ρύθμιση κόστους Snowflake AI Data Cloud για τον ιδιοκτήτη που η επιχείρησή του λειτουργεί με ξαναπληκτρολογημένα δεδομένα, καθυστερημένες υπενθυμίσεις και έναν άνθρωπο που ξέρει πώς δουλεύουν όλα.",
       }}
     />
   );

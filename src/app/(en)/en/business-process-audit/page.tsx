@@ -3,10 +3,11 @@ import BusinessProcessAuditLanding from '@/components/BusinessProcessAuditLandin
 import Footer from '@/components/Footer';
 import {createTranslationFunction} from '@/translations';
 import {buildAlternates} from '@/lib/alternates';
+import {GUARANTEE_WINDOW_MONTHS} from '@/lib/offer';
 
 export const metadata: Metadata = {
   title: 'Free Business Process Audit | Fiji Solutions',
-  description: 'Get a free Process Audit: a written map of the bottlenecks costing you money, then custom software backed by the Pays-For-Itself Guarantee. Payback within 6 months of go-live or your build fee back.',
+  description: `Get a free Process Audit: a written map of the bottlenecks costing you money, then custom software backed by the Pays-For-Itself Guarantee. Payback within ${GUARANTEE_WINDOW_MONTHS} months of go-live or your build fee back.`,
   keywords: 'free business process audit, workflow optimisation Greece, business process automation, custom software Greece, internal operations fix, AI software solutions',
   alternates: buildAlternates('/business-process-audit'),
   openGraph: {

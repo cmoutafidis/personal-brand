@@ -3,10 +3,11 @@ import BusinessProcessAuditLanding from '@/components/BusinessProcessAuditLandin
 import Footer from '@/components/Footer';
 import {createTranslationFunction} from '@/translations';
 import {buildAlternates} from '@/lib/alternates';
+import {GUARANTEE_WINDOW_MONTHS} from '@/lib/offer';
 
 export const metadata: Metadata = {
   title: 'Δωρεάν έλεγχος διαδικασιών | Fiji Solutions',
-  description: 'Κλείσε δωρεάν έλεγχο διαδικασιών: γραπτός χάρτης με τα τρία σημεία που σου κοστίζουν χρήματα, και μετά εξατομικευμένο λογισμικό με Εγγύηση Απόσβεσης. Απόσβεση σε 6 μήνες από τη θέση σε λειτουργία, αλλιώς επιστρέφουμε την αμοιβή υλοποίησης.',
+  description: `Κλείσε δωρεάν έλεγχο διαδικασιών: γραπτός χάρτης με τα τρία σημεία που σου κοστίζουν χρήματα, και μετά εξατομικευμένο λογισμικό με Εγγύηση Απόσβεσης. Απόσβεση σε ${GUARANTEE_WINDOW_MONTHS} μήνες από τη θέση σε λειτουργία, αλλιώς επιστρέφουμε την αμοιβή υλοποίησης.`,
   keywords: 'δωρεάν έλεγχος διαδικασιών, βελτιστοποίηση διαδικασιών, αυτοματοποίηση διαδικασιών, εξατομικευμένο λογισμικό Ελλάδα, εγγύηση απόσβεσης',
   alternates: buildAlternates('/business-process-audit', 'el'),
   openGraph: {

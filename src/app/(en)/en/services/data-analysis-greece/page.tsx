@@ -39,7 +39,7 @@ export default function Page() {
         serviceType: "Data analysis and business intelligence",
         provider: {'@type': 'ProfessionalService', name: 'Fiji Solutions', url: siteUrl},
         areaServed: {'@type': 'Country', name: 'Greece'},
-        description: "Automated reporting, BI dashboards and analytics pipelines for businesses in Greece.",
+        description: "Automated reporting, BI dashboards and analytics pipelines for the owner whose business runs on retyped data, late follow-ups, and one person who knows how everything works.",
       }}
     />
   );

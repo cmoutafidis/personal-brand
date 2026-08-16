@@ -39,7 +39,7 @@ export default function Page() {
         serviceType: "Custom software development and process automation",
         provider: {'@type': 'ProfessionalService', name: 'Fiji Solutions', url: siteUrl},
         areaServed: {'@type': 'Country', name: 'Greece'},
-        description: "Internal tools, system integration and workflow automation for businesses in Greece.",
+        description: "Internal tools, system integration and workflow automation for the owner whose business runs on retyped data, late follow-ups, and one person who knows how everything works.",
       }}
     />
   );
