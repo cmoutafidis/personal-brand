@@ -2,9 +2,8 @@ import Image from 'next/image';
 import ContactForm from '@/components/ContactForm';
 import {Language} from '@/types/language';
 import {
-  SPRINT_DAYS,
   AUDIT_CALL_MINUTES,
-  formatSprintPrice,
+  FIRST_FIX_DAYS,
   GUARANTEE_WINDOW_MONTHS,
   GUARANTEE_CURE_DAYS,
   GUARANTEE_CLAIM_DAYS,
@@ -215,7 +214,7 @@ const copy: Record<Language, LandingCopy> = {
     ],
     trustClosing: 'When we do publish client results, they’ll be real, measured, and named. Until then, we’d rather show you less and have all of it be true.',
     offerTitle: 'The Internal Operations Fix: how it works',
-    offerIntro: 'A done-for-you engagement in three steps. The target is agreed in writing before anything gets built.',
+    offerIntro: 'A done-for-you engagement in two steps. The target and the price are agreed in writing before anything gets built.',
     offerSteps: [
       {
         step: 'Step 1',
@@ -224,17 +223,12 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         step: 'Step 2',
-        title: `The Discovery Sprint — ${formatSprintPrice('en')}, ${SPRINT_DAYS} working days`,
-        body: 'If the map shows a fix worth building, we run a focused sprint with your team: we map the exact workflows step by step, rank every possible fix by return on investment, and agree the payback target in writing. You keep the implementation plan whatever you decide next, and the fee comes off the build price if you go ahead.'
-      },
-      {
-        step: 'Step 3',
-        title: 'Build & Run',
-        body: 'We build the highest-ROI fix first, so you see results before we touch anything else. Then the monthly care plan takes over: we maintain it, monitor it, and keep optimising it, so nothing ever lands back on your team’s plate.'
+        title: 'Scope, Build & Run',
+        body: 'If the map shows a fix worth building, we scope it with you first. We map the exact workflows step by step, rank every possible fix by return on investment, and agree the payback target and the price in writing before any work starts. The price is built around what you need and what your budget allows. Then we build the highest-ROI fix first, so you see results before we touch anything else. The monthly care plan takes over from there: we maintain it, monitor it, and keep optimising it, so nothing ever lands back on your team’s plate.'
       }
     ],
     offerPricing: 'The engagement is a one-time build fee plus a small monthly care plan. The exact numbers depend on what the audit finds. That is exactly why the audit comes first, and why it’s free.',
-    offerEffort: 'What we need from you: 30 minutes for the audit, and a few short sessions during the sprint. We do everything else.',
+    offerEffort: 'What we need from you: 30 minutes for the audit, and a few short sessions while we scope the fix. We do everything else.',
     dreamTitle: 'What Monday morning looks like after the fix',
     dreamBullets: [
       {
@@ -272,7 +266,7 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         when: 'Week 1',
-        body: 'The audit call. 30 minutes. You talk, we ask, we take notes. That’s your entire time investment.'
+        body: 'The audit call. 30 minutes. You talk, we ask, we take notes. That’s your entire time investment for the audit.'
       },
       {
         when: 'Week 2',
@@ -280,11 +274,11 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         when: 'Weeks 2–3',
-        body: 'If you want the fix: the Discovery Sprint. Workflows mapped, fixes ranked, target agreed in writing.'
+        body: 'If you want the fix: we scope it together. Workflows mapped, fixes ranked, target and price agreed in writing.'
       },
       {
         when: 'Around day 30',
-        body: 'The build starts on your highest-ROI fix. Our target: first automation live within 30 days after that.'
+        body: `The build starts on your highest-ROI fix. Our target: first automation live within ${FIRST_FIX_DAYS} days after that.`
       }
     ],
     sampleMapLabel: 'Example',
@@ -520,7 +514,7 @@ const copy: Record<Language, LandingCopy> = {
     ],
     trustClosing: 'Όταν δημοσιεύσουμε αποτελέσματα πελατών, θα είναι αληθινά, μετρημένα και επώνυμα. Μέχρι τότε, προτιμάμε να δείχνουμε λιγότερα και όλα να είναι αλήθεια.',
     offerTitle: 'Το Internal Operations Fix: πώς λειτουργεί',
-    offerIntro: 'Μια συνεργασία σε τρία βήματα, όπου τη δουλειά τη σηκώνουμε εμείς. Ο στόχος συμφωνείται γραπτά πριν χτιστεί οτιδήποτε.',
+    offerIntro: 'Μια συνεργασία σε δύο βήματα, όπου τη δουλειά τη σηκώνουμε εμείς. Ο στόχος και η τιμή συμφωνούνται γραπτά πριν χτιστεί οτιδήποτε.',
     offerSteps: [
       {
         step: 'Βήμα 1',
@@ -529,17 +523,12 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         step: 'Βήμα 2',
-        title: `Το Discovery Sprint — ${formatSprintPrice('el')}, ${SPRINT_DAYS} εργάσιμες μέρες`,
-        body: 'Αν ο χάρτης δείξει μια λύση που αξίζει να χτιστεί, τρέχουμε ένα εστιασμένο sprint με την ομάδα σου: αποτυπώνουμε τις ροές εργασίας βήμα βήμα, κατατάσσουμε κάθε πιθανή λύση με βάση την απόδοση της επένδυσης και συμφωνούμε γραπτά τον στόχο απόσβεσης. Κρατάς το σχέδιο υλοποίησης ό,τι κι αν αποφασίσεις μετά, και το ποσό αφαιρείται από την τιμή της κατασκευής αν προχωρήσεις.'
-      },
-      {
-        step: 'Βήμα 3',
-        title: 'Υλοποίηση & Λειτουργία',
-        body: 'Χτίζουμε πρώτα τη λύση με τη μεγαλύτερη απόδοση, ώστε να δεις αποτελέσματα πριν αγγίξουμε οτιδήποτε άλλο. Μετά αναλαμβάνει το μηνιαίο πλάνο φροντίδας: συντηρούμε, παρακολουθούμε και συνεχίζουμε να βελτιστοποιούμε, ώστε τίποτα να μην ξαναπέσει στις πλάτες της ομάδας σου.'
+        title: 'Σχεδιασμός, υλοποίηση και λειτουργία',
+        body: 'Αν ο χάρτης δείξει μια λύση που αξίζει να χτιστεί, ορίζουμε πρώτα μαζί σου τι ακριβώς θα φτιαχτεί. Αποτυπώνουμε τις ροές εργασίας βήμα βήμα, κατατάσσουμε κάθε πιθανή λύση με βάση την απόδοση της επένδυσης και συμφωνούμε γραπτά τον στόχο απόσβεσης και την τιμή πριν ξεκινήσει οποιαδήποτε δουλειά. Η τιμή διαμορφώνεται με βάση αυτό που χρειάζεσαι και αυτό που αντέχει ο προϋπολογισμός σου. Μετά χτίζουμε πρώτα τη λύση με τη μεγαλύτερη απόδοση, ώστε να δεις αποτελέσματα πριν αγγίξουμε οτιδήποτε άλλο. Από εκεί και πέρα αναλαμβάνει το μηνιαίο πλάνο φροντίδας: συντηρούμε, παρακολουθούμε και συνεχίζουμε να βελτιστοποιούμε, ώστε τίποτα να μην ξαναπέσει στις πλάτες της ομάδας σου.'
       }
     ],
     offerPricing: 'Η συνεργασία έχει μια εφάπαξ αμοιβή υλοποίησης και ένα μικρό μηνιαίο πλάνο φροντίδας. Τα ακριβή νούμερα εξαρτώνται από το τι θα βρει ο έλεγχος. Γι’ αυτό ακριβώς ο έλεγχος γίνεται πρώτος, και γι’ αυτό είναι δωρεάν.',
-    offerEffort: 'Τι χρειαζόμαστε από εσένα: 30 λεπτά για τον έλεγχο και λίγες σύντομες συναντήσεις στο Discovery Sprint. Όλα τα υπόλοιπα τα κάνουμε εμείς.',
+    offerEffort: 'Τι χρειαζόμαστε από εσένα: 30 λεπτά για τον έλεγχο και λίγες σύντομες συναντήσεις όσο ορίζουμε μαζί τη λύση. Όλα τα υπόλοιπα τα κάνουμε εμείς.',
     dreamTitle: 'Πώς μοιάζει το πρωινό της Δευτέρας μετά τη λύση',
     dreamBullets: [
       {
@@ -577,7 +566,7 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         when: 'Εβδομάδα 1',
-        body: 'Η κλήση του ελέγχου. 30 λεπτά. Εσύ μιλάς, εμείς ρωτάμε και κρατάμε σημειώσεις. Αυτή είναι όλη σου η επένδυση χρόνου.'
+        body: 'Η κλήση του ελέγχου. 30 λεπτά. Εσύ μιλάς, εμείς ρωτάμε και κρατάμε σημειώσεις. Αυτή είναι όλη σου η επένδυση χρόνου για τον έλεγχο.'
       },
       {
         when: 'Εβδομάδα 2',
@@ -585,11 +574,11 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         when: 'Εβδομάδες 2–3',
-        body: 'Αν θέλεις τη λύση: το Discovery Sprint. Ροές εργασίας αποτυπωμένες, λύσεις καταταγμένες, στόχος συμφωνημένος γραπτά.'
+        body: 'Αν θέλεις τη λύση: την ορίζουμε μαζί. Ροές εργασίας αποτυπωμένες, λύσεις ιεραρχημένες, στόχος και τιμή συμφωνημένα γραπτά.'
       },
       {
         when: 'Γύρω στην ημέρα 30',
-        body: 'Ξεκινά η υλοποίηση της λύσης με τη μεγαλύτερη απόδοση. Στόχος μας: ο πρώτος αυτοματισμός ζωντανός μέσα σε 30 ημέρες από την έναρξη.'
+        body: `Ξεκινά η υλοποίηση της λύσης με τη μεγαλύτερη απόδοση. Στόχος μας: ο πρώτος αυτοματισμός σε λειτουργία μέσα σε ${FIRST_FIX_DAYS} ημέρες από την έναρξη της υλοποίησης.`
       }
     ],
     sampleMapLabel: 'Παράδειγμα',

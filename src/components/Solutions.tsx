@@ -1,5 +1,5 @@
 import React from 'react';
-import {Building2, Clock, CreditCard, Zap} from 'lucide-react';
+import {Building2, CreditCard, Zap} from 'lucide-react';
 import ContactButton2 from "@/components/ContactButton2";
 
 interface SolutionsProps {
@@ -13,11 +13,6 @@ const Solutions: React.FC<SolutionsProps> = ({t}) => {
       icon: <Zap className="h-12 w-12"/>,
       title: t('solutions.experts.title'),
       description: t('solutions.experts.description')
-    },
-    {
-      icon: <Clock className="h-12 w-12"/>,
-      title: t('solutions.fast.title'),
-      description: t('solutions.fast.description')
     },
     {
       icon: <Building2 className="h-12 w-12"/>,
@@ -43,7 +38,7 @@ const Solutions: React.FC<SolutionsProps> = ({t}) => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {solutions.map((solution, index) => (
             <div key={index}
                  className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200/80 dark:border-gray-700/80 shadow-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl p-6 text-center">

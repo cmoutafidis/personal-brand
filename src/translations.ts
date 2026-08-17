@@ -1,10 +1,8 @@
 import {Language} from '@/types/language';
 import {
-  SPRINT_DAYS,
   FIRST_FIX_DAYS,
   AUDIT_CALL_MINUTES,
   REPLY_SLA,
-  formatSprintPrice,
   GUARANTEE_WINDOW_WORD
 } from '@/lib/offer';
 
@@ -22,8 +20,9 @@ import {
 //  5. Greek address form is informal singular (εσύ), everywhere, including metadata.
 //  6. One name per thing. The audit is "process audit" / «έλεγχος διαδικασιών» in every locale,
 //     every button, every page title. It had five different Greek names.
-//  7. Every commercial number comes from `@/lib/offer` — the price, the durations, the SLA and
-//     the guarantee window. None of them is typed into a string here.
+//  7. Every commercial number comes from `@/lib/offer` — the durations, the SLA and the
+//     guarantee window. None of them is typed into a string here. There is no price constant,
+//     because no price is published in either locale. Do not add one.
 
 export const translations: Record<Language, Record<string, string>> = {
   en: {
@@ -53,15 +52,13 @@ export const translations: Record<Language, Record<string, string>> = {
     'challenges.money.title': 'The numbers arrive too late',
     'challenges.money.description': 'When a report takes days to assemble, a small problem has already become an expensive one by the time anyone sees it.',
 
-    // Solutions — the three rungs, priced.
+    // Solutions — the two rungs. No price is published anywhere on this site.
     'solutions.title': 'How it works',
-    'solutions.subtitle': 'Three steps. You approve the price and the target in writing before anything gets built.',
+    'solutions.subtitle': 'Two steps, and a guarantee. You approve the price and the target in writing before anything gets built.',
     'solutions.experts.title': 'The free process audit',
     'solutions.experts.description': `A ${AUDIT_CALL_MINUTES}-minute call about how work actually moves through your business, then a written one-page map of your three most expensive bottlenecks, with the hours and euros each one costs per month.`,
-    'solutions.fast.title': `The Discovery Sprint — ${formatSprintPrice('en')}, ${SPRINT_DAYS} working days`,
-    'solutions.fast.description': `We map the exact workflow step by step, rank every possible fix by what it returns, and agree the payback target in writing. You keep the implementation plan. The fee comes off the build price if you go ahead.`,
-    'solutions.industry.title': 'Build & Run',
-    'solutions.industry.description': `We build the highest-return fix first and it is live within ${FIRST_FIX_DAYS} days of the build starting. Then a monthly care plan keeps it running, monitored and updated.`,
+    'solutions.industry.title': 'Scope, Build & Run',
+    'solutions.industry.description': `We map the exact workflow, rank every possible fix by what it returns, and agree the payback target and the price with you in writing. Then we build the highest-return fix first, and our target is live within ${FIRST_FIX_DAYS} days of the build starting. A monthly care plan keeps it running, monitored and updated.`,
     'solutions.payment.title': 'The guarantee',
     'solutions.payment.description': `If what we build has not paid for itself within ${GUARANTEE_WINDOW_WORD.en} months of going live, measured against the baseline in your audit, we refund the build fee. The full terms are on the audit page.`,
     'solutions.cta.title': 'Show us the process that wastes the most time',
@@ -223,13 +220,11 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Solutions
     'solutions.title': 'Πώς δουλεύει',
-    'solutions.subtitle': 'Τρία βήματα. Εγκρίνεις γραπτώς την τιμή και τον στόχο πριν φτιαχτεί οτιδήποτε.',
+    'solutions.subtitle': 'Δύο βήματα και μια εγγύηση. Εγκρίνεις γραπτώς την τιμή και τον στόχο πριν φτιαχτεί οτιδήποτε.',
     'solutions.experts.title': 'Ο δωρεάν έλεγχος διαδικασιών',
     'solutions.experts.description': `Μια κλήση ${AUDIT_CALL_MINUTES} λεπτών για το πώς κινείται πραγματικά η δουλειά στην επιχείρησή σου, και μετά ένας γραπτός χάρτης μιας σελίδας με τα τρία ακριβότερα σημεία, με τις ώρες και τα ευρώ που κοστίζει το καθένα τον μήνα.`,
-    'solutions.fast.title': `Το Discovery Sprint — ${formatSprintPrice('el')}, ${SPRINT_DAYS} εργάσιμες μέρες`,
-    'solutions.fast.description': 'Χαρτογραφούμε τη ροή βήμα προς βήμα, κατατάσσουμε κάθε πιθανή λύση με βάση το τι αποδίδει και συμφωνούμε γραπτώς τον στόχο απόσβεσης. Κρατάς το σχέδιο υλοποίησης. Το ποσό αφαιρείται από την τιμή της κατασκευής αν προχωρήσεις.',
-    'solutions.industry.title': 'Υλοποίηση και λειτουργία',
-    'solutions.industry.description': `Φτιάχνουμε πρώτα τη λύση με τη μεγαλύτερη απόδοση και είναι σε λειτουργία μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη. Μετά αναλαμβάνει το μηνιαίο πλάνο φροντίδας.`,
+    'solutions.industry.title': 'Σχεδιασμός, υλοποίηση και λειτουργία',
+    'solutions.industry.description': `Χαρτογραφούμε τη ροή, ιεραρχούμε κάθε πιθανή λύση με βάση το τι αποδίδει και συμφωνούμε γραπτώς μαζί σου τον στόχο απόσβεσης και την τιμή. Μετά φτιάχνουμε πρώτα τη λύση με τη μεγαλύτερη απόδοση, με στόχο να είναι σε λειτουργία μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης. Το μηνιαίο πλάνο φροντίδας τη συντηρεί, την παρακολουθεί και την ενημερώνει.`,
     'solutions.payment.title': 'Η εγγύηση',
     'solutions.payment.description': `Αν αυτό που φτιάξαμε δεν έχει αποσβεστεί μέσα σε ${GUARANTEE_WINDOW_WORD.el} μήνες από τη θέση του σε λειτουργία, μετρημένο πάνω στη βάση του ελέγχου σου, επιστρέφουμε το κόστος κατασκευής. Οι πλήρεις όροι είναι στη σελίδα του ελέγχου.`,
     'solutions.cta.title': 'Δείξε μας τη διαδικασία που τρώει τον περισσότερο χρόνο',

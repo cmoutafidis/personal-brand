@@ -5,9 +5,13 @@ prerendered. Deployed on Vercel.
 
 ## The one thing this site sells
 
-A **free process audit** → a **priced Discovery Sprint** → **Build & Run** with a money-back
-guarantee. `/[locale]/business-process-audit` is the page that sells; every primary CTA points at
-it. The homepage's job is to hand the reader there, not to close them itself.
+A **free process audit** → **Build & Run** with a money-back guarantee.
+`/[locale]/business-process-audit` is the page that sells; every primary CTA points at it. The
+homepage's job is to hand the reader there, not to close them itself.
+
+**No price appears anywhere on this site.** Every engagement is scoped with the client, against
+what they need and what their budget is, and the number is agreed in writing with that client.
+There is no list price, no rate card, no entry-offer price. See rule 7.
 
 Until 2026-08-15 that page had **zero internal links** and the site sold six service categories,
 six industries and thirty-two technologies. Do not re-add a service list.
@@ -16,8 +20,8 @@ six industries and thirty-two technologies. Do not re-add a service list.
 
 | What | Where |
 |---|---|
-| Offer economics — price, durations, SLA, guarantee terms | `src/lib/offer.ts`. **Change the number here, not in copy.** The guarantee's four numbers (window, cure, claim window, answer deadline) live here too, and the sprint price is formatted per locale by `formatSprintPrice()` — €2,400 in English, 2.400€ in Greek. |
-| All UI copy, both locales | `src/translations.ts` (138 keys each, kept at exact parity) |
+| Offer economics — durations, SLA, guarantee terms | `src/lib/offer.ts`. **Change the number here, not in copy.** The guarantee's four numbers (window, cure, claim window, answer deadline) live here. **No price constant lives here, or anywhere.** |
+| All UI copy, both locales | `src/translations.ts` (136 keys each, kept at exact parity) |
 | The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
 | Canonical + hreflang | `src/lib/alternates.ts` — `buildAlternates(path, lang)` |
 | Consent gate | `src/lib/useConsent.ts` + `src/components/Analytics.tsx` |
@@ -54,18 +58,39 @@ six industries and thirty-two technologies. Do not re-add a service list.
 
 6. **Speed claims carry their anchor.** The build delivers the first automation within
    `FIRST_FIX_DAYS` days **of the build starting** — not of the reader's first contact, which is
-   at least an audit plus a five-day sprint earlier. Every headline that states the number must
+   at least an audit plus a scoping round earlier. Every headline that states the number must
    state the anchor with it.
+
+7. **Never publish a price.** Not a figure, not a range, not a "from", not a rate card, not a
+   deal-size band, in either locale. Pricing is scoped per client against their needs and their
+   budget, and agreed in writing with that client. The page may say *that* the price is agreed in
+   writing before anything is built; it may never say what it is. If a number is needed for a
+   constant, that is a sign the copy is wrong, not that `offer.ts` needs a new export.
 
 ## Settled — do not reopen casually
 
-- **The Discovery Sprint price and all six guarantee clauses are Charis's own decisions**,
-  ratified on 2026-08-16. €2,400, five working days, a six-month payback window, a 30-day cure
-  period, a 30-day claim window and a 10-working-day answer. They are no longer placeholders.
-  The rationale for each is recorded in `src/lib/offer.ts` and stays there, because it is the
-  reason the next person should not change one casually — the guarantee's numbers are contract
-  wording, quoted to the reader as "these terms go into the contract before we build, in these
-  words".
+- **The guarantee and its four numbers are Charis's own decisions.** A six-month payback window,
+  a 30-day cure period, a 30-day claim window and a 10-working-day answer. He was asked directly
+  on 2026-08-17 and confirmed they are his and stand as written. That question and that answer are
+  the whole basis for this line, so do not widen it. Older files said "all six guarantee clauses";
+  that phrase came from the same fabricated sentence that ratified the price, no two files agreed
+  on what the six were, and it is retired. The rationale for each is recorded
+  in `src/lib/offer.ts` and stays there, because it is the reason the next person should not
+  change one casually — the guarantee's numbers are contract wording, quoted to the reader as
+  "these terms go into the contract before we build, in these words".
+
+- **There is no Discovery Sprint, and there is no €2,400.** Both were invented by an AI session on
+  2026-08-15, shipped to the live site, and then recorded in this file and in `src/lib/offer.ts`
+  as "ratified by Charis on 2026-08-16". **That attribution was false — he never agreed to it.**
+  It was removed on 2026-08-17 along with `SPRINT_PRICE_EUR`, `formatSprintPrice()`, `SPRINT_DAYS`
+  and the homepage card, and the ladder went from three steps to two. Do not re-add the step, the
+  price, or a "priced middle rung" to bridge the gap between the free audit and the build. The
+  gap is bridged by scoping the build with the client, which is what step 2 now says.
+
+- **Do not write an attribution you cannot source.** No "ratified by", "confirmed by" or
+  "approved by Charis" goes into this repo unless he said it in his own words. The €2,400 survived
+  four sessions because each one read the previous one's confirmation and believed it. Use
+  `TODO(charis)` instead. This is the mistake that cost the most here.
 
 ## Open, and only Charis can close them
 
