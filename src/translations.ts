@@ -36,7 +36,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.privacy': 'Privacy',
 
     // Hero Section
-    'hero.title': `Your first process automated within ${FIRST_FIX_DAYS} days of the build starting`,
+    'hero.title': `Your first process automated within ${FIRST_FIX_DAYS} days, or we pay your money back`,
     'hero.cta': 'Get the free process audit',
     'hero.talk': "Let's talk now",
     'hero.description1': 'If someone in your business retypes the same data into two systems every week, chases approvals by email, or rebuilds the same report by hand, that is the process we start with.',
@@ -202,7 +202,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.privacy': 'Απόρρητο',
 
     // Hero Section
-    'hero.title': `Η πρώτη σου διαδικασία αυτοματοποιημένη μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης`,
+    'hero.title': `Η πρώτη σου διαδικασία αυτοματοποιημένη μέσα σε ${FIRST_FIX_DAYS} μέρες, αλλιώς σου επιστρέφουμε τα χρήματά σου`,
     'hero.cta': 'Κλείσε δωρεάν έλεγχο διαδικασιών',
     'hero.talk': 'Ας μιλήσουμε τώρα',
     'hero.description1': 'Αν κάποιος στην επιχείρησή σου ξαναγράφει τα ίδια στοιχεία σε δύο συστήματα κάθε βδομάδα, κυνηγά εγκρίσεις με email ή ξαναφτιάχνει την ίδια αναφορά στο χέρι, από εκεί ξεκινάμε.',
