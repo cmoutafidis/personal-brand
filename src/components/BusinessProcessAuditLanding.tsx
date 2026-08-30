@@ -1,22 +1,15 @@
 import Image from 'next/image';
-import ContactForm from '@/components/ContactForm';
+import AuditFormSection, {AUDIT_CTA, CtaCopy} from '@/components/AuditFormSection';
 import {Language} from '@/types/language';
 import {
   AUDIT_CALL_MINUTES,
   FIRST_FIX_DAYS,
+  REPLY_SLA,
   GUARANTEE_WINDOW_MONTHS,
   GUARANTEE_CURE_DAYS,
   GUARANTEE_CLAIM_DAYS,
   GUARANTEE_ANSWER_WORKING_DAYS
 } from '@/lib/offer';
-
-const CALENDLY_URL = 'https://calendly.com/charis-fijisolutions/30min';
-
-type CtaCopy = {
-  button: string;
-  callout: string;
-  microcopy: string;
-};
 
 type LeadItem = {
   lead: string;
@@ -57,7 +50,6 @@ type LandingCopy = {
   heroTitle: string;
   heroSubhead: string;
   heroBullets: LeadItem[];
-  cta: CtaCopy;
   storyTitle: string;
   storyParagraphs: string[];
   painTitle: string;
@@ -107,14 +99,6 @@ type LandingCopy = {
   psParagraphs: string[];
   signatureName: string;
   signatureRole: string;
-  formTitle: string;
-  formSubhead: string;
-  formMessageLabel: string;
-  formMessagePlaceholder: string;
-  formMicrocopy: string;
-  formCalendlyLead: string;
-  formCalendlyLink: string;
-  formSuccess: string;
 };
 
 const copy: Record<Language, LandingCopy> = {
@@ -125,7 +109,7 @@ const copy: Record<Language, LandingCopy> = {
     heroBullets: [
       {
         lead: 'The free Process Audit.',
-        body: 'A 30-minute call, then a written map of your three biggest process money-leaks. Yours to keep either way.'
+        body: `A ${AUDIT_CALL_MINUTES}-minute call, then a written map of your three biggest process money-leaks. Yours to keep either way.`
       },
       {
         lead: 'The fix, built for you.',
@@ -136,11 +120,6 @@ const copy: Record<Language, LandingCopy> = {
         body: `If the fix we build doesn’t pay for itself within ${GUARANTEE_WINDOW_MONTHS} months of going live, we refund your build fee.`
       }
     ],
-    cta: {
-      button: 'Get my free Process Audit',
-      callout: `The audit is free, no obligation. Every fix we build is backed by the Pays-For-Itself Guarantee. If the fix we build doesn’t pay for itself within ${GUARANTEE_WINDOW_MONTHS} months of going live, we refund your build fee.`,
-      microcopy: 'We reply within 1 business day.'
-    },
     storyTitle: 'The most expensive employee in most Greek businesses is a spreadsheet',
     storyParagraphs: [
       'I’m Charalampos Moutafidis. I run Fiji Solutions, a software company in Thessaloniki.',
@@ -219,7 +198,7 @@ const copy: Record<Language, LandingCopy> = {
       {
         step: 'Step 1',
         title: 'The free Process Audit',
-        body: 'A 30-minute call where we walk through how work actually flows through your business: who types what, where, how often, and what breaks. You then receive your Process Money-Leak Map: a written one-page summary of your three most expensive bottlenecks, with an estimate of the hours and euros each one costs you per month. It’s yours to keep whether or not we ever speak again. It’s also the baseline our guarantee is measured against.'
+        body: `A ${AUDIT_CALL_MINUTES}-minute call where we walk through how work actually flows through your business: who types what, where, how often, and what breaks. You then receive your Process Money-Leak Map: a written one-page summary of your three most expensive bottlenecks, with an estimate of the hours and euros each one costs you per month. It’s yours to keep whether or not we ever speak again. It’s also the baseline our guarantee is measured against.`
       },
       {
         step: 'Step 2',
@@ -228,7 +207,7 @@ const copy: Record<Language, LandingCopy> = {
       }
     ],
     offerPricing: 'The engagement is a one-time build fee plus a small monthly care plan. The exact numbers depend on what the audit finds. That is exactly why the audit comes first, and why it’s free.',
-    offerEffort: 'What we need from you: 30 minutes for the audit, and a few short sessions while we scope the fix. We do everything else.',
+    offerEffort: `What we need from you: ${AUDIT_CALL_MINUTES} minutes for the audit, and a few short sessions while we scope the fix. We do everything else.`,
     dreamTitle: 'What Monday morning looks like after the fix',
     dreamBullets: [
       {
@@ -257,16 +236,16 @@ const copy: Record<Language, LandingCopy> = {
         body: 'Documented, visible, and runnable by anyone from day one.'
       }
     ],
-    dreamGoal: 'Our goal in every engagement is to give your team back 5–10 hours a week. In the free audit we calculate exactly how many hours your processes are costing you. That number becomes the written target we’re accountable to.',
+    dreamGoal: 'Our goal in every engagement is to give your team back hours every week. In the free audit we calculate exactly how many hours your processes are costing you. That number becomes the written target we’re accountable to.',
     timelineTitle: 'Your first 30 days, and what comes right after',
     timeline: [
       {
         when: 'Day 1',
-        body: 'You send the form. We reply within 1 business day to schedule your audit call.'
+        body: `You send the form. We reply within ${REPLY_SLA.en} to schedule your audit call.`
       },
       {
         when: 'Week 1',
-        body: 'The audit call. 30 minutes. You talk, we ask, we take notes. That’s your entire time investment for the audit.'
+        body: `The audit call. ${AUDIT_CALL_MINUTES} minutes. You talk, we ask, we take notes. That’s your entire time investment for the audit.`
       },
       {
         when: 'Week 2',
@@ -295,7 +274,7 @@ const copy: Record<Language, LandingCopy> = {
     stackItems: [
       {
         lead: 'The audit call.',
-        body: '30 minutes with the person who would actually build your fix.'
+        body: `${AUDIT_CALL_MINUTES} minutes with the person who would actually build your fix.`
       },
       {
         lead: 'Your Process Money-Leak Map.',
@@ -404,19 +383,11 @@ const copy: Record<Language, LandingCopy> = {
     ],
     guaranteeClosing: 'These terms go into the contract before we build, in these words. You can hold us to every one of them.',
     psParagraphs: [
-      'P.S. If you’ve read this far, one number to leave with: the audit takes 30 minutes of your time and costs nothing. If we find nothing worth fixing, we’ll say so. That’s a short, friendly call. But if your business runs on retyped data, late follow-ups, and one person who knows how everything works, those 30 minutes are probably the highest-return meeting you’ll book this year.',
+      `P.S. If you’ve read this far, one number to leave with: the audit takes ${AUDIT_CALL_MINUTES} minutes of your time and costs nothing. If we find nothing worth fixing, we’ll say so. That’s a short, friendly call. But if your business runs on retyped data, late follow-ups, and one person who knows how everything works, those ${AUDIT_CALL_MINUTES} minutes are probably the highest-return meeting you’ll book this year.`,
       'Every month you wait has a price. The audit will tell you exactly what it is, for free.'
     ],
     signatureName: 'Charalampos Moutafidis',
     signatureRole: 'Founder, Fiji Solutions · Thessaloniki',
-    formTitle: 'Get your free Process Audit',
-    formSubhead: 'Tell us where the week goes. We’ll reply within 1 business day to schedule your call. Within a week of the call you’ll know exactly what your processes are costing you.',
-    formMessageLabel: 'What’s the most time-consuming process in your business right now? (optional)',
-    formMessagePlaceholder: 'e.g. invoicing, order entry, client follow-ups…',
-    formMicrocopy: 'Free, no obligation, no sales pitch. We reply within 1 business day.',
-    formCalendlyLead: 'Prefer to skip the form? Book your audit call directly:',
-    formCalendlyLink: 'Pick a time on Calendly',
-    formSuccess: 'Thank you! We’ll reply within 1 business day to schedule your audit call.'
   },
   el: {
     heroEyebrow: 'Fiji Solutions · Θεσσαλονίκη · Snowflake AI Data Cloud Select Partner',
@@ -425,7 +396,7 @@ const copy: Record<Language, LandingCopy> = {
     heroBullets: [
       {
         lead: 'Ο δωρεάν έλεγχος διαδικασιών.',
-        body: 'Μια κλήση 30 λεπτών και μετά ένας γραπτός χάρτης με τις τρεις μεγαλύτερες διαρροές χρήματος στις διαδικασίες σου. Δικός σου ό,τι κι αν αποφασίσεις.'
+        body: `Μια κλήση ${AUDIT_CALL_MINUTES} λεπτών και μετά ένα γραπτό πλάνο με τις τρεις μεγαλύτερες διαρροές χρήματος στις διαδικασίες σου. Δικό σου ό,τι κι αν αποφασίσεις.`
       },
       {
         lead: 'Η λύση, φτιαγμένη για εσένα.',
@@ -436,18 +407,13 @@ const copy: Record<Language, LandingCopy> = {
         body: `Αν η λύση που χτίζουμε δεν αποσβέσει το κόστος της μέσα σε ${GUARANTEE_WINDOW_MONTHS} μήνες από τη θέση της σε λειτουργία, σου επιστρέφουμε την αμοιβή υλοποίησης.`
       }
     ],
-    cta: {
-      button: 'Κλείσε τον δωρεάν έλεγχο διαδικασιών σου',
-      callout: `Ο έλεγχος είναι δωρεάν, χωρίς καμία δέσμευση. Κάθε λύση που χτίζουμε καλύπτεται από την Εγγύηση Απόσβεσης. Αν η λύση που χτίζουμε δεν αποσβέσει το κόστος της μέσα σε ${GUARANTEE_WINDOW_MONTHS} μήνες από τη θέση της σε λειτουργία, σου επιστρέφουμε την αμοιβή υλοποίησης.`,
-      microcopy: 'Απαντάμε εντός 1 εργάσιμης ημέρας.'
-    },
     storyTitle: 'Ο πιο ακριβός υπάλληλος στις περισσότερες ελληνικές επιχειρήσεις είναι ένα Excel',
     storyParagraphs: [
       'Είμαι ο Χαράλαμπος Μουταφίδης. Διευθύνω τη Fiji Solutions, μια εταιρεία λογισμικού στη Θεσσαλονίκη.',
       'Όπου κι αν έχτισα λογισμικό, έβλεπα την ίδια εικόνα στις μικρότερες επιχειρήσεις: έξυπνες, ικανές ομάδες να ξοδεύουν ώρες κάθε εβδομάδα ξαναπληκτρολογώντας δεδομένα από σύστημα σε σύστημα, να κυνηγούν εγκρίσεις σε email, να διορθώνουν τα ίδια λάθη και να ζητούν συγγνώμη από πελάτες για υπενθυμίσεις που ξεχάστηκαν.',
       'Αυτές οι ομάδες δουλεύουν σκληρά. Απλώς κανείς δεν κάθισε ποτέ να αποτυπώσει τη διαδικασία από την αρχή ως το τέλος και να χτίσει το «βαρετό», αξιόπιστο λογισμικό που εξαφανίζει το πρόβλημα.',
       'Αυτή ακριβώς είναι η δουλειά της Fiji Solutions. Αποτυπώνουμε πώς πραγματικά δουλεύει η επιχείρησή σου, βρίσκουμε πού χάνει χρόνο και χρήμα, και χτίζουμε τη λύση που ταιριάζει ακριβώς. Μετά τη συντηρούμε ώστε να συνεχίσει να δουλεύει. Κάθε λύση χτίζεται από εμάς, ειδικά για εσένα.',
-      'Ολόκληρη τη συνεργασία τη λέμε Internal Operations Fix. Ξεκινά με έναν δωρεάν έλεγχο διαδικασιών, και ό,τι χτίζουμε καλύπτεται από εγγύηση επιστροφής χρημάτων. Δες πώς λειτουργεί.'
+      'Ξεκινά με έναν δωρεάν έλεγχο διαδικασιών, και ό,τι χτίζουμε καλύπτεται από εγγύηση επιστροφής χρημάτων. Δες πώς λειτουργεί.'
     ],
     painTitle: 'Σου θυμίζει κάτι αυτή η εβδομάδα;',
     painParagraphs: [
@@ -513,22 +479,22 @@ const copy: Record<Language, LandingCopy> = {
       }
     ],
     trustClosing: 'Όταν δημοσιεύσουμε αποτελέσματα πελατών, θα είναι αληθινά, μετρημένα και επώνυμα. Μέχρι τότε, προτιμάμε να δείχνουμε λιγότερα και όλα να είναι αλήθεια.',
-    offerTitle: 'Το Internal Operations Fix: πώς λειτουργεί',
+    offerTitle: 'Πώς λειτουργεί η συνεργασία',
     offerIntro: 'Μια συνεργασία σε δύο βήματα, όπου τη δουλειά τη σηκώνουμε εμείς. Ο στόχος και η τιμή συμφωνούνται γραπτά πριν χτιστεί οτιδήποτε.',
     offerSteps: [
       {
         step: 'Βήμα 1',
         title: 'Ο δωρεάν έλεγχος διαδικασιών',
-        body: 'Μια κλήση 30 λεπτών όπου βλέπουμε πώς πραγματικά ρέει η δουλειά μέσα στην επιχείρησή σου: ποιος καταχωρεί τι, πού, πόσο συχνά και τι χαλάει. Στη συνέχεια λαμβάνεις τον Χάρτη Διαρροών σου (Process Money-Leak Map): μια γραπτή, μονοσέλιδη σύνοψη των τριών πιο ακριβών σημείων συμφόρησης, με εκτίμηση για τις ώρες και τα ευρώ που σου κοστίζει το καθένα τον μήνα. Είναι δικός σου είτε ξαναμιλήσουμε είτε όχι. Είναι επίσης η βάση πάνω στην οποία μετριέται η εγγύησή μας.'
+        body: `Μια κλήση ${AUDIT_CALL_MINUTES} λεπτών όπου βλέπουμε πώς πραγματικά ρέει η δουλειά μέσα στην επιχείρησή σου: ποιος καταχωρεί τι, πού, πόσο συχνά και τι χαλάει. Στη συνέχεια λαμβάνεις το γραπτό σου πλάνο: μια μονοσέλιδη σύνοψη των τριών πιο ακριβών σημείων συμφόρησης, με εκτίμηση για τις ώρες και τα ευρώ που σου κοστίζει το καθένα τον μήνα. Είναι δικό σου είτε ξαναμιλήσουμε είτε όχι. Είναι επίσης η βάση πάνω στην οποία μετριέται η εγγύησή μας.`
       },
       {
         step: 'Βήμα 2',
         title: 'Σχεδιασμός, υλοποίηση και λειτουργία',
-        body: 'Αν ο χάρτης δείξει μια λύση που αξίζει να χτιστεί, ορίζουμε πρώτα μαζί σου τι ακριβώς θα φτιαχτεί. Αποτυπώνουμε τις ροές εργασίας βήμα βήμα, κατατάσσουμε κάθε πιθανή λύση με βάση την απόδοση της επένδυσης και συμφωνούμε γραπτά τον στόχο απόσβεσης και την τιμή πριν ξεκινήσει οποιαδήποτε δουλειά. Η τιμή διαμορφώνεται με βάση αυτό που χρειάζεσαι και αυτό που αντέχει ο προϋπολογισμός σου. Μετά χτίζουμε πρώτα τη λύση με τη μεγαλύτερη απόδοση, ώστε να δεις αποτελέσματα πριν αγγίξουμε οτιδήποτε άλλο. Από εκεί και πέρα αναλαμβάνει το μηνιαίο πλάνο φροντίδας: συντηρούμε, παρακολουθούμε και συνεχίζουμε να βελτιστοποιούμε, ώστε τίποτα να μην ξαναπέσει στις πλάτες της ομάδας σου.'
+        body: 'Αν το πλάνο δείξει μια λύση που αξίζει να χτιστεί, ορίζουμε πρώτα μαζί σου τι ακριβώς θα φτιαχτεί. Αποτυπώνουμε τις ροές εργασίας βήμα βήμα, κατατάσσουμε κάθε πιθανή λύση με βάση την απόδοση της επένδυσης και συμφωνούμε γραπτά τον στόχο απόσβεσης και την τιμή πριν ξεκινήσει οποιαδήποτε δουλειά. Η τιμή διαμορφώνεται με βάση αυτό που χρειάζεσαι και αυτό που αντέχει ο προϋπολογισμός σου. Μετά χτίζουμε πρώτα τη λύση με τη μεγαλύτερη απόδοση, ώστε να δεις αποτελέσματα πριν αγγίξουμε οτιδήποτε άλλο. Από εκεί και πέρα αναλαμβάνει το μηνιαίο πλάνο φροντίδας: συντηρούμε, παρακολουθούμε και συνεχίζουμε να βελτιστοποιούμε, ώστε τίποτα να μην ξαναπέσει στις πλάτες της ομάδας σου.'
       }
     ],
     offerPricing: 'Η συνεργασία έχει μια εφάπαξ αμοιβή υλοποίησης και ένα μικρό μηνιαίο πλάνο φροντίδας. Τα ακριβή νούμερα εξαρτώνται από το τι θα βρει ο έλεγχος. Γι’ αυτό ακριβώς ο έλεγχος γίνεται πρώτος, και γι’ αυτό είναι δωρεάν.',
-    offerEffort: 'Τι χρειαζόμαστε από εσένα: 30 λεπτά για τον έλεγχο και λίγες σύντομες συναντήσεις όσο ορίζουμε μαζί τη λύση. Όλα τα υπόλοιπα τα κάνουμε εμείς.',
+    offerEffort: `Τι χρειαζόμαστε από εσένα: ${AUDIT_CALL_MINUTES} λεπτά για τον έλεγχο και λίγες σύντομες συναντήσεις όσο ορίζουμε μαζί τη λύση. Όλα τα υπόλοιπα τα κάνουμε εμείς.`,
     dreamTitle: 'Πώς μοιάζει το πρωινό της Δευτέρας μετά τη λύση',
     dreamBullets: [
       {
@@ -557,20 +523,20 @@ const copy: Record<Language, LandingCopy> = {
         body: 'Τεκμηριωμένη, ορατή, και μπορεί να τη δουλέψει οποιοσδήποτε από την πρώτη μέρα.'
       }
     ],
-    dreamGoal: 'Στόχος μας σε κάθε συνεργασία είναι να δώσουμε πίσω στην ομάδα σου 5–10 ώρες την εβδομάδα. Στον δωρεάν έλεγχο υπολογίζουμε ακριβώς πόσες ώρες σου κοστίζουν οι διαδικασίες σου. Αυτό το νούμερο γίνεται ο γραπτός στόχος για τον οποίο λογοδοτούμε.',
+    dreamGoal: 'Στόχος μας σε κάθε συνεργασία είναι να δώσουμε πίσω ώρες στην ομάδα σου κάθε εβδομάδα. Στον δωρεάν έλεγχο υπολογίζουμε ακριβώς πόσες ώρες σου κοστίζουν οι διαδικασίες σου. Αυτό το νούμερο γίνεται ο γραπτός στόχος για τον οποίο λογοδοτούμε.',
     timelineTitle: 'Οι πρώτες 30 ημέρες, και τι έρχεται αμέσως μετά',
     timeline: [
       {
         when: 'Ημέρα 1',
-        body: 'Στέλνεις τη φόρμα. Απαντάμε εντός 1 εργάσιμης ημέρας για να κανονίσουμε την κλήση του ελέγχου.'
+        body: `Στέλνεις τη φόρμα. Απαντάμε μέσα σε ${REPLY_SLA.el} για να κανονίσουμε την κλήση του ελέγχου.`
       },
       {
         when: 'Εβδομάδα 1',
-        body: 'Η κλήση του ελέγχου. 30 λεπτά. Εσύ μιλάς, εμείς ρωτάμε και κρατάμε σημειώσεις. Αυτή είναι όλη σου η επένδυση χρόνου για τον έλεγχο.'
+        body: `Η κλήση του ελέγχου. ${AUDIT_CALL_MINUTES} λεπτά. Εσύ μιλάς, εμείς ρωτάμε και κρατάμε σημειώσεις. Αυτή είναι όλη σου η επένδυση χρόνου για τον έλεγχο.`
       },
       {
         when: 'Εβδομάδα 2',
-        body: 'Φτάνει ο Χάρτης Διαρροών σου. Τρία σημεία συμφόρησης, το μηνιαίο κόστος τους και μια εκτίμηση απόδοσης για το καθένα. Κράτησέ τον, αξιοποίησέ τον με όποιον θες.'
+        body: 'Φτάνει το γραπτό σου πλάνο. Τρία σημεία συμφόρησης, το μηνιαίο κόστος τους και μια εκτίμηση απόδοσης για το καθένα. Κράτησέ το, αξιοποίησέ το με όποιον θες.'
       },
       {
         when: 'Εβδομάδες 2–3',
@@ -582,23 +548,23 @@ const copy: Record<Language, LandingCopy> = {
       }
     ],
     sampleMapLabel: 'Παράδειγμα',
-    sampleMapTitle: 'Χάρτης Διαρροών: πώς θα μοιάζει ο δικός σου',
+    sampleMapTitle: 'Το γραπτό πλάνο: πώς θα μοιάζει το δικό σου',
     sampleMapHeaders: {process: 'Διαδικασία', hours: 'Χαμένος χρόνος', cost: 'Εκτιμώμενο κόστος'},
     sampleMapRows: [
       {process: 'Χειροκίνητη καταχώρηση και συμφωνία τιμολογίων', hours: '≈ 18 ώρες / μήνα', cost: '≈ 450€ / μήνα'},
       {process: 'Δεδομένα παραγγελιών ξαναπληκτρολογούνται από e-shop σε ERP', hours: '≈ 12 ώρες / μήνα', cost: '≈ 300€ / μήνα'},
       {process: 'Υπενθυμίσεις προσφορών που γίνονται από μνήμη', hours: '≈ 9 ώρες / μήνα', cost: '≈ 225€ / μήνα'}
     ],
-    sampleMapFootnote: 'Ενδεικτικό παράδειγμα. Ο δικός σου χάρτης φτιάχνεται με τα δικά σου νούμερα κατά τον έλεγχο.',
+    sampleMapFootnote: 'Ενδεικτικό παράδειγμα. Το δικό σου πλάνο φτιάχνεται με τα δικά σου νούμερα κατά τον έλεγχο.',
     timelineClosing: 'Τίποτα σε αυτό το χρονοδιάγραμμα δεν σε δεσμεύει για το επόμενο βήμα. Κάθε βήμα τελειώνει με μια απόφαση που είναι δική σου.',
     stackTitle: 'Τι κερδίζεις, ακόμη κι αν δεν συνεργαστούμε ποτέ',
     stackItems: [
       {
         lead: 'Την κλήση του ελέγχου.',
-        body: '30 λεπτά με τον άνθρωπο που θα έχτιζε πραγματικά τη λύση σου.'
+        body: `${AUDIT_CALL_MINUTES} λεπτά με τον άνθρωπο που θα έχτιζε πραγματικά τη λύση σου.`
       },
       {
-        lead: 'Τον Χάρτη Διαρροών σου.',
+        lead: 'Το γραπτό σου πλάνο.',
         body: 'Μια γραπτή, ιεραρχημένη λίστα με τα τρία πιο ακριβά σου σημεία συμφόρησης. Είναι το είδος του εγγράφου για το οποίο οι σύμβουλοι χρεώνουν κανονικά χρήματα. Δικός σου.'
       },
       {
@@ -626,7 +592,7 @@ const copy: Record<Language, LandingCopy> = {
     faqs: [
       {
         q: 'Τι κοστίζει πραγματικά ο έλεγχος;',
-        a: 'Τίποτα. Χωρίς κόστος, χωρίς δεσμεύσεις, χωρίς sales pitch. Αν δεν βρούμε τίποτα που να αξίζει να φτιαχτεί, θα σου το πούμε κι αυτό, και ο χάρτης μένει δικός σου.'
+        a: 'Τίποτα. Χωρίς κόστος, χωρίς δεσμεύσεις, χωρίς πιέσεις. Αν δεν βρούμε τίποτα που να αξίζει να φτιαχτεί, θα σου το πούμε κι αυτό, και το πλάνο μένει δικό σου.'
       },
       {
         q: 'Και η λύση, τι κοστίζει;',
@@ -642,7 +608,7 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         q: 'Δεν έχω χρόνο για ένα IT project.',
-        a: 'Αυτό ακριβώς είναι το νόημα. Ο έλεγχος θέλει 30 λεπτά από τον χρόνο σου· κατά την υλοποίηση, τη δουλειά την κάνουμε εμείς και η ομάδα σου συνεχίζει κανονικά. Τη δουλειά τη σηκώνουμε εμείς, από την αρχή ως το τέλος.'
+        a: `Αυτό ακριβώς είναι το νόημα. Ο έλεγχος θέλει ${AUDIT_CALL_MINUTES} λεπτά από τον χρόνο σου· κατά την υλοποίηση, τη δουλειά την κάνουμε εμείς και η ομάδα σου συνεχίζει κανονικά. Τη δουλειά τη σηκώνουμε εμείς, από την αρχή ως το τέλος.`
       },
       {
         q: 'Ποιος το συντηρεί αφού μπει σε λειτουργία;',
@@ -707,19 +673,11 @@ const copy: Record<Language, LandingCopy> = {
     ],
     guaranteeClosing: 'Αυτοί οι όροι μπαίνουν στο συμβόλαιο πριν χτίσουμε, με αυτά ακριβώς τα λόγια. Μπορείς να μας κρατήσεις σε κάθε έναν από αυτούς.',
     psParagraphs: [
-      'Υ.Γ. Αν έφτασες ως εδώ, κράτα ένα νούμερο: ο έλεγχος θέλει 30 λεπτά από τον χρόνο σου και δεν κοστίζει τίποτα. Αν δεν βρούμε τίποτα που να αξίζει να φτιαχτεί, θα το πούμε. Αυτή θα είναι μια σύντομη, φιλική κλήση. Αν όμως η επιχείρησή σου λειτουργεί με ξαναπληκτρολογημένα δεδομένα, καθυστερημένες υπενθυμίσεις και έναν άνθρωπο που ξέρει πώς δουλεύουν όλα, αυτά τα 30 λεπτά είναι μάλλον η συνάντηση με τη μεγαλύτερη απόδοση που θα κλείσεις φέτος.',
+      `Υ.Γ. Αν έφτασες ως εδώ, κράτα ένα νούμερο: ο έλεγχος θέλει ${AUDIT_CALL_MINUTES} λεπτά από τον χρόνο σου και δεν κοστίζει τίποτα. Αν δεν βρούμε τίποτα που να αξίζει να φτιαχτεί, θα το πούμε. Αυτή θα είναι μια σύντομη, φιλική κλήση. Αν όμως η επιχείρησή σου λειτουργεί με ξαναπληκτρολογημένα δεδομένα, καθυστερημένες υπενθυμίσεις και έναν άνθρωπο που ξέρει πώς δουλεύουν όλα, αυτά τα ${AUDIT_CALL_MINUTES} λεπτά είναι μάλλον η συνάντηση με τη μεγαλύτερη απόδοση που θα κλείσεις φέτος.`,
       'Κάθε μήνας που περιμένεις έχει ένα κόστος. Ο έλεγχος θα σου πει ακριβώς ποιο είναι, δωρεάν.'
     ],
     signatureName: 'Χαράλαμπος Μουταφίδης',
     signatureRole: 'Ιδρυτής, Fiji Solutions · Θεσσαλονίκη',
-    formTitle: 'Κλείσε τον δωρεάν έλεγχο διαδικασιών σου',
-    formSubhead: 'Πες μας πού πάει η εβδομάδα. Θα απαντήσουμε εντός 1 εργάσιμης ημέρας για να κανονίσουμε την κλήση σου. Μέσα σε μία εβδομάδα από την κλήση θα ξέρεις ακριβώς τι σου κοστίζουν οι διαδικασίες σου.',
-    formMessageLabel: 'Ποια είναι η πιο χρονοβόρα διαδικασία στην επιχείρησή σου αυτή τη στιγμή; (προαιρετικό)',
-    formMessagePlaceholder: 'π.χ. τιμολόγηση, καταχώρηση παραγγελιών, υπενθυμίσεις σε πελάτες…',
-    formMicrocopy: 'Δωρεάν, χωρίς δεσμεύσεις, χωρίς sales pitch. Απαντάμε εντός 1 εργάσιμης ημέρας.',
-    formCalendlyLead: 'Προτιμάς να παραλείψεις τη φόρμα; Κλείσε την κλήση του ελέγχου απευθείας:',
-    formCalendlyLink: 'Διάλεξε ώρα στο Calendly',
-    formSuccess: 'Ευχαριστούμε! Θα απαντήσουμε εντός 1 εργάσιμης ημέρας για να κανονίσουμε την κλήση του ελέγχου σου.'
   }
 };
 
@@ -758,6 +716,7 @@ interface BusinessProcessAuditLandingProps {
 
 export default function BusinessProcessAuditLanding({language}: BusinessProcessAuditLandingProps) {
   const pageCopy = copy[language];
+  const auditCta = AUDIT_CTA[language];
 
   return (
     <>
@@ -790,7 +749,7 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
                 </li>
               ))}
             </ul>
-            <CtaBlock cta={pageCopy.cta} showMicrocopy />
+            <CtaBlock cta={auditCta} showMicrocopy />
           </div>
         </div>
       </section>
@@ -846,7 +805,7 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
           <p className="mb-8 text-center text-xl font-semibold text-gray-950 dark:text-white">
             {pageCopy.cta2Lead}
           </p>
-          <CtaBlock cta={pageCopy.cta} />
+          <CtaBlock cta={auditCta} />
         </div>
       </section>
 
@@ -946,7 +905,7 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
             {pageCopy.dreamGoal}
           </p>
           <div className="mt-12">
-            <CtaBlock cta={pageCopy.cta} />
+            <CtaBlock cta={auditCta} />
           </div>
         </div>
       </section>
@@ -1053,7 +1012,7 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
             ))}
           </div>
           <div className="mt-12">
-            <CtaBlock cta={pageCopy.cta} />
+            <CtaBlock cta={auditCta} />
           </div>
         </div>
       </section>
@@ -1081,7 +1040,7 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
             ))}
           </div>
           <div className="mt-12">
-            <CtaBlock cta={pageCopy.cta} />
+            <CtaBlock cta={auditCta} />
           </div>
         </div>
       </section>
@@ -1131,49 +1090,9 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
         </div>
       </section>
 
-      {/* 15. Final CTA + form */}
-      <section id="consultation-form" className="scroll-mt-24 bg-gray-50 py-16 dark:bg-gray-950 md:py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto mb-10 max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold text-gray-950 dark:text-white md:text-4xl">
-              {pageCopy.formTitle}
-            </h2>
-            <p className="text-lg leading-8 text-gray-700 dark:text-gray-300">
-              {pageCopy.formSubhead}
-            </p>
-          </div>
-
-          <div className="mx-auto max-w-2xl">
-            <ContactForm
-              languageOverride={language}
-              hideTitle
-              presetQuestion="business-process-audit"
-              messageOptional
-              messageLabelOverride={pageCopy.formMessageLabel}
-              messagePlaceholderOverride={pageCopy.formMessagePlaceholder}
-              submitLabelOverride={pageCopy.cta.button}
-              successMessageOverride={pageCopy.formSuccess}
-            />
-            <p className="mt-6 text-center text-sm leading-6 text-gray-600 dark:text-gray-400">
-              {pageCopy.formMicrocopy}
-            </p>
-            <p className="mt-2 text-center text-sm leading-6 text-gray-600 dark:text-gray-400">
-              {pageCopy.formCalendlyLead}{' '}
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-primary-600 underline underline-offset-4 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
-              >
-                {pageCopy.formCalendlyLink}
-              </a>
-            </p>
-            <p className="mt-6 text-center text-sm font-medium leading-6 text-gray-700 dark:text-gray-300">
-              {pageCopy.cta.callout}
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* 15. Final CTA + form. The section itself lives in AuditFormSection.tsx, because the
+          homepage renders the same one. */}
+      <AuditFormSection language={language}/>
     </>
   );
 }

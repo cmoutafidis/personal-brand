@@ -40,15 +40,19 @@ export const translations: Record<Language, Record<string, string>> = {
     'hero.cta': 'Get the free process audit',
     'hero.talk': "Let's talk now",
     'hero.description1': 'If someone in your business retypes the same data into two systems every week, chases approvals by email, or rebuilds the same report by hand, that is the process we start with.',
-    'hero.description2': `It starts with a free process audit: a written map of the three bottlenecks costing you the most, in hours and euros. Yours to keep whether or not we work together.`,
+    'hero.description2': `It starts with a free process audit: a written map of the three bottlenecks costing you the most, in hours and euros. Yours to keep whether or not we work together. The ${FIRST_FIX_DAYS} days start when the build does.`,
 
     // Challenges — written as the reader would say them, not as we would categorise them.
     'challenges.title': 'Where the money leaks',
     'challenges.subtitle': 'These three cost you every week, and none of them shows up as a line in your accounts.',
     'challenges.old_tech.title': 'The same thing, typed twice',
     'challenges.old_tech.description': 'The order goes into the shop, then into the accounting system, then into a spreadsheet. Every retype is a chance for the error a customer finds before you do.',
-    'challenges.slow.title': 'Nothing talks to anything',
-    'challenges.slow.description': 'Your tools do not share data, so people wait for each other, enter it again, and decide on half a picture.',
+    // Key name is a leftover. This card was 'Nothing talks to anything', which restated card one
+    // from the system's point of view. It now carries the key-person trap, which the offer page
+    // ranks among its five leaks and the homepage had nowhere, and which the openGraph audience
+    // line already describes the buyer by.
+    'challenges.slow.title': 'It only works because one person knows how',
+    'challenges.slow.description': 'The process lives in one person\u2019s head. A sick day, a holiday or a resignation turns an ordinary week into a crisis.',
     'challenges.money.title': 'The numbers arrive too late',
     'challenges.money.description': 'When a report takes days to assemble, a small problem has already become an expensive one by the time anyone sees it.',
 
@@ -56,13 +60,13 @@ export const translations: Record<Language, Record<string, string>> = {
     'solutions.title': 'How it works',
     'solutions.subtitle': 'Two steps, and a guarantee. You approve the price and the target in writing before anything gets built.',
     'solutions.experts.title': 'The free process audit',
-    'solutions.experts.description': `A ${AUDIT_CALL_MINUTES}-minute call about how work actually moves through your business, then a written one-page map of your three most expensive bottlenecks, with the hours and euros each one costs per month.`,
+    'solutions.experts.description': `A ${AUDIT_CALL_MINUTES}-minute call about how work actually moves through your business, then a written one-page map of your three most expensive bottlenecks, with the hours and euros each one costs per month. You have it within a week of the call.`,
     'solutions.industry.title': 'Scope, Build & Run',
-    'solutions.industry.description': `We map the exact workflow, rank every possible fix by what it returns, and agree the payback target and the price with you in writing. Then we build the highest-return fix first, and our target is live within ${FIRST_FIX_DAYS} days of the build starting. A monthly care plan keeps it running, monitored and updated.`,
+    'solutions.industry.description': `We map the exact workflow, rank every possible fix by what it returns, and agree the payback target and the price with you in writing. Then we build the highest-return fix first, and our target is live within ${FIRST_FIX_DAYS} days of the build starting. The source code and the documentation are yours. A monthly care plan keeps it running, monitored and updated.`,
     'solutions.payment.title': 'The guarantee',
     'solutions.payment.description': `If what we build has not paid for itself within ${GUARANTEE_WINDOW_WORD.en} months of going live, measured against the baseline in your audit, we refund the build fee. The full terms are on the audit page.`,
     'solutions.cta.title': 'Show us the process that wastes the most time',
-    'solutions.cta.description': 'Tell us which task, spreadsheet or report costs you the most, and we will put a number on it in writing.',
+    'solutions.cta.description': 'Tell us which task, spreadsheet or report costs you the most, and we will put a number on it in writing. Automating it gives your team back the hours it takes, without hiring anyone.',
     'solutions.cta.button': 'Get the free process audit',
 
     // Contact
@@ -96,7 +100,6 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.form.error.email': 'Please enter a valid email address',
     'contact.form.consent': 'We use what you send to answer you. Nothing else.',
     'contact.form.consent.link': 'How we handle it',
-    'contact.connect': 'Connect With Us',
     'contact.phone': 'Phone',
 
     // Contact Location
@@ -137,8 +140,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.snowflake.feature4': 'Cost and performance tuning',
 
     // Footer
-    'footer.description': `We map how your business runs, put a euro figure on the three bottlenecks costing you most, and automate the first one within ${FIRST_FIX_DAYS} days of the build starting. Thessaloniki, Greece.`,
-    'footer.partnership': 'Trusted Partnerships',
+    'footer.description': `We map how your business runs, put a euro figure on the three bottlenecks costing you most, and automate the first one within ${FIRST_FIX_DAYS} days of the build starting. A monthly care plan keeps it running. Thessaloniki, Greece.`,
+    'footer.partnership': 'Verify our partnership',
     'footer.links': 'Quick Links',
     'footer.projects': 'Projects',
     'footer.rights': 'All rights reserved.',
@@ -195,15 +198,15 @@ export const translations: Record<Language, Record<string, string>> = {
     'hero.cta': 'Κλείσε δωρεάν έλεγχο διαδικασιών',
     'hero.talk': 'Ας μιλήσουμε τώρα',
     'hero.description1': 'Αν κάποιος στην επιχείρησή σου ξαναγράφει τα ίδια στοιχεία σε δύο συστήματα κάθε βδομάδα, κυνηγά εγκρίσεις με email ή ξαναφτιάχνει την ίδια αναφορά στο χέρι, από εκεί ξεκινάμε.',
-    'hero.description2': 'Ξεκινάει με δωρεάν έλεγχο διαδικασιών: έναν γραπτό χάρτη με τα τρία σημεία που σου κοστίζουν περισσότερο, σε ώρες και σε ευρώ. Τον κρατάς είτε συνεργαστούμε είτε όχι.',
+    'hero.description2': `Ξεκινάει με δωρεάν έλεγχο διαδικασιών: ένα γραπτό πλάνο με τα τρία σημεία που σου κοστίζουν περισσότερο, σε ώρες και σε ευρώ. Το κρατάς είτε συνεργαστούμε είτε όχι. Οι ${FIRST_FIX_DAYS} μέρες μετράνε από τη στιγμή που ξεκινάει η υλοποίηση.`,
 
     // Challenges
     'challenges.title': 'Από πού φεύγουν τα χρήματα',
     'challenges.subtitle': 'Αυτά τα τρία σου κοστίζουν κάθε βδομάδα, και κανένα δεν φαίνεται ως γραμμή στα βιβλία σου.',
     'challenges.old_tech.title': 'Το ίδιο πράγμα, γραμμένο δύο φορές',
     'challenges.old_tech.description': 'Η παραγγελία μπαίνει στο ηλεκτρονικό κατάστημα, μετά στο λογιστικό, μετά σε ένα υπολογιστικό φύλλο. Κάθε ξαναγράψιμο είναι μια ευκαιρία για το λάθος που θα το βρει ο πελάτης πριν από σένα.',
-    'challenges.slow.title': 'Τίποτα δεν μιλάει με τίποτα',
-    'challenges.slow.description': 'Τα εργαλεία σου δεν μοιράζονται στοιχεία, οπότε οι άνθρωποι περιμένουν ο ένας τον άλλον, τα ξαναπερνούν και αποφασίζουν με μισή εικόνα.',
+    'challenges.slow.title': 'Δουλεύει μόνο επειδή το ξέρει ένας άνθρωπος',
+    'challenges.slow.description': 'Η διαδικασία υπάρχει στο μυαλό ενός ανθρώπου. Μια άδεια, μια αρρώστια ή μια παραίτηση μετατρέπει μια κανονική βδομάδα σε κρίση.',
     'challenges.money.title': 'Οι αριθμοί έρχονται αργά',
     'challenges.money.description': 'Όταν μια αναφορά θέλει μέρες για να ετοιμαστεί, το μικρό πρόβλημα έχει ήδη γίνει ακριβό μέχρι να το δει κάποιος.',
 
@@ -211,13 +214,13 @@ export const translations: Record<Language, Record<string, string>> = {
     'solutions.title': 'Πώς δουλεύει',
     'solutions.subtitle': 'Δύο βήματα και μια εγγύηση. Εγκρίνεις γραπτώς την τιμή και τον στόχο πριν φτιαχτεί οτιδήποτε.',
     'solutions.experts.title': 'Ο δωρεάν έλεγχος διαδικασιών',
-    'solutions.experts.description': `Μια κλήση ${AUDIT_CALL_MINUTES} λεπτών για το πώς κινείται πραγματικά η δουλειά στην επιχείρησή σου, και μετά ένας γραπτός χάρτης μιας σελίδας με τα τρία ακριβότερα σημεία, με τις ώρες και τα ευρώ που κοστίζει το καθένα τον μήνα.`,
+    'solutions.experts.description': `Μια κλήση ${AUDIT_CALL_MINUTES} λεπτών για το πώς κινείται πραγματικά η δουλειά στην επιχείρησή σου, και μετά ένα γραπτό πλάνο μιας σελίδας με τα τρία ακριβότερα σημεία, με τις ώρες και τα ευρώ που κοστίζει το καθένα τον μήνα. Το έχεις μέσα σε μία εβδομάδα από την κλήση.`,
     'solutions.industry.title': 'Σχεδιασμός, υλοποίηση και λειτουργία',
-    'solutions.industry.description': `Χαρτογραφούμε τη ροή, ιεραρχούμε κάθε πιθανή λύση με βάση το τι αποδίδει και συμφωνούμε γραπτώς μαζί σου τον στόχο απόσβεσης και την τιμή. Μετά φτιάχνουμε πρώτα τη λύση με τη μεγαλύτερη απόδοση, με στόχο να είναι σε λειτουργία μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης. Το μηνιαίο πλάνο φροντίδας τη συντηρεί, την παρακολουθεί και την ενημερώνει.`,
+    'solutions.industry.description': `Χαρτογραφούμε τη ροή, ιεραρχούμε κάθε πιθανή λύση με βάση το τι αποδίδει και συμφωνούμε γραπτώς μαζί σου τον στόχο απόσβεσης και την τιμή. Μετά φτιάχνουμε πρώτα τη λύση με τη μεγαλύτερη απόδοση, με στόχο να είναι σε λειτουργία μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης. Ο πηγαίος κώδικας και η τεκμηρίωση είναι δικά σου. Το μηνιαίο πλάνο φροντίδας τη συντηρεί, την παρακολουθεί και την ενημερώνει.`,
     'solutions.payment.title': 'Η εγγύηση',
     'solutions.payment.description': `Αν αυτό που φτιάξαμε δεν έχει αποσβεστεί μέσα σε ${GUARANTEE_WINDOW_WORD.el} μήνες από τη θέση του σε λειτουργία, μετρημένο πάνω στη βάση του ελέγχου σου, επιστρέφουμε το κόστος κατασκευής. Οι πλήρεις όροι είναι στη σελίδα του ελέγχου.`,
     'solutions.cta.title': 'Δείξε μας τη διαδικασία που τρώει τον περισσότερο χρόνο',
-    'solutions.cta.description': 'Πες μας ποια εργασία, ποιο υπολογιστικό φύλλο ή ποια αναφορά σου κοστίζει περισσότερο, και θα βάλουμε νούμερο πάνω της γραπτώς.',
+    'solutions.cta.description': 'Πες μας ποια εργασία, ποιο υπολογιστικό φύλλο ή ποια αναφορά σου κοστίζει περισσότερο, και θα βάλουμε νούμερο πάνω της γραπτώς. Όταν την αυτοματοποιήσουμε, η ομάδα σου παίρνει πίσω τις ώρες που της τρώει, χωρίς νέες προσλήψεις.',
     'solutions.cta.button': 'Κλείσε δωρεάν έλεγχο διαδικασιών',
 
     // Contact
@@ -248,7 +251,6 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.form.error.email': 'Βάλε ένα κανονικό email',
     'contact.form.consent': 'Ό,τι στέλνεις το χρησιμοποιούμε για να σου απαντήσουμε. Τίποτα άλλο.',
     'contact.form.consent.link': 'Πώς τα διαχειριζόμαστε',
-    'contact.connect': 'Βρες μας online',
     'contact.phone': 'Τηλέφωνο',
 
     // Contact Location
@@ -258,7 +260,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Portfolio/Projects
     'projects.title': 'Λογισμικό που φτιάξαμε και τρέχουμε μόνοι μας',
-    'projects.subtitle': 'Δεν είναι μελέτες περίπτωσης. Είναι προϊόντα που μπορείς να ανοίξεις και να πατήσεις.',
+    'projects.subtitle': 'Προϊόντα που μπορείς να ανοίξεις και να πατήσεις.',
     'projects.fiji.title': 'Fiji Analytics Dashboard',
     'projects.fiji.description': 'Πλατφόρμα οικονομικών δεδομένων πάνω στο Snowflake AI Data Cloud. Τη σχεδιάσαμε, τη φτιάξαμε και τη λειτουργούμε εμείς.',
     'projects.catalytics.title': 'Catalytics Pro',
@@ -267,7 +269,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'projects.code': 'Ανοιχτός κώδικας',
 
     // Services
-    'services.title': 'Τι φτιάχνουμε μόλις ετοιμαστεί ο χάρτης',
+    'services.title': 'Τι φτιάχνουμε μόλις ετοιμαστεί το πλάνο',
     'services.subtitle': 'Τρία πράγματα. Το καθένα αφαιρεί δουλειά που κάνει κάποιος στο χέρι σήμερα.',
     'services.software.title': 'Αυτοματοποίηση διαδικασιών και εσωτερικά εργαλεία',
     'services.software.description': 'Το λογισμικό που κόβει το ξαναγράψιμο: εσωτερικά εργαλεία, συνδέσεις ανάμεσα σε συστήματα που δεν μιλάνε μεταξύ τους, και αυτοματισμοί για τα βήματα που επαναλαμβάνει κάποιος κάθε βδομάδα.',
@@ -289,8 +291,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.snowflake.feature4': 'Ρύθμιση κόστους και απόδοσης',
 
     // Footer
-    'footer.description': `Χαρτογραφούμε πώς δουλεύει η επιχείρησή σου, βάζουμε νούμερο σε ευρώ στα τρία σημεία που σου κοστίζουν περισσότερο και αυτοματοποιούμε το πρώτο μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης. Θεσσαλονίκη.`,
-    'footer.partnership': 'Αξιόπιστες Συνεργασίες',
+    'footer.description': `Χαρτογραφούμε πώς δουλεύει η επιχείρησή σου, βάζουμε νούμερο σε ευρώ στα τρία σημεία που σου κοστίζουν περισσότερο και αυτοματοποιούμε το πρώτο μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης. Το μηνιαίο πλάνο φροντίδας το κρατάει σε λειτουργία. Θεσσαλονίκη.`,
+    'footer.partnership': 'Επιβεβαίωσε τη συνεργασία μας',
     'footer.links': 'Γρήγοροι σύνδεσμοι',
     'footer.projects': 'Έργα',
     'footer.rights': 'Όλα τα δικαιώματα δικά μας.',

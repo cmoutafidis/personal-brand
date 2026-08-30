@@ -9,6 +9,7 @@ import VapiChatWidget from '@/components/VapiChatWidget';
 import CookieConsent from '@/components/CookieConsent';
 import Analytics from '@/components/Analytics';
 import {Language, assistantId, vapiApiKey} from '@/types/language';
+import {FIRST_FIX_DAYS} from '@/lib/offer';
 
 // One shell, two root layouts.
 //
@@ -34,24 +35,20 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const SITE = 'https://www.fijisolutions.net';
 
-const COPY: Record<Language, { title: string; description: string; keywords: string; ogDescription: string }> = {
+const COPY: Record<Language, { title: string; description: string; ogDescription: string }> = {
   en: {
-    title: 'Fiji Solutions — One process automated in 30 days | Thessaloniki',
+    title: `Fiji Solutions: one process automated in ${FIRST_FIX_DAYS} days from build start | Thessaloniki`,
     description:
-      'We map how your business actually runs, put a euro figure on the three bottlenecks costing you most, and automate the first one within 30 days of the build starting.',
-    keywords:
-      'business process automation Greece, workflow automation Greece, custom software development Greece, process audit Greece, software company Thessaloniki, Snowflake consulting Greece',
+      `We map how your business actually runs, put a euro figure on the three bottlenecks costing you most, and automate the first one within ${FIRST_FIX_DAYS} days of the build starting.`,
     ogDescription:
-      'A written map of the three bottlenecks costing you money, then the first one automated within 30 days.',
+      `A written map of the three bottlenecks costing you money, then the first one automated within ${FIRST_FIX_DAYS} days of the build starting.`,
   },
   el: {
-    title: 'Fiji Solutions — Μία διαδικασία αυτοματοποιημένη σε 30 μέρες | Θεσσαλονίκη',
+    title: `Fiji Solutions: μία διαδικασία αυτοματοποιημένη σε ${FIRST_FIX_DAYS} μέρες υλοποίησης | Θεσσαλονίκη`,
     description:
-      'Χαρτογραφούμε πώς δουλεύει πραγματικά η επιχείρησή σου, βάζουμε νούμερο σε ευρώ στα τρία σημεία που σου κοστίζουν περισσότερο και αυτοματοποιούμε το πρώτο μέσα σε 30 μέρες από την έναρξη.',
-    keywords:
-      'αυτοματοποίηση διαδικασιών, αυτοματισμοί επιχειρήσεων, εξατομικευμένο λογισμικό Ελλάδα, έλεγχος διαδικασιών, εταιρεία λογισμικού Θεσσαλονίκη, Snowflake Ελλάδα',
+      `Χαρτογραφούμε πώς δουλεύει πραγματικά η επιχείρησή σου, βάζουμε νούμερο σε ευρώ στα τρία σημεία που σου κοστίζουν περισσότερο και αυτοματοποιούμε το πρώτο μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης.`,
     ogDescription:
-      'Γραπτός χάρτης με τα τρία σημεία που σου κοστίζουν χρήματα, και το πρώτο αυτοματοποιημένο σε 30 μέρες.',
+      `Γραπτό πλάνο με τα τρία σημεία που σου κοστίζουν χρήματα, και το πρώτο αυτοματοποιημένο μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης.`,
   },
 };
 
@@ -61,7 +58,6 @@ export function buildRootMetadata(lang: Language): Metadata {
     metadataBase: new URL(SITE),
     title: c.title,
     description: c.description,
-    keywords: c.keywords,
     authors: [{name: 'Fiji Solutions'}],
     robots: 'index, follow',
     manifest: '/site.webmanifest',

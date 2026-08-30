@@ -1,5 +1,5 @@
 import React from 'react';
-import {Binary, Clock, DollarSign} from 'lucide-react';
+import {Binary, DollarSign, UserRound} from 'lucide-react';
 
 interface ChallengesProps {
   t: (key: string) => string;
@@ -14,7 +14,7 @@ const Challenges: React.FC<ChallengesProps> = ({t}) => {
       description: t('challenges.old_tech.description')
     },
     {
-      icon: <Clock className="h-12 w-12"/>,
+      icon: <UserRound className="h-12 w-12"/>,
       title: t('challenges.slow.title'),
       description: t('challenges.slow.description')
     },

@@ -21,8 +21,9 @@ six industries and thirty-two technologies. Do not re-add a service list.
 | What | Where |
 |---|---|
 | Offer economics — durations, SLA, guarantee terms | `src/lib/offer.ts`. **Change the number here, not in copy.** The guarantee's four numbers (window, cure, claim window, answer deadline) live here. **No price constant lives here, or anywhere.** |
-| All UI copy, both locales | `src/translations.ts` (126 keys each, kept at exact parity) |
+| All UI copy, both locales | `src/translations.ts` (125 keys each, kept at exact parity) |
 | The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
+| The audit form section, its CTA copy and the Calendly URL | `src/components/AuditFormSection.tsx`. Rendered by **both** the offer page and the homepage, so its strings live there rather than in `LandingCopy`. `AUDIT_CTA` feeds the offer page's five `CtaBlock`s, whose button is an in-page `#consultation-form` anchor. Give each new caller its own `presetQuestion`; it is the only lead-source marker there is. |
 | Canonical + hreflang | `src/lib/alternates.ts` — `buildAlternates(path, lang)` |
 | Consent gate | `src/lib/useConsent.ts` + `src/components/Analytics.tsx` |
 | Sitemap | `src/app/sitemap.ts`, generated from a route list |
@@ -49,6 +50,13 @@ six industries and thirty-two technologies. Do not re-add a service list.
    Technology proper nouns (Snowflake, ETL/ELT, BI, AI) and schema.org values stay English.
    One name per thing: the audit is «έλεγχος διαδικασιών», the recurring service is
    «πλάνο φροντίδας». Both had multiple names before.
+   The audit's deliverable is a «γραπτό πλάνο», in every Greek string on the site. Charis said
+   «γραπτός χάρτης» reads wrong in Greek on 2026-08-30 and asked for the Greek word for *plan*.
+   Asked which name should win, he chose the plain «πλάνο» over keeping a branded artefact, so
+   «Χάρτης Διαρροών» is retired and Greek has no capitalised name for it. English keeps
+   "Process Money-Leak Map" and "map"; the two locales deliberately differ on this noun.
+   Note «πλάνο» now names two things, the deliverable and «πλάνο φροντίδας». The second always
+   carries «φροντίδας». Keep it that way.
 
 5. **No claim without arithmetic behind it.** `proof/` in the offer-os knowledge base is empty:
    there are no case studies, no testimonials, no measured client results, no certifications.
@@ -86,6 +94,15 @@ six industries and thirty-two technologies. Do not re-add a service list.
   and the homepage card, and the ladder went from three steps to two. Do not re-add the step, the
   price, or a "priced middle rung" to bridge the gap between the free audit and the build. The
   gap is bridged by scoping the build with the client, which is what step 2 now says.
+
+- **The homepage H1 stands as written, and this is not a bug to re-open.** It promises the first
+  process automated within `FIRST_FIX_DAYS` days "or we pay your money back". No delivery
+  guarantee exists: the only refund in `offer.ts` triggers on payback failure over six months
+  from go-live, the amount is the build fee, and the Solutions card two screens down calls the
+  same 30 days a "target". Both conflicts were put to Charis on 2026-08-30, with the options of
+  narrowing the headline or adding a delivery clause to the contract, and he chose to leave it
+  as written knowing that. He had already asked for this wording twice before that (see
+  `7cf97a8`). It is a decision, not an oversight. Do not rewrite it and do not raise it again.
 
 - **Do not write an attribution you cannot source.** No "ratified by", "confirmed by" or
   "approved by Charis" goes into this repo unless he said it in his own words. The €2,400 survived

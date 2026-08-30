@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/portfolio',
     title: 'Services - Fiji Solutions',
-    description: 'Custom software, data analysis, BI dashboards, Snowflake consulting, and data engineering services in Greece.',
+    description: 'Process automation and internal tools, reporting and data analysis, and the Snowflake data platform.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Services - Fiji Solutions',
-    description: 'Custom software, data analysis, BI dashboards, Snowflake consulting, and data engineering services in Greece.',
+    description: 'Process automation and internal tools, reporting and data analysis, and the Snowflake data platform.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

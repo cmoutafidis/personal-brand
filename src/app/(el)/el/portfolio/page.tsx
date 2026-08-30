@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Υπηρεσίες - Λογισμικό, Ανάλυση Δεδομένων & Snowflake Ελλάδα',
-  description: 'Τι φτιάχνουμε μόλις ετοιμαστεί ο χάρτης: αυτοματοποίηση διαδικασιών και εσωτερικά εργαλεία, αναφορές και ανάλυση δεδομένων, πλατφόρμα δεδομένων Snowflake.',
+  description: 'Τι φτιάχνουμε μόλις ετοιμαστεί το πλάνο: αυτοματοποίηση διαδικασιών και εσωτερικά εργαλεία, αναφορές και ανάλυση δεδομένων, πλατφόρμα δεδομένων Snowflake.',
   keywords: 'υπηρεσίες λογισμικού Ελλάδα, ανάλυση δεδομένων Ελλάδα, Snowflake consulting Ελλάδα, business intelligence Ελλάδα, εταιρεία λογισμικού Θεσσαλονίκη, data engineering Ελλάδα',
   alternates: buildAlternates('/portfolio', 'el'),
   openGraph: {
