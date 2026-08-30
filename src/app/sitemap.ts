@@ -1,5 +1,4 @@
 import type {MetadataRoute} from 'next';
-import {blogData} from '@/data/blogs';
 
 // Generated, not hand-maintained.
 //
@@ -18,7 +17,6 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
   {path: '/services/custom-software-development-greece', priority: 0.8, changeFrequency: 'monthly'},
   {path: '/services/data-analysis-greece', priority: 0.8, changeFrequency: 'monthly'},
   {path: '/services/snowflake-consulting-greece', priority: 0.8, changeFrequency: 'monthly'},
-  {path: '/blog', priority: 0.7, changeFrequency: 'weekly'},
   {path: '/contact', priority: 0.7, changeFrequency: 'monthly'},
   {path: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly'},
   {path: '/legal', priority: 0.3, changeFrequency: 'yearly'},
@@ -41,18 +39,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             el: `${SITE}/el${r.path}`,
           },
         },
-      });
-    }
-  }
-
-  // Blog posts carry their own publication date rather than the build date.
-  for (const lang of ['en', 'el'] as const) {
-    for (const post of blogData[lang] ?? []) {
-      entries.push({
-        url: `${SITE}/${lang}/blog/${post.slug}`,
-        lastModified: post.publishedAt ? new Date(post.publishedAt) : now,
-        changeFrequency: 'yearly',
-        priority: 0.6,
       });
     }
   }

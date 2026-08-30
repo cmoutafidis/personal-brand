@@ -21,7 +21,7 @@ six industries and thirty-two technologies. Do not re-add a service list.
 | What | Where |
 |---|---|
 | Offer economics — durations, SLA, guarantee terms | `src/lib/offer.ts`. **Change the number here, not in copy.** The guarantee's four numbers (window, cure, claim window, answer deadline) live here. **No price constant lives here, or anywhere.** |
-| All UI copy, both locales | `src/translations.ts` (136 keys each, kept at exact parity) |
+| All UI copy, both locales | `src/translations.ts` (126 keys each, kept at exact parity) |
 | The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
 | Canonical + hreflang | `src/lib/alternates.ts` — `buildAlternates(path, lang)` |
 | Consent gate | `src/lib/useConsent.ts` + `src/components/Analytics.tsx` |
@@ -38,7 +38,7 @@ six industries and thirty-two technologies. Do not re-add a service list.
 
 2. **Never write a bare `canonical`.** Next merges `metadata` shallowly per key, so
    `alternates: { canonical }` silently deletes the layout's hreflang map. Call `buildAlternates()`.
-   Blog posts use `buildBlogAlternates()` because the two locales do not share a slug.
+   Every route now shares its slug across both locales, so `buildAlternates()` is the only one.
 
 3. **Nothing that tracks loads before consent.** `Analytics.tsx` renders `null` until
    `useConsent()` returns `granted`. There is no second path that loads Google Ads or Leadsy.
@@ -106,6 +106,6 @@ six industries and thirty-two technologies. Do not re-add a service list.
 
 ```
 npm run dev     # turbopack
-npm run build   # must stay at 29 static routes
+npm run build   # must stay at 23 static routes
 npm run lint
 ```

@@ -6,7 +6,6 @@ const LOCALELESS = [
   'business-process-audit',
   'portfolio',
   'contact',
-  'blog',
   'legal',
   'privacy-policy',
   'services/custom-software-development-greece',

@@ -22,7 +22,6 @@ const QuickLinks: React.FC = () => {
     {label: t('nav.audit'), href: `/${language}/business-process-audit`},
     {label: t('nav.portfolio'), href: `/${language}/portfolio`},
     {label: t('nav.snowflake'), href: `/${language}/services/snowflake-consulting-greece`},
-    {label: t('nav.blog'), href: `/${language}/blog`},
     {label: t('nav.contact'), href: `/${language}/contact`},
     {label: t('nav.privacy'), href: `/${language}/privacy-policy`},
     {label: t('nav.legal'), href: `/${language}/legal`},
