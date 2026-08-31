@@ -10,9 +10,22 @@ import type {MetadataRoute} from 'next';
 
 const SITE = 'https://www.fijisolutions.net';
 
+// The eight /offers/* routes are Google Ads landing pages. They are deliberately absent from the
+// navigation and from every internal link list except the one back-link on each page. They belong
+// here anyway: a page that is indexable but missing from the sitemap is a page you are half
+// publishing, and organic search finds these too. Priority sits below the audit page, which is
+// still the offer the site leads with.
 const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
   {path: '', priority: 1.0, changeFrequency: 'weekly'},
   {path: '/business-process-audit', priority: 0.9, changeFrequency: 'weekly'},
+  {path: '/offers/app-prototype', priority: 0.7, changeFrequency: 'monthly'},
+  {path: '/offers/software-prototype', priority: 0.7, changeFrequency: 'monthly'},
+  {path: '/offers/ai-prototype', priority: 0.7, changeFrequency: 'monthly'},
+  {path: '/offers/process-automation', priority: 0.7, changeFrequency: 'monthly'},
+  {path: '/offers/ai-agent', priority: 0.7, changeFrequency: 'monthly'},
+  {path: '/offers/ai-development-sprint', priority: 0.7, changeFrequency: 'monthly'},
+  {path: '/offers/website-seo', priority: 0.7, changeFrequency: 'monthly'},
+  {path: '/offers/website-google-ads', priority: 0.7, changeFrequency: 'monthly'},
   {path: '/portfolio', priority: 0.8, changeFrequency: 'monthly'},
   {path: '/services/custom-software-development-greece', priority: 0.8, changeFrequency: 'monthly'},
   {path: '/services/data-analysis-greece', priority: 0.8, changeFrequency: 'monthly'},

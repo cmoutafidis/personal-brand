@@ -16,6 +16,26 @@ There is no list price, no rate card, no entry-offer price. See rule 7.
 Until 2026-08-15 that page had **zero internal links** and the site sold six service categories,
 six industries and thirty-two technologies. Do not re-add a service list.
 
+### The eight `/offers/*` pages are ad destinations, not a service list (added 2026-08-31)
+
+`/[locale]/offers/<slug>` — eight front-end offers, both locales, sixteen routes. They come from an
+external swipe file Charis brought (`Copy of Software Development - Proven Offers.xlsx`, sheet
+*Proven Offers*, columns F–M) and exist so he can **test which offer pulls**, one Google Ads
+campaign per page.
+
+**Nothing links to them, and that is what keeps them from being the 2015-vintage service list.**
+They are not in the navbar, not in the footer, not in `QuickLinks`, and not linked from the
+homepage or the audit page. Each is reached by a paid click, a sitemap entry or a search result
+from somebody who asked for that specific thing. They are in `src/app/sitemap.ts` and indexable,
+because half-publishing a page is worse than either publishing or not. **Do not add one to a
+navigation menu.** The homepage and `/business-process-audit` are unchanged, and the audit is still
+the offer the site leads with.
+
+Every rule below applies to them without exception. In particular: **no price** (rule 7), and the
+**75% on six of the eight pages is a guarantee with a refund behind it**, settled against a
+baseline measured with the client before work starts. It is not a claim about past results, and
+rule 5 still forbids one.
+
 ## Where things live
 
 | What | Where |
@@ -24,6 +44,7 @@ six industries and thirty-two technologies. Do not re-add a service list.
 | All UI copy, both locales | `src/translations.ts` (125 keys each, kept at exact parity) |
 | The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
 | The audit form section, its CTA copy and the Calendly URL | `src/components/AuditFormSection.tsx`. Rendered by **both** the offer page and the homepage, so its strings live there rather than in `LandingCopy`. `AUDIT_CTA` feeds the offer page's five `CtaBlock`s, whose button is an in-page `#consultation-form` anchor. Give each new caller its own `presetQuestion`; it is the only lead-source marker there is. |
+| The eight front-end offer pages | One layout, `src/components/OfferLanding.tsx`; one bilingual data file per offer in `src/data/offers/`; two thin routes each. Metadata and the Service + FAQPage JSON-LD are derived in `src/lib/offerSchema.ts` from the same object the page renders, so the marked-up FAQ cannot drift from the rendered one. **To add or change an offer, edit its data file.** Each carries its own `questionMarker`, which is the only thing telling its leads from the other seven in the shared inbox. |
 | Canonical + hreflang | `src/lib/alternates.ts` — `buildAlternates(path, lang)` |
 | Consent gate | `src/lib/useConsent.ts` + `src/components/Analytics.tsx` |
 | Sitemap | `src/app/sitemap.ts`, generated from a route list |
@@ -123,6 +144,6 @@ six industries and thirty-two technologies. Do not re-add a service list.
 
 ```
 npm run dev     # turbopack
-npm run build   # must stay at 23 static routes
+npm run build   # must stay at 39 static routes (23 + the 16 /offers/* pages added 2026-08-31)
 npm run lint
 ```

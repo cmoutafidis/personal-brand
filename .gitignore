@@ -42,3 +42,7 @@ next-env.d.ts
 
 .idea
 .env
+
+# The Proven Offers workbook is an external swipe file, not site source. Its home is the
+# private offer-os knowledge base, not a website repo.
+*.xlsx
