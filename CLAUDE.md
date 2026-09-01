@@ -162,7 +162,13 @@ rule 5 still forbids one.
   price, or a "priced middle rung" to bridge the gap between the free audit and the build. The
   gap is bridged by scoping the build with the client, which is what step 2 now says.
 
-- **The homepage H1 stands as written, and this is not a bug to re-open.** It promises the first
+- **The homepage H1 stands as written, and this is not a bug to re-open.**
+- **Greek copy uses one term per concept, and the English loanwords are gone (2026-09-01).** The
+  kickoff meeting is «η εναρκτήρια συνάντηση» on all eight offer pages, a delivery cycle is «ο
+  κύκλος (υλοποίησης)» and never «sprint», and a demo is «μια επίδειξη». The apostrophe in «γι’
+  αυτό» is U+2019, never the koronis U+1FBD that six strings carried. The English copy keeps
+  "workshop" and "sprint" — these are translations, not a shared vocabulary, and the route slug
+  `/offers/ai-development-sprint` is a URL and stays as it is. It promises the first
   process automated within `FIRST_FIX_DAYS` days "or we pay your money back". No delivery
   guarantee exists: the only refund in `offer.ts` triggers on payback failure over six months
   from go-live, the amount is the build fee, and the Solutions card two screens down calls the
