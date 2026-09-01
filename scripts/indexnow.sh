@@ -43,7 +43,7 @@ for arg in "$@"; do
     --all)
       while IFS= read -r u; do URLS+=("$u"); done < <(
         curl -fsS --max-time 30 "https://${HOST}/sitemap.xml" \
-          | grep -o '<loc>[^<]*</loc>' | sed 's|</\?loc>||g'
+          | grep -o '<loc>[^<]*</loc>' | sed -E 's|</?loc>||g'
       )
       ;;
     https://*) URLS+=("$arg") ;;
