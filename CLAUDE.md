@@ -163,6 +163,11 @@ rule 5 still forbids one.
   gap is bridged by scoping the build with the client, which is what step 2 now says.
 
 - **The homepage H1 stands as written, and this is not a bug to re-open.**
+- **prerender.io is dead as of 2026-09-01 and must not be re-added.** `www.fijisolutions.net` was
+  registered in that account (since Aug 2025), but this project has **no environment variables at
+  all** and never proxied through it: Googlebot and a browser receive byte-identical HTML on every
+  page, which is the test that caught the problem on the Peak Code site. The account's plan is
+  cancelled and its API token regenerated.
 - **The blog is Greek-only on purpose, and `/en/blog` is noindex (added 2026-09-01).** Posts are
   typed blocks in `src/data/blogs.ts` (`src/types/blog.ts`), rendered by `BlogPost.tsx`, with
   metadata, canonical, hreflang and JSON-LD derived in `src/lib/blogSchema.ts`. It targets
