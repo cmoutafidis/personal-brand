@@ -5,7 +5,6 @@ import type { NextConfig } from "next";
 const LOCALELESS = [
   'business-process-audit',
   'portfolio',
-  'blog',
   'contact',
   'legal',
   'privacy-policy',
@@ -30,6 +29,10 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {source: '/', destination: '/en', permanent: true},
+      // The one locale-less path that does NOT go to /en. The blog is Greek-only for now and
+      // /en/blog is an empty noindex page, so the English default would land a reader on nothing.
+      // Move this into LOCALELESS the day blogData.en has posts.
+      {source: '/blog', destination: '/el/blog', permanent: true},
       ...LOCALELESS.map((path) => ({
         source: `/${path}`,
         destination: `/en/${path}`,
