@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import {buildAlternates} from '@/lib/alternates';
 import ServicePage from '@/components/ServicePage';
+import {OFFERS_BY_SERVICE} from '@/data/offerLinks';
 
 const siteUrl = 'https://www.fijisolutions.net';
 const path = '/services/data-analysis-greece';
@@ -32,6 +33,7 @@ export default function Page() {
       closingH2={"Στείλε μας την αναφορά που φτιάχνει στο χέρι η ομάδα σου"}
       closingBody={"Θα σου πούμε τι κοστίζει να συνεχίσει να ετοιμάζεται έτσι και τι χρειάζεται για να σταματήσει. Γραπτά, μέσα σε μία εβδομάδα από την κλήση."}
       closingCta={"Κλείσε δωρεάν έλεγχο διαδικασιών"}
+      offers={OFFERS_BY_SERVICE['services/data-analysis-greece']}
       schema={{
         '@context': 'https://schema.org',
         '@type': 'Service',

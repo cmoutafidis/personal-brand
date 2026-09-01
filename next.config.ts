@@ -11,9 +11,10 @@ const LOCALELESS = [
   'services/custom-software-development-greece',
   'services/data-analysis-greece',
   'services/snowflake-consulting-greece',
-  // The eight paid-ad destinations shipped 2026-08-31. They were missing from this list, so the
-  // exact failure the comment above describes — "an ad whose destination lost it" — was live on the
-  // pages that cost money per click: /offers/ai-agent hard-404'd while /en/offers/ai-agent served.
+  // The eight offer pages shipped 2026-08-31 (as paid-ad destinations; Ads was dropped 2026-09-01
+  // and they are organic targets now). They were missing from this list, so the exact failure the
+  // comment above describes — "a destination that lost its prefix" — was live on them:
+  // /offers/ai-agent hard-404'd while /en/offers/ai-agent served.
   'offers/app-prototype',
   'offers/software-prototype',
   'offers/ai-prototype',

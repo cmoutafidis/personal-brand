@@ -16,20 +16,66 @@ There is no list price, no rate card, no entry-offer price. See rule 7.
 Until 2026-08-15 that page had **zero internal links** and the site sold six service categories,
 six industries and thirty-two technologies. Do not re-add a service list.
 
-### The eight `/offers/*` pages are ad destinations, not a service list (added 2026-08-31)
+### The eight `/offers/*` pages: body links only, never a menu (rule rewritten 2026-09-01)
 
 `/[locale]/offers/<slug>` — eight front-end offers, both locales, sixteen routes. They come from an
 external swipe file Charis brought (`Copy of Software Development - Proven Offers.xlsx`, sheet
-*Proven Offers*, columns F–M) and exist so he can **test which offer pulls**, one Google Ads
-campaign per page.
+*Proven Offers*, columns F–M).
 
-**Nothing links to them, and that is what keeps them from being the 2015-vintage service list.**
-They are not in the navbar, not in the footer, not in `QuickLinks`, and not linked from the
-homepage or the audit page. Each is reached by a paid click, a sitemap entry or a search result
-from somebody who asked for that specific thing. They are in `src/app/sitemap.ts` and indexable,
-because half-publishing a page is worse than either publishing or not. **Do not add one to a
-navigation menu.** The homepage and `/business-process-audit` are unchanged, and the audit is still
-the offer the site leads with.
+**What the rule was, until 2026-09-01.** Nothing linked to them, and that was deliberate: they were
+Google Ads destinations, one campaign per page, each reached by a paid click. Being orphaned was
+the only thing keeping eight more pages from becoming the 2015-vintage service list this site
+deleted on 2026-08-15, and it cost nothing, because a paid click does not care about internal links.
+
+**What changed, and it is not a mistake.** Google Ads was **dropped on 2026-09-01** and organic
+search is now the entire strategy. The premise of the orphan rule went with it: an orphan is no
+longer a page that arrives by ad, it is a page that cannot rank. `fijisolutions.net` ranked for
+**zero** keywords in DataForSEO that day, and the two offers with real measured Greek demand behind
+them are `website-seo` and `website-google-ads` — `κατασκευή ιστοσελίδων` **2,900/mo** and
+`προώθηση ιστοσελίδων` **1,600/mo**, both LOW competition, plus `κατασκευή ιστοσελίδων θεσσαλονίκη`
+480 (+~640 in spelling variants). Every automation and AI phrase the other six chase is below
+Google's reporting floor in Greek. Source: `offer-os/gtm/keyword-research-2026-09-01.md`.
+**Charis approved these links. Do not revert them as a re-added service list — read this first.**
+
+**The rule now.** An offer may be linked from the **body** of a page, in prose, and from other offer
+pages — and from nowhere else. The whole graph is one file, `src/data/offerLinks.ts`:
+
+| Source (body only) | Offers linked |
+|---|---|
+| `/services/custom-software-development-greece` | process-automation, ai-agent, software-prototype, app-prototype, ai-development-sprint |
+| `/services/data-analysis-greece` | ai-prototype |
+| `/services/snowflake-consulting-greece` | **none, on purpose** — no offer is an honest way to buy Snowflake work |
+| `/business-process-audit`, in a block **after** the form | website-seo, website-google-ads |
+| both homepages, `Local.tsx`, two prose links | website-seo, website-google-ads |
+| each `/offers/*` page | its parent service page (if any) + its one sibling offer |
+
+**Still forbidden, and this half of the rule did not change.** Not in the navbar
+(`src/components/Navbar.tsx` is four links and stays four). Not in the footer. Not in `QuickLinks`.
+Not on `/portfolio`, which renders the three-card `Services` grid and is this site's one hub. Eight
+offers in a menu, a footer list or a hub grid **is** the service list, whatever the offers are
+called. **Do not add one to a navigation menu.** The check, which must print nothing:
+
+```
+grep -rn "offers/\|OfferLinks\|offerLinks\|OFFERS_BY_SERVICE\|WEBSITE_OFFERS" \
+  src/components/Navbar.tsx src/components/Footer.tsx src/components/QuickLinks.tsx \
+  src/components/Services.tsx "src/app/(en)/en/portfolio/page.tsx" "src/app/(el)/el/portfolio/page.tsx"
+```
+
+Three further guards, all in `offerLinks.ts`: every offer has at most **one** parent, so the map is
+a tree and not a mesh; the maps are keyed on literal unions, so a typo, a leading slash or a
+forgotten offer is a compile error rather than a prerender crash; and anchor text is never typed by
+hand — it is `offer.copy[lang].eyebrow`, the destination's own primary keyword.
+
+**`website-seo` and `website-google-ads` have no parent service page, and that is an open question,
+not an oversight.** The site sells three services and none of them is website work; the largest
+Greek keyword either company can reach has no page of its own. A fourth `/services/` page would be
+its home — and a fourth service means a fourth `Services` card and re-opening "the three things
+actually sold". That is Charis's call. Until he makes it, those two are linked from the audit page,
+the homepage's local section, and each other, and every comment that says so calls it an exception.
+
+They are in `src/app/sitemap.ts` and indexable, because half-publishing a page is worse than either
+publishing or not. The audit is still the offer the site leads with, every primary CTA still points
+at `#consultation-form`, and the audit-page block renders **after** the form so it costs nothing.
 
 Every rule below applies to them without exception. In particular: **no price** (rule 7), and the
 **75% on six of the eight pages is a guarantee with a refund behind it**, settled against a
@@ -41,7 +87,7 @@ rule 5 still forbids one.
 | What | Where |
 |---|---|
 | Offer economics — durations, SLA, guarantee terms | `src/lib/offer.ts`. **Change the number here, not in copy.** The guarantee's four numbers (window, cure, claim window, answer deadline) live here. **No price constant lives here, or anywhere.** |
-| All UI copy, both locales | `src/translations.ts` (125 keys each, kept at exact parity) |
+| All UI copy, both locales | `src/translations.ts` (132 keys each, kept at exact parity) |
 | The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
 | The audit form section, its CTA copy and the Calendly URL | `src/components/AuditFormSection.tsx`. Rendered by **both** the offer page and the homepage, so its strings live there rather than in `LandingCopy`. `AUDIT_CTA` feeds the offer page's five `CtaBlock`s, whose button is an in-page `#consultation-form` anchor. Give each new caller its own `presetQuestion`; it is the only lead-source marker there is. |
 | The eight front-end offer pages | One layout, `src/components/OfferLanding.tsx`; one bilingual data file per offer in `src/data/offers/`; two thin routes each. Metadata and the Service + FAQPage JSON-LD are derived in `src/lib/offerSchema.ts` from the same object the page renders, so the marked-up FAQ cannot drift from the rendered one. **To add or change an offer, edit its data file.** Each carries its own `questionMarker`, which is the only thing telling its leads from the other seven in the shared inbox. |
@@ -124,6 +170,25 @@ rule 5 still forbids one.
   narrowing the headline or adding a delivery clause to the contract, and he chose to leave it
   as written knowing that. He had already asked for this wording twice before that (see
   `7cf97a8`). It is a decision, not an oversight. Do not rewrite it and do not raise it again.
+
+- **The Greek homepage title tag is the local one; the H1 is still the promise (2026-09-01).**
+  `/el` now titles itself «Εταιρεία λογισμικού στη Θεσσαλονίκη | Fiji Solutions» and describes
+  itself with the category, the city and «κατασκευή ιστοσελίδων». The **H1 did not move** — the
+  bullet above stands. Retargeting the H1 at the website money term would make this site claim to
+  be a web agency, which is a positioning decision only Charis can take, and it has not been put
+  to him. The English homepage keeps its promise-led title on purpose: English in Greece is
+  measured dead (`software company thessaloniki`, `software development greece` and
+  `custom software development greece` all return no data).
+
+- **The `geo` in `RootShell.tsx` was wrong by ~10 km and is corrected (2026-09-01).** It pointed at
+  Πυλαία, postcode 570 01 — a different municipality from the address on the same schema node. It
+  is now the Porto Center building on Νικηφόρου Ουρανού at 546 27, which the published address
+  names. `TODO(charis): confirm against the Google Business Profile pin.` The node carries **no**
+  `priceRange` (rule 7), **no** `aggregateRating`/`review` (zero Google reviews), **no**
+  `openingHoursSpecification` (the only hours on record are the GBP default "Open 24 hours") and
+  **no** `vatID` (the number on `/legal` is the partner's personal ΑΦΜ). `serviceType` stays at
+  three, matching the rendered «Τρία πράγματα» — the two website offers are linked from page
+  bodies, not declared as a fourth and fifth service.
 
 - **Do not write an attribution you cannot source.** No "ratified by", "confirmed by" or
   "approved by Charis" goes into this repo unless he said it in his own words. The €2,400 survived

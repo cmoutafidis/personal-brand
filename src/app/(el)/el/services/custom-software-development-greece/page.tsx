@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import {buildAlternates} from '@/lib/alternates';
 import ServicePage from '@/components/ServicePage';
+import {OFFERS_BY_SERVICE} from '@/data/offerLinks';
 
 const siteUrl = 'https://www.fijisolutions.net';
 const path = '/services/custom-software-development-greece';
@@ -32,6 +33,7 @@ export default function Page() {
       closingH2={"Δεν είσαι σίγουρος από ποια διαδικασία να ξεκινήσεις;"}
       closingBody={"Γι’ αυτό υπάρχει ο έλεγχος. Τριάντα λεπτά σε μια κλήση, και μετά γραπτό πλάνο με τις τρεις διαδικασίες που σου κοστίζουν περισσότερο, σε ώρες και σε ευρώ."}
       closingCta={"Κλείσε δωρεάν έλεγχο διαδικασιών"}
+      offers={OFFERS_BY_SERVICE['services/custom-software-development-greece']}
       schema={{
         '@context': 'https://schema.org',
         '@type': 'Service',

@@ -10,11 +10,13 @@ import type {MetadataRoute} from 'next';
 
 const SITE = 'https://www.fijisolutions.net';
 
-// The eight /offers/* routes are Google Ads landing pages. They are deliberately absent from the
-// navigation and from every internal link list except the one back-link on each page. They belong
-// here anyway: a page that is indexable but missing from the sitemap is a page you are half
-// publishing, and organic search finds these too. Priority sits below the audit page, which is
-// still the offer the site leads with.
+// The eight /offers/* routes were Google Ads landing pages until Ads was dropped on 2026-09-01;
+// organic search is now the whole route to them, which is why they stopped being orphans that day.
+// They are still absent from the navigation, the footer and QuickLinks, and are now linked from the
+// BODY of their parent service page, from each other, and (the two website offers) from the audit
+// page and the homepage — the whole graph is src/data/offerLinks.ts. They belong here anyway: a
+// page that is indexable but missing from the sitemap is a page you are half publishing. Priority
+// sits below the audit page, which is still the offer the site leads with.
 // ⚠️ lastmod IS HAND-MAINTAINED PER ROUTE. Bump the ONE line you actually changed.
 //
 // Until 2026-09-01 this file computed `const now = new Date()` and stamped it on all 34 entries,
@@ -31,20 +33,20 @@ const SITE = 'https://www.fijisolutions.net';
 // file's: the homepage and the audit page both move with 73ec38d (2026-08-30), not with their
 // own page.tsx.
 const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']; lastmod: string }[] = [
-  {path: '', priority: 1.0, changeFrequency: 'weekly', lastmod: '2026-08-30'},
-  {path: '/business-process-audit', priority: 0.9, changeFrequency: 'weekly', lastmod: '2026-08-30'},
-  {path: '/offers/app-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-08-31'},
-  {path: '/offers/software-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-08-31'},
-  {path: '/offers/ai-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-08-31'},
-  {path: '/offers/process-automation', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-08-31'},
-  {path: '/offers/ai-agent', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-08-31'},
-  {path: '/offers/ai-development-sprint', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-08-31'},
-  {path: '/offers/website-seo', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-08-31'},
-  {path: '/offers/website-google-ads', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-08-31'},
+  {path: '', priority: 1.0, changeFrequency: 'weekly', lastmod: '2026-09-01'},
+  {path: '/business-process-audit', priority: 0.9, changeFrequency: 'weekly', lastmod: '2026-09-01'},
+  {path: '/offers/app-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
+  {path: '/offers/software-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
+  {path: '/offers/ai-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
+  {path: '/offers/process-automation', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
+  {path: '/offers/ai-agent', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
+  {path: '/offers/ai-development-sprint', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
+  {path: '/offers/website-seo', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
+  {path: '/offers/website-google-ads', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
   {path: '/portfolio', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-08-30'},
-  {path: '/services/custom-software-development-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-08-17'},
-  {path: '/services/data-analysis-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-08-17'},
-  {path: '/services/snowflake-consulting-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-08-17'},
+  {path: '/services/custom-software-development-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-01'},
+  {path: '/services/data-analysis-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-01'},
+  {path: '/services/snowflake-consulting-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-01'},
   {path: '/contact', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-08-15'},
   {path: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-08-15'},
   {path: '/legal', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-08-15'},

@@ -3,12 +3,15 @@ import ContactForm from '@/components/ContactForm';
 import {Language} from '@/types/language';
 import {REPLY_SLA} from '@/lib/offer';
 import {CALENDLY_URL} from '@/components/AuditFormSection';
+import {OFFER_NEXT_COPY, PARENT_SERVICE, SERVICE_LABEL, SIBLING_OFFER, type OfferSlug} from '@/data/offerLinks';
 
 // One component, every front-end offer page.
 //
-// These pages are Google Ads landing pages. They are deliberately NOT in the navigation: an ad
-// points at one of them, the reader either takes the offer or leaves. They ARE in the sitemap and
-// indexable, because organic search may also find them.
+// These pages WERE Google Ads landing pages. Ads was dropped on 2026-09-01 and organic search is
+// now the only way in, so each page carries a body link up to its parent service page and across
+// to one sibling offer — the block after the form, fed by src/data/offerLinks.ts. They are still
+// NOT in the navigation, the footer or QuickLinks, and never will be: a menu of eight offers is
+// the service list this site deleted on 2026-08-15. They ARE in the sitemap and indexable.
 //
 // WHY ONE COMPONENT AND NOT ONE PER OFFER. There are eight offers and two locales, so sixteen
 // hand-built pages would drift within a week: the guarantee wording, the CTA label and the form
@@ -86,6 +89,20 @@ export type OfferCopy = {
   fitNotForLabel: string;
   fitNotFor: string[];
 
+  /** s11a — local presence. OPTIONAL, and Greek-only on the two website offers.
+      «κατασκευή ιστοσελίδων θεσσαλονίκη» is 480/mo plus ~640 across unaccented and variant
+      spellings, while every English-in-Greece equivalent returned NO measurable volume at all
+      (offer-os/gtm/keyword-research-2026-09-01.md). So this section exists in `el` and not in `en`
+      on purpose. It is not a parity bug and an English twin buys nothing. Every other offer leaves
+      all five undefined and renders nothing. Only facts already published on /legal and /contact
+      go in here — no client, no count, no "years", no hours, no in-person promise. */
+  localTitle?: string;
+  localParagraphs?: string[];
+  localAddress?: string;
+  /** Rendered as a tel: link, because on a local page the phone is the conversion. */
+  localPhone?: string;
+  localPhoneHref?: string;
+
   /** s15 — also the source of the FAQPage JSON-LD, so the two can never disagree. */
   faqTitle: string;
   faqs: Faq[];
@@ -162,6 +179,12 @@ function Check() {
 
 export default function OfferLanding({offer, language}: {offer: Offer; language: Language}) {
   const c = offer.copy[language];
+  // Resolved from the slug, not passed in: sixteen route files must not each know the graph.
+  // PARENT_SERVICE is Partial, so `parent` is typed `| undefined` and the guard below is
+  // compiler-enforced — the two website offers have no parent service page.
+  const parent = PARENT_SERVICE[offer.slug as OfferSlug];
+  const sibling = SIBLING_OFFER[offer.slug as OfferSlug];
+  const next = OFFER_NEXT_COPY[language];
 
   return (
     <>
@@ -335,10 +358,46 @@ export default function OfferLanding({offer, language}: {offer: Offer; language:
         </div>
       </section>
 
+      {/* s11a — local presence. Renders ONLY where this locale's copy defines it: today that is
+          Greek on /el/offers/website-seo and /el/offers/website-google-ads and nowhere else.
+          Every fact in it is already published on /el/legal and /el/contact — the registered
+          seat, the address, the phone. Nothing here is a claim about past work, so rule 5 is
+          untouched. The two sections BELOW flip their background when this one renders; that is
+          what keeps the white/grey banding alternating on all sixteen pages. */}
+      {c.localTitle && c.localParagraphs && (
+        <section className="bg-white py-16 dark:bg-gray-900 md:py-24">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <SectionTitle>{c.localTitle}</SectionTitle>
+            <div className="space-y-5 text-lg leading-8 text-gray-700 dark:text-gray-300">
+              {c.localParagraphs.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
+            {c.localAddress && (
+              <address className="mt-8 rounded-xl border border-gray-200 bg-gray-50 p-6 text-base not-italic leading-7 text-gray-700 dark:border-gray-800 dark:bg-gray-950 dark:text-gray-300">
+                <p>{c.localAddress}</p>
+                {c.localPhone && c.localPhoneHref && (
+                  <p className="mt-2">
+                    <a
+                      href={c.localPhoneHref}
+                      className="font-medium text-primary-600 underline underline-offset-4 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                    >
+                      {c.localPhone}
+                    </a>
+                  </p>
+                )}
+              </address>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* s15 — objections. The SAME array feeds the FAQPage JSON-LD in the route file, so the
           marked-up answer and the rendered answer cannot drift apart. Google requires marked-up
           FAQ content to be present on the page. */}
-      <section className="bg-white py-16 dark:bg-gray-900 md:py-24">
+      <section
+        className={`${c.localTitle ? 'bg-gray-50 dark:bg-gray-950' : 'bg-white dark:bg-gray-900'} py-16 md:py-24`}
+      >
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <SectionTitle>{c.faqTitle}</SectionTitle>
           <dl className="space-y-8">
@@ -353,7 +412,10 @@ export default function OfferLanding({offer, language}: {offer: Offer; language:
       </section>
 
       {/* The form. `questionMarker` is what makes a submission attributable to THIS offer. */}
-      <section id="offer-form" className="scroll-mt-24 bg-gray-50 py-16 dark:bg-gray-950 md:py-24">
+      <section
+        id="offer-form"
+        className={`scroll-mt-24 ${c.localTitle ? 'bg-white dark:bg-gray-900' : 'bg-gray-50 dark:bg-gray-950'} py-16 md:py-24`}
+      >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-10 max-w-3xl text-center">
             <h2 className="mb-4 text-3xl font-bold text-gray-950 dark:text-white md:text-4xl">
@@ -409,6 +471,47 @@ export default function OfferLanding({offer, language}: {offer: Offer; language:
             </p>
           </div>
         </div>
+      </section>
+
+      {/* Where this offer sits. Added 2026-09-01.
+          Until then an offer page was very nearly a crawl dead end: nothing linked in, and the
+          only internal link out was the audit link inside the form block above. Google Ads was
+          dropped that day and organic search became the whole route to these pages, so each one
+          now carries a body link UP to the service it is a fixed-scope way to buy and ACROSS to
+          its one sibling. Both come from src/data/offerLinks.ts.
+          `parent` is undefined for website-seo and website-google-ads — this site has no website
+          service page, and creating one is a decision about what Fiji sells. Those two are linked
+          from the audit page and the homepage instead, and the audit link above is their way back.
+          ⛔ This is a body <nav> at the foot of one page. It is not, and must never become, the
+          site navigation: Navbar, Footer, QuickLinks and the /portfolio Services grid stay clean. */}
+      <section className="border-t border-gray-200 bg-white py-12 dark:border-gray-800 dark:bg-gray-900">
+        <nav aria-label={next.heading} className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-lg font-semibold text-gray-950 dark:text-white">{next.heading}</h2>
+          <ul className="mt-4 space-y-3 text-base leading-7 text-gray-700 dark:text-gray-300">
+            {parent && (
+              <li>
+                {next.parentLead}{' '}
+                <Link
+                  href={`/${language}/${parent}`}
+                  className="font-medium text-primary-600 underline underline-offset-4 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                >
+                  {SERVICE_LABEL[parent][language]}
+                </Link>
+              </li>
+            )}
+            {sibling && (
+              <li>
+                {next.siblingLead}{' '}
+                <Link
+                  href={`/${language}/${sibling.slug}`}
+                  className="font-medium text-primary-600 underline underline-offset-4 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+                >
+                  {sibling.copy[language].eyebrow}
+                </Link>
+              </li>
+            )}
+          </ul>
+        </nav>
       </section>
     </>
   );

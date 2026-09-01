@@ -1,5 +1,7 @@
 import Image from 'next/image';
 import AuditFormSection, {AUDIT_CTA, CtaCopy} from '@/components/AuditFormSection';
+import OfferLinks from '@/components/OfferLinks';
+import {WEBSITE_OFFERS} from '@/data/offerLinks';
 import {Language} from '@/types/language';
 import {
   AUDIT_CALL_MINUTES,
@@ -1093,6 +1095,18 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
       {/* 15. Final CTA + form. The section itself lives in AuditFormSection.tsx, because the
           homepage renders the same one. */}
       <AuditFormSection language={language}/>
+
+      {/* 16. The two offers this site has no service page for. AN EXCEPTION, RECORDED AS ONE.
+          website-seo and website-google-ads are the only two of the eight with measured Greek
+          demand behind them — κατασκευή ιστοσελίδων 2,900/mo and προώθηση ιστοσελίδων 1,600/mo,
+          both LOW competition (offer-os/gtm/keyword-research-2026-09-01.md) — and the only two
+          with no /services/ parent to be linked from. A website build is not a fixed-scope way to
+          buy a process audit; this block exists because the page the demand data points at does
+          not exist yet, and building it is Charis's decision about what Fiji sells.
+          IT RENDERS AFTER THE FORM ON PURPOSE. The audit is still the offer this page sells and
+          every CTA above still points at #consultation-form; a reader who reaches this block has
+          already passed five of them. Nothing here competes for the conversion. */}
+      <OfferLinks lang={language} variant="website" offers={WEBSITE_OFFERS}/>
     </>
   );
 }

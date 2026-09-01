@@ -3,6 +3,8 @@ import Link from 'next/link';
 import Footer from '@/components/Footer';
 import {createTranslationFunction} from '@/translations';
 import {Language} from '@/types/language';
+import OfferLinks from '@/components/OfferLinks';
+import type {Offer} from '@/components/OfferLanding';
 
 // One skeleton for all six service pages.
 //
@@ -24,6 +26,13 @@ export type ServicePageContent = {
   closingH2: string;
   closingBody: string;
   closingCta: string;
+  /**
+   * The offers that are fixed-scope ways to buy THIS service, from OFFERS_BY_SERVICE in
+   * src/data/offerLinks.ts. Never hand-written here, and never an offer that belongs to another
+   * service page: the map is a tree and it is only a tree if it stays in one file. The Snowflake
+   * page passes an empty array on purpose — see offerLinks.ts.
+   */
+  offers?: Offer[];
   schema: Record<string, unknown>;
 };
 
@@ -66,6 +75,12 @@ export default function ServicePage(c: ServicePageContent) {
           </div>
         </div>
       </section>
+
+      {/* Added 2026-09-01, when Google Ads was dropped and organic became the whole strategy.
+          Until then the /offers/* pages were orphans on purpose, because they arrived by paid
+          click; an orphan now is just a page that cannot rank. BODY link only — this must never
+          be lifted into Navbar, Footer, QuickLinks or the /portfolio Services grid. */}
+      <OfferLinks lang={c.lang} variant="service" offers={c.offers ?? []}/>
 
       <section className="bg-gray-50 py-16 dark:bg-gray-800 md:py-24">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">

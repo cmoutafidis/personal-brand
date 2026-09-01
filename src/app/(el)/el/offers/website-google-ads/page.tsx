@@ -5,7 +5,8 @@ import websiteGoogleAds from '@/data/offers/website-google-ads';
 import {buildOfferMetadata, offerSchema} from '@/lib/offerSchema';
 import {createTranslationFunction} from '@/translations';
 
-// Front-end offer page. Google Ads landing page: not in the navigation, in the sitemap.
+// Front-end offer page. Was a Google Ads landing page until 2026-09-01; organic search is now the
+// only way in, so it is linked from page bodies (src/data/offerLinks.ts) — still not in the navigation.
 // Everything on it comes from src/data/offers/website-google-ads.ts and src/components/OfferLanding.tsx.
 
 export const metadata: Metadata = buildOfferMetadata(websiteGoogleAds, 'el');

@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import {buildAlternates} from '@/lib/alternates';
 import ServicePage from '@/components/ServicePage';
+import {OFFERS_BY_SERVICE} from '@/data/offerLinks';
 
 const siteUrl = 'https://www.fijisolutions.net';
 const path = '/services/snowflake-consulting-greece';
@@ -32,6 +33,7 @@ export default function Page() {
       closingH2={"Είσαι ήδη σε Snowflake και πληρώνεις περισσότερα από όσα περίμενες;"}
       closingBody={"Στείλε μας τον λογαριασμό και το βαρύτερο ερώτημα. Συνήθως αυτό αρκεί για να πούμε πού πάνε τα χρήματα."}
       closingCta={"Κλείσε δωρεάν έλεγχο διαδικασιών"}
+      offers={OFFERS_BY_SERVICE['services/snowflake-consulting-greece']}
       schema={{
         '@context': 'https://schema.org',
         '@type': 'Service',

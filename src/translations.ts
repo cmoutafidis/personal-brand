@@ -69,6 +69,20 @@ export const translations: Record<Language, Record<string, string>> = {
     'solutions.cta.description': 'Tell us which task, spreadsheet or report costs you the most, and we will put a number on it in writing. Automating it gives your team back the hours it takes, without hiring anyone.',
     'solutions.cta.button': 'Get the free process audit',
 
+    // Local — added 2026-09-01. The section exists because the demand data says the site's own
+    // vocabulary has no searchers and the local category does (offer-os/gtm/keyword-research-2026-09-01.md).
+    // The NAP labels are NOT duplicated here: Local.tsx reuses 'contact.location',
+    // 'contact.address.street', 'contact.address.city' and 'contact.phone' so the homepage and the
+    // contact page cannot state a different address. "across Greece" matches the published
+    // areaServed; nothing here promises on-site visits, because nothing on the site does.
+    'local.title': 'Software company in Thessaloniki',
+    'local.subtitle': `Our office is in Thessaloniki and we work with businesses across Greece. We reply within ${REPLY_SLA.en}.`,
+    'local.website.title': 'If the website is what you need first',
+    'local.website.description': 'Not every business starts with its processes. If the first thing missing is a website that brings you customers from search, that is separate work, with its own timeline and its own guarantee. It has its own page too.',
+    'local.website.seo': 'Website build and SEO',
+    'local.website.ads': 'Website promotion with Google Ads',
+    'local.map': 'See us on the map',
+
     // Contact
     'contact.title': 'Get the free process audit',
     'contact.subtitle1': 'Tell us which process is costing you the most.',
@@ -222,6 +236,16 @@ export const translations: Record<Language, Record<string, string>> = {
     'solutions.cta.title': 'Δείξε μας τη διαδικασία που τρώει τον περισσότερο χρόνο',
     'solutions.cta.description': 'Πες μας ποια εργασία, ποιο υπολογιστικό φύλλο ή ποια αναφορά σου κοστίζει περισσότερο, και θα βάλουμε νούμερο πάνω της γραπτώς. Όταν την αυτοματοποιήσουμε, η ομάδα σου παίρνει πίσω τις ώρες που της τρώει, χωρίς νέες προσλήψεις.',
     'solutions.cta.button': 'Κλείσε δωρεάν έλεγχο διαδικασιών',
+
+    // Local — βλ. το σχόλιο στο en. Οι δύο σύνδεσμοι είναι οι δύο λέξεις-κλειδιά με μετρημένη ζήτηση,
+    // μία η καθεμία: «κατασκευή ιστοσελίδων» (2.900/μήνα) και «προώθηση ιστοσελίδων» (1.600/μήνα).
+    'local.title': 'Εταιρεία λογισμικού στη Θεσσαλονίκη',
+    'local.subtitle': `Η έδρα μας είναι στη Θεσσαλονίκη και δουλεύουμε με επιχειρήσεις σε όλη την Ελλάδα. Απαντάμε μέσα σε ${REPLY_SLA.el}.`,
+    'local.website.title': 'Αν αυτό που χρειάζεσαι πρώτα είναι η ιστοσελίδα',
+    'local.website.description': 'Δεν ξεκινάει κάθε επιχείρηση από τις διαδικασίες. Αν το πρώτο που σου λείπει είναι μια ιστοσελίδα που φέρνει πελάτες από την αναζήτηση, αυτή είναι ξεχωριστή δουλειά, με δικό της χρονοδιάγραμμα και δική της εγγύηση. Έχει και τη δική της σελίδα.',
+    'local.website.seo': 'Κατασκευή ιστοσελίδων και SEO',
+    'local.website.ads': 'Προώθηση ιστοσελίδων με Google Ads',
+    'local.map': 'Δες μας στον χάρτη',
 
     // Contact
     'contact.title': 'Κλείσε δωρεάν έλεγχο διαδικασιών',

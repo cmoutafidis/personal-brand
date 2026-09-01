@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import {buildAlternates} from '@/lib/alternates';
 import ServicePage from '@/components/ServicePage';
+import {OFFERS_BY_SERVICE} from '@/data/offerLinks';
 
 const siteUrl = 'https://www.fijisolutions.net';
 const path = '/services/custom-software-development-greece';
@@ -32,6 +33,7 @@ export default function Page() {
       closingH2={"Not sure which process to start with?"}
       closingBody={"That is what the audit is for. Thirty minutes on a call, then a written map of the three processes costing you the most, in hours and euros."}
       closingCta={"Get the free process audit"}
+      offers={OFFERS_BY_SERVICE['services/custom-software-development-greece']}
       schema={{
         '@context': 'https://schema.org',
         '@type': 'Service',

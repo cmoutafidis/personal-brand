@@ -5,6 +5,7 @@ import {createTranslationFunction} from '@/translations';
 import Hero from '@/components/Hero';
 import Challenges from '@/components/Challenges';
 import Solutions from '@/components/Solutions';
+import Local from '@/components/Local';
 import AuditFormSection from '@/components/AuditFormSection';
 import Footer from "@/components/Footer";
 
@@ -48,6 +49,14 @@ export default function EnglishHomePage() {
       <Hero t={t}/>
       <Challenges t={t}/>
       <Solutions t={t}/>
+      {/* The English homepage keeps its promise-led title and description on purpose. English in
+          Greece is measured dead — `software company thessaloniki`, `software development greece`
+          and `custom software development greece` all return no data
+          (offer-os/gtm/keyword-research-2026-09-01.md), so there is no local ranking to win here
+          and nothing to trade the headline for. The section renders anyway: the address, the phone
+          and the map are true on this page too, and it is what gives /en/offers/website-seo and
+          /en/offers/website-google-ads their first inbound internal link. */}
+      <Local t={t} language={language}/>
       <AuditFormSection language={language} presetQuestion="homepage-process-audit"/>
       <Footer t={t}/>
     </>
