@@ -163,6 +163,16 @@ rule 5 still forbids one.
   gap is bridged by scoping the build with the client, which is what step 2 now says.
 
 - **The homepage H1 stands as written, and this is not a bug to re-open.**
+- **The blog is Greek-only on purpose, and `/en/blog` is noindex (added 2026-09-01).** Posts are
+  typed blocks in `src/data/blogs.ts` (`src/types/blog.ts`), rendered by `BlogPost.tsx`, with
+  metadata, canonical, hreflang and JSON-LD derived in `src/lib/blogSchema.ts`. It targets
+  «κατασκευή ιστοσελίδων» (2,900/mo) and «προώθηση ιστοσελίδων» (1,600/mo); every Greek automation
+  and AI phrase measured zero. Three things not to "fix" back: `blogSchema` does NOT use
+  `buildAlternates()` and must not (a post has no English twin, so declaring one points at a 404);
+  `src/app/sitemap.ts` lists blog URLs outside the `ROUTES` loop for the same asymmetry; and the
+  Greek index's hreflang omits `en` so it agrees with the sitemap. Undo all three together in the
+  commit that fills `blogData.en` — and do not machine-translate the Greek posts to fill it.
+  `/blog` is in QuickLinks (the footer), never in the navbar.
 - **Greek copy uses one term per concept, and the English loanwords are gone (2026-09-01).** The
   kickoff meeting is «η εναρκτήρια συνάντηση» on all eight offer pages, a delivery cycle is «ο
   κύκλος (υλοποίησης)» and never «sprint», and a demo is «μια επίδειξη». The apostrophe in «γι’
