@@ -1,4 +1,5 @@
 import type {MetadataRoute} from 'next';
+import {blogData} from '@/data/blogs';
 
 // Generated, not hand-maintained.
 //
@@ -54,6 +55,24 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
+
+  // The blog does not go through ROUTES, because ROUTES emits every path in BOTH locales and the
+  // blog is not symmetrical: blogData.el has posts, blogData.en is empty and /en/blog is noindex.
+  // Listing an English post URL that does not exist is the failure this file was rewritten to stop.
+  for (const post of blogData.el) {
+    entries.push({
+      url: `${SITE}/el/blog/${post.slug}`,
+      lastModified: post.updatedAt ?? post.publishedAt,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    });
+  }
+  entries.push({
+    url: `${SITE}/el/blog`,
+    lastModified: '2026-09-01',
+    changeFrequency: 'weekly',
+    priority: 0.6,
+  });
 
   for (const r of ROUTES) {
     for (const lang of ['en', 'el'] as const) {

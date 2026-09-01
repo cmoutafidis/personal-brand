@@ -5,6 +5,7 @@ import type { NextConfig } from "next";
 const LOCALELESS = [
   'business-process-audit',
   'portfolio',
+  'blog',
   'contact',
   'legal',
   'privacy-policy',
