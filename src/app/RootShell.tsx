@@ -10,6 +10,7 @@ import CookieConsent from '@/components/CookieConsent';
 import Analytics from '@/components/Analytics';
 import {Language, assistantId, vapiApiKey} from '@/types/language';
 import {FIRST_FIX_DAYS} from '@/lib/offer';
+import {PERSON_REF, ORGANISATION_ID} from '@/lib/person';
 
 // One shell, two root layouts.
 //
@@ -152,11 +153,22 @@ function organisationSchema(lang: Language) {
   return {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    '@id': `${SITE}/#organisation`,
+    '@id': ORGANISATION_ID,
     name: 'Fiji Solutions',
     legalName: LEGAL_NAME[lang],
     description: COPY[lang].description,
-    url: `${SITE}/${lang}`,
+    // ⚠️ `url` IS THE SITE ROOT, NOT `${SITE}/${lang}`. Corrected 2026-09-02.
+    //
+    // This node ships under ONE `@id` on all 50 pages, but `url` was locale-dependent — so the same
+    // identifier declared `…/el` on 25 pages and `…/en` on 25 others. One organisation has one
+    // official website; a field that varies per locale under a shared `@id` gives a parser two
+    // answers to the same question, and the canonical Person node's `worksFor` edge inherits the
+    // ambiguity. The root 308s to /en, which is the correct behaviour for an official-site URL.
+    //
+    // `legalName` is deliberately LEFT per-locale: «Fiji Solutions ΜΟΝΟΠΡΟΣΩΠΗ ΙΚΕ» and "Fiji
+    // Solutions SINGLE MEMBER PRIVATE COMPANY (IKE)" are the same registered name in two scripts,
+    // both true, and both are the form the respective registry-facing surfaces use.
+    url: SITE,
     logo: `${SITE}/fijisolutions.png`,
     image: `${SITE}/fijisolutions.png`,
     telephone: '+30 231 107 0108',
@@ -198,11 +210,22 @@ function organisationSchema(lang: Language) {
     // corrected away from on 2026-09-01 — and search-engine answer summaries repeat it. Both are
     // fixed inside those platforms' own admin UIs and cannot be fixed from this repo. The audit and
     // the exact steps are in offer-os/gtm/citation-pack-2026-09-02.md, items A1 and A3.
+    //
+    // ⚠️ `https://github.com/cmoutafidis` WAS REMOVED FROM THIS ARRAY ON 2026-09-02, and it must
+    // not come back. It is Charis's PERSONAL GitHub account, and an entry in a company's `sameAs`
+    // asserts that the page IS this company — so this line told search engines that a person's
+    // GitHub profile is the Greek IKE. With `x.com/fiji_solutions` beside it, two of six identity
+    // assertions here were person-shaped, teaching exactly the association he ruled out: his name
+    // should reach his sites, and "Fiji" should reach the company, but the company should not be
+    // him. The account now sits where it belongs, in the `sameAs` of the canonical Person node at
+    // charismoutafidis.com, which this node references through `founder` below.
+    //
+    // It is still rendered as a visible link in the footer, which is correct — that is a link, not
+    // an identity claim.
     sameAs: [
       'https://x.com/fiji_solutions',
       'https://www.facebook.com/fijisolutions/',
       'https://www.linkedin.com/company/fijisolutionsnet/',
-      'https://github.com/cmoutafidis',
       'https://www.instagram.com/fijisolutionsnet/',
       'https://www.snowflake.com/en/why-snowflake/partners/all-partners/fiji-solutions/',
     ],
@@ -216,10 +239,10 @@ function organisationSchema(lang: Language) {
     // businesses grow online", and it already links back to www.fijisolutions.net.
     // ⚠️ @fijisolutions (no "net") is NOT this company — it is a Brazilian fintech with 11K
     // followers. Never add it.
-    founder: {
-      '@type': 'Person',
-      name: 'Charalampos Moutafidis',
-    },
+    // The canonical Person node, not a bare name string. Byte-identical to the reference the Peak
+    // Code repo emits, so the two companies' founders are one person rather than two matching
+    // strings. See src/lib/person.ts.
+    founder: PERSON_REF,
     areaServed: [
       {'@type': 'Country', name: 'Greece'},
       {'@type': 'City', name: 'Thessaloniki'},

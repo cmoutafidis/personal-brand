@@ -1,4 +1,5 @@
 import type {Metadata} from 'next';
+import {PERSON_REF, ORGANISATION_ID} from '@/lib/person';
 import type {Language} from '@/types/language';
 import type {BlogFaqBlock, BlogPost, BlogSourcesBlock} from '@/types/blog';
 
@@ -63,10 +64,15 @@ export function blogPostSchema(post: BlogPost, lang: Language) {
   const url = blogPostUrl(post.slug, lang);
   const faq = post.body.find((b): b is BlogFaqBlock => b.type === 'faq');
   const sources = post.body.find((b): b is BlogSourcesBlock => b.type === 'sources');
+  // `@id` added and `url` de-localised 2026-09-02: this was a fresh inline Organization on every
+  // one of the fourteen articles, declaring `url: …/el` and competing with the real `#organisation`
+  // node in RootShell rather than referencing it. `name`, `url` and `logo` stay because Google reads
+  // `publisher.logo` for article results.
   const publisher = {
     '@type': 'Organization',
+    '@id': ORGANISATION_ID,
     name: 'Fiji Solutions',
-    url: `${SITE}/${lang}`,
+    url: SITE,
     logo: {'@type': 'ImageObject', url: `${SITE}/fijisolutions.png`},
   };
 
@@ -80,7 +86,15 @@ export function blogPostSchema(post: BlogPost, lang: Language) {
       inLanguage: lang,
       datePublished: post.publishedAt,
       dateModified: post.updatedAt ?? post.publishedAt,
-      author: post.author ? {'@type': 'Person', name: post.author, worksFor: publisher} : publisher,
+      // ⚠️ THE AUTHOR IS THE CANONICAL PERSON NODE, NOT `post.author`.
+      //
+      // `post.author` is the RENDERED byline and stays «Χαράλαμπος Μουταφίδης» on every Greek
+      // article — that is the right name to print in Greek. It must not be the identity in the
+      // markup: the German sibling site signs "Charalampos Moutafidis", and with no shared
+      // identifier a parser reads two different people across the twenty-six articles. One `@id`
+      // merges them, and the four name spellings live once, in `alternateName` on the node at
+      // charismoutafidis.com.
+      author: post.author ? {...PERSON_REF, worksFor: {'@id': ORGANISATION_ID}} : publisher,
       publisher,
       keywords: post.tags.join(', '),
       articleSection: post.tags[0],
