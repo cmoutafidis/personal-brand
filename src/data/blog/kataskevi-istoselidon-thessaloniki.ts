@@ -57,7 +57,7 @@ const post: BlogPost = {
       {text: 'άλλα κριτήρια', strong: true},
       ' και τρέφονται από ',
       {text: 'άλλη πηγή δεδομένων', strong: true},
-      ' — και σε αυτό το κομμάτι, αυτό που εμφανίζεται στην οθόνη του πελάτη δεν είναι η ιστοσελίδα σου.',
+      '. Και σε αυτό το κομμάτι, αυτό που εμφανίζεται στην οθόνη του πελάτη δεν είναι η ιστοσελίδα σου.',
     ]},
     { type: 'paragraph', text: [
       'Η Google το γράφει σε μία πρόταση: «Local results are mainly based on relevance, distance, and popularity. Together, these factors help Google find the best match for customers’ searches.» (',
@@ -139,7 +139,7 @@ const post: BlogPost = {
     { type: 'heading', text: 'Γιατί η αυτο-αναζήτηση δεν είναι μέτρηση' },
     { type: 'paragraph', text: [
       'Αν από τα παραπάνω βγαίνει ένα πράγμα, είναι ότι το «το έψαξα και δεν βγαίνω» δεν είναι δεδομένο. Η Google το γράφει και σε επίπεδο εργαλείου: «Even if a query appears in your list, you might not see your site in results if you run the same query in Google Search. This is because Search results are specific to the time, place, device, and recent history of the person searching.» (',
-      {text: 'Search Console — Performance report', href: G_GSC},
+      {text: 'Search Console, Performance report', href: G_GSC},
       ').',
     ]},
     { type: 'paragraph', text: [
@@ -153,11 +153,11 @@ const post: BlogPost = {
 
     { type: 'heading', text: 'Τι δουλειά κάνει η ιστοσελίδα όταν αυτό που εμφανίζεται είναι το προφίλ' },
     { type: 'paragraph', text: [
-      'Εδώ είναι η σύνδεση που λείπει από τις περισσότερες συζητήσεις. Το προφίλ δεν το γράφεις μόνο εσύ σε μια φόρμα. Η Google γράφει ότι οι πληροφορίες στα προφίλ συντίθενται από πλήθος πηγών — «Information in profiles is compiled from a variety of sources:» — και ανάμεσα σε αυτές είναι δημόσια διαθέσιμο περιεχόμενο που έχει σαρωθεί, όπως ο επίσημος ιστότοπος της επιχείρησης (',
+      'Εδώ είναι η σύνδεση που λείπει από τις περισσότερες συζητήσεις. Το προφίλ δεν το γράφεις μόνο εσύ σε μια φόρμα. Η Google γράφει ότι οι πληροφορίες στα προφίλ συντίθενται από πλήθος πηγών, («Information in profiles is compiled from a variety of sources»), και ανάμεσα σε αυτές είναι δημόσια διαθέσιμο περιεχόμενο που έχει σαρωθεί, όπως ο επίσημος ιστότοπος της επιχείρησης (',
       {text: 'How Google sources & uses info in Business Profiles', href: G_PROFILE_SOURCES},
       '). Δηλαδή η ιστοσελίδα σου δεν ανταγωνίζεται το προφίλ, το ',
       {text: 'ταΐζει', strong: true},
-      ' — και κάθε ασυμφωνία είναι θόρυβος που τον παράγεις μόνος σου.',
+      '. Και κάθε ασυμφωνία είναι θόρυβος που τον παράγεις μόνος σου.',
     ]},
     { type: 'paragraph', text: [
       'Το δεύτερο σημείο επαφής είναι το πεδίο του ιστότοπου μέσα στο προφίλ, όπου η ιστοσελίδα μπαίνει ως πλήρες URL (',
@@ -169,7 +169,7 @@ const post: BlogPost = {
       ').',
     ]},
     { type: 'paragraph', text: [
-      'Αυτό αποκλείει τρία πράγματα που τα βλέπουμε συχνά: το προφίλ που δείχνει σε σελίδα κοινωνικού δικτύου αντί για ιστοσελίδα, το προφίλ κάθε υποκαταστήματος που δείχνει στην ίδια γενική αρχική, και τη διεύθυνση που δείχνει σε σελίδα προορισμού καμπάνιας η οποία μια μέρα θα κατέβει. Τα υπόλοιπα του προφίλ — επαλήθευση, κατηγορίες, φωτογραφίες, ωράρια, κριτικές — είναι άλλη δουλειά και έχουν ',
+      'Αυτό αποκλείει τρία πράγματα που τα βλέπουμε συχνά: το προφίλ που δείχνει σε σελίδα κοινωνικού δικτύου αντί για ιστοσελίδα, το προφίλ κάθε υποκαταστήματος που δείχνει στην ίδια γενική αρχική, και τη διεύθυνση που δείχνει σε σελίδα προορισμού καμπάνιας η οποία μια μέρα θα κατέβει. Τα υπόλοιπα του προφίλ (επαλήθευση, κατηγορίες, φωτογραφίες, ωράρια, κριτικές) είναι άλλη δουλειά και έχουν ',
       {text: 'δικό τους κείμενο', href: '/el/blog/profil-epicheirisis-google'},
       '.',
     ]},
@@ -183,7 +183,7 @@ const post: BlogPost = {
     { type: 'paragraph', text: [
       'Γιατί να σε νοιάζει τόσο; Γιατί το προφίλ δεν είναι εντελώς δικό σου. Η Google γράφει ότι αν κάποιες πηγές αναφέρουν πως τα στοιχεία σου είναι λανθασμένα ή παλιά, μπορεί να ενημερώσει το προφίλ, και ότι μπορείς να δεις και να διαχειριστείς αυτές τις ενημερώσεις (',
       {text: 'Understand Google updates on your Business Profile', href: G_UPDATES},
-      '). Και στους χάρτες, οποιοσδήποτε χρήστης μπορεί να στείλει σχόλιο για τα στοιχεία ενός σημείου — «You can provide feedback that helps Google Maps decide whether to change a place\'s information.» (',
+      '). Και στους χάρτες, οποιοσδήποτε χρήστης μπορεί να στείλει σχόλιο για τα στοιχεία ενός σημείου: «You can provide feedback that helps Google Maps decide whether to change a place\'s information.» (',
       {text: 'Edit place information in Google Maps', href: G_MAPS_EDIT},
       ').',
     ]},
@@ -224,7 +224,7 @@ const post: BlogPost = {
       'Υπάρχει και ο κανόνας που ακυρώνει το πιο συνηθισμένο κόλπο: «Do not include information in address lines that doesn\'t pertain to your business’s physical location, like URLs or keywords.» Δηλαδή το «Κατασκευή Ιστοσελίδων Θεσσαλονίκη» δεν χωράει στα πεδία της διεύθυνσης, όσο κι αν βολεύει.',
     ]},
     { type: 'paragraph', text: [
-      'Αν δουλεύεις πηγαίνοντας στον πελάτη, η περιοχή εξυπηρέτησης έχει τους δικούς της περιορισμούς, και ο πρώτος εκπλήσσει: «You can\'t set your service area as a radius distance around your business. If you previously set up your service area this way, you can\'t edit it. Instead you must specify your service-area by city, postal code, or another type of area.» — με ανώτατο όριο τις είκοσι περιοχές (',
+      'Αν δουλεύεις πηγαίνοντας στον πελάτη, η περιοχή εξυπηρέτησης έχει τους δικούς της περιορισμούς, και ο πρώτος εκπλήσσει: «You can\'t set your service area as a radius distance around your business. If you previously set up your service area this way, you can\'t edit it. Instead you must specify your service-area by city, postal code, or another type of area.», με ανώτατο όριο τις είκοσι περιοχές (',
       {text: 'Manage your service areas', href: G_AREA},
       ').',
     ]},
@@ -232,7 +232,7 @@ const post: BlogPost = {
       'Το όριο των είκοσι περιοχών κάνει και μια δουλειά που δεν θα έκανες μόνος σου: σε αναγκάζει να διαλέξεις. Περιοχές που όντως εξυπηρετείς περιγράφονται πολύ πιο εύκολα σε ένα ειλικρινές κείμενο απ’ ό,τι «όλη η Βόρεια Ελλάδα».',
     ]},
 
-    { type: 'heading', text: 'Πώς γράφεται μια ιστοσελίδα για τοπικό κοινό — και πού αρχίζει το spam' },
+    { type: 'heading', text: 'Πώς γράφεται μια ιστοσελίδα για τοπικό κοινό, και πού αρχίζει το spam' },
     { type: 'paragraph', text: [
       'Η Google απαριθμεί ρητά τι κοιτάει για να καταλάβει σε ποιο κοινό απευθύνεται ένας ιστότοπος: «Other signals to identify the intended audience of your site can include local addresses and phone numbers on the pages, the use of local language and currency, links from other local sites, or signals from your Business Profile (where available).» (',
       {text: 'Managing multi-regional and multilingual sites', href: G_MULTIREGION},
@@ -277,16 +277,16 @@ const post: BlogPost = {
 
     { type: 'heading', text: 'Το δομημένα δεδομένα: τι κάνει και τι σίγουρα δεν κάνει' },
     { type: 'paragraph', text: [
-      'Το LocalBusiness είναι ο κώδικας που περιγράφει την επιχείρησή σου σε μορφή που διαβάζεται από μηχανή. Δύο πράγματα είναι υποχρεωτικά — το όνομα και η διεύθυνση — και για τη διεύθυνση η οδηγία είναι σαφής: «The physical location of the business. Include as many properties as possible. The more properties you provide, the higher quality the result is to users.» (',
+      'Το LocalBusiness είναι ο κώδικας που περιγράφει την επιχείρησή σου σε μορφή που διαβάζεται από μηχανή. Δύο πράγματα είναι υποχρεωτικά (το όνομα και η διεύθυνση) και για τη διεύθυνση η οδηγία είναι σαφής: «The physical location of the business. Include as many properties as possible. The more properties you provide, the higher quality the result is to users.» (',
       {text: 'Local business structured data', href: G_SD_LOCAL},
       ').',
     ]},
     { type: 'paragraph', text: [
-      'Δύο λεπτομέρειες που τις χαλάνε τα περισσότερα έτοιμα πρόσθετα. Πρώτη, οι συντεταγμένες: «The latitude of the business location. The precision must be at least 5 decimal places.» Δεύτερη, το τηλέφωνο, όπου η ίδια σελίδα λέει «Be sure to include the country code and area code» — δηλαδή ένα ελληνικό σταθερό γραμμένο χωρίς τον κωδικό χώρας είναι λάθος κατά την τεκμηρίωση.',
+      'Δύο λεπτομέρειες που τις χαλάνε τα περισσότερα έτοιμα πρόσθετα. Πρώτη, οι συντεταγμένες: «The latitude of the business location. The precision must be at least 5 decimal places.» Δεύτερη, το τηλέφωνο, όπου η ίδια σελίδα λέει «Be sure to include the country code and area code». Δηλαδή ένα ελληνικό σταθερό γραμμένο χωρίς τον κωδικό χώρας είναι λάθος κατά την τεκμηρίωση.',
     ]},
     { type: 'list', items: [
-      [{text: 'Όνομα.', strong: true}, ' Η επωνυμία, ίδια με την ταμπέλα και με το προφίλ — όχι με λέξεις-κλειδιά κολλημένες.'],
-      [{text: 'Διεύθυνση.', strong: true}, ' Οδός, αριθμός, πόλη, ταχυδρομικός κώδικας, χώρα — όσο πιο πλήρης γίνεται.'],
+      [{text: 'Όνομα.', strong: true}, ' Η επωνυμία, ίδια με την ταμπέλα και με το προφίλ. Χωρίς λέξεις-κλειδιά κολλημένες.'],
+      [{text: 'Διεύθυνση.', strong: true}, ' Οδός, αριθμός, πόλη, ταχυδρομικός κώδικας, χώρα. Όσο πιο πλήρης γίνεται.'],
       [{text: 'Συντεταγμένες.', strong: true}, ' Με τουλάχιστον πέντε δεκαδικά ψηφία. Πολλά πρόσθετα γράφουν δύο ή τρία.'],
       [{text: 'Τηλέφωνο και διεύθυνση ιστότοπου.', strong: true}, ' Με κωδικό χώρας το πρώτο, και σύνδεσμο που δουλεύει το δεύτερο.'],
     ]},
@@ -296,7 +296,7 @@ const post: BlogPost = {
       ').',
     ]},
     { type: 'paragraph', text: [
-      'Τώρα το μέρος που παραλείπεται από κάθε προσφορά «θα σου βάλουμε schema και θα ανέβεις τοπικά». Πουθενά στην τεκμηρίωση τα δομημένα δεδομένα δεν συνδέεται με τα τρία κριτήρια των τοπικών αποτελεσμάτων. Αυτό που λέει η Google είναι: «Google does not guarantee that features that consume structured data will show up in search results.» (',
+      'Τώρα το μέρος που παραλείπεται από κάθε προσφορά «θα σου βάλουμε schema και θα ανέβεις τοπικά». Πουθενά στην τεκμηρίωση τα δομημένα δεδομένα δεν συνδέονται με τα τρία κριτήρια των τοπικών αποτελεσμάτων. Αυτό που λέει η Google είναι: «Google does not guarantee that features that consume structured data will show up in search results.» (',
       {text: 'Local business structured data', href: G_SD_LOCAL},
       ') και, πιο αναλυτικά, «Using structured data enables a feature to be present, it does not guarantee that it will be present. The Google algorithm tailors search results to create what it thinks is the best search experience for a user, depending on many variables, including search history, location, and device type.» (',
       {text: 'General structured data guidelines', href: G_SD_POLICIES},
@@ -305,7 +305,7 @@ const post: BlogPost = {
     { type: 'paragraph', text: [
       'Άρα το βάζεις γιατί κάνει τα στοιχεία σου μηχανικά αναγνώσιμα και σε κάνει ',
       {text: 'επιλέξιμο', strong: true},
-      ' για κάποιες εμφανίσεις — όχι γιατί ανεβάζει κατάταξη. Σωστή δουλειά με λάθος διαφημιστικό.',
+      ' για κάποιες εμφανίσεις. Η τεκμηρίωση δεν το συνδέει με την κατάταξη. Σωστή δουλειά με λάθος διαφημιστικό.',
     ]},
 
     { type: 'heading', text: 'Το κινητό δεν είναι «και για κινητά». Είναι η έκδοση που κρίνεται' },
@@ -322,7 +322,7 @@ const post: BlogPost = {
       {text: 'Understanding page experience in Google Search results', href: G_PAGE_EXP},
       '). Ταυτόχρονα υπάρχει τεκμηριωμένο κατώφλι για τον χρόνο εμφάνισης του κύριου περιεχομένου: το web.dev γράφει «Largest Contentful Paint (LCP) : measures loading performance. To provide a good user experience, LCP should occur within 2.5 seconds of when the page first starts loading.» (',
       {text: 'Web Vitals', href: W_VITALS},
-      '). Το κατώφλι είναι δικό τους — δεν είναι κάτι που υποσχόμαστε εμείς για τη δική σου σελίδα.',
+      '). Το κατώφλι είναι δικό τους. Δεν είναι κάτι που υποσχόμαστε εμείς για τη δική σου σελίδα.',
     ]},
 
     { type: 'heading', text: 'Δύο πράγματα που πουλιούνται τοπικά και δεν στέκουν' },
@@ -364,10 +364,10 @@ const post: BlogPost = {
       ['Έλεγξε ότι το πεδίο ιστότοπου στο προφίλ δείχνει στη σελίδα που όντως εκπροσωπεί το σημείο.'],
       ['Άνοιξε την ιστοσελίδα σου στο κινητό και σύγκρινέ την με τον υπολογιστή. Ό,τι λείπει από τη μικρή οθόνη, λείπει.'],
       ['Διόρθωσε τα δομημένα δεδομένα: πλήρης διεύθυνση, συντεταγμένες με πέντε δεκαδικά, τηλέφωνο με κωδικό χώρας.'],
-      ['Γράψε μία αληθινή σελίδα ανά πραγματικό σημείο ή διαφορετική υπηρεσία — και σβήσε το υποσέλιδο με τις συνοικίες.'],
+      ['Γράψε μία αληθινή σελίδα ανά πραγματικό σημείο ή διαφορετική υπηρεσία. Και σβήσε το υποσέλιδο με τις συνοικίες.'],
     ]},
     { type: 'paragraph', text: [
-      'Αν τα κάνεις όλα και δεν σε βρίσκει ακόμα κανείς, το πρόβλημα μπορεί να είναι πιο νωρίς στην αλυσίδα από όσο νομίζεις — δηλαδή η Google να μην έχει καν τις σελίδες σου. Αυτό το ελέγχεις μόνος σου σε δέκα δευτερόλεπτα, και το εξηγούμε βήμα βήμα στο ',
+      'Αν τα κάνεις όλα και δεν σε βρίσκει ακόμα κανείς, το πρόβλημα μπορεί να είναι πιο νωρίς στην αλυσίδα από όσο νομίζεις, δηλαδή η Google να μην έχει καν τις σελίδες σου. Αυτό το ελέγχεις μόνος σου σε δέκα δευτερόλεπτα, και το εξηγούμε βήμα βήμα στο ',
       {text: 'γιατί δεν εμφανίζεται η ιστοσελίδα σου στην Google', href: '/el/blog/giati-den-emfanizetai-i-istoselida-sto-google'},
       '.',
     ]},

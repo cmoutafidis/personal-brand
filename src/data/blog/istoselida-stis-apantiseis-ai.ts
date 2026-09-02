@@ -55,7 +55,7 @@ const post: BlogPost = {
       ': κάτι που είναι γραμμένο, ελέγξιμο και μετρήσιμο, και κάτι που δεν το ελέγχει ούτε αυτός που στο πουλάει.',
     ]},
     {type: 'paragraph', text: [
-      'Τεκμηριωμένο είναι το ποιοι αυτόματοι επισκέπτες περνούν από την ιστοσελίδα σου, με ποιο όνομα δηλώνεται ο καθένας, ποιον διακόπτη κλείνει ποιο αρχείο, και τι ακριβώς μετράνε τα εργαλεία της Google και της Microsoft. Μάρκετινγκ είναι κάθε πρόταση της μορφής «θα σε αναφέρει το ChatGPT». Κανένα σύστημα δεν το υπόσχεται αυτό — η ίδια η Google γράφει για τις δικές της AI λειτουργίες: ',
+      'Τεκμηριωμένο είναι το ποιοι αυτόματοι επισκέπτες περνούν από την ιστοσελίδα σου, με ποιο όνομα δηλώνεται ο καθένας, ποιον διακόπτη κλείνει ποιο αρχείο, και τι ακριβώς μετράνε τα εργαλεία της Google και της Microsoft. Μάρκετινγκ είναι κάθε πρόταση της μορφής «θα σε αναφέρει το ChatGPT». Κανένα σύστημα δεν το υπόσχεται αυτό. Η ίδια η Google γράφει για τις δικές της AI λειτουργίες: ',
       {text: "«Indexing and serving isn't guaranteed.»", href: G_AI},
     ]},
     {type: 'paragraph', text: [
@@ -72,7 +72,7 @@ const post: BlogPost = {
       {q: 'Αν μπλοκάρω το GPTBot, βγαίνω από την αναζήτηση του ChatGPT;', a: 'Όχι. Είναι δύο διαφορετικά ρομπότ με διαφορετική δουλειά: το GPTBot αφορά την εκπαίδευση μοντέλων, το OAI-SearchBot την αναζήτηση. Η OpenAI γράφει ρητά ότι κάθε ρύθμιση είναι ανεξάρτητη από τις άλλες.'},
       {q: 'Το Google-Extended κλείνει τα AI Overviews;', a: 'Όχι, και αυτό είναι το πιο συχνό λάθος της αγοράς. Το Google-Extended αφορά την εκπαίδευση και τη θεμελίωση των μοντέλων Gemini, και η Google γράφει ότι δεν επηρεάζει ούτε τη συμπερίληψη ούτε την κατάταξη στην Αναζήτηση. Τα AI Overviews και το AI Mode ελέγχονται από άλλα εργαλεία.'},
       {q: 'Βλέπω πουθενά πόση επισκεψιμότητα μου φέρνουν οι AI απαντήσεις;', a: 'Στο Search Console. Από τις 31 Αυγούστου 2026 η αναφορά generative AI είναι διαθέσιμη σε όλους τους ιστότοπους παγκοσμίως και δείχνει πόσες φορές εμφανίστηκαν σύνδεσμοι προς εσένα μέσα σε ένα generative AI χαρακτηριστικό. Δεν είναι δεύτερη ανεξάρτητη μέτρηση: αντλεί από τον ίδιο τύπο αναζήτησης Web της κανονικής αναφοράς επιδόσεων.'},
-      {q: 'Το robots.txt εμποδίζει τα AI να διαβάσουν τη σελίδα μου;', a: 'Όχι με βεβαιότητα. Είναι αίτημα, όχι κλειδαριά. Η επίσημη σελίδα του πρωτοκόλλου γράφει ότι τα ρομπότ μπορούν να το αγνοήσουν, και οι fetchers που ενεργοποιεί ο ίδιος ο χρήστης — της Google, της OpenAI, της Perplexity — γενικά δεν το τηρούν.'},
+      {q: 'Το robots.txt εμποδίζει τα AI να διαβάσουν τη σελίδα μου;', a: 'Όχι με βεβαιότητα. Είναι αίτημα, όχι κλειδαριά. Η επίσημη σελίδα του πρωτοκόλλου γράφει ότι τα ρομπότ μπορούν να το αγνοήσουν, και οι fetchers που ενεργοποιεί ο ίδιος ο χρήστης (της Google, της OpenAI, της Perplexity) γενικά δεν το τηρούν.'},
     ]},
 
     {type: 'heading', text: 'Τι λέει η ίδια η Google ότι χρειάζεται, και τι λέει ότι δεν χρειάζεται'},
@@ -96,7 +96,7 @@ const post: BlogPost = {
     {type: 'paragraph', text: [
       'Ένα πράγμα όμως αλλάζει στ’ αλήθεια, και δεν είναι αυτό που πουλιέται. Η Google γράφει ότι και τα AI Overviews και το AI Mode μπορεί να χρησιμοποιήσουν τεχνική «query fan-out»: ',
       {text: 'Both AI Overviews and AI Mode may use a "query fan-out" technique — issuing multiple related searches across subtopics and data sources — to develop a response.', href: G_AI},
-      ' Μία ερώτηση του χρήστη γίνεται πολλές παράλληλες αναζητήσεις σε υποθέματα. Το συμπέρασμα που βγάζω εγώ από αυτό — δικό μου, όχι της Google — είναι ότι μια σελίδα που απαντά καθαρά σε ένα συγκεκριμένο υποερώτημα έχει περισσότερους τρόπους να βρεθεί από μια σελίδα που λέει λίγο από όλα. Αυτό δεν είναι νέα τεχνική· είναι ο ίδιος λόγος για τον οποίο μια σελίδα ανά θέμα δούλευε και πριν.',
+      ' Μία ερώτηση του χρήστη γίνεται πολλές παράλληλες αναζητήσεις σε υποθέματα. Το συμπέρασμα που βγάζω εγώ από αυτό (δικό μου, όχι της Google) είναι ότι μια σελίδα που απαντά καθαρά σε ένα συγκεκριμένο υποερώτημα έχει περισσότερους τρόπους να βρεθεί από μια σελίδα που λέει λίγο από όλα. Αυτό δεν είναι νέα τεχνική· είναι ο ίδιος λόγος για τον οποίο μια σελίδα ανά θέμα δούλευε και πριν.',
     ]},
     {type: 'paragraph', text: [
       'Και το τελευταίο, που το κρατάς για κάθε συζήτηση περί εγγυήσεων: ',
@@ -107,12 +107,12 @@ const post: BlogPost = {
     {type: 'paragraph', text: [
       'Η αγορά μιλάει για «μπλοκάρισμα των AI» σαν να υπάρχει ένας διακόπτης. Είναι πέντε, κάνουν διαφορετικά πράγματα, και ο πιο διάσημος από όλους δεν κάνει αυτό που νομίζει ο κόσμος ότι κάνει.',
     ]},
-    {type: 'table', caption: 'Τι ελέγχει ο καθένας — και τι δεν ελέγχει.', head: ['Εργαλείο', 'Τι ελέγχει', 'Τι δεν ελέγχει'], rows: [
-      [[{text: 'robots.txt για Googlebot', strong: true}], ['Το αν ανιχνεύεται η ιστοσελίδα σου για την Αναζήτηση — και η AI είναι ενσωματωμένη μέσα στην Αναζήτηση'], ['Δεν κρατάει μια σελίδα εκτός Google· η ίδια η τεκμηρίωση λέει ότι δεν είναι μηχανισμός για αυτό']],
+    {type: 'table', caption: 'Τι ελέγχει ο καθένας, και τι δεν ελέγχει.', head: ['Εργαλείο', 'Τι ελέγχει', 'Τι δεν ελέγχει'], rows: [
+      [[{text: 'robots.txt για Googlebot', strong: true}], ['Το αν ανιχνεύεται η ιστοσελίδα σου για την Αναζήτηση, μέσα στην οποία είναι ενσωματωμένη και η AI'], ['Δεν κρατάει μια σελίδα εκτός Google· η ίδια η τεκμηρίωση λέει ότι δεν είναι μηχανισμός για αυτό']],
       [[{text: 'noindex', strong: true}], ['Το αν η σελίδα υπάρχει καθόλου στα αποτελέσματα'], ['Δεν είναι επιλεκτικό: ό,τι φεύγει από την Αναζήτηση φεύγει και από τις AI λειτουργίες της']],
       [[{text: 'nosnippet και max-snippet', strong: true}], ['Το απόσπασμα, και επιπλέον το πόσο από το περιεχόμενο μπορεί να χρησιμοποιηθεί ως άμεση είσοδος στα AI Overviews και στο AI Mode'], ['Δεν εμποδίζει την ανίχνευση ούτε την ευρετηρίαση της σελίδας']],
       [[{text: 'Search generative AI control', strong: true}], ['Το αν το περιεχόμενό σου μπορεί να εμφανιστεί στα generative AI χαρακτηριστικά της Αναζήτησης· η προεπιλογή σε κάθε property είναι η συμπερίληψη'], ['Δεν αφορά την εκπαίδευση μοντέλων και δεν χρησιμοποιείται ως σήμα κατάταξης αλλού μέσα στην Αναζήτηση']],
-      [[{text: 'Google-Extended', strong: true}], ['Την εκπαίδευση και το grounding των μοντέλων Gemini'], ['Δεν επηρεάζει ούτε τη συμπερίληψη ούτε την κατάταξη στην Google Αναζήτηση — και δεν είναι καν crawler']],
+      [[{text: 'Google-Extended', strong: true}], ['Την εκπαίδευση και το grounding των μοντέλων Gemini'], ['Δεν επηρεάζει ούτε τη συμπερίληψη ούτε την κατάταξη στην Google Αναζήτηση, και δεν είναι καν crawler']],
     ]},
     {type: 'paragraph', text: [
       'Η πρώτη γραμμή είναι πιο σημαντική απ’ όσο φαίνεται, γιατί εξηγεί γιατί δεν υπάρχει ξεχωριστός διακόπτης «AI» στη Google: «AI is built into Search and integral to how Search functions, which is why robots.txt directives for Googlebot is the control for site owners to manage access to how their sites are crawled for Search.» (',
@@ -138,7 +138,7 @@ const post: BlogPost = {
       {text: "«This control only affects whether your content can appear in certain Search generative AI features; this control isn't used as a ranking or inclusion signal affecting other parts of Search.»", href: G_SC_CONTROL},
       ' Η ίδια σελίδα σημειώνει ότι ',
       {text: 'Content will be excluded within 1-2 days after the control goes live, but some content may take longer to be excluded due to caching and propagation across Google systems.', href: G_SC_CONTROL},
-      ' — τεκμηριωμένη συμπεριφορά της Google, όχι χρονοδιάγραμμα δικής μας δουλειάς.',
+      ' Έτσι το τεκμηριώνει η ίδια η Google. Δεν είναι χρονοδιάγραμμα δικής μας δουλειάς.',
     ]},
     {type: 'paragraph', text: [
       'Και ο πέμπτος, το Google-Extended, είναι εκείνος που η αγορά χρησιμοποιεί λάθος πιο συχνά από κάθε άλλον. Η βοήθεια του Search Console λέει ρητά ότι ο διακόπτης της Αναζήτησης ',
@@ -159,12 +159,12 @@ const post: BlogPost = {
       {text: 'Google user-triggered fetchers', href: G_FETCHERS},
       '). Ο παρακάτω πίνακας γράφει, για κάθε όνομα, τι λέει ο ίδιος ο κάτοχός του ότι κάνει.',
     ]},
-    {type: 'table', caption: 'Ποιος περνάει, με ποιο όνομα, και για ποια δουλειά — σύμφωνα με την τεκμηρίωση του καθενός.', head: ['Ποιος', 'Όνομα στο robots.txt', 'Για τι είναι'], rows: [
-      [['Google'], [{text: 'Googlebot', strong: true}], ['Η ανίχνευση για την Αναζήτηση — και άρα ο έλεγχος για ό,τι τρέχει μέσα της, AI Overviews και AI Mode συμπεριλαμβανομένων']],
+    {type: 'table', caption: 'Ποιος περνάει, με ποιο όνομα, και για ποια δουλειά (σύμφωνα με την τεκμηρίωση του καθενός).', head: ['Ποιος', 'Όνομα στο robots.txt', 'Για τι είναι'], rows: [
+      [['Google'], [{text: 'Googlebot', strong: true}], ['Η ανίχνευση για την Αναζήτηση, και άρα ο έλεγχος για ό,τι τρέχει μέσα της, AI Overviews και AI Mode συμπεριλαμβανομένων']],
       [['Google'], [{text: 'Google-Extended', strong: true}], ['Μόνο token ελέγχου για εκπαίδευση και grounding των Gemini· χωρίς δικό του user agent']],
       [['Google'], [{text: 'Google-GeminiNotebook', strong: true}], ['Ο σημερινός fetcher του NotebookLM· το Google-NotebookLM είναι το παλιό όνομα']],
       [['OpenAI'], [{text: 'OAI-SearchBot', strong: true}], ['Η εμφάνιση στα αποτελέσματα αναζήτησης του ChatGPT']],
-      [['OpenAI'], [{text: 'GPTBot', strong: true}], ['Η εκπαίδευση των foundation models — όχι η αναζήτηση']],
+      [['OpenAI'], [{text: 'GPTBot', strong: true}], ['Η εκπαίδευση των foundation models· η αναζήτηση περνά από το OAI-SearchBot']],
       [['OpenAI'], [{text: 'ChatGPT-User', strong: true}], ['Ενεργοποιείται από ενέργεια χρήστη· δεν κρίνει το αν εμφανίζεσαι στην αναζήτηση']],
       [['OpenAI'], [{text: 'OAI-AdsBot', strong: true}], ['Ελέγχει σελίδες προορισμού που υποβλήθηκαν ως διαφημίσεις στο ChatGPT']],
       [['Anthropic'], [{text: 'Claude-SearchBot', strong: true}], ['Ευρετηρίαση περιεχομένου για την αναζήτηση']],
@@ -178,7 +178,7 @@ const post: BlogPost = {
       {text: 'OpenAI crawlers', href: OPENAI_BOTS},
       '). Πρόσεξε τι υπόσχεται και τι δεν υπόσχεται: ',
       {text: 'Sites that are opted out of OAI-SearchBot will not be shown in ChatGPT search answers, though can still appear as navigational links.', href: OPENAI_BOTS},
-      ' Δηλαδή σου εγγυάται μόνο την αρνητική κατεύθυνση — ότι αν εξαιρεθείς δεν θα φαίνεσαι. Δεν υπάρχει πουθενά η αντίστροφη υπόσχεση.',
+      ' Δηλαδή σου εγγυάται μόνο την αρνητική κατεύθυνση: αν εξαιρεθείς, δεν θα φαίνεσαι. Δεν υπάρχει πουθενά η αντίστροφη υπόσχεση.',
     ]},
     {type: 'paragraph', text: [
       'Το ChatGPT-User είναι η δεύτερη παγίδα της ίδιας σελίδας: ',
@@ -229,7 +229,7 @@ const post: BlogPost = {
       '). Το «if at all» είναι η ουσία: το πρωτόκολλο περιγράφει ένα αίτημα προς καλόπιστους πελάτες.',
     ]},
     {type: 'paragraph', text: [
-      'Οι μεγάλοι το τηρούν στις αυτόματες σαρώσεις — η Google γράφει για τους κοινούς crawlers της «They always respect robots.txt rules for automatic crawls.» — αλλά υπάρχουν δύο κατηγορίες που δεν το κάνουν. Η πρώτη είναι όσα ενεργοποιεί ο ίδιος ο χρήστης: ',
+      'Οι μεγάλοι το τηρούν στις αυτόματες σαρώσεις (η Google γράφει για τους κοινούς crawlers της «They always respect robots.txt rules for automatic crawls.»), αλλά υπάρχουν δύο κατηγορίες που δεν το κάνουν. Η πρώτη είναι όσα ενεργοποιεί ο ίδιος ο χρήστης: ',
       {text: 'Because the fetch was requested by a user, these fetchers generally ignore robots.txt rules.', href: G_FETCHERS},
       ' Η δεύτερη είναι οι ειδικές περιπτώσεις: ',
       {text: "«For example, AdsBot ignores the global robots.txt user agent ( * ) with the ad publisher's permission.»", href: G_CRAWLERS},
@@ -254,7 +254,7 @@ const post: BlogPost = {
       ' Και η Apple, στην ίδια πρόταση που είδες πιο πάνω, λέει ότι το Applebot δεν το ακολουθεί. Τρεις εταιρείες, τρεις συμπεριφορές, μία γραμμή κειμένου.',
     ]},
     {type: 'paragraph', text: [
-      'Στην ίδια σελίδα προδιαγραφών υπάρχουν και δύο όρια που τα βρίσκει κανείς μόνο όταν τον πονέσουν. Η Google υποστηρίζει τέσσερα μόνο πεδία — user-agent, allow, disallow, sitemap — και επιβάλλει όριο μεγέθους: ',
+      'Στην ίδια σελίδα προδιαγραφών υπάρχουν και δύο όρια που τα βρίσκει κανείς μόνο όταν τον πονέσουν. Η Google υποστηρίζει τέσσερα μόνο πεδία (user-agent, allow, disallow, sitemap) και επιβάλλει όριο μεγέθους: ',
       {text: 'Google enforces a robots.txt file size limit of 500 kibibytes (KiB).', href: G_ROBOTS_SPEC},
       ' Ό,τι γράψεις μετά από εκεί δεν διαβάζεται. Ένα robots.txt που έχει μεγαλώσει με τα χρόνια, με δεκάδες κανόνες για δεκάδες ρομπότ, είναι ακριβώς το αρχείο που κινδυνεύει να έχει τη σημαντική του γραμμή στο τέλος.',
     ]},
@@ -275,19 +275,19 @@ const post: BlogPost = {
       {text: 'Generative AI performance report', href: G_SC_GENAI},
       '). Και τι δεν είναι: δεύτερη, ανεξάρτητη πηγή δεδομένων. Η ίδια σελίδα γράφει ότι ',
       {text: 'The generative AI performance report includes data from the Web search type in the Performance report (Search results)', href: G_SC_GENAI},
-      ' — αντλεί από τα ίδια νούμερα, δεν προσθέτει καινούργια. Μην αθροίσεις τα δύο, και μην αφήσεις κάποιον να στα αθροίσει σε αναφορά.',
+      '. Η αναφορά αντλεί από τα ίδια νούμερα, δεν προσθέτει καινούργια. Μην αθροίσεις τα δύο, και μην αφήσεις κάποιον να στα αθροίσει σε αναφορά.',
     ]},
     {type: 'paragraph', text: [
       'Δύο ακόμη λεπτομέρειες που αλλάζουν το πώς διαβάζεις τον πίνακα. Πρώτη: ',
       {text: "«Search Console doesn't include data from experiments in Search Labs»", href: G_SC_GENAI},
-      ' — ό,τι έχεις δει σε πειραματική λειτουργία δεν μετριέται εκεί. Δεύτερη, για το AI Mode: ',
+      '. Ό,τι έχεις δει σε πειραματική λειτουργία δεν μετριέται εκεί. Δεύτερη, για το AI Mode: ',
       {text: 'Clicking a link to an external page in AI Mode counts as a click.', href: G_SC_IMPR},
       ' Αν θέλεις να καταλάβεις τι σου λέει και τι δεν σου λέει αυτό το εργαλείο συνολικά, υπάρχει χωριστό κείμενο για ',
       {text: 'το Google Search Console', href: A_GSC},
       '.',
     ]},
 
-    {type: 'heading', text: 'Το Bing μετράει αλλιώς — και το γράφει το ίδιο'},
+    {type: 'heading', text: 'Το Bing μετράει αλλιώς, και το γράφει το ίδιο'},
     {type: 'paragraph', text: [
       'Η δεύτερη μετρήσιμη πηγή δεν είναι η Google. Από τον Φεβρουάριο του 2026 τα Bing Webmaster Tools έχουν αναφορά AI Performance: «AI Performance extends those insights to AI-generated answers by showing where and how content from your site is referenced as a source across AI experiences.» (',
       {text: 'Bing Webmaster Blog', href: BING_AIPERF},
@@ -308,7 +308,7 @@ const post: BlogPost = {
       ' Άρα ένας αριθμός αναφορών δεν είναι θέση, δεν είναι κατάταξη, και δεν είναι πλήρης καταγραφή. Κάθε αναφορά που σου το παρουσιάζει σαν «ανεβήκαμε», το παρουσιάζει λάθος.',
     ]},
     {type: 'paragraph', text: [
-      'Από τον Ιούνιο του 2026 υπάρχουν και οι μετρήσεις Intents, Topics, Citation Share και Compare. Η Microsoft ορίζει τη βάση τους καθαρά — «In AI-generated answers, grounding refers to the source material and web evidence the system uses to support and cite its response.» — αλλά παραδέχεται και το στάδιο: ',
+      'Από τον Ιούνιο του 2026 υπάρχουν και οι μετρήσεις Intents, Topics, Citation Share και Compare. Η Microsoft ορίζει τη βάση τους καθαρά: «In AI-generated answers, grounding refers to the source material and web evidence the system uses to support and cite its response.» Παραδέχεται όμως και το στάδιο: ',
       {text: 'During the preview phase, some labels may still be broad', href: BING_INSIGHTS},
       ' Είναι εργαλεία σε προεπισκόπηση. Χρήσιμα για να δεις κατεύθυνση, όχι για να χτίσεις πάνω τους στόχο.',
     ]},
@@ -319,7 +319,7 @@ const post: BlogPost = {
       {text: 'While there’s no secret strategy for being selected by AI systems, success starts with content that is fresh, authoritative, structured, and semantically clear.', href: MS_ADS},
     ]},
 
-    {type: 'heading', text: 'Δύο προμηθευτές, δύο απαντήσεις για το schema — και οι δύο σωστές'},
+    {type: 'heading', text: 'Δύο προμηθευτές, δύο απαντήσεις για το schema, και οι δύο σωστές'},
     {type: 'paragraph', text: [
       'Εδώ βρίσκεται η καλύτερη απόδειξη ότι δεν υπάρχει ένας καθολικός κανόνας. Η Google γράφει για τα δικά της AI χαρακτηριστικά ότι δεν χρειάζεσαι ειδικό schema.org structured data. Η Microsoft, για τα δικά της, γράφει ότι το δομημένο και σημασιολογικά καθαρό περιεχόμενο είναι εκεί που αρχίζει η επιτυχία. Καμία από τις δύο δεν λέει ψέματα: ',
       {text: 'η καθεμία περιγράφει το δικό της σύστημα', strong: true},
@@ -354,7 +354,7 @@ const post: BlogPost = {
       [{text: 'Μου υπόσχεσαι εμφάνιση ή μου υπόσχεσαι δουλειά;', strong: true}, ' Η μία είναι αδύνατη και το γράφουν και η Google και η Microsoft. Η άλλη είναι απολύτως εύλογη και περιγράφεται σε συγκεκριμένα βήματα.'],
       [{text: 'Ποιον διακόπτη ακριβώς θα αγγίξεις;', strong: true}, ' Αν η απάντηση είναι «θα βάλουμε το Google-Extended για να μπεις στα AI Overviews», η δουλειά είναι λάθος πριν καν ξεκινήσει.'],
       [{text: 'Πού θα το δω;', strong: true}, ' Υπάρχουν δύο μετρήσιμα σημεία σήμερα, το Search Console και τα Bing Webmaster Tools, και τα δύο ανήκουν σε εσένα. Ένα στιγμιότυπο οθόνης από μια συνομιλία δεν είναι μέτρηση: το ίδιο ερώτημα δίνει άλλη απάντηση σε άλλον χρήστη και σε άλλη στιγμή.'],
-      [{text: 'Τι θα χαλάσει αν το κάνουμε;', strong: true}, ' Κάθε περιοριστική ρύθμιση έχει κόστος που το γράφουν οι ίδιοι οι πάροχοι — η Anthropic λέει ρητά ότι ο αποκλεισμός μπορεί να μειώσει την ορατότητα, και η Google ότι οι πιο περιοριστικές άδειες περιορίζουν το πώς προβάλλεται το περιεχόμενό σου.'],
+      [{text: 'Τι θα χαλάσει αν το κάνουμε;', strong: true}, ' Κάθε περιοριστική ρύθμιση έχει κόστος που το γράφουν οι ίδιοι οι πάροχοι: η Anthropic λέει ρητά ότι ο αποκλεισμός μπορεί να μειώσει την ορατότητα, και η Google ότι οι πιο περιοριστικές άδειες περιορίζουν το πώς προβάλλεται το περιεχόμενό σου.'],
     ]},
 
     {type: 'heading', text: 'Τι μένει, πρακτικά'},
@@ -362,7 +362,7 @@ const post: BlogPost = {
       'Χωρίς καινούργια εργαλεία, χωρίς καινούργια αρχεία και χωρίς καμία υπόσχεση, η λίστα είναι μικρή και έχει σειρά.',
     ]},
     {type: 'list', ordered: true, items: [
-      ['Άνοιξε το robots.txt σου και διάβασέ το ολόκληρο. Ψάξε γραμμές που γράφτηκαν για ένα ρομπότ και εφαρμόζονται σε άλλο — και θυμήσου την περίπτωση της Apple, όπου ένας κανόνας για το Googlebot ισχύει και για το Applebot.'],
+      ['Άνοιξε το robots.txt σου και διάβασέ το ολόκληρο. Ψάξε γραμμές που γράφτηκαν για ένα ρομπότ και εφαρμόζονται σε άλλο. Και θυμήσου την περίπτωση της Apple, όπου ένας κανόνας για το Googlebot ισχύει και για το Applebot.'],
       ['Δες αν κάποια σελίδα στέλνει nosnippet ή max-snippet από παλιά. Σήμερα αυτές οι ετικέτες κόβουν και τη χρήση του περιεχομένου ως άμεσης εισόδου στα AI Overviews και στο AI Mode.'],
       ['Μπες στις ρυθμίσεις του Search Console και δες πού είναι ο διακόπτης Search generative AI control. Η προεπιλογή είναι η συμπερίληψη· αν είναι αλλιώς, κάποιος το άλλαξε.'],
       ['Άνοιξε την αναφορά generative AI performance. Είναι διαθέσιμη παντού από τις 31 Αυγούστου 2026 και αντλεί από τον τύπο αναζήτησης Web, οπότε διάβασέ τη ως ανάλυση, όχι ως πρόσθεση.'],

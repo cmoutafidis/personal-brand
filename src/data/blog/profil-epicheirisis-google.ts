@@ -60,7 +60,7 @@ const post: BlogPost = {
     { type: 'paragraph', text: [
       'Το προφίλ της επιχείρησής σου στην Google δεν είναι φόρμα που συμπληρώνεις. Είναι ',
       {text: 'σύνθεση', strong: true},
-      ': ένα κομμάτι το γράφεις εσύ, ένα κομμάτι οι πελάτες σου, ένα κομμάτι το συμπληρώνει η Google από αλλού, και ένα κομμάτι μπορεί να το προτείνει οποιοσδήποτε περνάει από τον χάρτη. Η ίδια το λέει καθαρά: «Information in profiles is compiled from a variety of sources» — και από κάτω τις απαριθμεί (',
+      ': ένα κομμάτι το γράφεις εσύ, ένα κομμάτι οι πελάτες σου, ένα κομμάτι το συμπληρώνει η Google από αλλού, και ένα κομμάτι μπορεί να το προτείνει οποιοσδήποτε περνάει από τον χάρτη. Η ίδια το λέει καθαρά: «Information in profiles is compiled from a variety of sources». Και από κάτω τις απαριθμεί (',
       {text: 'πηγές πληροφοριών προφίλ', href: GBP_SOURCES},
       ').',
     ]},
@@ -70,12 +70,12 @@ const post: BlogPost = {
 
     { type: 'note', text: [
       {text: 'Έλεγχος στοιχείων: 2 Σεπτεμβρίου 2026.', strong: true},
-      ' Κάθε πρόταση της Google που παρατίθεται ελέγχθηκε εκείνη τη μέρα στη σελίδα που τη συνοδεύει. Οι χρόνοι που θα διαβάσεις είναι δικοί της, όπως τους δημοσιεύει η ίδια — δεν είναι δικές μας υποσχέσεις.',
+      ' Κάθε πρόταση της Google που παρατίθεται ελέγχθηκε εκείνη τη μέρα στη σελίδα που τη συνοδεύει. Οι χρόνοι που θα διαβάσεις είναι δικοί της, όπως τους δημοσιεύει η ίδια. Δεν είναι δικές μας υποσχέσεις.',
     ]},
 
     { type: 'faq', heading: 'Σύντομες απαντήσεις', items: [
-      {q: 'Ποιος μπορεί να αλλάξει τα στοιχεία της επιχείρησής μου;', a: 'Τρεις. Εσύ, οι χρήστες του Google Maps με πρόταση αλλαγής, και η ίδια η Google. Η Google γράφει ότι αν κάποιες πηγές αναφέρουν πως τα στοιχεία σου είναι λάθος ή παλιά, μπορεί να ενημερώσει το προφίλ μόνη της — και ότι δεν μπορείς να διαχειριστείς όλες τις δικές της ενημερώσεις μέσα από το προφίλ.'},
-      {q: 'Μπορώ να διαγράψω μια κακή κριτική;', a: 'Όχι. Δεν διαγράφεις κριτική άλλου και δεν επικοινωνείς με όποιον την έγραψε. Μπορείς να την αναφέρεις, αλλά επιλέξιμες για αφαίρεση είναι μόνο όσες παραβιάζουν τις πολιτικές της Google — και η Google λέει ρητά να μην αναφέρεις μια κριτική επειδή διαφωνείς μαζί της.'},
+      {q: 'Ποιος μπορεί να αλλάξει τα στοιχεία της επιχείρησής μου;', a: 'Τρεις. Εσύ, οι χρήστες του Google Maps με πρόταση αλλαγής, και η ίδια η Google. Η Google γράφει ότι αν κάποιες πηγές αναφέρουν πως τα στοιχεία σου είναι λάθος ή παλιά, μπορεί να ενημερώσει το προφίλ μόνη της. Γράφει επίσης ότι δεν μπορείς να διαχειριστείς όλες τις δικές της ενημερώσεις μέσα από το προφίλ.'},
+      {q: 'Μπορώ να διαγράψω μια κακή κριτική;', a: 'Όχι. Δεν διαγράφεις κριτική άλλου και δεν επικοινωνείς με όποιον την έγραψε. Μπορείς να την αναφέρεις, αλλά επιλέξιμες για αφαίρεση είναι μόνο όσες παραβιάζουν τις πολιτικές της Google. Και η ίδια λέει ρητά να μην αναφέρεις μια κριτική επειδή διαφωνείς μαζί της.'},
       {q: 'Γιατί το προφίλ μου λέει ότι είμαι ανοιχτά όλο το εικοσιτετράωρο;', a: 'Το πιθανότερο είναι ότι το δήλωσε κάποιος με πρόσβαση: η οδηγία της Google περιγράφει το εικοσιτετράωρο ως επιλογή που κάνει ο διαχειριστής, ημέρα προς ημέρα. Το ωράριο όμως μπορεί να αλλάξει και χωρίς εσένα, με πρόταση χρήστη ή με αυτόματη ενημέρωση της Google.'},
       {q: 'Πόσο κάνει να φανεί μια αλλαγή που έκανα;', a: 'Η Google γράφει ότι ο έλεγχος παίρνει συνήθως έως δέκα λεπτά, αλλά μπορεί να φτάσει και τις τριάντα ημέρες. Και μπορεί να μην εγκριθεί καθόλου, αν η Google δεν μπορεί να επιβεβαιώσει την ακρίβειά της.'},
       {q: 'Μπορεί να μου κλείσει η Google το προφίλ;', a: 'Ναι. Επιφυλάσσεται ρητά του δικαιώματος να αναστείλει την πρόσβαση σε προφίλ που παραβιάζουν τις οδηγίες της. Οι συνηθισμένες αφορμές δεν είναι εξωτικές: λέξεις-κλειδιά μέσα στο όνομα, δεύτερο προφίλ για την ίδια επιχείρηση, ή διεύθυνση που δεν δέχεται πελάτες.'},
@@ -89,11 +89,11 @@ const post: BlogPost = {
       ' (Google Business Profile). Ίδιο πράγμα, καινούργιο όνομα.',
     ]},
     { type: 'paragraph', text: [
-      'Η σελίδα που εξηγεί από πού μαζεύονται τα στοιχεία είναι μικρή και ασυνήθιστα ειλικρινής. Μία πηγή είναι δημόσιο περιεχόμενο που έχει ήδη σαρώσει η Google — «Publicly-available information, such as crawled web content (e.g., information from a business’ official website)» — και άλλη οι ίδιοι οι χρήστες: «Users who contribute factual information (such as addresses and phone numbers), and content (such as photos and reviews)» (',
+      'Η σελίδα που εξηγεί από πού μαζεύονται τα στοιχεία είναι μικρή και ασυνήθιστα ειλικρινής. Μία πηγή είναι δημόσιο περιεχόμενο που έχει ήδη σαρώσει η Google: «Publicly-available information, such as crawled web content (e.g., information from a business’ official website)». Άλλη πηγή είναι οι ίδιοι οι χρήστες: «Users who contribute factual information (such as addresses and phone numbers), and content (such as photos and reviews)» (',
       {text: 'πηγές πληροφοριών προφίλ', href: GBP_SOURCES},
       '). Πρόσεξε τη δεύτερη: όχι μόνο περιεχόμενο, αλλά ',
       {text: 'πραγματολογικά στοιχεία', strong: true},
-      ' — διευθύνσεις και τηλέφωνα.',
+      ', δηλαδή διευθύνσεις και τηλέφωνα.',
     ]},
     { type: 'paragraph', text: [
       'Η συνέπεια είναι γραμμένη, με παράδειγμα εστιατορίου: «They also might get information you haven’t added, such as a link to your menu or photos customers have uploaded» (',
@@ -102,12 +102,12 @@ const post: BlogPost = {
     ]},
 
     { type: 'table', caption: 'Ποιος ορίζει τι στο Επιχειρηματικό προφίλ σου.', head: ['Στοιχείο', 'Ποιος το ορίζει', 'Τι μπορείς να κάνεις εσύ'], rows: [
-      [['Όνομα, κατηγορία, διεύθυνση, τηλέφωνο'], ['Εσύ, εφόσον έχεις επαληθεύσει την επιχείρηση'], ['Τα επεξεργάζεσαι — αλλά κάθε αλλαγή περνά από έλεγχο πριν βγει']],
+      [['Όνομα, κατηγορία, διεύθυνση, τηλέφωνο'], ['Εσύ, εφόσον έχεις επαληθεύσει την επιχείρηση'], ['Τα επεξεργάζεσαι, αλλά κάθε αλλαγή περνά από έλεγχο πριν βγει']],
       [['Ωράριο λειτουργίας'], ['Εσύ· και χρήστες με πρόταση αλλαγής· και η Google με αυτόματη ενημέρωση'], ['Το δηλώνεις, και το ξαναδηλώνεις αν αλλάξει χωρίς εσένα']],
       [['Φωτογραφίες που ανέβασαν πελάτες'], ['Οι πελάτες'], ['Ζητάς αφαίρεση αν παραβιάζουν πολιτική. Δεν τις διαγράφεις εσύ']],
       [['Κριτικές και βαθμολογία'], ['Οι πελάτες'], ['Απαντάς δημόσια. Αναφέρεις μόνο ό,τι παραβιάζει πολιτική']],
       [['Χαρακτηριστικά (attributes)'], ['Άλλα εσύ, άλλα οι πελάτες που σε επισκέπτονται'], ['Επεξεργάζεσαι μόνο όσα επιτρέπει η χώρα και η κατηγορία σου']],
-      [['Σύνδεσμοι υπηρεσιών, π.χ. κράτησης'], ['Τρίτοι συνεργάτες ή αυτοματοποιημένα δεδομένα της Google'], ['Συχνά τίποτα — εμφανίζονται μόνοι τους']],
+      [['Σύνδεσμοι υπηρεσιών, π.χ. κράτησης'], ['Τρίτοι συνεργάτες ή αυτοματοποιημένα δεδομένα της Google'], ['Συχνά τίποτα· εμφανίζονται μόνοι τους']],
       [['Προειδοποίηση σε αργία ότι το ωράριο ίσως διαφέρει'], ['Η Google'], ['Δηλώνεις ειδικές ώρες, ώστε το μήνυμα να μη χρειάζεται']],
     ]},
 
@@ -120,7 +120,7 @@ const post: BlogPost = {
     { type: 'paragraph', text: [
       'Υπάρχει και τρίτη έκβαση, πέρα από «πέρασε» και «περιμένει»: «Not approved: Google might not approve changes if it can’t confirm its accuracy.» (',
       {text: 'μη εγκεκριμένες αλλαγές', href: GBP_EDITS},
-      '). Μια σωστή αλλαγή, δηλαδή, μπορεί να μην περάσει επειδή η Google δεν βρήκε πώς να την επιβεβαιώσει. Αν αλλάζεις διεύθυνση ή όνομα, βοηθάει να έχει αλλάξει ήδη στην ιστοσελίδα σου, στο τιμολόγιο και στην πρόσοψη — εκεί κοιτάει.',
+      '). Μια σωστή αλλαγή, δηλαδή, μπορεί να μην περάσει επειδή η Google δεν βρήκε πώς να την επιβεβαιώσει. Αν αλλάζεις διεύθυνση ή όνομα, βοηθάει να έχει αλλάξει ήδη στην ιστοσελίδα σου, στο τιμολόγιο και στην πρόσοψη. Εκεί κοιτάει.',
     ]},
     { type: 'paragraph', text: [
       'Τίποτα από αυτά δεν σου είναι διαθέσιμο χωρίς επαλήθευση: «To edit your business info on Google, such as business name or business hours, and interact with customers, you need to verify your business.» (',
@@ -132,7 +132,7 @@ const post: BlogPost = {
     { type: 'paragraph', text: [
       'Δεν χρειάζεται να έχεις καμία σχέση με μια επιχείρηση για να προτείνεις αλλαγή στα στοιχεία της: «You can add missing information, edit attributes, or report incorrect attributes for places in Google Maps» (',
       {text: 'επεξεργασία στοιχείων στο Maps', href: MAPS_EDIT},
-      '). Και δεν είναι μόνο μικρολεπτομέρειες — στην ίδια σελίδα, ανάμεσα σε όσα μπορεί να αλλάξει ένας τρίτος, είναι και το ωράριο, «You can add, edit, or report when the place is open each day of the week», ενώ στις ίδιες επιλογές υπάρχει και το «Place closed or not here» (',
+      '). Και δεν είναι μόνο μικρολεπτομέρειες: στην ίδια σελίδα, ανάμεσα σε όσα μπορεί να αλλάξει ένας τρίτος, είναι και το ωράριο, «You can add, edit, or report when the place is open each day of the week», ενώ στις ίδιες επιλογές υπάρχει και το «Place closed or not here» (',
       {text: 'τι μπορεί να αλλάξει ένας χρήστης', href: MAPS_EDIT},
       '). Ημέρα προς ημέρα, από κάποιον που πέρασε έξω και σε βρήκε κλειστό.',
     ]},
@@ -144,7 +144,7 @@ const post: BlogPost = {
       ', σε δύο διαφορετικές σελίδες, και μπερδεύονται συνέχεια: η απόρριψη «γιατί δεν επιβεβαιώνεται η ακρίβεια» αφορά τις δικές σου αλλαγές· η απόρριψη «γιατί αλλάζει ουσιωδώς την επιχείρηση» αφορά τις προτάσεις τρίτων.',
     ]},
     { type: 'paragraph', text: [
-      'Πάνω από όλα αυτά υπάρχει και η Google ως συντάκτης — «If sources report that your profile info is incorrect or outdated, Google may update your profile.» — και η πρόταση που κλείνει τη συζήτηση για το ποιος αποφασίζει είναι «You can’t manage all Google updates through your Business Profile» (',
+      'Πάνω από όλα αυτά υπάρχει και η Google ως συντάκτης: «If sources report that your profile info is incorrect or outdated, Google may update your profile.» Και η πρόταση που κλείνει τη συζήτηση για το ποιος αποφασίζει είναι «You can’t manage all Google updates through your Business Profile» (',
       {text: 'ενημερώσεις από τη Google', href: GBP_UPDATES},
       ').',
     ]},
@@ -156,14 +156,14 @@ const post: BlogPost = {
 
     { type: 'heading', text: 'Το ωράριο: τι είναι δική σου δήλωση και τι όχι' },
     { type: 'paragraph', text: [
-      'Θα ακούσεις ότι το «ανοιχτά όλο το εικοσιτετράωρο» το βάζει μόνο του το σύστημα. Δεν βρήκαμε καμία σελίδα της Google που να το λέει, και η σελίδα που περιγράφει τη ρύθμιση λέει το αντίθετο — είναι ενέργεια του διαχειριστή, ημέρα προς ημέρα: «Each day of the week that your business is open, click Opens at and then 24 hours and then Save.» (',
+      'Θα ακούσεις ότι το «ανοιχτά όλο το εικοσιτετράωρο» το βάζει μόνο του το σύστημα. Δεν βρήκαμε καμία σελίδα της Google που να το λέει, και η σελίδα που περιγράφει τη ρύθμιση λέει το αντίθετο, ότι είναι ενέργεια του διαχειριστή, ημέρα προς ημέρα: «Each day of the week that your business is open, click Opens at and then 24 hours and then Save.» (',
       {text: 'ρύθμιση ωραρίου', href: GBP_HOURS},
       '). Αν λοιπόν το προφίλ σου λέει ότι δεν κλείνεις ποτέ, η πρώτη υπόθεση δεν είναι «φταίει η Google»· είναι «ποιος έχει πρόσβαση εδώ μέσα».',
     ]},
     { type: 'paragraph', text: [
       'Αυτό δεν σημαίνει ότι το ωράριο είναι αποκλειστικά δικό σου. Σημαίνει ότι οι τεκμηριωμένοι τρόποι να αλλάξει χωρίς εσένα είναι τρεις: η πρόταση ενός χρήστη μέσα από τον χάρτη, η αυτόματη ενημέρωση της Google επειδή κάποια πηγή ανέφερε ότι το ωράριο είναι παλιό, και η προειδοποίηση που εμφανίζει η ίδια σε ορισμένες αργίες, λέγοντας στους χρήστες ότι το ωράριό σου ίσως διαφέρει εκείνη τη μέρα (',
       {text: 'αργίες στην Google', href: GBP_HOLIDAYS},
-      '). Η λίστα των αργιών περιλαμβάνει και ελληνικές — δηλαδή αυτό θα το δεις.',
+      '). Η λίστα των αργιών περιλαμβάνει και ελληνικές, δηλαδή αυτό θα το δεις.',
     ]},
     { type: 'paragraph', text: [
       'Για τις προσωρινές αλλαγές υπάρχει ξεχωριστό εργαλείο, ακριβώς για να μην πειράζεις το κανονικό σου ωράριο: «When your hours of operation change for a brief period of time, like for a special event, you can set special hours so that your regular hours don’t change.» (',
@@ -173,7 +173,7 @@ const post: BlogPost = {
     { type: 'paragraph', text: [
       'Έχουν όμως όριο, γραμμένο: «If your business is closed for 7 or more days in a row, or will be closed for an unknown period of time, you should mark your business as Temporarily closed.» (',
       {text: 'όριο ειδικών ωρών', href: GBP_SPECIAL_HOURS},
-      '). Για μια εβδομάδα διακοπών και πάνω δεν βάζεις ειδικές ώρες — σημαίνεις την επιχείρηση προσωρινά κλειστή.',
+      '). Για μια εβδομάδα διακοπών και πάνω δεν βάζεις ειδικές ώρες. Σημαίνεις την επιχείρηση προσωρινά κλειστή.',
     ]},
 
     { type: 'heading', text: 'Τα χαρακτηριστικά που δεν τα γράφεις εσύ' },
@@ -185,12 +185,12 @@ const post: BlogPost = {
     { type: 'paragraph', text: [
       'Υπάρχει και δεύτερος περιορισμός, που εξηγεί γιατί κάποιος σε άλλη χώρα βλέπει ρυθμίσεις που εσύ δεν βλέπεις: «Some attributes can only be changed in certain locations, countries, or business categories.» (',
       {text: 'περιορισμοί ανά χώρα και κατηγορία', href: GBP_ATTRIBUTES},
-      '). Η κατηγορία σου, δηλαδή, δεν καθορίζει μόνο πώς σε καταλαβαίνει η Google — καθορίζει και ποια κουμπιά θα υπάρχουν καν στη διάθεσή σου.',
+      '). Η κατηγορία σου, δηλαδή, δεν καθορίζει μόνο πώς σε καταλαβαίνει η Google· καθορίζει και ποια κουμπιά θα υπάρχουν καν στη διάθεσή σου.',
     ]},
     { type: 'paragraph', text: [
       'Το πιο ακραίο «δεν το έβαλα εγώ» είναι οι σύνδεσμοι υπηρεσιών, που εμφανίζονται αυτόματα: «These links are provided and updated by third-party partners or through automated data from Google.» (',
       {text: 'σύνδεσμοι τοπικής επιχείρησης', href: GBP_LINKS},
-      '). Αν πελάτης σου παραπονεθεί ότι έκανε κράτηση από κουμπί που δεν αναγνωρίζεις, αυτή είναι η εξήγηση — και ο λόγος να κοιτάς το προφίλ με τα μάτια του πελάτη.',
+      '). Αν πελάτης σου παραπονεθεί ότι έκανε κράτηση από κουμπί που δεν αναγνωρίζεις, αυτή είναι η εξήγηση. Είναι και ο λόγος να κοιτάς το προφίλ με τα μάτια του πελάτη.',
     ]},
 
     { type: 'heading', text: 'Μια κακή κριτική: τι δουλεύει και τι όχι' },
@@ -200,29 +200,29 @@ const post: BlogPost = {
       '). Δεν υπάρχει κουμπί διαγραφής, και δεν υπάρχει τρόπος να μιλήσεις στον συντάκτη μέσα από την πλατφόρμα.',
     ]},
     { type: 'paragraph', text: [
-      'Αναφορά μπορείς να κάνεις, με σαφές κριτήριο — «You can report any review, but only those that violate Google policies are eligible for removal.» — και με μια οδηγία που κάνει τη διαφορά ανάμεσα σε αναφορά που εξετάζεται σοβαρά και σε αναφορά που θορυβεί: «Do not report a review just because you disagree with it or dislike it.» (',
+      'Αναφορά μπορείς να κάνεις, με σαφές κριτήριο: «You can report any review, but only those that violate Google policies are eligible for removal.» Υπάρχει και μια οδηγία που κάνει τη διαφορά ανάμεσα σε αναφορά που εξετάζεται σοβαρά και σε αναφορά που θορυβεί: «Do not report a review just because you disagree with it or dislike it.» (',
       {text: 'αναφορά ακατάλληλων κριτικών', href: GBP_REPORT_REVIEWS},
       ').',
     ]},
     { type: 'paragraph', text: [
-      'Αν περιμένεις ότι η Google θα κρίνει ποιος έχει δίκιο, μην περιμένεις — «Google doesn’t get involved in conflict between businesses and customers.» — και αν η κριτική δεν αφαιρεθεί έχεις ',
+      'Αν περιμένεις ότι η Google θα κρίνει ποιος έχει δίκιο, μην περιμένεις: «Google doesn’t get involved in conflict between businesses and customers.» Και αν η κριτική δεν αφαιρεθεί έχεις ',
       {text: 'μία', strong: true},
       ' ευκαιρία ακόμη: «If a flagged review doesn’t qualify for removal, submit a one-time appeal.» (',
       {text: 'ένσταση', href: GBP_REPORT_REVIEWS},
       '). Μία, όχι όσες αντέχεις. Η αξιολόγηση παίρνει συνήθως αρκετές ημέρες.',
     ]},
     { type: 'paragraph', text: [
-      'Το εργαλείο που πραγματικά έχεις είναι η δημόσια απάντηση, και θέλει επαληθευμένη επιχείρηση — «Before you can reply to reviews, you must verify your business.» — ενώ για όσους διστάζουν νομίζοντας ότι εκτίθενται προσωπικά, ισχύει και το «It will appear like your business replied, and your personal name won’t be shown.» (',
+      'Το εργαλείο που πραγματικά έχεις είναι η δημόσια απάντηση, και θέλει επαληθευμένη επιχείρηση: «Before you can reply to reviews, you must verify your business.» Για όσους διστάζουν νομίζοντας ότι εκτίθενται προσωπικά, ισχύει και το «It will appear like your business replied, and your personal name won’t be shown.» (',
       {text: 'διαχείριση κριτικών', href: GBP_MANAGE_REVIEWS},
       '). Απαντάει η επιχείρηση, όχι εσύ ονομαστικά.',
     ]},
     { type: 'paragraph', text: [
-      'Και ο λόγος που η καλή απάντηση αξίζει τον κόπο: ο ίδιος ο συντάκτης μπορεί να επεξεργαστεί ή να διαγράψει τη δική του κριτική οποιαδήποτε στιγμή — η σελίδα του Maps του δίνει «Edit review» και «Delete review» (',
+      'Και ο λόγος που η καλή απάντηση αξίζει τον κόπο: ο ίδιος ο συντάκτης μπορεί να επεξεργαστεί ή να διαγράψει τη δική του κριτική οποιαδήποτε στιγμή. Η σελίδα του Maps του δίνει «Edit review» και «Delete review» (',
       {text: 'επεξεργασία της δικής σου κριτικής', href: MAPS_REVIEWS},
       '). Δεν το ελέγχεις εσύ, αλλά είναι ο μόνος δρόμος από τον οποίο φεύγει μια άδικη κριτική χωρίς παρέμβαση της Google.',
     ]},
     { type: 'paragraph', text: [
-      'Για τις φωτογραφίες ισχύει η ίδια λογική: «If you notice that a photo or video uploaded by a customer violates our policies, you can request its removal.» — και η έκβαση δεν είναι δεδομένη, «The photo or video is then reviewed and may possibly be removed from your Business Profile.» (',
+      'Για τις φωτογραφίες ισχύει η ίδια λογική: «If you notice that a photo or video uploaded by a customer violates our policies, you can request its removal.» Και η έκβαση δεν είναι δεδομένη, «The photo or video is then reviewed and may possibly be removed from your Business Profile.» (',
       {text: 'αναφορά φωτογραφιών', href: GBP_PHOTOS},
       '). Ζητάς αφαίρεση· δεν αφαιρείς.',
     ]},
@@ -240,7 +240,7 @@ const post: BlogPost = {
     { type: 'paragraph', text: [
       'Κάθε ιδιοκτήτης σκέφτεται κάποια στιγμή τη συντόμευση: μια μικρή έκπτωση σε όποιον αφήσει πέντε αστέρια. Η Google το έχει προβλέψει ονομαστικά: «Offering incentives, like free or discounted goods or services, in exchange for customers to post reviews, change reviews, or remove negative reviews is considered fake & misleading content and is strictly prohibited.» (',
       {text: 'κριτικές και κίνητρα', href: GBP_MORE_REVIEWS},
-      '). Μέσα στην ίδια πρόταση χωράει και το «να αφαιρέσει αρνητική κριτική» — δηλαδή και η φιλική διευθέτηση με αντάλλαγμα.',
+      '). Μέσα στην ίδια πρόταση χωράει και το «να αφαιρέσει αρνητική κριτική», δηλαδή και η φιλική διευθέτηση με αντάλλαγμα.',
     ]},
     { type: 'paragraph', text: [
       'Ο κανόνας από πίσω αφορά όλο το Maps: «Contributions to Google Maps should reflect a genuine experience at a place or business.» (',
@@ -248,18 +248,18 @@ const post: BlogPost = {
       '). Δεν είναι κανόνας ποιότητας· είναι κανόνας γνησιότητας. Θετική κριτική από πραγματικό πελάτη είναι εντάξει· θετική κριτική από τον ξάδερφό σου δεν είναι, όσο καλογραμμένη κι αν είναι.',
     ]},
     { type: 'paragraph', text: [
-      'Οι συνέπειες είναι δημοσιευμένες. Το προφίλ μπορεί να πάψει να δέχεται νέες κριτικές — «Business Profile will not be able to receive new reviews or ratings for set period of time» — και να αποκτήσει δημόσιο σήμα ντροπής: «Business Profile will display a warning to let consumers know that fake reviews were removed» (',
+      'Οι συνέπειες είναι δημοσιευμένες. Το προφίλ μπορεί να πάψει να δέχεται νέες κριτικές: «Business Profile will not be able to receive new reviews or ratings for set period of time». Μπορεί επίσης να αποκτήσει δημόσιο σήμα ντροπής: «Business Profile will display a warning to let consumers know that fake reviews were removed» (',
       {text: 'περιορισμοί προφίλ', href: GBP_RESTRICTIONS},
       ').',
     ]},
     { type: 'paragraph', text: [
       'Μια διευκρίνιση που χάνεται εύκολα: οι περιορισμοί αφορούν την επιχείρηση που ',
       {text: 'παραβίασε', strong: true},
-      ' την πολιτική — αυτήν που ζήτησε ή αγόρασε κριτικές. Δεν είναι τιμωρία για επιχείρηση που ',
+      ' την πολιτική, αυτήν που ζήτησε ή αγόρασε κριτικές. Δεν είναι τιμωρία για επιχείρηση που ',
       {text: 'δέχτηκε', strong: true},
       ' πλαστές κριτικές από τρίτον. Αν σου το παρουσιάσουν ανάποδα για να σου πουλήσουν «προστασία», σου λένε ψέματα. Υπάρχει, τέλος, και προειδοποίηση πριν από το χτύπημα: «We will notify business owners via email if we plan to apply a restriction to their profile.» (',
       {text: 'ειδοποίηση πριν τον περιορισμό', href: GBP_RESTRICTIONS},
-      ') — που σημαίνει ότι το email του λογαριασμού πρέπει να το διαβάζει κάποιος δικός σου.',
+      '). Σημαίνει ότι το email του λογαριασμού πρέπει να το διαβάζει κάποιος δικός σου.',
     ]},
 
     { type: 'cta', heading: 'Αν θέλεις να δεις τι δείχνει σήμερα το δικό σου προφίλ', text: 'Το κοιτάμε μαζί με την ιστοσελίδα σου και σου λέμε γραπτά τι είναι δική σου δήλωση, τι το έχει γράψει κάποιος άλλος και τι λείπει.', label: 'Δες τι περιλαμβάνει', href: '/el/offers/website-seo' },
@@ -272,9 +272,9 @@ const post: BlogPost = {
     ]},
     { type: 'paragraph', text: [
       {text: 'Πρώτος: το όνομα.', strong: true},
-      ' «Your name should reflect your business’s real-world name, as used consistently on your storefront, website, stationery, and as known to customers.» — και η συνέπεια, ρητά, «Including unnecessary information in your business name isn’t permitted, and could result in the suspension of your Business Profile.» (',
+      ' «Your name should reflect your business’s real-world name, as used consistently on your storefront, website, stationery, and as known to customers.» Και η συνέπεια, ρητά: «Including unnecessary information in your business name isn’t permitted, and could result in the suspension of your Business Profile.» (',
       {text: 'κανόνας ονόματος', href: GBP_GUIDELINES},
-      '). Δηλαδή το «Επωνυμία — Κατασκευή Ιστοσελίδων Θεσσαλονίκη» δεν είναι έξυπνη κίνηση· είναι εκτεθειμένη κίνηση.',
+      '). Δηλαδή το να προσθέσεις στην επωνυμία σου «Κατασκευή Ιστοσελίδων Θεσσαλονίκη» δεν είναι έξυπνη κίνηση· είναι εκτεθειμένη κίνηση.',
     ]},
     { type: 'paragraph', text: [
       {text: 'Δεύτερος: ένα προφίλ.', strong: true},
@@ -282,7 +282,7 @@ const post: BlogPost = {
       {text: 'ένα προφίλ ανά επιχείρηση', href: GBP_GUIDELINES},
       '). Η ελληνική έκδοση της σελίδας το λέει με τα ίδια λόγια: «Θα πρέπει να υπάρχει μόνο ένα προφίλ ανά επιχείρηση.» (',
       {text: 'ελληνική έκδοση των οδηγιών', href: GBP_GUIDELINES_EL},
-      '). Τα διπλά σπάνια φτιάχνονται με κακή πρόθεση — φτιάχνονται επειδή κάποιος δεν βρήκε τον παλιό λογαριασμό.',
+      '). Τα διπλά σπάνια φτιάχνονται με κακή πρόθεση. Φτιάχνονται επειδή κάποιος δεν βρήκε τον παλιό λογαριασμό.',
     ]},
     { type: 'paragraph', text: [
       {text: 'Τρίτος: η επιλεξιμότητα.', strong: true},
@@ -293,7 +293,7 @@ const post: BlogPost = {
     { type: 'paragraph', text: [
       'Αν το χειρότερο συμβεί, όταν ένα προφίλ αφαιρεθεί ισχύει το «The public can’t go to the profile.» (',
       {text: 'προφίλ σε αναστολή', href: GBP_SUSPENDED},
-      ') — και δεν μπορούν να ενεργήσουν πάνω του ούτε ο ιδιοκτήτης ούτε οι διαχειριστές. Δύο πράγματα αξίζει να τα ξέρεις ',
+      '). Δεν μπορούν να ενεργήσουν πάνω του ούτε ο ιδιοκτήτης ούτε οι διαχειριστές. Δύο πράγματα αξίζει να τα ξέρεις ',
       {text: 'πριν', strong: true},
       ' τα χρειαστείς: «Do not create a new Business Profile for the same business while your appeal is under review.» και, καθαρά πρακτικό, «Once you open the evidence form, you must submit it within 60 minutes or it won’t be attached.» (',
       {text: 'ένσταση και αποδεικτικά', href: GBP_SUSPENDED},
@@ -309,12 +309,12 @@ const post: BlogPost = {
       ').',
     ]},
     { type: 'paragraph', text: [
-      'Στην ίδια πολιτική είναι και η πρόταση που αξίζει να έχεις πρόχειρη σε μια δύσκολη συζήτηση — «Changes or disablement of profile features without the business owner’s consent is prohibited.» — και εκείνη που ξεκαθαρίζει τι δεν επιτρέπεται να σου υποσχεθεί κανείς: «Guarantees top placement on Google.» (',
+      'Στην ίδια πολιτική είναι και η πρόταση που αξίζει να έχεις πρόχειρη σε μια δύσκολη συζήτηση: «Changes or disablement of profile features without the business owner’s consent is prohibited.» Εκεί είναι και εκείνη που ξεκαθαρίζει τι δεν επιτρέπεται να σου υποσχεθεί κανείς: «Guarantees top placement on Google.» (',
       {text: 'απαγορευμένοι ισχυρισμοί τρίτων', href: GBP_THIRD_PARTY_POLICY},
       '). Κατά τη Google, αυτό είναι παράδειγμα παραβίασης, όχι πωλησιακό επιχείρημα.',
     ]},
     { type: 'paragraph', text: [
-      'Αν το προφίλ σου το κατέχει σήμερα άλλος λογαριασμός, υπάρχει διαδικασία διεκδίκησης, με προθεσμία που τρέχει για τον απέναντι — «The current profile owner is then notified by email and has 3 days to respond.» — και, αν απορριφθεί, δεν τελείωσε: «You’ll get a rejection email but you can still suggest an edit to the profile. You can also try to appeal the decision.» (',
+      'Αν το προφίλ σου το κατέχει σήμερα άλλος λογαριασμός, υπάρχει διαδικασία διεκδίκησης, με προθεσμία που τρέχει για τον απέναντι: «The current profile owner is then notified by email and has 3 days to respond.» Και αν απορριφθεί, δεν τελείωσε: «You’ll get a rejection email but you can still suggest an edit to the profile. You can also try to appeal the decision.» (',
       {text: 'αίτημα ιδιοκτησίας', href: GBP_OWNERSHIP},
       ').',
     ]},
@@ -331,7 +331,7 @@ const post: BlogPost = {
       '). Δεν είναι δεοντολογία· είναι περιγραφή του συστήματος από αυτόν που το φτιάχνει.',
     ]},
     { type: 'paragraph', text: [
-      'Η ίδια σελίδα ονοματίζει τους παράγοντες — συνάφεια, απόσταση και δημοτικότητα — και ο τρίτος είναι ο πιο παρεξηγημένος: «Prominence means how well-known a business is.» (',
+      'Η ίδια σελίδα ονοματίζει τους παράγοντες (συνάφεια, απόσταση και δημοτικότητα), και ο τρίτος είναι ο πιο παρεξηγημένος: «Prominence means how well-known a business is.» (',
       {text: 'δημοτικότητα', href: GBP_LOCAL_RANKING},
       '). Είναι το πόσο γνωστός είσαι, κάτι που δεν ρυθμίζεται σε ένα πεδίο. Το μόνο που λέει η Google ότι εξαρτάται από σένα είναι το προφανές: «Businesses with complete and accurate info are more likely to show up in local search results.» (',
       {text: 'παράγοντες τοπικής κατάταξης', href: GBP_LOCAL_RANKING},
@@ -354,7 +354,7 @@ const post: BlogPost = {
     { type: 'list', ordered: true, items: [
       [{text: 'Δες ποιος έχει πρόσβαση.', strong: true}, ' Πριν από οτιδήποτε άλλο. Αν ο λογαριασμός που κατέχει το προφίλ δεν είναι δικός σου, τα υπόλοιπα βήματα τα κάνει άλλος άνθρωπος.'],
       [{text: 'Άνοιξε τον επεξεργαστή και ψάξε μπλε κείμενο.', strong: true}, ' Είναι ο μόνος δείκτης για το τι άλλαξε η Google μόνη της.'],
-      [{text: 'Έλεγξε το ωράριο σαν πελάτης.', strong: true}, ' Όχι από τον επεξεργαστή — από έναν χάρτη σε κινητό που δεν είναι συνδεδεμένο στον λογαριασμό σου.'],
+      [{text: 'Έλεγξε το ωράριο σαν πελάτης.', strong: true}, ' Από έναν χάρτη σε κινητό που δεν είναι συνδεδεμένο στον λογαριασμό σου. Όχι από τον επεξεργαστή.'],
       [{text: 'Βάλε ειδικές ώρες για την επόμενη αργία.', strong: true}, ' Και για διακοπές μιας εβδομάδας και πάνω, σήμανε προσωρινό κλείσιμο.'],
       [{text: 'Καθάρισε το όνομα και ψάξε για δεύτερο προφίλ.', strong: true}, ' Αν το όνομα έχει μέσα πόλη ή υπηρεσία που δεν υπάρχει στην πινακίδα σου, αφαίρεσέ τα. Τα διπλά προφίλ είναι πιο συχνά από όσο νομίζεις.'],
       [{text: 'Απάντησε στις τελευταίες κριτικές, και στις καλές.', strong: true}, ' Η Google γράφει ότι ένα μείγμα θετικών και αρνητικών σχολίων φαίνεται συχνά πιο αξιόπιστο, και συνιστά να απαντάς.'],
