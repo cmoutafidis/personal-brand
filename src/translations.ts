@@ -37,7 +37,19 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.privacy': 'Privacy',
 
     // Hero Section
-    'hero.title': `Your first process automated within ${FIRST_FIX_DAYS} days, or we pay your money back`,
+    // ⚠️ THE REFUND CLAUSE WAS REMOVED FROM THIS HEADLINE ON 2026-09-02, on his decision, and must
+    // not come back. It promised the money back if the first process was not automated in 30 days —
+    // a DIFFERENT promise from the guarantee this site actually gives, which is stated three
+    // sections below in `solutions.payment.description`: if what we build has not paid for itself
+    // within six months of going live, we refund the build fee. Two refund promises on one page,
+    // with different triggers, different windows and different remedies, is not risk reversal; it
+    // is a reader who cannot tell which one they are owed. Asked directly which was real, he said
+    // the six-month one.
+    //
+    // FIRST_FIX_DAYS is untouched and stays: 30 days is a real DELIVERY commitment, anchored to the
+    // build starting rather than to first contact, and `hero.description2` and the page metadata
+    // both already say so.
+    'hero.title': `Your first process automated within ${FIRST_FIX_DAYS} days of the build starting`,
     'hero.cta': 'Get the free process audit',
     'hero.talk': "Let's talk now",
     'hero.description1': 'If someone in your business retypes the same data into two systems every week, chases approvals by email, or rebuilds the same report by hand, that is the process we start with.',
@@ -210,7 +222,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.privacy': 'Απόρρητο',
 
     // Hero Section
-    'hero.title': `Η πρώτη σου διαδικασία αυτοματοποιημένη μέσα σε ${FIRST_FIX_DAYS} μέρες, αλλιώς σου επιστρέφουμε τα χρήματά σου`,
+    // Twin of the English above — see the note there for why the refund clause is gone.
+    'hero.title': `Η πρώτη σου διαδικασία αυτοματοποιημένη μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης`,
     'hero.cta': 'Κλείσε δωρεάν έλεγχο διαδικασιών',
     'hero.talk': 'Ας μιλήσουμε τώρα',
     'hero.description1': 'Αν κάποιος στην επιχείρησή σου ξαναγράφει τα ίδια στοιχεία σε δύο συστήματα κάθε βδομάδα, κυνηγά εγκρίσεις με email ή ξαναφτιάχνει την ίδια αναφορά στο χέρι, από εκεί ξεκινάμε.',
