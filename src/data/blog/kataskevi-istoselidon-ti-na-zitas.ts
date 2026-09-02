@@ -80,8 +80,8 @@ const post: BlogPost = {
       '.',
     ]},
     { type: 'sources', heading: 'Πηγές', items: [
-      {label: 'Google, SEO Starter Guide — ανακτήθηκε 1 Σεπτεμβρίου 2026', url: G_ESSENTIALS},
-      {label: 'Google, Spam policies for Google web search — ανακτήθηκε 1 Σεπτεμβρίου 2026', url: G_SPAM},
+      {label: 'Google, SEO Starter Guide (ανακτήθηκε 1 Σεπτεμβρίου 2026)', url: G_ESSENTIALS},
+      {label: 'Google, Spam policies for Google web search (ανακτήθηκε 1 Σεπτεμβρίου 2026)', url: G_SPAM},
     ]},
   ],
 };

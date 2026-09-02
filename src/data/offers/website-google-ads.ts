@@ -190,7 +190,7 @@ const websiteGoogleAds: Offer = {
       faqs: [
         {
           q: 'What does it cost?',
-          a: 'We quote it after the first call, in writing, against what your site and your market need. There is no list price, because scoping a website without seeing yours is guessing. The fee is fixed before anything is built. Your click budget is separate, and you pay Google directly. Separately from the fee there are recurring lines — the domain, renewed at your registrar, hosting and maintenance, and any third-party licence or subscription. We name them in the written quote, in their own column, apart from the one-off work.'
+          a: 'We quote it after the first call, in writing, against what your site and your market need. There is no list price, because scoping a website without seeing yours is guessing. The fee is fixed before anything is built. Your click budget is separate, and you pay Google directly. Separately from the fee there are recurring lines: the domain, renewed at your registrar, hosting and maintenance, and any third-party licence or subscription. We name them in the written quote, in their own column, apart from the one-off work.'
         },
         {
           q: 'Can you get us to number one on Google?',
@@ -391,7 +391,7 @@ const websiteGoogleAds: Offer = {
       faqs: [
         {
           q: 'Πόσο κοστίζει;',
-          a: 'Δεν υπάρχει τιμοκατάλογος, γιατί το να κοστολογήσεις μια ιστοσελίδα χωρίς να τη δεις είναι μαντεψιά. Την αμοιβή την καθορίζουν πόσες σελίδες χρειάζεται η ιστοσελίδα, αν ξαναχτίζουμε από την αρχή ή δουλεύουμε πάνω σε αυτό που ήδη έχεις, και πόσο μεγάλη είναι η καμπάνια που θέλει η αγορά σου. Τα περνάμε ένα ένα στην πρώτη κλήση και μετά παίρνεις γραπτή προσφορά. Η αμοιβή κλειδώνει πριν χτιστεί οτιδήποτε. Ο προϋπολογισμός των κλικ είναι ξεχωριστός και τον πληρώνεις εσύ απευθείας στη Google. Χωριστά από την αμοιβή τρέχουν οι επαναλαμβανόμενες γραμμές — το όνομα χώρου, που ανανεώνεται στον καταχωρητή σου, η φιλοξενία και η συντήρηση, και όποια άδεια ή συνδρομή τρίτου χρειαστεί. Τις γράφουμε ονομαστικά στη γραπτή προσφορά, χωρισμένες από τα εφάπαξ.'
+          a: 'Δεν υπάρχει τιμοκατάλογος, γιατί το να κοστολογήσεις μια ιστοσελίδα χωρίς να τη δεις είναι μαντεψιά. Την αμοιβή την καθορίζουν πόσες σελίδες χρειάζεται η ιστοσελίδα, αν ξαναχτίζουμε από την αρχή ή δουλεύουμε πάνω σε αυτό που ήδη έχεις, και πόσο μεγάλη είναι η καμπάνια που θέλει η αγορά σου. Τα περνάμε ένα ένα στην πρώτη κλήση και μετά παίρνεις γραπτή προσφορά. Η αμοιβή κλειδώνει πριν χτιστεί οτιδήποτε. Ο προϋπολογισμός των κλικ είναι ξεχωριστός και τον πληρώνεις εσύ απευθείας στη Google. Χωριστά από την αμοιβή τρέχουν οι επαναλαμβανόμενες γραμμές: το όνομα χώρου, που ανανεώνεται στον καταχωρητή σου, η φιλοξενία και η συντήρηση, και όποια άδεια ή συνδρομή τρίτου χρειαστεί. Τις γράφουμε ονομαστικά στη γραπτή προσφορά, χωρισμένες από τα εφάπαξ.'
         },
         {
           // Same target as the twin entry in website-seo.ts: the «τιμες» query, answered without a

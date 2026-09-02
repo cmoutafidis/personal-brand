@@ -47,8 +47,8 @@ export default function OfferLinks({
                 className="font-semibold text-primary-600 underline underline-offset-4 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
               >
                 {offer.copy[lang].eyebrow}
-              </Link>{' '}
-              — {OFFER_BLURB[offer.slug as OfferSlug][lang]}
+              </Link>{': '}
+              {OFFER_BLURB[offer.slug as OfferSlug][lang]}
             </li>
           ))}
         </ul>

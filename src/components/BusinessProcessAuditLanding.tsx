@@ -159,7 +159,7 @@ const copy: Record<Language, LandingCopy> = {
       }
     ],
     leaksClosing: 'Every one of these leaks is a software problem. Software problems can be fixed for good, and kept fixed.',
-    mathBox: 'Do the math for your own team: 3 people spending 5 hours a week on manual work is 15 hours a week, and about 780 hours a year — roughly twenty working weeks spent on work nobody chose. Multiply that by what an hour costs you. And that is before you count the errors, the late invoices, and the clients who quietly left.',
+    mathBox: 'Do the math for your own team: 3 people spending 5 hours a week on manual work is 15 hours a week, and about 780 hours a year, roughly twenty working weeks spent on work nobody chose. Multiply that by what an hour costs you. And that is before you count the errors, the late invoices, and the clients who quietly left.',
     cta2Lead: 'Find out what your processes are actually costing you. It’s free, and it’s in writing within a week of your audit call.',
     trustTitle: 'Here’s what you can verify yourself.',
     trustIntro: 'We’re a small company and we say so plainly. Here are things you can check for yourself:',
@@ -253,7 +253,7 @@ const copy: Record<Language, LandingCopy> = {
         body: 'Your Process Money-Leak Map arrives. Three bottlenecks, their monthly cost, and an ROI estimate for each. Keep it, and act on it with anyone you like.'
       },
       {
-        when: 'Weeks 2–3',
+        when: 'Weeks 2 to 3',
         body: 'If you want the fix: we scope it together. Workflows mapped, fixes ranked, target and price agreed in writing.'
       },
       {
@@ -342,11 +342,12 @@ const copy: Record<Language, LandingCopy> = {
       }
     ],
     bioTitle: 'Who you’ll be talking to',
-    bioIntro: 'I’m Charalampos (Charis) Moutafidis, founder of Fiji Solutions.',
+    bioIntro: 'I’m Charalampos (Charis) Moutafidis, a software engineer with more than ten years of experience, and the founder of Fiji Solutions.',
     bioBullets: [
       'Software engineer; founder and administrator of Fiji Solutions IKE, Thessaloniki.',
-      'Snowflake AI Data Cloud Select Partner: one of the vetted partners of the Snowflake data platform.',
-      'Builder of Fiji Analytics Dashboard and Catalytics Pro: live products you can open right now.'
+      'Fiji Solutions is a Snowflake AI Data Cloud Select Partner: one of the vetted partners of the Snowflake data platform. That status belongs to the company.',
+      'Builder of Fiji Analytics Dashboard and Catalytics Pro: live products you can open right now.',
+      'More than ten years of work across five sectors: banking, travel, telecommunications, health and online education. Some of it through Fiji Solutions, some through Peak Code Consulting, my Swiss company, and some in earlier jobs as a developer. Those sectors are my own working history.'
     ],
     bioClosing: [
       'When you book an audit, you talk to me. I’m the same person who scopes the work, builds the software, and stands behind the guarantee. No account managers, no handoffs, no telephone game between sales and delivery.',
@@ -375,7 +376,7 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         lead: 'How you claim.',
-        body: `Email info@fijisolutions.net within ${GUARANTEE_CLAIM_DAYS} days of the window closing, with the measurement we agreed. We answer within ${GUARANTEE_ANSWER_WORKING_DAYS} working days. The refund is the build fee — not the care-plan months, which bought you a service that ran.`
+        body: `Email info@fijisolutions.net within ${GUARANTEE_CLAIM_DAYS} days of the window closing, with the measurement we agreed. We answer within ${GUARANTEE_ANSWER_WORKING_DAYS} working days. The refund is the build fee. It does not cover the care-plan months, which bought you a service that ran.`
       },
       {
         lead: 'What voids it.',
@@ -446,7 +447,7 @@ const copy: Record<Language, LandingCopy> = {
       }
     ],
     leaksClosing: 'Καθεμία από αυτές τις διαρροές είναι πρόβλημα λογισμικού. Τα προβλήματα λογισμικού διορθώνονται οριστικά, και μένουν διορθωμένα.',
-    mathBox: 'Κάνε τον λογαριασμό για τη δική σου ομάδα: 3 άτομα που ξοδεύουν 5 ώρες την εβδομάδα σε χειροκίνητη δουλειά είναι 15 ώρες την εβδομάδα, περίπου 780 ώρες τον χρόνο — περίπου είκοσι εργάσιμες εβδομάδες σε δουλειά που δεν διάλεξε κανείς. Πολλαπλασίασέ το με το πόσο σου κοστίζει μία ώρα. Κι αυτό πριν μετρήσεις τα λάθη, τα καθυστερημένα τιμολόγια και τους πελάτες που έφυγαν αθόρυβα.',
+    mathBox: 'Κάνε τον λογαριασμό για τη δική σου ομάδα: 3 άτομα που ξοδεύουν 5 ώρες την εβδομάδα σε χειροκίνητη δουλειά είναι 15 ώρες την εβδομάδα, περίπου 780 ώρες τον χρόνο, περίπου είκοσι εργάσιμες εβδομάδες σε δουλειά που δεν διάλεξε κανείς. Πολλαπλασίασέ το με το πόσο σου κοστίζει μία ώρα. Κι αυτό πριν μετρήσεις τα λάθη, τα καθυστερημένα τιμολόγια και τους πελάτες που έφυγαν αθόρυβα.',
     cta2Lead: 'Μάθε τι πραγματικά σου κοστίζουν οι διαδικασίες σου. Είναι δωρεάν, και το έχεις γραπτά μέσα σε μία εβδομάδα από την κλήση του ελέγχου.',
     trustTitle: 'Να τι μπορείς να ελέγξεις μόνος σου.',
     trustIntro: 'Είμαστε μικρή εταιρεία και το λέμε καθαρά. Εδώ θα βρεις πράγματα που επαληθεύονται:',
@@ -540,7 +541,7 @@ const copy: Record<Language, LandingCopy> = {
         body: 'Φτάνει το γραπτό σου πλάνο. Τρία σημεία συμφόρησης, το μηνιαίο κόστος τους και μια εκτίμηση απόδοσης για το καθένα. Κράτησέ το, αξιοποίησέ το με όποιον θες.'
       },
       {
-        when: 'Εβδομάδες 2–3',
+        when: 'Εβδομάδες 2 έως 3',
         body: 'Αν θέλεις τη λύση: την ορίζουμε μαζί. Ροές εργασίας αποτυπωμένες, λύσεις ιεραρχημένες, στόχος και τιμή συμφωνημένα γραπτά.'
       },
       {
@@ -629,11 +630,12 @@ const copy: Record<Language, LandingCopy> = {
       }
     ],
     bioTitle: 'Με ποιον θα μιλήσεις',
-    bioIntro: 'Είμαι ο Χαράλαμπος (Χάρης) Μουταφίδης, ιδρυτής της Fiji Solutions.',
+    bioIntro: 'Είμαι ο Χαράλαμπος (Χάρης) Μουταφίδης, μηχανικός λογισμικού με πάνω από δέκα χρόνια εμπειρίας, και ιδρυτής της Fiji Solutions.',
     bioBullets: [
       'Μηχανικός λογισμικού· ιδρυτής και διαχειριστής της Fiji Solutions ΙΚΕ, Θεσσαλονίκη.',
-      'Snowflake AI Data Cloud Select Partner: από τους πιστοποιημένους συνεργάτες της πλατφόρμας δεδομένων Snowflake.',
-      'Δημιουργός του Fiji Analytics Dashboard και του Catalytics Pro: ζωντανά προϊόντα που μπορείς να ανοίξεις τώρα.'
+      'Η Fiji Solutions είναι Snowflake AI Data Cloud Select Partner: από τους επιλεγμένους συνεργάτες της πλατφόρμας δεδομένων Snowflake. Η ιδιότητα αυτή ανήκει στην εταιρεία.',
+      'Δημιουργός του Fiji Analytics Dashboard και του Catalytics Pro: ζωντανά προϊόντα που μπορείς να ανοίξεις τώρα.',
+      'Πάνω από δέκα χρόνια σε πέντε κλάδους: τράπεζες, τουρισμό, τηλεπικοινωνίες, υγεία και διαδικτυακή εκπαίδευση. Ένα μέρος της δουλειάς έγινε μέσω της Fiji Solutions, ένα μέρος μέσω της Peak Code Consulting, της ελβετικής μου εταιρείας, και ένα μέρος σε παλιότερες δουλειές μου ως προγραμματιστή. Οι κλάδοι αυτοί είναι η δική μου διαδρομή.'
     ],
     bioClosing: [
       'Όταν κλείνεις έναν έλεγχο, μιλάς με εμένα. Είμαι ο ίδιος άνθρωπος που σχεδιάζει τη δουλειά, χτίζει το λογισμικό και στέκεται πίσω από την εγγύηση. Χωρίς υπεύθυνους πελατών, χωρίς ενδιάμεσους, χωρίς «χαλασμένο τηλέφωνο» ανάμεσα σε πωλήσεις και υλοποίηση.',
@@ -665,7 +667,7 @@ const copy: Record<Language, LandingCopy> = {
         // «εξαμήνου» spells the window out as a Greek noun, so it is the one place the number is
         // not substitutable. Its English twin says only "the window". If GUARANTEE_WINDOW_MONTHS
         // ever moves off 6, this word has to be rewritten by hand.
-        body: `Στέλνεις email στο info@fijisolutions.net μέσα σε ${GUARANTEE_CLAIM_DAYS} ημέρες από τη λήξη του εξαμήνου, με τη μέτρηση που συμφωνήσαμε. Απαντάμε μέσα σε ${GUARANTEE_ANSWER_WORKING_DAYS} εργάσιμες ημέρες. Η επιστροφή αφορά την αμοιβή υλοποίησης — όχι τους μήνες του πλάνου φροντίδας, που αγόρασαν μια υπηρεσία που δούλεψε.`
+        body: `Στέλνεις email στο info@fijisolutions.net μέσα σε ${GUARANTEE_CLAIM_DAYS} ημέρες από τη λήξη του εξαμήνου, με τη μέτρηση που συμφωνήσαμε. Απαντάμε μέσα σε ${GUARANTEE_ANSWER_WORKING_DAYS} εργάσιμες ημέρες. Η επιστροφή αφορά την αμοιβή υλοποίησης. Δεν καλύπτει τους μήνες του πλάνου φροντίδας, που αγόρασαν μια υπηρεσία που δούλεψε.`
       },
       {
         lead: 'Τι την ακυρώνει.',

@@ -217,6 +217,11 @@ const en: HomeLongFormCopy = {
       q: 'Do I have to replace the software I already use?',
       a: 'Usually not. Replacement is proposed only when the existing system allows no connection at all, and the reason is written into the audit plan. More often the gap is a connection between two systems that each work well on their own, or a small tool between them.',
     },
+    {
+      id: 'poios-kanei-ti-douleia',
+      q: 'Who actually does the work?',
+      a: 'Our founder, Charis Moutafidis. He has worked as a software engineer for more than ten years. Those years cover five sectors: banking, travel, telecommunications, health and online education. Some of that work went through Fiji Solutions, some through Peak Code Consulting, his Swiss company, and some in earlier jobs as a developer. Those sectors describe his own working history.',
+    },
   ],
 };
 

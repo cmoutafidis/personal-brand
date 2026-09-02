@@ -26,10 +26,10 @@ export default function Page() {
       lang="en"
       eyebrow={"Custom software Greece"}
       h1={"The work your team repeats every week, done by software"}
-      lead={"Someone in your business copies the same data into a second system, chases approvals by email, or rebuilds the same file every Monday morning. That is the work we remove — not the job, the retyping."}
+      lead={"Someone in your business copies the same data into a second system, chases approvals by email, or rebuilds the same file every Monday morning. That is the work we remove. The retyping goes and the job stays."}
       heroCta={"Get the free process audit"}
       outcomesTitle={"What we build"}
-      outcomes={[{title: "Systems that pass data to each other", body: "Your shop, your accounting system and your spreadsheet stop being three places the same order gets typed. It is entered once and appears everywhere."}, {title: "Internal tools built around your process", body: "Not a platform you bend your business around. A tool shaped to the way the work already runs, minus the parts nobody should be doing by hand."}, {title: "Approvals that leave the inbox", body: "Who approved what, when, and what is still waiting — visible, timestamped, and chasing itself instead of you chasing it."}, {title: "Scheduled work that runs itself", body: "The weekly export, the monthly reconciliation, the reminder someone has to remember. Set once, then it happens without anyone."}]}
+      outcomes={[{title: "Systems that pass data to each other", body: "Your shop, your accounting system and your spreadsheet stop being three places the same order gets typed. It is entered once and appears everywhere."}, {title: "Internal tools built around your process", body: "Not a platform you bend your business around. A tool shaped to the way the work already runs, minus the parts nobody should be doing by hand."}, {title: "Approvals that leave the inbox", body: "Who approved what, when, and what is still waiting, all of it visible, timestamped, and chasing itself instead of you chasing it."}, {title: "Scheduled work that runs itself", body: "The weekly export, the monthly reconciliation, the reminder someone has to remember. Set once, then it happens without anyone."}]}
       closingH2={"Not sure which process to start with?"}
       closingBody={"That is what the audit is for. Thirty minutes on a call, then a written map of the three processes costing you the most, in hours and euros."}
       closingCta={"Get the free process audit"}

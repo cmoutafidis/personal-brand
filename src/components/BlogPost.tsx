@@ -148,7 +148,7 @@ export default function BlogPost({post, language}: { post: BlogPostType; languag
                     <ol className="ml-6 list-outside list-decimal space-y-2 break-words text-base">
                       {block.items.map((s, j) => (
                         <li key={j}>
-                          {s.label}{' — '}
+                          {s.label}{': '}
                           <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-primary-600 dark:text-primary-400 underline underline-offset-2">{s.url}</a>
                         </li>
                       ))}

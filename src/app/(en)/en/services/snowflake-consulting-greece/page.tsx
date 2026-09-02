@@ -26,7 +26,7 @@ export default function Page() {
       lang="en"
       eyebrow={"Snowflake Greece"}
       h1={"Snowflake, implemented or repaired"}
-      lead={"When the data outgrows spreadsheets, the next step is usually bought before it is designed — and then it is slow, expensive, or both. We implement it, migrate onto it, or fix the one you already have."}
+      lead={"When the data outgrows spreadsheets, the next step is usually bought before it is designed. Then it is slow, expensive, or both. We implement it, migrate onto it, or fix the one you already have."}
       heroCta={"Get the free process audit"}
       outcomesTitle={"What we do"}
       outcomes={[{title: "Data warehouse build", body: "Designed around the questions you actually ask, not around a reference architecture from a vendor deck."}, {title: "ETL/ELT pipelines", body: "The loading that runs on schedule, fails loudly when it fails, and does not need someone watching it."}, {title: "Migration onto Snowflake", body: "Off whatever it is on now, with the reports still returning the same numbers on the other side."}, {title: "Cost and performance tuning", body: "Snowflake bills for what you run. Most estates are paying for queries nobody reads and warehouses nobody sized."}]}

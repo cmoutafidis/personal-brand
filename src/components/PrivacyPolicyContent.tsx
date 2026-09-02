@@ -46,7 +46,7 @@ const CONTENT: Record<Language, {
         h: 'What we collect when you contact us',
         p: [
           'The forms on this site ask for your name, your email address, your company, the question or process you want to discuss, your message, and how you heard about us. Everything you type is what we get; we do not enrich it from anywhere else.',
-          'We use it to answer you and, if it goes that way, to run a process audit and quote work. The legal basis is Article 6(1)(b) GDPR — steps taken at your request before entering a contract.',
+          'We use it to answer you and, if it goes that way, to run a process audit and quote work. The legal basis is Article 6(1)(b) GDPR: steps taken at your request before entering a contract.',
         ],
       },
       {
@@ -59,7 +59,7 @@ const CONTENT: Record<Language, {
       {
         h: 'Cookies and tracking',
         p: [
-          'No analytics or advertising cookie loads until you accept it. Before you choose, this site sets none and makes no request to Google or to Leadsy. The chat and voice assistant described above is a separate, visible feature and loads regardless — it is not analytics and it sets no advertising cookie.',
+          'No analytics or advertising cookie loads until you accept it. Before you choose, this site sets none and makes no request to Google or to Leadsy. The chat and voice assistant described above is a separate, visible feature and loads regardless. It is not analytics and it sets no advertising cookie.',
           'If you accept, two things load. Google Ads tracks which advertisement led to an enquiry. Leadsy attempts to identify the company an anonymous visitor is browsing from, using your IP address. Both are used to work out which pages produce enquiries.',
           'If you decline, they never load and the site works exactly the same. You can change your answer at the bottom of this page at any time.',
           'The legal basis for both is your consent, Article 6(1)(a) GDPR.',
@@ -83,7 +83,7 @@ const CONTENT: Record<Language, {
       {
         h: 'Your rights',
         p: [
-          'You can ask us for a copy of what we hold about you, ask us to correct it, ask us to delete it, ask us to restrict what we do with it, ask for it in a portable format, and object to us processing it. Where we rely on your consent, you can withdraw it at any time — withdrawing is as easy as giving it, and the button is below.',
+          'You can ask us for a copy of what we hold about you, ask us to correct it, ask us to delete it, ask us to restrict what we do with it, ask for it in a portable format, and object to us processing it. Where we rely on your consent, you can withdraw it at any time. Withdrawing is as easy as giving it, and the button is below.',
           'Write to info@fijisolutions.net. We answer within one month.',
           'If you think we have handled your data badly, you can complain to the Hellenic Data Protection Authority (Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα), Kifisias 1-3, 115 23 Athens, www.dpa.gr.',
         ],
@@ -125,8 +125,8 @@ const CONTENT: Record<Language, {
       {
         h: 'Τι συλλέγουμε όταν επικοινωνείς',
         p: [
-          'Οι φόρμες του ιστότοπου ζητούν το όνομά σου, το email σου, την εταιρεία σου, την ερώτηση ή τη διαδικασία που θέλεις να συζητήσουμε, το μήνυμά σου και το πώς μας έμαθες. Παίρνουμε ακριβώς ό,τι γράφεις — δεν το εμπλουτίζουμε από αλλού.',
-          'Τα χρησιμοποιούμε για να σου απαντήσουμε και, αν πάει έτσι, για να κάνουμε έλεγχο διαδικασιών και να δώσουμε προσφορά. Νομική βάση: άρθρο 6 παρ. 1 στοιχ. β΄ ΓΚΠΔ — ενέργειες κατόπιν αιτήματός σου πριν από τη σύναψη σύμβασης.',
+          'Οι φόρμες του ιστότοπου ζητούν το όνομά σου, το email σου, την εταιρεία σου, την ερώτηση ή τη διαδικασία που θέλεις να συζητήσουμε, το μήνυμά σου και το πώς μας έμαθες. Παίρνουμε ακριβώς ό,τι γράφεις. Δεν το εμπλουτίζουμε από αλλού.',
+          'Τα χρησιμοποιούμε για να σου απαντήσουμε και, αν πάει έτσι, για να κάνουμε έλεγχο διαδικασιών και να δώσουμε προσφορά. Νομική βάση: άρθρο 6 παρ. 1 στοιχ. β΄ ΓΚΠΔ. Πρόκειται για ενέργειες κατόπιν αιτήματός σου πριν από τη σύναψη σύμβασης.',
         ],
       },
       {
@@ -139,7 +139,7 @@ const CONTENT: Record<Language, {
       {
         h: 'Cookies και παρακολούθηση',
         p: [
-          'Κανένα cookie ανάλυσης ή διαφήμισης δεν φορτώνει πριν το αποδεχτείς. Πριν επιλέξεις, ο ιστότοπος δεν βάζει κανένα και δεν κάνει κανένα αίτημα προς την Google ή τη Leadsy. Ο βοηθός συνομιλίας και φωνής που περιγράφεται παραπάνω είναι ξεχωριστό, ορατό χαρακτηριστικό και φορτώνει ανεξάρτητα — δεν είναι ανάλυση και δεν βάζει διαφημιστικό cookie.',
+          'Κανένα cookie ανάλυσης ή διαφήμισης δεν φορτώνει πριν το αποδεχτείς. Πριν επιλέξεις, ο ιστότοπος δεν βάζει κανένα και δεν κάνει κανένα αίτημα προς την Google ή τη Leadsy. Ο βοηθός συνομιλίας και φωνής που περιγράφεται παραπάνω είναι ξεχωριστό, ορατό χαρακτηριστικό και φορτώνει ανεξάρτητα. Δεν είναι ανάλυση και δεν βάζει διαφημιστικό cookie.',
           'Αν αποδεχτείς, φορτώνουν δύο πράγματα. Το Google Ads καταγράφει ποια διαφήμιση οδήγησε σε αίτημα. Η Leadsy προσπαθεί να αναγνωρίσει από ποια εταιρεία περιηγείται ένας ανώνυμος επισκέπτης, με βάση τη διεύθυνση IP. Και τα δύο χρησιμεύουν στο να καταλάβουμε ποιες σελίδες φέρνουν αιτήματα.',
           'Αν αρνηθείς, δεν φορτώνουν ποτέ και ο ιστότοπος δουλεύει ακριβώς το ίδιο. Μπορείς να αλλάξεις την απάντησή σου στο τέλος αυτής της σελίδας όποτε θέλεις.',
           'Νομική βάση και για τα δύο είναι η συγκατάθεσή σου, άρθρο 6 παρ. 1 στοιχ. α΄ ΓΚΠΔ.',
@@ -163,7 +163,7 @@ const CONTENT: Record<Language, {
       {
         h: 'Τα δικαιώματά σου',
         p: [
-          'Μπορείς να ζητήσεις αντίγραφο όσων τηρούμε για σένα, να ζητήσεις διόρθωση, διαγραφή, περιορισμό της επεξεργασίας, φορητότητα, και να εναντιωθείς στην επεξεργασία. Όπου στηριζόμαστε στη συγκατάθεσή σου, μπορείς να την ανακαλέσεις όποτε θέλεις — η ανάκληση είναι εξίσου εύκολη με τη χορήγηση, και το κουμπί είναι παρακάτω.',
+          'Μπορείς να ζητήσεις αντίγραφο όσων τηρούμε για σένα, να ζητήσεις διόρθωση, διαγραφή, περιορισμό της επεξεργασίας, φορητότητα, και να εναντιωθείς στην επεξεργασία. Όπου στηριζόμαστε στη συγκατάθεσή σου, μπορείς να την ανακαλέσεις όποτε θέλεις. Η ανάκληση είναι εξίσου εύκολη με τη χορήγηση, και το κουμπί είναι παρακάτω.',
           'Γράψε στο info@fijisolutions.net. Απαντάμε εντός ενός μήνα.',
           'Αν θεωρείς ότι χειριστήκαμε άσχημα τα δεδομένα σου, μπορείς να προσφύγεις στην Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα, Κηφισίας 1-3, 115 23 Αθήνα, www.dpa.gr.',
         ],

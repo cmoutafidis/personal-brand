@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
-        alt: 'Fiji Solutions — εταιρεία λογισμικού στη Θεσσαλονίκη',
+        alt: 'Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη',
       },
     ],
   },

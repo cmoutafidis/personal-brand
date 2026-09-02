@@ -128,11 +128,11 @@ const post: BlogPost = {
       '.',
     ]},
     { type: 'sources', heading: 'Πηγές', items: [
-      {label: 'Google, SEO Starter Guide — ανακτήθηκε 1 Σεπτεμβρίου 2026', url: G_ESSENTIALS},
-      {label: 'Google, How Google Search Works (ανίχνευση, ευρετηρίαση, προβολή) — ανακτήθηκε 1 Σεπτεμβρίου 2026', url: G_HOWSEARCH},
-      {label: 'Google, Influencing your title links in search results — ανακτήθηκε 1 Σεπτεμβρίου 2026', url: G_TITLES},
-      {label: 'Google, Spam policies for Google web search (ανεπιθύμητες πρακτικές συνδέσμων) — ανακτήθηκε 1 Σεπτεμβρίου 2026', url: G_SPAM},
-      {label: 'Google, Συμβουλές για τη βελτίωση της τοπικής κατάταξης — ανακτήθηκε 2 Σεπτεμβρίου 2026', url: G_GBP},
+      {label: 'Google, SEO Starter Guide (ανακτήθηκε 1 Σεπτεμβρίου 2026)', url: G_ESSENTIALS},
+      {label: 'Google, How Google Search Works (ανίχνευση, ευρετηρίαση, προβολή) (ανακτήθηκε 1 Σεπτεμβρίου 2026)', url: G_HOWSEARCH},
+      {label: 'Google, Influencing your title links in search results (ανακτήθηκε 1 Σεπτεμβρίου 2026)', url: G_TITLES},
+      {label: 'Google, Spam policies for Google web search (ανεπιθύμητες πρακτικές συνδέσμων) (ανακτήθηκε 1 Σεπτεμβρίου 2026)', url: G_SPAM},
+      {label: 'Google, Συμβουλές για τη βελτίωση της τοπικής κατάταξης (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: G_GBP},
     ]},
   ],
 };
