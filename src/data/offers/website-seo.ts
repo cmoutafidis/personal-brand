@@ -99,7 +99,7 @@ const websiteSeo: Offer = {
         },
         {
           lead: 'A starting set of links.',
-          body: 'Listings, profiles and partner pages that are real and relevant. We do not buy links from networks. Google works that out, and you carry the penalty.'
+          body: 'Listings, profiles and partner pages that are real and relevant. We do not buy links from networks. Google names bought links as a link spam practice, and the risk sits on your domain.'
         },
         {
           lead: 'Presentation and handover, two to four hours.',
@@ -189,7 +189,7 @@ const websiteSeo: Offer = {
       faqs: [
         {
           q: 'What does it cost?',
-          a: 'We quote it after the first call, in writing, against what your site actually needs. There is no list price and no rate card, because scoping a website without seeing it is guessing. The fee is fixed before anything is built, and it does not move afterwards.'
+          a: 'We quote it after the first call, in writing, against what your site actually needs. There is no list price and no rate card, because scoping a website without seeing it is guessing. The fee is fixed before anything is built, and it does not move afterwards. Separately from the fee there are recurring lines — the domain, renewed at your registrar, hosting and maintenance, and any third-party licence or subscription. We name them in the written quote, in their own column, apart from the one-off work.'
         },
         {
           q: 'Can you guarantee we rank first on Google?',
@@ -293,7 +293,7 @@ const websiteSeo: Offer = {
         },
         {
           lead: 'Ένα πρώτο σύνολο συνδέσμων.',
-          body: 'Καταχωρίσεις, προφίλ και σελίδες συνεργατών, αληθινά και σχετικά με τη δουλειά σου. Δεν αγοράζουμε συνδέσμους από δίκτυα. Η Google το καταλαβαίνει και την ποινή τη σηκώνεις εσύ.'
+          body: 'Καταχωρίσεις, προφίλ και σελίδες συνεργατών, αληθινά και σχετικά με τη δουλειά σου. Δεν αγοράζουμε συνδέσμους από δίκτυα. Η Google τους αναφέρει ρητά ως ανεπιθύμητη πρακτική συνδέσμων, και το ρίσκο μένει στο δικό σου domain.'
         },
         {
           lead: 'Παρουσίαση και παράδοση, δύο με τέσσερις ώρες.',
@@ -392,7 +392,7 @@ const websiteSeo: Offer = {
       faqs: [
         {
           q: 'Πόσο κοστίζει;',
-          a: 'Δεν υπάρχει τιμοκατάλογος, γιατί δύο ιστοσελίδες ίδιου μεγέθους μπορεί να θέλουν τελείως διαφορετική δουλειά. Την αμοιβή την καθορίζουν τέσσερα πράγματα, και τα βλέπεις κι εσύ: πόσες σελίδες χρειάζεται η ιστοσελίδα, αν ξαναχτίζουμε από την αρχή ή δουλεύουμε πάνω σε αυτό που ήδη έχεις, πόσα άρθρα γράφουμε, και αν υπάρχει παλιά ιστοσελίδα με URL που πρέπει να μεταφερθούν. Τα περνάμε ένα ένα στην πρώτη κλήση και μετά παίρνεις γραπτή προσφορά. Η αμοιβή κλειδώνει πριν χτιστεί οτιδήποτε και δεν μετακινείται μετά.'
+          a: 'Δεν υπάρχει τιμοκατάλογος, γιατί δύο ιστοσελίδες ίδιου μεγέθους μπορεί να θέλουν τελείως διαφορετική δουλειά. Την αμοιβή την καθορίζουν τέσσερα πράγματα, και τα βλέπεις κι εσύ: πόσες σελίδες χρειάζεται η ιστοσελίδα, αν ξαναχτίζουμε από την αρχή ή δουλεύουμε πάνω σε αυτό που ήδη έχεις, πόσα άρθρα γράφουμε, και αν υπάρχει παλιά ιστοσελίδα με URL που πρέπει να μεταφερθούν. Τα περνάμε ένα ένα στην πρώτη κλήση και μετά παίρνεις γραπτή προσφορά. Η αμοιβή κλειδώνει πριν χτιστεί οτιδήποτε και δεν μετακινείται μετά. Χωριστά από την αμοιβή τρέχουν οι επαναλαμβανόμενες γραμμές — το όνομα χώρου, που ανανεώνεται στον καταχωρητή σου, η φιλοξενία και η συντήρηση, και όποια άδεια ή συνδρομή τρίτου χρειαστεί. Τις γράφουμε ονομαστικά στη γραπτή προσφορά, χωρισμένες από τα εφάπαξ.'
         },
         {
           // Aimed at «κατασκευή ιστοσελίδων θεσσαλονίκη τιμες», 90/mo. It answers what the searcher

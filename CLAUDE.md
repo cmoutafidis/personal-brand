@@ -32,9 +32,25 @@ search is now the entire strategy. The premise of the orphan rule went with it: 
 longer a page that arrives by ad, it is a page that cannot rank. `fijisolutions.net` ranked for
 **zero** keywords in DataForSEO that day, and the two offers with real measured Greek demand behind
 them are `website-seo` and `website-google-ads` — `κατασκευή ιστοσελίδων` **2,900/mo** and
-`προώθηση ιστοσελίδων` **1,600/mo**, both LOW competition, plus `κατασκευή ιστοσελίδων θεσσαλονίκη`
-480 (+~640 in spelling variants). Every automation and AI phrase the other six chase is below
-Google's reporting floor in Greek. Source: `offer-os/gtm/keyword-research-2026-09-01.md`.
+`προώθηση ιστοσελίδων` (see the trap below), both LOW competition, plus
+`κατασκευή ιστοσελίδων θεσσαλονίκη` **480**. Every automation and AI phrase the other six chase is
+below Google's reporting floor in Greek. Sources: `offer-os/gtm/keyword-research-2026-09-01.md`
+**with its corrections A/B/C**, and `offer-os/gtm/fiji-greek-content-plan-2026-09-02.md`.
+
+⚠️ **Two figures on this line were wrong until 2026-09-02 and are corrected here.**
+`προώθηση ιστοσελίδων` **is not 1,600/mo** — that average describes no month that happened. Its
+twelve months read `210 390 260 320 210 210 170 260 390 1000 5400 9900`: flat at 170–390 for ten
+months, then vertical in May–July 2026. **Quote the trajectory, never the average.** And the
+Thessaloniki term is ~480 **plus one ~320 variant group**, not "+~640 in spelling variants" — the
+two "variants" return identical twelve-month curves, so they are one normalised keyword reported
+twice. Accented and unaccented spellings *are* separate keywords; identical curves are not.
+Compare curves before summing.
+
+⚠️ **And a measurement trap that invalidates any Greek "no demand" verdict taken before
+2026-09-02:** DataForSEO returns **no data for any Greek keyword containing a word-final ς**
+(U+03C2). Substitute **σ** (U+03C3). The control: `καιρός`, the most-searched word in Greek,
+returns nothing; `καιροσ` returns **5,000,000**. Re-test with σ before concluding a Greek phrase
+is dead.
 **Charis approved these links. Do not revert them as a re-added service list — read this first.**
 
 **The rule now.** An offer may be linked from the **body** of a page, in prose, and from other offer
@@ -169,10 +185,17 @@ rule 5 still forbids one.
   page, which is the test that caught the problem on the Peak Code site. The account's plan is
   cancelled and its API token regenerated.
 - **The blog is Greek-only on purpose, and `/en/blog` is noindex (added 2026-09-01).** Posts are
-  typed blocks in `src/data/blogs.ts` (`src/types/blog.ts`), rendered by `BlogPost.tsx`, with
-  metadata, canonical, hreflang and JSON-LD derived in `src/lib/blogSchema.ts`. It targets
-  «κατασκευή ιστοσελίδων» (2,900/mo) and «προώθηση ιστοσελίδων» (1,600/mo); every Greek automation
-  and AI phrase measured zero. Three things not to "fix" back: `blogSchema` does NOT use
+  typed blocks (`src/types/blog.ts`), rendered by `BlogPost.tsx`, with metadata, canonical,
+  hreflang and JSON-LD derived in `src/lib/blogSchema.ts`. It targets «κατασκευή ιστοσελίδων»
+  (2,900/mo) and «προώθηση ιστοσελίδων» (a rising trajectory, **not** 1,600 — see above); every
+  Greek automation and AI phrase measured at or near zero.
+  **Since 2026-09-02 it is fourteen articles, one file per article in `src/data/blog/`** — the same
+  convention `src/data/offers/` uses; fourteen inline in `blogs.ts` was ~7,000 unreviewable lines.
+  `src/data/blogs.ts` is now only the aggregator, and **the order of `blogData.el` in it IS the
+  index order** — nothing else sorts `/el/blog`. Shared Google URLs live in
+  `src/data/blog/sources.ts` so two articles cannot cite one document at two addresses.
+  Roadmap and the angle per article: `offer-os/gtm/fiji-greek-content-plan-2026-09-02.md`.
+  Three things not to "fix" back: `blogSchema` does NOT use
   `buildAlternates()` and must not (a post has no English twin, so declaring one points at a 404);
   `src/app/sitemap.ts` lists blog URLs outside the `ROUTES` loop for the same asymmetry; and the
   Greek index's hreflang omits `en` so it agrees with the sitemap. Undo all three together in the
