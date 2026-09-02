@@ -49,7 +49,7 @@ const post: BlogPost = {
   id: 'profil-epicheirisis-google',
   slug: 'profil-epicheirisis-google',
   title: 'Το προφίλ της επιχείρησής σου στην Google: τι ελέγχεις εσύ και τι όχι',
-  metaTitle: 'Προφίλ επιχείρησης στην Google: τι ελέγχεις εσύ',
+  metaTitle: 'Google Business Profile (Google My Business): τι ελέγχεις',
   excerpt: 'Ποια στοιχεία του προφίλ σου είναι δική σου δήλωση, ποια τα γράφουν οι πελάτες και ποια τα αλλάζει η Google μόνη της. Με τα λόγια της ίδιας.',
   author: 'Χαράλαμπος Μουταφίδης',
   publishedAt: '2026-09-02',

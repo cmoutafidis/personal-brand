@@ -41,7 +41,7 @@ const post: BlogPost = {
   id: 'istoselida-stis-apantiseis-ai',
   slug: 'istoselida-stis-apantiseis-ai',
   title: 'Η ιστοσελίδα σου στις απαντήσεις της τεχνητής νοημοσύνης: τι είναι μετρήσιμο και τι μάρκετινγκ',
-  metaTitle: 'Η ιστοσελίδα σου στις απαντήσεις AI: τι μετριέται',
+  metaTitle: 'Google AI Mode: η ιστοσελίδα σου στις απαντήσεις AI',
   excerpt: 'Ποιοι crawlers υπάρχουν, ποιος διακόπτης κλείνει τι και τι μετράει πραγματικά το Search Console. Και ποια υπόσχεση δεν την ελέγχει κανείς.',
   author: 'Χαράλαμπος Μουταφίδης',
   publishedAt: '2026-09-02',

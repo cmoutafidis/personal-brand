@@ -3,8 +3,8 @@ import type {BlogPost} from '@/types/blog';
 const post: BlogPost = {
   id: 'kataskevi-eshop-apofaseis',
   slug: 'kataskevi-eshop-apofaseis',
-  title: 'Κατασκευή e-shop: οι αποφάσεις που παίρνεις πριν γραφτεί μία γραμμή κώδικα',
-  metaTitle: 'Κατασκευή e-shop: οι αποφάσεις πριν τον κώδικα',
+  title: 'Κατασκευή eshop: οι αποφάσεις που παίρνεις πριν γραφτεί μία γραμμή κώδικα',
+  metaTitle: 'Κατασκευή eshop: οι αποφάσεις πριν τον κώδικα',
   excerpt: 'Πέντε αποφάσεις κρίνουν αν θα μπορείς ποτέ να φύγεις: πλατφόρμα, πληρωμές, μεταφορικά και επιστροφές, δεδομένα πελατών, έξοδος.',
   author: 'Χαράλαμπος Μουταφίδης',
   publishedAt: '2026-09-02',

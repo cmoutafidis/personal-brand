@@ -51,7 +51,7 @@ const post: BlogPost = {
   id: 'google-search-console-ti-sou-leei',
   slug: 'google-search-console-ti-sou-leei',
   title: 'Google Search Console: τι σου λέει πραγματικά, και τι δεν σου λέει',
-  metaTitle: 'Search Console: τι σου λέει και τι δεν σου λέει',
+  metaTitle: 'Google Search Console: τι σου λέει και τι δεν σου λέει',
   excerpt: 'Οι τέσσερις αναφορές που έχουν σημασία, τι μετράει ακριβώς η καθεμία, και τα όρια που δεν γράφει κανείς: μέση θέση, δείγμα, ζώνη ώρας.',
   author: 'Χαράλαμπος Μουταφίδης',
   publishedAt: '2026-09-02',
