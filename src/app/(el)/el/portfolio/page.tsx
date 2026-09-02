@@ -6,14 +6,14 @@ import Projects from '@/components/Projects';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Υπηρεσίες - Λογισμικό, Ανάλυση Δεδομένων & Snowflake Ελλάδα',
+  title: 'Υπηρεσίες: Λογισμικό, Ανάλυση Δεδομένων & Snowflake Ελλάδα',
   description: 'Τι φτιάχνουμε μόλις ετοιμαστεί το πλάνο: αυτοματοποίηση διαδικασιών και εσωτερικά εργαλεία, αναφορές και ανάλυση δεδομένων, πλατφόρμα δεδομένων Snowflake.',
   keywords: 'υπηρεσίες λογισμικού Ελλάδα, ανάλυση δεδομένων Ελλάδα, Snowflake consulting Ελλάδα, business intelligence Ελλάδα, εταιρεία λογισμικού Θεσσαλονίκη, data engineering Ελλάδα',
   alternates: buildAlternates('/portfolio', 'el'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/portfolio',
-    title: 'Υπηρεσίες - Fiji Solutions',
+    title: 'Υπηρεσίες | Fiji Solutions',
     description: 'Αυτοματοποίηση διαδικασιών, αναφορές και ανάλυση δεδομένων, πλατφόρμα Snowflake.',
     images: [
       {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Υπηρεσίες - Fiji Solutions',
+    title: 'Υπηρεσίες | Fiji Solutions',
     description: 'Αυτοματοποίηση διαδικασιών, αναφορές και ανάλυση δεδομένων, πλατφόρμα Snowflake.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },

@@ -6,14 +6,14 @@ import Projects from '@/components/Projects';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Services - Custom Software, Data Analysis & Snowflake Greece',
+  title: 'Services: Custom Software, Data Analysis & Snowflake Greece',
   description: 'What we build once the map is done: process automation and internal tools, reporting and data analysis, and the Snowflake data platform.',
   keywords: 'custom software services Greece, data analysis services Greece, Snowflake consulting Greece, business intelligence Greece, software company Thessaloniki, data engineering Greece',
   alternates: buildAlternates('/portfolio'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/portfolio',
-    title: 'Services - Fiji Solutions',
+    title: 'Services | Fiji Solutions',
     description: 'Process automation and internal tools, reporting and data analysis, and the Snowflake data platform.',
     images: [
       {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Services - Fiji Solutions',
+    title: 'Services | Fiji Solutions',
     description: 'Process automation and internal tools, reporting and data analysis, and the Snowflake data platform.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
