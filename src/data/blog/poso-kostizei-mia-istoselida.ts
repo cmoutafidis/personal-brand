@@ -188,7 +188,7 @@ const post: BlogPost = {
       '), οπότε μια γραμμή «SSL» δεν σημαίνει αυτόματα ότι κάποιος αγόρασε κάτι. Πιο σημαντικό είναι το επόμενο: «Our default certificates are valid for 90 days.» Κάποιος πρέπει να τα ανανεώνει, αλλιώς η ιστοσελίδα σου κάποια στιγμή δείχνει προειδοποίηση. Συντήρηση, όχι εγκατάσταση. Η ίδια σελίδα αναγνωρίζει ότι «In some cases, integrators (e.g. hosting providers) will charge a nominal fee that reflects the administrative and management costs they incur to provide Let’s Encrypt certificates.» — χρέωση για τη διαχείριση, όχι για το πιστοποιητικό.',
     ]},
     {type: 'paragraph', text: [
-      'Για e-shop δεν είναι καν προαιρετικό. Όταν ο πελάτης πληρώνει πάνω στο δικό σου site: «Direct: Customer purchases and pays directly on your site, requiring an SSL certificate as part of PCI Compliance.» (',
+      'Για e-shop δεν είναι καν προαιρετικό. Όταν ο πελάτης πληρώνει πάνω στη δική σου ιστοσελίδα: «Direct: Customer purchases and pays directly on your site, requiring an SSL certificate as part of PCI Compliance.» (',
       {text: 'WooCommerce — Which payment option is right for me?', href: WC_PAY},
       ').',
     ]},

@@ -57,11 +57,11 @@ const post: BlogPost = {
     ]},
 
     { type: 'faq', heading: 'Σύντομες απαντήσεις', items: [
-      {q: 'Τι ακριβώς αγοράζω όταν αγοράζω «προώθηση»;', a: 'Ζήτα να στο πουν με το όνομα του καναλιού: οργανική αναζήτηση, πληρωμένη αναζήτηση, κοινωνικά δίκτυα ή καταχωρήσεις σε άλλα sites. Η Google τα μετράει ως ξεχωριστά κανάλια και δεν αγοράζουν το ίδιο πράγμα.'},
+      {q: 'Τι ακριβώς αγοράζω όταν αγοράζω «προώθηση»;', a: 'Ζήτα να στο πουν με το όνομα του καναλιού: οργανική αναζήτηση, πληρωμένη αναζήτηση, κοινωνικά δίκτυα ή καταχωρήσεις σε άλλους ιστότοπους. Η Google τα μετράει ως ξεχωριστά κανάλια και δεν αγοράζουν το ίδιο πράγμα.'},
       {q: 'Αν σταματήσω να πληρώνω, τι μένει;', a: 'Ό,τι κάθεται στο δικό σου domain και στους δικούς σου λογαριασμούς. Οι πληρωμένες επισκέψεις σταματούν μαζί με τη δαπάνη. Οι σελίδες, τα κείμενα και το ιστορικό των μετρήσεων μένουν — αλλά μόνο αν οι λογαριασμοί είναι στο δικό σου όνομα.'},
-      {q: 'Η διαφήμιση βοηθάει την οργανική μου θέση;', a: 'Όχι. Η Google το γράφει η ίδια: η διαφήμιση στη Google δεν έχει καμία επίδραση στην παρουσία του site στα αποτελέσματα αναζήτησης. Δύο διαφορετικά πράγματα με το ίδιο εμπορικό όνομα.'},
+      {q: 'Η διαφήμιση βοηθάει την οργανική μου θέση;', a: 'Όχι. Η Google το γράφει η ίδια: η διαφήμιση στη Google δεν έχει καμία επίδραση στην παρουσία της ιστοσελίδας σου στα αποτελέσματα αναζήτησης. Δύο διαφορετικά πράγματα με το ίδιο εμπορικό όνομα.'},
       {q: 'Ποιοι λογαριασμοί πρέπει να είναι δικοί μου;', a: 'Το domain, το Google Ads, το Analytics, το Search Console, το Tag Manager, το Επιχειρηματικό προφίλ και ο διαχειριστής της ίδιας της ιστοσελίδας. Ο πάροχος μπαίνει σε αυτά ως χρήστης, όχι ως ιδιοκτήτης.'},
-      {q: 'Αρκεί να διαγράψω τον πάροχο όταν φύγει;', a: 'Στο Search Console όχι. Η Google γράφει ότι όταν αφαιρείς έναν ιδιοκτήτη το token επαλήθευσής του δεν ακυρώνεται, οπότε μπορεί να ξανα-επαληθευτεί μόνος του. Πρέπει να φύγει και το token από το site — προσεκτικά, γιατί μπορεί να το χρησιμοποιούν και άλλες υπηρεσίες.'},
+      {q: 'Αρκεί να διαγράψω τον πάροχο όταν φύγει;', a: 'Στο Search Console όχι. Η Google γράφει ότι όταν αφαιρείς έναν ιδιοκτήτη το token επαλήθευσής του δεν ακυρώνεται, οπότε μπορεί να ξανα-επαληθευτεί μόνος του. Πρέπει να φύγει και το token από την ιστοσελίδα — προσεκτικά, γιατί μπορεί να το χρησιμοποιούν και άλλες υπηρεσίες.'},
       {q: 'Τι πρέπει να λέει μια μηνιαία αναφορά;', a: 'Κλικ, εμφανίσεις, CTR και μέση θέση από το Search Console, και τη λίστα των αλλαγών με την αιτιολόγησή τους. Ένα «score» από εργαλείο τρίτου δεν είναι αποτέλεσμα: η Google δεν αξιολογεί τέτοια εργαλεία και αυτά δεν βλέπουν τα δεδομένα κατάταξής της.'},
     ]},
 
@@ -74,7 +74,7 @@ const post: BlogPost = {
       [{text: 'Paid Search', href: GA_CHANNELS}, ' — οι διαφημίσεις στην αναζήτηση. «Paid Search is the channel by which users arrive at your site/app via ads on search-engine sites like Bing, Baidu, or Google.»'],
       [{text: 'Organic Social', href: GA_CHANNELS}, ' — δημοσιεύσεις στα κοινωνικά χωρίς πληρωμή. «Organic Social is the channel by which users arrive at your site/app via non-ad links on social sites like Facebook or Twitter.»'],
       [{text: 'Paid Social', href: GA_CHANNELS}, ' — διαφημίσεις μέσα στα κοινωνικά. «Paid Social is the channel by which users arrive at your site/app via ads on social sites like Facebook and Twitter.»'],
-      [{text: 'Referral', href: GA_CHANNELS}, ' — καταχωρήσεις σε καταλόγους και συνδέσμοι από άλλα sites, ένα τέταρτο και ξεχωριστό κανάλι.'],
+      [{text: 'Referral', href: GA_CHANNELS}, ' — καταχωρήσεις σε καταλόγους και συνδέσμοι από άλλους ιστότοπους, ένα τέταρτο και ξεχωριστό κανάλι.'],
     ]},
     { type: 'paragraph', text: [
       'Η πρώτη ερώτηση σε όποιον σου μιλάει για προώθηση είναι η πιο ανιαρή που υπάρχει: ',
@@ -197,7 +197,7 @@ const post: BlogPost = {
       ').',
     ]},
     { type: 'paragraph', text: [
-      'Η σωστή σειρά είναι γραμμένη: πρώτα επαληθεύεσαι εσύ, και μετά αφαιρείς το token του προηγούμενου — για παράδειγμα, βγάζοντας από το site την ετικέτα HTML με την οποία είχε επαληθευτεί. Και μια προειδοποίηση πριν αρχίσεις να σβήνεις ετικέτες: «The same verification token can be reused across various services to verify ownership (like Search Console, Merchant Center, Google Workspace, etc.), and removing those tokens could negatively impact other services relying on them.» (',
+      'Η σωστή σειρά είναι γραμμένη: πρώτα επαληθεύεσαι εσύ, και μετά αφαιρείς το token του προηγούμενου — για παράδειγμα, βγάζοντας από την ιστοσελίδα σου την ετικέτα HTML με την οποία είχε επαληθευτεί. Και μια προειδοποίηση πριν αρχίσεις να σβήνεις ετικέτες: «The same verification token can be reused across various services to verify ownership (like Search Console, Merchant Center, Google Workspace, etc.), and removing those tokens could negatively impact other services relying on them.» (',
       {text: 'Managing owners, users, and permissions', href: SC_OWNERS},
       ').',
     ]},
@@ -320,7 +320,7 @@ const post: BlogPost = {
     { type: 'paragraph', text: [
       'Τρεις προτάσεις της Google αξίζουν να μπουν αυτούσιες στη συζήτηση με έναν υποψήφιο πάροχο. Ένα όριο: «You should never have to link to an SEO.» Ένα φίλτρο: «Be careful if a company is secretive or won\'t clearly explain what they intend to do.» Και το ποιος πληρώνει τον λογαριασμό: «Ultimately, you are responsible for the actions of any companies you hire, so it\'s best to be sure you know exactly how they intend to "help" you.» (',
       {text: 'Do you need an SEO?', href: G_SEO_NEED},
-      '). Αν το περιεχόμενο που γράφεται για λογαριασμό σου είναι παραπλανητικό, το site μπορεί να αφαιρεθεί εντελώς από το ευρετήριο.',
+      '). Αν το περιεχόμενο που γράφεται για λογαριασμό σου είναι παραπλανητικό, η ιστοσελίδα μπορεί να αφαιρεθεί εντελώς από το ευρετήριο.',
     ]},
 
     { type: 'heading', text: 'Τι να ζητάς σε μηνιαία αναφορά' },

@@ -201,6 +201,32 @@ rule 5 still forbids one.
   Greek index's hreflang omits `en` so it agrees with the sitemap. Undo all three together in the
   commit that fills `blogData.en` — and do not machine-translate the Greek posts to fill it.
   `/blog` is in QuickLinks (the footer), never in the navbar.
+- **The blog batch broke the one-term-per-concept rule and it is swept (2026-09-02).** Sixteen
+  places in six of the fourteen articles inflected a bare English noun as a Greek one — «το site
+  σου», «σε άλλα sites», «στο theme σου», «Δικός σου server» — against a rule this repo had already
+  written down: `src/data/offerLinks.ts:157` says **«ιστοσελίδα» never «site»**. What the sweep
+  settled, so it does not have to be re-argued:
+    - **«ιστοσελίδα» is the reader's own site** — 56 «ιστοσελίδα σου» in `src/` against one
+      «ιστότοπό σου». **«ιστότοπος» is a third-party or generic site**, and the site-as-host that a
+      crawler loads and can overload; that is why `google-search-console-ti-sou-leei` says «θα
+      υπερφόρτωνε τον ιστότοπο» (and «την ιστοσελίδα» there would also have collided with «τη
+      σελίδα» in the same sentence). Plural third-party sites are «άλλους ιστότοπους».
+    - **«θέμα» is the WordPress/Shopify template**, articled — «Έτοιμο θέμα», «η άδεια του θέματος».
+      The homonym («θέμα» = matter) is anarthrous and never collides in practice.
+    - **«διακομιστής» is the server** and **«φιλοξενία» is the hosting**; both were already the
+      house terms and one stray «server» was the only exception left.
+    - **«checkout» STAYS, and that is a decision, not an oversight.** The only Greek candidate is
+      «ταμείο», which this corpus uses three times and always for the till being open or shut, never
+      for the checkout page — and `kataskevi-eshop-apofaseis` discusses Shopify's Liquid object
+      literally named `checkout` one paragraph away. An indeclinable «το checkout» under a Greek
+      article is not the defect class; a mangled declension is.
+  ⚠️ **The 155 `site` tokens in `src/data/blog/` are NOT 155 defects — 144 of them must never be
+  touched.** They sit inside « » verbatim quotations (emitted as schema.org `citation`), in English
+  source titles and link labels, in URL constants, in the Google `site:` operator the reader types,
+  and in one Webflow product name («Site plan»). **Never sweep this class with a regex.**
+  `poso-kostizei-mia-istoselida.ts:191` is the proof: one line carries a real defect immediately
+  followed by a colon (so an operator-protecting rule skips it) and a verbatim WooCommerce quotation
+  four words later (so a line-wide rule falsifies a checked citation).
 - **Greek copy uses one term per concept, and the English loanwords are gone (2026-09-01).** The
   kickoff meeting is «η εναρκτήρια συνάντηση» on all eight offer pages, a delivery cycle is «ο
   κύκλος (υλοποίησης)» and never «sprint», and a demo is «μια επίδειξη». The apostrophe in «γι’
@@ -227,7 +253,9 @@ rule 5 still forbids one.
 - **The `geo` in `RootShell.tsx` was wrong by ~10 km and is corrected (2026-09-01).** It pointed at
   Πυλαία, postcode 570 01 — a different municipality from the address on the same schema node. It
   is now the Porto Center building on Νικηφόρου Ουρανού at 546 27, which the published address
-  names. `TODO(charis): confirm against the Google Business Profile pin.` The node carries **no**
+  names. ✅ **Confirmed against the Google Business Profile pin on 2026-09-01** — 40.643639,
+  22.912267 lands on Porto Center at Νικηφόρου Ουρανού and matches the profile address, so the
+  `TODO(charis)` that used to sit here is closed. The node carries **no**
   `priceRange` (rule 7), **no** `aggregateRating`/`review` (zero Google reviews), **no**
   `openingHoursSpecification` (the only hours on record are the GBP default "Open 24 hours") and
   **no** `vatID` (the number on `/legal` is the partner's personal ΑΦΜ). `serviceType` stays at

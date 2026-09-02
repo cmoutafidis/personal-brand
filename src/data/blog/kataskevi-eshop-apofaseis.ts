@@ -124,7 +124,7 @@ const post: BlogPost = {
     { type: 'paragraph', text: [
       'Η πιο συχνή παρανόηση είναι ότι, με μεγάλο πάροχο, τελείωσες με την ασφάλεια. Η τεκμηρίωση του WooCommerce το λέει ωμά: ',
       {text: '«PCI DSS compliance is ultimately the responsibility of the store owner.»', href: 'https://woocommerce.com/document/pci-dss-compliance-and-woocommerce/'},
-      ' Και προσθέτει ότι ακόμη κι όταν η πληρωμή γίνεται εκτός του site σου, το PCI DSS εξακολουθεί να ισχύει επειδή τη σελίδα ολοκλήρωσης της παραγγελίας την εμφανίζει η δική σου ιστοσελίδα — απλώς μικραίνει το εύρος. Το ίδιο ισχύει για όλο το σύστημα γύρω από την πληρωμή: ',
+      ' Και προσθέτει ότι ακόμη κι όταν η πληρωμή γίνεται εκτός της ιστοσελίδας σου, το PCI DSS εξακολουθεί να ισχύει επειδή τη σελίδα ολοκλήρωσης της παραγγελίας την εμφανίζει η δική σου ιστοσελίδα — απλώς μικραίνει το εύρος. Το ίδιο ισχύει για όλο το σύστημα γύρω από την πληρωμή: ',
       {text: '«Because WooCommerce is built on WordPress, a given WooCommerce site is overall exactly as secure as the WordPress installation itself.»', href: 'https://woocommerce.com/document/woocommerce-security-faq/'},
       ' Και στην ίδια σελίδα: «Any security matter that pertains to WordPress, including choosing a secure website host and hosting package, will also pertain to WooCommerce.» Η επιλογή φιλοξενίας δεν είναι απόφαση κόστους ή ταχύτητας· είναι απόφαση ασφάλειας, και παίρνεται πριν την κατασκευή.',
     ]},
