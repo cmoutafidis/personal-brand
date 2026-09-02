@@ -284,3 +284,33 @@ npm run dev     # turbopack
 npm run build   # must stay at 39 static routes (23 + the 16 /offers/* pages added 2026-08-31)
 npm run lint
 ```
+
+## ⛔ TWO WRITING RULES, HIS, GIVEN 2026-09-02, AND THEY ARE ABSOLUTE
+
+> **"I dont like em dashes. Dont use them. Also dont use the 'It is not X, it is Y' type of writing"**
+
+**1. No em dash (—) and no en dash (–) in any string that ships.** Copy, metadata, JSON-LD, alt
+text, social posts, all of it. A hyphen inside a compound word (`Camunda-7-Migration`, `e-shop`,
+`c/o`) is a different character doing a different job and is fine. A spaced hyphen used as a dash
+(` - `) is the same move in disguise and is also out.
+
+**2. No contrastive-definition writing**, in any of its shapes:
+*"It is not a career history, it is the work behind the companies."* ·
+*"This is the work, not a career history."* (the comma form) ·
+*"your path is named, not a start date, a path"* (the pivot form) ·
+*"X is not Y; it is Z."*
+Say what the thing **is** and stop. Where the negative genuinely carries information the reader
+needs, state it as a plain separate sentence with no rhetorical pivot.
+
+**Check before every commit that touches copy:**
+```bash
+grep -n "—\|–" src/data/**/*.ts   # must return nothing inside quoted strings
+```
+The second rule is not greppable and has to be read for. It is easy to miss precisely because it
+reads well, which is why it gets written.
+
+⚠️ 82 em dashes were live in `charismoutafidis-com` when he said this, and every one had to be
+rewritten by hand in its own language. A blind replace does not work: each dash wants a different
+repair depending on what the clause is doing. In Greek the repair is genuinely risky, because
+restructuring around «τίποτα» / «κανένας» / «ποτέ» can invert the sentence.
+
