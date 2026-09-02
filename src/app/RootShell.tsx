@@ -203,8 +203,19 @@ function organisationSchema(lang: Language) {
       'https://www.facebook.com/fijisolutions/',
       'https://www.linkedin.com/company/fijisolutionsnet/',
       'https://github.com/cmoutafidis',
+      'https://www.instagram.com/fijisolutionsnet/',
       'https://www.snowflake.com/en/why-snowflake/partners/all-partners/fiji-solutions/',
     ],
+    // ⚠️ TikTok is DELIBERATELY ABSENT. `social-media-content/brands/fiji-solutions/targets.json`
+    // records the handle `fiji.solutions`, but the publisher's own config gates TikTok off
+    // ("absent, and must stay absent for now") and the account could not be verified — tiktok.com is
+    // blocked by the Chrome extension's site permissions. A `sameAs` entry is an identity claim, so
+    // it goes in only after somebody has looked at the profile. Same for YouTube, which has no
+    // channel recorded at all.
+    // Instagram @fijisolutionsnet WAS verified on 2026-09-02: real, 5 posts, bio "We help
+    // businesses grow online", and it already links back to www.fijisolutions.net.
+    // ⚠️ @fijisolutions (no "net") is NOT this company — it is a Brazilian fintech with 11K
+    // followers. Never add it.
     founder: {
       '@type': 'Person',
       name: 'Charalampos Moutafidis',
