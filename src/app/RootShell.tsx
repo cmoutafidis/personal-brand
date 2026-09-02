@@ -222,8 +222,16 @@ function organisationSchema(lang: Language) {
     //
     // It is still rendered as a visible link in the footer, which is correct — that is a link, not
     // an identity claim.
+    // ⚠️ `https://x.com/fiji_solutions` WAS REMOVED ON 2026-09-03, on his decision, and it must not
+    // come back. Asked directly, he answered: "I say you drop the Twitter account. We don't need
+    // that." The profile reads as a personal account (display name "Fiji", bio "Boxer. Businessman.
+    // Always working.", personal posts) and its location field says Aarau, which is Peak Code's
+    // city, on a claim that this page IS the Greek IKE. That is the same person-shaped identity
+    // assertion the GitHub entry was removed for the day before.
+    //
+    // It is STILL a visible link in the footer (`src/components/Footer.tsx:81`) and that is correct:
+    // a link is not an identity claim. Removing the link was not what he decided.
     sameAs: [
-      'https://x.com/fiji_solutions',
       'https://www.facebook.com/fijisolutions/',
       'https://www.linkedin.com/company/fijisolutionsnet/',
       'https://www.instagram.com/fijisolutionsnet/',
