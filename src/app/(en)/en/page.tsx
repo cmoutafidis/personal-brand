@@ -8,6 +8,8 @@ import Solutions from '@/components/Solutions';
 import Local from '@/components/Local';
 import AuditFormSection from '@/components/AuditFormSection';
 import Footer from "@/components/Footer";
+import HomeLongForm from '@/components/HomeLongForm';
+import {homeLongForm} from '@/data/homeLongForm';
 
 export const metadata: Metadata = {
   title: `One process automated in ${FIRST_FIX_DAYS} days from build start | Fiji Solutions`,
@@ -58,6 +60,29 @@ export default function EnglishHomePage() {
           /en/offers/website-google-ads their first inbound internal link. */}
       <Local t={t} language={language}/>
       <AuditFormSection language={language} presetQuestion="homepage-process-audit"/>
+      {/* The long-form block. VISIBLE, not collapsed: audit §9 item 18 says so and gives the
+          reason. It is also the only route from the home page into the fourteen Greek articles
+          and into /services/custom-software-development-greece and /services/data-analysis-greece,
+          which are in neither the navigation nor the footer. */}
+      <HomeLongForm copy={homeLongForm.en}/>
+      {/* FAQPage, built from the SAME array HomeLongForm renders, so the marked-up questions and
+          the visible ones cannot drift. This page had no FAQPage at all before 2026-09-02, while
+          peakcodeconsulting.ch's home page has one. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            inLanguage: 'en',
+            mainEntity: homeLongForm.en.faqs.map((faq) => ({
+              '@type': 'Question',
+              name: faq.q,
+              acceptedAnswer: {'@type': 'Answer', text: faq.a},
+            })),
+          }),
+        }}
+      />
       <Footer t={t}/>
     </>
   );

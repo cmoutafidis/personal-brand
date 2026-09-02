@@ -7,6 +7,8 @@ import Solutions from '@/components/Solutions';
 import Local from '@/components/Local';
 import AuditFormSection from '@/components/AuditFormSection';
 import Footer from "@/components/Footer";
+import HomeLongForm from '@/components/HomeLongForm';
+import {homeLongForm} from '@/data/homeLongForm';
 
 // Retargeted 2026-09-01 on the first demand data either company has ever had
 // (offer-os/gtm/keyword-research-2026-09-01.md).
@@ -72,6 +74,29 @@ export default function GreekHomePage() {
           so no click path is interrupted. See Local.tsx for why this section exists. */}
       <Local t={t} language={language}/>
       <AuditFormSection language={language} presetQuestion="homepage-process-audit"/>
+      {/* The long-form block. VISIBLE, not collapsed: audit §9 item 18 says so and gives the
+          reason. It is also the only route from the home page into the fourteen Greek articles
+          and into /services/custom-software-development-greece and /services/data-analysis-greece,
+          which are in neither the navigation nor the footer. */}
+      <HomeLongForm copy={homeLongForm.el}/>
+      {/* FAQPage, built from the SAME array HomeLongForm renders, so the marked-up questions and
+          the visible ones cannot drift. This page had no FAQPage at all before 2026-09-02, while
+          peakcodeconsulting.ch's home page has one. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            inLanguage: 'el',
+            mainEntity: homeLongForm.el.faqs.map((faq) => ({
+              '@type': 'Question',
+              name: faq.q,
+              acceptedAnswer: {'@type': 'Answer', text: faq.a},
+            })),
+          }),
+        }}
+      />
       <Footer t={t}/>
     </>
   );
