@@ -39,7 +39,6 @@ type TimelineItem = {
 type MapRow = {
   process: string;
   hours: string;
-  cost: string;
 };
 
 type Faq = {
@@ -77,7 +76,7 @@ type LandingCopy = {
   timeline: TimelineItem[];
   sampleMapLabel: string;
   sampleMapTitle: string;
-  sampleMapHeaders: {process: string; hours: string; cost: string};
+  sampleMapHeaders: {process: string; hours: string};
   sampleMapRows: MapRow[];
   sampleMapFootnote: string;
   timelineClosing: string;
@@ -160,7 +159,7 @@ const copy: Record<Language, LandingCopy> = {
       }
     ],
     leaksClosing: 'Every one of these leaks is a software problem. Software problems can be fixed for good, and kept fixed.',
-    mathBox: 'Do the math for your own team: 3 people spending 5 hours a week on manual work, at €25/hour, is over €19,000 a year. That is before you count the errors, the late invoices, and the clients who quietly left.',
+    mathBox: 'Do the math for your own team: 3 people spending 5 hours a week on manual work is 15 hours a week, and about 780 hours a year — roughly twenty working weeks spent on work nobody chose. Multiply that by what an hour costs you. And that is before you count the errors, the late invoices, and the clients who quietly left.',
     cta2Lead: 'Find out what your processes are actually costing you. It’s free, and it’s in writing within a week of your audit call.',
     trustTitle: 'Here’s what you can verify yourself.',
     trustIntro: 'We’re a small company and we say so plainly. Here are things you can check for yourself:',
@@ -264,11 +263,11 @@ const copy: Record<Language, LandingCopy> = {
     ],
     sampleMapLabel: 'Example',
     sampleMapTitle: 'Process Money-Leak Map: what yours will look like',
-    sampleMapHeaders: {process: 'Bottleneck', hours: 'Time lost', cost: 'Estimated cost'},
+    sampleMapHeaders: {process: 'Bottleneck', hours: 'Time lost'},
     sampleMapRows: [
-      {process: 'Manual invoice entry and reconciliation', hours: '≈ 18 h / month', cost: '≈ €450 / month'},
-      {process: 'Order data retyped between e-shop and ERP', hours: '≈ 12 h / month', cost: '≈ €300 / month'},
-      {process: 'Quote follow-ups tracked by memory', hours: '≈ 9 h / month', cost: '≈ €225 / month'}
+      {process: 'Manual invoice entry and reconciliation', hours: '≈ 18 h / month'},
+      {process: 'Order data retyped between e-shop and ERP', hours: '≈ 12 h / month'},
+      {process: 'Quote follow-ups tracked by memory', hours: '≈ 9 h / month'}
     ],
     sampleMapFootnote: 'An illustrative example. Your map is built from your own numbers during the audit.',
     timelineClosing: 'Nothing on this timeline commits you to the next step. Each one ends with a decision that is yours to make.',
@@ -447,7 +446,7 @@ const copy: Record<Language, LandingCopy> = {
       }
     ],
     leaksClosing: 'Καθεμία από αυτές τις διαρροές είναι πρόβλημα λογισμικού. Τα προβλήματα λογισμικού διορθώνονται οριστικά, και μένουν διορθωμένα.',
-    mathBox: 'Κάνε τον λογαριασμό για τη δική σου ομάδα: 3 άτομα που ξοδεύουν 5 ώρες την εβδομάδα σε χειροκίνητη δουλειά, με 25€/ώρα, είναι πάνω από 19.000€ τον χρόνο. Κι αυτό πριν μετρήσεις τα λάθη, τα καθυστερημένα τιμολόγια και τους πελάτες που έφυγαν αθόρυβα.',
+    mathBox: 'Κάνε τον λογαριασμό για τη δική σου ομάδα: 3 άτομα που ξοδεύουν 5 ώρες την εβδομάδα σε χειροκίνητη δουλειά είναι 15 ώρες την εβδομάδα, περίπου 780 ώρες τον χρόνο — περίπου είκοσι εργάσιμες εβδομάδες σε δουλειά που δεν διάλεξε κανείς. Πολλαπλασίασέ το με το πόσο σου κοστίζει μία ώρα. Κι αυτό πριν μετρήσεις τα λάθη, τα καθυστερημένα τιμολόγια και τους πελάτες που έφυγαν αθόρυβα.',
     cta2Lead: 'Μάθε τι πραγματικά σου κοστίζουν οι διαδικασίες σου. Είναι δωρεάν, και το έχεις γραπτά μέσα σε μία εβδομάδα από την κλήση του ελέγχου.',
     trustTitle: 'Να τι μπορείς να ελέγξεις μόνος σου.',
     trustIntro: 'Είμαστε μικρή εταιρεία και το λέμε καθαρά. Εδώ θα βρεις πράγματα που επαληθεύονται:',
@@ -551,11 +550,11 @@ const copy: Record<Language, LandingCopy> = {
     ],
     sampleMapLabel: 'Παράδειγμα',
     sampleMapTitle: 'Το γραπτό πλάνο: πώς θα μοιάζει το δικό σου',
-    sampleMapHeaders: {process: 'Διαδικασία', hours: 'Χαμένος χρόνος', cost: 'Εκτιμώμενο κόστος'},
+    sampleMapHeaders: {process: 'Διαδικασία', hours: 'Χαμένος χρόνος'},
     sampleMapRows: [
-      {process: 'Χειροκίνητη καταχώρηση και συμφωνία τιμολογίων', hours: '≈ 18 ώρες / μήνα', cost: '≈ 450€ / μήνα'},
-      {process: 'Δεδομένα παραγγελιών ξαναπληκτρολογούνται από e-shop σε ERP', hours: '≈ 12 ώρες / μήνα', cost: '≈ 300€ / μήνα'},
-      {process: 'Υπενθυμίσεις προσφορών που γίνονται από μνήμη', hours: '≈ 9 ώρες / μήνα', cost: '≈ 225€ / μήνα'}
+      {process: 'Χειροκίνητη καταχώρηση και συμφωνία τιμολογίων', hours: '≈ 18 ώρες / μήνα'},
+      {process: 'Δεδομένα παραγγελιών ξαναπληκτρολογούνται από e-shop σε ERP', hours: '≈ 12 ώρες / μήνα'},
+      {process: 'Υπενθυμίσεις προσφορών που γίνονται από μνήμη', hours: '≈ 9 ώρες / μήνα'}
     ],
     sampleMapFootnote: 'Ενδεικτικό παράδειγμα. Το δικό σου πλάνο φτιάχνεται με τα δικά σου νούμερα κατά τον έλεγχο.',
     timelineClosing: 'Τίποτα σε αυτό το χρονοδιάγραμμα δεν σε δεσμεύει για το επόμενο βήμα. Κάθε βήμα τελειώνει με μια απόφαση που είναι δική σου.',
@@ -942,7 +941,6 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
                   <tr className="border-b border-gray-200 text-gray-500 dark:border-gray-700 dark:text-gray-400">
                     <th scope="col" className="px-6 py-3 font-medium">{pageCopy.sampleMapHeaders.process}</th>
                     <th scope="col" className="px-6 py-3 font-medium">{pageCopy.sampleMapHeaders.hours}</th>
-                    <th scope="col" className="px-6 py-3 font-medium">{pageCopy.sampleMapHeaders.cost}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -950,7 +948,6 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
                     <tr key={row.process} className="border-b border-gray-100 last:border-0 dark:border-gray-700/50">
                       <td className="px-6 py-4 text-gray-900 dark:text-gray-100">{row.process}</td>
                       <td className="whitespace-nowrap px-6 py-4 text-gray-700 dark:text-gray-300">{row.hours}</td>
-                      <td className="whitespace-nowrap px-6 py-4 text-gray-700 dark:text-gray-300">{row.cost}</td>
                     </tr>
                   ))}
                 </tbody>
