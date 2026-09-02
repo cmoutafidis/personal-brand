@@ -181,11 +181,29 @@ function organisationSchema(lang: Language) {
       value: '185101306000',
     },
     knowsLanguage: ['el', 'en'],
+    // ⚠️ `sameAs` is an identity claim, not a link list. Every entry must be a page that identifies
+    // THIS entity and that a search engine can reach — a profile we control, or an authoritative
+    // third-party record of us. Nothing aspirational, and nothing that implies a credential we do
+    // not hold.
+    //
+    // The Snowflake entry was added 2026-09-02 after a citation audit found it: it is the single
+    // most authoritative inbound link either company has, it is a real accreditation (AI Data Cloud
+    // Select Partner) that belongs to Fiji and to Fiji alone, and until now the relationship was
+    // one-way. This makes it reciprocal. It must NEVER appear on a Peak Code surface — that company
+    // holds no accreditation of any kind, and the identical badge file sitting unused in the Peak
+    // Code repo is a copy of Fiji's by accident.
+    //
+    // ⚠️ Two entries here publish an address that is NOT this company's. LinkedIn and Facebook both
+    // carry "Marinou Antipa 40, 570 01" — the old Pylaia address the JSON-LD `geo` above was
+    // corrected away from on 2026-09-01 — and search-engine answer summaries repeat it. Both are
+    // fixed inside those platforms' own admin UIs and cannot be fixed from this repo. The audit and
+    // the exact steps are in offer-os/gtm/citation-pack-2026-09-02.md, items A1 and A3.
     sameAs: [
       'https://x.com/fiji_solutions',
       'https://www.facebook.com/fijisolutions/',
       'https://www.linkedin.com/company/fijisolutionsnet/',
       'https://github.com/cmoutafidis',
+      'https://www.snowflake.com/en/why-snowflake/partners/all-partners/fiji-solutions/',
     ],
     founder: {
       '@type': 'Person',
