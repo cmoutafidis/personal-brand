@@ -9,10 +9,21 @@
 # one is shared with all of them (indexnow.org/faq). GOOGLE DOES NOT PARTICIPATE. Nothing here
 # affects Google; use Search Console for that.
 #
-# WHY IT IS WORTH RUNNING HERE. Half this site is not in Google's index and neither domain is
-# verified in Bing Webmaster Tools, so Bing currently discovers these pages only by crawling.
-# Bing is also Copilot's index, and it is a materially larger share of the Swiss market than the
-# Greek one — which matters because the same eight offers ship on peakcodeconsulting.ch too.
+# WHY IT IS WORTH RUNNING HERE. Half this site is not in Google's index. Bing has about 13 pages of
+# it, measured 2026-09-03 with `site:www.fijisolutions.net`, and none of the fourteen Greek articles
+# is among them. Bing is also Copilot's index, and a materially larger share of the Swiss market
+# than the Greek one, which matters because the same eight offers ship on peakcodeconsulting.ch too.
+#
+# ⚠️ THE OLD TEXT HERE SAID "neither domain is verified in Bing Webmaster Tools". THAT IS FALSE and
+# was measured false on 2026-09-03. Both are verified, on the apex host, and Bing normalises www
+# into the same property: POSTing site/add for the www host returns 400 SiteAlreadyAdded.
+#
+# ⚠️ AND AN IndexNow PING IS NOT A SUBMISSION YOU CAN SEE. Measured the same day: Bing's URL
+# Submission page read "No URLs submitted in last 28 days" for BOTH company sites, the day after
+# URLs had been pushed through IndexNow and accepted. Accepted means received. It does not mean
+# crawled, and it does not appear in the tools. Bing's own sitemap row for this site still said 34
+# URLs discovered while the live sitemap held 49, and one Re-submit fixed it. RUN THIS, AND THEN
+# RESUBMIT THE SITEMAP IN BING AS WELL AS IN SEARCH CONSOLE.
 #
 # ⚠️ RUN THIS BY HAND, AND ONLY FOR PAGES THAT ACTUALLY CHANGED.
 # This is deliberately NOT wired to a deploy hook. IndexNow's own FAQ: "Every URL submitted
