@@ -1,0 +1,77 @@
+name: gates
+
+# The two checkers that read this repo, run on every push.
+#
+# WHY THIS EXISTS. Both replaced things that were nominally in place and were not working.
+#
+# The no-dash rule was enforced by `grep -n "—\|–" src/data/**/*.ts` pasted into CLAUDE.md. Bash
+# leaves globstar off, so it matched one directory deep, 26 of the 28 files here. Worse, it could
+# only ever have been noise: 19 of the dashes in this repo are somebody else's writing, quoted
+# verbatim, and he decided on 2026-09-03 that they stay. A check reporting all 19 on every run is
+# one that gets turned off.
+#
+# The hreflang parity check exists because until 2026-09-03 src/app/sitemap.ts built its own copy
+# of the map, `{en, el}`, and stopped there: every page published three values and the sitemap
+# published two, on all 34 route entries, with x-default the one missing. THAT DEFECT WAS ALREADY
+# KNOWN AND WRITTEN DOWN, in charismoutafidis-com/src/app/sitemap.ts, which says of this site "its
+# sitemap omits x-default while its pages emit one". Separate remote, so nothing here could go red
+# on it, and it survived for as long as nobody happened to open that file. A finding recorded
+# somewhere unreachable is a finding that does not exist.
+#
+# TWO JOBS, AND THE ORDER MATTERS. `self-test` runs FIRST and proves each checker can still go red:
+# both scripts sabotage their own internals and assert the fixtures notice. A neutered checker
+# looks exactly like a clean repo on an ordinary push.
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  self-test:
+    name: Prove the gates can go red
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: The checkers must exist
+        run: |
+          for f in scripts/no-shipped-dashes.py scripts/hreflang-parity.py; do
+            if [ ! -f "$f" ]; then
+              echo "::error file=$f::GATE NEUTERED. $f is missing from the tree. This is not a"
+              echo "runner problem. Restore the file or delete this workflow deliberately."
+              exit 1
+            fi
+          done
+      # ⚠️ The allowlist is load-bearing and its absence is silent: without it the dash gate reports
+      # the three quoted spans that carry no guillemets in the source as defects, which is the
+      # shape of noise that gets a check deleted.
+      - name: The dash allowlist must exist
+        run: |
+          if [ ! -f scripts/dash-allowlist.txt ]; then
+            echo "::error file=scripts/dash-allowlist.txt::The allowlist is gone. Three verbatim"
+            echo "quotations here carry no guillemets in the source and are allowed by SHA-1."
+            echo "Without this file they read as defects and the gate becomes noise."
+            exit 1
+          fi
+      - run: python3 scripts/no-shipped-dashes.py --selftest
+      - run: python3 scripts/hreflang-parity.py --selftest
+
+  gates:
+    name: No shipped dashes, and the sitemap matches the pages
+    needs: self-test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # ⚠️ THE PARITY GATE READS .next, NOT src, and lowercases both sides. Next emits the React
+      # prop name hrefLang in page HTML while the sitemap uses the lowercase attribute, so a
+      # case-sensitive comparison reports a correct site as having no hreflang at all.
+      - run: npm run build
+      - run: python3 scripts/no-shipped-dashes.py
+      - run: python3 scripts/hreflang-parity.py
