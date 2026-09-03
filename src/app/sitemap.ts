@@ -1,5 +1,6 @@
 import type {MetadataRoute} from 'next';
 import {blogData} from '@/data/blogs';
+import {hreflangMap} from '@/lib/alternates';
 
 // Generated, not hand-maintained.
 //
@@ -81,11 +82,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: r.lastmod,
         changeFrequency: r.changeFrequency,
         priority: r.priority,
+        // ⚠️ THIS USED TO BE A SECOND COPY OF THE MAP and the copy was short one value: it listed
+        // en and el and omitted x-default, so every page published three hreflang values and the
+        // sitemap published two for the same URL, on all 34 route entries. Call the shared
+        // function; do not rebuild the map here.
         alternates: {
-          languages: {
-            en: `${SITE}/en${r.path}`,
-            el: `${SITE}/el${r.path}`,
-          },
+          languages: hreflangMap(r.path),
         },
       });
     }

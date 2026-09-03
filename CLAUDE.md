@@ -283,7 +283,26 @@ rule 5 still forbids one.
 npm run dev     # turbopack
 npm run build   # must stay at 39 static routes (23 + the 16 /offers/* pages added 2026-08-31)
 npm run lint
+
+npm run build && python3 scripts/hreflang-parity.py   # AFTER a build, always
+python3 scripts/hreflang-parity.py --selftest
+python3 scripts/no-shipped-dashes.py
 ```
+
+`scripts/hreflang-parity.py` asserts the built pages and the built sitemap declare the SAME
+hreflang set for the same URL. It exists because until 2026-09-03 they did not: `sitemap.ts` built
+its own copy of the map with `{en, el}` and stopped, so every page published three values and the
+sitemap published two, on all 34 route entries, with x-default the one missing.
+
+⚠️ **That defect was known, written down, and could not go red here.** The note lived in
+`charismoutafidis-com/src/app/sitemap.ts`, which says of this site: *"its sitemap omits x-default
+while its pages emit one."* Separate repo, separate remote, so nothing in this one could see it.
+Both files now call one exported `hreflangMap()`, and the script checks the result from outside.
+
+It reads the BUILT artifact, and it lowercases both sides before comparing, because Next emits the
+React prop name `hrefLang` in page HTML while the sitemap uses the lowercase attribute. A
+case-sensitive grep over the pages returns zero and reports a correct site as having no hreflang at
+all, which is a trap this estate has already fallen into once.
 
 ## ⛔ TWO WRITING RULES, HIS, GIVEN 2026-09-02, AND THEY ARE ABSOLUTE
 
@@ -304,8 +323,22 @@ needs, state it as a plain separate sentence with no rhetorical pivot.
 
 **Check before every commit that touches copy:**
 ```bash
-grep -n "—\|–" src/data/**/*.ts   # must return nothing inside quoted strings
+python3 scripts/no-shipped-dashes.py            # must print 0 defects
+python3 scripts/no-shipped-dashes.py --list     # every dash, with why it is or is not allowed
+python3 scripts/no-shipped-dashes.py --selftest # fixtures plus four sabotages, must all say ok
 ```
+⚠️ **This replaced a `grep -n "—\|–" src/data/**/*.ts` on 2026-09-03, and that grep was reading
+almost nothing.** Bash leaves globstar off, so `src/data/**/*.ts` collapses to `src/data/*/*.ts`
+and matches only files one directory deep. Measured across the three repos it reached 8 of 14
+files here, 26 of 28 on fiji and 3 of 6 on charismoutafidis, and it never opened `blogs.ts`, which
+is where the articles live. It also never looked outside `src/data` at all.
+
+The script reads every `.ts` and `.tsx` under `src/`, strips comments, and then tells a quotation
+from a defect. Dashes inside `„ … “` or `« … »` are quotations and pass. Quotations that carry no
+marks in the source pass only if their SHA-1 is in `scripts/dash-allowlist.txt`, and editing one
+revokes its entry. That distinction is the reason the check is usable at all: 21 dashes in the
+estate are somebody else’s writing, he decided on 2026-09-03 that they stay, and a check that
+reported all 21 on every run would be turned off within the week.
 The second rule is not greppable and has to be read for. It is easy to miss precisely because it
 reads well, which is why it gets written.
 

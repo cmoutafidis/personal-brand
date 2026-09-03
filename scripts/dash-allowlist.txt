@@ -1,0 +1,20 @@
+# Literals that carry an em dash or an en dash and are allowed to, because they are somebody
+# else's writing quoted verbatim and this repo's source does not mark them with guillemets.
+#
+# His decision, 2026-09-03: the dashes inside verbatim quotations stay, and so do Google's own
+# Greek Search Console status labels. Editing somebody else's quoted sentence falsifies a citation.
+# Everything marked with the German quotation marks or with Greek guillemets is recognised by the
+# checker itself and does not need a line here. These three are the ones with no marks in the
+# source, because the component renders them as a quotation instead.
+#
+# Format: the SHA-1 of the whole string literal, then a human note. The checker matches the SHA-1
+# only. Editing the quotation changes the hash and revokes the entry, which is the point: a
+# quotation that has been touched needs looking at again.
+#
+# scripts/no-shipped-dashes.py prints the SHA-1 of anything it flags, so adding a genuinely new
+# quotation is a copy and paste. Adding a line here for copy that is YOURS is the one thing that
+# would make this file a lie.
+
+6712e375ae933eec337ac822534a480a007c7df5  Google Search Console status label, comparison table row: Ανακαλύφθηκε ... δεν έχει ευρετηριαστεί
+3f6753b50345ea17ec5e9c4bde52f4e67ac661ea  Google Search Console status label, comparison table row: Σαρώθηκε ... δεν έχει ευρετηριαστεί
+4f0a588d9b282f7bc161d28231b84c80a6831722  Google, AI features and your website, on query fan-out. Two dashes, one sentence, linked to the source.
