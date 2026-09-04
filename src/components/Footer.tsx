@@ -10,26 +10,8 @@ interface FooterProps {
 export default function Footer({t}: FooterProps) {
   const currentYear = new Date().getFullYear();
 
-  const XIcon = (props: { className?: string | undefined }) => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={props.className}
-    >
-      <path
-        d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
-        stroke="none"
-        fill="currentColor"
-      />
-    </svg>
-  );
+  // The XIcon component was deleted here on 2026-09-04 along with the link it drew. It was the only
+  // thing that used it, and an unused icon is an invitation to put the link back.
 
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
@@ -77,15 +59,23 @@ export default function Footer({t}: FooterProps) {
               >
                 <Github className="h-5 w-5"/>
               </a>
-              <a
-                href="https://x.com/fiji_solutions"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Twitter"
-              >
-                <XIcon className="h-5 w-5"/>
-              </a>
+              {/* ⛔ THE X LINK WAS REMOVED 2026-09-04 AND IT DOES NOT COME BACK. His instruction,
+                  verbatim: "I told you to drop X. Dont modify anything. Leave it alone. unlink it
+                  from my companies."
+
+                  This was the LAST link from either company to `x.com/fiji_solutions`. The account
+                  came out of Fiji's `sameAs` on 2026-09-03 (citation pack C4) and the footer link
+                  was kept at the time. That half is now closed too, so no Fiji or Peak Code surface
+                  points at X in any form.
+
+                  ⛔ Do not "fix" the X profile instead. Measured 2026-09-04, it reads display name
+                  `Fiji`, bio `Boxer. Businessman. Always working.`, location `Aarau, Switzerland`.
+                  Those are wrong for a Greek company and they are deliberately being left wrong,
+                  because the account is his and it is no longer presented as the company's.
+
+                  ⚠️ The `twitter:` blocks in every page's metadata are OpenGraph Twitter Cards.
+                  They control how a link previews when somebody shares it and they do NOT link to
+                  this account. Leave them alone. */}
               <a
                 href="https://www.facebook.com/fijisolutions/"
                 target="_blank"
