@@ -28,7 +28,14 @@ const Projects: React.FC<ProjectsProps> = ({t}) => {
       title: t('projects.catalytics.title'),
       description: t('projects.catalytics.description'),
       image: '/catalytics.png',
-      technologies: ['Angular', 'TypeScript', 'Web3', 'Blockchain', 'Python'],
+      // 'Blockchain' removed 2026-09-04, his call. The tag was factually true of Catalytics, but
+      // the word had already been taken off the Google Business Profile (2026-09-01) and off Fiji's
+      // LinkedIn About (2026-09-02), both times on the ground that it is not what Fiji sells. Nobody
+      // had swept the company's own site, which is the surface Google reconciles the others against.
+      // This card sits directly under "built on the same stack we would build yours on", so the tag
+      // row reads as an offer rather than as a project description. 'Web3' stays: it names the
+      // technology honestly without claiming the practice. Both locales render from this one array.
+      technologies: ['Angular', 'TypeScript', 'Web3', 'Python'],
       liveUrl: 'https://catalytics.pro/',
     }
   ];
