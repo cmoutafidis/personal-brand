@@ -1,5 +1,5 @@
 import React from 'react';
-import {Facebook, Github, Linkedin} from 'lucide-react';
+import {Facebook, Linkedin} from 'lucide-react';
 import FooterButton from "@/components/FooterButton";
 import QuickLinks from "@/components/QuickLinks";
 
@@ -50,15 +50,23 @@ export default function Footer({t}: FooterProps) {
               </a>
             </div>
             <div className="flex space-x-4">
-              <a
-                href="https://github.com/cmoutafidis"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="h-5 w-5"/>
-              </a>
+              {/* ⛔ THE PERSONAL GITHUB LINK WAS REMOVED 2026-09-05 AND IT DOES NOT COME BACK.
+                  His instruction, verbatim: "this github is personal It is correct as it is. It
+                  should only link with my personal website. Same as X, it should only link with my
+                  personal website, not companies."
+
+                  `github.com/cmoutafidis` came out of this company's `sameAs` on 2026-09-02
+                  because a person's profile is not the Greek IKE, and the visible link was kept at
+                  the time on the reasoning that a link is not an identity claim. X was kept on the
+                  identical reasoning one day later, and on 2026-09-04 he overruled it and the X
+                  link went. The GitHub link three lines above it was never revisited, so this
+                  company page went on pointing at his personal account for another day.
+
+                  It is live where it belongs: `charismoutafidis.com` publishes it five times, in
+                  the `sameAs` of the canonical Person node this company's JSON-LD references
+                  through `founder`. Peak Code has never linked it. ⛔ Do not add it back here, and
+                  do not "fix" the GitHub profile either: its display name reads `Fiji` and he has
+                  said to leave the account exactly as it is. */}
               {/* ⛔ THE X LINK WAS REMOVED 2026-09-04 AND IT DOES NOT COME BACK. His instruction,
                   verbatim: "I told you to drop X. Dont modify anything. Leave it alone. unlink it
                   from my companies."

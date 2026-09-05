@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import {buildAlternates} from '@/lib/alternates';
 import ServicePage from '@/components/ServicePage';
 import {OFFERS_BY_SERVICE} from '@/data/offerLinks';
+import {ORGANISATION_ID} from '\@/lib/person';
 
 const siteUrl = 'https://www.fijisolutions.net';
 const path = '/services/snowflake-consulting-greece';
@@ -39,7 +40,7 @@ export default function Page() {
         '@type': 'Service',
         name: "Snowflake Consulting Ελλάδα",
         serviceType: "Snowflake consulting and data engineering",
-        provider: {'@type': 'ProfessionalService', name: 'Fiji Solutions', url: siteUrl},
+        provider: {'@id': ORGANISATION_ID},
         areaServed: {'@type': 'Country', name: 'Greece'},
         description: "Υλοποίηση, μετάβαση, διοχετεύσεις και ρύθμιση κόστους Snowflake AI Data Cloud για τον ιδιοκτήτη που η επιχείρησή του λειτουργεί με ξαναπληκτρολογημένα δεδομένα, καθυστερημένες υπενθυμίσεις και έναν άνθρωπο που ξέρει πώς δουλεύουν όλα.",
       }}
