@@ -18,6 +18,16 @@ name: gates
 # on it, and it survived for as long as nobody happened to open that file. A finding recorded
 # somewhere unreachable is a finding that does not exist.
 #
+# ⚠️ THE THIRD CHECKER WAS ADDED 2026-09-06 AND IT CLOSES A HOLE ALL OF THE ABOVE WERE BLIND TO.
+# Charis banned publishing his `charis@` mailbox on 2026-09-06. The estate measured itself the same
+# day: the address appeared ZERO times on 106 of 106 live routes and SEVENTEEN times in fourteen
+# source files, nine of them `offer.guarantee.contact` values that `offer-build` renders onto a
+# public page. Every gate in all three repos was green, and not one of them was buggy. They were
+# green because no checker here had ever looked at an email address. The rule was written into
+# `companies/*/voice.md`, which is a prompt-level guard rather than a gate.
+#
+#     WHEN A VALUE IS BANNED, GREP THE GENERATOR, NOT ONLY THE OUTPUT.
+#
 # TWO JOBS, AND THE ORDER MATTERS. `self-test` runs FIRST and proves each checker can still go red:
 # both scripts sabotage their own internals and assert the fixtures notice. A neutered checker
 # looks exactly like a clean repo on an ordinary push.
@@ -37,7 +47,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: The checkers must exist
         run: |
-          for f in scripts/no-shipped-dashes.py scripts/hreflang-parity.py scripts/hreflang-reciprocity.py; do
+          for f in scripts/no-shipped-dashes.py scripts/hreflang-parity.py scripts/hreflang-reciprocity.py scripts/no-published-private-contacts.py; do
             if [ ! -f "$f" ]; then
               echo "::error file=$f::GATE NEUTERED. $f is missing from the tree. This is not a"
               echo "runner problem. Restore the file or delete this workflow deliberately."
@@ -58,9 +68,10 @@ jobs:
       - run: python3 scripts/no-shipped-dashes.py --selftest
       - run: python3 scripts/hreflang-parity.py --selftest
       - run: python3 scripts/hreflang-reciprocity.py --selftest
+      - run: python3 scripts/no-published-private-contacts.py --selftest
 
   gates:
-    name: No shipped dashes, the sitemap matches the pages, every hreflang pair names back
+    name: No shipped dashes, the sitemap matches the pages, every hreflang pair names back, no banned mailbox is published
     needs: self-test
     runs-on: ubuntu-latest
     steps:
@@ -84,3 +95,8 @@ jobs:
       # the next day. hreflang-reciprocity.py iterates the BUILD and resolves every alternate,
       # which is the only way to see a route that is deliberately kept out of the sitemap.
       - run: python3 scripts/hreflang-reciprocity.py
+      # ⚠️ THIS ONE MUST RUN AFTER THE BUILD. It reads .next/server/app and .next/static as well
+      # as src, because the build is what a stranger reads and the source is what regenerates it.
+      # It catches the literal address, six obfuscations of it, and the split-variable shape that
+      # search.ch uses to publish an address a grep returns zero on.
+      - run: python3 scripts/no-published-private-contacts.py
