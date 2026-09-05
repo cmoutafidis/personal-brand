@@ -9,10 +9,10 @@ import type {BlogPost} from '@/types/blog';
 // ανάθεσης — αυτό ανήκει στο «τι να ζητάς γραπτά».
 
 const G_AI = 'https://developers.google.com/search/docs/appearance/ai-features';
-const G_CRAWLERS = 'https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers';
-const G_COMMON = 'https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers';
-const G_FETCHERS = 'https://developers.google.com/search/docs/crawling-indexing/google-user-triggered-fetchers';
-const G_ROBOTS_SPEC = 'https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt';
+const G_CRAWLERS = 'https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers';
+const G_COMMON = 'https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers';
+const G_FETCHERS = 'https://developers.google.com/crawling/docs/crawlers-fetchers/google-user-triggered-fetchers';
+const G_ROBOTS_SPEC = 'https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec';
 const G_ROBOTS_INTRO = 'https://developers.google.com/search/docs/crawling-indexing/robots/intro';
 const G_META = 'https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag';
 const G_BLOG_AI = 'https://developers.google.com/search/blog/2025/05/succeeding-in-ai-search';
@@ -24,7 +24,7 @@ const G_STRUCTURED = 'https://developers.google.com/search/docs/appearance/struc
 const OPENAI_BOTS = 'https://developers.openai.com/api/docs/bots';
 const ANTHROPIC_BOTS = 'https://support.claude.com/en/articles/8896518';
 const CCBOT = 'https://commoncrawl.org/ccbot';
-const PERPLEXITY = 'https://docs.perplexity.ai/guides/bots';
+const PERPLEXITY = 'https://docs.perplexity.ai/docs/resources/perplexity-crawlers';
 const APPLEBOT = 'https://support.apple.com/en-us/119829';
 const BING_AIPERF = 'https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview';
 const BING_INSIGHTS = 'https://blogs.bing.com/search/June-2026/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare';

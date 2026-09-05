@@ -1097,8 +1097,12 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
 
       {/* 16. The two offers this site has no service page for. AN EXCEPTION, RECORDED AS ONE.
           website-seo and website-google-ads are the only two of the eight with measured Greek
-          demand behind them — κατασκευή ιστοσελίδων 2,900/mo and προώθηση ιστοσελίδων 1,600/mo,
-          both LOW competition (offer-os/gtm/keyword-research-2026-09-01.md) — and the only two
+          demand behind them: κατασκευή ιστοσελίδων 2,900/mo and προώθηση ιστοσελίδων, both LOW
+          competition (offer-os/gtm/keyword-research-2026-09-01.md), and the only two
+          ⚠️ CORRECTED 2026-09-06: this used to quote προώθηση ιστοσελίδων at 1,600/mo, a withdrawn
+          twelve month average. The real curve is 210 390 260 320 210 210 170 260 390 1000 5400
+          9900, so the term is stronger than this block claimed and the exception is better
+          justified. blogs.ts has carried the correction since 2026-09-02.
           with no /services/ parent to be linked from. A website build is not a fixed-scope way to
           buy a process audit; this block exists because the page the demand data points at does
           not exist yet, and building it is Charis's decision about what Fiji sells.

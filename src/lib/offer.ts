@@ -62,7 +62,10 @@ export const GUARANTEE_WINDOW_WORD: {en: string; el: string} =
 
 // The audit call books this Calendly event. The copy said "45–60 minutes" in five places while the
 // link booked 30, so the copy now matches the link. If you would rather run an hour, create the
-// event in Calendly and change both this and CALENDLY_URL in BusinessProcessAuditLanding.tsx.
+// event in Calendly and change both this and CALENDLY_URL.
+// ⚠️ CORRECTED 2026-09-06: this used to send a maintainer to BusinessProcessAuditLanding.tsx for
+// CALENDLY_URL. That file does not contain the string. It is exported from
+// `src/components/AuditFormSection.tsx:21` and imported by OfferLanding.tsx.
 export const AUDIT_CALL_MINUTES = 30;
 
 // One published reply-time promise, site-wide. It used to be "48 hours" in translations.ts and

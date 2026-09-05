@@ -8,8 +8,11 @@ import {Language} from '@/types/language';
 //
 // WHY IT EXISTS. DataForSEO measured the vocabulary this homepage is written in — «αυτοματοποίηση
 // διαδικασιών», «εξατομικευμένο λογισμικό», «ψηφιακός μετασχηματισμός» — at no measurable volume in
-// Greek, and the vocabulary it does not use at 2,900/mo (κατασκευή ιστοσελίδων), 1,600/mo (προώθηση
-// ιστοσελίδων) and ~1,100/mo across the Θεσσαλονίκη spelling variants, all LOW competition. The
+// Greek, and the vocabulary it does not use at 2,900/mo (κατασκευή ιστοσελίδων), a climbing
+// προώθηση ιστοσελίδων and ~1,100/mo across the Θεσσαλονίκη spelling variants, all LOW competition.
+// ⚠️ CORRECTED 2026-09-06. This line used to say 1,600/mo for προώθηση ιστοσελίδων. That number is
+// WITHDRAWN, per blogs.ts since 2026-09-02: it is a twelve month average of 210 390 260 320 210 210
+// 170 260 390 1000 5400 9900, flat for ten months and then vertical. Quote the trajectory. The
 // category phrase «εταιρεία λογισμικού» (260/mo) was in this site's metadata and in the audit
 // page's founder story, but never in a homepage H2. cylicom.gr ranks #1 for the local term from a
 // homepage with ten ranked keywords; this site ranked for zero.

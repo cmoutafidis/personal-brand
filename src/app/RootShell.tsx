@@ -140,8 +140,16 @@ const MAP_URL =
 // 40.568785, 22.981762 — about 10 km away in Πυλαία, postcode 570 01, a different municipality
 // from the address on the same node. The value below is the Porto Center building on Νικηφόρου
 // Ουρανού at 546 27, which is the building Fiji's own published address names.
-// TODO(charis): confirm this pin against the one on the verified Google Business Profile. The two
-// must agree — a JSON-LD pin that disagrees with the GBP pin is a contradiction, not a second opinion.
+// ⛔ CLOSED 2026-09-03, and the TODO that stood here said the opposite. It asked for this pin to be
+// confirmed against the verified Google Business Profile pin and asserted that "the two must agree".
+// He was asked with all three numbers in front of him and ruled that the GBP pin stays where it is.
+// The GBP pin is 40.6441686 / 22.9127209, the value below is 40.643639 / 22.912267, and Google's own
+// record for the Porto Center complex is 40.6430489 / 22.9122252, so the two are about 130 m and
+// about 66 m from the complex. Fiji is in Κτίριο Γ1 of a multi-building complex, so an offset from
+// the complex centroid is expected. Both points sit on the correct street, the correct postcode and
+// the correct district, and moving a verified listing's pin can trigger re-verification.
+// ⛔ Do not reconcile them and do not raise it again unless somebody establishes where Κτίριο Γ1 is.
+// STATE-2026-09-03.md §45.
 //
 // ⛔ No `priceRange`. Rule 7: no price on any surface, and structured data is a surface.
 // ⛔ No `aggregateRating` and no `review`. Both profiles have zero Google reviews
@@ -205,11 +213,18 @@ function organisationSchema(lang: Language) {
     // holds no accreditation of any kind, and the identical badge file sitting unused in the Peak
     // Code repo is a copy of Fiji's by accident.
     //
-    // ⚠️ Two entries here publish an address that is NOT this company's. LinkedIn and Facebook both
-    // carry "Marinou Antipa 40, 570 01" — the old Pylaia address the JSON-LD `geo` above was
-    // corrected away from on 2026-09-01 — and search-engine answer summaries repeat it. Both are
-    // fixed inside those platforms' own admin UIs and cannot be fixed from this repo. The audit and
-    // the exact steps are in offer-os/gtm/citation-pack-2026-09-02.md, items A1 and A3.
+    // ✅ CORRECTED 2026-09-06. This block used to say, in the present tense, that two entries here
+    // publish an address that is not this company's, the old Pylaia address the JSON-LD `geo` above
+    // was corrected away from on 2026-09-01. THAT IS NO LONGER TRUE. Both were applied and
+    // re-verified live on 2026-09-05, items A1 and A3 of
+    // offer-os/gtm/citation-pack-2026-09-02.md. Fiji's LinkedIn company page now publishes
+    // "Nikiforou Ouranou & Minotavrou 15" and 54627 three times, with Antipa, Antypa, 57001, Pilea
+    // and Thermi at zero each, measured against a 404 control. The Facebook Page was corrected in
+    // the same pass. Google's own index was read directly on 2026-09-06 and holds zero
+    // fijisolutions.net pages carrying any of those values, with a working operator control.
+    // ⛔ Do not re-open A1 or A3. Both platforms are edited only inside their own admin UIs and
+    // neither can be touched from this repo, so a session that believes this stale sentence spends
+    // itself re-editing records that are already right.
     //
     // ⚠️ `https://github.com/cmoutafidis` WAS REMOVED FROM THIS ARRAY ON 2026-09-02, and it must
     // not come back. It is Charis's PERSONAL GitHub account, and an entry in a company's `sameAs`
@@ -220,8 +235,13 @@ function organisationSchema(lang: Language) {
     // him. The account now sits where it belongs, in the `sameAs` of the canonical Person node at
     // charismoutafidis.com, which this node references through `founder` below.
     //
-    // It is still rendered as a visible link in the footer, which is correct — that is a link, not
-    // an identity claim.
+    // ⚠️ CORRECTED 2026-09-06. This used to read "It is still rendered as a visible link in the
+    // footer, which is correct", and that has been false since 2026-09-05. He extended the X ruling
+    // to GitHub unprompted: "this github is personal ... It should only link with my personal
+    // website, not companies." The footer link went in `932fdf1` and the `Github` lucide import went
+    // with it, verified at zero occurrences across all 49 pages under both user agents. The account
+    // stays in the Person `sameAs` on charismoutafidis.com, where he says it belongs.
+    // ⛔ Do not restore the footer link, and do not touch the GitHub account itself.
     // ⚠️ `https://x.com/fiji_solutions` WAS REMOVED ON 2026-09-03, on his decision, and it must not
     // come back. Asked directly, he answered: "I say you drop the Twitter account. We don't need
     // that." The profile reads as a personal account (display name "Fiji", bio "Boxer. Businessman.
@@ -229,8 +249,14 @@ function organisationSchema(lang: Language) {
     // city, on a claim that this page IS the Greek IKE. That is the same person-shaped identity
     // assertion the GitHub entry was removed for the day before.
     //
-    // It is STILL a visible link in the footer (`src/components/Footer.tsx:81`) and that is correct:
-    // a link is not an identity claim. Removing the link was not what he decided.
+    // ⚠️ CORRECTED 2026-09-06. This used to read "It is STILL a visible link in the footer
+    // (`src/components/Footer.tsx:81`) and that is correct ... Removing the link was not what he
+    // decided." All three halves of that are now wrong. He overruled it on 2026-09-04: "I told you
+    // to drop X. Dont modify anything. Leave it alone. unlink it from my companies." The footer link
+    // was deleted in `ee7fe2c` and the `XIcon` component with it, verified on all four company URLs.
+    // The cited `Footer.tsx:81` now lands inside a comment block rather than on a link.
+    // ⛔ Do not restore it. ⚠️ The `twitter:` metadata blocks on every page are OpenGraph Twitter
+    // Cards for link previews. They do not link to the account, and they stay.
     sameAs: [
       'https://www.facebook.com/fijisolutions/',
       'https://www.linkedin.com/company/fijisolutionsnet/',

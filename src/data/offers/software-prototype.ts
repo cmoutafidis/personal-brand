@@ -9,10 +9,13 @@ import type {Offer} from '@/components/OfferLanding';
 // That "every time" includes the two surfaces that travel away from the page and cannot be
 // qualified by anything below them: the metaTitle (which is also og:title, twitter:title and the
 // schema.org Service.name, split off the pipe) and the ogAlt. Carrying the anchor costs the title
-// characters, so the brand suffix here is "| Fiji" rather than the "| Fiji Solutions" the sibling
-// offer files use. The 60-character cap is hard and the anchor outranks the longer brand. Do not
-// restore "Solutions" without first removing something else from the string, and never by removing
+// characters. The 60-character cap is hard and the anchor outranks the longer brand, so do not
+// lengthen the title without first removing something else from the string, and never by removing
 // the anchor or the exact keyword "custom software prototype".
+// ⚠️ CORRECTED 2026-09-06: this paragraph used to state that the brand suffix here "is | Fiji"
+// rather than the "| Fiji Solutions" the sibling offer files use, and forbade restoring
+// "Solutions". The en metaTitle at line 45 already reads "| Fiji Solutions" and is 57 characters,
+// so it is inside the cap. The prohibition described a string this file no longer carries.
 //
 // Guarantee: the workbook's row 11 for this offer lists timeline, requirements match, "bug free"
 // and a cost reduction. "Bug free" is never printed literally, because nobody can guarantee it;

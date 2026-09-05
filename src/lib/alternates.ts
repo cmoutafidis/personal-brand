@@ -28,10 +28,13 @@ export function buildAlternates(path: string, lang: Language = 'en'): Metadata['
  * ⚠️ EXPORTED SO THE SITEMAP USES THE SAME MAP THE PAGES USE. Until 2026-09-03 `src/app/sitemap.ts`
  * built its own, with `{en, el}` and nothing else, so every page published three hreflang values
  * and the sitemap published two for the same URL, with x-default missing on all 34 route entries.
- * The defect was known and written down: `charismoutafidis-com/src/app/sitemap.ts` says in its
- * header "The sibling site publishes two hreflang sets that differ — its sitemap omits x-default
- * while its pages emit one." This site is that sibling, the note sat in another repo, and nothing
- * here could go red. One function now, called from both places.
+ * ⚠️ CORRECTED 2026-09-06. This used to cite a sentence in the header of
+ * `charismoutafidis-com/src/app/sitemap.ts` recording the defect. That sentence is not in that
+ * file and a grep of that repo does not find it, so the citation sent a reader chasing nothing.
+ * The substantive point stands and is the reason this function is exported: the map lived in two
+ * places, neither could contradict the other inside one repo, and nothing here could go red.
+ * `scripts/hreflang-reciprocity.py` now walks the BUILD in all three repos for exactly this.
+ * One function now, called from both places.
  *
  * x-default is `en` because English is what this site serves a reader whose language matches
  * neither, and because the root redirects to /en.

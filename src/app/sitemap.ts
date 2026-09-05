@@ -35,22 +35,22 @@ const SITE = 'https://www.fijisolutions.net';
 // file's: the homepage and the audit page both move with 73ec38d (2026-08-30), not with their
 // own page.tsx.
 const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']; lastmod: string }[] = [
-  {path: '', priority: 1.0, changeFrequency: 'weekly', lastmod: '2026-09-01'},
-  {path: '/business-process-audit', priority: 0.9, changeFrequency: 'weekly', lastmod: '2026-09-01'},
+  {path: '', priority: 1.0, changeFrequency: 'weekly', lastmod: '2026-09-03'},
+  {path: '/business-process-audit', priority: 0.9, changeFrequency: 'weekly', lastmod: '2026-09-03'},
   {path: '/offers/app-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
   {path: '/offers/software-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
   {path: '/offers/ai-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
   {path: '/offers/process-automation', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
   {path: '/offers/ai-agent', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
   {path: '/offers/ai-development-sprint', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
-  {path: '/offers/website-seo', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-02'},
-  {path: '/offers/website-google-ads', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-02'},
-  {path: '/portfolio', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-08-30'},
-  {path: '/services/custom-software-development-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-01'},
-  {path: '/services/data-analysis-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-01'},
-  {path: '/services/snowflake-consulting-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-01'},
+  {path: '/offers/website-seo', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-03'},
+  {path: '/offers/website-google-ads', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-03'},
+  {path: '/portfolio', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-04'},
+  {path: '/services/custom-software-development-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-03'},
+  {path: '/services/data-analysis-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-03'},
+  {path: '/services/snowflake-consulting-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-03'},
   {path: '/contact', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-08-15'},
-  {path: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-08-15'},
+  {path: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-09-03'},
   {path: '/legal', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-08-15'},
 ];
 

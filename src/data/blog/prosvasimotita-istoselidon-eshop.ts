@@ -15,7 +15,7 @@ const DIR_EN = 'https://eur-lex.europa.eu/eli/dir/2019/882/oj/eng';
 const DIR_EL = 'https://eur-lex.europa.eu/eli/dir/2019/882/oj/ell';
 const NIM_REC = 'https://eur-lex.europa.eu/legal-content/EL/TXT/?uri=NIM:202207302';
 const NIM_PDF = 'https://eur-lex.europa.eu/legal-content/EL/TXT/PDF/?uri=NIM:202207302';
-const EC_EAA = 'https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/union-equality-strategy-rights-persons-disabilities-2021-2030/european-accessibility-act_en';
+const EC_EAA = 'https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/european-accessibility-act-eaa_en';
 const EC_STD = 'https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation';
 const ETSI = 'https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf';
 const W3_WCAG22 = 'https://www.w3.org/TR/WCAG22/';

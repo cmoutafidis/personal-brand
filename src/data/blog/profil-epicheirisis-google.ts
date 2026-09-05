@@ -27,7 +27,7 @@ const GBP_EDITS = 'https://support.google.com/business/answer/3038311?hl=en';
 const MAPS_EDIT = 'https://support.google.com/maps/answer/7084895?hl=en&co=GENIE.Platform%3DAndroid';
 const GBP_ATTRIBUTES = 'https://support.google.com/business/answer/9049526?hl=en';
 const GBP_LINKS = 'https://support.google.com/business/answer/6218037?hl=en';
-const GBP_HOURS = 'https://support.google.com/business/answer/10417060?hl=en&co=GENIE.Platform%3DDesktop';
+const GBP_HOURS = 'https://support.google.com/business/answer/15300403?hl=en&co=GENIE.Platform%3DDesktop';
 const GBP_SPECIAL_HOURS = 'https://support.google.com/business/answer/6303076?hl=en';
 const GBP_HOLIDAYS = 'https://support.google.com/business/answer/6333474?hl=en';
 const MAPS_REVIEWS = 'https://support.google.com/maps/answer/6230175?hl=en&co=GENIE.Platform%3DDesktop';
