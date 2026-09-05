@@ -15,6 +15,7 @@ const DIR_EN = 'https://eur-lex.europa.eu/eli/dir/2019/882/oj/eng';
 const DIR_EL = 'https://eur-lex.europa.eu/eli/dir/2019/882/oj/ell';
 const NIM_REC = 'https://eur-lex.europa.eu/legal-content/EL/TXT/?uri=NIM:202207302';
 const NIM_PDF = 'https://eur-lex.europa.eu/legal-content/EL/TXT/PDF/?uri=NIM:202207302';
+const NIM_AMEND = 'https://eur-lex.europa.eu/legal-content/EL/TXT/PDF/?uri=NIM:202504433';
 const EC_EAA = 'https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/european-accessibility-act-eaa_en';
 const EC_STD = 'https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation';
 const ETSI = 'https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf';
@@ -61,7 +62,7 @@ const post: BlogPost = {
       {text: '«υπηρεσίες ηλεκτρονικού εμπορίου» είναι ονομαστικά μέσα στη λίστα', strong: true},
       '. Η Οδηγία (ΕΕ) 2019/882 γράφει: «this Directive applies to the following services provided to consumers after 28 June 2025: […] (f) e-commerce services» (',
       {text: 'κείμενο της Οδηγίας', href: DIR_EN},
-      '). Στην Ελλάδα ενσωματώθηκε με τον ν. 4994/2022.',
+      '). Στην Ελλάδα ενσωματώθηκε με τον ν. 4994/2022, όπως τροποποιήθηκε με τον ν. 5218/2025 (ΦΕΚ Α΄ 125, 14 Ιουλίου 2025).',
     ]},
     {type: 'paragraph', text: [
       'Αυτό το άρθρο ',
@@ -117,7 +118,7 @@ const post: BlogPost = {
       [['Μεταβατικές διατάξεις'], ['άρθρα 31 και 32'], ['άρθρο 28']],
     ]},
     {type: 'paragraph', text: [
-      'Και μια ειλικρινής σημείωση: ο κατάλογος εθνικών μέτρων δείχνει και δεύτερη ελληνική εγγραφή με τον ίδιο τίτλο, την οποία δεν ανοίξαμε. Δεν μπορούμε επομένως να σου πούμε ότι ο νόμος ισχύει σήμερα αμετάβλητος όπως ψηφίστηκε. Το ισχύον κείμενο το βεβαιώνει ο δικηγόρος σου.',
+      'Και μια ειλικρινής σημείωση: ο κατάλογος εθνικών μέτρων δείχνει και δεύτερη ελληνική εγγραφή, τον ν. 5218/2025. Δεν διαβάσαμε τι ακριβώς άλλαξε με αυτόν, οπότε δεν μπορούμε να σου πούμε ποιο είναι σήμερα το ισχύον κείμενο. Αυτό το βεβαιώνει ο δικηγόρος σου.',
     ]},
 
     {type: 'heading', text: 'Τι ακριβώς είναι «υπηρεσία ηλεκτρονικού εμπορίου»'},
@@ -355,6 +356,7 @@ const post: BlogPost = {
       {label: 'Οδηγία (ΕΕ) 2019/882, ελληνικό κείμενο, Παραρτήματα I και V (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: DIR_EL},
       {label: 'Καταγραφή του ελληνικού μέτρου ενσωμάτωσης (ΦΕΚ Α΄ 215/18.11.2022) (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: NIM_REC},
       {label: 'ν. 4994/2022, ΦΕΚ Α΄ 215/18.11.2022, πλήρες κείμενο (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: NIM_PDF},
+      {label: 'ν. 5218/2025, ΦΕΚ Α΄ 125/14.7.2025, το δεύτερο ελληνικό μέτρο ενσωμάτωσης (ανακτήθηκε 5 Σεπτεμβρίου 2026)', url: NIM_AMEND},
       {label: 'Ευρωπαϊκή Επιτροπή, European Accessibility Act (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: EC_EAA},
       {label: 'Ευρωπαϊκή Επιτροπή, Web Accessibility Directive: Standards and harmonisation (τελευταία ενημέρωση 5 Μαΐου 2025) (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: EC_STD},
       {label: 'ETSI EN 301 549 V3.2.1 (2021-03), Accessibility requirements for ICT products and services (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: ETSI},

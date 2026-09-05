@@ -166,7 +166,7 @@ const copy: Record<Language, LandingCopy> = {
     trustCards: [
       {
         title: 'Snowflake AI Data Cloud Select Partner',
-        body: 'A vetted partnership with one of the world’s leading data platforms.',
+        body: 'Listed in Snowflake’s official partner directory at the Select tier, with two SnowPro Core certifications.',
         badge: true,
         links: [
           {
@@ -345,7 +345,7 @@ const copy: Record<Language, LandingCopy> = {
     bioIntro: 'I’m Charalampos (Charis) Moutafidis, a software engineer with more than ten years of experience, and the founder of Fiji Solutions.',
     bioBullets: [
       'Software engineer; founder and administrator of Fiji Solutions IKE, Thessaloniki.',
-      'Fiji Solutions is a Snowflake AI Data Cloud Select Partner: one of the vetted partners of the Snowflake data platform. That status belongs to the company.',
+      'Fiji Solutions is a Snowflake AI Data Cloud Select Partner, listed in Snowflake’s official partner directory. Select is one of the tiers of the partner network, alongside Registered, Premier and Elite. That status belongs to the company.',
       'Builder of Fiji Analytics Dashboard and Catalytics Pro: live products you can open right now.',
       'More than ten years of work across five sectors: banking, travel, telecommunications, health and online education. Some of it through Fiji Solutions, some through Peak Code Consulting, my Swiss company, and some in earlier jobs as a developer. Those sectors are my own working history.'
     ],
@@ -454,7 +454,7 @@ const copy: Record<Language, LandingCopy> = {
     trustCards: [
       {
         title: 'Snowflake AI Data Cloud Select Partner',
-        body: 'Πιστοποιημένη συνεργασία με μία από τις κορυφαίες πλατφόρμες δεδομένων παγκοσμίως.',
+        body: 'Καταχώριση στον επίσημο κατάλογο συνεργατών της Snowflake, στη βαθμίδα Select, με δύο πιστοποιήσεις SnowPro Core.',
         badge: true,
         links: [
           {
@@ -633,7 +633,7 @@ const copy: Record<Language, LandingCopy> = {
     bioIntro: 'Είμαι ο Χαράλαμπος (Χάρης) Μουταφίδης, μηχανικός λογισμικού με πάνω από δέκα χρόνια εμπειρίας, και ιδρυτής της Fiji Solutions.',
     bioBullets: [
       'Μηχανικός λογισμικού· ιδρυτής και διαχειριστής της Fiji Solutions ΙΚΕ, Θεσσαλονίκη.',
-      'Η Fiji Solutions είναι Snowflake AI Data Cloud Select Partner: από τους επιλεγμένους συνεργάτες της πλατφόρμας δεδομένων Snowflake. Η ιδιότητα αυτή ανήκει στην εταιρεία.',
+      'Η Fiji Solutions είναι Snowflake AI Data Cloud Select Partner, καταχωρισμένη στον επίσημο κατάλογο συνεργατών της Snowflake. Το Select είναι μία από τις βαθμίδες του δικτύου συνεργατών, μαζί με τις Registered, Premier και Elite. Η ιδιότητα αυτή ανήκει στην εταιρεία.',
       'Δημιουργός του Fiji Analytics Dashboard και του Catalytics Pro: ζωντανά προϊόντα που μπορείς να ανοίξεις τώρα.',
       'Πάνω από δέκα χρόνια σε πέντε κλάδους: τράπεζες, τουρισμό, τηλεπικοινωνίες, υγεία και διαδικτυακή εκπαίδευση. Ένα μέρος της δουλειάς έγινε μέσω της Fiji Solutions, ένα μέρος μέσω της Peak Code Consulting, της ελβετικής μου εταιρείας, και ένα μέρος σε παλιότερες δουλειές μου ως προγραμματιστή. Οι κλάδοι αυτοί είναι η δική μου διαδρομή.'
     ],

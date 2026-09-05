@@ -113,8 +113,8 @@ const post: BlogPost = {
       'Μετά, το πού βρίσκεσαι. Το Shopify Payments δεν είναι το ίδιο προϊόν σε κάθε χώρα· για την Ελλάδα η τεκμηρίωση λέει: ',
       {text: "«Shopify Payments is only available for online selling in Greece. You can't use Shopify Payments for in-person (POS) payment processing.»", href: 'https://help.shopify.com/en/manual/payments/shopify-payments/supported-countries/greece/accepting-payments'},
       ' Αν ο σχεδιασμός σου ήταν «ένα σύστημα για το ηλεκτρονικό και για το φυσικό κατάστημα», αυτή η γραμμή τον ακυρώνει. Η σελίδα απαιτήσεων για την Ελλάδα ',
-      {text: 'ζητά επίσης αριθμό Γ.Ε.ΜΗ. και ΑΦΜ για τις εταιρείες', href: 'https://help.shopify.com/en/manual/payments/shopify-payments/supported-countries/greece/requirements'},
-      '. Χρειάζονται για να ανοίξει ο λογαριασμός στον πάροχο. Δεν πρόκειται για φορολογικό θέμα.',
+      {text: 'ζητά επίσης αριθμό Γ.Ε.ΜΗ. σε τρεις από τις πέντε κατηγορίες εγγεγραμμένης επιχείρησης', href: 'https://help.shopify.com/en/manual/payments/shopify-payments/supported-countries/greece/requirements'},
+      ', και αριθμό ΦΠΑ εφόσον υπάρχει: «Value Added Tax (VAT) number: Your VAT registration number, if applicable». Ζητούνται για να ανοίξει ο λογαριασμός στον πάροχο. Δεν πρόκειται για φορολογικό θέμα.',
     ]},
     { type: 'paragraph', text: [
       'Το τρίτο κομμάτι δεν το ελέγχει ούτε η πλατφόρμα ούτε εσύ. Ο κατ’ εξουσιοδότηση κανονισμός για την ισχυρή ταυτοποίηση πελάτη ',
