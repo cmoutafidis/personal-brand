@@ -135,7 +135,11 @@ export const SIBLING_OFFER: Record<OfferSlug, Offer> = {
 /**
  * The two offers with no parent service page, and, measured 2026-09-01, the only two with real
  * Greek search demand behind them: κατασκευή ιστοσελίδων 2,900/mo and προώθηση ιστοσελίδων, both
- * LOW competition, plus κατασκευή ιστοσελίδων θεσσαλονίκη 480 (+~640 in variants).
+ * LOW competition, plus κατασκευή ιστοσελίδων θεσσαλονίκη ~480 with one ~320 variant group.
+ * ⚠️ CORRECTED 2026-09-06: this used to read "480 (+~640 in variants)". Correction C in
+ * keyword-research-2026-09-01.md withdrew the sum, because the two spellings return identical
+ * twelve month curves and were one keyword counted twice. This repo's own CLAUDE.md already says
+ * so, in those words, and the source files never inherited it.
  * ⚠️ CORRECTED 2026-09-06. This used to quote προώθηση ιστοσελίδων at 1,600/mo. THAT NUMBER IS
  * WITHDRAWN and `blogs.ts` has said so since 2026-09-02. 1,600 is a twelve month average and the
  * average is the artifact: the months read 210 390 260 320 210 210 170 260 390 1000 5400 9900, flat

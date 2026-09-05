@@ -9,7 +9,10 @@ import en from '@/data/homeLongForm/en';
 // missing a section is a compile error in its own file.
 //
 // ⚠️ WHAT THE TYPE CANNOT CATCH is the thing that matters most here: the two files must carry the
-// SAME six section ids and the SAME six FAQ ids in the SAME order. `tsc` is satisfied by two files
+// SAME section ids and the SAME FAQ ids in the SAME order.
+// ⚠️ CORRECTED 2026-09-06: this used to say SIX of each. Both files carry THIRTEEN ids and they are
+// identical and in the same order, verified today. A reviewer told to count to six finds a seventh
+// and either deletes a live entry to match the comment or records a false divergence. `tsc` is satisfied by two files
 // with different ids, and the home page would then answer different questions in the two languages
 // with a green build. That parity is checked by reading, and both files record it in their header.
 //

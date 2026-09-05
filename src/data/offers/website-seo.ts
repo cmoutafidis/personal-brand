@@ -226,7 +226,9 @@ const websiteSeo: Offer = {
 
     el: {
       // Aimed at measured demand, not at a translation of the English title. «κατασκευή ιστοσελίδων»
-      // 2,900/mo and «κατασκευή ιστοσελίδων Θεσσαλονίκη» 480/mo (+~640 in spelling variants) are both
+      // 2,900/mo and «κατασκευή ιστοσελίδων Θεσσαλονίκη» ~480/mo with one ~320 variant group are both
+      // ⚠️ CORRECTED 2026-09-06: this used to read "(+~640 in spelling variants)". Withdrawn by
+      // correction C in keyword-research-2026-09-01.md: identical curves, one keyword counted twice.
       // exact substrings of this one title, and it is also the Service schema name.
       metaTitle: 'Κατασκευή ιστοσελίδων Θεσσαλονίκη | Fiji Solutions',
       metaDescription:

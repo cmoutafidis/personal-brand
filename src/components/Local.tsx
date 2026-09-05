@@ -9,7 +9,11 @@ import {Language} from '@/types/language';
 // WHY IT EXISTS. DataForSEO measured the vocabulary this homepage is written in — «αυτοματοποίηση
 // διαδικασιών», «εξατομικευμένο λογισμικό», «ψηφιακός μετασχηματισμός» — at no measurable volume in
 // Greek, and the vocabulary it does not use at 2,900/mo (κατασκευή ιστοσελίδων), a climbing
-// προώθηση ιστοσελίδων and ~1,100/mo across the Θεσσαλονίκη spelling variants, all LOW competition.
+// προώθηση ιστοσελίδων and ~480/mo on the Θεσσαλονίκη term with one ~320 variant group, all LOW
+// competition. ⚠️ CORRECTED 2026-09-06: this line used to say ~1,100/mo across the Θεσσαλονίκη
+// spelling variants. Correction C in keyword-research-2026-09-01.md withdrew that: the accented and
+// unaccented spellings return IDENTICAL twelve month curves, so Google Ads normalised them to one
+// keyword and DataForSEO reported it twice. Compare the curves before summing anything.
 // ⚠️ CORRECTED 2026-09-06. This line used to say 1,600/mo for προώθηση ιστοσελίδων. That number is
 // WITHDRAWN, per blogs.ts since 2026-09-02: it is a twelve month average of 210 390 260 320 210 210
 // 170 260 390 1000 5400 9900, flat for ten months and then vertical. Quote the trajectory. The

@@ -120,7 +120,7 @@ const post: BlogPost = {
     ]},
     { type: 'paragraph', text: [
       'Η διάταξη της σελίδας δεν είναι σταθερή, και εδώ πέφτουν έξω τα σχεδιαγράμματα που κυκλοφορούν: ',
-      {text: '«Top ads are generally above the top organic results, although top ads may show below the top organic search results on certain queries.»', href: A_TOPADS},
+      {text: '«Top ads are generally above the top organic results, although top ads may show below the top organic results on certain queries.»', href: A_TOPADS},
       ' Γενικά από πάνω, σε ορισμένα ερωτήματα από κάτω.',
     ]},
     { type: 'paragraph', text: [
@@ -301,7 +301,7 @@ const post: BlogPost = {
     ]},
     { type: 'paragraph', text: [
       'Από το ίδιο υλικό υπάρχει και δωρεάν δρόμος: ',
-      {text: '«Your products can show for free across many areas of Google including Search, Maps, and more.»', href: A_FREELIST},
+      {text: '«With a free listing, the products you sell can appear at no cost on Google Search, Google Maps, Gemini, YouTube, the Shopping tab, Google Images, and Google Lens.»', href: A_FREELIST},
       ' Οι δωρεάν καταχωρίσεις προϊόντων είναι το αντίστοιχο των οργανικών για ένα κατάστημα: ίδιο υλικό, δύο μηχανισμοί.',
     ]},
     { type: 'paragraph', text: [
