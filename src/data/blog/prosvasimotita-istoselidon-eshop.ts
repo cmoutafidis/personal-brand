@@ -19,6 +19,7 @@ const NIM_AMEND = 'https://eur-lex.europa.eu/legal-content/EL/TXT/PDF/?uri=NIM:2
 const EC_EAA = 'https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/european-accessibility-act-eaa_en';
 const EC_STD = 'https://digital-strategy.ec.europa.eu/en/policies/web-accessibility-directive-standards-and-harmonisation';
 const ETSI = 'https://www.etsi.org/deliver/etsi_en/301500_301599/301549/03.02.01_60/en_301549v030201p.pdf';
+const ETSI_V411 = 'https://www.etsi.org/deliver/etsi_en/301500_301599/301549/04.01.01_60/en_301549v040101p.pdf';
 const W3_WCAG22 = 'https://www.w3.org/TR/WCAG22/';
 const W3_INTRO = 'https://www.w3.org/WAI/fundamentals/accessibility-intro/';
 const W3_TOOLS = 'https://www.w3.org/WAI/test-evaluate/tools/selecting/';
@@ -53,8 +54,8 @@ const post: BlogPost = {
   excerpt: 'Ποιον αφορά το κείμενο, ποια εξαίρεση προβλέπει για τις πολύ μικρές επιχειρήσεις, και τι ακριβώς αλλάζει μέσα στον κώδικα μιας ιστοσελίδας.',
   author: 'Χαράλαμπος Μουταφίδης',
   publishedAt: '2026-09-02',
-  updatedAt: '2026-09-02',
-  readingTime: 30,
+  updatedAt: '2026-09-06',
+  readingTime: 31,
   tags: ['E-shop', 'Ιστοσελίδες', 'Λογισμικό'],
   body: [
     {type: 'paragraph', text: [
@@ -76,8 +77,8 @@ const post: BlogPost = {
     ]},
 
     {type: 'note', text: [
-      {text: 'Έλεγχος στοιχείων: 2 Σεπτεμβρίου 2026.', strong: true},
-      ' Κάθε νομική πρόταση εδώ διαβάστηκε εκείνη τη μέρα στο ίδιο το κείμενο της Οδηγίας ή του νόμου, και κάθε τεχνική στη σελίδα του W3C ή του ETSI που τη συνοδεύει. Όπου δεν επιβεβαιώσαμε κάτι, το γράφουμε αντί να το συμπληρώσουμε.',
+      {text: 'Έλεγχος στοιχείων: 2, 5 και 6 Σεπτεμβρίου 2026.', strong: true},
+      ' Κάθε νομική πρόταση εδώ διαβάστηκε στις 2 Σεπτεμβρίου 2026 στο ίδιο το κείμενο της Οδηγίας ή του νόμου, και κάθε τεχνική στη σελίδα του W3C ή του ETSI που τη συνοδεύει. Η πηγή για τον ν. 5218/2025 προστέθηκε στις 5 Σεπτεμβρίου 2026. Το πρότυπο EN 301 549 και το ερώτημα της Επίσημης Εφημερίδας τα ελέγξαμε ξανά στις 6 Σεπτεμβρίου 2026. Όπου δεν επιβεβαιώσαμε κάτι, το γράφουμε αντί να το συμπληρώσουμε.',
     ]},
 
     {type: 'faq', heading: 'Σύντομες απαντήσεις', items: [
@@ -177,16 +178,21 @@ const post: BlogPost = {
       {text: 'δημόσιου τομέα', strong: true},
       ', όχι για την 2019/882. Και το τεκμήριο συμμόρφωσης έχει αυστηρή προϋπόθεση, στο άρθρο 15 της Οδηγίας: προκύπτει από «harmonised standards […] the references of which have been published in the Official Journal». Δεν γεννιέται από ένα audit.',
     ]},
+    {type: 'paragraph', text: [
+      'Τον Σεπτέμβριο του 2026 το ETSI δημοσίευσε νέα έκδοση, την ',
+      {text: 'EN 301 549 V4.1.1', href: ETSI_V411},
+      ', που εκπονήθηκε, όπως γράφει ο πρόλογός της, «to provide one voluntary means of conforming to the essential requirements of Directive (EU) 2019/882 on the accessibility requirements for products and services». Προσθέτει νέο Παράρτημα ZB για την Οδηγία αυτή και ευθυγραμμίζει τις ρήτρες 9, 10 και 11 με το WCAG 2.2. Το ίδιο το πρότυπο βάζει τον όρο: «Once the present document is cited in the Official Journal of the European Union under that Directive, compliance with the normative clauses […] confers […] a presumption of conformity […]».',
+    ]},
     {type: 'note', text: [
-      {text: 'Τι δεν καταφέραμε να επιβεβαιώσουμε.', strong: true},
-      ' Δεν μπορέσαμε να βεβαιώσουμε στις 2 Σεπτεμβρίου 2026 αν έχει δημοσιευθεί στην Επίσημη Εφημερίδα εναρμονισμένο πρότυπο ',
+      {text: 'Τι ελέγξαμε ξανά.', strong: true},
+      ' Στις 2 Σεπτεμβρίου 2026 δεν είχαμε καταφέρει να δούμε αν έχει δημοσιευθεί στην Επίσημη Εφημερίδα εναρμονισμένο πρότυπο ',
       {text: 'για την Οδηγία (ΕΕ) 2019/882', strong: true},
-      ' και ποιο: η σχετική σελίδα της Επιτροπής δεν φόρτωνε εκείνη τη μέρα. Δεν θα γράψουμε επομένως ότι το EN 301 549 σου δίνει τεκμήριο συμμόρφωσης με αυτή την Οδηγία. Είναι ερώτηση για τον δικηγόρο σου, με πηγή την Επίσημη Εφημερίδα.',
+      ', επειδή η σχετική σελίδα της Επιτροπής δεν φόρτωνε εκείνη τη μέρα. Το ελέγξαμε στην επίσημη βάση νομοθεσίας της ΕΕ: μέχρι τις 6 Σεπτεμβρίου 2026 δεν έχει δημοσιευθεί στην Επίσημη Εφημερίδα καμία τέτοια παραπομπή. Άρα, με βάση αυτόν τον έλεγχο, το EN 301 549 δεν σου δίνει τεκμήριο συμμόρφωσης με αυτή την Οδηγία. Ποιο κείμενο σε δεσμεύει στη δική σου περίπτωση το λέει ο δικηγόρος σου.',
     ]},
     {type: 'paragraph', text: [
-      'Ένα ακόμη σημείο που ακούγεται λάθος σε πολλές προσφορές: το WCAG 2.2 δεν είναι νομική απαίτηση. Η Επιτροπή, σε σελίδα για την οδηγία του δημόσιου τομέα που ενημερώθηκε τελευταία στις 5 Μαΐου 2025, γράφει ότι «whilst WCAG 2.2 was published on 5 October 2023, it is not yet used in a version of EN 301 549 that has been harmonised», και σημειώνει ότι μόνο δύο εκδόσεις του προτύπου έχουν εναρμονιστεί, με την τελευταία, την V3.2.1, τον Αύγουστο του 2021 (',
+      'Ένα ακόμη σημείο που ακούγεται λάθος σε πολλές προσφορές: το WCAG 2.2 δεν είναι νομική απαίτηση. Η Επιτροπή, σε σελίδα για την οδηγία του δημόσιου τομέα που ενημερώθηκε τελευταία στις 5 Μαΐου 2025, γράφει ότι «whilst WCAG 2.2 was published on 5 October 2023, it is not yet used in a version of EN 301 549 that has been harmonised […]», και σημειώνει ότι μόνο δύο εκδόσεις του προτύπου έχουν εναρμονιστεί, με την τελευταία, την V3.2.1, τον Αύγουστο του 2021 (',
       {text: 'Standards and harmonisation', href: EC_STD},
-      '). Πρακτικά: το WCAG 2.2 είναι η τρέχουσα έκδοση και καλή πρακτική· το WCAG 2.1 επιπέδου AA είναι αυτό στο οποίο παραπέμπει η εναρμονισμένη έκδοση.',
+      '). Η σελίδα αυτή ενημερώθηκε πριν βγει η V4.1.1 και δεν την αναφέρει. Πρακτικά: το WCAG 2.2 είναι η τρέχουσα έκδοση και καλή πρακτική· το WCAG 2.1 επιπέδου AA είναι αυτό στο οποίο παραπέμπει η V3.2.1, η έκδοση της οποίας τα στοιχεία έχουν δημοσιευθεί στην Επίσημη Εφημερίδα ως εναρμονισμένο πρότυπο για την οδηγία του δημόσιου τομέα.',
     ]},
 
     {type: 'heading', text: 'Τι αλλάζει στον κώδικα: τα έξι που δεν χρειάζονται ξαναχτίσιμο'},
@@ -360,6 +366,7 @@ const post: BlogPost = {
       {label: 'Ευρωπαϊκή Επιτροπή, European Accessibility Act (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: EC_EAA},
       {label: 'Ευρωπαϊκή Επιτροπή, Web Accessibility Directive: Standards and harmonisation (τελευταία ενημέρωση 5 Μαΐου 2025) (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: EC_STD},
       {label: 'ETSI EN 301 549 V3.2.1 (2021-03), Accessibility requirements for ICT products and services (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: ETSI},
+      {label: 'ETSI EN 301 549 V4.1.1 (2026-09), Accessibility requirements for ICT products and services (ανακτήθηκε 6 Σεπτεμβρίου 2026)', url: ETSI_V411},
       {label: 'W3C, Web Content Accessibility Guidelines (WCAG) 2.2 (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: W3_WCAG22},
       {label: 'W3C WAI, Introduction to Web Accessibility (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: W3_INTRO},
       {label: 'W3C WAI, Selecting Web Accessibility Evaluation Tools (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: W3_TOOLS},
