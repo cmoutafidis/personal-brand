@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""No mailbox the owner banned may reach a stranger. One file, three repos.
+"""No mailbox the owner banned may reach a stranger. One file, four repos.
+
+CORRECTED 2026-09-06. This line read "three repos". The file is byte-identical in FOUR, md5
+of the corrected text recorded in gtm/NEXT-SESSION-PROMPT.md: the three website repos and
+`offer-os`, which is where the nine banned `offer.guarantee.contact` values actually lived and
+so the repo the gate was built for. Editing it means editing all four and re-recording the md5.
 
 WHY THIS EXISTS
 ===============
@@ -21,8 +26,13 @@ guard rather than a gate.
 
     A RULE IN A MARKDOWN FILE IS NOT A GATE. Nobody runs a grep that lives in a document.
 
-That sentence is this repo's own, from `gates.yml`, about the no-dash rule, which was enforced by a
-pasted `grep` for months while bash globstar was off and it read one directory deep.
+CORRECTED 2026-09-06. That sentence used to be attributed here to `gates.yml`. It is not in any
+of the four `gates.yml` files. It is this docstring's own coinage and it is also recorded in the
+ledger at `gtm/STATE-2026-09-03.md` section 134. What the three website repos' `gates.yml` does
+carry, at its line 11, is the same idea in different words: "A command in a markdown file is not
+a gate. Nobody ran the grep either." The no-dash history behind it is real and is at their lines
+6 to 8: the rule was enforced by `grep -n` pasted into CLAUDE.md while bash globstar was off, so
+it matched one directory deep, 8 of the 14 files under `src/data`, never `blogs.ts`.
 
 WHAT IT ASSERTS
 ===============
@@ -69,9 +79,16 @@ THE ITERATION DOMAIN, STATED ON PURPOSE
 =======================================
 
 Three green gates once sat over one live defect and none of them was broken. The blind spot was
-what each one iterated. So, explicitly: this reads `.next/server/app/**/*.html`, the client bundles
-under `.next/static/**/*.js`, and every text file under `src/`. It does NOT read the sitemap, which
-is the surface a route can be kept out of, and it does NOT read anything outside this repo.
+what each one iterated. So, explicitly, IN THE DEFAULT MODE: this reads
+`.next/server/app/**/*.html`, the client bundles under `.next/static/**/*.js`, and every text file
+under `src/`. It does NOT read the sitemap, which is the surface a route can be kept out of, and it
+does NOT read anything outside this repo.
+
+⚠️ ADDED 2026-09-06, because the paragraph above named a domain that does not exist in one of the
+four repos. `--source-only <dir>` REPLACES that domain: it reads every text file under <dir> and
+no build at all. That is the only mode `offer-os` runs, as `--source-only offers`, because that
+repo has no `src/`, no build and no package.json. Reading this paragraph there without the
+qualifier, a maintainer concludes the gate scans nothing in that repo.
 
 ⚠️ It FAILS rather than passes when the build directory is missing. A check that ticks on no input
 is worse than no check.
@@ -237,7 +254,13 @@ SPLIT_WINDOW = 240
 
 
 def scan_text(text, style='none', allow=None):
-    """Return a list of (verdict, evidence). Verdicts: DEFECT, SPLIT.
+    """Return a list of (verdict, evidence). Verdicts: DEFECT, SPLIT, ALLOWED.
+
+    ALLOWED was missing from this line until 2026-09-06 and it is the verdict the whole
+    allowlist half turns on. A caller written from the old contract handles two verdicts, so an
+    allowlisted line falls through and is counted as a defect or dropped in silence. `scan_repo`
+    is correct today only because it was written beside this function rather than from its
+    docstring.
 
     `style` is the comment syntax to strip first. Build output is always scanned with 'none',
     because an HTML comment is published.
