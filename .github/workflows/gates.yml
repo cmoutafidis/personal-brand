@@ -44,7 +44,21 @@ jobs:
     name: Prove the gates can go red
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      # ⚠️ PINNED AT v7 ON 2026-09-10, UP FROM THE v4 MAJOR, IN ALL FIVE GTM REPOS IN ONE PASS.
+      # Every run of this workflow carried GitHub's own deprecation annotation, naming the checkout
+      # action at its old major as targeting Node.js 20 and being forced onto Node.js 24. All five
+      # repos pinned that same major, so all five gate suites would have broken on the same day
+      # support was withdrawn. That is the failure mode uniformity buys and also the one it
+      # concentrates. STATE section 182 carries his answer of 2026-09-10: all five together.
+      # v7 is the current major, read off the GitHub API on 2026-09-10 as v7.0.1 rather than recalled
+      # from memory. The move to Node 24 itself landed in v5.0.0.
+      # ⚠️ v7.0.0 blocks a fork PR checkout under `pull_request_target` and `workflow_run`. Neither
+      # event appears in any workflow in any of the five repos, and none of the twelve checkout steps
+      # carries a `with:` block, so nothing here can reach that change. The v5 and v6 minimum runner
+      # versions are satisfied by `ubuntu-latest`.
+      # ⛔ Do not bump one of these repos alone. STATE section 182, in its own words: "Bumping one
+      # forks a pattern four documents describe as byte-identical."
+      - uses: actions/checkout@v7
       - name: The checkers must exist
         run: |
           for f in scripts/no-shipped-dashes.py scripts/hreflang-parity.py scripts/hreflang-reciprocity.py scripts/no-published-private-contacts.py; do
@@ -75,7 +89,7 @@ jobs:
     needs: self-test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: actions/setup-node@v4
         with:
           node-version: 22
