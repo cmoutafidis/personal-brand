@@ -90,7 +90,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v4
+      # ⚠️ PINNED AT v7 ON 2026-09-10, UP FROM THE v4 MAJOR, IN ALL THREE REPOS THAT RUN NODE.
+      # His answer to open decision 15, given the same day as decision 14 and on the same reasoning.
+      # After the checkout bump earlier that day this was the ONLY action left targeting Node 20
+      # anywhere in the estate, and it was exactly what the three surviving deprecation annotations
+      # named. v7 is the current major, read off the GitHub API on 2026-09-10 as v7.0.0, published
+      # 2026-07-14. The move to Node 24 itself landed in v5.0.0.
+      # ⚠️ UNLIKE THE CHECKOUT STEP, THIS ONE CARRIES A `with:` BLOCK, so every change between v4 and
+      # v7 was checked against these two inputs rather than waved through:
+      #   v5.0.0 caches automatically when package.json carries a `packageManager` field. None of the
+      #     three package.json files has one, and `cache: npm` is set explicitly here regardless.
+      #   v6.0.0 narrowed that automatic caching to npm. Same answer.
+      #   v6.1.0 removed `always-auth` handling, and v7.0.0 removed the dummy NODE_AUTH_TOKEN export.
+      #     Neither string occurs in any workflow in any of the five repos, and no `registry-url` is
+      #     set, so nothing here authenticates to a registry.
+      #   `cache: npm` needs a lockfile to key on. All three repos carry package-lock.json.
+      # ⛔ Do not bump one of these alone. STATE section 185.
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
