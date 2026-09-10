@@ -69,7 +69,7 @@ jobs:
       - uses: actions/checkout@v7
       - name: The checkers must exist
         run: |
-          for f in scripts/no-shipped-dashes.py scripts/hreflang-parity.py scripts/hreflang-reciprocity.py scripts/no-published-private-contacts.py; do
+          for f in scripts/no-shipped-dashes.py scripts/hreflang-parity.py scripts/hreflang-reciprocity.py scripts/no-published-private-contacts.py scripts/decision-freshness.py; do
             if [ ! -f "$f" ]; then
               echo "::error file=$f::GATE NEUTERED. $f is missing from the tree. This is not a"
               echo "runner problem. Restore the file or delete this workflow deliberately."
@@ -91,6 +91,7 @@ jobs:
       - run: python3 scripts/hreflang-parity.py --selftest
       - run: python3 scripts/hreflang-reciprocity.py --selftest
       - run: python3 scripts/no-published-private-contacts.py --selftest
+      - run: python3 scripts/decision-freshness.py --selftest
 
   gates:
     name: No shipped dashes, the sitemap matches the pages, every hreflang pair names back, no banned mailbox is published
@@ -138,3 +139,16 @@ jobs:
       # It catches the literal address, six obfuscations of it, and the split-variable shape that
       # search.ch uses to publish an address a grep returns zero on.
       - run: python3 scripts/no-published-private-contacts.py
+      # ⚠️ decision-freshness IS A REPORT AND IT NEVER FAILS THIS BUILD. Read its docstring
+      # before changing that. It lists comments that name a decided topic and never name the
+      # decision that settled it, which is the class every defect of the 2026-09-10 sampled
+      # audit fell into. It cannot be a red gate: STATE section 208 measured 23 mechanical hits
+      # across the three repos and SIX were correct as written, because "Website + Google Ads"
+      # is an offer this business SELLS while the dropped channel is what it BUYS. A check that
+      # fires on normal work gets switched off, and STATE section 100 records this estate losing
+      # a shipped feature exactly that way. Its --selftest in the job above IS hard, because a
+      # neutered checker has to go red loudly.
+      #
+      # It reads only this repository and needs no credential, so it is outside the 2026-09-10
+      # ruling that no token goes into any CI. That ruling is about a gate reading OTHER repos.
+      - run: python3 scripts/decision-freshness.py
