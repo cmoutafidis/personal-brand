@@ -1,6 +1,12 @@
 name: gates
 
-# The two checkers that read this repo, run on every push.
+# The four checkers that read this repo, run on every push: no-shipped-dashes, hreflang-parity,
+# hreflang-reciprocity and no-published-private-contacts.
+#
+# CORRECTED 2026-09-10. This header said "two checkers" and called the mailbox gate below "THE
+# THIRD CHECKER". Both counts were stale: hreflang-reciprocity.py landed 2026-09-05 and the
+# mailbox gate 2026-09-06, so the mailbox gate was the fourth. The job bodies have run four all
+# along.
 #
 # WHY THIS EXISTS. Both replaced things that were nominally in place and were not working.
 #
@@ -13,12 +19,14 @@ name: gates
 # The hreflang parity check exists because until 2026-09-03 src/app/sitemap.ts built its own copy
 # of the map, `{en, el}`, and stopped there: every page published three values and the sitemap
 # published two, on all 34 route entries, with x-default the one missing. THAT DEFECT WAS ALREADY
-# KNOWN AND WRITTEN DOWN, in charismoutafidis-com/src/app/sitemap.ts, which says of this site "its
-# sitemap omits x-default while its pages emit one". Separate remote, so nothing here could go red
+# KNOWN AND WRITTEN DOWN, in charismoutafidis-com/src/app/sitemap.ts, which said of this site "its
+# sitemap omits x-default while its pages emit one". ⚠️ That sentence was deleted from that file on
+# 2026-09-03 in b824025 and is quoted here from the record rather than from the file. Do not go
+# looking for it. Separate remote, so nothing here could go red
 # on it, and it survived for as long as nobody happened to open that file. A finding recorded
 # somewhere unreachable is a finding that does not exist.
 #
-# ⚠️ THE THIRD CHECKER WAS ADDED 2026-09-06 AND IT CLOSES A HOLE ALL OF THE ABOVE WERE BLIND TO.
+# ⚠️ THE MAILBOX CHECKER WAS ADDED 2026-09-06 AND IT CLOSES A HOLE ALL OF THE ABOVE WERE BLIND TO.
 # Charis banned publishing his `charis@` mailbox on 2026-09-06. The estate measured itself the same
 # day: the address appeared ZERO times on 106 of 106 live routes and SEVENTEEN times in fourteen
 # source files, nine of them `offer.guarantee.contact` values that `offer-build` renders onto a
@@ -29,7 +37,7 @@ name: gates
 #     WHEN A VALUE IS BANNED, GREP THE GENERATOR, NOT ONLY THE OUTPUT.
 #
 # TWO JOBS, AND THE ORDER MATTERS. `self-test` runs FIRST and proves each checker can still go red:
-# both scripts sabotage their own internals and assert the fixtures notice. A neutered checker
+# every script sabotages its own internals and asserts the fixtures notice. A neutered checker
 # looks exactly like a clean repo on an ordinary push.
 on:
   push:

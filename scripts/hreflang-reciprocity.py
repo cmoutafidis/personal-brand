@@ -277,13 +277,19 @@ def _page(canon, alts, robots='index, follow', body_switcher=True):
         f'<link rel="alternate" hrefLang="{l}" href="{h}"/>' for l, h in alts)
     body = ''
     if body_switcher:
-        # Two things every real page in these three repos puts in its BODY, and a head-blind reader
-        # counts both as declarations:
+        # Two things in this FIXTURE body that a head-blind reader counts as declarations, and
+        # only the first is something a real page here emits:
         #   the locale switcher, which is a crawlable link and not an annotation, and
-        #   Next's RSC flight payload, which embeds a second copy of the head's own link tags.
-        # The payload here names a locale the fixture site does not build, so a checker that reads
+        #   a stray <link rel="alternate"> inside <noscript>, which is a hypothetical. The third
+        #   paragraph below says why it is here.
+        # The stray link names a locale the fixture site does not build, so a checker that reads
         # past </head> goes RED on a healthy page. That is what makes head_of falsifiable.
-        # Two things in the BODY that a loose reader turns into declarations.
+        #
+        # CORRECTED 2026-09-10. The first paragraph used to say that every real page in these three
+        # repos puts "Next's RSC flight payload, which embeds a second copy of the head's own link
+        # tags" in its body. The two paragraphs below it, and the module docstring, both record the
+        # opposite and were right. A duplicate topic sentence left standing above its own correction
+        # was the tell. Nothing about the fixture or the checker changed.
         #
         # The switcher anchors are what every real page here emits. Measured on the three real
         # builds 2026-09-05: 4 `hrefLang=` occurrences in the body of every page and ZERO body
@@ -400,10 +406,15 @@ def selftest():
     }
     expect('body anchors and the RSC payload are not annotations', body_only, False)
 
-    # A trailing slash is not a difference, and both real conventions appear in these repos: page
-    # metadata declares the bare origin while a sitemap declares it with a slash. Without norm() the
-    # canonical check and the reciprocity check both go red on a healthy site, so this fixture is
-    # what makes norm falsifiable.
+    # A trailing slash is not a difference. Without norm() the canonical check and the reciprocity
+    # check both go red on a healthy site, so this fixture is what makes norm falsifiable.
+    #
+    # CORRECTED 2026-09-10. This used to say the two conventions in these repos are "page metadata
+    # declares the bare origin while a sitemap declares it with a slash". Measured: both declare the
+    # root WITH a slash in all three repos (peak-code src/app/(de)/page.tsx canonical `${siteUrl}/`
+    # against public/sitemap.xml `<loc>https://www.peakcodeconsulting.ch/</loc>`). The divergence
+    # norm() exists for is between a root URL derived by joining an origin to a route and a
+    # canonical declared with the slash, which is inside this checker rather than across surfaces.
     slashy = {
         '/': _page(f'{O}/', [('en', f'{O}/'), ('de', f'{O}/de'), ('x-default', f'{O}/')]),
         '/de': _page(f'{O}/de', [('en', f'{O}/'), ('de', f'{O}/de'), ('x-default', f'{O}/')]),
