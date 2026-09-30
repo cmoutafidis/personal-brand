@@ -2,6 +2,7 @@ import React from 'react';
 import VapiWidget from './VapiWidget';
 import ContactButton from "@/components/ContactButton";
 import {assistantId, vapiApiKey} from "@/types/language";
+import {HOMEPAGE_VOICE_ON} from "@/lib/landing";
 
 interface HeroProps {
   t: (key: string) => string;
@@ -25,12 +26,16 @@ const Hero: React.FC<HeroProps> = ({t}) => {
               buttons keep their place under the H1 (03-copy-homepage.md, the hero build note). */}
           <div className="mb-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <ContactButton label={t('hero.cta')}/>
-            <VapiWidget
-              apiKey={vapiApiKey}
-              assistantId={assistantId}
-              className="text-lg px-8 py-4"
-              buttonText={t('hero.talk')}
-            />
+            {/* 2026-09-30 (G20): the voice button stays hidden until G23's assistant script is
+                live, because today's script pitches a second guarantee (src/lib/landing.ts). */}
+            {HOMEPAGE_VOICE_ON && (
+              <VapiWidget
+                apiKey={vapiApiKey}
+                assistantId={assistantId}
+                className="text-lg px-8 py-4"
+                buttonText={t('hero.talk')}
+              />
+            )}
           </div>
 
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-2">

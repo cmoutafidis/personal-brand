@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { useLanguage } from "@/context/LanguageContext";
 import { createTranslationFunction } from "@/translations";
 import { usePathname } from 'next/navigation';
-import { isLandingPath } from '@/lib/landing';
+import { isChatSuppressedPath } from '@/lib/landing';
 
 interface VapiChatWidgetProps {
   apiKey: string;
@@ -18,8 +18,9 @@ const VapiChatWidget: React.FC<VapiChatWidgetProps> = ({
   const { language } = useLanguage();
   const t = createTranslationFunction(language);
   const widgetRef = useRef<HTMLDivElement>(null);
-  // Single-goal landing pages load no chat bubble (src/lib/landing.ts, added 2026-09-30).
-  const suppressed = isLandingPath(usePathname());
+  // Single-goal landing pages load no chat bubble, and the two homepages load none until G23's
+  // assistant script is live (src/lib/landing.ts, both added 2026-09-30).
+  const suppressed = isChatSuppressedPath(usePathname());
 
   useEffect(() => {
     if (suppressed) return;
