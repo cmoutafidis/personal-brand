@@ -1,10 +1,5 @@
 import {Language} from '@/types/language';
-import {
-  FIRST_FIX_DAYS,
-  AUDIT_CALL_MINUTES,
-  REPLY_SLA,
-  GUARANTEE_WINDOW_WORD
-} from '@/lib/offer';
+import {REPLY_SLA} from '@/lib/offer';
 
 // Copy rules for this file, set 2026-08-15 after the site audit:
 //
@@ -23,6 +18,14 @@ import {
 //  7. Every commercial number comes from `@/lib/offer` — the durations, the SLA and the
 //     guarantee window. None of them is typed into a string here. There is no price constant,
 //     because no price is published in either locale. Do not add one.
+//     2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D68): one dated exception.
+//     The homepage `hero.*`, `challenges.*` and `solutions.*` strings are the sheet-to-app hook
+//     and are copied word for word from offer-os `offers/fiji-solutions--sheet-to-app/
+//     03-copy-homepage.md`. Their numbers (7 days, 30 minutes, 48 hours, 3 to 5 lines, 5 screens,
+//     2 roles, 30 days) and the five dollar figures in `solutions.cta.description` are typed
+//     there, as the landing page's data file types them, so no price constant enters
+//     `@/lib/offer`. To change one, change it in 03-copy-homepage.md first. Every other string in
+//     this file keeps this rule.
 
 export const translations: Record<Language, Record<string, string>> = {
   en: {
@@ -37,61 +40,53 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.privacy': 'Privacy',
 
     // Hero Section
-    // ⚠️ THE REFUND CLAUSE WAS REMOVED FROM THIS HEADLINE ON 2026-09-02, on his decision, and must
-    // not come back. It promised the money back if the first process was not automated in 30 days —
-    // a DIFFERENT promise from the guarantee this site actually gives, which is stated three
-    // sections below in `solutions.payment.description`: if what we build has not paid for itself
-    // within six months of going live, we refund the build fee. Two refund promises on one page,
-    // with different triggers, different windows and different remedies, is not risk reversal; it
-    // is a reader who cannot tell which one they are owed. Asked directly which was real, he said
-    // the six-month one.
-    //
-    // FIRST_FIX_DAYS is untouched and stays: 30 days is a real DELIVERY commitment, anchored to the
-    // build starting rather than to first contact, and `hero.description2` and the page metadata
-    // both already say so.
-    'hero.title': `Your first process automated within ${FIRST_FIX_DAYS} days of the build starting`,
-    'hero.cta': 'Get the free process audit',
+    // 2026-09-30 (G20, D5, D66): the homepage is the hook for the 7-Day Sheet-to-App Prototype.
+    // The H1 opens on the prototype, anchors the 7 days to the audit call and states the one
+    // guarantee, "Pay only if you like it". The earlier H1 lock is struck in CLAUDE.md with this
+    // date. `hero.description1` names the mechanism, once on the page, and holds its one "free".
+    'hero.title': 'Prototype 7 days after the audit call. Pay only if you like it.',
+    'hero.cta': 'Book my 30-minute call',
     'hero.talk': "Let's talk now",
-    'hero.description1': 'If someone in your business retypes the same data into two systems every week, chases approvals by email, or rebuilds the same report by hand, that is the process we start with.',
-    'hero.description2': `It starts with a free process audit: a written map of the three bottlenecks costing you the most, in hours and euros. Yours to keep whether or not we work together. The ${FIRST_FIX_DAYS} days start when the build does.`,
+    'hero.description1': 'The Column-First Build starts from the column headers of the spreadsheet your team runs on. Book a free 30-minute audit call and send us those headers. On the call we talk through what you need. We write down together what the prototype must do, and we agree what the finished app must do.',
+    'hero.description2': 'On day 7 you click through the prototype yourself: a screen for each role, with sample rows made from your column headers. If you like it, you pay for it, and if not, you pay nothing and we stop there. If you go on, the finished app follows about three weeks later, and at delivery you pay for it if you like it.',
 
-    // Challenges — written as the reader would say them, not as we would categorise them.
-    'challenges.title': 'Where the money leaks',
-    'challenges.subtitle': 'These three cost you every week, and none of them shows up as a line in your accounts.',
-    'challenges.old_tech.title': 'The same thing, typed twice',
-    'challenges.old_tech.description': 'The order goes into the shop, then into the accounting system, then into a spreadsheet. Every retype is a chance for the error a customer finds before you do.',
-    // Key name is a leftover. This card was 'Nothing talks to anything', which restated card one
-    // from the system's point of view. It now carries the key-person trap, which the offer page
-    // ranks among its five leaks and the homepage had nowhere, and which the openGraph audience
-    // line already describes the buyer by.
-    'challenges.slow.title': 'It only works because one person knows how',
-    'challenges.slow.description': 'The process lives in one person\u2019s head. A sick day, a holiday or a resignation turns an ordinary week into a crisis.',
-    'challenges.money.title': 'The numbers arrive too late',
-    'challenges.money.description': 'When a report takes days to assemble, a small problem has already become an expensive one by the time anyone sees it.',
+    // Challenges. 2026-09-30 (G20): the three card titles are the buyer's own lines, so they keep
+    // their quotation marks. Key names are leftovers from the audit homepage and stay for parity.
+    'challenges.title': 'What you hear every week',
+    'challenges.subtitle': 'And the line you say yourself: "I can\'t see where everything stands without asking around."',
+    'challenges.old_tech.title': '"Where\'s that order at?"',
+    'challenges.old_tech.description': 'Everyone edits the same spreadsheet, and people chase each other about where an order or a job stands. The foremen call the office to ask where they go tomorrow.',
+    'challenges.slow.title': '"We type the same thing in twice."',
+    'challenges.slow.description': 'What goes into the spreadsheet gets typed again somewhere else: into accounting, into an email. Each retype is one more chance for a mistake. A change order gets approved on site and never makes it into the log.',
+    'challenges.money.title': '"Who changed this?"',
+    'challenges.money.description': 'Everyone can open and edit the whole spreadsheet: "Everyone sees everything." Someone sorts one column and breaks the spreadsheet for everyone, and someone else has to find out who changed it.',
 
-    // Solutions — the two rungs. No price is published anywhere on this site.
-    'solutions.title': 'How it works',
-    'solutions.subtitle': 'Two steps, and a guarantee. You approve the price and the target in writing before anything gets built.',
-    'solutions.experts.title': 'The free process audit',
-    'solutions.experts.description': `A ${AUDIT_CALL_MINUTES}-minute call about how work actually moves through your business, then a written one-page map of your three most expensive bottlenecks, with the hours and euros each one costs per month. You have it within a week of the call.`,
-    'solutions.industry.title': 'Scope, Build & Run',
-    'solutions.industry.description': `We map the exact workflow, rank every possible fix by what it returns, and agree the payback target and the price with you in writing. Then we build the highest-return fix first, and our target is live within ${FIRST_FIX_DAYS} days of the build starting. The source code and the documentation are yours. A monthly care plan keeps it running, monitored and updated.`,
-    'solutions.payment.title': 'The guarantee',
-    'solutions.payment.description': `If what we build has not paid for itself within ${GUARANTEE_WINDOW_WORD.en} months of going live, measured against the baseline in your audit, we refund the build fee. The full terms are on the audit page.`,
-    'solutions.cta.title': 'Show us the process that wastes the most time',
-    'solutions.cta.description': 'Tell us which task, spreadsheet or report costs you the most, and we will put a number on it in writing. Automating it gives your team back the hours it takes, without hiring anyone.',
-    'solutions.cta.button': 'Get the free process audit',
+    // Solutions. 2026-09-30 (G20, D5, D68): steps 2 to 4 of the sheet-to-app offer, then the box
+    // that is the homepage's one priced slot (the dated exception to CLAUDE.md rule 7). Solutions.tsx
+    // splits `solutions.cta.description` on each blank line into its own paragraph.
+    'solutions.title': 'From the audit call to day 7',
+    'solutions.subtitle': 'Every screen is built around the columns your team already uses.',
+    'solutions.experts.title': 'The audit call',
+    'solutions.experts.description': 'In 30 minutes we see how your spreadsheet runs today and talk through what you need from it. Together we write 3 to 5 lines on what the prototype must do: each is a screen, a role and an action, up to 5 screens and 2 roles. We also agree what the finished app must do. The 7 days start once that list is agreed and your column headers have arrived.',
+    'solutions.industry.title': 'Days 1 to 6: progress links',
+    'solutions.industry.description': 'We build each role\'s screen from your column headers. A private progress link comes within 48 hours of the audit call, and one more with every change. You watch the prototype take shape and comment when it suits you.',
+    'solutions.payment.title': 'Day 7: Pay only if you like it',
+    'solutions.payment.description': 'In a 30-minute walkthrough you click through the prototype yourself and say whether you like it. A no needs no reason and costs nothing: we stop there, and we delete your data on request. If you like it, we invoice the prototype. If you go on, the finished app follows about three weeks later, built as we agreed on the audit call, for one flat price. At delivery you decide the same way: if you like it, we invoice the rest of its price; if you do not, you pay nothing more, and the code stays with us.',
+    'solutions.cta.title': 'What you pay, and when',
+    'solutions.cta.description': 'Pay only if you like it, at both steps.\n\nThe prototype is $2,000. We invoice it when you say yes at the day-7 walkthrough.\n\nThe finished app is $7,000 in total. If we start it within 30 days of the walkthrough, the prototype\'s $2,000 counts toward it, so you pay $5,000 more, invoiced when you say yes at delivery.\n\nWhen you accept the finished app, you choose one of our two care plans, billed monthly from delivery, or you take the code and host it yourself.\n\nCare, $400 a month: hosting on our AWS platform with backups, bug fixes, up to 2 hours of changes and one 1-hour call a month.\n\nCare Plus, $990 a month: everything in Care, up to 10 hours of changes a month, a weekly call and a direct phone line to your engineer.\n\nWhat each plan covers, line by line, is on the prototype\'s page, linked below.',
+    'solutions.cta.button': 'Book my 30-minute call',
 
     // Local — added 2026-09-01. The section exists because the demand data says the site's own
     // vocabulary has no searchers and the local category does (offer-os/gtm/keyword-research-2026-09-01.md).
     // The NAP labels are NOT duplicated here: Local.tsx reuses 'contact.location',
     // 'contact.address.street', 'contact.address.city' and 'contact.phone' so the homepage and the
-    // contact page cannot state a different address. "across Greece" matches the published
-    // areaServed; nothing here promises on-site visits, because nothing on the site does.
+    // contact page cannot state a different address. Nothing here promises on-site visits, because
+    // nothing on the site does. 2026-09-30 (G20, D76): the English subtitle names no market, since
+    // US owners read the English homepage; the Greek one keeps «σε όλη την Ελλάδα» (D48).
     'local.title': 'Software company in Thessaloniki',
-    'local.subtitle': `Our office is in Thessaloniki and we work with businesses across Greece. We reply within ${REPLY_SLA.en}.`,
-    'local.website.title': 'If the website is what you need first',
-    'local.website.description': 'Not every business starts with its processes. If the first thing missing is a website that brings you customers from search, that is separate work, with its own timeline and its own guarantee. It has its own page too.',
+    'local.subtitle': 'Our office is in Thessaloniki.',
+    'local.website.title': 'If a website is what you need',
+    'local.website.description': 'Not every business starts with its processes. If what is missing is a website that brings you customers from search, that is separate work, with its own timeline. It has its own page too.',
     'local.website.seo': 'Website build and SEO',
     'local.website.ads': 'Website promotion with Google Ads',
     'local.map': 'See us on the map',
@@ -167,7 +162,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.snowflake.feature4': 'Cost and performance tuning',
 
     // Footer
-    'footer.description': `We map how your business runs, put a euro figure on the three bottlenecks costing you most, and automate the first one within ${FIRST_FIX_DAYS} days of the build starting. A monthly care plan keeps it running. Thessaloniki, Greece.`,
+    'footer.description': 'We build software around the way your business already works, from a prototype you review to the finished app, and a monthly care plan keeps it running. Thessaloniki, Greece.',
     'footer.partnership': 'Verify our partnership',
     'footer.links': 'Quick Links',
     'footer.projects': 'Projects',
@@ -222,35 +217,35 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.privacy': 'Απόρρητο',
 
     // Hero Section
-    // Twin of the English above — see the note there for why the refund clause is gone.
-    'hero.title': `Η πρώτη σου διαδικασία αυτοματοποιημένη μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης`,
-    'hero.cta': 'Κλείσε δωρεάν έλεγχο διαδικασιών',
+    // Twin of the English above (2026-09-30, G20, D5, D66).
+    'hero.title': 'Πρωτότυπο εφαρμογής 7 μέρες μετά την πρώτη κλήση. Πληρώνεις μόνο αν σου αρέσει.',
+    'hero.cta': 'Κλείνω ώρα για την πρώτη κλήση των 30 λεπτών',
     'hero.talk': 'Ας μιλήσουμε τώρα',
-    'hero.description1': 'Αν κάποιος στην επιχείρησή σου ξαναγράφει τα ίδια στοιχεία σε δύο συστήματα κάθε βδομάδα, κυνηγά εγκρίσεις με email ή ξαναφτιάχνει την ίδια αναφορά στο χέρι, από εκεί ξεκινάμε.',
-    'hero.description2': `Ξεκινάει με δωρεάν έλεγχο διαδικασιών: ένα γραπτό πλάνο με τα τρία σημεία που σου κοστίζουν περισσότερο, σε ώρες και σε ευρώ. Το κρατάς είτε συνεργαστούμε είτε όχι. Οι ${FIRST_FIX_DAYS} μέρες μετράνε από τη στιγμή που ξεκινάει η υλοποίηση.`,
+    'hero.description1': 'Η μέθοδος «Πρώτα οι στήλες» ξεκινά από τα ονόματα των στηλών στο Excel όπου γράφει όλη η ομάδα σου. Κλείσε ώρα για την πρώτη κλήση, 30 λεπτά και δωρεάν, και στείλε μας αυτά τα ονόματα. Στην κλήση συζητάμε τι χρειάζεσαι, γράφουμε μαζί τι πρέπει να κάνει το πρωτότυπο και συμφωνούμε τι θα κάνει η τελική εφαρμογή.',
+    'hero.description2': 'Την 7η μέρα εξετάζεις εσύ το πρωτότυπο: μια οθόνη για κάθε ρόλο, με ενδεικτικές γραμμές φτιαγμένες από τα ονόματα των στηλών σου. Αν σου αρέσει, το πληρώνεις, κι αν όχι, δεν πληρώνεις τίποτα και σταματάμε εκεί. Αν συνεχίσεις, η τελική εφαρμογή έρχεται περίπου τρεις βδομάδες μετά, και στην παράδοση την πληρώνεις αν σου αρέσει.',
 
     // Challenges
-    'challenges.title': 'Από πού φεύγουν τα χρήματα',
-    'challenges.subtitle': 'Αυτά τα τρία σου κοστίζουν κάθε βδομάδα, και κανένα δεν φαίνεται ως γραμμή στα βιβλία σου.',
-    'challenges.old_tech.title': 'Το ίδιο πράγμα, γραμμένο δύο φορές',
-    'challenges.old_tech.description': 'Η παραγγελία μπαίνει στο ηλεκτρονικό κατάστημα, μετά στο λογιστικό, μετά σε ένα υπολογιστικό φύλλο. Κάθε ξαναγράψιμο είναι μια ευκαιρία για το λάθος που θα το βρει ο πελάτης πριν από σένα.',
-    'challenges.slow.title': 'Δουλεύει μόνο επειδή το ξέρει ένας άνθρωπος',
-    'challenges.slow.description': 'Η διαδικασία υπάρχει στο μυαλό ενός ανθρώπου. Μια άδεια, μια αρρώστια ή μια παραίτηση μετατρέπει μια κανονική βδομάδα σε κρίση.',
-    'challenges.money.title': 'Οι αριθμοί έρχονται αργά',
-    'challenges.money.description': 'Όταν μια αναφορά θέλει μέρες για να ετοιμαστεί, το μικρό πρόβλημα έχει ήδη γίνει ακριβό μέχρι να το δει κάποιος.',
+    'challenges.title': 'Αυτά ακούς κάθε βδομάδα',
+    'challenges.subtitle': 'Και αυτό που λες εσύ: «Για να δω πού βρίσκονται όλα, πρέπει να ρωτήσω τον έναν και τον άλλον».',
+    'challenges.old_tech.title': '«Τι έγινε με την παραγγελία;»',
+    'challenges.old_tech.description': 'Όλοι γράφουν στο ίδιο Excel, και ο ένας κυνηγάει τον άλλον για να μάθει πού βρίσκεται μια παραγγελία ή ένα έργο. Οι εργοδηγοί παίρνουν τηλέφωνο στο γραφείο και ρωτάνε πού πάνε αύριο.',
+    'challenges.slow.title': '«Τα ίδια τα γράφουμε δύο φορές»',
+    'challenges.slow.description': 'Ό,τι μπαίνει στο Excel σου ξαναγράφεται αλλού, στο λογιστικό ή σε ένα email. Κάθε ξαναγράψιμο είναι μια ακόμα ευκαιρία για λάθος. Μια αλλαγή που συμφωνήθηκε στο εργοτάξιο δεν περνάει ποτέ στο Excel.',
+    'challenges.money.title': '«Ποιος το άλλαξε αυτό;»',
+    'challenges.money.description': 'Όλοι ανοίγουν και αλλάζουν ολόκληρο το Excel σου: «Όλοι βλέπουν τα πάντα». Κάποιος ταξινομεί μια στήλη και χαλάει το Excel για όλους, και κάποιος άλλος πρέπει να ψάξει ποιος το άλλαξε.',
 
     // Solutions
-    'solutions.title': 'Πώς δουλεύει',
-    'solutions.subtitle': 'Δύο βήματα και μια εγγύηση. Εγκρίνεις γραπτώς την τιμή και τον στόχο πριν φτιαχτεί οτιδήποτε.',
-    'solutions.experts.title': 'Ο δωρεάν έλεγχος διαδικασιών',
-    'solutions.experts.description': `Μια κλήση ${AUDIT_CALL_MINUTES} λεπτών για το πώς κινείται πραγματικά η δουλειά στην επιχείρησή σου, και μετά ένα γραπτό πλάνο μιας σελίδας με τα τρία ακριβότερα σημεία, με τις ώρες και τα ευρώ που κοστίζει το καθένα τον μήνα. Το έχεις μέσα σε μία εβδομάδα από την κλήση.`,
-    'solutions.industry.title': 'Σχεδιασμός, υλοποίηση και λειτουργία',
-    'solutions.industry.description': `Χαρτογραφούμε τη ροή, ιεραρχούμε κάθε πιθανή λύση με βάση το τι αποδίδει και συμφωνούμε γραπτώς μαζί σου τον στόχο απόσβεσης και την τιμή. Μετά φτιάχνουμε πρώτα τη λύση με τη μεγαλύτερη απόδοση, με στόχο να είναι σε λειτουργία μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης. Ο πηγαίος κώδικας και η τεκμηρίωση είναι δικά σου. Το μηνιαίο πλάνο φροντίδας τη συντηρεί, την παρακολουθεί και την ενημερώνει.`,
-    'solutions.payment.title': 'Η εγγύηση',
-    'solutions.payment.description': `Αν αυτό που φτιάξαμε δεν έχει αποσβεστεί μέσα σε ${GUARANTEE_WINDOW_WORD.el} μήνες από τη θέση του σε λειτουργία, μετρημένο πάνω στη βάση του ελέγχου σου, επιστρέφουμε το κόστος κατασκευής. Οι πλήρεις όροι είναι στη σελίδα του ελέγχου.`,
-    'solutions.cta.title': 'Δείξε μας τη διαδικασία που τρώει τον περισσότερο χρόνο',
-    'solutions.cta.description': 'Πες μας ποια εργασία, ποιο υπολογιστικό φύλλο ή ποια αναφορά σου κοστίζει περισσότερο, και θα βάλουμε νούμερο πάνω της γραπτώς. Όταν την αυτοματοποιήσουμε, η ομάδα σου παίρνει πίσω τις ώρες που της τρώει, χωρίς νέες προσλήψεις.',
-    'solutions.cta.button': 'Κλείσε δωρεάν έλεγχο διαδικασιών',
+    'solutions.title': 'Από την πρώτη κλήση ως την 7η μέρα',
+    'solutions.subtitle': 'Κάθε οθόνη φτιάχνεται γύρω από τις στήλες που ήδη χρησιμοποιεί η ομάδα σου.',
+    'solutions.experts.title': 'Η πρώτη κλήση',
+    'solutions.experts.description': 'Σε 30 λεπτά βλέπουμε πώς δουλεύει σήμερα το Excel σου και συζητάμε τι χρειάζεσαι από αυτό. Γράφουμε μαζί 3 έως 5 σημεία για το τι πρέπει να κάνει το πρωτότυπο: το καθένα είναι μια οθόνη, ένας ρόλος και μια ενέργεια, με όριο τις 5 οθόνες και τους 2 ρόλους. Συμφωνούμε και τι θα κάνει η τελική εφαρμογή. Οι 7 μέρες ξεκινούν όταν συμφωνήσουμε τη λίστα και έχουν φτάσει τα ονόματα των στηλών σου.',
+    'solutions.industry.title': 'Μέρες 1 έως 6: σύνδεσμοι προόδου',
+    'solutions.industry.description': 'Φτιάχνουμε την οθόνη κάθε ρόλου από τα ονόματα των στηλών σου. Μέσα σε 48 ώρες από την πρώτη κλήση σού στέλνουμε ιδιωτικό σύνδεσμο προόδου, και έναν ακόμα με κάθε αλλαγή, για να βλέπεις το πρωτότυπο να παίρνει μορφή και να σχολιάζεις όποτε σε βολεύει.',
+    'solutions.payment.title': '7η μέρα: Πληρώνεις μόνο αν σου αρέσει',
+    'solutions.payment.description': 'Στη συνάντηση της 7ης μέρας, που κρατάει 30 λεπτά, εξετάζεις εσύ το πρωτότυπο και λες αν σου αρέσει. Το «όχι» δεν θέλει αιτιολογία και δεν κοστίζει τίποτα: σταματάμε εκεί και σβήνουμε τα στοιχεία σου αν μας το ζητήσεις. Αν σου αρέσει, σου στέλνουμε τιμολόγιο για το πρωτότυπο. Αν συνεχίσεις, η τελική εφαρμογή έρχεται περίπου τρεις βδομάδες μετά, φτιαγμένη όπως τη συμφωνήσαμε στην πρώτη κλήση, σε σταθερή τιμή. Στην παράδοση αποφασίζεις με τον ίδιο τρόπο: αν σου αρέσει, σου στέλνουμε τιμολόγιο για το υπόλοιπο ποσό, κι αν όχι, δεν πληρώνεις τίποτα παραπάνω και ο κώδικας μένει σε εμάς.',
+    'solutions.cta.title': 'Τι πληρώνεις και πότε',
+    'solutions.cta.description': 'Πληρώνεις μόνο αν σου αρέσει, και στα δύο βήματα.\n\nΤο πρωτότυπο κοστίζει 2.000\u00A0$. Σου στέλνουμε τιμολόγιο όταν πεις «ναι» στη συνάντηση της 7ης μέρας.\n\nΗ τελική εφαρμογή κοστίζει 7.000\u00A0$ συνολικά. Αν την ξεκινήσουμε μέσα σε 30 μέρες από τη συνάντηση, τα 2.000\u00A0$ του πρωτοτύπου συμψηφίζονται, οπότε πληρώνεις ακόμα 5.000\u00A0$, και σου στέλνουμε τιμολόγιο όταν πεις «ναι» στην παράδοση.\n\nΌταν παραλάβεις την τελική εφαρμογή, διαλέγεις ένα από τα δύο πλάνα φροντίδας μας, με μηνιαία χρέωση από την παράδοση, ή παίρνεις τον κώδικα και τη φιλοξενείς εσύ.\n\nΤο Care, 400\u00A0$ τον μήνα: φιλοξενία στην πλατφόρμα μας στο AWS με αντίγραφα ασφαλείας, διόρθωση σφαλμάτων, έως 2 ώρες αλλαγών και μία κλήση μίας ώρας τον μήνα.\n\nΤο Care Plus, 990\u00A0$ τον μήνα: ό,τι έχει το Care, έως 10 ώρες αλλαγών τον μήνα, μία κλήση κάθε βδομάδα και απευθείας τηλέφωνο με τον μηχανικό σου.\n\nΤι καλύπτει το κάθε πλάνο, σημείο προς σημείο, το βρίσκεις στη σελίδα του πρωτοτύπου, στον σύνδεσμο παρακάτω.',
+    'solutions.cta.button': 'Κλείνω ώρα για την πρώτη κλήση των 30 λεπτών',
 
     // Local — βλ. το σχόλιο στο en. Οι δύο σύνδεσμοι είναι οι δύο λέξεις-κλειδιά με μετρημένη ζήτηση,
     // μία η καθεμία: «κατασκευή ιστοσελίδων» (2.900/μήνα) και «προώθηση ιστοσελίδων».
@@ -258,9 +253,9 @@ export const translations: Record<Language, Record<string, string>> = {
     // έχει αποσυρθεί από τις 2026-09-02 (blogs.ts). Είναι μέσος όρος δώδεκα μηνών και ο μέσος όρος
     // κρύβει την πορεία: 210 390 260 320 210 210 170 260 390 1000 5400 9900.
     'local.title': 'Εταιρεία λογισμικού στη Θεσσαλονίκη',
-    'local.subtitle': `Η έδρα μας είναι στη Θεσσαλονίκη και δουλεύουμε με επιχειρήσεις σε όλη την Ελλάδα. Απαντάμε μέσα σε ${REPLY_SLA.el}.`,
-    'local.website.title': 'Αν αυτό που χρειάζεσαι πρώτα είναι η ιστοσελίδα',
-    'local.website.description': 'Δεν ξεκινάει κάθε επιχείρηση από τις διαδικασίες. Αν το πρώτο που σου λείπει είναι μια ιστοσελίδα που φέρνει πελάτες από την αναζήτηση, αυτή είναι ξεχωριστή δουλειά, με δικό της χρονοδιάγραμμα και δική της εγγύηση. Έχει και τη δική της σελίδα.',
+    'local.subtitle': 'Η έδρα μας είναι στη Θεσσαλονίκη και δουλεύουμε με επιχειρήσεις σε όλη την Ελλάδα.',
+    'local.website.title': 'Αν αυτό που χρειάζεσαι είναι η ιστοσελίδα',
+    'local.website.description': 'Δεν ξεκινάει κάθε επιχείρηση από τις διαδικασίες. Αν αυτό που σου λείπει είναι μια ιστοσελίδα που φέρνει πελάτες από την αναζήτηση, αυτή είναι ξεχωριστή δουλειά, με δικό της χρονοδιάγραμμα. Έχει και τη δική της σελίδα.',
     'local.website.seo': 'Κατασκευή ιστοσελίδων και SEO',
     'local.website.ads': 'Προώθηση ιστοσελίδων με Google Ads',
     'local.map': 'Δες μας στον χάρτη',
@@ -333,7 +328,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.snowflake.feature4': 'Ρύθμιση κόστους και απόδοσης',
 
     // Footer
-    'footer.description': `Χαρτογραφούμε πώς δουλεύει η επιχείρησή σου, βάζουμε νούμερο σε ευρώ στα τρία σημεία που σου κοστίζουν περισσότερο και αυτοματοποιούμε το πρώτο μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης. Το μηνιαίο πλάνο φροντίδας το κρατάει σε λειτουργία. Θεσσαλονίκη.`,
+    'footer.description': 'Φτιάχνουμε λογισμικό γύρω από τον τρόπο που ήδη δουλεύει η επιχείρησή σου, από το πρωτότυπο ως την τελική εφαρμογή, και το μηνιαίο πλάνο φροντίδας το κρατάει σε λειτουργία. Θεσσαλονίκη.',
     'footer.partnership': 'Επιβεβαίωσε τη συνεργασία μας',
     'footer.links': 'Γρήγοροι σύνδεσμοι',
     'footer.projects': 'Έργα',

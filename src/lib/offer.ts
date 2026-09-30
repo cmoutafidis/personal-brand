@@ -3,6 +3,9 @@
 // ⚠️ THIS SITE DOES NOT PUBLISH PRICES. Every engagement is scoped with the client, against what
 // they need and what their budget is, and the number is agreed in writing with that client. There
 // is no list price for anything, and none may be added here or in copy.
+// 2026-09-30: the 7-Day Sheet-to-App Prototype is the one dated exception (CLAUDE.md rule 7, offer-os
+// gtm/sheet-to-app-rollout/PLAN.md D68). Its figures are typed in its own copy, on its landing page
+// (G19) and in the homepage Solutions box (G20), and no price constant is added to this file.
 //
 // Until 2026-08-17 this file exported SPRINT_PRICE_EUR = 2400 and a formatSprintPrice() helper,
 // and the site sold a "Discovery Sprint" at €2,400 / five working days as the middle rung of a
@@ -47,7 +50,8 @@ export const GUARANTEE_CURE_DAYS = 30;
 export const GUARANTEE_CLAIM_DAYS = 30;
 export const GUARANTEE_ANSWER_WORKING_DAYS = 10;
 
-// The homepage states the window in words ("six months" / «έξι μήνες»); the audit page states it
+// Until 2026-09-30 the homepage stated the window in words ("six months" / «έξι μήνες»); since G20
+// (D5) the homepage sells the sheet-to-app offer and states no window. The audit page states it
 // in digits. Same number, two registers — so the word form is looked up from the number rather
 // than typed a second time. If the window ever changes, add its row here; the fallback is the
 // digits, which stays truthful and only reads worse.

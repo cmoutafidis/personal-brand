@@ -25,8 +25,8 @@ import {Language} from '@/types/language';
 // /offers/* pages were Google Ads destinations, one campaign per page. Google Ads was dropped on
 // 2026-09-01 and organic search is the whole strategy, so orphaning them now only means they cannot
 // rank. Charis approved linking them from inside the BODY of a page — never a navigation menu, a
-// footer link list or a hub. This is that link: two, in prose, in one section, below the audit
-// argument. Do not add a third, do not turn this into a grid, and do not put any of it in
+// footer link list or a hub. This is that link: two, in prose, in one section, below the
+// how-it-works section (2026-09-30, G20: the homepage is the sheet-to-app hook, D5). Do not add a third, do not turn this into a grid, and do not put any of it in
 // Navbar.tsx, QuickLinks.tsx or Footer.tsx.
 //
 // Server component — it takes `language` as a prop rather than calling useLanguage(), which is what

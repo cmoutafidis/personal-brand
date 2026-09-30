@@ -19,6 +19,10 @@ const Hero: React.FC<HeroProps> = ({t}) => {
             {t('hero.title')}
           </h1>
 
+          {/* 2026-09-30 (G20, D61): the order stays H1, buttons, then `hero.description1`, which
+              opens with the mechanism's name. Measured at 375 by 667 on a local build: with that
+              paragraph above the buttons, the Greek buttons leave the first viewport, so the
+              buttons keep their place under the H1 (03-copy-homepage.md, the hero build note). */}
           <div className="mb-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <ContactButton label={t('hero.cta')}/>
             <VapiWidget

@@ -13,7 +13,8 @@ import type {Language} from '@/types/language';
 //
 // `BlogInline` is reused deliberately rather than a new paragraph type invented: it is already the
 // repo's way of writing a run of text with a link inside it, and inline contextual links are the
-// whole point of this block. It is the internal-linking surface for the fourteen Greek articles and
+// whole point of this block. It is the internal-linking surface for twelve of the fourteen Greek
+// articles (two links left on 2026-09-30, G20) and
 // for /services/custom-software-development-greece and /services/data-analysis-greece, which are in
 // neither the navigation nor the footer.
 

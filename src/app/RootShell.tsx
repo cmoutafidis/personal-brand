@@ -9,7 +9,6 @@ import VapiChatWidget from '@/components/VapiChatWidget';
 import CookieConsent from '@/components/CookieConsent';
 import Analytics from '@/components/Analytics';
 import {Language, assistantId, vapiApiKey} from '@/types/language';
-import {FIRST_FIX_DAYS} from '@/lib/offer';
 import {PERSON_REF, ORGANISATION_ID} from '@/lib/person';
 
 // One shell, two root layouts.
@@ -36,25 +35,30 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const SITE = 'https://www.fijisolutions.net';
 
+// 2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D66): the site-wide defaults
+// state the new positioning, from a prototype to the finished app, and leave room for the rest of
+// what Fiji sells. Copied word for word from offer-os `offers/fiji-solutions--sheet-to-app/
+// 03-copy-homepage.md` section 7. They name no guarantee, no "audit call", no number and no price,
+// since they render on every page and each page states its own terms.
+//
+// Live consumers of these strings: `description` is the Organization JSON-LD description below and
+// the default description of the 404 page; `title` is the twitter:title of the six /services/*
+// routes (they declare `openGraph` but no `twitter`) and the og:title and twitter:title of the 404
+// page. Every route declares its own <title>. The Greek local title of 2026-09-01 is struck by D66.
 const COPY: Record<Language, { title: string; description: string; ogDescription: string }> = {
   en: {
-    title: `Fiji Solutions: one process automated in ${FIRST_FIX_DAYS} days from build start | Thessaloniki`,
+    title: 'Fiji Solutions: from a prototype to the finished app',
     description:
-      `We map how your business actually runs, put a euro figure on the three bottlenecks costing you most, and automate the first one within ${FIRST_FIX_DAYS} days of the build starting.`,
+      'Software company in Thessaloniki. We turn spreadsheets into web apps, starting with a prototype. We also automate processes and work on Snowflake.',
     ogDescription:
-      `A written map of the three bottlenecks costing you money, then the first one automated within ${FIRST_FIX_DAYS} days of the build starting.`,
+      'The spreadsheet your team runs on becomes a prototype you review, then the finished app, with a monthly care plan that keeps it running.',
   },
   el: {
-    // Not rendered as a page <title> or description anywhere: all 34 routes declare their own
-    // `metadata`. Live consumers: organisationSchema()'s `description` below, and — because the six
-    // /services/* routes declare `openGraph` but no `twitter` — the twitter:title of those pages.
-    // Retargeted 2026-09-01 at the category and the city («εταιρεία λογισμικού» 260/mo LOW), away
-    // from vocabulary DataForSEO measured at zero. See offer-os/gtm/keyword-research-2026-09-01.md.
-    title: 'Εταιρεία λογισμικού στη Θεσσαλονίκη | Fiji Solutions',
+    title: 'Fiji Solutions: από το πρωτότυπο ως την τελική εφαρμογή',
     description:
-      'Εταιρεία λογισμικού στη Θεσσαλονίκη: λογισμικό, αυτοματισμοί και κατασκευή ιστοσελίδων για επιχειρήσεις. Ξεκινάμε με δωρεάν έλεγχο διαδικασιών και γραπτό πλάνο.',
+      'Εταιρεία λογισμικού στη Θεσσαλονίκη. Κάνουμε το Excel σου εφαρμογή, ξεκινώντας από πρωτότυπο. Αυτοματοποιούμε διαδικασίες και δουλεύουμε με Snowflake.',
     ogDescription:
-      `Γραπτό πλάνο με τα τρία σημεία που σου κοστίζουν χρήματα, και το πρώτο αυτοματοποιημένο μέσα σε ${FIRST_FIX_DAYS} μέρες από την έναρξη της υλοποίησης.`,
+      'Το Excel της ομάδας σου γίνεται πρωτότυπο για να το εξετάσεις, και μετά τελική εφαρμογή, με μηνιαίο πλάνο φροντίδας που την κρατάει σε λειτουργία.',
   },
 };
 

@@ -13,7 +13,8 @@ import type {HomeLongFormCopy} from '@/types/homeLongForm';
 // Every site in the 17-site comparison sample that ships long-form bottom content leaves it visible.
 // Position audit 2026-09-02, §9 item 18, which says so explicitly and gives the reason.
 //
-// WHY IT EXISTS AT ALL: it is the internal-linking surface. The fourteen Greek articles and the two
+// WHY IT EXISTS AT ALL: it is the internal-linking surface. Twelve of the fourteen Greek articles
+// (since 2026-09-30, G20, when the myDATA and accessibility links left as compliance text) and the two
 // service pages at /services/custom-software-development-greece and /services/data-analysis-greece
 // are reachable from the home page through nothing else, and the audit named this the cheapest
 // distribution lever on the site. Links belong INSIDE sentences, where a reader is already thinking

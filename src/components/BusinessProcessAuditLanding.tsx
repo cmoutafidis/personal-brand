@@ -1106,8 +1106,8 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
         </div>
       </section>
 
-      {/* 15. Final CTA + form. The section itself lives in AuditFormSection.tsx, because the
-          homepage renders the same one. */}
+      {/* 15. Final CTA + form. The section itself lives in AuditFormSection.tsx, which the homepage
+          also rendered until 2026-09-30 (G20, D5: the homepage now has its own sheet-to-app form). */}
       <AuditFormSection language={language}/>
 
       {/* 15a. Added 2026-09-30 (G19): the body link to /offers/sheet-to-app, which that offer's

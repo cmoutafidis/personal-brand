@@ -1,5 +1,4 @@
 import type {HomeLongFormCopy} from '@/types/homeLongForm';
-import {FIRST_FIX_DAYS, GUARANTEE_WINDOW_WORD} from '@/lib/offer';
 import {SERVICE_LABEL} from '@/data/offerLinks';
 import processAutomation from '@/data/offers/process-automation';
 import aiPrototype from '@/data/offers/ai-prototype';
@@ -28,7 +27,7 @@ import websiteSeo from '@/data/offers/website-seo';
 //    target, and process-automation's read "automating one business process" against an eyebrow of
 //    "Automate one business process". The sentences below are built around the exact strings,
 //    capital letter included. If one reads awkwardly, change the sentence, never the anchor.
-//    The two "free process audit" anchors are the exception and stay literals: they point at
+//    The two "process audit" anchors are the exception and stay literals: they point at
 //    `/en/business-process-audit`, which is neither a service page nor an offer, so no constant
 //    exists to read them from. That is the whole exception; do not grow it.
 //
@@ -44,18 +43,16 @@ import websiteSeo from '@/data/offers/website-seo';
 //    about not being found is five article links in Greek, and that page is the only destination
 //    this locale has for it.
 //
-// 4. THE GUARANTEE IS STATED EXACTLY ONCE, IN THE `eggyisi` FAQ, IN THE WORDS THE PAGE ALREADY
-//    SHIPS (`translations.ts`, 'solutions.payment.description'). Until 2026-09-02 this page carried
-//    two contradictory refund promises. Do not paraphrase the window, the trigger or the remedy and
-//    do not add terms: the denominator is total fees paid, and the refund is the build fee. "All
-//    your money back" is a larger guarantee than the one that ships. The numbers are read from
-//    `src/lib/offer.ts` and never retyped. No price appears here in any form, and no result figure,
-//    client name or client count appears either.
-//
-//    That FAQ also names WHICH work the guarantee governs, and that clause is load-bearing. This
-//    array is emitted as FAQPage structured data, and `/en/offers/website-seo`, linked a screen
-//    above it, carries a different guarantee of its own. Naming the scope keeps the two apart. The
-//    clause quotes no terms from either one, and it must not start doing so.
+// 4. THE PAGE STATES ONE GUARANTEE, "Pay only if you like it", AND THIS BLOCK HOLDS ITS TERMS IN THE
+//    `eggyisi` FAQ. 2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D53, D71): the
+//    homepage is the hook for the 7-Day Sheet-to-App Prototype, and `pos-xekinaei`, `poso-grigora`,
+//    `eggyisi`, `poso-kostizei` and `poso-kostizei-ergo` are copied word for word from offer-os
+//    `offers/fiji-solutions--sheet-to-app/03-copy-homepage.md` section 6, with its Findings applied
+//    to the other ids. The six parts of `eggyisi` are joined with a space into the one string
+//    `LongFormFaq.a` holds. Until that date this item held the audit's payback guarantee; that
+//    guarantee still lives on the audit page. No price appears here in any form: these answers feed
+//    the FAQPage structured data, and the homepage's figures sit in the Solutions box alone (D68).
+//    No result figure, client name or client count appears either.
 //
 // 5. NO EM DASH, NO EN DASH, AND NO "IT IS NOT X, IT IS Y" (CLAUDE.md, the two writing rules given
 //    2026-09-02). Where a negative carries something the reader needs, it is a plain separate
@@ -78,7 +75,7 @@ const en: HomeLongFormCopy = {
       heading: 'What a software company actually does all day',
       paragraphs: [
         [
-          'We write software that does not exist yet, for a process your business has and the business next door does not. The piece that moves an order from one system into another with nobody in between. The screen that shows what is outstanding and who has it. The job that runs every Monday without anyone remembering it.',
+          'We write software that does not exist yet, for a process your business has. The piece that moves an order from one system into another with nobody in between. The screen that shows what is outstanding and who has it. The job that runs every Monday on its own.',
         ],
         [
           'It comes in two shapes. One is ',
@@ -88,7 +85,7 @@ const en: HomeLongFormCopy = {
           ', for when the same figure comes out three ways from three places, and the deliverable there is one source and one owner per number. Above what a spreadsheet holds we work on Snowflake. Fiji Solutions is a Snowflake AI Data Cloud Select Partner.',
         ],
         [
-          'We do not do desk support, and we do not take on projects framed as digitising the business. Some of what your software has to do is not your choice either: if you invoice in Greece it has to talk to myDATA, and it is worth asking any supplier how they handle it before you sign.',
+          'We do not do desk support, and we do not take on projects framed as digitising the business.',
         ],
       ],
     },
@@ -98,33 +95,36 @@ const en: HomeLongFormCopy = {
       heading: 'What you get to keep',
       paragraphs: [
         [
-          'The honest answer is a list of objects. The source code. The documentation. Your data in a format another system can open. Instructions written for a person: what each piece does, where it runs, what happens when it stops. None of it is held back as leverage.',
+          'For a build that follows the process audit, the honest answer is a list of objects. The source code. The documentation. Your data in a format another system can open. Instructions written for a person: what each piece does, where it runs, what happens when it stops. None of it is held back as leverage.',
         ],
         [
-          'Accounts work the same way. The domain, the hosting, the code repository and the tool logins are opened in your own name. Ask for that in writing before work starts, with any supplier, ours included. The answer decides what is still standing the day you stop paying.',
+          'For a build that follows the process audit, accounts work the same way. The domain, the hosting, the code repository and the tool logins are opened in your own name. Ask for that in writing before work starts, with any supplier, ours included. The answer decides what is still standing the day you stop paying.',
         ],
         [
-          'The third thing is the right to leave. Every ready-made platform holds something back, so choosing between WordPress, Shopify and something built for you is mostly a decision about what you can carry out later. In an online shop, accessibility joins that list as a legal obligation, and whether it binds yours is a question for your lawyer and your accountant.',
+          'The third thing is the right to leave. Every ready-made platform holds something back, so choosing between WordPress, Shopify and something built for you is mostly a decision about what you can carry out later.',
         ],
       ],
     },
 
     {
       id: 'pos-xekinaei',
-      heading: 'How a project starts, and where the ladder stops',
+      heading: 'How a project starts: two ways in',
       paragraphs: [
         [
-          'Step one is the ',
-          {text: 'free process audit', href: '/en/business-process-audit'},
-          '. It is not billed and it is not a sales visit under another name. Nobody should have to buy something to find out what is worth buying, so the written map of where your money leaks is yours either way.',
+          'If your team runs on one shared spreadsheet, it starts with the audit call. In 30 minutes we talk through what you need from your spreadsheet. We write a short list of what the prototype must do, and we agree what the finished app must do.',
         ],
         [
-          'Step two is the build, with a care plan that keeps it alive afterwards. Three things go in writing before a line of code exists: what gets built, which number will show that it worked, and the price. If you already know your scope, that same step two can be bought as a fixed scope instead: ',
+          'On day 7 you click through the prototype and decide. Pay only if you like it, at both steps: the prototype on day 7, and the finished app when we deliver it, about three weeks after you go on. When you accept the app, you choose Care or Care Plus, billed monthly from delivery, or you take the code and host it yourself.',
+        ],
+        [
+          'If the trouble is a process with no spreadsheet at its center, we start with the ',
+          {text: 'process audit', href: '/en/business-process-audit'},
+          ': a written map of where your money leaks, yours to keep either way. Then comes the build, with three things in writing before any code is written: what gets built, which number will show that it worked, and the price. If you already know your scope, the build can be bought as a fixed scope: ',
           {text: processAutomation.copy.en.eyebrow, href: '/en/offers/process-automation'},
           '.',
         ],
         [
-          'There is no step three. A paid discovery phase is work you fund to reach the decision you were already facing. What we need from you is access to the systems, one person who can decide, and two or three hours with whoever does the job by hand.',
+          'Your part in the prototype is the column headers, 30 minutes on the audit call and 30 minutes on day 7. For a build that follows the process audit, we need access to the systems, one person who can decide, and two or three hours with whoever does the job by hand.',
         ],
       ],
     },
@@ -137,7 +137,7 @@ const en: HomeLongFormCopy = {
           'A cheaper question sits in front of the price: what the process costs you today, in hours, in errors corrected later, and in days spent waiting on somebody. That number comes out of one call, and it makes every later comparison possible.',
         ],
         [
-          'We publish no prices. Two quotes for the same thing differ because they count different things. Ask every supplier for the same lines, then split them three ways: paid once, repeating every year, and paid to somebody else, such as hosting. Your figure is agreed in writing, against the scope, before anything is built.',
+          'Two quotes for the same thing differ because they count different things. Ask every supplier for the same lines, then split them three ways: paid once, repeating every year, and paid to somebody else, such as hosting. For a build that follows the process audit, the figure is agreed in writing, against the scope, before anything is built.',
         ],
         [
           'The cost is driven mostly by decisions nobody has made yet: who approves what, what happens to the exceptions, and which steps are compulsory. In an online shop that is the platform, the payments, the shipping rules, the customer data and the way back out, all settled before a line of code is written.',
@@ -150,14 +150,14 @@ const en: HomeLongFormCopy = {
       heading: 'When the problem is that nobody finds you',
       paragraphs: [
         [
-          'The audit measures what the work costs inside the business. Another leak never reaches the books: the customers who went looking and found somebody else. Between your website and a search result there are three stages, crawling, indexing and ranking, and a site missing entirely has usually not cleared one of the first two.',
+          'The audit measures what the work costs inside the business. Another leak never reaches the books: the customers who went looking and found somebody else. Between your website and a search result there are three stages, crawling, indexing and ranking, and a site missing entirely has usually not cleared crawling or indexing.',
         ],
         [
           'Search work is a list of jobs, and part of that list is outside your control. Anyone promising a position has no mechanism to deliver one. Anyone promising work can list it. ',
           {text: websiteSeo.copy.en.eyebrow, href: '/en/offers/website-seo'},
           ' is that list, and the ',
-          {text: 'free process audit', href: '/en/business-process-audit'},
-          ' is the way in if you want the numbers first.',
+          {text: 'process audit', href: '/en/business-process-audit'},
+          ' is the way in if you want the numbers before anything else.',
         ],
         [
           'Advertising is a separate tool. It does not lift your organic position, and switching it off does not lower it. When your customers are local, local results are judged on their own criteria and fed mostly by your Google Business Profile, a page your customers and Google both write parts of.',
@@ -170,10 +170,10 @@ const en: HomeLongFormCopy = {
       heading: 'How you know it worked',
       paragraphs: [
         [
-          'The only way to know is to have measured the before. That is why the audit records hours, errors and delays while everything still runs the old way. Without that baseline, everyone argues about whether it feels better.',
+          'To know it worked, you need a measure of how things ran before. That is why the audit records hours, errors and delays while everything still runs the old way. With no baseline, everyone argues about whether it feels better.',
         ],
         [
-          'In data work the measurement is the product: a report that assembles itself, a figure with one source behind it, an alert that arrives while the problem is still cheap. To see that at small scale first, there is an ',
+          'In data work the measurement is the product: a report that assembles itself, a figure with one source behind it, an alert that arrives while the problem is still cheap. To see that at small scale, there is an ',
           {text: aiPrototype.copy.en.eyebrow, href: '/en/offers/ai-prototype'},
           '.',
         ],
@@ -184,38 +184,38 @@ const en: HomeLongFormCopy = {
     },
   ],
 
-  faqHeading: 'Questions people ask before the first call',
+  faqHeading: 'Questions people ask before the audit call',
 
   faqs: [
     {
       id: 'ti-kanei-etaireia-logismikou',
       q: 'What exactly does a software company do?',
-      a: 'It writes software that does not come ready-made: internal tools, connections between systems that will not exchange data on their own, automation for steps somebody does by hand, and reports that assemble without a person. Desk support and reselling off-the-shelf licences are different businesses. The starting point is your own process.',
+      a: 'It writes software that does not come ready-made: internal tools, connections between systems that will not exchange data on their own, automation for steps somebody does by hand, and reports that assemble themselves. The starting point is your own process.',
     },
     {
       id: 'poso-kostizei-ergo',
-      q: 'What does a software project cost, and why are there no prices on this site?',
-      a: 'We publish no prices on any page, because no price holds for two different projects. The cost is set by the scope, by how many systems have to be connected, and by what keeps running after handover. The figure is agreed with you in writing before the build starts.',
+      q: 'What does a software project cost?',
+      a: 'The 7-day prototype and the finished app have their prices on this page, under "What you pay, and when". For any other project, the cost is set by the scope, by how many systems have to be connected, and by what keeps running after handover. The figure is agreed with you in writing before the build starts.',
     },
     {
       id: 'poso-grigora',
-      q: 'How quickly will I see something working?',
-      a: `The target is to have your first process live within ${FIRST_FIX_DAYS} days of the build starting. The anchor matters: ahead of it sit the audit and a written agreement on what gets built.`,
+      q: 'How quickly will I see my app?',
+      a: 'On day 7 you click through the prototype of your app. A progress link comes within 48 hours of the audit call, with one more for every change, so you watch it take shape before that. The 7 days start once the short written list is agreed on the call and your column headers have arrived. If you go on straight after the walkthrough, the finished app follows about three weeks later, roughly a month from the audit call.',
     },
     {
       id: 'eggyisi',
-      q: 'What happens if what you build does not pay off?',
-      a: `If what we build has not paid for itself within ${GUARANTEE_WINDOW_WORD.en} months of going live, measured against the baseline in your audit, we refund the build fee. The full terms are on the audit page. That guarantee covers the build that follows the audit; the website and search offers carry their own terms on their own pages.`,
+      q: 'What happens if I don\'t like the prototype or the finished app?',
+      a: 'You pay nothing for what you don\'t like. Our guarantee is called "Pay only if you like it", and it holds twice. On day 7, in a 30-minute walkthrough, you click through the prototype yourself and say whether you like it, with no payment due before that. A no needs no reason: we stop there, and we delete your data on request. If you like it, we invoice the prototype. If you go on, we build the finished app as we agreed on the audit call, for one flat price, and deliver it about three weeks later. If we start it within 30 days of the walkthrough, the prototype fee counts toward that price. For those 30 days the prototype stays up at no charge while you decide. At delivery you go through the finished app the same way. If you like it, we invoice the rest of its price; if you do not, you pay nothing more, and the code stays with us. When you accept the finished app, you choose Care or Care Plus, billed monthly from delivery, or you take the code and host it yourself. Once the finished app is paid, you can ask for its source code at any time. The prototype\'s scope is the short written list agreed on the audit call: 3 to 5 lines, each a screen, a role and an action, capped at 5 screens and 2 roles. Anything about the guarantee goes to info@fijisolutions.net.',
     },
     {
       id: 'poios-echei-ton-kodika',
       q: 'Who owns the code, the data and the accounts at the end?',
-      a: 'You do, the code included. The accounts are opened in your own name at the start, so there is nothing to transfer at the end. Your data comes out in a format another system can open, and the written instructions leave with it. If you carry on with somebody else, there is nothing to ask us for.',
+      a: 'For a build that follows the process audit, you do, the code included. The accounts are opened in your own name at the start, so there is nothing to transfer at the end. Your data comes out in a format another system can open, and the written instructions leave with it. If you carry on with somebody else, there is nothing to ask us for. For the 7-day prototype and the finished app, you can ask for the source code once the finished app is paid, at any time after that.',
     },
     {
       id: 'antikatastasi-programmaton',
       q: 'Do I have to replace the software I already use?',
-      a: 'Usually not. Replacement is proposed only when the existing system allows no connection at all, and the reason is written into the audit plan. More often the gap is a connection between two systems that each work well on their own, or a small tool between them.',
+      a: 'Usually not. We propose replacement when the existing system allows no connection at all, and the reason is written into the audit plan. More often the gap is a connection between two systems that each work well on their own, or a small tool between them.',
     },
     {
       id: 'poios-kanei-ti-douleia',

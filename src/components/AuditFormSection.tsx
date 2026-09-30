@@ -19,6 +19,10 @@ import {GUARANTEE_WINDOW_MONTHS, REPLY_SLA} from '@/lib/offer';
 // `presetQuestion` is the only thing the two callers differ on. It rides along as the `question`
 // field, so it is the marker that tells a homepage submission from an offer-page one in the inbox.
 // Give a new caller a new value; do not reuse another surface's.
+//
+// 2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5): both homepages stopped rendering
+// this section (presetQuestion "homepage-process-audit") when the homepage became the hook for the
+// sheet-to-app offer; they render SheetToAppFormSection.tsx instead. The audit page renders this.
 
 export const CALENDLY_URL = 'https://calendly.com/charis-fijisolutions/30min';
 

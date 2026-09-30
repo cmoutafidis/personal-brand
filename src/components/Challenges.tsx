@@ -1,25 +1,27 @@
 import React from 'react';
-import {Binary, DollarSign, UserRound} from 'lucide-react';
+import {Copy, MessageCircleQuestion, UserSearch} from 'lucide-react';
 
 interface ChallengesProps {
   t: (key: string) => string;
 }
 
+// 2026-09-30 (G20, D5): the three cards carry the buyer's own lines about the shared spreadsheet;
+// the icons were re-picked for them (the question, the retype, the unknown editor).
 const Challenges: React.FC<ChallengesProps> = ({t}) => {
 
   const challenges = [
     {
-      icon: <Binary className="h-12 w-12"/>,
+      icon: <MessageCircleQuestion className="h-12 w-12"/>,
       title: t('challenges.old_tech.title'),
       description: t('challenges.old_tech.description')
     },
     {
-      icon: <UserRound className="h-12 w-12"/>,
+      icon: <Copy className="h-12 w-12"/>,
       title: t('challenges.slow.title'),
       description: t('challenges.slow.description')
     },
     {
-      icon: <DollarSign className="h-12 w-12"/>,
+      icon: <UserSearch className="h-12 w-12"/>,
       title: t('challenges.money.title'),
       description: t('challenges.money.description')
     }

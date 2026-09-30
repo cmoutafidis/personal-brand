@@ -18,7 +18,8 @@ const SITE = 'https://www.fijisolutions.net';
 // BODY of their parent service page, from each other, and (the two website offers) from the audit
 // page and the homepage — the whole graph is src/data/offerLinks.ts. They belong here anyway: a
 // page that is indexable but missing from the sitemap is a page you are half publishing. Priority
-// sits below the audit page, which is still the offer the site leads with.
+// sits below the audit page. Since 2026-09-30 (G20, D5) the homepage leads with the sheet-to-app
+// offer, links /offers/sheet-to-app in its body, and the audit page sells the audit.
 // ⚠️ lastmod IS HAND-MAINTAINED PER ROUTE. Bump the ONE line you actually changed.
 //
 // Until 2026-09-01 this file computed `const now = new Date()` and stamped it on all 34 entries,
@@ -35,7 +36,8 @@ const SITE = 'https://www.fijisolutions.net';
 // file's: the homepage and the audit page both move with 73ec38d (2026-08-30), not with their
 // own page.tsx.
 const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']; lastmod: string }[] = [
-  {path: '', priority: 1.0, changeFrequency: 'weekly', lastmod: '2026-09-03'},
+  // 2026-09-30 (G20): both homepages became the sheet-to-app hook. Move this to the deploy date.
+  {path: '', priority: 1.0, changeFrequency: 'weekly', lastmod: '2026-09-30'},
   // 2026-09-30 (G19): /business-process-audit gained its body link to sheet-to-app, and
   // software-prototype's sibling link now points there. /offers/app-prototype is retired and
   // redirects to /offers/sheet-to-app (next.config.ts), so its row is gone. Set the sheet-to-app
