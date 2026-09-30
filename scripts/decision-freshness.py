@@ -109,6 +109,20 @@ DECISIONS = [
                 r"the two rungs"],
          ack=[r"2026-09-30", r"sheet-to-app", r"\bd5\b", r"\bd66\b", r"the hook",
               r"\bstruck\b"]),
+    dict(id="sheet-to-app-peak-landing",
+         what="On 2026-09-30 Peak Code's 7-Day Sheet-to-App Prototype page, "
+              "/angebote/excel-tabelle-als-app and /en/offers/sheet-to-app, became the dated "
+              "exception to two site rules: it publishes its CHF ladder in 'What it costs' only "
+              "(D83), and it names Aargauische Kantonalbank in its one approved sentence (D85, "
+              "D91, D92). Both rules stand for every other page. It took the retired App "
+              "Prototype's place (D81).",
+         where="offer-os gtm/sheet-to-app-rollout/PLAN.md D81, D83, D85, D91, D92; Peak Code CLAUDE.md",
+         topic=[r"no price appears on any", r"(this|the) site publishes no price",
+                r"no price field", r"same rules as every other surface",
+                r"same rules the pages are", r"exactly two (permitted )?(akb|client-proof)",
+                r"third akb sentence", r"akb reference must not"],
+         ack=[r"2026-09-30", r"sheet-to-app", r"\bd83\b", r"\bd85\b", r"\bd91\b",
+              r"\bd92\b"]),
 ]
 
 # --------------------------------------------------------------------------- allowlist
