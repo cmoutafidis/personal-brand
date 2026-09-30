@@ -95,6 +95,20 @@ DECISIONS = [
          where="STATE §45",
          topic=[r"confirm this pin", r"the two must agree", r"pin against the"],
          ack=[r"2026-09-03", r"\bstays\b", r"his call", r"ruled", r"closed", r"corrected"]),
+    dict(id="sheet-to-app-fiji-homepage",
+         what="On 2026-09-30 the Fiji homepage, English and Greek, became the hook for the 7-Day "
+              "Sheet-to-App Prototype (D5). Its titles and H1 open with the 7-day prototype and "
+              "'pay only if you like it' (D66), its buttons scroll to its own sheet-to-app form, "
+              "and its body links /offers/sheet-to-app. The Greek homepage dropped its local "
+              "title. The audit page still sells the audit.",
+         where="offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D66; Fiji CLAUDE.md, struck 2026-09-30",
+         topic=[r"one thing (this|the) site sells", r"offer the site leads with",
+                r"homepage'?s job is to hand", r"hands? (the )?readers? (there|to the audit)",
+                r"homepage ctas?", r"h1 is not touched", r"homepage h1 stands",
+                r"keeps its (promise-led|local) title", r"now goes to the offer",
+                r"the two rungs"],
+         ack=[r"2026-09-30", r"sheet-to-app", r"\bd5\b", r"\bd66\b", r"the hook",
+              r"\bstruck\b"]),
 ]
 
 # --------------------------------------------------------------------------- allowlist
