@@ -236,10 +236,10 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
   2026-08-15, shipped to the live site, and then recorded in this file and in `src/lib/offer.ts`
   as "ratified by Charis on 2026-08-16". **That attribution was false — he never agreed to it.**
   It was removed on 2026-08-17 along with `SPRINT_PRICE_EUR`, `formatSprintPrice()`, `SPRINT_DAYS`
-  and the homepage card, and the ladder went from three steps to two. ~~Do not re-add the step, the
-  price, or a "priced middle rung" to bridge the gap between the free audit and the build. The
-  gap is bridged by scoping the build with the client, which is what step 2 now says.~~
-  **This last sentence struck 2026-09-30 (G20, offer-os `gtm/sheet-to-app-rollout/PLAN.md` D5).**
+  and the homepage card, and the ladder went from three steps to two. Do not re-add the step or its price.
+  ~~Do not re-add a "priced middle rung" to bridge the gap between the free audit and the build.
+  The gap is bridged by scoping the build with the client, which is what step 2 now says.~~
+  **The two sentences above, on the priced middle rung and on scoping, were struck 2026-09-30 (G20, offer-os `gtm/sheet-to-app-rollout/PLAN.md` D5).**
   Charis, in his words: *"leave that as it is, change only fiji solutions home page"*. The homepage now sells a priced prototype,
   the 7-Day Sheet-to-App Prototype, with its figures in one box (rule 7). The record above, that
   the Discovery Sprint and its price were invented and falsely attributed to him, stays as written.
