@@ -31,7 +31,7 @@ const CONTENT: Record<Language, {
 }> = {
   en: {
     title: 'Privacy Policy',
-    updated: 'Last updated: 15 August 2026',
+    updated: 'Last updated: 30 September 2026',
     intro:
       'This policy covers www.fijisolutions.net. It describes what the website collects, why, who it is shared with, and what you can require us to do about it.',
     blocks: [
@@ -59,17 +59,17 @@ const CONTENT: Record<Language, {
       {
         h: 'Cookies and tracking',
         p: [
-          'No analytics or advertising cookie loads until you accept it. Before you choose, this site sets none and makes no request to Google or to Leadsy. The chat and voice assistant described above is a separate, visible feature and loads regardless. It is not analytics and it sets no advertising cookie.',
-          'If you accept, two things load. Google Ads tracks which advertisement led to an enquiry. Leadsy attempts to identify the company an anonymous visitor is browsing from, using your IP address. Both are used to work out which pages produce enquiries.',
+          'No analytics or advertising cookie loads until you accept it. Before you choose, this site sets none and makes no request to Google Analytics, Google Ads or Leadsy. The chat and voice assistant described above is a separate, visible feature and loads regardless. It is not analytics and it sets no advertising cookie.',
+          'If you accept, three things load. Google Analytics counts which pages are read and which buttons and forms are used, with cookies that recognise a returning browser. Google Ads tracks which advertisement led to an enquiry. Leadsy attempts to identify the company an anonymous visitor is browsing from, using your IP address. All three are used to work out which pages produce enquiries.',
           'If you decline, they never load and the site works exactly the same. You can change your answer at the bottom of this page at any time.',
-          'The legal basis for both is your consent, Article 6(1)(a) GDPR.',
+          'The legal basis for all three is your consent, Article 6(1)(a) GDPR.',
         ],
       },
       {
         h: 'Who else sees your data',
         p: [
           'Form submissions are transmitted to and stored by Amazon Web Services on infrastructure located in the United States (region us-east-1). This is a transfer outside the European Economic Area, made under the European Commission\'s Standard Contractual Clauses.',
-          'If you book a call, Calendly receives the name and email you give it. If you accept cookies, Google and Leadsy receive the data described above.',
+          'If you book a call, Calendly receives the name and email you give it. If you accept cookies, Google (for Google Analytics and Google Ads) and Leadsy receive the data described above.',
           'We do not sell your data, and we do not share it with anyone who is not listed here.',
         ],
       },
@@ -111,7 +111,7 @@ const CONTENT: Record<Language, {
   },
   el: {
     title: 'Πολιτική Απορρήτου',
-    updated: 'Τελευταία ενημέρωση: 15 Αυγούστου 2026',
+    updated: 'Τελευταία ενημέρωση: 30 Σεπτεμβρίου 2026',
     intro:
       'Η πολιτική αυτή αφορά το www.fijisolutions.net. Περιγράφει τι συλλέγει ο ιστότοπος, γιατί, με ποιους μοιράζεται και τι μπορείς να μας ζητήσεις να κάνουμε.',
     blocks: [
@@ -139,17 +139,17 @@ const CONTENT: Record<Language, {
       {
         h: 'Cookies και παρακολούθηση',
         p: [
-          'Κανένα cookie ανάλυσης ή διαφήμισης δεν φορτώνει πριν το αποδεχτείς. Πριν επιλέξεις, ο ιστότοπος δεν βάζει κανένα και δεν κάνει κανένα αίτημα προς την Google ή τη Leadsy. Ο βοηθός συνομιλίας και φωνής που περιγράφεται παραπάνω είναι ξεχωριστό, ορατό χαρακτηριστικό και φορτώνει ανεξάρτητα. Δεν είναι ανάλυση και δεν βάζει διαφημιστικό cookie.',
-          'Αν αποδεχτείς, φορτώνουν δύο πράγματα. Το Google Ads καταγράφει ποια διαφήμιση οδήγησε σε αίτημα. Η Leadsy προσπαθεί να αναγνωρίσει από ποια εταιρεία περιηγείται ένας ανώνυμος επισκέπτης, με βάση τη διεύθυνση IP. Και τα δύο χρησιμεύουν στο να καταλάβουμε ποιες σελίδες φέρνουν αιτήματα.',
+          'Κανένα cookie ανάλυσης ή διαφήμισης δεν φορτώνει πριν το αποδεχτείς. Πριν επιλέξεις, ο ιστότοπος δεν βάζει κανένα και δεν κάνει κανένα αίτημα προς το Google Analytics, το Google Ads ή τη Leadsy. Ο βοηθός συνομιλίας και φωνής που περιγράφεται παραπάνω είναι ξεχωριστό, ορατό χαρακτηριστικό και φορτώνει ανεξάρτητα. Δεν είναι ανάλυση και δεν βάζει διαφημιστικό cookie.',
+          'Αν αποδεχτείς, φορτώνουν τρία πράγματα. Το Google Analytics μετράει ποιες σελίδες διαβάζονται και ποια κουμπιά και φόρμες χρησιμοποιούνται, με cookies που αναγνωρίζουν τον browser σου όταν ξανάρχεσαι. Το Google Ads καταγράφει ποια διαφήμιση οδήγησε σε αίτημα. Η Leadsy προσπαθεί να αναγνωρίσει από ποια εταιρεία περιηγείται ένας ανώνυμος επισκέπτης, με βάση τη διεύθυνση IP. Και τα τρία χρησιμεύουν στο να καταλάβουμε ποιες σελίδες φέρνουν αιτήματα.',
           'Αν αρνηθείς, δεν φορτώνουν ποτέ και ο ιστότοπος δουλεύει ακριβώς το ίδιο. Μπορείς να αλλάξεις την απάντησή σου στο τέλος αυτής της σελίδας όποτε θέλεις.',
-          'Νομική βάση και για τα δύο είναι η συγκατάθεσή σου, άρθρο 6 παρ. 1 στοιχ. α΄ ΓΚΠΔ.',
+          'Νομική βάση και για τα τρία είναι η συγκατάθεσή σου, άρθρο 6 παρ. 1 στοιχ. α΄ ΓΚΠΔ.',
         ],
       },
       {
         h: 'Ποιοι άλλοι βλέπουν τα δεδομένα σου',
         p: [
           'Οι υποβολές των φορμών μεταφέρονται και αποθηκεύονται στην Amazon Web Services, σε υποδομή στις Ηνωμένες Πολιτείες (περιοχή us-east-1). Πρόκειται για διαβίβαση εκτός Ευρωπαϊκού Οικονομικού Χώρου, που γίνεται βάσει των Τυποποιημένων Συμβατικών Ρητρών της Ευρωπαϊκής Επιτροπής.',
-          'Αν κλείσεις ραντεβού, η Calendly λαμβάνει το όνομα και το email που δίνεις. Αν αποδεχτείς τα cookies, η Google και η Leadsy λαμβάνουν όσα περιγράφονται παραπάνω.',
+          'Αν κλείσεις ραντεβού, η Calendly λαμβάνει το όνομα και το email που δίνεις. Αν αποδεχτείς τα cookies, η Google (για το Google Analytics και το Google Ads) και η Leadsy λαμβάνουν όσα περιγράφονται παραπάνω.',
           'Δεν πουλάμε τα δεδομένα σου και δεν τα μοιραζόμαστε με κανέναν που δεν αναφέρεται εδώ.',
         ],
       },
@@ -206,6 +206,9 @@ export default function PrivacyPolicyContent({lang}: { lang: Language }) {
       /* private mode */
     }
     window.dispatchEvent(new CustomEvent(CONSENT_EVENT));
+    // Added 2026-09-30. A reload removes gtag.js from the page, which unmounting its scripts
+    // cannot do, and brings the banner back so the visitor can choose again.
+    window.location.reload();
   };
 
   return (

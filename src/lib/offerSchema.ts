@@ -1,5 +1,5 @@
 import type {Metadata} from 'next';
-import type {Offer} from '@/components/OfferLanding';
+import type {Faq} from '@/components/OfferLanding';
 import {Language} from '@/types/language';
 import {buildAlternates} from '@/lib/alternates';
 
@@ -15,10 +15,35 @@ import {buildAlternates} from '@/lib/alternates';
 // in copy or in structured data. An `offers` node without a price is also not added: it would be
 // an empty promise to a crawler.
 // ⛔ There is no `aggregateRating` and no `review` node. There is no consented review data.
+//
+// 2026-09-30 (G19): /offers/sheet-to-app is the one page whose BODY publishes prices (the dated
+// exception to CLAUDE.md rule 7, offer-os PLAN.md D68 and D69). Its structured data still carries
+// none: no `offers` node, no price, and its FAQ answers, which feed the FAQPage node, hold no figure.
+// Three changes that day, for G19 step 2:
+//  1. `siteName` is re-declared in openGraph. Next replaces the layout's whole openGraph object when
+//    a page declares its own, so every offer page shipped without og:site_name until today (the
+//    same fix src/app/(el)/el/page.tsx made for the Greek homepage).
+//  2. `areaServed` is per locale when the offer declares it (sheet-to-app: the United States on the
+//    English page, Greece on the Greek page, D97). The seven workbook offers declare none and keep
+//    Greece.
+//  3. Both functions take the fields they read, so an offer with its own layout (SheetToAppLanding)
+//    feeds them the same way an OfferLanding offer does.
+
+/** The fields metadata and JSON-LD are built from. Every `Offer` and `SheetToAppOffer` fits it. */
+export type OfferSchemaSource = {
+  slug: string;
+  serviceType: string;
+  /** schema.org areaServed country names per locale. Omitted: Greece. */
+  areaServed?: Record<Language, string[]>;
+  copy: Record<
+    Language,
+    {metaTitle: string; metaDescription: string; metaKeywords: string; ogAlt: string; faqs: Faq[]}
+  >;
+};
 
 const SITE = 'https://www.fijisolutions.net';
 
-export function buildOfferMetadata(offer: Offer, lang: Language): Metadata {
+export function buildOfferMetadata(offer: OfferSchemaSource, lang: Language): Metadata {
   const c = offer.copy[lang];
   const url = `${SITE}/${lang}/${offer.slug}`;
 
@@ -33,6 +58,7 @@ export function buildOfferMetadata(offer: Offer, lang: Language): Metadata {
       title: c.metaTitle,
       description: c.metaDescription,
       url,
+      siteName: 'Fiji Solutions',
       locale: lang === 'el' ? 'el_GR' : 'en_US',
       images: [
         {
@@ -53,7 +79,13 @@ export function buildOfferMetadata(offer: Offer, lang: Language): Metadata {
   };
 }
 
-export function offerSchema(offer: Offer, lang: Language) {
+function areaServed(offer: OfferSchemaSource, lang: Language) {
+  const names = offer.areaServed?.[lang] ?? ['Greece'];
+  const nodes = names.map((name) => ({'@type': 'Country', name}));
+  return nodes.length === 1 ? nodes[0] : nodes;
+}
+
+export function offerSchema(offer: OfferSchemaSource, lang: Language) {
   const c = offer.copy[lang];
 
   return {
@@ -66,7 +98,7 @@ export function offerSchema(offer: Offer, lang: Language) {
         description: c.metaDescription,
         url: `${SITE}/${lang}/${offer.slug}`,
         provider: {'@id': `${SITE}/#organisation`},
-        areaServed: {'@type': 'Country', name: 'Greece'},
+        areaServed: areaServed(offer, lang),
       },
       {
         '@type': 'FAQPage',

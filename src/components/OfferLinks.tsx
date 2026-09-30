@@ -1,8 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import type {Offer} from '@/components/OfferLanding';
 import type {Language} from '@/types/language';
-import {OFFER_BLURB, OFFER_LINKS_COPY, type OfferSlug} from '@/data/offerLinks';
+import {OFFER_BLURB, OFFER_LINKS_COPY, type LinkedOffer, type OfferLinksVariant, type OfferSlug} from '@/data/offerLinks';
 
 // The body block that links /offers/* pages from a page that is a way into them. Server component,
 // like everything that renders it — no 'use client', so the offer data files never reach the
@@ -27,8 +26,8 @@ export default function OfferLinks({
   offers
 }: {
   lang: Language;
-  variant: 'service' | 'website';
-  offers: Offer[];
+  variant: OfferLinksVariant;
+  offers: LinkedOffer[];
 }) {
   if (offers.length === 0) return null;
 

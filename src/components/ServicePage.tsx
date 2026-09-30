@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import {createTranslationFunction} from '@/translations';
 import {Language} from '@/types/language';
 import OfferLinks from '@/components/OfferLinks';
-import type {Offer} from '@/components/OfferLanding';
+import type {LinkedOffer} from '@/data/offerLinks';
 
 // One skeleton for all six service pages.
 //
@@ -32,7 +32,7 @@ export type ServicePageContent = {
    * service page: the map is a tree and it is only a tree if it stays in one file. The Snowflake
    * page passes an empty array on purpose — see offerLinks.ts.
    */
-  offers?: Offer[];
+  offers?: LinkedOffer[];
   schema: Record<string, unknown>;
 };
 

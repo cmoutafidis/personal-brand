@@ -30,9 +30,11 @@ import type {Offer} from '@/components/OfferLanding';
 // Keyword separation: /services/custom-software-development-greece already owns "custom software
 // development Greece" and the topic phrasings around it. This page targets the purchase-intent
 // phrasing instead, "custom software prototype" and "software prototype development", and never
-// the service page's terms. The sibling offer page /offers/app-prototype is the other neighbour:
-// it sells a customer-facing app, this one sells internal or product software for a CTO or a
-// product owner, and the two eyebrows are deliberately different strings. Two pages chasing one
+// the service page's terms. The sibling offer page is /offers/sheet-to-app (2026-09-30, G19; it
+// replaced /offers/app-prototype, which now redirects there). That page turns an owner's shared
+// spreadsheet into an app and targets "order tracker app" and «excel σε εφαρμογή»; this one sells
+// internal or product software for a CTO or a product owner, and the two eyebrows are different
+// strings. Two pages chasing one
 // keyword is how the sister repo ended up issuing a 301.
 //
 // No price appears in any string here, in either locale, per CLAUDE.md rule 7 and Charis on

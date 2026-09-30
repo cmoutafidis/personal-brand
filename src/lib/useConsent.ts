@@ -6,7 +6,8 @@ import {useEffect, useState} from 'react';
 //
 // Until 2026-08-15 this site loaded the Leadsy visitor-identification tag and the Google Ads tag
 // on every page for every visitor, with no consent gate anywhere in the codebase and a privacy
-// policy that described a mobile app. Both tags now load only when this returns 'granted'.
+// policy that described a mobile app. Leadsy, Google Ads and Google Analytics now load only when
+// this returns 'granted'.
 
 export type ConsentState = 'granted' | 'denied' | 'unknown';
 

@@ -36,9 +36,13 @@ const SITE = 'https://www.fijisolutions.net';
 // own page.tsx.
 const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']; lastmod: string }[] = [
   {path: '', priority: 1.0, changeFrequency: 'weekly', lastmod: '2026-09-03'},
-  {path: '/business-process-audit', priority: 0.9, changeFrequency: 'weekly', lastmod: '2026-09-03'},
-  {path: '/offers/app-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
-  {path: '/offers/software-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
+  // 2026-09-30 (G19): /business-process-audit gained its body link to sheet-to-app, and
+  // software-prototype's sibling link now points there. /offers/app-prototype is retired and
+  // redirects to /offers/sheet-to-app (next.config.ts), so its row is gone. Set the sheet-to-app
+  // lastmod to the deploy date if the deploy lands on a later day.
+  {path: '/business-process-audit', priority: 0.9, changeFrequency: 'weekly', lastmod: '2026-09-30'},
+  {path: '/offers/sheet-to-app', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-30'},
+  {path: '/offers/software-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-30'},
   {path: '/offers/ai-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
   {path: '/offers/process-automation', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
   {path: '/offers/ai-agent', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
@@ -46,7 +50,7 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
   {path: '/offers/website-seo', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-03'},
   {path: '/offers/website-google-ads', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-03'},
   {path: '/portfolio', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-04'},
-  {path: '/services/custom-software-development-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-03'},
+  {path: '/services/custom-software-development-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-30'},
   {path: '/services/data-analysis-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-03'},
   {path: '/services/snowflake-consulting-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-03'},
   {path: '/contact', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-08-15'},

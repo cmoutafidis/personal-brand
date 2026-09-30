@@ -5,7 +5,7 @@ import Link from 'next/link';
 import {AlertCircle, CheckCircle, Send} from 'lucide-react';
 import {useLanguage} from '@/context/LanguageContext';
 import {createTranslationFunction} from "@/translations";
-import { reportConversion } from '@/utils/gtag';
+import {CONTACT_FORM_EVENT, reportConversion, trackEvent} from '@/utils/gtag';
 import {Language} from '@/types/language';
 
 interface ContactFormProps {
@@ -15,10 +15,22 @@ interface ContactFormProps {
   presetQuestion?: string;
   /** When true, the message field is optional and skipped during validation. */
   messageOptional?: boolean;
+  /** Visible labels for the three fixed fields, where a page's copy names them itself (added 2026-09-30 for /offers/sheet-to-app). */
+  nameLabelOverride?: string;
+  emailLabelOverride?: string;
+  companyLabelOverride?: string;
   messageLabelOverride?: string;
   messagePlaceholderOverride?: string;
+  /** The whole error line when the message field is empty, for a page whose message label does not read with "is required" (added 2026-09-30). */
+  messageRequiredErrorOverride?: string;
   submitLabelOverride?: string;
   successMessageOverride?: string;
+  /** A line rendered directly under the submit button, above the consent line (added 2026-09-30 for /offers/sheet-to-app). */
+  microcopyUnderButton?: string;
+  /** Leaves the name, email and company inputs without the site's sample placeholders, for a page whose copy gives none. */
+  hideSamplePlaceholders?: boolean;
+  /** Sent to GA4 as `offer_slug` on contact_form_submit, e.g. `business-process-audit`. */
+  offerSlug?: string;
 }
 
 export default function ContactForm({
@@ -26,10 +38,17 @@ export default function ContactForm({
   hideTitle = false,
   presetQuestion,
   messageOptional = false,
+  nameLabelOverride,
+  emailLabelOverride,
+  companyLabelOverride,
   messageLabelOverride,
   messagePlaceholderOverride,
+  messageRequiredErrorOverride,
   submitLabelOverride,
-  successMessageOverride
+  successMessageOverride,
+  microcopyUnderButton,
+  hideSamplePlaceholders = false,
+  offerSlug
 }: ContactFormProps = {}) {
   const {language: contextLanguage} = useLanguage();
   const language = languageOverride ?? contextLanguage;
@@ -84,12 +103,12 @@ export default function ContactForm({
     const {name, email, company, question, message, heardAbout} = formData;
 
     if (!name.trim()) {
-      setSubmitError(t('contact.form.name') + ' ' + t('contact.form.error.required'));
+      setSubmitError((nameLabelOverride ?? t('contact.form.name')) + ' ' + t('contact.form.error.required'));
       return false;
     }
 
     if (!email.trim()) {
-      setSubmitError(t('contact.form.email') + ' ' + t('contact.form.error.required'));
+      setSubmitError((emailLabelOverride ?? t('contact.form.email')) + ' ' + t('contact.form.error.required'));
       return false;
     }
 
@@ -101,7 +120,7 @@ export default function ContactForm({
     }
 
     if (!company.trim()) {
-      setSubmitError(t('contact.form.company') + ' ' + t('contact.form.error.required'));
+      setSubmitError((companyLabelOverride ?? t('contact.form.company')) + ' ' + t('contact.form.error.required'));
       return false;
     }
 
@@ -111,7 +130,10 @@ export default function ContactForm({
     }
 
     if (!messageOptional && !message.trim()) {
-      setSubmitError(t('contact.form.message') + ' ' + t('contact.form.error.required'));
+      setSubmitError(
+        messageRequiredErrorOverride ??
+          (messageLabelOverride ?? t('contact.form.message')) + ' ' + t('contact.form.error.required')
+      );
       return false;
     }
 
@@ -172,6 +194,15 @@ export default function ContactForm({
       // Success
       setSubmitSuccess(true);
       reportConversion();
+      // GA4, added 2026-09-30. Every form on the site renders this component, so this one call
+      // covers all of them. `form_location` is the question marker, the same value the inbox uses
+      // to tell the surfaces apart. Nothing the visitor typed is sent: the heard-about answer goes
+      // to the inbox alone, as the privacy policy describes.
+      trackEvent(CONTACT_FORM_EVENT, {
+        locale: language,
+        offer_slug: offerSlug,
+        form_location: presetQuestion || 'contact'
+      });
       setFormData({
         name: '',
         email: '',
@@ -233,7 +264,7 @@ export default function ContactForm({
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              {t('contact.form.name')} *
+              {nameLabelOverride ?? t('contact.form.name')} *
             </label>
             <input
               type="text"
@@ -242,14 +273,14 @@ export default function ContactForm({
               value={formData.name}
               onChange={handleInputChange}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-              placeholder={t('contact.form.name.placeholder')}
+              placeholder={hideSamplePlaceholders ? undefined : t('contact.form.name.placeholder')}
               disabled={isSubmitting}
             />
           </div>
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              {t('contact.form.email')} *
+              {emailLabelOverride ?? t('contact.form.email')} *
             </label>
             <input
               type="email"
@@ -258,14 +289,14 @@ export default function ContactForm({
               value={formData.email}
               onChange={handleInputChange}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-              placeholder={t('contact.form.email.placeholder')}
+              placeholder={hideSamplePlaceholders ? undefined : t('contact.form.email.placeholder')}
               disabled={isSubmitting}
             />
           </div>
 
           <div>
             <label htmlFor="company" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              {t('contact.form.company')} *
+              {companyLabelOverride ?? t('contact.form.company')} *
             </label>
             <input
               type="text"
@@ -274,7 +305,7 @@ export default function ContactForm({
               value={formData.company}
               onChange={handleInputChange}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
-              placeholder={t('contact.form.company.placeholder')}
+              placeholder={hideSamplePlaceholders ? undefined : t('contact.form.company.placeholder')}
               disabled={isSubmitting}
             />
           </div>
@@ -350,6 +381,12 @@ export default function ContactForm({
               </>
             )}
           </button>
+
+          {microcopyUnderButton && (
+            <p className="text-center text-sm font-medium leading-6 text-gray-700 dark:text-gray-300">
+              {microcopyUnderButton}
+            </p>
+          )}
 
           {/* Added 2026-08-15: this form sends a name, an email and a company name to a
               third-party endpoint. The page it sits on now says so and links to the policy. */}

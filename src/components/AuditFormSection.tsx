@@ -1,4 +1,6 @@
 import ContactForm from '@/components/ContactForm';
+import TrackedLink from '@/components/TrackedLink';
+import {BOOKING_CLICK_EVENT} from '@/utils/gtag';
 import {Language} from '@/types/language';
 import {GUARANTEE_WINDOW_MONTHS, REPLY_SLA} from '@/lib/offer';
 
@@ -103,6 +105,7 @@ export default function AuditFormSection({
             languageOverride={language}
             hideTitle
             presetQuestion={presetQuestion}
+            offerSlug="business-process-audit"
             messageOptional
             messageLabelOverride={copy.formMessageLabel}
             messagePlaceholderOverride={copy.formMessagePlaceholder}
@@ -114,14 +117,16 @@ export default function AuditFormSection({
           </p>
           <p className="mt-2 text-center text-sm leading-6 text-gray-600 dark:text-gray-400">
             {copy.formCalendlyLead}{' '}
-            <a
+            <TrackedLink
+              event={BOOKING_CLICK_EVENT}
+              params={{cta_location: 'form-calendly', locale: language, offer_slug: 'business-process-audit'}}
               href={CALENDLY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary-600 underline underline-offset-4 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
             >
               {copy.formCalendlyLink}
-            </a>
+            </TrackedLink>
           </p>
           <p className="mt-6 text-center text-sm font-medium leading-6 text-gray-700 dark:text-gray-300">
             {cta.callout}

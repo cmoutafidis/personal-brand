@@ -322,7 +322,7 @@ export default function RootShell({
               assistantId={assistantId}
             />
           </main>
-          {/* Leadsy + Google Ads load from here, and ONLY after consent. See Analytics.tsx. */}
+          {/* Leadsy + Google Ads + Google Analytics load from here, and ONLY after consent. See Analytics.tsx. */}
           <Analytics/>
           <CookieConsent/>
         </div>

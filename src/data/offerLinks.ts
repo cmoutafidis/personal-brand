@@ -1,7 +1,7 @@
 import type {Offer} from '@/components/OfferLanding';
 import type {Language} from '@/types/language';
 
-import appPrototype from '@/data/offers/app-prototype';
+import sheetToApp from '@/data/offers/sheet-to-app';
 import softwarePrototype from '@/data/offers/software-prototype';
 import aiPrototype from '@/data/offers/ai-prototype';
 import processAutomation from '@/data/offers/process-automation';
@@ -41,13 +41,20 @@ import websiteGoogleAds from '@/data/offers/website-google-ads';
 // prerendered for all sixteen routes, so a missing key is a build-time crash, not a runtime
 // nicety. With the unions below, a typo, a leading slash or a forgotten offer is a compile error.
 
+/**
+ * What the graph needs from an offer: its route and its anchor text. The seven workbook offers are
+ * `Offer`s rendered by OfferLanding; /offers/sheet-to-app (added 2026-09-30, G19) has its own
+ * layout, SheetToAppLanding, and carries the same two fields, so both fit here.
+ */
+export type LinkedOffer = {slug: string; copy: Record<Language, {eyebrow: string}>};
+
 export type ServiceSlug =
   | 'services/custom-software-development-greece'
   | 'services/data-analysis-greece'
   | 'services/snowflake-consulting-greece';
 
 export type OfferSlug =
-  | 'offers/app-prototype'
+  | 'offers/sheet-to-app'
   | 'offers/software-prototype'
   | 'offers/ai-prototype'
   | 'offers/process-automation'
@@ -79,8 +86,12 @@ export const SERVICE_LABEL: Record<ServiceSlug, Record<Language, string>> = {
  *  custom-software-development-greece — H1 "The work your team repeats every week, done by
  *  software" is process-automation's headline; outcome card "Approvals that leave the inbox" is
  *  ai-agent's problem section; "Internal tools built around your process" is what
- *  software-prototype and app-prototype let you see before commissioning it; and
- *  ai-development-sprint is one fixed release of exactly that kind of build.
+ *  software-prototype and sheet-to-app let you see before commissioning it (sheet-to-app also
+ *  answers the card "Your shop, your accounting system and your spreadsheet stop being three
+ *  places the same order gets typed"); and ai-development-sprint is one fixed release of exactly
+ *  that kind of build.
+ *  2026-09-30 (G19; offer-os gtm/sheet-to-app-rollout/PLAN.md D51): sheet-to-app took the slot of
+ *  the retired app-prototype, whose routes now redirect to it (next.config.ts).
  *
  *  data-analysis-greece — ai-prototype is the only offer whose subhead says "on your data" and
  *  measures itself against what that work costs today, which is this page's whole argument.
@@ -89,12 +100,12 @@ export const SERVICE_LABEL: Record<ServiceSlug, Record<Language, string>> = {
  *  review refuted it: a software-release sprint is not a way to buy Snowflake implementation,
  *  migration or cost tuning. The tree tolerates an empty branch; a padded one is the catalogue.
  */
-export const OFFERS_BY_SERVICE: Record<ServiceSlug, Offer[]> = {
+export const OFFERS_BY_SERVICE: Record<ServiceSlug, LinkedOffer[]> = {
   'services/custom-software-development-greece': [
     processAutomation,
     aiAgent,
     softwarePrototype,
-    appPrototype,
+    sheetToApp,
     aiDevelopmentSprint
   ],
   'services/data-analysis-greece': [aiPrototype],
@@ -111,7 +122,7 @@ export const PARENT_SERVICE: Partial<Record<OfferSlug, ServiceSlug>> = {
   'offers/process-automation': 'services/custom-software-development-greece',
   'offers/ai-agent': 'services/custom-software-development-greece',
   'offers/software-prototype': 'services/custom-software-development-greece',
-  'offers/app-prototype': 'services/custom-software-development-greece',
+  'offers/sheet-to-app': 'services/custom-software-development-greece',
   'offers/ai-development-sprint': 'services/custom-software-development-greece',
   'offers/ai-prototype': 'services/data-analysis-greece'
 };
@@ -120,12 +131,14 @@ export const PARENT_SERVICE: Partial<Record<OfferSlug, ServiceSlug>> = {
  * One sibling per offer, and every pairing is reciprocal, so each pair is a real pair and not a
  * chain that dead-ends. website-seo and website-google-ads were already declared siblings in prose
  * at the top of website-seo.ts; this makes that navigable.
+ * 2026-09-30 (G19): sheet-to-app took the retired app-prototype's place in the software-prototype
+ * pair, so the pairing stays reciprocal with eight offers.
  */
-export const SIBLING_OFFER: Record<OfferSlug, Offer> = {
+export const SIBLING_OFFER: Record<OfferSlug, LinkedOffer> = {
   'offers/process-automation': aiAgent,
   'offers/ai-agent': processAutomation,
-  'offers/software-prototype': appPrototype,
-  'offers/app-prototype': softwarePrototype,
+  'offers/software-prototype': sheetToApp,
+  'offers/sheet-to-app': softwarePrototype,
   'offers/ai-prototype': aiDevelopmentSprint,
   'offers/ai-development-sprint': aiPrototype,
   'offers/website-seo': websiteGoogleAds,
@@ -158,6 +171,15 @@ export const SIBLING_OFFER: Record<OfferSlug, Offer> = {
 export const WEBSITE_OFFERS: Offer[] = [websiteSeo, websiteGoogleAds];
 
 /**
+ * The offer the audit page links for a reader whose work runs through one shared spreadsheet.
+ * Added 2026-09-30 in G19: offer.yaml `seo.internal_links_from` of sheet-to-app names
+ * /business-process-audit in both locales, body links only. Like the website block, it renders
+ * AFTER the audit form, so the audit stays the page's one conversion. Its parent is still
+ * custom-software-development-greece; this is an in-edge from a page body and adds no parent.
+ */
+export const SPREADSHEET_OFFERS: LinkedOffer[] = [sheetToApp];
+
+/**
  * One line per offer: what you get, and when. The "when" is always anchored to the kickoff
  * meeting, never to first contact — the rule the offer pages themselves keep (CLAUDE.md rule 6).
  * No price, no percentage, no results claim: the guarantee is stated on the offer page with its
@@ -165,6 +187,10 @@ export const WEBSITE_OFFERS: Offer[] = [websiteSeo, websiteGoogleAds];
  *
  * Greek: «εναρκτήρια συνάντηση» for the kickoff (the natural Greek, already used by
  * process-automation.ts), «ιστοσελίδα» never «site», U+2019 for every apostrophe.
+ *
+ * 2026-09-30 (G19): sheet-to-app has no kickoff workshop. Its 7 days are anchored to the audit
+ * call («την πρώτη κλήση»), so its line says that instead. Both of its lines are copied verbatim
+ * from its 03-copy.md (en: CTA block 2; el: CTA block 1), so the blurb and the page say the same.
  */
 export const OFFER_BLURB: Record<OfferSlug, Record<Language, string>> = {
   'offers/process-automation': {
@@ -179,9 +205,9 @@ export const OFFER_BLURB: Record<OfferSlug, Record<Language, string>> = {
     en: 'The tool running instead of specified, two weeks from the kickoff workshop, with the source code and the documentation.',
     el: 'Το εργαλείο να τρέχει αντί να περιγράφεται, δύο εβδομάδες από την εναρκτήρια συνάντηση, με τον πηγαίο κώδικα και την τεκμηρίωση.'
   },
-  'offers/app-prototype': {
-    en: 'The same, when what you need is an app people tap through: working and clickable two weeks from the kickoff workshop.',
-    el: 'Το ίδιο, όταν αυτό που χρειάζεσαι είναι εφαρμογή: δουλεύει και πατιέται δύο εβδομάδες από την εναρκτήρια συνάντηση.'
+  'offers/sheet-to-app': {
+    en: 'Your column headers become a prototype of your app 7 days after the audit call.',
+    el: 'Στην πρώτη κλήση συζητάμε τι χρειάζεσαι από το Excel σου, και 7 μέρες μετά εξετάζεις το πρωτότυπο της εφαρμογής σου.'
   },
   'offers/ai-prototype': {
     en: 'One use case built on your own data and measured against what that work costs you today, two weeks from the kickoff workshop.',
@@ -202,7 +228,9 @@ export const OFFER_BLURB: Record<OfferSlug, Record<Language, string>> = {
 };
 
 /** Heading and intro for the two block variants. Shared component, so the locales cannot drift. */
-export const OFFER_LINKS_COPY: Record<'service' | 'website', Record<Language, {heading: string; intro: string}>> = {
+export type OfferLinksVariant = 'service' | 'website' | 'spreadsheet';
+
+export const OFFER_LINKS_COPY: Record<OfferLinksVariant, Record<Language, {heading: string; intro: string}>> = {
   service: {
     en: {
       heading: 'Already know what you want built?',
@@ -221,6 +249,19 @@ export const OFFER_LINKS_COPY: Record<'service' | 'website', Record<Language, {h
     el: {
       heading: 'Αν αυτό που χρειάζεσαι είναι πελάτες, όχι λιγότερη γραφειοκρατία',
       intro: 'Ο έλεγχος χαρτογραφεί πώς τρέχει η δουλειά μέσα στην επιχείρησή σου. Αν αυτό που σου κοστίζει είναι ότι δεν σε βρίσκει κανείς εξαρχής, αυτή είναι άλλη δουλειά, και ορίζεται με τον ίδιο τρόπο:'
+    }
+  },
+  // 2026-09-30 (G19). The English heading follows the sheet-to-app page's English S03 heading. The
+  // Greek heading and both intros were written in G19, appear in no 03-copy file, and await
+  // Charis's approval.
+  spreadsheet: {
+    en: {
+      heading: 'If your whole week runs through one shared spreadsheet',
+      intro: 'We turn that sheet into an app, starting from its column headers:'
+    },
+    el: {
+      heading: 'Αν όλη σου η βδομάδα περνάει από ένα κοινό Excel',
+      intro: 'Φτιάχνουμε από αυτό το Excel μια εφαρμογή, ξεκινώντας από τα ονόματα των στηλών του:'
     }
   }
 };

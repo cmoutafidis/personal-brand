@@ -8,6 +8,7 @@ import {useTheme} from '@/context/ThemeContext';
 import {useLanguage} from '@/context/LanguageContext';
 import {translations} from '@/translations';
 import LanguageSwitcher from './LanguageSwitcher';
+import {isLandingPath} from '@/lib/landing';
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -47,6 +48,44 @@ const Navbar: React.FC = () => {
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
+
+  // Single-goal landing pages (src/lib/landing.ts, added 2026-09-30): the logo, unlinked, and the
+  // theme toggle. No menu, no language switch, nothing that leads off the page.
+  if (isLandingPath(pathname)) {
+    return (
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolling
+            ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md'
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <img
+              src="/fiji_solutions.png"
+              alt="Fiji Solutions Logo"
+              className="h-8 w-8 object-contain"
+            />
+            <span className="text-xl font-bold text-gray-900 dark:text-white">
+              Fiji Solutions
+            </span>
+          </div>
+          <button
+            onClick={toggleDarkMode}
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+            aria-label="Toggle Dark Mode"
+          >
+            {darkMode ? (
+              <Sun className="h-5 w-5 text-yellow-400"/>
+            ) : (
+              <Moon className="h-5 w-5 text-gray-700"/>
+            )}
+          </button>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header

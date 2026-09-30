@@ -3,6 +3,8 @@
 import React, { useEffect, useRef } from 'react';
 import { useLanguage } from "@/context/LanguageContext";
 import { createTranslationFunction } from "@/translations";
+import { usePathname } from 'next/navigation';
+import { isLandingPath } from '@/lib/landing';
 
 interface VapiChatWidgetProps {
   apiKey: string;
@@ -16,8 +18,12 @@ const VapiChatWidget: React.FC<VapiChatWidgetProps> = ({
   const { language } = useLanguage();
   const t = createTranslationFunction(language);
   const widgetRef = useRef<HTMLDivElement>(null);
+  // Single-goal landing pages load no chat bubble (src/lib/landing.ts, added 2026-09-30).
+  const suppressed = isLandingPath(usePathname());
 
   useEffect(() => {
+    if (suppressed) return;
+
     // Load the Vapi widget script dynamically
     const loadVapiScript = () => {
       // Check if script is already loaded
@@ -92,7 +98,9 @@ const VapiChatWidget: React.FC<VapiChatWidgetProps> = ({
         widgetRef.current.innerHTML = '';
       }
     };
-  }, [apiKey, assistantId, language, t]);
+  }, [apiKey, assistantId, language, t, suppressed]);
+
+  if (suppressed) return null;
 
   return <div ref={widgetRef} />;
 };

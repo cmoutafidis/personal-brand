@@ -12,6 +12,8 @@ homepage's job is to hand the reader there, not to close them itself.
 **No price appears anywhere on this site.** Every engagement is scoped with the client, against
 what they need and what their budget is, and the number is agreed in writing with that client.
 There is no list price, no rate card, no entry-offer price. See rule 7.
+**2026-09-30: one dated exception.** `/en/offers/sheet-to-app` and `/el/offers/sheet-to-app` publish
+their price ladder in the page body; rule 7 records it and its source.
 
 Until 2026-08-15 that page had **zero internal links** and the site sold six service categories,
 six industries and thirty-two technologies. Do not re-add a service list.
@@ -21,6 +23,10 @@ six industries and thirty-two technologies. Do not re-add a service list.
 `/[locale]/offers/<slug>` — eight front-end offers, both locales, sixteen routes. They come from an
 external swipe file Charis brought (`Copy of Software Development - Proven Offers.xlsx`, sheet
 *Proven Offers*, columns F–M).
+**2026-09-30 (G19):** offer F, `app-prototype`, is retired (offer-os `gtm/sheet-to-app-rollout/PLAN.md`
+D51). Its three URLs 308 to `/offers/sheet-to-app`, the 7-Day Sheet-to-App Prototype, which is not
+from the workbook, takes its place in the graph, and renders through its own layout,
+`src/components/SheetToAppLanding.tsx`. The count stays eight offers and sixteen routes.
 
 **What the rule was, until 2026-09-01.** Nothing linked to them, and that was deliberate: they were
 Google Ads destinations, one campaign per page, each reached by a paid click. Being orphaned was
@@ -58,10 +64,11 @@ pages — and from nowhere else. The whole graph is one file, `src/data/offerLin
 
 | Source (body only) | Offers linked |
 |---|---|
-| `/services/custom-software-development-greece` | process-automation, ai-agent, software-prototype, app-prototype, ai-development-sprint |
+| `/services/custom-software-development-greece` | process-automation, ai-agent, software-prototype, sheet-to-app, ai-development-sprint |
 | `/services/data-analysis-greece` | ai-prototype |
 | `/services/snowflake-consulting-greece` | **none, on purpose** — no offer is an honest way to buy Snowflake work |
 | `/business-process-audit`, in a block **after** the form | website-seo, website-google-ads |
+| `/business-process-audit`, in its own block **after** the form (2026-09-30) | sheet-to-app |
 | both homepages, `Local.tsx`, two prose links | website-seo, website-google-ads |
 | each `/offers/*` page | its parent service page (if any) + its one sibling offer |
 
@@ -94,9 +101,10 @@ publishing or not. The audit is still the offer the site leads with, every prima
 at `#consultation-form`, and the audit-page block renders **after** the form so it costs nothing.
 
 Every rule below applies to them without exception. In particular: **no price** (rule 7), and the
-**75% on six of the eight pages is a guarantee with a refund behind it**, settled against a
+**75% on five of the eight pages is a guarantee with a refund behind it**, settled against a
 baseline measured with the client before work starts. It is not a claim about past results, and
-rule 5 still forbids one.
+rule 5 still forbids one. (Six until 2026-09-30: app-prototype carried the 75% limb and retired
+that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no percentage.)
 
 ## Where things live
 
@@ -106,9 +114,11 @@ rule 5 still forbids one.
 | All UI copy, both locales | `src/translations.ts` (132 keys each, kept at exact parity) |
 | The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
 | The audit form section, its CTA copy and the Calendly URL | `src/components/AuditFormSection.tsx`. Rendered by **both** the offer page and the homepage, so its strings live there rather than in `LandingCopy`. `AUDIT_CTA` feeds the offer page's five `CtaBlock`s, whose button is an in-page `#consultation-form` anchor. Give each new caller its own `presetQuestion`; it is the only lead-source marker there is. |
-| The eight front-end offer pages | One layout, `src/components/OfferLanding.tsx`; one bilingual data file per offer in `src/data/offers/`; two thin routes each. Metadata and the Service + FAQPage JSON-LD are derived in `src/lib/offerSchema.ts` from the same object the page renders, so the marked-up FAQ cannot drift from the rendered one. **To add or change an offer, edit its data file.** Each carries its own `questionMarker`, which is the only thing telling its leads from the other seven in the shared inbox. |
+| The sheet-to-app offer page (2026-09-30) | Its own layout, `src/components/SheetToAppLanding.tsx` (nineteen sections from its offer-os contract, sticky mobile bar in `SheetToAppStickyCta.tsx`), copy in `src/data/offers/sheet-to-app.ts`, verbatim from offer-os `offers/fiji-solutions--sheet-to-app/03-copy.md`. Metadata and JSON-LD come from the same `src/lib/offerSchema.ts`. Its booking link waits on `SHEET_TO_APP_BOOKING_URL` in that data file. `src/lib/landing.ts` lists the routes whose Navbar is logo-only and which load no Vapi bubble. |
+| The seven workbook offer pages | One layout, `src/components/OfferLanding.tsx` (the eighth offer, sheet-to-app, has its own layout, in the row above); one bilingual data file per offer in `src/data/offers/`; two thin routes each. Metadata and the Service + FAQPage JSON-LD are derived in `src/lib/offerSchema.ts` from the same object the page renders, so the marked-up FAQ cannot drift from the rendered one. **To add or change an offer, edit its data file.** Each carries its own `questionMarker`, which is the only thing telling its leads from the other seven in the shared inbox. |
 | Canonical + hreflang | `src/lib/alternates.ts` — `buildAlternates(path, lang)` |
 | Consent gate | `src/lib/useConsent.ts` + `src/components/Analytics.tsx` |
+| GA4 event names, `trackEvent()` | `src/utils/gtag.ts`. Server components send clicks through `src/components/TrackedLink.tsx`. |
 | Sitemap | `src/app/sitemap.ts`, generated from a route list |
 
 ## Rules that are load-bearing
@@ -125,9 +135,25 @@ rule 5 still forbids one.
    Every route now shares its slug across both locales, so `buildAlternates()` is the only one.
 
 3. **Nothing that tracks loads before consent.** `Analytics.tsx` renders `null` until
-   `useConsent()` returns `granted`. There is no second path that loads Google Ads or Leadsy.
+   `useConsent()` returns `granted`. There is no second path that loads Google Ads, Google
+   Analytics or Leadsy.
    The Vapi chat/voice widget is *not* behind the gate — it is a visible feature, and the privacy
    policy says so explicitly. Keep those two statements in sync.
+   **2026-09-30: GA4 now exists behind the same gate** (Charis's decision that day, O17: a proper
+   Google Analytics setup before the cold emails). One gtag.js load configures Google Ads and,
+   when `NEXT_PUBLIC_GA_MEASUREMENT_ID` was set at build time, GA4. The ID lives in Vercel only
+   and is never committed; locally it is unset, so GA4 does nothing under `npm run dev`.
+   `trackEvent()` in `src/utils/gtag.ts` checks consent again before every hit and sends to GA4
+   alone (`send_to`); `reportConversion()` checks consent too. When consent leaves 'granted'
+   after gtag.js has loaded (in this tab, or in another tab through the 'storage' event),
+   Analytics.tsx switches both Google tags off, sets consent mode to denied and reloads the page,
+   as "Clear my choice" on the privacy page does, so gtag.js and Leadsy are gone and the banner
+   returns. Events:
+   `contact_form_submit` (ContactForm success, every form; params `locale`, `form_location` = the
+   question marker, `offer_slug` when given; the heard-about answer goes to the inbox only), `cta_click` (in-page CTAs;
+   `cta_location`, `locale`, `offer_slug`) and `booking_click` (the Calendly link; same params).
+   The names match Peak Code's and GA4 pins them from the first hit, so do not rename one. The
+   privacy policy names Google Analytics in both locales; keep it in sync with what loads.
 
 4. **Greek is written in Greek**, informal singular (εσύ), everywhere including metadata.
    Technology proper nouns (Snowflake, ETL/ELT, BI, AI) and schema.org values stay English.
@@ -157,6 +183,19 @@ rule 5 still forbids one.
    budget, and agreed in writing with that client. The page may say *that* the price is agreed in
    writing before anything is built; it may never say what it is. If a number is needed for a
    constant, that is a sign the copy is wrong, not that `offer.ts` needs a new export.
+   **Dated exception, 2026-09-30, for two pages only: `/en/offers/sheet-to-app` and
+   `/el/offers/sheet-to-app`.** Charis, 2026-09-27, in his words: *"If you want to make the prices
+   public and the whole plan public on the website, you can do that if you want."* Asked whether the
+   prices go on the Fiji pages, he picked "The whole ladder". The figures are his, in dollars
+   (PLAN.md D69). Source:
+   offer-os `gtm/sheet-to-app-rollout/PLAN.md` D68 and D69. D68 names a "What it costs" section
+   (S12) and no figure in the hero. The close (S19) also carries figures, because that offer's
+   approved `03-copy.md` places them in S12 and in the S19 close; D68 keeps figures out of the hero,
+   the FAQ and every email, so S19 stands as approved. D68 also sets that the figures are re-confirmed with
+   Charis after the dry runs, before the deploy (a row of the ship-day table). On those two pages the
+   prices appear in the body only, exactly as their `03-copy.md` gives them: never in the hero, in an FAQ answer, in metadata or in any JSON-LD (`offerSchema.ts` still
+   emits no `offers` node and no price). Every other page on the site keeps this rule unchanged, and
+   still no price constant lives in `offer.ts`.
 
 ## Settled — do not reopen casually
 
@@ -180,8 +219,9 @@ rule 5 still forbids one.
 
 - **The homepage H1 stands as written, and this is not a bug to re-open.**
 - **prerender.io is dead as of 2026-09-01 and must not be re-added.** `www.fijisolutions.net` was
-  registered in that account (since Aug 2025), but this project has **no environment variables at
-  all** and never proxied through it: Googlebot and a browser receive byte-identical HTML on every
+  registered in that account (since Aug 2025), but this project never proxied through it (and
+  until 2026-09-30 had no environment variables at all; it now has exactly one,
+  `NEXT_PUBLIC_GA_MEASUREMENT_ID`, set in Vercel and deliberately absent from the repo): Googlebot and a browser receive byte-identical HTML on every
   page, which is the test that caught the problem on the Peak Code site. The account's plan is
   cancelled and its API token regenerated.
 - **The blog is Greek-only on purpose, and `/en/blog` is noindex (added 2026-09-01).** Posts are

@@ -15,7 +15,9 @@ const LOCALELESS = [
   // and they are organic targets now). They were missing from this list, so the exact failure the
   // comment above describes — "a destination that lost its prefix" — was live on them:
   // /offers/ai-agent hard-404'd while /en/offers/ai-agent served.
-  'offers/app-prototype',
+  // 2026-09-30 (G19): offers/app-prototype left this list when it retired (offer-os PLAN.md D51);
+  // its three URLs redirect to sheet-to-app below, each in one hop. offers/sheet-to-app joined.
+  'offers/sheet-to-app',
   'offers/software-prototype',
   'offers/ai-prototype',
   'offers/process-automation',
@@ -33,6 +35,12 @@ const nextConfig: NextConfig = {
       // /en/blog is an empty noindex page, so the English default would land a reader on nothing.
       // Move this into LOCALELESS the day blogData.en has posts.
       {source: '/blog', destination: '/el/blog', permanent: true},
+      // The retired App Prototype (offer-os PLAN.md D51, 2026-09-27; shipped with G19). Its page
+      // promised a two-week app on its own terms, which the 7-day sheet-to-app offer replaces.
+      // Each URL goes to its locale's sheet-to-app page in one hop.
+      {source: '/en/offers/app-prototype', destination: '/en/offers/sheet-to-app', permanent: true},
+      {source: '/el/offers/app-prototype', destination: '/el/offers/sheet-to-app', permanent: true},
+      {source: '/offers/app-prototype', destination: '/en/offers/sheet-to-app', permanent: true},
       ...LOCALELESS.map((path) => ({
         source: `/${path}`,
         destination: `/en/${path}`,

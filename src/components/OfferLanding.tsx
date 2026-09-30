@@ -1,11 +1,16 @@
 import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
+import TrackedLink from '@/components/TrackedLink';
+import {BOOKING_CLICK_EVENT, CTA_CLICK_EVENT} from '@/utils/gtag';
 import {Language} from '@/types/language';
 import {REPLY_SLA} from '@/lib/offer';
 import {CALENDLY_URL} from '@/components/AuditFormSection';
 import {OFFER_NEXT_COPY, PARENT_SERVICE, SERVICE_LABEL, SIBLING_OFFER, type OfferSlug} from '@/data/offerLinks';
 
-// One component, every front-end offer page.
+// One component, every front-end offer page from the workbook.
+// 2026-09-30: /offers/sheet-to-app is the exception. Its contract is a different page, so it renders
+// through src/components/SheetToAppLanding.tsx and publishes its prices by a dated exception to
+// CLAUDE.md rule 7. The rule below still holds for every page this component renders.
 //
 // These pages WERE Google Ads landing pages. Ads was dropped on 2026-09-01 and organic search is
 // now the only way in, so each page carries a body link up to its parent service page and across
@@ -134,15 +139,30 @@ export type Offer = {
   copy: Record<Language, OfferCopy>;
 };
 
-function CtaButton({label, callout}: {label: string; callout?: string}) {
+// `location` names the spot on the page for GA4's cta_click (added 2026-09-30).
+function CtaButton({
+  label,
+  callout,
+  location,
+  offerSlug,
+  language
+}: {
+  label: string;
+  callout?: string;
+  location: string;
+  offerSlug: string;
+  language: Language;
+}) {
   return (
     <div className="mx-auto max-w-2xl text-center">
-      <a
+      <TrackedLink
+        event={CTA_CLICK_EVENT}
+        params={{cta_location: location, locale: language, offer_slug: offerSlug}}
         href="#offer-form"
         className="inline-flex items-center justify-center rounded-lg bg-primary-600 px-8 py-4 text-lg font-medium text-white shadow-lg shadow-primary-600/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
       >
         {label}
-      </a>
+      </TrackedLink>
       {callout && (
         <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-gray-600 dark:text-gray-400">
           {callout}
@@ -179,6 +199,8 @@ function Check() {
 
 export default function OfferLanding({offer, language}: {offer: Offer; language: Language}) {
   const c = offer.copy[language];
+  // GA4's offer_slug: the route slug without its folder, e.g. `ai-agent`.
+  const offerSlug = offer.slug.replace(/^offers\//, '');
   // Resolved from the slug, not passed in: sixteen route files must not each know the graph.
   // PARENT_SERVICE is Partial, so `parent` is typed `| undefined` and the guard below is
   // compiler-enforced — the two website offers have no parent service page.
@@ -219,7 +241,7 @@ export default function OfferLanding({offer, language}: {offer: Offer; language:
                 </li>
               ))}
             </ul>
-            <CtaButton label={c.ctaButton} callout={c.ctaCallout}/>
+            <CtaButton label={c.ctaButton} callout={c.ctaCallout} location="hero" offerSlug={offerSlug} language={language}/>
           </div>
         </div>
       </section>
@@ -265,7 +287,7 @@ export default function OfferLanding({offer, language}: {offer: Offer; language:
             ))}
           </ul>
           <div className="mt-12">
-            <CtaButton label={c.ctaButton}/>
+            <CtaButton label={c.ctaButton} location="after-what-you-get" offerSlug={offerSlug} language={language}/>
           </div>
         </div>
       </section>
@@ -315,7 +337,7 @@ export default function OfferLanding({offer, language}: {offer: Offer; language:
             {c.guaranteeClosing}
           </p>
           <div className="mt-12">
-            <CtaButton label={c.ctaButton}/>
+            <CtaButton label={c.ctaButton} location="after-guarantee" offerSlug={offerSlug} language={language}/>
           </div>
         </div>
       </section>
@@ -429,6 +451,7 @@ export default function OfferLanding({offer, language}: {offer: Offer; language:
               languageOverride={language}
               hideTitle
               presetQuestion={offer.questionMarker}
+              offerSlug={offerSlug}
               messageOptional
               messageLabelOverride={c.formMessageLabel}
               messagePlaceholderOverride={c.formMessagePlaceholder}
@@ -440,14 +463,16 @@ export default function OfferLanding({offer, language}: {offer: Offer; language:
             </p>
             <p className="mt-2 text-center text-sm leading-6 text-gray-600 dark:text-gray-400">
               {c.calendlyLead}{' '}
-              <a
+              <TrackedLink
+                event={BOOKING_CLICK_EVENT}
+                params={{cta_location: 'form-calendly', locale: language, offer_slug: offerSlug}}
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-primary-600 underline underline-offset-4 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
               >
                 {c.calendlyLink}
-              </a>
+              </TrackedLink>
             </p>
             <p className="mt-6 text-center text-sm font-medium leading-6 text-gray-700 dark:text-gray-300">
               {c.ctaCallout}

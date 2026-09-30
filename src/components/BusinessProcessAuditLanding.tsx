@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import AuditFormSection, {AUDIT_CTA, CtaCopy} from '@/components/AuditFormSection';
 import OfferLinks from '@/components/OfferLinks';
-import {WEBSITE_OFFERS} from '@/data/offerLinks';
+import TrackedLink from '@/components/TrackedLink';
+import {CTA_CLICK_EVENT} from '@/utils/gtag';
+import {SPREADSHEET_OFFERS, WEBSITE_OFFERS} from '@/data/offerLinks';
 import {Language} from '@/types/language';
 import {
   AUDIT_CALL_MINUTES,
@@ -684,15 +686,28 @@ const copy: Record<Language, LandingCopy> = {
   }
 };
 
-function CtaBlock({cta, showMicrocopy = false}: {cta: CtaCopy; showMicrocopy?: boolean}) {
+// `location` names the spot on the page for GA4's cta_click (added 2026-09-30).
+function CtaBlock({
+  cta,
+  location,
+  language,
+  showMicrocopy = false
+}: {
+  cta: CtaCopy;
+  location: string;
+  language: Language;
+  showMicrocopy?: boolean;
+}) {
   return (
     <div className="mx-auto max-w-2xl text-center">
-      <a
+      <TrackedLink
+        event={CTA_CLICK_EVENT}
+        params={{cta_location: location, locale: language, offer_slug: 'business-process-audit'}}
         href="#consultation-form"
         className="inline-flex items-center justify-center rounded-lg bg-primary-600 px-8 py-4 text-lg font-medium text-white shadow-lg shadow-primary-600/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
       >
         {cta.button}
-      </a>
+      </TrackedLink>
       <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-gray-600 dark:text-gray-400">
         {cta.callout}
       </p>
@@ -752,7 +767,7 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
                 </li>
               ))}
             </ul>
-            <CtaBlock cta={auditCta} showMicrocopy />
+            <CtaBlock cta={auditCta} location="hero" language={language} showMicrocopy />
           </div>
         </div>
       </section>
@@ -808,7 +823,7 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
           <p className="mb-8 text-center text-xl font-semibold text-gray-950 dark:text-white">
             {pageCopy.cta2Lead}
           </p>
-          <CtaBlock cta={auditCta} />
+          <CtaBlock cta={auditCta} location="after-pain" language={language} />
         </div>
       </section>
 
@@ -908,7 +923,7 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
             {pageCopy.dreamGoal}
           </p>
           <div className="mt-12">
-            <CtaBlock cta={auditCta} />
+            <CtaBlock cta={auditCta} location="dream-outcome" language={language} />
           </div>
         </div>
       </section>
@@ -1013,7 +1028,7 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
             ))}
           </div>
           <div className="mt-12">
-            <CtaBlock cta={auditCta} />
+            <CtaBlock cta={auditCta} location="faq" language={language} />
           </div>
         </div>
       </section>
@@ -1041,7 +1056,7 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
             ))}
           </div>
           <div className="mt-12">
-            <CtaBlock cta={auditCta} />
+            <CtaBlock cta={auditCta} location="authority" language={language} />
           </div>
         </div>
       </section>
@@ -1094,6 +1109,12 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
       {/* 15. Final CTA + form. The section itself lives in AuditFormSection.tsx, because the
           homepage renders the same one. */}
       <AuditFormSection language={language}/>
+
+      {/* 15a. Added 2026-09-30 (G19): the body link to /offers/sheet-to-app, which that offer's
+          record names among its in-links (offer.yaml seo.internal_links_from). After the form,
+          like the block below, so the audit stays this page's one conversion. The anchor is the
+          offer's own outcome line, read from its data file (offerLinks.ts). */}
+      <OfferLinks lang={language} variant="spreadsheet" offers={SPREADSHEET_OFFERS}/>
 
       {/* 16. The two offers this site has no service page for. AN EXCEPTION, RECORDED AS ONE.
           website-seo and website-google-ads are the only two of the eight with measured Greek
