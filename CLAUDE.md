@@ -5,15 +5,23 @@ prerendered. Deployed on Vercel.
 
 ## The one thing this site sells
 
-A **free process audit** → **Build & Run** with a money-back guarantee.
+~~A **free process audit** → **Build & Run** with a money-back guarantee.
 `/[locale]/business-process-audit` is the page that sells; every primary CTA points at it. The
-homepage's job is to hand the reader there, not to close them itself.
+homepage's job is to hand the reader there, not to close them itself.~~
+**Struck 2026-09-30 (G20, offer-os `gtm/sheet-to-app-rollout/PLAN.md` D5).** Charis, in his words:
+*"leave that as it is, change only fiji solutions home page"*. Both homepages are now the hook for the **7-Day Sheet-to-App
+Prototype**: their titles and H1 open with the 7-day prototype and "Pay only if you like it" (D66),
+both homepage buttons scroll to the homepage's own form (`#sheet-to-app-form`,
+`src/components/SheetToAppFormSection.tsx`, `presetQuestion` `homepage-sheet-to-app`), and the body
+links `/offers/sheet-to-app` once. `/[locale]/business-process-audit` still sells the free process
+audit, with its own guarantee, and every CTA on that page still points at its own form.
 
 **No price appears anywhere on this site.** Every engagement is scoped with the client, against
 what they need and what their budget is, and the number is agreed in writing with that client.
 There is no list price, no rate card, no entry-offer price. See rule 7.
 **2026-09-30: one dated exception.** `/en/offers/sheet-to-app` and `/el/offers/sheet-to-app` publish
-their price ladder in the page body; rule 7 records it and its source.
+their price ladder in the page body, and both homepages publish the same figures in one box under
+the how-it-works cards (G20); rule 7 records it and its source.
 
 Until 2026-08-15 that page had **zero internal links** and the site sold six service categories,
 six industries and thirty-two technologies. Do not re-add a service list.
@@ -70,6 +78,7 @@ pages — and from nowhere else. The whole graph is one file, `src/data/offerLin
 | `/business-process-audit`, in a block **after** the form | website-seo, website-google-ads |
 | `/business-process-audit`, in its own block **after** the form (2026-09-30) | sheet-to-app |
 | both homepages, `Local.tsx`, two prose links | website-seo, website-google-ads |
+| both homepages, `Solutions.tsx`, one prose link under the price box (2026-09-30, G20) | sheet-to-app |
 | each `/offers/*` page | its parent service page (if any) + its one sibling offer |
 
 **Still forbidden, and this half of the rule did not change.** Not in the navbar
@@ -97,7 +106,8 @@ actually sold". That is Charis's call. Until he makes it, those two are linked f
 the homepage's local section, and each other, and every comment that says so calls it an exception.
 
 They are in `src/app/sitemap.ts` and indexable, because half-publishing a page is worse than either
-publishing or not. The audit is still the offer the site leads with, every primary CTA still points
+publishing or not. ~~The audit is still the offer the site leads with,~~ (struck 2026-09-30, G20, D5:
+the homepage leads with the sheet-to-app offer) every primary CTA on the audit page still points
 at `#consultation-form`, and the audit-page block renders **after** the form so it costs nothing.
 
 Every rule below applies to them without exception. In particular: **no price** (rule 7), and the
@@ -111,10 +121,11 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 | What | Where |
 |---|---|
 | Offer economics — durations, SLA, guarantee terms | `src/lib/offer.ts`. **Change the number here, not in copy.** The guarantee's four numbers (window, cure, claim window, answer deadline) live here. **No price constant lives here, or anywhere.** |
-| All UI copy, both locales | `src/translations.ts` (132 keys each, kept at exact parity) |
+| All UI copy, both locales | `src/translations.ts` (133 keys each, kept at exact parity; the count read 132 until 2026-09-30) |
 | The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
-| The audit form section, its CTA copy and the Calendly URL | `src/components/AuditFormSection.tsx`. Rendered by **both** the offer page and the homepage, so its strings live there rather than in `LandingCopy`. `AUDIT_CTA` feeds the offer page's five `CtaBlock`s, whose button is an in-page `#consultation-form` anchor. Give each new caller its own `presetQuestion`; it is the only lead-source marker there is. |
+| The audit form section, its CTA copy and the Calendly URL | `src/components/AuditFormSection.tsx`. Rendered by the offer page, and by the homepage until 2026-09-30 (G20, D5), so its strings live there rather than in `LandingCopy`. `AUDIT_CTA` feeds the offer page's five `CtaBlock`s, whose button is an in-page `#consultation-form` anchor. Give each new caller its own `presetQuestion`; it is the only lead-source marker there is. |
 | The sheet-to-app offer page (2026-09-30) | Its own layout, `src/components/SheetToAppLanding.tsx` (nineteen sections from its offer-os contract, sticky mobile bar in `SheetToAppStickyCta.tsx`), copy in `src/data/offers/sheet-to-app.ts`, verbatim from offer-os `offers/fiji-solutions--sheet-to-app/03-copy.md`. Metadata and JSON-LD come from the same `src/lib/offerSchema.ts`. Its booking link is `SHEET_TO_APP_BOOKING_URL` in that data file, the existing 30-minute Calendly event (offer-os D120, 2026-09-30), the same URL as `CALENDLY_URL`. `src/lib/landing.ts` lists the routes whose Navbar is logo-only and which load no Vapi bubble. |
+| The homepage hook (2026-09-30, G20) | Both homepages sell the sheet-to-app offer. `hero.*`, `challenges.*` and `solutions.*` in `src/translations.ts`, the body link and limit line in `src/components/Solutions.tsx`, the form in `src/components/SheetToAppFormSection.tsx` (`presetQuestion` `homepage-sheet-to-app`, `offer_slug` `sheet-to-app`, `cta_location` `home-hero`, `home-solutions-box` and `home-form-calendly`), and the long-form ids in `src/data/homeLongForm/`, all verbatim from offer-os `offers/fiji-solutions--sheet-to-app/03-copy-homepage.md`. |
 | The seven workbook offer pages | One layout, `src/components/OfferLanding.tsx` (the eighth offer, sheet-to-app, has its own layout, in the row above); one bilingual data file per offer in `src/data/offers/`; two thin routes each. Metadata and the Service + FAQPage JSON-LD are derived in `src/lib/offerSchema.ts` from the same object the page renders, so the marked-up FAQ cannot drift from the rendered one. **To add or change an offer, edit its data file.** Each carries its own `questionMarker`, which is the only thing telling its leads from the other seven in the shared inbox. |
 | Canonical + hreflang | `src/lib/alternates.ts` — `buildAlternates(path, lang)` |
 | Consent gate | `src/lib/useConsent.ts` + `src/components/Analytics.tsx` |
@@ -172,11 +183,16 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
    Do not publish a percentage, an outcome figure, a client name or a capacity number that the
    repo cannot back. A capacity claim and a "dated waitlist" were deleted on 2026-08-15 for
    exactly this reason.
+   2026-09-30 (G20): the homepage's limit line, "We take on 3 prototypes a month", is his own
+   (offer-os `gtm/sheet-to-app-rollout/PLAN.md` D75), which is what backs it.
 
 6. **Speed claims carry their anchor.** The build delivers the first automation within
    `FIRST_FIX_DAYS` days **of the build starting** — not of the reader's first contact, which is
    at least an audit plus a scoping round earlier. Every headline that states the number must
    state the anchor with it.
+   2026-09-30 (G19, G20, D66): the sheet-to-app pages and both homepages state "7 days", anchored
+   to the audit call ("after the audit call", «μετά την πρώτη κλήση») in the H1 and in each
+   description.
 
 7. **Never publish a price.** Not a figure, not a range, not a "from", not a rate card, not a
    deal-size band, in either locale. Pricing is scoped per client against their needs and their
@@ -196,6 +212,13 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
    prices appear in the body only, exactly as their `03-copy.md` gives them: never in the hero, in an FAQ answer, in metadata or in any JSON-LD (`offerSchema.ts` still
    emits no `offers` node and no price). Every other page on the site keeps this rule unchanged, and
    still no price constant lives in `offer.ts`.
+   **Extended 2026-09-30 (G20) to both homepages, one slot only:** the box under the three
+   how-it-works cards (`solutions.cta.description` in `src/translations.ts`), as offer-os
+   `offers/fiji-solutions--sheet-to-app/03-copy-homepage.md` places the figures (D68: the homepage
+   carries the figures in one slot). Never in the homepage hero, metadata, FAQ answers (they feed
+   the FAQPage JSON-LD), the footer or the RootShell strings. The Greek figures carry a no-break
+   space before «$». The homepage's other numbers are typed as that file gives them, a dated
+   exception recorded in the `translations.ts` header.
 
 ## Settled — do not reopen casually
 
@@ -213,11 +236,20 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
   2026-08-15, shipped to the live site, and then recorded in this file and in `src/lib/offer.ts`
   as "ratified by Charis on 2026-08-16". **That attribution was false — he never agreed to it.**
   It was removed on 2026-08-17 along with `SPRINT_PRICE_EUR`, `formatSprintPrice()`, `SPRINT_DAYS`
-  and the homepage card, and the ladder went from three steps to two. Do not re-add the step, the
+  and the homepage card, and the ladder went from three steps to two. ~~Do not re-add the step, the
   price, or a "priced middle rung" to bridge the gap between the free audit and the build. The
-  gap is bridged by scoping the build with the client, which is what step 2 now says.
+  gap is bridged by scoping the build with the client, which is what step 2 now says.~~
+  **This last sentence struck 2026-09-30 (G20, offer-os `gtm/sheet-to-app-rollout/PLAN.md` D5).**
+  Charis, in his words: *"leave that as it is, change only fiji solutions home page"*. The homepage now sells a priced prototype,
+  the 7-Day Sheet-to-App Prototype, with its figures in one box (rule 7). The record above, that
+  the Discovery Sprint and its price were invented and falsely attributed to him, stays as written.
 
-- **The homepage H1 stands as written, and this is not a bug to re-open.**
+- ~~**The homepage H1 stands as written, and this is not a bug to re-open.**~~ **Struck
+  2026-09-30 (G20, offer-os `gtm/sheet-to-app-rollout/PLAN.md` D5 and D66).** Charis, in his words:
+  *"leave that as it is, change only fiji solutions home page"*, and for the headline: *"literally the first word that someone
+  should read is "prototype within 7 days. You pay only if you like it.""* Both H1s now open on
+  the prototype, 7 days after the audit call, and "Pay only if you like it". This bullet's body sits
+  at the end of the Greek copy bullet below and is struck there with the same date.
 - **prerender.io is dead as of 2026-09-01 and must not be re-added.** `www.fijisolutions.net` was
   registered in that account (since Aug 2025), but this project never proxied through it (and
   until 2026-09-30 had no environment variables at all; it now has exactly one,
@@ -272,23 +304,30 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
   κύκλος (υλοποίησης)» and never «sprint», and a demo is «μια επίδειξη». The apostrophe in «γι’
   αυτό» is U+2019, never the koronis U+1FBD that six strings carried. The English copy keeps
   "workshop" and "sprint" — these are translations, not a shared vocabulary, and the route slug
-  `/offers/ai-development-sprint` is a URL and stays as it is. It promises the first
+  `/offers/ai-development-sprint` is a URL and stays as it is. ~~It promises the first
   process automated within `FIRST_FIX_DAYS` days "or we pay your money back". No delivery
   guarantee exists: the only refund in `offer.ts` triggers on payback failure over six months
   from go-live, the amount is the build fee, and the Solutions card two screens down calls the
   same 30 days a "target". Both conflicts were put to Charis on 2026-08-30, with the options of
   narrowing the headline or adding a delivery clause to the contract, and he chose to leave it
   as written knowing that. He had already asked for this wording twice before that (see
-  `7cf97a8`). It is a decision, not an oversight. Do not rewrite it and do not raise it again.
+  `7cf97a8`). It is a decision, not an oversight. Do not rewrite it and do not raise it again.~~
+  **Struck 2026-09-30 (G20, D5, D66):** these sentences are the body of the homepage H1 bullet
+  above, moved here by an earlier edit, and are struck with it.
 
-- **The Greek homepage title tag is the local one; the H1 is still the promise (2026-09-01).**
+- ~~**The Greek homepage title tag is the local one; the H1 is still the promise (2026-09-01).**
   `/el` now titles itself «Εταιρεία λογισμικού στη Θεσσαλονίκη | Fiji Solutions» and describes
   itself with the category, the city and «κατασκευή ιστοσελίδων». The **H1 did not move** — the
   bullet above stands. Retargeting the H1 at the website money term would make this site claim to
   be a web agency, which is a positioning decision only Charis can take, and it has not been put
   to him. The English homepage keeps its promise-led title on purpose: English in Greece is
   measured dead (`software company thessaloniki`, `software development greece` and
-  `custom software development greece` all return no data).
+  `custom software development greece` all return no data).~~
+  **Struck 2026-09-30 (G20, offer-os `gtm/sheet-to-app-rollout/PLAN.md` D66).** Charis, in his
+  words: *"literally the first word that someone should read is "prototype within 7 days. You pay
+  only if you like it.""* Every title and both H1s now open with the 7-day prototype and "Pay only
+  if you like it". The Greek title is «Το πρωτότυπό σου σε 7 μέρες. Πληρώνεις μόνο αν σου αρέσει»,
+  and Thessaloniki stays in the Greek description and in the Local section.
 
 - **The `geo` in `RootShell.tsx` was wrong by ~10 km and is corrected (2026-09-01).** It pointed at
   Πυλαία, postcode 570 01 — a different municipality from the address on the same schema node. It
