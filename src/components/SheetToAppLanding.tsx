@@ -478,9 +478,9 @@ export default function SheetToAppLanding({offer, language}: {offer: SheetToAppO
               microcopyUnderButton={c.formMicrocopy}
               hideSamplePlaceholders
             />
-            {/* TODO(charis): the booking link of the 20-minute audit call event, his task
-                t-YK13BAZE. The line renders only once SHEET_TO_APP_BOOKING_URL is set in
-                src/data/offers/sheet-to-app.ts, so no dead link ships before the event exists. */}
+            {/* The booking line books the audit call on the existing 30-minute Calendly event
+                (offer-os D120, 2026-09-30), SHEET_TO_APP_BOOKING_URL in
+                src/data/offers/sheet-to-app.ts. It renders only while that string is set. */}
             {SHEET_TO_APP_BOOKING_URL && (
               <p className="mt-2 text-center text-sm leading-6 text-gray-600 dark:text-gray-400">
                 {c.bookingBefore}

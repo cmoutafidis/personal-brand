@@ -30,12 +30,13 @@ import type {SheetToAppOffer} from '@/components/SheetToAppLanding';
 // wraps onto a line of its own, as 03-copy.md Appendix D (el) allows the build to do.
 
 /**
- * TODO(charis): the booking link of the 20-minute audit call event, his task t-YK13BAZE; the event
- * does not exist on 2026-09-30. While this is empty, the booking line under the form does not
- * render at all, so no dead link ships. company.md's Calendly link is a 30-minute event and does
- * not fit (03-copy.md Appendix D). Paste the event URL here and the line appears in both locales.
+ * The booking link of the audit call. Since 2026-09-30 (offer-os D120) the audit call is 30 minutes
+ * and the page books on the existing 30-minute Calendly event, the same URL as CALENDLY_URL in
+ * src/components/AuditFormSection.tsx. It is written out here so this data file, which sitemap.ts
+ * and offerLinks.ts also load, does not import a component module. If the event ever changes,
+ * change both. While this string is empty, the booking line under the form does not render.
  */
-export const SHEET_TO_APP_BOOKING_URL = '';
+export const SHEET_TO_APP_BOOKING_URL = 'https://calendly.com/charis-fijisolutions/30min';
 
 const sheetToApp: SheetToAppOffer = {
   slug: 'offers/sheet-to-app',
@@ -59,8 +60,8 @@ const sheetToApp: SheetToAppOffer = {
       eyebrow: 'The finished app shows where every order or job stands',
       title: 'A prototype 7 days after the audit call. Pay only if you like it.',
       subhead:
-        'The Column-First Build starts from your spreadsheet\'s column headers. On a free 20-minute audit call, we talk through what you need.',
-      button: 'Book my 20-minute call',
+        'The Column-First Build starts from your spreadsheet\'s column headers. On a free 30-minute audit call, we talk through what you need.',
+      button: 'Book my 30-minute call',
       heroSkip: 'See what you get',
       illustrationDayTag: 'Day 7',
       riskRemover: 'Pay only if you like it.',
@@ -146,7 +147,7 @@ const sheetToApp: SheetToAppOffer = {
             {type: 'p', text: 'You paste the top row of your sheet into the form on this page. The headers are enough for this step.'},
             {type: 'p', text: 'We read them before the call, so the call starts from your own columns. Later, the prototype runs on sample rows we make from your headers, so nobody on your team types test data. Your real sheet moves in with the finished app.'},
             {type: 'h3', text: '2. On the audit call we talk through what you need'},
-            {type: 'p', text: 'The audit call takes 20 minutes. We see how your sheet runs today and what you need from it.'},
+            {type: 'p', text: 'The audit call takes 30 minutes. We see how your sheet runs today and what you need from it.'},
             {type: 'p', text: 'Then we write down together the 3 to 5 things the prototype must do. Each line names a screen, a role and an action. The list is capped at 5 screens and 2 roles.'},
             {type: 'p', text: 'That short written list is the prototype\'s scope. We also agree what the finished app must do, if you go ahead with it. Before the call ends, we book the day-7 walkthrough.'},
             {type: 'h3', text: '3. Days 1 to 6: each role gets its screen, and every change gets a link'},
@@ -193,7 +194,7 @@ const sheetToApp: SheetToAppOffer = {
         {
           kind: 'content',
           id: 's10-process',
-          title: 'Your part is the headers, 20 minutes on a call and 30 minutes on day 7',
+          title: 'Your part is the headers, 30 minutes on a call and 30 minutes on day 7',
           blocks: [
             {
               type: 'ul',
@@ -219,7 +220,7 @@ const sheetToApp: SheetToAppOffer = {
               head: ['Item', 'What you get'],
               rowHeaders: true,
               rows: [
-                ['The audit call', '20 minutes: we talk through what you need and agree the scope'],
+                ['The audit call', '30 minutes: we talk through what you need and agree the scope'],
                 ['The 7-day prototype', 'A prototype of your app to review, a screen per role'],
                 ['Progress links', 'A private link for every change'],
                 ['The day-7 walkthrough', '30 minutes to review it and decide'],
@@ -323,7 +324,7 @@ const sheetToApp: SheetToAppOffer = {
           title: '7 days after the audit call, you click through your own prototype. Pay only if you like it.',
           blocks: [
             {type: 'p', text: 'The 7-Day Sheet-to-App Prototype turns your team\'s shared spreadsheet into a prototype of your app, with a screen for each role.'},
-            {type: 'p', text: 'It starts with a 20-minute audit call, where we talk through what you need. On day 7, you go through the prototype in a 30-minute walkthrough.'},
+            {type: 'p', text: 'It starts with a 30-minute audit call, where we talk through what you need. On day 7, you go through the prototype in a 30-minute walkthrough.'},
             {type: 'p', text: 'If you like it, you pay $2,000. If you do not, you pay nothing.'},
             {type: 'p', text: 'Start the build within 30 days of the walkthrough, and that $2,000 counts toward the finished app\'s $7,000. At delivery you go through the finished app. If you like it, you pay the other $5,000; if you do not, you pay nothing more.'},
             {type: 'p', text: 'To start, paste your column headers below and pick a time.'}
@@ -339,7 +340,7 @@ const sheetToApp: SheetToAppOffer = {
       faqs: [
         {q: 'What does it cost?', a: 'Each stage and each plan has its price in "What it costs" above. We take on 3 prototypes a month, so each one gets our full attention. Today\'s prices are where we start, and they will rise as we grow the team.'},
         {q: 'Why not Glide, Softr or Airtable?', a: 'If one of them fits how your team works, use it, and we will say so on the call. What we build follows your own columns, and the finished app connects to your accounting and email.'},
-        {q: 'We don\'t have time for a software project.', a: 'Your part: the column headers, 20 minutes on the audit call and 30 minutes on day 7. We make the sample rows and send a link for every change.'},
+        {q: 'We don\'t have time for a software project.', a: 'Your part: the column headers, 30 minutes on the audit call and 30 minutes on day 7. We make the sample rows and send a link for every change.'},
         {q: 'Our data is sensitive.', a: 'The prototype runs on sample rows made from your column headers. Your real sheet moves in later, with the finished app, and we delete your data when you ask.'},
         {q: 'Every system we look at wants us to change how we work.', a: 'The app is built around the columns you already use, and the prototype is made from your own sheet.'},
         {q: 'Who are you, and where are you based?', a: 'Fiji Solutions is a software company in Thessaloniki, Greece. Our founder has more than ten years of experience building software, and Snowflake\'s partner directory lists Fiji as a Select Partner.'},
@@ -350,7 +351,7 @@ const sheetToApp: SheetToAppOffer = {
         {q: 'We already use industry software or an ERP.', a: 'Keep it. The prototype is for the spreadsheet that sits next to it. With no such sheet, we are the wrong call.'}
       ],
 
-      formTitle: 'Send your column headers and book your 20-minute call',
+      formTitle: 'Send your column headers and book your 30-minute call',
       formSubhead: 'We read the top row of your sheet before the call, so we start from your own columns.',
       formNameLabel: 'Name',
       formEmailLabel: 'Email',
@@ -360,10 +361,9 @@ const sheetToApp: SheetToAppOffer = {
       formMessageRequired: 'Paste your column headers first.',
       formMicrocopy: 'Pay only if you like it.',
       formSuccess: 'Thank you. We will read your headers before the call. Pick a time below.',
-      // TODO(charis): the booking link of the 20-minute audit call event, his task t-YK13BAZE.
-      // Renders only once SHEET_TO_APP_BOOKING_URL above is set.
+      // Links SHEET_TO_APP_BOOKING_URL above, the existing 30-minute event (D120, 2026-09-30).
       bookingBefore: 'Or ',
-      bookingLink: 'book the 20-minute audit call here',
+      bookingLink: 'book the 30-minute audit call here',
       bookingAfter: '.'
     },
 
@@ -379,8 +379,8 @@ const sheetToApp: SheetToAppOffer = {
       eyebrow: 'Κάθε παραγγελία και κάθε δουλειά σε μία οθόνη',
       title: 'Πρωτότυπο της εφαρμογής σου 7 μέρες μετά την πρώτη κλήση. Πληρώνεις μόνο αν σου αρέσει.',
       subhead:
-        'Δουλεύουμε με τη μέθοδο «Πρώτα οι στήλες»: μας στέλνεις τα ονόματα των στηλών του Excel σου. Στην πρώτη κλήση, 20 λεπτά και δωρεάν, συζητάμε τι χρειάζεσαι.',
-      button: 'Κλείνω ώρα για την πρώτη κλήση των 20 λεπτών',
+        'Δουλεύουμε με τη μέθοδο «Πρώτα οι στήλες»: μας στέλνεις τα ονόματα των στηλών του Excel σου. Στην πρώτη κλήση, 30 λεπτά και δωρεάν, συζητάμε τι χρειάζεσαι.',
+      button: 'Κλείνω ώρα για την πρώτη κλήση των 30 λεπτών',
       heroSkip: 'Δες τι παίρνεις',
       // The Greek visual brief asks for the column row and the screen, and no calendar strip.
       riskRemover: 'Πληρώνεις μόνο αν σου αρέσει.',
@@ -463,7 +463,7 @@ const sheetToApp: SheetToAppOffer = {
             {type: 'h3', text: 'Τέσσερα βήματα σε πάνε από τα ονόματα των στηλών ως την 7η μέρα'},
             {type: 'diagram', boxes: ['Τα ονόματα των στηλών', 'Η πρώτη κλήση', 'Μέρες 1 έως 6', '7η μέρα']},
             {type: 'p', lead: '1. Τα ονόματα των στηλών σου.', text: 'Μας τα στέλνεις από το Excel σου.'},
-            {type: 'p', lead: '2. Η πρώτη κλήση, 20 λεπτά.', text: 'Βλέπουμε πώς δουλεύει σήμερα το Excel σου και συζητάμε τι χρειάζεσαι από αυτό. Γράφουμε μαζί τη λίστα του πρωτοτύπου: 3 έως 5 σημεία, το καθένα μια οθόνη, ένας ρόλος και μια ενέργεια, το πολύ 5 οθόνες και 2 ρόλοι. Συμφωνούμε και τι θα κάνει η τελική εφαρμογή.'},
+            {type: 'p', lead: '2. Η πρώτη κλήση, 30 λεπτά.', text: 'Βλέπουμε πώς δουλεύει σήμερα το Excel σου και συζητάμε τι χρειάζεσαι από αυτό. Γράφουμε μαζί τη λίστα του πρωτοτύπου: 3 έως 5 σημεία, το καθένα μια οθόνη, ένας ρόλος και μια ενέργεια, το πολύ 5 οθόνες και 2 ρόλοι. Συμφωνούμε και τι θα κάνει η τελική εφαρμογή.'},
             {type: 'p', lead: '3. Μέρες 1 έως 6.', text: 'Χτίζουμε την οθόνη κάθε ρόλου και σου στέλνουμε σύνδεσμο προόδου για κάθε αλλαγή.'},
             {type: 'p', lead: '4. 7η μέρα.', text: 'Εξετάζεις το πρωτότυπο και αποφασίζεις. Το σχέδιο υλοποίησης της τελικής εφαρμογής είναι στο τραπέζι.'},
             {type: 'p', text: 'Η λίστα γράφεται μαζί στην πρώτη κλήση, και έτσι οι μέρες 1 έως 6 πάνε στις οθόνες των ρόλων σου.'},
@@ -507,7 +507,7 @@ const sheetToApp: SheetToAppOffer = {
         {
           kind: 'content',
           id: 's10-process',
-          title: 'Από σένα: τα ονόματα των στηλών, 20 λεπτά στην πρώτη κλήση και 30 λεπτά την 7η μέρα',
+          title: 'Από σένα: τα ονόματα των στηλών, 30 λεπτά στην πρώτη κλήση και 30 λεπτά την 7η μέρα',
           blocks: [
             {
               type: 'ul',
@@ -533,7 +533,7 @@ const sheetToApp: SheetToAppOffer = {
               head: ['Τι είναι', 'Τι παίρνεις'],
               rowHeaders: true,
               rows: [
-                ['Η πρώτη κλήση', '20 λεπτά: συζητάμε τι χρειάζεσαι και γράφουμε μαζί τη λίστα του πρωτοτύπου.'],
+                ['Η πρώτη κλήση', '30 λεπτά: συζητάμε τι χρειάζεσαι και γράφουμε μαζί τη λίστα του πρωτοτύπου.'],
                 ['Το πρωτότυπο σε 7 μέρες', 'Μια οθόνη για κάθε ρόλο, με ενδεικτικές γραμμές από τις στήλες σου.'],
                 ['Σύνδεσμοι προόδου', 'Ιδιωτικοί, ένας για κάθε αλλαγή. Μέσα σε 48 ώρες από την πρώτη κλήση έχεις ήδη έναν.'],
                 ['Η συνάντηση της 7ης μέρας', '30 λεπτά: εξετάζεις το πρωτότυπο και λες αν σου αρέσει.'],
@@ -654,7 +654,7 @@ const sheetToApp: SheetToAppOffer = {
           id: 's19-close',
           title: 'Σε 7 μέρες από την πρώτη κλήση βλέπεις το πρωτότυπο της εφαρμογής σου',
           blocks: [
-            {type: 'p', text: 'Μας στέλνεις τα ονόματα των στηλών του Excel σου. Στην πρώτη κλήση των 20 λεπτών συζητάμε τι χρειάζεσαι, και γράφουμε μαζί τα 3 έως 5 σημεία του πρωτοτύπου.'},
+            {type: 'p', text: 'Μας στέλνεις τα ονόματα των στηλών του Excel σου. Στην πρώτη κλήση των 30 λεπτών συζητάμε τι χρειάζεσαι, και γράφουμε μαζί τα 3 έως 5 σημεία του πρωτοτύπου.'},
             {type: 'p', text: 'Έτσι, 7 μέρες μετά, έχεις το πρωτότυπο της εφαρμογής σου, με μια οθόνη για κάθε ρόλο. Στη συνάντηση της 7ης μέρας το εξετάζεις και αποφασίζεις.'},
             {type: 'p', text: 'Το πρωτότυπο κοστίζει 2.000 $ και πληρώνεις μόνο αν σου αρέσει. Αν συνεχίσεις, η τελική εφαρμογή έρχεται περίπου τρεις βδομάδες αργότερα, και στην παράδοσή της ισχύει ο ίδιος κανόνας.'},
             {type: 'p', text: 'Το επόμενο βήμα: επικόλλησε τα ονόματα των στηλών σου στη φόρμα παρακάτω και διάλεξε ώρα για την πρώτη κλήση.'}
@@ -667,7 +667,7 @@ const sheetToApp: SheetToAppOffer = {
       faqs: [
         {q: '«Πόσο κοστίζει;»', a: 'Οι τιμές είναι γραμμένες σε αυτή τη σελίδα, στην ενότητα «Τι κοστίζει». Το πρωτότυπο το πληρώνεις όταν πεις ναι την 7η μέρα. Αν η τελική εφαρμογή ξεκινήσει μέσα σε 30 μέρες από εκείνη τη μέρα, η αμοιβή του πρωτοτύπου μετράει στην τιμή της. Στην παράδοση διαλέγεις Care ή Care Plus, με μηνιαία χρέωση, ή παίρνεις τον κώδικα. Αναλαμβάνουμε 3 πρωτότυπα τον μήνα, για να έχει το καθένα όλη μας την προσοχή. Ξεκινάμε με αυτές τις τιμές, και θα ανεβαίνουν όσο μεγαλώνει η ομάδα μας.'},
         {q: '«Γιατί να μη χρησιμοποιήσουμε Glide, Softr ή Airtable;»', a: 'Αν κάποιο από αυτά ταιριάζει στον τρόπο που δουλεύει η ομάδα σου, θα σου το πούμε στην πρώτη κλήση για να το χρησιμοποιήσεις. Ό,τι φτιάχνουμε ακολουθεί τις στήλες και τα βήματα της ομάδας σου, και στην τελική εφαρμογή το συνδέουμε με το πρόγραμμα του λογιστηρίου και το email σου.'},
-        {q: '«Δεν έχουμε χρόνο για έργο λογισμικού.»', a: 'Το δικό σου κομμάτι είναι τα ονόματα των στηλών, 20 λεπτά στην πρώτη κλήση και 30 λεπτά την 7η μέρα. Τις ενδεικτικές γραμμές τις φτιάχνουμε εμείς, και σου στέλνουμε σύνδεσμο προόδου κάθε φορά που κάτι αλλάζει.'},
+        {q: '«Δεν έχουμε χρόνο για έργο λογισμικού.»', a: 'Το δικό σου κομμάτι είναι τα ονόματα των στηλών, 30 λεπτά στην πρώτη κλήση και 30 λεπτά την 7η μέρα. Τις ενδεικτικές γραμμές τις φτιάχνουμε εμείς, και σου στέλνουμε σύνδεσμο προόδου κάθε φορά που κάτι αλλάζει.'},
         {q: '«Τα δεδομένα μας είναι ευαίσθητα.»', a: 'Το πρωτότυπο δείχνει ενδεικτικές γραμμές, φτιαγμένες από τα ονόματα των στηλών σου. Τα πραγματικά σου δεδομένα περνάνε στην τελική εφαρμογή, και τα διαγράφουμε όποτε μας το ζητήσεις.'},
         {q: '«Κάθε σύστημα που κοιτάμε θέλει να αλλάξουμε τον τρόπο που δουλεύουμε.»', a: 'Η εφαρμογή χτίζεται γύρω από τις στήλες που ήδη χρησιμοποιεί η ομάδα σου, και το πρωτότυπο φτιάχνεται από το δικό σου Excel.'},
         {q: '«Ποιοι είστε και πού βρίσκεστε;»', a: 'Είμαστε η Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη. Ο ιδρυτής μας έχει πάνω από δέκα χρόνια εμπειρία στην κατασκευή λογισμικού, σε τράπεζες, τουρισμό, τηλεπικοινωνίες, υγεία και διαδικτυακή εκπαίδευση. Θα μας βρεις ως Select Partner στον κατάλογο συνεργατών της ίδιας της Snowflake.'},
@@ -688,8 +688,7 @@ const sheetToApp: SheetToAppOffer = {
       formMessageRequired: 'Επικόλλησε πρώτα τα ονόματα των στηλών σου.',
       formMicrocopy: 'Πληρώνεις μόνο αν σου αρέσει.',
       formSuccess: 'Ευχαριστούμε. Διάλεξε ώρα για την πρώτη κλήση. Θα διαβάσουμε τα ονόματα των στηλών σου πριν από αυτήν.',
-      // TODO(charis): the link of the 20-minute booking event, which does not exist yet; his task
-      // t-YK13BAZE. Renders only once SHEET_TO_APP_BOOKING_URL above is set.
+      // Links SHEET_TO_APP_BOOKING_URL above, the existing 30-minute event (D120, 2026-09-30).
       bookingBefore: 'Ή ',
       bookingLink: 'διάλεξε κατευθείαν ώρα για την πρώτη κλήση',
       bookingAfter: ' και στείλε μας από πριν τα ονόματα των στηλών.'
