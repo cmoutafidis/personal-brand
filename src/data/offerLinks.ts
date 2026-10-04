@@ -252,8 +252,9 @@ export const OFFER_LINKS_COPY: Record<OfferLinksVariant, Record<Language, {headi
     }
   },
   // 2026-09-30 (G19). The English heading follows the sheet-to-app page's English S03 heading. The
-  // Greek heading and both intros were written in G19, appear in no 03-copy file, and await
-  // Charis's approval.
+  // Greek heading and both intros were written in G19, appear in no 03-copy file, and ~~await
+  // Charis's approval~~ were approved by him with the local build on 2026-09-30 (offer-os
+  // gtm/sheet-to-app-rollout/PLAN.md D117); live since the G19 push of 2026-10-04.
   spreadsheet: {
     en: {
       heading: 'If your whole week runs through one shared spreadsheet',

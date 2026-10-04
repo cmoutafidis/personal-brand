@@ -46,7 +46,9 @@ H_EXT = {".py", ".yml", ".yaml"}
 DECISIONS = [
     dict(id="ads-dropped-2026-09-01",
          what="Google Ads was dropped as a bought channel on 2026-09-01. Decision 17 of "
-              "2026-09-10 keeps it off until the October read.",
+              "2026-09-10 ~~keeps it off until the October read~~ kept it off until the "
+              "October read. 2026-10-04, read #1: paid ads stay off until read #2 "
+              "(offer-os gtm/sheet-to-app-rollout/PLAN.md D131).",
          where="STATE §29.4, §30.1, §163, §204, §208",
          topic=[r"google ads", r"adwords", r"ad destination", r"ads? campaign",
                 r"paid click", r"ad spend", r"landing page for an ad"],
@@ -146,7 +148,8 @@ ALLOW = {
     "bde5f462758d0d4408d5e5ed140ddb7917f90ff8":
         "fiji RootShell.tsx. 'Leadsy + Google Ads load from here, and ONLY after consent.' "
         "MEASURED 2026-09-10 and TRUE: Analytics.tsx still loads AW-17750042512 behind the "
-        "consent gate. Decision 17 re-opens the channel at the October read, so the tag "
+        "consent gate. Decision 17 re-opens the channel at the October read (2026-10-04, "
+        "read #1: it stays off until read #2, D131), so the tag "
         "staying is correct and removing it would only mean re-adding it.",
     "d68e2d207405266cd14052d444b6d2d7992bc7ca":
         "charis config/site.ts PROFILES. Explains why x.com/fiji_solutions is deliberately "
