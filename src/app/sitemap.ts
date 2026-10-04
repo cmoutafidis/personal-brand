@@ -36,8 +36,8 @@ const SITE = 'https://www.fijisolutions.net';
 // file's: the homepage and the audit page both move with 73ec38d (2026-08-30), not with their
 // own page.tsx.
 const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']; lastmod: string }[] = [
-  // 2026-09-30 (G20): both homepages became the sheet-to-app hook. Move this to the deploy date.
-  {path: '', priority: 1.0, changeFrequency: 'weekly', lastmod: '2026-09-30'},
+  // 2026-09-30 (G20): both homepages became the sheet-to-app hook. Deployed 2026-10-04, so lastmod is that date.
+  {path: '', priority: 1.0, changeFrequency: 'weekly', lastmod: '2026-10-04'},
   // 2026-09-30 (G19): /business-process-audit gained its body link to sheet-to-app, and
   // software-prototype's sibling link now points there. /offers/app-prototype is retired and
   // redirects to /offers/sheet-to-app (next.config.ts), so its row is gone. Set the sheet-to-app
