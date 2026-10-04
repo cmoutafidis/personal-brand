@@ -125,6 +125,16 @@ DECISIONS = [
                 r"third akb sentence", r"akb reference must not"],
          ack=[r"2026-09-30", r"sheet-to-app", r"\bd83\b", r"\bd85\b", r"\bd91\b",
               r"\bd92\b"]),
+    dict(id="sheet-to-app-fiji-landing",
+         what="On 2026-10-04 Fiji's 7-Day Sheet-to-App Prototype page, /en/offers/sheet-to-app "
+              "and /el/offers/sheet-to-app, went live as the dated exception to the site's "
+              "no-price rule: it publishes its dollar ladder in 'What it costs' (D68, D69), "
+              "with no figure in the hero, the FAQ or the JSON-LD. It took the retired App "
+              "Prototype's place (D51). The rule stands for every other Fiji offer.",
+         where="offer-os gtm/sheet-to-app-rollout/PLAN.md D51, D68, D69; Fiji CLAUDE.md rule 7",
+         topic=[r"no price appears anywhere", r"never publish a price", r"no list price",
+                r"no rate card", r"fiji publishes no price"],
+         ack=[r"2026-09-30", r"2026-10-04", r"sheet-to-app", r"\bd68\b", r"\bd69\b"]),
 ]
 
 # --------------------------------------------------------------------------- allowlist
