@@ -19,7 +19,9 @@ export function isLandingPath(pathname: string | null | undefined): boolean {
 // homepage contract, 03-copy-homepage.md (the hero.talk note, Findings 13), allows G20 to deploy
 // with both hidden. Once G23's new assistant script is live in the Vapi dashboard, set
 // HOMEPAGE_VOICE_ON to true and both come back on /en and /el.
-export const HOMEPAGE_VOICE_ON = false;
+// 2026-10-04: the new script is live (Vapi assistant version v5, which also hears and speaks Greek),
+// so both are back on /en and /el.
+export const HOMEPAGE_VOICE_ON = true;
 
 export const HOMEPAGE_PATHS: readonly string[] = ['/en', '/el'];
 
