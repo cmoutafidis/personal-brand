@@ -27,6 +27,9 @@ import websiteGoogleAds from '@/data/offers/website-google-ads';
 // other offer pages — and from NOWHERE ELSE. Never the navbar, never the footer, never QuickLinks,
 // never /portfolio (which renders the three-card Services grid and is this site's one hub). Eight
 // offers in a menu, a footer list or a hub grid IS the service list, whatever the offers are called.
+// 2026-10-08 (F16, offer-os gtm/followups-and-search/PLAN.md F-D132, F-D133): two exceptions, both to
+// sheet-to-app only: the navbar's second link (Navbar.tsx) and one prose link on /portfolio
+// (PortfolioOfferLink.tsx). Neither goes through this file. See CLAUDE.md.
 //
 // ⛔ ONE PARENT PER OFFER. OFFERS_BY_SERVICE is a TREE, not a mesh: every offer appears in at most
 // one array. snowflake-consulting-greece carries ZERO offers on purpose — no offer is an honest

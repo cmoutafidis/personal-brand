@@ -31,7 +31,7 @@ const CONTENT: Record<Language, {
 }> = {
   en: {
     title: 'Privacy Policy',
-    updated: 'Last updated: 30 September 2026',
+    updated: 'Last updated: 8 October 2026',
     intro:
       'This policy covers www.fijisolutions.net. It describes what the website collects, why, who it is shared with, and what you can require us to do about it.',
     blocks: [
@@ -68,7 +68,7 @@ const CONTENT: Record<Language, {
       {
         h: 'Who else sees your data',
         p: [
-          'Form submissions are transmitted to and stored by Amazon Web Services on infrastructure located in the United States (region us-east-1). This is a transfer outside the European Economic Area, made under the European Commission\'s Standard Contractual Clauses.',
+          'Form submissions are transmitted to and stored by Amazon Web Services on infrastructure located in the United States. This is a transfer outside the European Economic Area, made under the European Commission\'s Standard Contractual Clauses.',
           'If you book a call, Calendly receives the name and email you give it. If you accept cookies, Google (for Google Analytics and Google Ads) and Leadsy receive the data described above.',
           'We do not sell your data, and we do not share it with anyone who is not listed here.',
         ],
@@ -111,7 +111,7 @@ const CONTENT: Record<Language, {
   },
   el: {
     title: 'Πολιτική Απορρήτου',
-    updated: 'Τελευταία ενημέρωση: 30 Σεπτεμβρίου 2026',
+    updated: 'Τελευταία ενημέρωση: 8 Οκτωβρίου 2026',
     intro:
       'Η πολιτική αυτή αφορά το www.fijisolutions.net. Περιγράφει τι συλλέγει ο ιστότοπος, γιατί, με ποιους μοιράζεται και τι μπορείς να μας ζητήσεις να κάνουμε.',
     blocks: [
@@ -148,7 +148,7 @@ const CONTENT: Record<Language, {
       {
         h: 'Ποιοι άλλοι βλέπουν τα δεδομένα σου',
         p: [
-          'Οι υποβολές των φορμών μεταφέρονται και αποθηκεύονται στην Amazon Web Services, σε υποδομή στις Ηνωμένες Πολιτείες (περιοχή us-east-1). Πρόκειται για διαβίβαση εκτός Ευρωπαϊκού Οικονομικού Χώρου, που γίνεται βάσει των Τυποποιημένων Συμβατικών Ρητρών της Ευρωπαϊκής Επιτροπής.',
+          'Οι υποβολές των φορμών μεταφέρονται και αποθηκεύονται στην Amazon Web Services, σε υποδομή στις Ηνωμένες Πολιτείες. Πρόκειται για διαβίβαση εκτός Ευρωπαϊκού Οικονομικού Χώρου, που γίνεται βάσει των Τυποποιημένων Συμβατικών Ρητρών της Ευρωπαϊκής Επιτροπής.',
           'Αν κλείσεις ραντεβού, η Calendly λαμβάνει το όνομα και το email που δίνεις. Αν αποδεχτείς τα cookies, η Google (για το Google Analytics και το Google Ads) και η Leadsy λαμβάνουν όσα περιγράφονται παραπάνω.',
           'Δεν πουλάμε τα δεδομένα σου και δεν τα μοιραζόμαστε με κανέναν που δεν αναφέρεται εδώ.',
         ],

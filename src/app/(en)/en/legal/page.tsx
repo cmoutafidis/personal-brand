@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
-        alt: 'Fiji Solutions Legal Information - Registered Software Company in Thessaloniki specializing in IT consulting and custom software development',
+        alt: 'Fiji Solutions Legal Information: Registered Software Company in Thessaloniki specializing in IT consulting and custom software development',
       },
     ],
   },

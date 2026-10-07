@@ -33,7 +33,7 @@ const processAutomation: Offer = {
         'Pick the process eating your week. We automate it in two weeks from the kickoff workshop, guaranteed to cost 75% less to run or we refund your fee.',
       metaKeywords:
         'automate a business process, process automation for small business, workflow automation Greece, no-code automation, automate manual data entry',
-      ogAlt: 'Fiji Solutions - one business process automated, two weeks from the kickoff workshop',
+      ogAlt: 'Fiji Solutions: one business process automated, two weeks from the kickoff workshop',
 
       eyebrow: 'Automate one business process',
       title: 'Pick the process that eats your week. Two weeks from the kickoff workshop, it runs itself.',
@@ -204,7 +204,7 @@ const processAutomation: Offer = {
         'Αυτοματοποίηση διαδικασίας σε δύο εβδομάδες από την εναρκτήρια συνάντηση. Κοστίζει τουλάχιστον 75% λιγότερο να τρέχει, αλλιώς επιστρέφουμε την αμοιβή.',
       metaKeywords:
         'αυτοματοποίηση διαδικασίας, αυτοματοποίηση διαδικασιών μικρή επιχείρηση, αυτοματισμοί επιχείρησης, no-code αυτοματοποίηση, χειροκίνητη καταχώρηση δεδομένων',
-      ogAlt: 'Fiji Solutions - μία διαδικασία αυτοματοποιημένη, δύο εβδομάδες από την εναρκτήρια συνάντηση',
+      ogAlt: 'Fiji Solutions: μία διαδικασία αυτοματοποιημένη, δύο εβδομάδες από την εναρκτήρια συνάντηση',
 
       eyebrow: 'Αυτοματοποίηση μίας διαδικασίας',
       title: 'Διάλεξε τη διαδικασία που σου τρώει την εβδομάδα. Δύο εβδομάδες από την εναρκτήρια συνάντηση, τρέχει μόνη της.',

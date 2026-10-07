@@ -21,10 +21,12 @@ const QuickLinks: React.FC = () => {
     {label: t('nav.home'), href: `/${language}`},
     {label: t('nav.audit'), href: `/${language}/business-process-audit`},
     {label: t('nav.portfolio'), href: `/${language}/portfolio`},
+    // 2026-10-08 (F16, F-D130): the about page, for a lead who checks who sent the email.
+    {label: t('nav.about'), href: `/${language}/about`},
     {label: t('nav.snowflake'), href: `/${language}/services/snowflake-consulting-greece`},
     // The blog is a content surface, not a service. It goes here and NOT in the navbar: the
-    // navbar's four items are the whole menu, and the eight offer pages are kept out of every
-    // menu for the same reason (see CLAUDE.md).
+    // navbar's four items are the whole menu, and the offer pages are kept out of every menu for
+    // the same reason (see CLAUDE.md), save the navbar's one link to sheet-to-app (2026-10-08, F-D132).
     {label: t('nav.blog'), href: `/${language}/blog`},
     {label: t('nav.contact'), href: `/${language}/contact`},
     {label: t('nav.privacy'), href: `/${language}/privacy-policy`},

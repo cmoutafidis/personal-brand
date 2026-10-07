@@ -38,9 +38,14 @@ const Navbar: React.FC = () => {
   // site with a named offer, a named deliverable, a guarantee and a booking link — had ZERO
   // internal links pointing at it and was reachable only by typing the URL. Snowflake moved out
   // to make room for it; it is still linked from Services and from the footer's Quick Links.
+  //
+  // 2026-10-08 (F16, offer-os gtm/followups-and-search/PLAN.md F-D132): the second link is the
+  // 7-Day Sheet-to-App Prototype, the offer both homepages sell, and "Process audit" moved to the
+  // footer's Quick Links. Charis picked "Swap 'Process audit' for the offer". This is the one
+  // /offers/* link a menu carries; the menu stays four links, and no other offer joins it.
   const navLinks = [
     {name: t('nav.home'), href: `/${language}`},
-    {name: t('nav.audit'), href: `/${language}/business-process-audit`},
+    {name: t('nav.offer'), href: `/${language}/offers/sheet-to-app`},
     {name: t('nav.portfolio'), href: `/${language}/portfolio`},
     {name: t('nav.contact'), href: `/${language}/contact`},
   ];

@@ -2,8 +2,8 @@
 // only, and the Vapi chat bubble does not load. Added 2026-09-30 (G19) for the sheet-to-app offer,
 // whose record asks for one thing to do on the page (offer.yaml page.attention_ratio_notes).
 //
-// This list lives here, and Navbar imports it, so Navbar.tsx itself never names an offer route:
-// CLAUDE.md's grep over the navigation files must keep printing nothing.
+// This list lives here, and Navbar imports it. Since 2026-10-08 (F16, F-D132) Navbar.tsx names one
+// offer route, sheet-to-app, as its second link; CLAUDE.md's check allows that one and no other.
 
 export const LANDING_PATHS: readonly string[] = ['/en/offers/sheet-to-app', '/el/offers/sheet-to-app'];
 

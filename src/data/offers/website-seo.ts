@@ -39,7 +39,7 @@ const websiteSeo: Offer = {
         'We rebuild or optimise your website and do the SEO, three weeks from the kickoff workshop. We agree a lead target in writing, or we refund your fee.',
       metaKeywords:
         'website and SEO, more leads from Google without ads, website redesign Greece, SEO for small business, Google Business Profile optimisation',
-      ogAlt: 'Fiji Solutions - website and SEO delivered three weeks from the kickoff workshop',
+      ogAlt: 'Fiji Solutions: website and SEO delivered three weeks from the kickoff workshop',
 
       eyebrow: 'Website and SEO for more leads',
       title: 'A website that brings you customers from search. Live three weeks from the kickoff workshop.',
@@ -235,7 +235,7 @@ const websiteSeo: Offer = {
         'Κατασκευή και προώθηση ιστοσελίδων στη Θεσσαλονίκη. Στον αέρα τρεις εβδομάδες από την εναρκτήρια συνάντηση. Γραπτός στόχος σε νέα αιτήματα ή πίσω η αμοιβή.',
       metaKeywords:
         'κατασκευή ιστοσελίδων, κατασκευή ιστοσελίδων Θεσσαλονίκη, προώθηση ιστοσελίδων, κατασκευή ιστοσελίδας Θεσσαλονίκη, SEO Θεσσαλονίκη, Google Business Profile',
-      ogAlt: 'Fiji Solutions - κατασκευή και προώθηση ιστοσελίδων στη Θεσσαλονίκη, στον αέρα τρεις εβδομάδες από την εναρκτήρια συνάντηση',
+      ogAlt: 'Fiji Solutions: κατασκευή και προώθηση ιστοσελίδων στη Θεσσαλονίκη, στον αέρα τρεις εβδομάδες από την εναρκτήρια συνάντηση',
 
       eyebrow: 'Κατασκευή ιστοσελίδων στη Θεσσαλονίκη',
       title: 'Φτιάχνουμε ιστοσελίδες στη Θεσσαλονίκη που σου φέρνουν πελάτες από την αναζήτηση. Στον αέρα τρεις εβδομάδες από την εναρκτήρια συνάντηση.',

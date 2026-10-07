@@ -37,7 +37,7 @@ const aiDevelopmentSprint: Offer = {
         'We develop your next software release in 15 days from the kickoff workshop, matched to your written requirements. On time and to spec, or your fee back.',
       metaKeywords:
         'software development sprint, fixed scope software development, reduce software development cost, custom software development Greece, software release in 15 days',
-      ogAlt: 'Fiji Solutions - your next software release built in a 15-day sprint from the kickoff workshop',
+      ogAlt: 'Fiji Solutions: your next software release built in a 15-day sprint from the kickoff workshop',
 
       eyebrow: 'AI development sprint',
       title: 'Your next software release, working 15 days after the kickoff workshop.',
@@ -208,7 +208,7 @@ const aiDevelopmentSprint: Offer = {
         'Αναπτύσσουμε την επόμενη έκδοση του λογισμικού σου σε 15 ημέρες από τη συνάντηση, σύμφωνα με τις γραπτές απαιτήσεις. Αλλιώς επιστρέφουμε την αμοιβή.',
       metaKeywords:
         'ανάπτυξη λογισμικού σε 15 ημέρες, κόστος ανάπτυξης λογισμικού, κύκλος ανάπτυξης λογισμικού, custom software development Ελλάδα, ανάπτυξη λογισμικού με AI',
-      ogAlt: 'Fiji Solutions - η επόμενη έκδοση του λογισμικού σου σε κύκλο υλοποίησης 15 ημερών από την εναρκτήρια συνάντηση',
+      ogAlt: 'Fiji Solutions: η επόμενη έκδοση του λογισμικού σου σε κύκλο υλοποίησης 15 ημερών από την εναρκτήρια συνάντηση',
 
       eyebrow: 'Κύκλος ανάπτυξης λογισμικού με AI',
       title: 'Η επόμενη έκδοση του λογισμικού σου, έτοιμη 15 ημέρες μετά την εναρκτήρια συνάντηση.',

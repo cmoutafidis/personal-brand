@@ -35,7 +35,7 @@ const aiPrototype: Offer = {
         'Pick one use case. We build a working AI prototype two weeks from the kickoff workshop, and guarantee at least 75% lower cost, or we refund your fee.',
       metaKeywords:
         'AI prototype, AI proof of concept, AI pilot project, test AI on one use case, AI prototype Greece',
-      ogAlt: 'Fiji Solutions - an AI prototype for one use case, two weeks from the kickoff workshop',
+      ogAlt: 'Fiji Solutions: an AI prototype for one use case, two weeks from the kickoff workshop',
 
       eyebrow: 'AI prototype for one use case',
       title: 'See what AI is actually worth here, on one use case, two weeks from the kickoff workshop.',
@@ -206,7 +206,7 @@ const aiPrototype: Offer = {
         'Μία περίπτωση χρήσης. Χτίζουμε AI πρωτότυπο σε δύο εβδομάδες από τη συνάντηση, με εγγύηση τουλάχιστον 75% χαμηλότερου κόστους ή επιστροφή αμοιβής.',
       metaKeywords:
         'AI πρωτότυπο, AI proof of concept, πιλοτικό έργο AI, δοκιμή AI σε μία περίπτωση χρήσης, AI πρωτότυπο Ελλάδα',
-      ogAlt: 'Fiji Solutions - AI πρωτότυπο για μία περίπτωση χρήσης, δύο εβδομάδες από την εναρκτήρια συνάντηση',
+      ogAlt: 'Fiji Solutions: AI πρωτότυπο για μία περίπτωση χρήσης, δύο εβδομάδες από την εναρκτήρια συνάντηση',
 
       eyebrow: 'AI πρωτότυπο για μία περίπτωση χρήσης',
       title: 'Δες τι αξίζει στα αλήθεια το AI εδώ, σε μία περίπτωση χρήσης, δύο εβδομάδες από την εναρκτήρια συνάντηση.',

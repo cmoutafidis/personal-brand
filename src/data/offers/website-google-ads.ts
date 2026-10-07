@@ -44,7 +44,7 @@ const websiteGoogleAds: Offer = {
         'We rebuild your website and launch your Google Ads campaign three weeks from the kickoff workshop. We agree a lead target in writing, or your fee back.',
       metaKeywords:
         'google ads agency, google ads campaign setup, website and google ads, ppc for small business, google ads management Greece',
-      ogAlt: 'Fiji Solutions - website and Google Ads campaign live three weeks after the kickoff workshop',
+      ogAlt: 'Fiji Solutions: website and Google Ads campaign live three weeks after the kickoff workshop',
 
       eyebrow: 'Website and Google Ads campaign',
       title: 'Your website and your Google Ads campaign, live together, three weeks from the kickoff workshop.',
@@ -236,7 +236,7 @@ const websiteGoogleAds: Offer = {
         'Διαφήμιση στη Google και ιστοσελίδα, στον αέρα μαζί τρεις εβδομάδες από την εναρκτήρια συνάντηση. Γραπτός στόχος σε νέα αιτήματα ή πίσω η αμοιβή.',
       metaKeywords:
         'διαφήμιση Google, διαφήμιση στη Google, διαχείριση Google Ads, καμπάνια Google Ads, κατασκευή ιστοσελίδας και Google Ads, Google Ads για μικρή επιχείρηση',
-      ogAlt: 'Fiji Solutions - διαφήμιση Google Ads και ιστοσελίδα, στον αέρα τρεις εβδομάδες από την εναρκτήρια συνάντηση',
+      ogAlt: 'Fiji Solutions: διαφήμιση Google Ads και ιστοσελίδα, στον αέρα τρεις εβδομάδες από την εναρκτήρια συνάντηση',
 
       eyebrow: 'Διαφήμιση Google Ads και ιστοσελίδα',
       title: 'Η ιστοσελίδα σου και η καμπάνια σου στο Google Ads, στον αέρα μαζί, τρεις εβδομάδες από την εναρκτήρια συνάντηση.',

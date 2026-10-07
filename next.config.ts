@@ -6,6 +6,8 @@ const LOCALELESS = [
   'business-process-audit',
   'portfolio',
   'contact',
+  // 2026-10-08 (F16, F-D130): a lead who checks the sender may type fijisolutions.net/about.
+  'about',
   'legal',
   'privacy-policy',
   'services/custom-software-development-greece',

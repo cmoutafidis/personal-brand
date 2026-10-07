@@ -43,20 +43,23 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
   // redirects to /offers/sheet-to-app (next.config.ts), so its row is gone. Set the sheet-to-app
   // lastmod to the deploy date if the deploy lands on a later day.
   {path: '/business-process-audit', priority: 0.9, changeFrequency: 'weekly', lastmod: '2026-09-30'},
-  {path: '/offers/sheet-to-app', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-30'},
+  // 2026-10-08 (F16): S09 names PAP Center and New Era Learning, the FAQ gains the US line.
+  {path: '/offers/sheet-to-app', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-08'},
   {path: '/offers/software-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-30'},
   {path: '/offers/ai-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
   {path: '/offers/process-automation', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
-  {path: '/offers/ai-agent', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
+  {path: '/offers/ai-agent', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-08'},
   {path: '/offers/ai-development-sprint', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
   {path: '/offers/website-seo', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-03'},
   {path: '/offers/website-google-ads', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-03'},
-  {path: '/portfolio', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-04'},
+  {path: '/portfolio', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-08'},
+  // 2026-10-08 (F16, F-D130): the about page, for a lead who checks who sent the email.
+  {path: '/about', priority: 0.6, changeFrequency: 'monthly', lastmod: '2026-10-08'},
   {path: '/services/custom-software-development-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-30'},
   {path: '/services/data-analysis-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-03'},
   {path: '/services/snowflake-consulting-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-09-03'},
-  {path: '/contact', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-08-15'},
-  {path: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-09-03'},
+  {path: '/contact', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-08'},
+  {path: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-10-08'},
   {path: '/legal', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-08-15'},
 ];
 

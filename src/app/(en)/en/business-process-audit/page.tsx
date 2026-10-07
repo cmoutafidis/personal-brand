@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
-        alt: 'Fiji Solutions - Free business process audit and custom AI software solutions',
+        alt: 'Fiji Solutions: Free business process audit and custom AI software solutions',
       },
     ],
   },

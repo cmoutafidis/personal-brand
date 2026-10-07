@@ -52,7 +52,7 @@ const softwarePrototype: Offer = {
         'Your custom software as a working prototype, two weeks from the kickoff workshop. On time and matching your written requirements, or we refund the fee.',
       metaKeywords:
         'custom software prototype, software prototype development, working prototype in two weeks, proof of concept software, rapid software prototyping, AI software development',
-      ogAlt: 'Fiji Solutions - a custom software prototype built in two weeks from the kickoff workshop',
+      ogAlt: 'Fiji Solutions: a custom software prototype built in two weeks from the kickoff workshop',
 
       eyebrow: 'Custom software prototype',
       title: 'Show them the software instead of the slide deck. Two weeks from the kickoff workshop.',
@@ -227,7 +227,7 @@ const softwarePrototype: Offer = {
         'Πρωτότυπο λογισμικού που δουλεύει, δύο εβδομάδες από την εναρκτήρια συνάντηση. Στην ώρα του, στις γραπτές προδιαγραφές, αλλιώς επιστρέφουμε την αμοιβή.',
       metaKeywords:
         'πρωτότυπο λογισμικού, ανάπτυξη πρωτοτύπου λογισμικού, proof of concept λογισμικό, κατασκευή λογισμικού με AI, γρήγορη ανάπτυξη λογισμικού',
-      ogAlt: 'Fiji Solutions - πρωτότυπο λογισμικού σε δύο εβδομάδες από την εναρκτήρια συνάντηση',
+      ogAlt: 'Fiji Solutions: πρωτότυπο λογισμικού σε δύο εβδομάδες από την εναρκτήρια συνάντηση',
 
       eyebrow: 'Πρωτότυπο λογισμικού',
       title: 'Δείξε τους το λογισμικό, αντί για τις διαφάνειες. Δύο εβδομάδες από την εναρκτήρια συνάντηση.',

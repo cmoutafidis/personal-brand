@@ -186,8 +186,11 @@ const sheetToApp: SheetToAppOffer = {
           blocks: [
             {type: 'p', text: 'Fiji Solutions is a software company in Thessaloniki. Our founder has more than ten years of experience building software in banking, travel, telecom, health and online education.'},
             {type: 'p', text: 'Fiji Solutions is listed in Snowflake\'s own partner directory as a Snowflake AI Data Cloud Select Partner.'},
-            {type: 'p', text: 'One story from our own work. A hair clinic in Thessaloniki ran on software built in 2000 and feared that software would stop working.'},
+            // 2026-10-08 (F16, offer-os gtm/followups-and-search/PLAN.md F-D140): PAP Center named with the
+            // owner's written yes (F-D20), and New Era Learning added (F-D30). AKB stays off every Fiji page (F-D21).
+            {type: 'p', text: 'PAP Center, a hair clinic in Thessaloniki, ran on software built in 2000 and feared that software would stop working.'},
             {type: 'p', text: 'We built the clinic a custom CRM, and it still runs today. We have shipped changes to that CRM every week since July 2026, on the platform your finished app runs on.'},
+            {type: 'p', text: 'New Era Learning is an online learning platform. We helped build the platform and built a Snowflake data setup that extracts their data into customer and revenue insights.'},
             {type: 'p', text: 'From the audit call through the prototype and the build, you talk to the engineer who builds your app.'}
           ]
         },
@@ -343,7 +346,7 @@ const sheetToApp: SheetToAppOffer = {
         {q: 'We don\'t have time for a software project.', a: 'Your part: the column headers, 30 minutes on the audit call and 30 minutes on day 7. We make the sample rows and send a link for every change.'},
         {q: 'Our data is sensitive.', a: 'The prototype runs on sample rows made from your column headers. Your real sheet moves in later, with the finished app, and we delete your data when you ask.'},
         {q: 'Every system we look at wants us to change how we work.', a: 'The app is built around the columns you already use, and the prototype is made from your own sheet.'},
-        {q: 'Who are you, and where are you based?', a: 'Fiji Solutions is a software company in Thessaloniki, Greece. Our founder has more than ten years of experience building software, and Snowflake\'s partner directory lists Fiji as a Select Partner.'},
+        {q: 'Who are you, and where are you based?', a: 'Fiji Solutions is a software company in Thessaloniki, Greece. We work with business owners in the United States and in Greece. Our founder has more than ten years of experience building software, and Snowflake\'s partner directory lists Fiji as a Select Partner.'},
         {q: 'What happens after day 7? Are we locked in?', a: 'If you go ahead, the finished app follows about three weeks later, on the same terms: pay only if you like it. Then you choose Care, Care Plus or the code, which is yours on request once the app is paid.'},
         {q: 'Can it keep our formulas and macros?', a: 'They stay out of the 7 days. They come into the finished app, for its one price, when we agree them on the audit call.'},
         {q: 'Is this just AI-generated code?', a: 'We use AI tools to build faster. The finished app runs on the same AWS platform as the CRM we have shipped changes to every week since July 2026.'},
@@ -500,7 +503,9 @@ const sheetToApp: SheetToAppOffer = {
           blocks: [
             {type: 'p', text: 'Ο ιδρυτής μας έχει πάνω από δέκα χρόνια εμπειρία στην κατασκευή λογισμικού, σε τράπεζες, τουρισμό, τηλεπικοινωνίες, υγεία και διαδικτυακή εκπαίδευση.'},
             {type: 'p', text: 'Η Fiji Solutions είναι Snowflake AI Data Cloud Select Partner. Το βλέπεις στον κατάλογο συνεργατών της ίδιας της Snowflake.'},
-            {type: 'p', text: 'Μια κλινική μαλλιών στη Θεσσαλονίκη δούλευε με λογισμικό φτιαγμένο το 2000 και φοβόταν μήπως σταματήσει να λειτουργεί. Της φτιάξαμε ένα CRM στα μέτρα της, που τρέχει ακόμα και σήμερα. Από τον Ιούλιο του 2026 παραδίδουμε αλλαγές σε αυτό το CRM κάθε βδομάδα, στην πλατφόρμα όπου θα τρέχει και η δική σου τελική εφαρμογή.'},
+            // 2026-10-08 (F16, F-D140): PAP Center named, New Era Learning added; AKB stays off (F-D21).
+            {type: 'p', text: 'Το PAP Center, μια κλινική μαλλιών στη Θεσσαλονίκη, δούλευε με λογισμικό φτιαγμένο το 2000 και φοβόταν μήπως σταματήσει να λειτουργεί. Φτιάξαμε για την κλινική ένα CRM στα μέτρα της, που τρέχει ακόμα και σήμερα. Από τον Ιούλιο του 2026 παραδίδουμε αλλαγές σε αυτό το CRM κάθε βδομάδα, στην πλατφόρμα όπου θα τρέχει και η δική σου τελική εφαρμογή.'},
+            {type: 'p', text: 'Το New Era Learning είναι πλατφόρμα διαδικτυακής εκπαίδευσης. Βοηθήσαμε να χτιστεί η πλατφόρμα και στήσαμε στη Snowflake ένα σύστημα που μετατρέπει τα δεδομένα της πλατφόρμας σε εικόνα για τους πελάτες και τα έσοδά της.'},
             {type: 'p', text: 'Από την πρώτη κλήση ως το πρωτότυπο και την τελική εφαρμογή, μιλάς με τον μηχανικό που χτίζει την εφαρμογή σου.'}
           ]
         },

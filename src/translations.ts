@@ -26,12 +26,18 @@ import {REPLY_SLA} from '@/lib/offer';
 //     there, as the landing page's data file types them, so no price constant enters
 //     `@/lib/offer`. To change one, change it in 03-copy-homepage.md first. Every other string in
 //     this file keeps this rule.
+//     2026-10-08 (F16, offer-os gtm/followups-and-search/PLAN.md F-D132, F-D135): `nav.offer` and
+//     `contact.title`, `contact.subtitle1` and `contact.subtitle3` join that exception. They type
+//     "7 days" and "30 minutes" as offer-os `offers/fiji-solutions--sheet-to-app/derived/site/
+//     F16-COPY.md` gives them; change them there first.
 
 export const translations: Record<Language, Record<string, string>> = {
   en: {
     // Navigation
     'nav.home': 'Home',
     'nav.audit': 'Process audit',
+    'nav.offer': '7-day prototype',
+    'nav.about': 'About',
     'nav.portfolio': 'Services',
     'nav.snowflake': 'Snowflake',
     'nav.blog': 'Blog',
@@ -92,10 +98,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'local.map': 'See us on the map',
 
     // Contact
-    'contact.title': 'Get the free process audit',
-    'contact.subtitle1': 'Tell us which process is costing you the most.',
-    'contact.subtitle2': `Fill in the form and we will reply within ${REPLY_SLA.en} with a practical first step.`,
-    'contact.subtitle3': 'No cost, no obligation.',
+    'contact.title': 'Start with a free 30-minute audit call',
+    'contact.subtitle1': 'Tell us which spreadsheet your team runs on. You get a prototype of your app 7 days after the audit call, and you pay only if you like it.',
+    'contact.subtitle2': `Fill in the form and we reply within ${REPLY_SLA.en}.`,
+    'contact.subtitle3': 'The audit call is free and takes 30 minutes.',
     'contact.info.title': 'Contact Information',
     'contact.form.title': 'Send a Message',
     'contact.form.name': 'Your Name',
@@ -209,6 +215,8 @@ export const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.home': 'Αρχική',
     'nav.audit': 'Έλεγχος διαδικασιών',
+    'nav.offer': 'Πρωτότυπο σε 7 μέρες',
+    'nav.about': 'Ποιοι είμαστε',
     'nav.portfolio': 'Υπηρεσίες',
     'nav.snowflake': 'Snowflake',
     'nav.blog': 'Blog',
@@ -261,10 +269,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'local.map': 'Δες μας στον χάρτη',
 
     // Contact
-    'contact.title': 'Κλείσε δωρεάν έλεγχο διαδικασιών',
-    'contact.subtitle1': 'Πες μας ποια διαδικασία σου κοστίζει περισσότερο.',
-    'contact.subtitle2': `Συμπλήρωσε τη φόρμα και θα σου απαντήσουμε μέσα σε ${REPLY_SLA.el} με ένα πρακτικό πρώτο βήμα.`,
-    'contact.subtitle3': 'Χωρίς κόστος, χωρίς δέσμευση.',
+    'contact.title': 'Ξεκίνα με μια δωρεάν κλήση 30 λεπτών',
+    'contact.subtitle1': 'Πες μας σε ποιο Excel τρέχει η δουλειά της ομάδας σου. 7 μέρες μετά την πρώτη κλήση έχεις ένα πρωτότυπο της εφαρμογής σου, και πληρώνεις μόνο αν σου αρέσει.',
+    'contact.subtitle2': `Συμπλήρωσε τη φόρμα και θα σου απαντήσουμε μέσα σε ${REPLY_SLA.el}.`,
+    'contact.subtitle3': 'Η πρώτη κλήση είναι δωρεάν και κρατάει 30 λεπτά.',
     'contact.info.title': 'Πώς να μας βρεις',
     'contact.form.title': 'Στείλε μας μήνυμα',
     'contact.form.name': 'Το όνομά σου',

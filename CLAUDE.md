@@ -79,18 +79,26 @@ pages — and from nowhere else. The whole graph is one file, `src/data/offerLin
 | `/business-process-audit`, in its own block **after** the form (2026-09-30) | sheet-to-app |
 | both homepages, `Local.tsx`, two prose links | website-seo, website-google-ads |
 | both homepages, `Solutions.tsx`, one prose link under the price box (2026-09-30, G20) | sheet-to-app |
+| `/portfolio`, `PortfolioOfferLink.tsx`, one prose link under the three cards (2026-10-08, F16, F-D133) | sheet-to-app |
+| `/about`, `AboutPage.tsx`, one prose link in "Where to start" (2026-10-08, F16, F-D130) | sheet-to-app |
+| the navbar, its second of four links (2026-10-08, F16, F-D132) | sheet-to-app, and only it |
 | each `/offers/*` page | its parent service page (if any) + its one sibling offer |
 
-**Still forbidden, and this half of the rule did not change.** Not in the navbar
-(`src/components/Navbar.tsx` is four links and stays four). Not in the footer. Not in `QuickLinks`.
-Not on `/portfolio`, which renders the three-card `Services` grid and is this site's one hub. Eight
-offers in a menu, a footer list or a hub grid **is** the service list, whatever the offers are
-called. **Do not add one to a navigation menu.** The check, which must print nothing:
+**Still forbidden, and this half of the rule did not change.** Not in the footer. Not in `QuickLinks`.
+Not in the three-card `Services` grid on `/portfolio`, this site's one hub. Eight offers in a menu, a
+footer list or a hub grid **is** the service list, whatever the offers are called.
+**2026-10-08, two dated exceptions, both Charis's picks in F16 of offer-os `gtm/followups-and-search`
+(PLAN.md F-D132, F-D133).** The navbar's second link is the 7-Day Sheet-to-App Prototype, the offer both
+homepages sell ("Swap 'Process audit' for the offer"); the navbar stays four links, "Process audit" moved
+to `QuickLinks`, and **no other offer joins a menu**. `/portfolio` carries one prose link to the same
+offer under the three cards (`src/components/PortfolioOfferLink.tsx`, "Yes, one prose link"); the cards
+stay three. The check, which must print nothing:
 
 ```
 grep -rn "offers/\|OfferLinks\|offerLinks\|OFFERS_BY_SERVICE\|WEBSITE_OFFERS" \
-  src/components/Navbar.tsx src/components/Footer.tsx src/components/QuickLinks.tsx \
-  src/components/Services.tsx "src/app/(en)/en/portfolio/page.tsx" "src/app/(el)/el/portfolio/page.tsx"
+  src/components/Footer.tsx src/components/QuickLinks.tsx src/components/Services.tsx \
+  "src/app/(en)/en/portfolio/page.tsx" "src/app/(el)/el/portfolio/page.tsx"
+grep -n "offers/" src/components/Navbar.tsx | grep -v "offers/sheet-to-app\|/offers/\* link"
 ```
 
 Three further guards, all in `offerLinks.ts`: every offer has at most **one** parent, so the map is
@@ -121,12 +129,13 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 | What | Where |
 |---|---|
 | Offer economics — durations, SLA, guarantee terms | `src/lib/offer.ts`. **Change the number here, not in copy.** The guarantee's four numbers (window, cure, claim window, answer deadline) live here. **No price constant lives here, or anywhere.** |
-| All UI copy, both locales | `src/translations.ts` (133 keys each, kept at exact parity; the count read 132 until 2026-09-30) |
+| All UI copy, both locales | `src/translations.ts` (135 keys each, kept at exact parity; 133 until 2026-10-08, when F16 added `nav.offer` and `nav.about`) |
 | The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
 | The audit form section, its CTA copy and the Calendly URL | `src/components/AuditFormSection.tsx`. Rendered by the offer page, and by the homepage until 2026-09-30 (G20, D5), so its strings live in that file. `AUDIT_CTA` feeds the offer page's five `CtaBlock`s, whose button is an in-page `#consultation-form` anchor. Give each new caller its own `presetQuestion`; it is the only lead-source marker there is. |
 | The sheet-to-app offer page (2026-09-30) | Its own layout, `src/components/SheetToAppLanding.tsx` (nineteen sections from its offer-os contract, sticky mobile bar in `SheetToAppStickyCta.tsx`), copy in `src/data/offers/sheet-to-app.ts`, verbatim from offer-os `offers/fiji-solutions--sheet-to-app/03-copy.md`. Metadata and JSON-LD come from the same `src/lib/offerSchema.ts`. Its booking link is `SHEET_TO_APP_BOOKING_URL` in that data file, the existing 30-minute Calendly event (offer-os D120, 2026-09-30), the same URL as `CALENDLY_URL`. `src/lib/landing.ts` lists the routes whose Navbar is logo-only and which load no Vapi bubble. |
 | The homepage hook (2026-09-30, G20) | Both homepages sell the sheet-to-app offer. `hero.*`, `challenges.*` and `solutions.*` in `src/translations.ts`, the body link and limit line in `src/components/Solutions.tsx`, the form in `src/components/SheetToAppFormSection.tsx` (`presetQuestion` `homepage-sheet-to-app`, `offer_slug` `sheet-to-app`, `cta_location` `home-hero`, `home-solutions-box` and `home-form-calendly`), and the long-form ids in `src/data/homeLongForm/`, all verbatim from offer-os `offers/fiji-solutions--sheet-to-app/03-copy-homepage.md`, the Greek `ti-kanoume` p2 included («Το ένα είναι ...» and «Το άλλο είναι ...», recorded in the contract's Findings item 5 on 2026-09-30, so «πρώτ-» stays within the ration of D67). ~~The Vapi voice button in the hero and the Vapi chat bubble are hidden on `/en` and `/el` (2026-09-30, G20): the assistant behind both still pitches the process audit and its guarantee, and the homepage names one guarantee (D53).~~ ~~`HOMEPAGE_VOICE_ON` in `src/lib/landing.ts` brings both back once G23's new assistant script is live in the Vapi dashboard.~~ 2026-10-04: the new script is live in the Vapi dashboard (version v5, Greek and English by voice), and `HOMEPAGE_VOICE_ON` is `true`, so both are back on `/en` and `/el`. |
 | The seven workbook offer pages | One layout, `src/components/OfferLanding.tsx` (the eighth offer, sheet-to-app, has its own layout, in the row above); one bilingual data file per offer in `src/data/offers/`; two thin routes each. Metadata and the Service + FAQPage JSON-LD are derived in `src/lib/offerSchema.ts` from the same object the page renders, so the marked-up FAQ cannot drift from the rendered one. **To add or change an offer, edit its data file.** Each carries its own `questionMarker`, which is the only thing telling its leads from the other seven in the shared inbox. |
+| The about page (2026-10-08, F16) | `src/components/AboutPage.tsx`: copy, metadata and the AboutPage JSON-LD in one file, verbatim from offer-os `offers/fiji-solutions--sheet-to-app/derived/site/F16-COPY.md`; the photo is `public/charis-moutafidis.jpg`, his own, cropped at his word (F-D131). The JSON-LD hangs `image` on the canonical Person reference. The Contact page strings (`contact.title`, `contact.subtitle*`) and its metadata lead with the 7-day prototype from the same file (F-D135); its form sends `offer_slug` `sheet-to-app` and keeps `form_location` `contact`. |
 | Canonical + hreflang | `src/lib/alternates.ts` — `buildAlternates(path, lang)` |
 | Consent gate | `src/lib/useConsent.ts` + `src/components/Analytics.tsx` |
 | GA4 event names, `trackEvent()` | `src/utils/gtag.ts`. Server components send clicks through `src/components/TrackedLink.tsx`. |
@@ -360,7 +369,7 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 
 ```
 npm run dev     # turbopack
-npm run build   # must stay at 39 static routes (23 + the 16 /offers/* pages added 2026-08-31)
+npm run build   # must stay at 41 static routes (23 + the 16 /offers/* pages added 2026-08-31 + the 2 /about pages added 2026-10-08)
 npm run lint
 
 npm run build && python3 scripts/hreflang-parity.py   # AFTER a build, always

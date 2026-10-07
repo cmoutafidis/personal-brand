@@ -3,6 +3,7 @@ import {buildAlternates} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 import Services from '@/components/Services';
 import Projects from '@/components/Projects';
+import PortfolioOfferLink from '@/components/PortfolioOfferLink';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
-        alt: 'Fiji Solutions Portfolio - Innovative software development projects from Thessaloniki specializing in web development, AI solutions, and Snowflake AI Data Cloud data engineering',
+        alt: 'Fiji Solutions Portfolio: Innovative software development projects from Thessaloniki specializing in web development, AI solutions, and Snowflake AI Data Cloud data engineering',
       },
     ],
   },
@@ -40,6 +41,7 @@ export default function EnglishPortfolioPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <Services t={t} lang="en"/>
+      <PortfolioOfferLink lang="en"/>
       <Projects t={t}/>
       <Footer t={t}/>
     </div>

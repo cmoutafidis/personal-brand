@@ -44,7 +44,7 @@ const aiAgent: Offer = {
       metaKeywords:
         'custom AI agent, AI agent for business, AI agent development, AI agent for customer emails, AI agent to run a process',
       ogAlt:
-        'Fiji Solutions - a custom AI agent running one business process, live a week after the kickoff workshop',
+        'Fiji Solutions: a custom AI agent running one business process, live a week after the kickoff workshop',
 
       eyebrow: 'Custom AI agent for one process',
       title: 'Pick one process. One week from the kickoff workshop, an AI agent runs it.',
@@ -186,7 +186,9 @@ const aiAgent: Offer = {
         },
         {
           q: 'Where does our data go?',
-          a: 'We agree the model and the hosting region with you before the build, and the agent touches only the systems you grant it. The documentation lists every connection. If your data cannot leave a specific jurisdiction, say so on the call.'
+          // 2026-10-08 (F16, offer-os gtm/followups-and-search/PLAN.md F-D31): no hosting region on any page;
+          // the answer is its offer.yaml's, hosting said as AWS.
+          a: 'The model is agreed before the build, and the agent runs on AWS. The agent touches only the systems it is granted. The documentation lists every connection. If your data cannot leave a specific jurisdiction, say so on the call.'
         },
         {
           q: 'How is this different from automating the process without AI?',
@@ -220,7 +222,7 @@ const aiAgent: Offer = {
       metaKeywords:
         'custom AI agent, AI agent για επιχειρήσεις, ανάπτυξη AI agent, AI agent για email πελατών, AI agent που τρέχει διαδικασία',
       ogAlt:
-        'Fiji Solutions - custom AI agent που τρέχει μία διαδικασία, ζωντανό μία εβδομάδα από την εναρκτήρια συνάντηση',
+        'Fiji Solutions: custom AI agent που τρέχει μία διαδικασία, ζωντανό μία εβδομάδα από την εναρκτήρια συνάντηση',
 
       eyebrow: 'Custom AI agent για μία διαδικασία',
       title: 'Διάλεξε μία διαδικασία. Μία εβδομάδα από την εναρκτήρια συνάντηση, την τρέχει ένα AI agent.',
@@ -362,7 +364,7 @@ const aiAgent: Offer = {
         },
         {
           q: 'Πού πάνε τα δεδομένα μας;',
-          a: 'Το μοντέλο και η περιοχή φιλοξενίας συμφωνούνται μαζί σου πριν την υλοποίηση, και το agent ακουμπά μόνο τα συστήματα που του δίνεις. Η τεκμηρίωση αναφέρει κάθε σύνδεση. Αν τα δεδομένα σου δεν επιτρέπεται να φύγουν από συγκεκριμένη δικαιοδοσία, πες το μας στην κλήση.'
+          a: 'Το μοντέλο συμφωνείται μαζί σου πριν την υλοποίηση, και το agent τρέχει στο AWS. Το agent ακουμπά μόνο τα συστήματα που του δίνεις. Η τεκμηρίωση αναφέρει κάθε σύνδεση. Αν τα δεδομένα σου δεν επιτρέπεται να φύγουν από συγκεκριμένη δικαιοδοσία, πες το μας στην κλήση.'
         },
         {
           q: 'Σε τι διαφέρει από αυτοματοποίηση χωρίς AI;',
