@@ -57,8 +57,8 @@ export default function ContactForm({
 
   // Form state.
   //
-  // `heardAbout` is state only and is NOT a sixth key in the request body. The endpoint accepts
-  // exactly name, email, company, question and message and 500s on anything else, so the answer
+  // `heardAbout` is state only and is NOT a key of its own in the request body. The endpoint emails
+  // name, email, company, question and message and ignores every other key, so the answer
   // rides at the end of `message`. It is asked because roughly 70-80% of B2B journeys strip
   // referrer data: someone who sees a post, searches the name days later and fills this form
   // arrives in analytics as "direct", and the content programme then gets judged on numbers that
@@ -77,6 +77,15 @@ export default function ContactForm({
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const hideTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  // Spam screening, added 2026-10-08. `website` carries a honeypot nobody sees (its input is named `leave_empty`, a name password managers do not fill), and `elapsed_ms` is how
+  // long the form was on screen before the submit; the endpoint drops a filled honeypot or a submit
+  // under three seconds without emailing it. Both are read from the DOM and the clock, never state.
+  const honeypot = useRef<HTMLInputElement>(null);
+  const shownAt = useRef(0);
+  useEffect(() => {
+    shownAt.current = performance.now();
+  }, []);
 
   useEffect(() => () => {
     if (hideTimer.current) {
@@ -183,7 +192,9 @@ export default function ContactForm({
           email: formData.email.trim(),
           company: formData.company.trim(),
           message: messageWithAttribution,
-          question: presetQuestion || formData.question.trim()
+          question: presetQuestion || formData.question.trim(),
+          website: honeypot.current?.value ?? '',
+          elapsed_ms: Math.round(performance.now() - shownAt.current)
         })
       });
 
@@ -387,6 +398,13 @@ export default function ContactForm({
               {microcopyUnderButton}
             </p>
           )}
+
+          {/* The honeypot. Off screen rather than display:none, which some bots skip. Never the form's
+              first child: space-y-6 would then add a gap above the name field. */}
+          <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+            <label htmlFor="leave-empty">Leave this field empty</label>
+            <input type="text" id="leave-empty" name="leave_empty" ref={honeypot} tabIndex={-1} autoComplete="off" data-1p-ignore="" data-lpignore="true" data-bwignore="true" data-form-type="other" defaultValue=""/>
+          </div>
 
           {/* Added 2026-08-15: this form sends a name, an email and a company name to a
               third-party endpoint. The page it sits on now says so and links to the policy. */}
