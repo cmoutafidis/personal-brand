@@ -31,8 +31,11 @@ import {offerLastmod} from '@/lib/offerSchema';
 // else, and the JSON-LD built in lib/offerSchema.ts carries none.
 //
 // ATTENTION RATIO. Navbar renders a logo-only header on this route and the Vapi chat bubble does
-// not load (src/lib/landing.ts). The body links nowhere except its own anchors, the privacy link
-// inside the form, and the offer graph's foot nav below the form. The footer stays, for the
+// not load (src/lib/landing.ts). The body links nowhere except its own anchors, the public mailto
+// address, the privacy link inside the form, the Calendly booking line under the form, the offer
+// graph's foot nav below the form, and (2026-10-08, F22, offer-os
+// gtm/followups-and-search/PLAN.md F-D161 to F-D164) the two case study lines in S09, each to its
+// shared Gamma doc in a new tab, so the offer page stays open behind it. The footer stays, for the
 // privacy-policy link.
 
 export type Block =
@@ -54,7 +57,12 @@ export type Block =
   /** A paragraph that is a quotation of the reader's own words. */
   | {type: 'quote'; text: string}
   /** A text link to the offer stack. `lead` is plain text before the link. */
-  | {type: 'skip'; text: string; lead?: string};
+  | {type: 'skip'; text: string; lead?: string}
+  /**
+   * A line linking a case study doc (F22, 2026-10-08), opened in a new tab. Each click is a
+   * cta_click with `location` as its cta_location. Only CS1 and CS-NEL, never CS-AKB (F-D21).
+   */
+  | {type: 'caseStudy'; text: string; href: string; location: string};
 
 export type Section =
   | {kind: 'content'; id: string; title: string; blocks: Block[]}
@@ -168,7 +176,7 @@ function CtaButton({
   );
 }
 
-function BlockView({block}: {block: Block}) {
+function BlockView({block, language, offerSlug}: {block: Block; language: Language; offerSlug: string}) {
   switch (block.type) {
     case 'p':
       return (
@@ -327,6 +335,21 @@ function BlockView({block}: {block: Block}) {
           </a>
         </p>
       );
+    case 'caseStudy':
+      return (
+        <p className="text-base">
+          <TrackedLink
+            event={CTA_CLICK_EVENT}
+            params={{cta_location: block.location, locale: language, offer_slug: offerSlug}}
+            href={block.href}
+            target="_blank"
+            rel="noopener"
+            className={linkClass}
+          >
+            {block.text}
+          </TrackedLink>
+        </p>
+      );
   }
 }
 
@@ -459,7 +482,7 @@ export default function SheetToAppLanding({offer, language}: {offer: SheetToAppO
               <h2 className="mb-8 text-3xl font-bold text-gray-950 dark:text-white md:text-4xl">{section.title}</h2>
               <div className="space-y-5 text-lg leading-8 text-gray-700 dark:text-gray-300">
                 {section.blocks.map((block, i) => (
-                  <BlockView key={`${section.id}-${i}`} block={block}/>
+                  <BlockView key={`${section.id}-${i}`} block={block} language={language} offerSlug={offerSlug}/>
                 ))}
               </div>
             </div>

@@ -38,6 +38,16 @@ import type {SheetToAppOffer} from '@/components/SheetToAppLanding';
  */
 export const SHEET_TO_APP_BOOKING_URL = 'https://calendly.com/charis-fijisolutions/30min';
 
+/**
+ * The two case studies S09 links (2026-10-08, F22, offer-os gtm/followups-and-search/PLAN.md F-D161
+ * to F-D164): Gamma docs in the Fiji workspace, shared view-only, copied from offer-os
+ * `offers/fiji-solutions--sheet-to-app/derived/gamma/LINKS.md` (CS1, CS-NEL). The AKB case study is
+ * never linked from a Fiji page (F-D21). If a doc is renamed in Gamma, its slug changes; the last 15
+ * characters are the doc ID and keep working on their own.
+ */
+export const CASE_STUDY_PAP_CENTER_URL = 'https://gamma.app/docs/Case-study-PAP-Center-90ptybbgeeyvct7';
+export const CASE_STUDY_NEW_ERA_LEARNING_URL = 'https://gamma.app/docs/Case-study-New-Era-Learning-wxkt0z0q2c523an';
+
 const sheetToApp: SheetToAppOffer = {
   slug: 'offers/sheet-to-app',
   questionMarker: 'offer-sheet-to-app',
@@ -198,7 +208,10 @@ const sheetToApp: SheetToAppOffer = {
             // owner's written yes (F-D20), and New Era Learning added (F-D30). AKB stays off every Fiji page (F-D21).
             {type: 'p', text: 'PAP Center, a hair clinic in Thessaloniki, ran on software built in 2000 and feared that software would stop working.'},
             {type: 'p', text: 'We built the clinic a custom CRM, and it still runs today. We have shipped changes to that CRM every week since July 2026, on the platform your finished app runs on.'},
+            // 2026-10-08 (F22, F-D161 to F-D164): a line under each story to its shared Gamma case study.
+            {type: 'caseStudy', text: 'Read the PAP Center case study', href: CASE_STUDY_PAP_CENTER_URL, location: 's09-case-study-pap-center'},
             {type: 'p', text: 'New Era Learning is an online learning platform. We helped build the platform and built a Snowflake data setup that extracts their data into customer and revenue insights.'},
+            {type: 'caseStudy', text: 'Read the New Era Learning case study', href: CASE_STUDY_NEW_ERA_LEARNING_URL, location: 's09-case-study-new-era-learning'},
             {type: 'p', text: 'From the audit call through the prototype and the build, you talk to the engineer who builds your app.'}
           ]
         },
@@ -514,7 +527,10 @@ const sheetToApp: SheetToAppOffer = {
             {type: 'p', text: 'Η Fiji Solutions είναι Snowflake AI Data Cloud Select Partner. Το βλέπεις στον κατάλογο συνεργατών της ίδιας της Snowflake.'},
             // 2026-10-08 (F16, F-D140): PAP Center named, New Era Learning added; AKB stays off (F-D21).
             {type: 'p', text: 'Το PAP Center, μια κλινική μαλλιών στη Θεσσαλονίκη, δούλευε με λογισμικό φτιαγμένο το 2000 και φοβόταν μήπως σταματήσει να λειτουργεί. Φτιάξαμε για την κλινική ένα CRM στα μέτρα της, που τρέχει ακόμα και σήμερα. Από τον Ιούλιο του 2026 παραδίδουμε αλλαγές σε αυτό το CRM κάθε βδομάδα, στην πλατφόρμα όπου θα τρέχει και η δική σου τελική εφαρμογή.'},
+            // 2026-10-08 (F22): the case studies are in English, so each line says so.
+            {type: 'caseStudy', text: 'Διάβασε τη μελέτη περίπτωσης για το PAP Center (στα αγγλικά)', href: CASE_STUDY_PAP_CENTER_URL, location: 's09-case-study-pap-center'},
             {type: 'p', text: 'Το New Era Learning είναι πλατφόρμα διαδικτυακής εκπαίδευσης. Βοηθήσαμε να χτιστεί η πλατφόρμα και στήσαμε στη Snowflake ένα σύστημα που μετατρέπει τα δεδομένα της πλατφόρμας σε εικόνα για τους πελάτες και τα έσοδά της.'},
+            {type: 'caseStudy', text: 'Διάβασε τη μελέτη περίπτωσης για το New Era Learning (στα αγγλικά)', href: CASE_STUDY_NEW_ERA_LEARNING_URL, location: 's09-case-study-new-era-learning'},
             {type: 'p', text: 'Από την πρώτη κλήση ως το πρωτότυπο και την τελική εφαρμογή, μιλάς με τον μηχανικό που χτίζει την εφαρμογή σου.'}
           ]
         },

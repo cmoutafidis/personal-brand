@@ -40,7 +40,11 @@ export type GtagParams = Record<string, string | number | boolean | undefined>;
 
 /** A form submission, sent from ContactForm on success. Every form on the site goes through it. */
 export const CONTACT_FORM_EVENT = 'contact_form_submit';
-/** A click on an in-page CTA that scrolls to a form. Engagement only, deliberately no key event. */
+/**
+ * A click on an in-page CTA that scrolls to a form, and since 2026-10-08 (F22, offer-os F-D164) on the
+ * two S09 case study links of /offers/sheet-to-app, which open a Gamma doc in a new tab and carry
+ * their own cta_location. Engagement only, deliberately no key event.
+ */
 export const CTA_CLICK_EVENT = 'cta_click';
 /** A click on the Calendly link. It opens a new tab; the booking itself is counted in Calendly. */
 export const BOOKING_CLICK_EVENT = 'booking_click';
