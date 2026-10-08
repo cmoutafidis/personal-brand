@@ -46,6 +46,14 @@ const sheetToApp: SheetToAppOffer = {
     en: ['United States'],
     el: ['Greece']
   },
+  // 2026-10-08 (F17 of offer-os gtm/followups-and-search). F-D143: each locale's own preview image,
+  // its words the offer name and the H1 (EN) or the H1 (EL), no price. F-D144: the visible
+  // "Updated" line at the page end, dated by the sitemap lastmod.
+  ogImage: {
+    en: '/og/sheet-to-app-en.png',
+    el: '/og/sheet-to-app-el.png'
+  },
+  showUpdated: true,
   copy: {
     en: {
       metaTitle: '7-day prototype. Pay only if you like it | Fiji Solutions',
@@ -367,7 +375,8 @@ const sheetToApp: SheetToAppOffer = {
       // Links SHEET_TO_APP_BOOKING_URL above, the existing 30-minute event (D120, 2026-09-30).
       bookingBefore: 'Or ',
       bookingLink: 'book the 30-minute audit call here',
-      bookingAfter: '.'
+      bookingAfter: '.',
+      updatedLabel: 'Updated'
     },
 
     el: {
@@ -696,7 +705,8 @@ const sheetToApp: SheetToAppOffer = {
       // Links SHEET_TO_APP_BOOKING_URL above, the existing 30-minute event (D120, 2026-09-30).
       bookingBefore: 'Ή ',
       bookingLink: 'διάλεξε κατευθείαν ώρα για την πρώτη κλήση',
-      bookingAfter: ' και στείλε μας από πριν τα ονόματα των στηλών.'
+      bookingAfter: ' και στείλε μας από πριν τα ονόματα των στηλών.',
+      updatedLabel: 'Ενημερώθηκε'
     }
   }
 };

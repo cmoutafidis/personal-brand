@@ -139,7 +139,8 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 | Canonical + hreflang | `src/lib/alternates.ts` — `buildAlternates(path, lang)` |
 | Consent gate | `src/lib/useConsent.ts` + `src/components/Analytics.tsx` |
 | GA4 event names, `trackEvent()` | `src/utils/gtag.ts`. Server components send clicks through `src/components/TrackedLink.tsx`. |
-| Sitemap | `src/app/sitemap.ts`, generated from a route list |
+| Sitemap | `src/app/sitemap.ts`, generated from the route list in `src/lib/routes.ts` (moved there 2026-10-08, F17). `routeLastmod()` gives a page its own lastmod: the sheet-to-app pages print it as "Updated <date>" at the page end and emit it as `dateModified`, so bump the lastmod and the page date moves with it. |
+| Site-wide JSON-LD (2026-10-08, F17) | `src/app/RootShell.tsx` emits the ProfessionalService node (`areaServed` Greece, Thessaloniki, United States) and a WebSite node (`#website`, `alternateName` fijisolutions.net). `src/lib/offerSchema.ts` gives every offer page a WebPage node (`isPartOf` the WebSite) with a two-item BreadcrumbList, and `inLanguage` on its FAQPage. The sheet-to-app pages have their own preview images, `public/og/sheet-to-app-en.png` and `-el.png`, whose words are the offer name and the H1, with no price (rule 7). |
 
 ## Rules that are load-bearing
 

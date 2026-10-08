@@ -8,6 +8,7 @@ import {BOOKING_CLICK_EVENT, CTA_CLICK_EVENT} from '@/utils/gtag';
 import {Language} from '@/types/language';
 import {OFFER_NEXT_COPY, PARENT_SERVICE, SERVICE_LABEL, SIBLING_OFFER, type OfferSlug} from '@/data/offerLinks';
 import {SHEET_TO_APP_BOOKING_URL} from '@/data/offers/sheet-to-app';
+import {offerLastmod} from '@/lib/offerSchema';
 
 // The layout of the 7-Day Sheet-to-App Prototype page, /en/offers/sheet-to-app and
 // /el/offers/sheet-to-app. Built 2026-09-30 in G19.
@@ -92,6 +93,8 @@ export type SheetToAppCopy = {
   bookingBefore: string;
   bookingLink: string;
   bookingAfter: string;
+  /** Written 2026-10-08 in F17 (F-D144), outside 03-copy.md: the word before the page's visible last-update date. */
+  updatedLabel: string;
 };
 
 export type SheetToAppOffer = {
@@ -102,10 +105,24 @@ export type SheetToAppOffer = {
   serviceType: string;
   /** schema.org areaServed per locale, from offer.yaml seo.area_served (D97). */
   areaServed: Record<Language, string[]>;
+  /** Site-relative 1200x630 preview image per locale (F17, F-D143). */
+  ogImage: Record<Language, string>;
+  /** Prints the sitemap lastmod as "Updated <date>" at the page end and emits it as dateModified (F17, F-D144). */
+  showUpdated: true;
   copy: Record<Language, SheetToAppCopy>;
 };
 
 const FORM_ID = 'sheet-to-app-form';
+
+/** An ISO date as "8 October 2026" or «8 Οκτωβρίου 2026», read in UTC so the build machine's zone cannot shift it. */
+function formatUpdated(iso: string, language: Language): string {
+  return new Date(`${iso}T00:00:00Z`).toLocaleDateString(language === 'el' ? 'el-GR' : 'en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
 const STACK_ID = 's07-offer-stack';
 const HERO_ID = 's01-hero';
 const CONTACT_EMAIL = 'info@fijisolutions.net';
@@ -367,6 +384,7 @@ export default function SheetToAppLanding({offer, language}: {offer: SheetToAppO
   const parent = PARENT_SERVICE[offer.slug as OfferSlug];
   const sibling = SIBLING_OFFER[offer.slug as OfferSlug];
   const next = OFFER_NEXT_COPY[language];
+  const updated = offerLastmod(offer);
 
   let band = 0;
   const bandClass = () =>
@@ -526,6 +544,13 @@ export default function SheetToAppLanding({offer, language}: {offer: SheetToAppO
             )}
           </ul>
         </nav>
+        {/* 2026-10-08 (F17, F-D144): the page's last update, at the page end, outside the nav
+            landmark. The date is the route's sitemap lastmod (src/lib/routes.ts), the same value the
+            WebPage node emits as dateModified, so the sitemap, this line and the JSON-LD agree. */}
+        <p className="mx-auto mt-8 max-w-[65ch] px-4 text-sm leading-6 text-gray-600 dark:text-gray-400 sm:px-6">
+          {c.updatedLabel}{' '}
+          <time dateTime={updated}>{formatUpdated(updated, language)}</time>
+        </p>
       </section>
 
       <SheetToAppStickyCta

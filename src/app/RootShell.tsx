@@ -281,15 +281,38 @@ function organisationSchema(lang: Language) {
     // Code repo emits, so the two companies' founders are one person rather than two matching
     // strings. See src/lib/person.ts.
     founder: PERSON_REF,
+    // 2026-10-08 (F17, offer-os F-D134): the United States joins, matching the visible sentence "We
+    // work with business owners in the United States and in Greece." on the EN offer FAQ and both
+    // about pages. It also separates us, for a machine, from Fiji IT Solutions, a Bay Area IT firm
+    // AI engines confused us with in the F14 panel.
     areaServed: [
       {'@type': 'Country', name: 'Greece'},
       {'@type': 'City', name: 'Thessaloniki'},
+      {'@type': 'Country', name: 'United States'},
     ],
     serviceType: [
       'Business Process Automation',
       'Custom Software Development',
       'Snowflake Consulting',
     ],
+  };
+}
+
+// The WebSite node, added 2026-10-08 (F17 of offer-os gtm/followups-and-search, F-D146). One `@id`
+// on every page, so every field is the same in both locales: `url` is the site root (the reason is
+// in the organisation node above), `inLanguage` lists both. `alternateName` is the domain, which
+// Google can use for the site name in results. Each offer page's WebPage node points here through
+// `isPartOf` (src/lib/offerSchema.ts).
+function websiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE}/#website`,
+    url: SITE,
+    name: 'Fiji Solutions',
+    alternateName: 'fijisolutions.net',
+    inLanguage: ['en', 'el'],
+    publisher: {'@id': ORGANISATION_ID},
   };
 }
 
@@ -309,6 +332,10 @@ export default function RootShell({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{__html: JSON.stringify(organisationSchema(lang))}}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{__html: JSON.stringify(websiteSchema())}}
       />
     </head>
     <body className="antialiased">
