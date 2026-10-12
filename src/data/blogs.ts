@@ -45,6 +45,12 @@ import kataskeviIstoselidonTiNaZitas from './blog/kataskevi-istoselidon-ti-na-zi
 // src/app/sitemap.ts and the two /blog index files). Original English, not a translation of the Greek posts.
 import howMuchDoesItCost from './blog/how-much-does-it-cost-to-turn-a-spreadsheet-into-an-app';
 import appsheetGlideOrADeveloper from './blog/appsheet-glide-or-a-developer';
+// Two English niche pages in buyer words (F21 of offer-os gtm/followups-and-search, 2026-10-12): the job
+// words construction subs and machine shops type ("crew schedule template excel", "job shop scheduling excel
+// template"), each "when the spreadsheet stops working, here is what the app does", linking the offer page.
+// Original English, no price, no client named.
+import crewScheduleChangeOrderJobTracker from './blog/crew-schedule-change-order-job-tracker-app';
+import jobShopSchedulingWorkOrderQuote from './blog/job-shop-scheduling-work-order-quote-app';
 
 // One file per article in src/data/blog/, the same convention src/data/offers/ uses. Fourteen
 // articles inline in this file was about seven thousand lines and nothing could be reviewed.
@@ -71,5 +77,7 @@ export const blogData: BlogData = {
   en: [
     howMuchDoesItCost,
     appsheetGlideOrADeveloper,
+    crewScheduleChangeOrderJobTracker,
+    jobShopSchedulingWorkOrderQuote,
   ],
 };

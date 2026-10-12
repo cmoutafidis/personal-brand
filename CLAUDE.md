@@ -292,6 +292,12 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
   and stay self-referential (no post has a cross-locale twin), which is why `blogSchema` still does not
   call `buildAlternates()`. The Greek posts were not translated. No price in the posts (rule 7): the cost
   article links `/en/offers/sheet-to-app#s12-what-it-costs` for the figures.
+  **2026-10-12 (F21 of the same plan, F-D177 to F-D179): two more English posts join `blogData.en`**,
+  `crew-schedule-change-order-job-tracker-app` and `job-shop-scheduling-work-order-quote-app`: niche pages in
+  the job words construction subs and machine shops type, each "when the spreadsheet stops working, here is
+  what the app does", linking the offer page. Same conventions as the F20 pair (self-referential, no price,
+  no client named, link `#s12-what-it-costs`). They are prerendered paths under the existing `/en/blog/[slug]`
+  route, so the route count stays 42.
 - **The blog batch broke the one-term-per-concept rule and it is swept (2026-09-02).** Sixteen
   places in six of the fourteen articles inflected a bare English noun as a Greek one — «το site
   σου», «σε άλλα sites», «στο theme σου», «Δικός σου server» — against a rule this repo had already
