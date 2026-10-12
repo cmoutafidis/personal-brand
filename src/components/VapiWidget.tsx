@@ -56,13 +56,35 @@ const VapiWidget: React.FC<VapiWidgetProps> = ({
     });
 
     vapiInstance.on('message', (message) => {
-      if (message.type === 'transcript') {
-        console.log(`${message.role}: ${message.transcript}`);
+      // The call keeps ending with Daily's "Meeting has ended" ejection, which only means the
+      // Vapi call stopped server-side. endedReason on the status-update / end-of-call-report is
+      // the one field that says WHY (silence timeout, a pipeline error, a max-duration cap, the
+      // assistant ending the call itself, or an account fault). Log it so we can see it.
+      const m = message as {
+        type?: string;
+        status?: string;
+        endedReason?: string;
+        role?: string;
+        transcript?: string;
+      };
+      if (m.type === 'status-update') {
+        console.log('Vapi status-update:', m.status, m.endedReason ? `(endedReason: ${m.endedReason})` : '');
+      } else if (m.type === 'end-of-call-report') {
+        console.log('Vapi end-of-call-report, endedReason:', m.endedReason);
+      } else if (m.type === 'transcript') {
+        console.log(`${m.role}: ${m.transcript}`);
       }
     });
 
     vapiInstance.on('error', (error) => {
-      console.error('Vapi error:', error);
+      // Stringify so the nested Vapi/Daily reason is visible in the console, not "Object".
+      let detail = '';
+      try {
+        detail = JSON.stringify(error);
+      } catch {
+        detail = String(error);
+      }
+      console.error('Vapi error:', detail, error);
       setIsLoading(false);
       setIsConnected(false);
     });
