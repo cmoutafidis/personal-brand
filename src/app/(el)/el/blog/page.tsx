@@ -2,24 +2,20 @@ import type {Metadata} from 'next';
 import BlogList from '@/components/BlogList';
 import Footer from '@/components/Footer';
 import {blogData} from '@/data/blogs';
+import {buildAlternates} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 
 const siteUrl = 'https://www.fijisolutions.net';
 
-// Indexable: blogData.el carries posts. The English index is noindex while blogData.en is empty —
-// see (en)/en/blog/page.tsx, that divergence is deliberate.
+// Indexable: blogData.el carries posts. Since 2026-10-12 blogData.en carries the two English answer articles
+// too (F20 of offer-os gtm/followups-and-search), so /en/blog is indexable and this page uses
+// buildAlternates('/blog', 'el'), which names en, el and x-default. Before that, this block omitted en
+// because /en/blog was an empty noindex page the sitemap did not list.
 export const metadata: Metadata = {
   title: 'Blog: ιστοσελίδες και αναζήτηση | Fiji Solutions',
   description: 'Πρακτικά κείμενα για ιστοσελίδες, αναζήτηση και ό,τι αξίζει να συμφωνηθεί γραπτά. Κάθε ισχυρισμός για την Google με πηγή και ημερομηνία.',
   keywords: 'κατασκευή ιστοσελίδων, προώθηση ιστοσελίδων, αναζήτηση Google, Θεσσαλονίκη, Fiji Solutions',
-  // NOT buildAlternates(): that always declares both locales, and /en/blog is an empty noindex
-  // page. src/app/sitemap.ts lists only the Greek blog URLs, and Google discards an hreflang set
-  // when the sitemap and the page disagree. Restore buildAlternates('/blog', 'el') in the same
-  // commit that fills blogData.en.
-  alternates: {
-    canonical: `${siteUrl}/el/blog`,
-    languages: {el: `${siteUrl}/el/blog`, 'x-default': `${siteUrl}/el/blog`},
-  },
+  alternates: buildAlternates('/blog', 'el'),
   openGraph: {
     type: 'website',
     url: `${siteUrl}/el/blog`,

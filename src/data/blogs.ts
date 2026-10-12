@@ -2,8 +2,12 @@ import type {BlogData} from '@/types/blog';
 
 // Greek-first on purpose. «κατασκευή ιστοσελίδων» measures 2,900 searches a month, stable across
 // eleven of twelve months, while every Greek phrase for automation and AI work measures at or near
-// Google's reporting floor. The blog answers what people actually type. `en` stays empty until
-// there is a reason. Roadmap: offer-os/gtm/fiji-greek-content-plan-2026-09-02.md.
+// Google's reporting floor. The blog answers what people actually type. Roadmap:
+// offer-os/gtm/fiji-greek-content-plan-2026-09-02.md.
+// 2026-10-12 (F20 of offer-os gtm/followups-and-search): `en` now carries the two English answer
+// articles, written for the full-sentence cost and tool-choice questions AI assistants answer. They
+// are original English, not translations of the Greek posts. See the two /blog index pages and
+// src/app/sitemap.ts for the three parts undone together when en was filled.
 //
 // ⚠️ TWO MEASUREMENT TRAPS, both proven on 2026-09-02, both of which had already produced a wrong
 // number in this file:
@@ -36,6 +40,11 @@ import istoselidaStisApantiseisAi from './blog/istoselida-stis-apantiseis-ai';
 import googleSearchConsoleTiSouLeei from './blog/google-search-console-ti-sou-leei';
 import giatiDenEmfanizetaiIIstoselidaStoGoogle from './blog/giati-den-emfanizetai-i-istoselida-sto-google';
 import kataskeviIstoselidonTiNaZitas from './blog/kataskevi-istoselidon-ti-na-zitas';
+// English answer articles (F20 of offer-os gtm/followups-and-search, 2026-10-12). These are the first
+// entries in blogData.en; filling it turns /en/blog indexable (see the three-part undo in that page,
+// src/app/sitemap.ts and the two /blog index files). Original English, not a translation of the Greek posts.
+import howMuchDoesItCost from './blog/how-much-does-it-cost-to-turn-a-spreadsheet-into-an-app';
+import appsheetGlideOrADeveloper from './blog/appsheet-glide-or-a-developer';
 
 // One file per article in src/data/blog/, the same convention src/data/offers/ uses. Fourteen
 // articles inline in this file was about seven thousand lines and nothing could be reviewed.
@@ -59,5 +68,8 @@ export const blogData: BlogData = {
     giatiDenEmfanizetaiIIstoselidaStoGoogle,
     kataskeviIstoselidonTiNaZitas,
   ],
-  en: [],
+  en: [
+    howMuchDoesItCost,
+    appsheetGlideOrADeveloper,
+  ],
 };

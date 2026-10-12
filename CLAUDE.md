@@ -283,6 +283,15 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
   Greek index's hreflang omits `en` so it agrees with the sitemap. Undo all three together in the
   commit that fills `blogData.en` — and do not machine-translate the Greek posts to fill it.
   `/blog` is in QuickLinks (the footer), never in the navbar.
+  **2026-10-12 (F20 of offer-os `gtm/followups-and-search`, F-D173, F-D176): `blogData.en` is filled.**
+  Two original English answer articles (`how-much-does-it-cost-to-turn-a-spreadsheet-into-an-app`,
+  `appsheet-glide-or-a-developer`) are in `src/data/blog/` and in `blogData.en`, so `/en/blog` is now
+  indexable. The three were undone together in this commit: both index pages use
+  `buildAlternates('/blog', ...)`; `src/app/sitemap.ts` lists the English posts and gives both `/blog`
+  index entries `hreflangMap('/blog')`; the Greek index names `en`. The POSTS still carry no `twinSlug`
+  and stay self-referential (no post has a cross-locale twin), which is why `blogSchema` still does not
+  call `buildAlternates()`. The Greek posts were not translated. No price in the posts (rule 7): the cost
+  article links `/en/offers/sheet-to-app#s12-what-it-costs` for the figures.
 - **The blog batch broke the one-term-per-concept rule and it is swept (2026-09-02).** Sixteen
   places in six of the fourteen articles inflected a bare English noun as a Greek one — «το site
   σου», «σε άλλα sites», «στο theme σου», «Δικός σου server» — against a rule this repo had already
@@ -370,7 +379,7 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 
 ```
 npm run dev     # turbopack
-npm run build   # must stay at 41 static routes (23 + the 16 /offers/* pages added 2026-08-31 + the 2 /about pages added 2026-10-08)
+npm run build   # must stay at 42 routes (23 + the 16 /offers/* pages added 2026-08-31 + the 2 /about pages added 2026-10-08 + the /en/blog/[slug] route, which appears once blogData.en has posts, added 2026-10-12, F20)
 npm run lint
 
 npm run build && python3 scripts/hreflang-parity.py   # AFTER a build, always

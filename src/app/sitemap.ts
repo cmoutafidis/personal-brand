@@ -19,9 +19,13 @@ const SITE = 'https://www.fijisolutions.net';
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];
 
-  // The blog does not go through ROUTES, because ROUTES emits every path in BOTH locales and the
-  // blog is not symmetrical: blogData.el has posts, blogData.en is empty and /en/blog is noindex.
-  // Listing an English post URL that does not exist is the failure this file was rewritten to stop.
+  // The blog does not go through ROUTES, because ROUTES emits every path in BOTH locales and a post
+  // exists in one locale only. Each post is listed under its own locale, with NO hreflang annotation:
+  // a post has no cross-locale twin, so its page declares a self-referential set and the parity gate
+  // reads "sitemap silent, page self-referential" as agreement. Since 2026-10-12 blogData.en carries
+  // the two English answer articles (F20 of offer-os gtm/followups-and-search), so the English posts
+  // and the /en/blog index are listed too. Listing a URL that does not exist is still the failure this
+  // file guards against, so both loops are driven by the real post lists.
   for (const post of blogData.el) {
     entries.push({
       url: `${SITE}/el/blog/${post.slug}`,
@@ -30,11 +34,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     });
   }
+  for (const post of blogData.en) {
+    entries.push({
+      url: `${SITE}/en/blog/${post.slug}`,
+      lastModified: post.updatedAt ?? post.publishedAt,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    });
+  }
+  // The two blog index pages ARE twins and use buildAlternates('/blog', ...), so each page head declares
+  // en, el and x-default. These sitemap entries carry the same map, or the parity gate goes red on a set
+  // mismatch. hreflangMap is already the one shared source the ROUTES loop below uses.
   entries.push({
     url: `${SITE}/el/blog`,
     lastModified: '2026-09-01',
     changeFrequency: 'weekly',
     priority: 0.6,
+    alternates: {languages: hreflangMap('/blog')},
+  });
+  entries.push({
+    url: `${SITE}/en/blog`,
+    lastModified: '2026-10-12',
+    changeFrequency: 'weekly',
+    priority: 0.6,
+    alternates: {languages: hreflangMap('/blog')},
   });
 
   for (const r of ROUTES) {

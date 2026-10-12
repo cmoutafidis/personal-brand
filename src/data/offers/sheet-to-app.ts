@@ -372,7 +372,12 @@ const sheetToApp: SheetToAppOffer = {
         {q: 'Can it keep our formulas and macros?', a: 'They stay out of the 7 days. They come into the finished app, for its one price, when we agree them on the audit call.'},
         {q: 'Is this just AI-generated code?', a: 'We use AI tools to build faster. The finished app runs on the same AWS platform as the CRM we have shipped changes to every week since July 2026.'},
         {q: 'What if you disappear?', a: 'Once the finished app is paid, its code is yours on request at any time. Everything it runs on is written down as code, so another engineer can pick it up.'},
-        {q: 'We already use industry software or an ERP.', a: 'Keep it. The prototype is for the spreadsheet that sits next to it. With no such sheet, we are the wrong call.'}
+        {q: 'We already use industry software or an ERP.', a: 'Keep it. The prototype is for the spreadsheet that sits next to it. With no such sheet, we are the wrong call.'},
+        // Two buyer-phrased Q&As added 2026-10-12 (F20 of offer-os gtm/followups-and-search, F-D176): they
+        // carry the order-tracker, web-app, logins, AppSheet and developer phrasings onto the page and into
+        // the FAQPage JSON-LD. No price (these feed the JSON-LD; prices stay in S12).
+        {q: 'Can you turn my Excel order tracker into a web app with logins?', a: 'Yes. Your order tracker becomes a web app where each person signs in and sees the screen for their role. We start from your column headers and build a screen for each role, with the logins and permissions you need. A Google Sheet works the same way.'},
+        {q: 'Is AppSheet enough, or do I need a developer?', a: 'If someone on your team will build the app in a tool like AppSheet or Glide and keep it running, a no-code tool can be enough, and we will tell you so on the call. When you want it built for you, joined to your accounting and email, with your own columns, that is the work we do.'}
       ],
 
       formTitle: 'Send your column headers and book your 30-minute call',
@@ -705,7 +710,10 @@ const sheetToApp: SheetToAppOffer = {
         {q: '«Κρατάει τους τύπους και τις μακροεντολές μας;»', a: 'Ναι, στην τελική εφαρμογή, αν τα συμφωνήσουμε στην πρώτη κλήση, και τα καλύπτει η ίδια σταθερή τιμή. Οι 7 μέρες του πρωτοτύπου πάνε σε οθόνες, ρόλους και ενέργειες.'},
         {q: '«Δηλαδή τον κώδικα τον γράφει το AI;»', a: 'Χρησιμοποιούμε εργαλεία AI για να χτίζουμε πιο γρήγορα. Η τελική εφαρμογή τρέχει στην ίδια πλατφόρμα στο AWS με το CRM που φτιάξαμε για μια κλινική στη Θεσσαλονίκη, στο οποίο παραδίδουμε αλλαγές κάθε βδομάδα από τον Ιούλιο του 2026. Και σε κάθε βήμα ισχύει το «Πληρώνεις μόνο αν σου αρέσει».'},
         {q: '«Κι αν εξαφανιστείτε;»', a: 'Μόλις πληρώσεις την τελική εφαρμογή, ζητάς τον κώδικά της όποτε θέλεις. Όλο το στήσιμό της είναι κι αυτό γραμμένο σε κώδικα, οπότε μπορεί να τη συνεχίσει άλλος μηχανικός.'},
-        {q: '«Έχουμε ήδη λογισμικό του κλάδου μας ή ERP.»', a: 'Κράτα το. Το πρωτότυπο είναι για το Excel που έχεις ακόμα δίπλα του, αν υπάρχει. Αν δεν υπάρχει τέτοιο Excel, αυτή η πρόταση δεν είναι για σένα.'}
+        {q: '«Έχουμε ήδη λογισμικό του κλάδου μας ή ERP.»', a: 'Κράτα το. Το πρωτότυπο είναι για το Excel που έχεις ακόμα δίπλα του, αν υπάρχει. Αν δεν υπάρχει τέτοιο Excel, αυτή η πρόταση δεν είναι για σένα.'},
+        // Οι δύο ερωτήσεις με λόγια του πελάτη, 2026-10-12 (F20, F-D176). Χωρίς τιμή.
+        {q: '«Μπορείς να κάνεις τον πίνακα παραγγελιών μου στο Excel εφαρμογή με λογαριασμούς χρηστών;»', a: 'Ναι. Ο πίνακας παραγγελιών σου γίνεται μια εφαρμογή όπου ο καθένας μπαίνει με τον δικό του λογαριασμό και βλέπει την οθόνη του ρόλου του. Ξεκινάμε από τα ονόματα των στηλών σου και φτιάχνουμε μια οθόνη για κάθε ρόλο, με τους λογαριασμούς και τα δικαιώματα που χρειάζεσαι. Ένα Google Sheet δουλεύει με τον ίδιο τρόπο.'},
+        {q: '«Φτάνει το AppSheet ή χρειάζομαι προγραμματιστή;»', a: 'Αν στην ομάδα σου υπάρχει κάποιος που θα φτιάξει την εφαρμογή σε ένα εργαλείο όπως το AppSheet ή το Glide και θα τη συντηρεί, ένα no-code εργαλείο μπορεί να φτάνει, και θα σου το πούμε στην κλήση. Όταν θέλεις να σου τη φτιάξουμε εμείς, συνδεδεμένη με τη λογιστική και το email σου, με τις δικές σου στήλες, αυτή είναι η δουλειά που κάνουμε.'}
       ],
 
       formTitle: 'Στείλε μας τα ονόματα των στηλών σου',
