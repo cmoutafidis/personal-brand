@@ -218,7 +218,7 @@ const websiteGoogleAds: Offer = {
       formSubhead:
         'Name what you sell and the area you serve. We will come back with what it would take to bring you leads from Google, and the target we would sign.',
       formMessageLabel: 'What do you sell, and where? (optional)',
-      formMessagePlaceholder: 'e.g. commercial air conditioning, Thessaloniki and Halkidiki…',
+      formMessagePlaceholder: 'e.g. structural steel, Dallas and Fort Worth…',
       formMicrocopy: 'Free, no obligation, no sales pitch.',
       formSuccess: 'Thank you. We will come back to you about your website and your campaign.',
       calendlyLead: 'Prefer to skip the form? Book the call directly:',
