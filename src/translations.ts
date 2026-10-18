@@ -30,6 +30,8 @@ import {REPLY_SLA} from '@/lib/offer';
 //     `contact.title`, `contact.subtitle1` and `contact.subtitle3` join that exception. They type
 //     "7 days" and "30 minutes" as offer-os `offers/fiji-solutions--sheet-to-app/derived/site/
 //     F16-COPY.md` gives them; change them there first.
+//     2026-10-18 (offer-os gtm/atlas/DECISIONS.md AT-D8, AT-D25): `nav.atlas` joins both locales,
+//     "Atlas" in Latin script in Greek too, from offer-os `offers/fiji-solutions--atlas/03-copy.md`.
 
 export const translations: Record<Language, Record<string, string>> = {
   en: {
@@ -39,6 +41,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.offer': '7-day prototype',
     'nav.about': 'About',
     'nav.portfolio': 'Services',
+    'nav.atlas': 'Atlas',
     'nav.snowflake': 'Snowflake',
     'nav.blog': 'Blog',
     'nav.contact': 'Contact',
@@ -218,6 +221,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.offer': 'Πρωτότυπο σε 7 μέρες',
     'nav.about': 'Ποιοι είμαστε',
     'nav.portfolio': 'Υπηρεσίες',
+    'nav.atlas': 'Atlas',
     'nav.snowflake': 'Snowflake',
     'nav.blog': 'Blog',
     'nav.contact': 'Επικοινωνία',

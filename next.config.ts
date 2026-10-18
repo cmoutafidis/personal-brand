@@ -27,6 +27,8 @@ const LOCALELESS = [
   'offers/ai-development-sprint',
   'offers/website-seo',
   'offers/website-google-ads',
+  // 2026-10-18: Atlas (offer-os gtm/atlas/DECISIONS.md AT-D8).
+  'offers/atlas',
 ];
 
 const nextConfig: NextConfig = {

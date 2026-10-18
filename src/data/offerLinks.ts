@@ -30,6 +30,9 @@ import websiteGoogleAds from '@/data/offers/website-google-ads';
 // 2026-10-08 (F16, offer-os gtm/followups-and-search/PLAN.md F-D132, F-D133): two exceptions, both to
 // sheet-to-app only: the navbar's second link (Navbar.tsx) and one prose link on /portfolio
 // (PortfolioOfferLink.tsx). Neither goes through this file. See CLAUDE.md.
+// 2026-10-18 (offer-os gtm/atlas/DECISIONS.md AT-D8): /offers/atlas is linked from the navbar and
+// QuickLinks and is deliberately NOT in this graph: it is never linked from inside another offer's
+// page, and its own page links to no other offer. See CLAUDE.md.
 //
 // ⛔ ONE PARENT PER OFFER. OFFERS_BY_SERVICE is a TREE, not a mesh: every offer appears in at most
 // one array. snowflake-consulting-greece carries ZERO offers on purpose — no offer is an honest

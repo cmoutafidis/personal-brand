@@ -43,10 +43,16 @@ const Navbar: React.FC = () => {
   // 7-Day Sheet-to-App Prototype, the offer both homepages sell, and "Process audit" moved to the
   // footer's Quick Links. Charis picked "Swap 'Process audit' for the offer". This is the one
   // /offers/* link a menu carries; the menu stays four links, and no other offer joins it.
+  //
+  // 2026-10-18 (offer-os gtm/atlas/DECISIONS.md AT-D8, Charis: "everything looks good, yes"): one
+  // dated exception to the sentence above. "Atlas" sits directly after "Services", beside the
+  // services and outside the services list (the 2026-08-16 no-fourth-nav-service rule is about
+  // that list). The menu is five links; no other offer joins it.
   const navLinks = [
     {name: t('nav.home'), href: `/${language}`},
     {name: t('nav.offer'), href: `/${language}/offers/sheet-to-app`},
     {name: t('nav.portfolio'), href: `/${language}/portfolio`},
+    {name: t('nav.atlas'), href: `/${language}/offers/atlas`},
     {name: t('nav.contact'), href: `/${language}/contact`},
   ];
 

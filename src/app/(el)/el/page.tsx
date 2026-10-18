@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import Challenges from '@/components/Challenges';
 import Solutions from '@/components/Solutions';
 import Local from '@/components/Local';
+import AtlasHomeSection from '@/components/AtlasHomeSection';
 import SheetToAppFormSection from '@/components/SheetToAppFormSection';
 import Footer from "@/components/Footer";
 import HomeLongForm from '@/components/HomeLongForm';
@@ -57,6 +58,9 @@ export default function GreekHomePage() {
       <Hero t={t}/>
       <Challenges t={t}/>
       <Solutions t={t} language={language}/>
+      {/* 2026-10-18 (offer-os gtm/atlas/DECISIONS.md AT-D8, AT-D22): the Atlas band, its own section
+          directly after the Sheet-to-App section. */}
+      <AtlasHomeSection language={language}/>
       {/* Where we are and the two website offers, then the sheet-to-app form. Both homepage
           buttons scroll to that form (2026-09-30, G20, D5). See Local.tsx for why this section
           exists. */}

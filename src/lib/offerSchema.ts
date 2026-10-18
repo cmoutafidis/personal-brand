@@ -39,6 +39,11 @@ import {ORGANISATION_ID} from '@/lib/person';
 //  7. An offer that sets `showUpdated` prints "Updated <date>" at the page end and its WebPage node
 //    carries `dateModified`, both read from its sitemap lastmod (src/lib/routes.ts), so the three
 //    agree. Only sheet-to-app sets it.
+// 2026-10-18 (offer-os gtm/atlas/DECISIONS.md): /offers/atlas is built through both functions.
+//  8. `metaKeywords` is optional and the FAQPage node is emitted only when the page has an FAQ.
+//    Atlas has neither. Its body publishes "Atlas starts from USD 100,000" after the value stack
+//    (AT-D2, the dated exception to CLAUDE.md rule 7, placed by AT-D34); its structured data carries
+//    no `offers` node and no price.
 
 /** The fields metadata and JSON-LD are built from. Every `Offer` and `SheetToAppOffer` fits it. */
 export type OfferSchemaSource = {
@@ -52,7 +57,9 @@ export type OfferSchemaSource = {
   showUpdated?: boolean;
   copy: Record<
     Language,
-    {metaTitle: string; metaDescription: string; metaKeywords: string; ogAlt: string; faqs: Faq[]}
+    // metaKeywords is optional since 2026-10-18: /offers/atlas has no keyword research yet
+    // (offer.yaml seo.primary_keyword is a TODO(charis)), so it declares none rather than invent one.
+    {metaTitle: string; metaDescription: string; metaKeywords?: string; ogAlt: string; faqs: Faq[]}
   >;
 };
 
@@ -72,7 +79,7 @@ export function buildOfferMetadata(offer: OfferSchemaSource, lang: Language): Me
   return {
     title: c.metaTitle,
     description: c.metaDescription,
-    keywords: c.metaKeywords,
+    ...(c.metaKeywords ? {keywords: c.metaKeywords} : {}),
     // Never a bare canonical. buildAlternates emits the canonical AND the full hreflang map.
     alternates: buildAlternates(`/${offer.slug}`, lang),
     openGraph: {
@@ -144,17 +151,23 @@ export function offerSchema(offer: OfferSchemaSource, lang: Language) {
         provider: {'@id': ORGANISATION_ID},
         areaServed: areaServed(offer, lang),
       },
-      {
-        '@type': 'FAQPage',
-        inLanguage: lang,
-        // Built from the SAME array the page renders. Google requires marked-up FAQ content to be
-        // present on the page, and a hand-written second copy drifts within one commit.
-        mainEntity: c.faqs.map((faq) => ({
-          '@type': 'Question',
-          name: faq.q,
-          acceptedAnswer: {'@type': 'Answer', text: faq.a},
-        })),
-      },
+      // Built from the SAME array the page renders. Google requires marked-up FAQ content to be
+      // present on the page, and a hand-written second copy drifts within one commit. A page with
+      // no FAQ (/offers/atlas, 2026-10-18: its 02-architecture.md drops S15) emits no FAQPage node,
+      // since an empty one would mark up questions that are not there.
+      ...(c.faqs.length > 0
+        ? [
+            {
+              '@type': 'FAQPage',
+              inLanguage: lang,
+              mainEntity: c.faqs.map((faq) => ({
+                '@type': 'Question',
+                name: faq.q,
+                acceptedAnswer: {'@type': 'Answer', text: faq.a},
+              })),
+            },
+          ]
+        : []),
     ],
   };
 }

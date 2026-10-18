@@ -46,6 +46,10 @@ export const ROUTES: { path: string; priority: number; changeFrequency: Metadata
   {path: '/offers/ai-development-sprint', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-01'},
   {path: '/offers/website-seo', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-03'},
   {path: '/offers/website-google-ads', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-09-03'},
+  // 2026-10-18 (offer-os gtm/atlas/DECISIONS.md): Atlas, the apply-only top tier. Linked from the
+  // navbar, QuickLinks, both homepages and every form's thank-you line (AT-D8, AT-D9). Set lastmod
+  // to the deploy date if the deploy lands on a later day.
+  {path: '/offers/atlas', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-18'},
   {path: '/portfolio', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-08'},
   // 2026-10-08 (F16, F-D130): the about page, for a lead who checks who sent the email.
   {path: '/about', priority: 0.6, changeFrequency: 'monthly', lastmod: '2026-10-08'},

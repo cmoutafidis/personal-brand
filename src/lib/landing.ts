@@ -3,9 +3,17 @@
 // whose record asks for one thing to do on the page (offer.yaml page.attention_ratio_notes).
 //
 // This list lives here, and Navbar imports it. Since 2026-10-08 (F16, F-D132) Navbar.tsx names one
-// offer route, sheet-to-app, as its second link; CLAUDE.md's check allows that one and no other.
+// offer route, sheet-to-app, as its second link; CLAUDE.md's check allows that one and, since
+// 2026-10-18 (offer-os gtm/atlas/DECISIONS.md AT-D8), the Atlas link after "Services", and no other.
 
-export const LANDING_PATHS: readonly string[] = ['/en/offers/sheet-to-app', '/el/offers/sheet-to-app'];
+// 2026-10-18: the two Atlas routes join, per offer-os offers/fiji-solutions--atlas/offer.yaml
+// page.attention_ratio_notes (one destination, the application form).
+export const LANDING_PATHS: readonly string[] = [
+  '/en/offers/sheet-to-app',
+  '/el/offers/sheet-to-app',
+  '/en/offers/atlas',
+  '/el/offers/atlas',
+];
 
 export function isLandingPath(pathname: string | null | undefined): boolean {
   if (!pathname) return false;

@@ -7,6 +7,8 @@ import {useLanguage} from '@/context/LanguageContext';
 import {createTranslationFunction} from "@/translations";
 import {CONTACT_FORM_EVENT, reportConversion, trackEvent} from '@/utils/gtag';
 import {Language} from '@/types/language';
+import {sendForm} from '@/lib/formDelivery';
+import {ATLAS_PATH, ATLAS_THANK_YOU} from '@/data/offers/atlas';
 
 interface ContactFormProps {
   languageOverride?: Language;
@@ -76,6 +78,9 @@ export default function ContactForm({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
+  // The Atlas line (offer-os gtm/atlas/DECISIONS.md AT-D9). Set on the first success and never
+  // cleared, so it stays on screen after the success message above it hides at 5 seconds.
+  const [showAtlasLine, setShowAtlasLine] = useState(false);
   const hideTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   // Spam screening, added 2026-10-08. `website` carries a honeypot nobody sees (its input is named `leave_empty`, a name password managers do not fill), and `elapsed_ms` is how
@@ -182,28 +187,20 @@ export default function ContactForm({
     ].filter(Boolean).join('\n\n');
 
     try {
-      const response = await fetch('https://np40nkw6be.execute-api.us-east-1.amazonaws.com/Prod/personal-brand/form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          company: formData.company.trim(),
-          message: messageWithAttribution,
-          question: presetQuestion || formData.question.trim(),
-          website: honeypot.current?.value ?? '',
-          elapsed_ms: Math.round(performance.now() - shownAt.current)
-        })
+      // The shared delivery path (src/lib/formDelivery.ts), the same one the Atlas form uses.
+      await sendForm({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        company: formData.company.trim(),
+        message: messageWithAttribution,
+        question: presetQuestion || formData.question.trim(),
+        website: honeypot.current?.value ?? '',
+        elapsed_ms: Math.round(performance.now() - shownAt.current)
       });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
 
       // Success
       setSubmitSuccess(true);
+      setShowAtlasLine(true);
       reportConversion();
       // GA4, added 2026-09-30. Every form on the site renders this component, so this one call
       // covers all of them. `form_location` is the question marker, the same value the inbox uses
@@ -260,6 +257,25 @@ export default function ContactForm({
               {successMessageOverride ?? t('contact.form.success')}
             </p>
           </div>
+        )}
+
+        {/* 2026-10-18 (offer-os gtm/atlas/DECISIONS.md AT-D9, AT-D10): every form's thank-you
+            surface carries one qualifying line linking to Atlas, with the staff threshold only.
+            Every form on the site renders this component, so this one block covers all of them,
+            the Sheet-to-App forms included: AT-D29 confirms the line there, because it opens with
+            the qualifier, and it renders after a send only, never in a page body (AT-D8 holds).
+            It sits outside the auto-hidden success message, so it stays long enough to click.
+            Copy verbatim from offer-os offers/fiji-solutions--atlas/03-copy.md. */}
+        {showAtlasLine && (
+          <p className="mb-6 text-base leading-7 text-gray-700 dark:text-gray-300">
+            {ATLAS_THANK_YOU[language].before}{' '}
+            <Link
+              href={`/${language}/${ATLAS_PATH}`}
+              className="font-medium text-primary-600 underline underline-offset-4 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+            >
+              {ATLAS_THANK_YOU[language].link}
+            </Link>
+          </p>
         )}
 
         {/* Error Message */}

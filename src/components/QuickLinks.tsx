@@ -21,6 +21,9 @@ const QuickLinks: React.FC = () => {
     {label: t('nav.home'), href: `/${language}`},
     {label: t('nav.audit'), href: `/${language}/business-process-audit`},
     {label: t('nav.portfolio'), href: `/${language}/portfolio`},
+    // 2026-10-18 (offer-os gtm/atlas/DECISIONS.md AT-D8): Atlas, after Services. The one offer
+    // this list carries; the rule below about the other offers stands.
+    {label: t('nav.atlas'), href: `/${language}/offers/atlas`},
     // 2026-10-08 (F16, F-D130): the about page, for a lead who checks who sent the email.
     {label: t('nav.about'), href: `/${language}/about`},
     {label: t('nav.snowflake'), href: `/${language}/services/snowflake-consulting-greece`},
