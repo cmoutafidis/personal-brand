@@ -92,6 +92,10 @@ export type AtlasCopy = {
   /** The hero diagram's generic labels (03-copy.md S01 visual brief): departments around one system. */
   diagramCenter: string;
   diagramBoxes: string[];
+  /** The pre-stack story (AT-D41): problem, failed fixes, why now, the dream. */
+  story: {heading: string; paragraphs: string[]}[];
+  /** The lead-in line directly above the stack heading (AT-D41). */
+  stackIntro: string;
   stackSubhead: string;
   stackHead: [string, string, string];
   stackRows: StackRow[];
@@ -388,6 +392,40 @@ const atlas: AtlasOffer = {
       button: 'Apply for Atlas',
       diagramCenter: 'Atlas',
       diagramBoxes: ['Sales', 'Finance', 'Warehouse', 'Customer service'],
+      // The pre-stack story (AT-D41, Charis 2026-10-18): problem, failed fixes, why now, the dream, then the lead-in.
+      story: [
+        {
+          heading: 'Your company runs on a few people and a pile of spreadsheets.',
+          paragraphs: [
+            'An order comes in by email. Someone types it into a spreadsheet. Someone types it again into the invoicing tool, and again into accounting.',
+            'To answer one question, like how much you sold last month, a person chases numbers across five files.',
+            'It works until a key person goes on holiday or leaves. Then nobody knows how things run. And you end up as the person everyone has to ask.',
+          ],
+        },
+        {
+          heading: 'You have probably tried to fix this before.',
+          paragraphs: [
+            'Perhaps you bought a large ERP package. It asked your team to change how they work, and many of them went back to their spreadsheets.',
+            'Perhaps you bought one tool for each problem. Now you have more systems, and they still do not talk to each other.',
+            'Perhaps a vendor sold you a package and left. You still pay the licence.',
+          ],
+        },
+        {
+          heading: 'Why this matters now.',
+          paragraphs: [
+            'Hiring is hard, so the same people have to do more each year. AI tools are everywhere, and it is easy to feel behind. And under myDATA, every invoice has to reach AADE correctly.',
+          ],
+        },
+        {
+          heading: 'Now picture one system that runs your whole company.',
+          paragraphs: [
+            'Every customer, order, booking and invoice sits in one place. Data typed once goes everywhere it needs to go. Routine work runs on its own, and your people handle the exceptions. When you want a number, you open one screen.',
+            'When a key person is away, the company keeps running, because the answers live in the system.',
+            'That system is Atlas.',
+          ],
+        },
+      ],
+      stackIntro: 'Here is everything that goes into Atlas. Next to each part is what it would cost if you bought it on its own.',
       stackSubhead: '8 core parts, USD 452,000 in value.',
       stackHead: ['Part', 'Value', 'What it does for you'],
       stackRows: [
@@ -492,6 +530,40 @@ const atlas: AtlasOffer = {
       button: 'Κάνε αίτηση για το Atlas',
       diagramCenter: 'Atlas',
       diagramBoxes: ['Πωλήσεις', 'Λογιστήριο', 'Αποθήκη', 'Εξυπηρέτηση'],
+      // The pre-stack story (AT-D41, Charis 2026-10-18): problem, failed fixes, why now, the dream, then the lead-in.
+      story: [
+        {
+          heading: 'Η επιχείρησή σου στηρίζεται σε λίγους ανθρώπους και σε πολλά Excel.',
+          paragraphs: [
+            'Μια παραγγελία έρχεται με email. Κάποιος την περνάει σε ένα Excel. Κάποιος την περνάει ξανά στο πρόγραμμα τιμολόγησης, και ξανά στο λογιστήριο.',
+            'Για να απαντήσεις σε μία ερώτηση, όπως πόσα πούλησες τον προηγούμενο μήνα, κάποιος ψάχνει νούμερα σε πέντε αρχεία.',
+            'Δουλεύει, μέχρι να πάει διακοπές ή να φύγει ένας βασικός άνθρωπος. Τότε κανείς δεν ξέρει πώς τρέχουν τα πράγματα. Και στο τέλος όλοι ρωτάνε εσένα.',
+          ],
+        },
+        {
+          heading: 'Μάλλον έχεις ήδη προσπαθήσει να το λύσεις.',
+          paragraphs: [
+            'Ίσως αγόρασες ένα μεγάλο πακέτο ERP. Ζήτησε από την ομάδα σου να αλλάξει τον τρόπο που δουλεύει, και πολλοί γύρισαν στα Excel τους.',
+            'Ίσως αγόρασες ένα εργαλείο για κάθε πρόβλημα. Τώρα έχεις περισσότερα συστήματα, και ακόμα δεν μιλάνε μεταξύ τους.',
+            'Ίσως κάποιος προμηθευτής σού πούλησε ένα πακέτο και εξαφανίστηκε. Την άδεια την πληρώνεις ακόμα.',
+          ],
+        },
+        {
+          heading: 'Γιατί έχει σημασία τώρα.',
+          paragraphs: [
+            'Οι καλοί υπάλληλοι βρίσκονται δύσκολα, οπότε οι ίδιοι άνθρωποι πρέπει να κάνουν περισσότερα κάθε χρόνο. Τα εργαλεία AI είναι παντού, και εύκολα νιώθεις ότι μένεις πίσω. Και με το myDATA, κάθε τιμολόγιο πρέπει να φτάνει σωστά στην ΑΑΔΕ.',
+          ],
+        },
+        {
+          heading: 'Τώρα φαντάσου ένα σύστημα που τρέχει όλη την επιχείρησή σου.',
+          paragraphs: [
+            'Κάθε πελάτης, παραγγελία, κράτηση και τιμολόγιο βρίσκεται σε ένα μέρος. Ό,τι περαστεί μία φορά πηγαίνει παντού όπου χρειάζεται. Η ρουτίνα τρέχει μόνη της, και οι άνθρωποί σου χειρίζονται τις εξαιρέσεις. Όταν θέλεις ένα νούμερο, ανοίγεις μία οθόνη.',
+            'Όταν λείπει ένας βασικός άνθρωπος, η επιχείρηση συνεχίζει, γιατί οι απαντήσεις βρίσκονται μέσα στο σύστημα.',
+            'Αυτό το σύστημα είναι το Atlas.',
+          ],
+        },
+      ],
+      stackIntro: 'Αυτά είναι όλα όσα περιλαμβάνει το Atlas. Δίπλα σε κάθε μέρος γράφει πόσο θα κόστιζε αν το αγόραζες χωριστά.',
       stackSubhead: '8 βασικά μέρη, αξίας 452.000 $.',
       stackHead: ['Μέρος', 'Αξία', 'Τι κάνει για σένα'],
       stackRows: [

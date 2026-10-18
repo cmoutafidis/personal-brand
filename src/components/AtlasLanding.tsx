@@ -10,13 +10,13 @@ import type {AtlasOffer, StackRow} from '@/data/offers/atlas';
 // `offers/fiji-solutions--atlas` (02-architecture.md is the build contract, 03-copy.md the approved
 // copy, AT-D26). Copy lives in src/data/offers/atlas.ts.
 //
-// WHY A THIRD OFFER LAYOUT. The contract is a short page (300 to 500 words, AT-D15) with a value
+// WHY A THIRD OFFER LAYOUT. The contract is a short page (AT-D15; since AT-D41, 2026-10-18, about 730 words with the S03 story) with a value
 // stack and a two-step application form, which neither OfferLanding's fixed section set nor
 // SheetToAppLanding's nineteen sections fit. It follows SheetToAppLanding's idiom: a server
 // component, one bilingual data file, every section with a stable id, every button an in-page link
 // to the form, and the same sticky mobile bar.
 //
-// SECTION ORDER. page.sections in offer.yaml is S01, S07, S08, S18, S17, S21, S05, S19, S18. This
+// SECTION ORDER. S03 (the pre-stack story, AT-D41) sits between S01 and S07. page.sections in offer.yaml is S01, S03, S07, S08, S18, S17, S21, S05, S19, S18. This
 // renders S17, S05, S21, as 03-copy.md does ("Section order" note), so the subjectless method line
 // follows a block whose subject is Atlas.
 //
@@ -169,6 +169,24 @@ export default function AtlasLanding({offer, language}: {offer: AtlasOffer; lang
         </div>
       </section>
 
+      {/* S03: the pre-stack story (AT-D41, 2026-10-18): problem, failed fixes, why now, the dream. */}
+      {c.story.map((block, i) => (
+        <section
+          key={block.heading}
+          id={`s03-story-${i + 1}`}
+          className={`${i % 2 === 0 ? 'bg-white dark:bg-gray-900' : 'bg-gray-50 dark:bg-gray-950'} py-14 md:py-20`}
+        >
+          <div className="mx-auto max-w-[65ch] px-4 sm:px-6">
+            <h2 className="mb-6 text-3xl font-bold text-gray-950 dark:text-white md:text-4xl">{block.heading}</h2>
+            <div className="space-y-4 text-base leading-7 text-gray-700 dark:text-gray-300 sm:text-lg sm:leading-8">
+              {block.paragraphs.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
+          </div>
+        </section>
+      ))}
+
       {/* S07: the offer stack, eight core parts with their values (AT-D18, AT-D20). Its heading
           names the 8 core parts and their value (AT-D36). The core total is its own line under the
           table, and the price reveal sits on its own line under it at the same weight, never folded
@@ -176,6 +194,7 @@ export default function AtlasLanding({offer, language}: {offer: AtlasOffer; lang
           builder note). */}
       <section id="s07-offer-stack" className="scroll-mt-24 bg-white py-16 dark:bg-gray-900 md:py-24">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <p className="mb-6 max-w-[65ch] text-lg font-semibold leading-8 text-gray-950 dark:text-white">{c.stackIntro}</p>
           <h2 className="mb-8 text-3xl font-bold text-gray-950 dark:text-white md:text-4xl">{c.stackSubhead}</h2>
           <StackTable head={c.stackHead} rows={c.stackRows}/>
           <div className="max-w-[65ch]">
