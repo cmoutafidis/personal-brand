@@ -82,6 +82,9 @@ pages — and from nowhere else. The whole graph is one file, `src/data/offerLin
 | `/portfolio`, `PortfolioOfferLink.tsx`, one prose link under the three cards (2026-10-08, F16, F-D133) | sheet-to-app |
 | `/about`, `AboutPage.tsx`, one prose link in "Where to start" (2026-10-08, F16, F-D130) | sheet-to-app |
 | the navbar, its second of four links (2026-10-08, F16, F-D132) | sheet-to-app, and only it |
+| the navbar, after "Services", and `QuickLinks`, after "Services" (2026-10-18, offer-os `gtm/atlas/DECISIONS.md` AT-D8) | atlas, and only it |
+| both homepages, `AtlasHomeSection.tsx`, its own band after `Solutions.tsx` (2026-10-18, AT-D22) | atlas |
+| the success state of every form, `ContactForm.tsx`, "You need Atlas." (2026-10-18, AT-D9) | atlas |
 | each `/offers/*` page | its parent service page (if any) + its one sibling offer |
 
 **Still forbidden, and this half of the rule did not change.** Not in the footer. Not in `QuickLinks`.
@@ -92,13 +95,19 @@ footer list or a hub grid **is** the service list, whatever the offers are calle
 homepages sell ("Swap 'Process audit' for the offer"); the navbar stays four links, "Process audit" moved
 to `QuickLinks`, and **no other offer joins a menu**. `/portfolio` carries one prose link to the same
 offer under the three cards (`src/components/PortfolioOfferLink.tsx`, "Yes, one prose link"); the cards
-stay three. The check, which must print nothing:
+stay three.
+**2026-10-18, a third dated exception: Atlas (offer-os `gtm/atlas/DECISIONS.md` AT-D8, Charis: *"Don't put
+this offer into a different offer landing page offer, but it should be somewhere."* and *"everything looks
+good, yes"*).** `/offers/atlas` has a navbar link directly after "Services", outside the services list
+(the navbar is five links), and a `QuickLinks` entry after "Services". It is **not** in `offerLinks.ts`,
+and no offer page body links it; its other inbound links are the homepage band and the thank-you line
+every form shows (AT-D9). No other offer joins a menu. The check, which must print nothing:
 
 ```
 grep -rn "offers/\|OfferLinks\|offerLinks\|OFFERS_BY_SERVICE\|WEBSITE_OFFERS" \
   src/components/Footer.tsx src/components/QuickLinks.tsx src/components/Services.tsx \
-  "src/app/(en)/en/portfolio/page.tsx" "src/app/(el)/el/portfolio/page.tsx"
-grep -n "offers/" src/components/Navbar.tsx | grep -v "offers/sheet-to-app\|/offers/\* link"
+  "src/app/(en)/en/portfolio/page.tsx" "src/app/(el)/el/portfolio/page.tsx" | grep -v "offers/atlas"
+grep -n "offers/" src/components/Navbar.tsx | grep -v "offers/sheet-to-app\|offers/atlas\|/offers/\* link"
 ```
 
 Three further guards, all in `offerLinks.ts`: every offer has at most **one** parent, so the map is
@@ -129,13 +138,15 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 | What | Where |
 |---|---|
 | Offer economics — durations, SLA, guarantee terms | `src/lib/offer.ts`. **Change the number here, not in copy.** The guarantee's four numbers (window, cure, claim window, answer deadline) live here. **No price constant lives here, or anywhere.** |
-| All UI copy, both locales | `src/translations.ts` (135 keys each, kept at exact parity; 133 until 2026-10-08, when F16 added `nav.offer` and `nav.about`) |
+| All UI copy, both locales | `src/translations.ts` (136 keys each, kept at exact parity; 133 until 2026-10-08, when F16 added `nav.offer` and `nav.about`; 135 until 2026-10-18, when Atlas added `nav.atlas`) |
 | The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
 | The audit form section, its CTA copy and the Calendly URL | `src/components/AuditFormSection.tsx`. Rendered by the offer page, and by the homepage until 2026-09-30 (G20, D5), so its strings live in that file. `AUDIT_CTA` feeds the offer page's five `CtaBlock`s, whose button is an in-page `#consultation-form` anchor. Give each new caller its own `presetQuestion`; it is the only lead-source marker there is. |
 | The sheet-to-app offer page (2026-09-30) | Its own layout, `src/components/SheetToAppLanding.tsx` (nineteen sections from its offer-os contract, sticky mobile bar in `SheetToAppStickyCta.tsx`), copy in `src/data/offers/sheet-to-app.ts`, verbatim from offer-os `offers/fiji-solutions--sheet-to-app/03-copy.md`. Metadata and JSON-LD come from the same `src/lib/offerSchema.ts`. Its booking link is `SHEET_TO_APP_BOOKING_URL` in that data file, the existing 30-minute Calendly event (offer-os D120, 2026-09-30), the same URL as `CALENDLY_URL`. `src/lib/landing.ts` lists the routes whose Navbar is logo-only and which load no Vapi bubble. Since 2026-10-08 (F22 of offer-os `gtm/followups-and-search`, F-D161 to F-D164) S09 carries one `caseStudy` line under each story, linking the shared Gamma case studies of PAP Center and New Era Learning in a new tab (`CASE_STUDY_*_URL` in the data file, each click a `cta_click`); the Greek lines say «(στα αγγλικά)». The AKB case study is never linked from a Fiji page. |
 | The homepage hook (2026-09-30, G20) | Both homepages sell the sheet-to-app offer. `hero.*`, `challenges.*` and `solutions.*` in `src/translations.ts`, the body link and limit line in `src/components/Solutions.tsx`, the form in `src/components/SheetToAppFormSection.tsx` (`presetQuestion` `homepage-sheet-to-app`, `offer_slug` `sheet-to-app`, `cta_location` `home-hero`, `home-solutions-box` and `home-form-calendly`), and the long-form ids in `src/data/homeLongForm/`, all verbatim from offer-os `offers/fiji-solutions--sheet-to-app/03-copy-homepage.md`, the Greek `ti-kanoume` p2 included («Το ένα είναι ...» and «Το άλλο είναι ...», recorded in the contract's Findings item 5 on 2026-09-30, so «πρώτ-» stays within the ration of D67). ~~The Vapi voice button in the hero and the Vapi chat bubble are hidden on `/en` and `/el` (2026-09-30, G20): the assistant behind both still pitches the process audit and its guarantee, and the homepage names one guarantee (D53).~~ ~~`HOMEPAGE_VOICE_ON` in `src/lib/landing.ts` brings both back once G23's new assistant script is live in the Vapi dashboard.~~ 2026-10-04: the new script is live in the Vapi dashboard (version v5, Greek and English by voice), and `HOMEPAGE_VOICE_ON` is `true`, so both are back on `/en` and `/el`. |
 | The seven workbook offer pages | One layout, `src/components/OfferLanding.tsx` (the eighth offer, sheet-to-app, has its own layout, in the row above); one bilingual data file per offer in `src/data/offers/`; two thin routes each. Metadata and the Service + FAQPage JSON-LD are derived in `src/lib/offerSchema.ts` from the same object the page renders, so the marked-up FAQ cannot drift from the rendered one. **To add or change an offer, edit its data file.** Each carries its own `questionMarker`, which is the only thing telling its leads from the other seven in the shared inbox. |
 | The about page (2026-10-08, F16) | `src/components/AboutPage.tsx`: copy, metadata and the AboutPage JSON-LD in one file, verbatim from offer-os `offers/fiji-solutions--sheet-to-app/derived/site/F16-COPY.md`; the photo is `public/charis-moutafidis.jpg`, his own, cropped at his word (F-D131). The JSON-LD hangs `image` on the canonical Person reference. The Contact page strings (`contact.title`, `contact.subtitle*`) and its metadata lead with the 7-day prototype from the same file (F-D135); its form sends `offer_slug` `sheet-to-app` and keeps `form_location` `contact`. |
+| Atlas (2026-10-18) | The apply-only top tier, offer-os `offers/fiji-solutions--atlas`, decisions `gtm/atlas/DECISIONS.md` AT-D1 to AT-D32. Layout `src/components/AtlasLanding.tsx`, the two-step form `src/components/AtlasApplicationForm.tsx`, copy in `src/data/offers/atlas.ts`, verbatim from its `03-copy.md`. Both form steps POST through `src/lib/formDelivery.ts`, the endpoint every form uses (AT-D12): step 1 as its own email marked incomplete (`atlas-step1`), step 2 as the complete application (`atlas`, `atlas-not-yet` or `atlas-no`, AT-D23). No reply promise on any Atlas surface (AT-D21), so its form drops the site consent sentence and carries AT-D27's own privacy line above the submit button on both steps ("We use your details to review your application. Privacy policy"). The "You need Atlas." line lives in `ContactForm.tsx` and stays on screen after the success message hides (AT-D9); it shows after the Sheet-to-App forms are sent too (AT-D29), never in a page body. Its two routes render `src/components/AtlasFooter.tsx` (privacy, legal and the copyright line only, 44px tap targets) in place of the shared `Footer`. ~~Its form fires no Google Ads conversion (QA round 1, 2026-10-18).~~ Changed 2026-10-18: the complete send calls `reportConversion()` beside `contact_form_submit`, as `ContactForm` does on every other form, so all forms match; drop it from both in one change. |
+| Form delivery | `src/lib/formDelivery.ts`: the endpoint URL and `sendForm()`. `ContactForm` and the Atlas form both call it. |
 | Canonical + hreflang | `src/lib/alternates.ts` — `buildAlternates(path, lang)` |
 | Consent gate | `src/lib/useConsent.ts` + `src/components/Analytics.tsx` |
 | GA4 event names, `trackEvent()` | `src/utils/gtag.ts`. Server components send clicks through `src/components/TrackedLink.tsx`. |
@@ -222,6 +233,14 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
    prices appear in the body only, exactly as their `03-copy.md` gives them: never in the hero, in an FAQ answer, in metadata or in any JSON-LD (`offerSchema.ts` still
    emits no `offers` node and no price). Every other page on the site keeps this rule unchanged, and
    still no price constant lives in `offer.ts`.
+   **Dated exception, 2026-10-18, for Atlas only (offer-os `gtm/atlas/DECISIONS.md` AT-D2).** Charis:
+   *"We can charge 100,000 in Greece, so 100,000 in Fiji Solutions"*, *"100k on whatever currency we
+   have"*, and to "From or flat?": *"from"*. `/en/offers/atlas` and `/el/offers/atlas` publish "From USD
+   100,000" / «Από 100.000 $» in the hero, the stack total line, the close and the form's budget
+   question, and its stack shows each part's stated value (AT-D18, AT-D20). The homepage Atlas band
+   (`AtlasHomeSection.tsx`) carries the same from-figure once. Never in metadata or JSON-LD
+   (`offerSchema.ts` emits no `offers` node for it either). No guarantee and no payment terms appear
+   on any Atlas surface (AT-D4). Every other page keeps this rule unchanged.
    **Extended 2026-09-30 (G20) to both homepages, one slot only:** the box under the three
    how-it-works cards (`solutions.cta.description` in `src/translations.ts`), as offer-os
    `offers/fiji-solutions--sheet-to-app/03-copy-homepage.md` places the figures (D68: the homepage
@@ -385,7 +404,7 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 
 ```
 npm run dev     # turbopack
-npm run build   # must stay at 42 routes (23 + the 16 /offers/* pages added 2026-08-31 + the 2 /about pages added 2026-10-08 + the /en/blog/[slug] route, which appears once blogData.en has posts, added 2026-10-12, F20)
+npm run build   # must stay at 44 routes (23 + the 16 /offers/* pages added 2026-08-31 + the 2 /about pages added 2026-10-08 + the /en/blog/[slug] route, which appears once blogData.en has posts, added 2026-10-12, F20 + the 2 /offers/atlas pages added 2026-10-18)
 npm run lint
 
 npm run build && python3 scripts/hreflang-parity.py   # AFTER a build, always
