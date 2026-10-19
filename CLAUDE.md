@@ -417,6 +417,18 @@ python3 scripts/hreflang-parity.py --selftest
 python3 scripts/no-shipped-dashes.py
 ```
 
+**The SEO loop's gate (2026-10-19, offer-os `gtm/seo-loop-2026-10` S03).** `.github/workflows/seo-gates.yml`
+runs on every push to `seo/**`, one job named `seo-gates`. A loop branch may change only the paths in
+`scripts/seo-allowlist.txt` as `main` holds it, never `.github/` or `scripts/`, and may add no price:
+`scripts/pricecheck.py --diff origin/main` reads only the lines the branch adds, because `main` carries
+prices on purpose. Then the checkers above run, taken from `main`, and the build. `pricecheck.py` is
+byte-identical in both company website repos.
+
+```
+python3 scripts/pricecheck.py --selftest          # fixtures, a diff run in a temp repo, five sabotages
+python3 scripts/pricecheck.py --diff origin/main  # the lines this branch adds
+```
+
 `scripts/hreflang-parity.py` asserts the built pages and the built sitemap declare the SAME
 hreflang set for the same URL. It exists because until 2026-09-03 they did not: `sitemap.ts` built
 its own copy of the map with `{en, el}` and stopped, so every page published three values and the

@@ -1,0 +1,99 @@
+name: seo-gates
+
+# The gates every branch of the SEO loop must pass before it may merge (offer-os
+# gtm/seo-loop-2026-10, goal S03). The loop pushes `seo/<slug>` and merges its own pull request
+# with nobody reading it first, his decision of 2026-10-19 (SL-D1: "auto merge and deploy without me
+# doing anything"). So this job is the safety, and S04 makes its one check, `seo-gates`, required
+# on `main`.
+#
+# WHAT IT REFUSES, IN ORDER
+#   1. Any changed path outside scripts/seo-allowlist.txt AS IT IS ON MAIN, anything under .github/
+#      or scripts/, a path with any character outside letters, digits and ._/-, a symlink, an
+#      executable bit, a submodule, a file holding a NUL byte, and a branch that changes nothing.
+#   2. A price on any line the branch adds (scripts/pricecheck.py --diff). Main carries prices on
+#      purpose (CLAUDE.md rule 7 lists the dated exceptions), so only added lines are read.
+#   3. A shipped dash, a broken hreflang set, a published private mailbox, a failed build: the same
+#      checkers gates.yml runs, taken from main.
+#
+# ⚠️ THE CHECKERS COME FROM MAIN. Step 1 already fails a branch that touches scripts/, and the
+# checkout of main's scripts/ below makes that hold even if step 1 were ever loosened.
+#
+# ⚠️ THIS FILE RUNS FROM THE BRANCH. GitHub runs the YAML of the pushed commit, so a branch that
+# rewrote this file would run its own rewrite. Step 1 turns such a branch red only while the branch
+# still runs step 1. S04 closes that hole from main: the merge workflow is triggered by
+# workflow_run, which always runs main's YAML, and it checks the changed paths again before it
+# merges anything.
+on:
+  push:
+    branches: ['seo/**']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: seo-gates-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  seo-gates:
+    name: seo-gates
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      # The one checkout in this repo with a `with:` block: the merge base with main needs the full
+      # history. Pinned at v7 with gates.yml (STATE section 182); bump them together.
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: The branch changes only allowlisted paths, read from main
+        run: |
+          git fetch --no-tags origin main
+          git show origin/main:scripts/seo-allowlist.txt > "$RUNNER_TEMP/seo-allowlist.txt"
+          git diff --raw --no-renames -z origin/main...HEAD > "$RUNNER_TEMP/changes"
+          python3 /dev/stdin "$RUNNER_TEMP/seo-allowlist.txt" "$RUNNER_TEMP/changes" <<'PY'
+          import re, subprocess, sys
+          globs = [l.strip() for l in open(sys.argv[1], encoding='utf-8')
+                   if l.strip() and not l.lstrip().startswith('#')]
+          def rx(g):
+              return re.compile(''.join('[^/]*' if c == '*' else re.escape(c) for c in g))
+          allowed = [rx(g) for g in globs]
+          parts = open(sys.argv[2], 'rb').read().decode('utf-8', 'replace').split('\0')
+          bad, seen = [], 0
+          for meta, path in zip(parts[0::2], parts[1::2]):
+              if not meta.startswith(':'):
+                  continue
+              seen += 1
+              new_mode = meta[1:].split()[1]
+              if not re.fullmatch('[A-Za-z0-9._/-]+', path):
+                  bad.append(f'{path!r}: a path outside letters, digits and ._/- is never a post')
+              elif path.startswith(('.github/', 'scripts/')):
+                  bad.append(f'{path}: workflows and checkers are never changed by a loop branch')
+              elif not any(a.fullmatch(path) for a in allowed):
+                  bad.append(f'{path}: outside scripts/seo-allowlist.txt on main')
+              elif new_mode not in ('100644', '000000'):
+                  bad.append(f'{path}: mode {new_mode}, only plain files may change')
+              elif new_mode == '100644' and b'\0' in subprocess.run(
+                      ['git', 'cat-file', 'blob', f'HEAD:{path}'], capture_output=True, check=True).stdout:
+                  bad.append(f'{path}: holds a NUL byte, which git reads as binary')
+          if not seen:
+              bad.append('the branch changes nothing against main')
+          for b in bad:
+              print(f'::error::{b}')
+          print(f'{seen} changed path(s), {len(bad)} refused')
+          sys.exit(1 if bad else 0)
+          PY
+      - name: The checkers come from main
+        run: git checkout origin/main -- scripts
+      - run: python3 scripts/pricecheck.py --selftest
+      - name: No price on any line the branch adds
+        run: python3 scripts/pricecheck.py --diff origin/main
+      - run: python3 scripts/no-shipped-dashes.py
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: python3 scripts/hreflang-parity.py
+      - run: python3 scripts/hreflang-reciprocity.py
+      - run: python3 scripts/no-published-private-contacts.py

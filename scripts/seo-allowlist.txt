@@ -1,0 +1,6 @@
+# The only paths a branch of the SEO loop may change (offer-os gtm/seo-loop-2026-10, S03).
+# One glob per line. `*` stands for any run of characters inside one folder and never crosses a
+# slash. `.github/` and `scripts/` are refused whatever this file says. The seo-gates workflow reads
+# this file from `main`, so a branch cannot widen it for itself.
+src/data/blog/*.ts
+src/data/blogs.ts
