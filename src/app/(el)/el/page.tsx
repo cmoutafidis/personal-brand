@@ -10,6 +10,7 @@ import SheetToAppFormSection from '@/components/SheetToAppFormSection';
 import Footer from "@/components/Footer";
 import HomeLongForm from '@/components/HomeLongForm';
 import {homeLongForm} from '@/data/homeLongForm';
+import {jsonLd} from '@/lib/jsonLd';
 
 // 2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D66): the homepage is the hook
 // for the 7-Day Sheet-to-App Prototype. The local title «Εταιρεία λογισμικού στη Θεσσαλονίκη»,
@@ -80,7 +81,7 @@ export default function GreekHomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: jsonLd({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
             inLanguage: 'el',

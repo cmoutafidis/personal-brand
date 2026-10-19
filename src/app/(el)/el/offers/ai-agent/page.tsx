@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import aiAgent from '@/data/offers/ai-agent';
 import {buildOfferMetadata, offerSchema} from '@/lib/offerSchema';
 import {createTranslationFunction} from '@/translations';
+import {jsonLd} from '@/lib/jsonLd';
 
 // Front-end offer page. Was a Google Ads landing page until 2026-09-01; organic search is now the
 // only way in, so it is linked from page bodies (src/data/offerLinks.ts) — still not in the navigation.
@@ -18,7 +19,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{__html: JSON.stringify(offerSchema(aiAgent, 'el'))}}
+        dangerouslySetInnerHTML={{__html: jsonLd(offerSchema(aiAgent, 'el'))}}
       />
       <OfferLanding offer={aiAgent} language="el"/>
       {/* The page collects a name, an email and a company name, so it needs the footer's

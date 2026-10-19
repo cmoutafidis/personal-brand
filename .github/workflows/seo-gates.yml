@@ -14,6 +14,9 @@ name: seo-gates
 #      purpose (CLAUDE.md rule 7 lists the dated exceptions), so only added lines are read.
 #   3. A shipped dash, a broken hreflang set, a published private mailbox, a failed build: the same
 #      checkers gates.yml runs, taken from main.
+#   4. Since S08 (2026-10-19): a post that is anything but data (scripts/seo-content-check.py), a link
+#      off scripts/seo-hosts.txt, and a JSON-LD script that could be broken out of
+#      (scripts/jsonld-escape-check.py, before and after the build).
 #
 # ⚠️ THE CHECKERS COME FROM MAIN. Step 1 already fails a branch that touches scripts/, and the
 # checkout of main's scripts/ below makes that hold even if step 1 were ever loosened.
@@ -84,6 +87,16 @@ jobs:
           PY
       - name: The checkers come from main
         run: git checkout origin/main -- scripts
+      # S08 (2026-10-19): a post title holding "</script>" must not leave its JSON-LD tag. The
+      # source mode proves every ld+json script goes through src/lib/jsonLd.ts; the built mode,
+      # after the build, reads the prerendered pages in .next/server/app.
+      - run: python3 scripts/jsonld-escape-check.py --selftest
+      - run: python3 scripts/jsonld-escape-check.py
+      # S08 (2026-10-19): a post is data. The changed post must be one literal of the BlogPost shape,
+      # its links on scripts/seo-hosts.txt, and nothing beside it may change (SL-D28).
+      - run: python3 scripts/seo-content-check.py --selftest
+      - name: The post is data, its links on the host list
+        run: python3 scripts/seo-content-check.py --diff origin/main
       - run: python3 scripts/pricecheck.py --selftest
       - name: No price on any line the branch adds
         run: python3 scripts/pricecheck.py --diff origin/main
@@ -94,6 +107,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - run: python3 scripts/jsonld-escape-check.py --built .next/server/app
       - run: python3 scripts/hreflang-parity.py
       - run: python3 scripts/hreflang-reciprocity.py
       - run: python3 scripts/no-published-private-contacts.py

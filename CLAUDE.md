@@ -438,6 +438,24 @@ the App, tip unchanged, holds all of `main`, `.github/` and `scripts/` equal to 
 and squash merges it; the merge deploys. A pull request from any other branch waits on `seo-gates` for ever:
 merge it with the admin bypass, or push to `main` directly.
 
+**The SEO loop's post checks (2026-10-19, offer-os `gtm/seo-loop-2026-10` S08).** A post is data and nothing
+else. `scripts/seo-content-check.py --diff origin/main` admits a loop branch only when its changed post is one
+literal of the `BlogPost` shape (no identifier, call, template or spread), every `href` and source `url` is a site
+path or `https://` on a host in `scripts/seo-hosts.txt`, no string holds `<` or `>`, and nothing beside the post
+changed. Every `application/ld+json` script renders through `jsonLd()` in `src/lib/jsonLd.ts`, which writes `<`,
+`>`, `&`, U+2028 and U+2029 as JSON escapes, so a title holding `</script>` stays inside its tag;
+`scripts/jsonld-escape-check.py` holds every page to it in the source and in the built pages, in `gates.yml` and
+in `seo-gates.yml`. Use `jsonLd(...)` for any new JSON-LD script, never `JSON.stringify`. `vercel.json` turns off
+Vercel previews for `seo/**` branches; `main` deploys as before. Both checkers are byte-identical in the two
+company website repos.
+
+```
+python3 scripts/seo-content-check.py --selftest
+python3 scripts/jsonld-escape-check.py --selftest
+python3 scripts/jsonld-escape-check.py                          # the source
+npm run build && python3 scripts/jsonld-escape-check.py --built .next/server/app
+```
+
 `scripts/hreflang-parity.py` asserts the built pages and the built sitemap declare the SAME
 hreflang set for the same URL. It exists because until 2026-09-03 they did not: `sitemap.ts` built
 its own copy of the map with `{en, el}` and stopped, so every page published three values and the

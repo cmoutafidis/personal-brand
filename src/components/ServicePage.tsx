@@ -5,6 +5,7 @@ import {createTranslationFunction} from '@/translations';
 import {Language} from '@/types/language';
 import OfferLinks from '@/components/OfferLinks';
 import type {LinkedOffer} from '@/data/offerLinks';
+import {jsonLd} from '@/lib/jsonLd';
 
 // One skeleton for all six service pages.
 //
@@ -42,7 +43,7 @@ export default function ServicePage(c: ServicePageContent) {
 
   return (
     <div className="min-h-screen bg-white pt-20 dark:bg-gray-900">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(c.schema)}}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: jsonLd(c.schema)}}/>
 
       <section className="bg-gradient-to-br from-primary-50 to-secondary-50 py-20 dark:from-gray-900 dark:to-gray-800">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

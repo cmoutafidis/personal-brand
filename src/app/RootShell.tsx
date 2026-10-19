@@ -10,6 +10,7 @@ import CookieConsent from '@/components/CookieConsent';
 import Analytics from '@/components/Analytics';
 import {Language, assistantId, vapiApiKey} from '@/types/language';
 import {PERSON_REF, ORGANISATION_ID} from '@/lib/person';
+import {jsonLd} from '@/lib/jsonLd';
 
 // One shell, two root layouts.
 //
@@ -331,11 +332,11 @@ export default function RootShell({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{__html: JSON.stringify(organisationSchema(lang))}}
+        dangerouslySetInnerHTML={{__html: jsonLd(organisationSchema(lang))}}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{__html: JSON.stringify(websiteSchema())}}
+        dangerouslySetInnerHTML={{__html: jsonLd(websiteSchema())}}
       />
     </head>
     <body className="antialiased">

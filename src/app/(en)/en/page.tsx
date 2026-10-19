@@ -12,6 +12,7 @@ import HomeLongForm from '@/components/HomeLongForm';
 import LatestPostsSection from '@/components/LatestPostsSection';
 import {blogData} from '@/data/blogs';
 import {homeLongForm} from '@/data/homeLongForm';
+import {jsonLd} from '@/lib/jsonLd';
 
 // 2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D66): the homepage is the hook
 // for the 7-Day Sheet-to-App Prototype. Every title opens with the 7-day prototype and "pay only
@@ -84,7 +85,7 @@ export default function EnglishHomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: jsonLd({
             '@context': 'https://schema.org',
             '@type': 'FAQPage',
             inLanguage: 'en',

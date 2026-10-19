@@ -3,6 +3,7 @@ import AtlasLanding from '@/components/AtlasLanding';
 import AtlasFooter from '@/components/AtlasFooter';
 import atlas from '@/data/offers/atlas';
 import {buildOfferMetadata, offerSchema} from '@/lib/offerSchema';
+import {jsonLd} from '@/lib/jsonLd';
 
 // Atlas, the apply-only top tier, built 2026-10-18 from offer-os offers/fiji-solutions--atlas
 // (gtm/atlas/DECISIONS.md AT-D1 to AT-D26). Everything on it comes from src/data/offers/atlas.ts
@@ -15,7 +16,7 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{__html: JSON.stringify(offerSchema(atlas, 'el'))}}
+        dangerouslySetInnerHTML={{__html: jsonLd(offerSchema(atlas, 'el'))}}
       />
       <AtlasLanding offer={atlas} language="el"/>
       {/* The form collects a name, an email and a company name, so the page needs the privacy

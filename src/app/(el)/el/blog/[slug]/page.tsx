@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import {blogData} from '@/data/blogs';
 import {blogPostSchema, buildBlogPostMetadata} from '@/lib/blogSchema';
 import {createTranslationFunction} from '@/translations';
+import {jsonLd} from '@/lib/jsonLd';
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -33,7 +34,7 @@ export default async function Page({params}: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{__html: JSON.stringify(blogPostSchema(post, 'el'))}}
+        dangerouslySetInnerHTML={{__html: jsonLd(blogPostSchema(post, 'el'))}}
       />
       <BlogPost post={post} language="el"/>
       <Footer t={t}/>

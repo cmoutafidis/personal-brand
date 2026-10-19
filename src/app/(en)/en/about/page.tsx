@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import AboutPage, {aboutMetadata, aboutSchema} from '@/components/AboutPage';
 import Footer from '@/components/Footer';
 import {createTranslationFunction} from '@/translations';
+import {jsonLd} from '@/lib/jsonLd';
 
 // The about page, added 2026-10-08 in F16 (offer-os gtm/followups-and-search/PLAN.md F-D130).
 // Everything on it lives in src/components/AboutPage.tsx.
@@ -15,7 +16,7 @@ export default function EnglishAboutPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{__html: JSON.stringify(aboutSchema('en'))}}
+        dangerouslySetInnerHTML={{__html: jsonLd(aboutSchema('en'))}}
       />
       <AboutPage lang="en"/>
       <Footer t={t}/>
