@@ -1,0 +1,149 @@
+name: seo-merge
+
+# Merges the SEO loop's pull request once `seo-gates` passed on it (offer-os gtm/seo-loop-2026-10,
+# goal S04). His decision of 2026-10-19, SL-D1: "auto merge and deploy without me doing anything". The
+# merge to main deploys through Vercel.
+#
+# WHY workflow_run. A workflow triggered by workflow_run always runs the YAML on main, never the YAML of
+# the branch. seo-gates.yml runs from the branch, so this file is the one place a branch cannot rewrite.
+#
+# WHAT IT CHECKS BEFORE IT MERGES, ALL READ FROM MAIN
+#   1. The run was seo-gates on a push to seo/<slug> in this repository, it passed, and the push came
+#      from the loop's App, fiji-seo-loop[bot].
+#   2. The branch tip is still the commit the gates passed.
+#   3. The branch holds all of main, so the gates ran on main plus the post, and nothing else.
+#   4. .github/ and scripts/ are identical to main's, so the gates that ran were main's gates.
+#   5. Every changed path matches scripts/seo-allowlist.txt on main, and is a plain file.
+#   6. At most one open pull request from that branch, opened by the App or by this workflow, whose
+#      head is that commit. With none, this workflow opens it, so the order of push and pull request
+#      never strands a post.
+# Then it squash merges exactly that commit, and the repository deletes the branch.
+#
+# THE RULES ON MAIN DO THE REST. A ruleset requires a pull request and a passing seo-gates check from
+# GitHub Actions, with only the repository admin role on the bypass list. The App has no workflow
+# permission, so it cannot push a change to any workflow file, and it is on no bypass list.
+#
+# ⚠️ A BRANCH BEHIND MAIN IS REFUSED, AND THE LOOP OWNS THE RETRY. When main moves while the gates run,
+# step 3 fails with "behind main". The publish job on the VPS (S10) then rebuilds the branch from the
+# new main and pushes again; nothing here updates a branch.
+#
+# ⚠️ EVERY PULL REQUEST TO MAIN NEEDS seo-gates, WHICH RUNS ONLY ON seo/ BRANCHES. A pull request from
+# any other branch (his own, a dependency bot) waits on it for ever. He merges those with the admin
+# bypass, or pushes to main directly. Never add a job named seo-gates that runs on pull_request: it
+# would run the pull request's own YAML, a fork's included, and satisfy the rule for anything.
+on:
+  workflow_run:
+    workflows: [seo-gates]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  seo-merge:
+    name: seo-merge
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      startsWith(github.event.workflow_run.head_branch, 'seo/')
+    # On the job, so a run that is skipped never joins the group and never displaces a waiting merge.
+    concurrency:
+      group: seo-merge-${{ github.event.workflow_run.head_repository.full_name }}-${{ github.event.workflow_run.head_branch }}
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BRANCH: ${{ github.event.workflow_run.head_branch }}
+      SHA: ${{ github.event.workflow_run.head_sha }}
+      HEAD_REPO: ${{ github.event.workflow_run.head_repository.full_name }}
+      ACTOR: ${{ github.event.workflow_run.actor.login }}
+      LOOP: fiji-seo-loop[bot]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: The run came from the loop's App, on a seo/ branch of this repository
+        run: |
+          [ "$HEAD_REPO" = "$GITHUB_REPOSITORY" ] || { echo "::error::the branch lives in $HEAD_REPO; only branches of this repository merge"; exit 1; }
+          [ "$ACTOR" = "$LOOP" ] || { echo "::error::pushed by $ACTOR; only $LOOP may merge"; exit 1; }
+          [[ "$BRANCH" =~ ^seo/[a-z0-9][a-z0-9-]{0,80}$ ]] || { echo "::error::branch name $BRANCH"; exit 1; }
+          [[ "$SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::head sha $SHA"; exit 1; }
+      - name: The branch tip is the commit the gates passed, and it holds all of main
+        run: |
+          git fetch --no-tags origin "+refs/heads/main:refs/remotes/origin/main" "+refs/heads/$BRANCH:refs/remotes/origin/$BRANCH"
+          tip=$(git rev-parse "refs/remotes/origin/$BRANCH")
+          [ "$tip" = "$SHA" ] || { echo "::error::$BRANCH moved to $tip after the gates passed $SHA"; exit 1; }
+          git merge-base --is-ancestor origin/main "$SHA" || { echo "::error::$BRANCH is behind main; the loop must rebase and push again"; exit 1; }
+      - name: .github/ and scripts/ are main's
+        run: |
+          git diff --quiet origin/main "$SHA" -- .github scripts || { git diff --stat origin/main "$SHA" -- .github scripts; echo "::error::.github/ or scripts/ differ from main"; exit 1; }
+      - name: Every changed path is on the allowlist of main, and a plain file
+        run: |
+          git diff --raw --no-renames -z origin/main "$SHA" > "$RUNNER_TEMP/changes"
+          git show origin/main:scripts/seo-allowlist.txt > "$RUNNER_TEMP/seo-allowlist.txt"
+          python3 /dev/stdin "$RUNNER_TEMP/seo-allowlist.txt" "$RUNNER_TEMP/changes" <<'PY'
+          import re, sys
+          globs = [l.strip() for l in open(sys.argv[1], encoding='utf-8')
+                   if l.strip() and not l.lstrip().startswith('#')]
+          def rx(g):
+              return re.compile(''.join('[^/]*' if c == '*' else re.escape(c) for c in g))
+          allowed = [rx(g) for g in globs]
+          parts = open(sys.argv[2], 'rb').read().decode('utf-8', 'replace').split('\0')
+          bad, seen = [], 0
+          for meta, path in zip(parts[0::2], parts[1::2]):
+              if not meta.startswith(':'):
+                  continue
+              seen += 1
+              new_mode = meta[1:].split()[1]
+              if not re.fullmatch('[A-Za-z0-9._/-]+', path):
+                  bad.append(f'{path!r}: a path outside letters, digits and ._/-')
+              elif not any(a.fullmatch(path) for a in allowed):
+                  bad.append(f'{path}: outside scripts/seo-allowlist.txt on main')
+              elif new_mode not in ('100644', '000000'):
+                  bad.append(f'{path}: mode {new_mode}, only plain files may change')
+          if not seen:
+              bad.append('the branch changes nothing against main')
+          for b in bad:
+              print(f'::error::{b}')
+          print(f'{seen} changed path(s), {len(bad)} refused')
+          sys.exit(1 if bad else 0)
+          PY
+      - name: Squash merge the pull request at exactly that commit
+        run: |
+          gh pr list --repo "$GITHUB_REPOSITORY" --head "$BRANCH" --state open \
+            --json number,headRefOid,author,isCrossRepository,baseRefName > "$RUNNER_TEMP/prs.json"
+          python3 /dev/stdin "$RUNNER_TEMP/prs.json" > "$RUNNER_TEMP/pr" <<'PY'
+          import json, os, sys
+          prs = json.load(open(sys.argv[1]))
+          ours = ('app/fiji-seo-loop', 'fiji-seo-loop[bot]', 'app/github-actions', 'github-actions[bot]')
+          bad = [p for p in prs if p['isCrossRepository'] or p['baseRefName'] != 'main'
+                 or p['headRefOid'] != os.environ['SHA'] or p['author']['login'] not in ours]
+          for p in bad:
+              print(f"::error::open pull request #{p['number']} on this branch by {p['author']['login']}, "
+                    f"head {p['headRefOid']}, base {p['baseRefName']}", file=sys.stderr)
+          if bad or len(prs) > 1:
+              sys.exit(1)
+          print(prs[0]['number'] if prs else '')
+          PY
+          pr=$(cat "$RUNNER_TEMP/pr")
+          if [ -z "$pr" ]; then
+            url=$(gh pr create --repo "$GITHUB_REPOSITORY" --base main --head "$BRANCH" \
+                  --title "SEO loop: $BRANCH" --body "Opened by seo-merge after seo-gates passed on $SHA.")
+            pr=${url##*/}
+          fi
+          [[ "$pr" =~ ^[0-9]+$ ]] || { echo "::error::no pull request number ($pr)"; exit 1; }
+          for i in 1 2 3 4 5 6; do
+            if gh pr merge "$pr" --repo "$GITHUB_REPOSITORY" --squash --match-head-commit "$SHA"; then
+              echo "merged #$pr at $SHA"; exit 0
+            fi
+            state=$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json state --jq .state)
+            case "$state" in
+              MERGED) echo "#$pr is merged"; exit 0;;
+              CLOSED) echo "::error::#$pr was closed"; exit 1;;
+            esac
+            [ "$i" -lt 6 ] && sleep 10
+          done
+          echo "::error::#$pr did not merge"; exit 1

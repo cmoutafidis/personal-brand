@@ -429,6 +429,15 @@ python3 scripts/pricecheck.py --selftest          # fixtures, a diff run in a te
 python3 scripts/pricecheck.py --diff origin/main  # the lines this branch adds
 ```
 
+**The SEO loop's merge (2026-10-19, offer-os `gtm/seo-loop-2026-10` S04).** A ruleset on `main` requires a
+pull request and a passing `seo-gates` check from GitHub Actions; force pushes and deletion are blocked. The
+repository admin role bypasses it, so his direct pushes and the other plans' pushes work as before. The loop
+pushes as the GitHub App `fiji-seo-loop`, which has no workflow permission and no bypass.
+`.github/workflows/seo-merge.yml` runs from `main` after `seo-gates` passes, checks the branch again (pushed by
+the App, tip unchanged, holds all of `main`, `.github/` and `scripts/` equal to `main`, paths on the allowlist)
+and squash merges it; the merge deploys. A pull request from any other branch waits on `seo-gates` for ever:
+merge it with the admin bypass, or push to `main` directly.
+
 `scripts/hreflang-parity.py` asserts the built pages and the built sitemap declare the SAME
 hreflang set for the same URL. It exists because until 2026-09-03 they did not: `sitemap.ts` built
 its own copy of the map with `{en, el}` and stopped, so every page published three values and the
