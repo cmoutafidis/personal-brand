@@ -20,10 +20,15 @@ import type {HomeLongFormCopy} from '@/types/homeLongForm';
 // distribution lever on the site. Links belong INSIDE sentences, where a reader is already thinking
 // about the thing; a bare "read more" list at the bottom is not the same asset.
 //
-// ⚠️ THE ENGLISH BLOCK CARRIES NO /en/blog LINK, AND THAT ASYMMETRY IS DELIBERATE. `blogData.en` is
+// ~~THE ENGLISH BLOCK CARRIES NO /en/blog LINK, AND THAT ASYMMETRY IS DELIBERATE. `blogData.en` is
 // empty and `/en/blog/<slug>` is a hard 404 under `dynamicParams = false`, so every English article
 // link would be a broken link on the home page. The English makes the same points in prose and
-// links the service pages, the audit page and the offer pages instead.
+// links the service pages, the audit page and the offer pages instead.~~
+// Stale since 2026-10-12, struck 2026-10-19 (offer-os gtm/seo-loop-2026-10 S01, O2): blogData.en holds
+// four English posts (F20, F21 of offer-os gtm/followups-and-search), so their /en/blog/<slug> pages exist.
+// The English homepage now links the newest of them and /en/blog through its own band,
+// src/components/LatestPostsSection.tsx, rendered right after this block in src/app/(en)/en/page.tsx.
+// This block's English copy is unchanged and still links the service, audit and offer pages in prose.
 
 function Inline({parts}: { parts: BlogInline[] }) {
   return (

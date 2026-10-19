@@ -317,6 +317,11 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
   what the app does", linking the offer page. Same conventions as the F20 pair (self-referential, no price,
   no client named, link `#s12-what-it-costs`). They are prerendered paths under the existing `/en/blog/[slug]`
   route, so the route count stays 42.
+  **2026-10-19 (offer-os `gtm/seo-loop-2026-10` S01, O2): `/en` links the newest English posts.**
+  `src/components/LatestPostsSection.tsx` renders three `BlogCard`s (titles as `h3`, through BlogCard's
+  `headingLevel` prop) and one link to `/en/blog`, after `HomeLongForm` on the English homepage only. The
+  posts are picked by `publishedAt`, newest first, so a new English post shows up there with no edit. The
+  Greek homepage keeps its prose links in `HomeLongForm`.
 - **The blog batch broke the one-term-per-concept rule and it is swept (2026-09-02).** Sixteen
   places in six of the fourteen articles inflected a bare English noun as a Greek one — «το site
   σου», «σε άλλα sites», «στο theme σου», «Δικός σου server» — against a rule this repo had already

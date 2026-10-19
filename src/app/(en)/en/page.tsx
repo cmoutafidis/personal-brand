@@ -9,6 +9,8 @@ import AtlasHomeSection from '@/components/AtlasHomeSection';
 import SheetToAppFormSection from '@/components/SheetToAppFormSection';
 import Footer from "@/components/Footer";
 import HomeLongForm from '@/components/HomeLongForm';
+import LatestPostsSection from '@/components/LatestPostsSection';
+import {blogData} from '@/data/blogs';
 import {homeLongForm} from '@/data/homeLongForm';
 
 // 2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D66): the homepage is the hook
@@ -73,6 +75,9 @@ export default function EnglishHomePage() {
           compliance text; the blog index and other articles still link them) and into /services/custom-software-development-greece and /services/data-analysis-greece,
           which are in neither the navigation nor the footer. */}
       <HomeLongForm copy={homeLongForm.en}/>
+      {/* 2026-10-19 (offer-os gtm/seo-loop-2026-10 S01, O2): the newest English posts, picked by date
+          from blogData.en, plus one link to /en/blog. English homepage only. */}
+      <LatestPostsSection posts={blogData.en} language={language}/>
       {/* FAQPage, built from the SAME array HomeLongForm renders, so the marked-up questions and
           the visible ones cannot drift. This page had no FAQPage at all before 2026-09-02, while
           peakcodeconsulting.ch's home page has one. */}
