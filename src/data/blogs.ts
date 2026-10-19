@@ -81,3 +81,4 @@ export const blogData: BlogData = {
     jobShopSchedulingWorkOrderQuote,
   ],
 };
+// S04 red test: this plan costs CHF 500
