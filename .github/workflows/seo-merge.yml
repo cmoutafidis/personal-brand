@@ -17,7 +17,7 @@ name: seo-merge
 #   6. At most one open pull request from that branch, opened by the App or by this workflow, whose
 #      head is that commit. With none, this workflow opens it, so the order of push and pull request
 #      never strands a post.
-# Then it squash merges exactly that commit, and the repository deletes the branch.
+# Then it squash merges exactly that commit and deletes the branch.
 #
 # THE RULES ON MAIN DO THE REST. A ruleset requires a pull request and a passing seo-gates check from
 # GitHub Actions, with only the repository admin role on the bypass list. The App has no workflow
@@ -135,13 +135,16 @@ jobs:
             pr=${url##*/}
           fi
           [[ "$pr" =~ ^[0-9]+$ ]] || { echo "::error::no pull request number ($pr)"; exit 1; }
+          # The repository's "delete branch on merge" does not fire for a merge made with GITHUB_TOKEN
+          # (measured in the S04 green tests), so the branch is deleted here.
+          done_merge(){ echo "$1"; gh api -X DELETE "repos/$GITHUB_REPOSITORY/git/refs/heads/$BRANCH" || echo "::warning::$BRANCH not deleted"; exit 0; }
           for i in 1 2 3 4 5 6; do
             if gh pr merge "$pr" --repo "$GITHUB_REPOSITORY" --squash --match-head-commit "$SHA"; then
-              echo "merged #$pr at $SHA"; exit 0
+              done_merge "merged #$pr at $SHA"
             fi
             state=$(gh pr view "$pr" --repo "$GITHUB_REPOSITORY" --json state --jq .state)
             case "$state" in
-              MERGED) echo "#$pr is merged"; exit 0;;
+              MERGED) done_merge "#$pr is merged";;
               CLOSED) echo "::error::#$pr was closed"; exit 1;;
             esac
             [ "$i" -lt 6 ] && sleep 10
