@@ -39,6 +39,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import unicodedata
 import xml.etree.ElementTree as ET
 
 POST_KEYS = {'id', 'slug', 'title', 'metaTitle', 'excerpt', 'body', 'author', 'publishedAt', 'updatedAt',
@@ -67,7 +68,14 @@ TOKEN = re.compile(r'''
 ''', re.S | re.X)
 
 
+# JavaScript ends a // comment at any of these, this tokenizer at \n only, so a file holding one could hide code
+# inside what reads here as a comment (S08 review, 2026-10-19). A post never needs them.
+ODD_BREAKS = re.compile('[\r\x85\u2028\u2029]')
+
+
 def tokens(src):
+    if ODD_BREAKS.search(src):
+        raise Bad('a line break other than \\n (CR, U+0085, U+2028 or U+2029)')
     out, i = [], 0
     while i < len(src):
         m = TOKEN.match(src, i)
@@ -176,13 +184,32 @@ def literal(src):
 
 # ---------------------------------------------------------------- the BlogPost shape
 
+def odd_char(c):
+    """Why a character has no place in a loop post, or None. Invisible format characters, soft hyphens, odd
+    spaces and look-alike letters from other scripts would let a name, a price or a dash slip past the
+    word checks that follow (S08 review, 2026-10-19), so a post holds Latin and Greek letters, digits,
+    marks, punctuation and the plain space only."""
+    cat = unicodedata.category(c)
+    if cat in ('Cc', 'Cf', 'Co', 'Cs', 'Cn') or c in '\u00ad\u034f' or 0xFE00 <= ord(c) <= 0xFE0F:
+        return f'U+{ord(c):04X} is invisible or a control character'
+    if cat.startswith('Z') and c != ' ':
+        return f'U+{ord(c):04X} is a space other than the plain space'
+    if cat.startswith('L') and not unicodedata.name(c, '').startswith(('LATIN', 'GREEK')):
+        return f'U+{ord(c):04X} is a letter outside the Latin and Greek scripts'
+    if cat.startswith('M') and not unicodedata.name(c, '').startswith(('COMBINING', 'GREEK')):
+        return f'U+{ord(c):04X} is an unusual mark'
+    return None
+
+
 def check_string(s, where):
     if not isinstance(s, str):
         raise Bad(f'{where}: a string was expected')
     if '<' in s or '>' in s:
         raise Bad(f'{where}: < or > in a string')
-    if re.search(r'[\x00-\x08\x0b-\x1f\x7f  ]', s):
-        raise Bad(f'{where}: a control character')
+    for c in s:
+        why = odd_char(c)
+        if why:
+            raise Bad(f'{where}: {why}')
 
 
 def check_link(u, where, hosts):
@@ -628,6 +655,15 @@ def selftest():
     expect('fiji sources.ts', lambda: check_change('src/data/blog/sources.ts', 'x', "export const A = 'x';", HOSTS, 'fiji'), True)
     expect('deleted post', lambda: check_change('src/data/blog/a-post.ts', fiji_file(), None, HOSTS, 'fiji'), True)
     expect('unknown path', lambda: check_change('src/app/page.tsx', 'a', 'b', HOSTS, 'fiji'), True)
+    expect('U+2028 in a comment', lambda: fiji_post_file(fiji_file().replace('// facts: F-fiji-001', '// facts\u2028process.exit(1)'), 'src/data/blog/a-post.ts', HOSTS), True)
+    expect('U+2029 in a comment', lambda: fiji_post_file(fiji_file().replace('// facts: F-fiji-001', '// x\u2029fetch(1)'), 'src/data/blog/a-post.ts', HOSTS), True)
+    expect('CR in a comment', lambda: fiji_post_file(fiji_file().replace('// facts: F-fiji-001', '// x\rfetch(1)'), 'src/data/blog/a-post.ts', HOSTS), True)
+    expect('zero width space', fp(GOOD_POST.replace('A title', 'A ti\u200btle')), True)
+    expect('soft hyphen', fp(GOOD_POST.replace('A title', 'A ti\u00adtle')), True)
+    expect('no-break space', fp(GOOD_POST.replace('A title', 'A\u00a0title')), True)
+    expect('Cyrillic look-alike', fp(GOOD_POST.replace('A title', 'A titl\u0435')), True)
+    expect('fullwidth letter', fp(GOOD_POST.replace('A title', 'A \uff54itle')), True)
+    expect('Greek and German letters', fp(GOOD_POST.replace('A title', 'Σύστημα ERP für Größe')), False)
 
     idx = "import a from './blog/a';\nexport const blogData = {\n  el: [\n    a,\n  ],\n};\n"
     idx_ok = idx.replace("import a from './blog/a';\n", "import a from './blog/a';\nimport aPost from './blog/a-post';\n").replace('    a,\n', '    a,\n    aPost,\n')
