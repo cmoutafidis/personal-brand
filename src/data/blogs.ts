@@ -81,4 +81,3 @@ export const blogData: BlogData = {
     jobShopSchedulingWorkOrderQuote,
   ],
 };
-// S04 green test: a comment only change by the SEO loop
