@@ -27,7 +27,7 @@ export default function Page() {
       lang="en"
       eyebrow={"Data analysis Greece"}
       h1={"Reports that build themselves"}
-      lead={"If a report takes two days to assemble, and two people disagree about the number at the end of it, the problem is not the spreadsheet. It is that the number has three sources and no owner."}
+      lead={"If a report takes two days to assemble, and two people disagree about the number at the end of it, that number usually has three sources and no owner."}
       heroCta={"Get the free process audit"}
       outcomesTitle={"What we build"}
       outcomes={[{title: "Reports that build themselves", body: "The Monday file that someone assembles by hand, rebuilt so it is ready before anyone arrives."}, {title: "One number, one source", body: "When two reports disagree, work stops until someone reconciles them. We make the number come from one place so there is nothing to reconcile."}, {title: "Alerts before it costs you", body: "You find out that stock is short, a margin slipped or an invoice is overdue while it is still cheap to act on, not at month end."}, {title: "History you can query", body: "The data you already generate, kept somewhere you can ask questions of, instead of being overwritten every month."}]}
