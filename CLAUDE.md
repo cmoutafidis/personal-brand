@@ -48,7 +48,9 @@ longer a page that arrives by ad, it is a page that cannot rank. `fijisolutions.
 them are `website-seo` and `website-google-ads` — `κατασκευή ιστοσελίδων` **2,900/mo** and
 `προώθηση ιστοσελίδων` (see the trap below), both LOW competition, plus
 `κατασκευή ιστοσελίδων θεσσαλονίκη` **480**. Every automation and AI phrase the other six chase is
-below Google's reporting floor in Greek. Sources: `offer-os/gtm/keyword-research-2026-09-01.md`
+below Google's reporting floor in Greek. (That floor is Google's alone. A Google rank or volume does not decide
+AI citation, so check such a phrase with a replay before ruling it out: "AI citation (arXiv 2610.15033)"
+below, 2026-10-20.) Sources: `offer-os/gtm/keyword-research-2026-09-01.md`
 **with its corrections A/B/C**, and `offer-os/gtm/fiji-greek-content-plan-2026-09-02.md`.
 
 ⚠️ **Two figures on this line were wrong until 2026-09-02 and are corrected here.**
@@ -152,6 +154,30 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 | GA4 event names, `trackEvent()` | `src/utils/gtag.ts`. Server components send clicks through `src/components/TrackedLink.tsx`. |
 | Sitemap | `src/app/sitemap.ts`, generated from the route list in `src/lib/routes.ts` (moved there 2026-10-08, F17). `routeLastmod()` gives a page its own lastmod: the sheet-to-app pages print it as "Updated <date>" at the page end and emit it as `dateModified`, so bump the lastmod and the page date moves with it. |
 | Site-wide JSON-LD (2026-10-08, F17) | `src/app/RootShell.tsx` emits the ProfessionalService node (`areaServed` Greece, Thessaloniki, United States) and a WebSite node (`#website`, `alternateName` fijisolutions.net). `src/lib/offerSchema.ts` gives every offer page a WebPage node (`isPartOf` the WebSite) with a two-item BreadcrumbList, and `inLanguage` on its FAQPage. The sheet-to-app pages have their own preview images, `public/og/sheet-to-app-en.png` and `-el.png`, whose words are the offer name and the H1, with no price (rule 7). |
+
+## AI citation (arXiv 2610.15033)
+
+Added 2026-10-20 by offer-os `gtm/geo-retrieval-2026-10` G07 (its `PLAN.md` §1 and `RESEARCH.md`). The study,
+Chen and Koudas, 10 October 2026, read 158,099 answers of ChatGPT, Gemini and Perplexity to commercial questions
+and replayed the questions through the engines' APIs. Four rules follow from it for every chat in this repo:
+
+1. **Titles and paragraphs use the buyer's question words.** Within one site, matching in meaning the questions
+   people ask is the one content property that goes with more citations.
+2. **One page per distinct question.** The engines rewrite every question into new sub-queries on every answer
+   and rank pages by match in meaning, so each page that answers its own question is one more chance to be
+   retrieved. The study did not test near-identical pages, so every page answers a question of its own.
+3. **Per page markup is frozen as a GEO lever.** No new FAQ markup, schema, summary boxes, speed passes or
+   llms.txt to lift one page over its siblings. In the study the first four line up with differences between
+   websites only, and it does not study llms.txt. What exists stays: the site-level ProfessionalService and WebSite nodes in `RootShell.tsx` (the Person is a reference to the canonical node on charismoutafidis.com), the per offer FAQPage from `src/lib/offerSchema.ts`, and `src/lib/blogSchema.ts`.
+4. **Retrieval is observed.** The plan's question set and runs (`offer-os/gtm/geo-retrieval-2026-10/questions/`
+   and `runs/`) record which sub-queries the engines issue and which of our pages come back.
+
+**Google rank does not decide AI citation.** Retrieval by ChatGPT's own search explains 32% of the variation
+between pages of one website, page properties 2.8%, and the engines' searches rarely return what Google or Bing
+return.
+A page is therefore not ruled out because it cannot reach Google's first page. Low or zero Google volume is also
+no proof that the engines skip that sub-query: check such a phrase with a replay before investing in it or
+dropping it.
 
 ## Rules that are load-bearing
 
@@ -289,11 +315,14 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
   `NEXT_PUBLIC_GA_MEASUREMENT_ID`, set in Vercel and deliberately absent from the repo): Googlebot and a browser receive byte-identical HTML on every
   page, which is the test that caught the problem on the Peak Code site. The account's plan is
   cancelled and its API token regenerated.
-- **The blog is Greek-only on purpose, and `/en/blog` is noindex (added 2026-09-01).** Posts are
+- **The blog (added 2026-09-01; Greek only, with `/en/blog` noindex, until 2026-10-12, when F20 below filled
+  `blogData.en` and made `/en/blog` indexable; this line was corrected 2026-10-20, offer-os
+  `gtm/geo-retrieval-2026-10` G07).** Posts are
   typed blocks (`src/types/blog.ts`), rendered by `BlogPost.tsx`, with metadata, canonical,
   hreflang and JSON-LD derived in `src/lib/blogSchema.ts`. It targets «κατασκευή ιστοσελίδων»
   (2,900/mo) and «προώθηση ιστοσελίδων» (a rising trajectory, **not** 1,600 — see above); every
-  Greek automation and AI phrase measured at or near zero.
+  Greek automation and AI phrase measured at or near zero on Google (no proof the AI engines skip them:
+  see "AI citation (arXiv 2610.15033)" above).
   **Since 2026-09-02 it is fourteen articles, one file per article in `src/data/blog/`** — the same
   convention `src/data/offers/` uses; fourteen inline in `blogs.ts` was ~7,000 unreviewable lines.
   `src/data/blogs.ts` is now only the aggregator, and **the order of `blogData.el` in it IS the

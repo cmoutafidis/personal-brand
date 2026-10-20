@@ -7,6 +7,10 @@ import type {BlogPost} from '@/types/blog';
 // Δεν ξαναεξηγεί τα τρία στάδια (crawl/index/serve) ούτε το noindex ως έννοια — αυτά ανήκουν στο
 // «Γιατί δεν εμφανίζεται η ιστοσελίδα σου στην Google». Δεν ξαναγράφει την εγγυημένη θέση ως όρο
 // ανάθεσης — αυτό ανήκει στο «τι να ζητάς γραπτά».
+// 20 Οκτωβρίου 2026 (offer-os gtm/geo-retrieval-2026-10 G07): μία ενότητα παραθέτει την ερευνητική
+// εργασία arXiv 2610.15033 με τα δύο ποσοστά της (32% και 2,8%). Είναι ποσοστά της εργασίας, και
+// γράφονται πάντα ως μερίδια της διακύμανσης ανάμεσα σε σελίδες του ίδιου ιστότοπου. Η Fiji δεν
+// έχει δικές της μετρήσεις. Οι παραθέσεις είναι αυτούσιες από την περίληψή της.
 
 const G_AI = 'https://developers.google.com/search/docs/appearance/ai-features';
 const G_CRAWLERS = 'https://developers.google.com/crawling/docs/crawlers-fetchers/overview-google-crawlers';
@@ -33,6 +37,7 @@ const INDEXNOW = 'https://www.indexnow.org/';
 const CLOUDFLARE = 'https://blog.cloudflare.com/content-independence-day-no-ai-crawl-without-compensation/';
 const RFC9309 = 'https://www.rfc-editor.org/rfc/rfc9309.html';
 const ROBOTSTXT_ORG = 'https://www.robotstxt.org/robotstxt.html';
+const ARXIV_GEO = 'https://arxiv.org/abs/2610.15033';
 
 const A_SEO = '/el/blog/ti-einai-to-seo';
 const A_GSC = '/el/blog/google-search-console-ti-sou-leei';
@@ -42,11 +47,11 @@ const post: BlogPost = {
   slug: 'istoselida-stis-apantiseis-ai',
   title: 'Η ιστοσελίδα σου στις απαντήσεις της τεχνητής νοημοσύνης: τι είναι μετρήσιμο και τι μάρκετινγκ',
   metaTitle: 'Google AI Mode: η ιστοσελίδα σου στις απαντήσεις AI',
-  excerpt: 'Ποιοι crawlers υπάρχουν, ποιος διακόπτης κλείνει τι και τι μετράει πραγματικά το Search Console. Και ποια υπόσχεση δεν την ελέγχει κανείς.',
+  excerpt: 'Ποιοι crawlers υπάρχουν, τι μετράει το Search Console και ποια υποερωτήματα τρέχουν το ChatGPT, το Gemini και το Perplexity για να βρουν σελίδες.',
   author: 'Χαράλαμπος Μουταφίδης',
   publishedAt: '2026-09-02',
-  updatedAt: '2026-09-02',
-  readingTime: 20,
+  updatedAt: '2026-10-20',
+  readingTime: 23,
   tags: ['Αναζήτηση', 'Ιστοσελίδες', 'Ανάθεση έργου'],
   body: [
     {type: 'paragraph', text: [
@@ -69,7 +74,7 @@ const post: BlogPost = {
     {type: 'faq', heading: 'Σύντομες απαντήσεις', items: [
       {q: 'Χρειάζεται ξεχωριστή δουλειά για να εμφανίζομαι στις AI απαντήσεις της Google;', a: 'Η τεκμηρίωση της Google λέει όχι. Γράφει ότι δεν υπάρχουν πρόσθετες απαιτήσεις ούτε ειδικές βελτιστοποιήσεις, και ότι δεν χρειάζεται να φτιάξεις κανένα νέο μηχαναγνώσιμο αρχείο ούτε ειδικό schema. Η προϋπόθεση είναι η σελίδα να είναι στο ευρετήριο και επιλέξιμη να εμφανιστεί με απόσπασμα.'},
       {q: 'Μπορεί κάποιος να μου εγγυηθεί ότι θα με αναφέρει το ChatGPT ή η Google;', a: 'Όχι. Η Google γράφει ότι η ευρετηρίαση και η προβολή δεν είναι εγγυημένες ακόμη κι όταν τα πληροίς όλα. Η Microsoft γράφει ότι δεν υπάρχει μυστική στρατηγική για να σε διαλέξει ένα AI σύστημα. Η OpenAI υπόσχεται μόνο το αντίστροφο: ότι όποιος έχει εξαιρεθεί δεν θα εμφανίζεται.'},
-      {q: 'Αν μπλοκάρω το GPTBot, βγαίνω από την αναζήτηση του ChatGPT;', a: 'Όχι. Είναι δύο διαφορετικά ρομπότ με διαφορετική δουλειά: το GPTBot αφορά την εκπαίδευση μοντέλων, το OAI-SearchBot την αναζήτηση. Η OpenAI γράφει ρητά ότι κάθε ρύθμιση είναι ανεξάρτητη από τις άλλες.'},
+      {q: 'Αν μπλοκάρω το GPTBot, βγαίνω από την αναζήτηση του ChatGPT;', a: 'Όχι. Είναι δύο διαφορετικά ρομπότ με διαφορετική δουλειά: το GPTBot αφορά την εκπαίδευση μοντέλων, το OAI-SearchBot την αναζήτηση. Η OpenAI γράφει ρητά ότι κάθε ρύθμιση είναι ανεξάρτητη από τις άλλες. Μια μελέτη του Οκτωβρίου 2026 (arXiv 2610.15033) βρήκε επιπλέον ότι το ChatGPT αναφέρει επωνυμίες που ήδη γνωρίζει, ακόμη και χωρίς σελίδα που να το στηρίζει. Τα ρομπότ εκπαίδευσης η μελέτη δεν τα εξέτασε.'},
       {q: 'Το Google-Extended κλείνει τα AI Overviews;', a: 'Όχι, και αυτό είναι το πιο συχνό λάθος της αγοράς. Το Google-Extended αφορά την εκπαίδευση και τη θεμελίωση των μοντέλων Gemini, και η Google γράφει ότι δεν επηρεάζει ούτε τη συμπερίληψη ούτε την κατάταξη στην Αναζήτηση. Τα AI Overviews και το AI Mode ελέγχονται από άλλα εργαλεία.'},
       {q: 'Βλέπω πουθενά πόση επισκεψιμότητα μου φέρνουν οι AI απαντήσεις;', a: 'Στο Search Console. Από τις 31 Αυγούστου 2026 η αναφορά generative AI είναι διαθέσιμη σε όλους τους ιστότοπους παγκοσμίως και δείχνει πόσες φορές εμφανίστηκαν σύνδεσμοι προς εσένα μέσα σε ένα generative AI χαρακτηριστικό. Δεν είναι δεύτερη ανεξάρτητη μέτρηση: αντλεί από τον ίδιο τύπο αναζήτησης Web της κανονικής αναφοράς επιδόσεων.'},
       {q: 'Το robots.txt εμποδίζει τα AI να διαβάσουν τη σελίδα μου;', a: 'Όχι με βεβαιότητα. Είναι αίτημα, όχι κλειδαριά. Η επίσημη σελίδα του πρωτοκόλλου γράφει ότι τα ρομπότ μπορούν να το αγνοήσουν, και οι fetchers που ενεργοποιεί ο ίδιος ο χρήστης (της Google, της OpenAI, της Perplexity) γενικά δεν το τηρούν.'},
@@ -101,6 +106,45 @@ const post: BlogPost = {
     {type: 'paragraph', text: [
       'Και το τελευταίο, που το κρατάς για κάθε συζήτηση περί εγγυήσεων: ',
       {text: "«Just because a page meets all requirements, best practices, and complies with the policies, doesn't mean that Google will crawl, index, or serve its content. Indexing and serving isn't guaranteed.»", href: G_AI},
+    ]},
+
+    {type: 'heading', text: 'Τι βρήκε μια μελέτη για το πώς διαλέγουν πηγές το ChatGPT, το Gemini και το Perplexity'},
+    {type: 'note', text: [
+      {text: 'Προσθήκη: 20 Οκτωβρίου 2026.', strong: true},
+      ' Αυτή η ενότητα στηρίζεται σε μια ερευνητική εργασία που δημοσιεύτηκε στις 10 Οκτωβρίου 2026. Οι παραθέσεις είναι αυτούσιες από την περίληψή της, στα αγγλικά όπως και οι υπόλοιπες.',
+    ]},
+    {type: 'paragraph', text: [
+      'Οι ερευνητές Mahe Chen και Nick Koudas μελέτησαν δύο συλλογές απαντήσεων σε εμπορικές ερωτήσεις, η καθεμία 90 ημερών: 158.099 απαντήσεις με 468.037 παραπομπές σε πηγές (',
+      {text: 'arXiv 2610.15033', href: ARXIV_GEO},
+      '). Το κεντρικό τους εύρημα αφορά το βήμα πριν γραφτεί η απάντηση: ',
+      {text: 'Every page ChatGPT cites is one its own search retrieved.', href: ARXIV_GEO},
+      ' Το μοντέλο αναφέρει μόνο σελίδες που έφερε η δική του αναζήτηση.',
+    ]},
+    {type: 'paragraph', text: [
+      'Και αυτή η αναζήτηση έχει τη μορφή που περιγράφει η Google παραπάνω για το query fan-out. Η εργασία γράφει ότι το μοντέλο ξαναγράφει την ερώτηση σε νέα υποερωτήματα σε κάθε απάντηση, και ότι αυτά ',
+      {text: "rarely coincide with Google's or Bing's results", href: ARXIV_GEO},
+      '. Άρα μια σελίδα μπορεί να αναφερθεί από ένα μοντέλο χωρίς να βρίσκεται στην πρώτη σελίδα της Google.',
+    ]},
+    {type: 'paragraph', text: [
+      'Από την εργασία κυκλοφορούν δύο νούμερα, το 32% και το 2,8%, και αξίζει να ξέρεις τι ακριβώς μετράνε. Είναι και τα δύο μερίδια της διακύμανσης ανάμεσα σε σελίδες του ίδιου ιστότοπου: πόση από τη διαφορά ανάμεσα σε μια σελίδα που αναφέρεται συχνά και σε μια που αναφέρεται σπάνια, μέσα στον ίδιο ιστότοπο, εξηγεί ο κάθε παράγοντας. Το ποιες σελίδες φέρνει η αναζήτηση του ChatGPT εξηγεί το 32%. Οι ιδιότητες της ίδιας της σελίδας εξηγούν το 2,8%. Η πρόταση της περίληψης: ',
+      {text: "which pages that search retrieves, for sub-queries the model rewrites on every answer and that rarely coincide with Google's or Bing's results, explains far more of the variation than page properties (32% against 2.8%).", href: ARXIV_GEO},
+      ' Τα δύο ποσοστά δεν είναι ποσοστά επισκεψιμότητας ούτε πιθανότητα να σε αναφέρει ένα μοντέλο.',
+    ]},
+    {type: 'paragraph', text: [
+      'Για το περιεχόμενο, μέσα στον ίδιο ιστότοπο η εργασία βρήκε ένα πράγμα που μετράει: ',
+      {text: 'pages whose title and paragraphs match the questions people ask are cited more', href: ARXIV_GEO},
+      '. Για τα FAQ, τα δομημένα δεδομένα, τα πλαίσια περίληψης και την ταχύτητα γράφει ότι ',
+      {text: 'appear effective only across websites', href: ARXIV_GEO},
+      '. Συνδέονται δηλαδή με διαφορές ανάμεσα σε ιστότοπους. Μέσα στον ίδιο ιστότοπο η εργασία δεν τα βρήκε να ανεβάζουν μια σελίδα πάνω από τις άλλες.',
+    ]},
+    {type: 'paragraph', text: [
+      'Το τελευταίο εύρημα αφορά τη μνήμη του μοντέλου: ',
+      {text: 'ChatGPT writes brands it knows into its searches, prefers websites it knows, and names brands without any supporting page', href: ARXIV_GEO},
+      '. Η εργασία το κλείνει με μία πρόταση: ',
+      {text: '«Pages are thus cited when searched; brands are also named when remembered.»', href: ARXIV_GEO},
+    ]},
+    {type: 'paragraph', text: [
+      'Δύο πρακτικά συμπεράσματα, και τα δύο δικά μου. Μια σελίδα για κάθε ερώτηση, με τίτλο και παραγράφους στα λόγια που χρησιμοποιεί όποιος ρωτάει, έχει περισσότερες πιθανότητες να ταιριάξει με κάποιο υποερώτημα. Στο ίδιο συμπέρασμα οδηγεί και το query fan-out της Google. Και το βήμα της αναζήτησης μετριέται πλέον: η εργασία στέλνει ξανά τις ίδιες ερωτήσεις μέσα από τα API των μηχανών και καταγράφει ποια υποερωτήματα τρέχουν και ποιες σελίδες επιστρέφουν.',
     ]},
 
     {type: 'heading', text: 'Πέντε διακόπτες που δεν κάνουν το ίδιο πράγμα'},
@@ -403,6 +447,7 @@ const post: BlogPost = {
       {label: 'Cloudflare Blog, Content Independence Day: no AI crawl without compensation (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: CLOUDFLARE},
       {label: 'RFC 9309, Robots Exclusion Protocol (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: RFC9309},
       {label: 'robotstxt.org, About /robots.txt (ανακτήθηκε 2 Σεπτεμβρίου 2026)', url: ROBOTSTXT_ORG},
+      {label: 'Mahe Chen, Nick Koudas, What Drives AI Citations? Content, Retrieval and Model Knowledge in Generative Engine Optimization (GEO), arXiv 2610.15033 (10 Οκτωβρίου 2026) (ανακτήθηκε 20 Οκτωβρίου 2026)', url: ARXIV_GEO},
     ]},
   ],
 };

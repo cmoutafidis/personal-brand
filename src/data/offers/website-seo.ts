@@ -201,7 +201,7 @@ const websiteSeo: Offer = {
         },
         {
           q: 'Will we be found in ChatGPT and other AI answers?',
-          a: 'The same work helps: clear pages, real answers to real questions, a profile that matches, and a site a machine can read. We build for that deliberately. We do not guarantee it, because nobody controls what a model says.'
+          a: 'Partly. ChatGPT, Gemini and Perplexity run their own searches. They rewrite your customer\'s question into several new questions and cite the pages that match them in meaning, which often differ from what Google shows first. So we write a page for each question your customers ask, in their words. We do not guarantee it, because nobody controls what a model says.'
         },
         {
           q: 'Do we have to stay on your hosting?',
@@ -414,7 +414,7 @@ const websiteSeo: Offer = {
         },
         {
           q: 'Θα μας βρίσκει το ChatGPT και οι άλλες AI απαντήσεις;',
-          a: 'Βοηθά η ίδια δουλειά: καθαρές σελίδες, πραγματικές απαντήσεις στις ερωτήσεις που κάνει ο κόσμος, προφίλ επιχείρησης που ταιριάζει, και ιστοσελίδα που διαβάζεται από μηχανή. Το χτίζουμε συνειδητά για αυτό. Δεν το εγγυόμαστε, γιατί κανείς δεν ελέγχει τι θα πει ένα μοντέλο.'
+          a: 'Εν μέρει. Το ChatGPT, το Gemini και το Perplexity κάνουν τις δικές τους αναζητήσεις. Ξαναγράφουν την ερώτηση του πελάτη σου σε νέες ερωτήσεις και παραθέτουν τις σελίδες που ταιριάζουν νοηματικά με αυτές. Συχνά είναι άλλες από αυτές που δείχνει πρώτες η Google. Γι’ αυτό γράφουμε μια σελίδα για κάθε ερώτηση που κάνουν οι πελάτες σου, με τα δικά τους λόγια. Δεν το εγγυόμαστε, γιατί κανείς δεν ελέγχει τι θα πει ένα μοντέλο.'
         },
         {
           q: 'Πρέπει να μείνουμε στη δική σας φιλοξενία;',
