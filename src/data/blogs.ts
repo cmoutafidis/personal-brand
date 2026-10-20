@@ -51,6 +51,7 @@ import appsheetGlideOrADeveloper from './blog/appsheet-glide-or-a-developer';
 // Original English, no price, no client named.
 import crewScheduleChangeOrderJobTracker from './blog/crew-schedule-change-order-job-tracker-app';
 import jobShopSchedulingWorkOrderQuote from './blog/job-shop-scheduling-work-order-quote-app';
+import onePersonKnowsEverythingBusinessContinuity from './blog/one-person-knows-everything-business-continuity';
 
 // One file per article in src/data/blog/, the same convention src/data/offers/ uses. Fourteen
 // articles inline in this file was about seven thousand lines and nothing could be reviewed.
@@ -79,5 +80,6 @@ export const blogData: BlogData = {
     appsheetGlideOrADeveloper,
     crewScheduleChangeOrderJobTracker,
     jobShopSchedulingWorkOrderQuote,
+    onePersonKnowsEverythingBusinessContinuity,
   ],
 };
