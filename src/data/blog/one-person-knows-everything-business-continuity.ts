@@ -22,7 +22,7 @@ const post: BlogPost = {
     {
       type: 'paragraph',
       text: [
-        'When that person is on holiday, the work does not stop needing to happen. What stops is your ability to do it the way it has always been done, because the steps live in their head and nowhere else.',
+        'When that person is on holiday, the work still needs to happen, and the steps for doing it the usual way live in their head and nowhere else.',
       ],
     },
     {type: 'heading', text: 'Why one person ends up holding all the process knowledge'},
@@ -60,7 +60,7 @@ const post: BlogPost = {
     {
       type: 'paragraph',
       text: [
-        'The work does not stop all at once. It stops a piece at a time, wherever the next unwritten step happens to be, and it starts again only when the person is back or someone reconstructs the step from scratch.',
+        'The work stalls a piece at a time, wherever the next unwritten step happens to be, and it starts again only when the person is back or someone reconstructs the step from scratch.',
       ],
     },
     {type: 'heading', text: 'Turning What They Know Into Written Steps Anyone Can Follow'},
