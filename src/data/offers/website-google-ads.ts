@@ -39,7 +39,7 @@ const websiteGoogleAds: Offer = {
   serviceType: 'Search Engine Marketing',
   copy: {
     en: {
-      metaTitle: 'Website + Google Ads, 3 Weeks from Kickoff | Fiji Solutions',
+      metaTitle: 'Website and Google Ads Campaign Setup | Fiji Solutions',
       metaDescription:
         'We rebuild your website and launch your Google Ads campaign three weeks from the kickoff workshop. We agree a lead target in writing, or your fee back.',
       metaKeywords:

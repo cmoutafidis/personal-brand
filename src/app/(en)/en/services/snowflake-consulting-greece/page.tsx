@@ -26,7 +26,7 @@ export default function Page() {
     <ServicePage
       lang="en"
       eyebrow={"Snowflake Greece"}
-      h1={"Snowflake, implemented or repaired"}
+      h1={"Snowflake consulting in Greece: implementation, migration and tuning"}
       lead={"When the data outgrows spreadsheets, the next step is usually bought before it is designed. Then it is slow, expensive, or both. We implement it, migrate onto it, or fix the one you already have."}
       heroCta={"Get the free process audit"}
       outcomesTitle={"What we do"}

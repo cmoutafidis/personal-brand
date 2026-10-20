@@ -12,6 +12,11 @@ import type {Offer} from '@/components/OfferLanding';
 // characters. The 60-character cap is hard and the anchor outranks the longer brand, so do not
 // lengthen the title without first removing something else from the string, and never by removing
 // the anchor or the exact keyword "custom software prototype".
+// 2026-10-20 (offer-os gtm/geo-retrieval-2026-10 G06, his pick "Buyer phrase, no number"): this
+// overrides the metaTitle half of the paragraph above, and its "57 characters" is history. Every
+// workbook offer title now names the service in the buyer's words and carries no number, so it
+// needs no anchor. The number and its kickoff anchor stay together in the H1, the description and
+// the ogAlt. A title that brings a number back brings the anchor with it.
 // ⚠️ CORRECTED 2026-09-06: this paragraph used to state that the brand suffix here "is | Fiji"
 // rather than the "| Fiji Solutions" the sibling offer files use, and forbade restoring
 // "Solutions". The en metaTitle at line 45 already reads "| Fiji Solutions" and is 57 characters,
@@ -47,7 +52,7 @@ const softwarePrototype: Offer = {
   serviceType: 'Custom Software Development',
   copy: {
     en: {
-      metaTitle: 'Software Prototype, 2 Weeks From Kickoff | Fiji Solutions',
+      metaTitle: 'Custom Software Prototype Development | Fiji Solutions',
       metaDescription:
         'Your custom software as a working prototype, two weeks from the kickoff workshop. On time and matching your written requirements, or we refund the fee.',
       metaKeywords:
@@ -55,7 +60,7 @@ const softwarePrototype: Offer = {
       ogAlt: 'Fiji Solutions: a custom software prototype built in two weeks from the kickoff workshop',
 
       eyebrow: 'Custom software prototype',
-      title: 'Show them the software instead of the slide deck. Two weeks from the kickoff workshop.',
+      title: 'A working custom software prototype, two weeks from the kickoff workshop.',
       subhead:
         'You bring the idea and the people who will use it. We turn it into software that runs, and hand it over with the source code and the documentation. Two weeks from the kickoff workshop, on time and matching what we wrote down, or we refund your fee.',
       bullets: [
@@ -222,7 +227,7 @@ const softwarePrototype: Offer = {
     },
 
     el: {
-      metaTitle: 'Πρωτότυπο λογισμικού | Fiji Solutions',
+      metaTitle: 'Ανάπτυξη πρωτοτύπου λογισμικού | Fiji Solutions',
       metaDescription:
         'Πρωτότυπο λογισμικού που δουλεύει, δύο εβδομάδες από την εναρκτήρια συνάντηση. Στην ώρα του, στις γραπτές προδιαγραφές, αλλιώς επιστρέφουμε την αμοιβή.',
       metaKeywords:
@@ -230,7 +235,7 @@ const softwarePrototype: Offer = {
       ogAlt: 'Fiji Solutions: πρωτότυπο λογισμικού σε δύο εβδομάδες από την εναρκτήρια συνάντηση',
 
       eyebrow: 'Πρωτότυπο λογισμικού',
-      title: 'Δείξε τους το λογισμικό, αντί για τις διαφάνειες. Δύο εβδομάδες από την εναρκτήρια συνάντηση.',
+      title: 'Ένα πρωτότυπο λογισμικού που δουλεύει, δύο εβδομάδες από την εναρκτήρια συνάντηση.',
       subhead:
         'Εσύ φέρνεις την ιδέα και τους ανθρώπους που θα τη χρησιμοποιήσουν. Εμείς τη μετατρέπουμε σε λογισμικό που τρέχει, με τον πηγαίο κώδικα και την τεκμηρίωση στα χέρια σου. Δύο εβδομάδες από την εναρκτήρια συνάντηση, στην ώρα του και πάνω σε αυτά που γράψαμε, αλλιώς σου επιστρέφουμε την αμοιβή.',
       bullets: [

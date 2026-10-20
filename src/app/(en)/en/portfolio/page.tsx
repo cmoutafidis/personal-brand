@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: 'Services: Custom Software, Data Analysis & Snowflake Greece',
-  description: 'What we build once the map is done: process automation and internal tools, reporting and data analysis, and the Snowflake data platform.',
+  description: 'What Fiji Solutions builds: process automation and internal tools, reporting and data analysis, and the Snowflake data platform.',
   keywords: 'custom software services Greece, data analysis services Greece, Snowflake consulting Greece, business intelligence Greece, software company Thessaloniki, data engineering Greece',
   alternates: buildAlternates('/portfolio'),
   openGraph: {

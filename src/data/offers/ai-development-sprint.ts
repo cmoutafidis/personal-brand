@@ -32,7 +32,7 @@ const aiDevelopmentSprint: Offer = {
   serviceType: 'Custom Software Development',
   copy: {
     en: {
-      metaTitle: 'Software Release, 15 Days From Kickoff | Fiji Solutions',
+      metaTitle: 'Fixed-Scope AI Software Development Sprint | Fiji Solutions',
       metaDescription:
         'We develop your next software release in 15 days from the kickoff workshop, matched to your written requirements. On time and to spec, or your fee back.',
       metaKeywords:
@@ -40,7 +40,7 @@ const aiDevelopmentSprint: Offer = {
       ogAlt: 'Fiji Solutions: your next software release built in a 15-day sprint from the kickoff workshop',
 
       eyebrow: 'AI development sprint',
-      title: 'Your next software release, working 15 days after the kickoff workshop.',
+      title: 'Software development sprint: your next release, working 15 days after the kickoff workshop.',
       subhead:
         'You bring the release you already want. We write the requirements with you, build for ten working days, and hand it back running. Fifteen days from the workshop, matching the document you signed off, or we refund your fee.',
       bullets: [
@@ -203,7 +203,7 @@ const aiDevelopmentSprint: Offer = {
     },
 
     el: {
-      metaTitle: 'Έκδοση λογισμικού με AI | Fiji Solutions',
+      metaTitle: 'Κύκλος ανάπτυξης λογισμικού με AI | Fiji Solutions',
       metaDescription:
         'Αναπτύσσουμε την επόμενη έκδοση του λογισμικού σου σε 15 ημέρες από τη συνάντηση, σύμφωνα με τις γραπτές απαιτήσεις. Αλλιώς επιστρέφουμε την αμοιβή.',
       metaKeywords:
@@ -211,7 +211,7 @@ const aiDevelopmentSprint: Offer = {
       ogAlt: 'Fiji Solutions: η επόμενη έκδοση του λογισμικού σου σε κύκλο υλοποίησης 15 ημερών από την εναρκτήρια συνάντηση',
 
       eyebrow: 'Κύκλος ανάπτυξης λογισμικού με AI',
-      title: 'Η επόμενη έκδοση του λογισμικού σου, έτοιμη 15 ημέρες μετά την εναρκτήρια συνάντηση.',
+      title: 'Κύκλος ανάπτυξης λογισμικού: η επόμενη έκδοσή σου, έτοιμη 15 ημέρες μετά την εναρκτήρια συνάντηση.',
       subhead:
         'Εσύ φέρνεις την έκδοση που ήδη θέλεις. Εμείς γράφουμε μαζί σου τις απαιτήσεις, χτίζουμε δέκα εργάσιμες, και στην παραδίδουμε να δουλεύει. Δεκαπέντε ημέρες από τη συνάντηση, σύμφωνα με το κείμενο που υπέγραψες, αλλιώς σου επιστρέφουμε την αμοιβή.',
       bullets: [

@@ -34,7 +34,7 @@ const websiteSeo: Offer = {
   serviceType: 'Search Engine Optimization',
   copy: {
     en: {
-      metaTitle: 'Website and SEO, 3 Weeks From Kickoff | Fiji Solutions',
+      metaTitle: 'Website and SEO for More Leads from Google | Fiji Solutions',
       metaDescription:
         'We rebuild or optimise your website and do the SEO, three weeks from the kickoff workshop. We agree a lead target in writing, or we refund your fee.',
       metaKeywords:
@@ -42,7 +42,7 @@ const websiteSeo: Offer = {
       ogAlt: 'Fiji Solutions: website and SEO delivered three weeks from the kickoff workshop',
 
       eyebrow: 'Website and SEO for more leads',
-      title: 'A website that brings you customers from search. Live three weeks from the kickoff workshop.',
+      title: 'Website and SEO that bring you customers from search, live three weeks from the kickoff workshop.',
       subhead:
         'We rebuild or optimise the site, do the SEO, and sort out your Google Business Profile. The lead target is agreed in writing first, and if the site misses it, we refund your fee.',
       bullets: [

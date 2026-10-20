@@ -38,7 +38,7 @@ const aiAgent: Offer = {
   serviceType: 'Business Process Automation',
   copy: {
     en: {
-      metaTitle: 'Custom AI Agent, Live a Week From Kickoff | Fiji Solutions',
+      metaTitle: 'Custom AI Agent Development for One Process | Fiji Solutions',
       metaDescription:
         'Pick one process. We build an AI agent that runs it, live one week from the kickoff workshop. It costs at least 75% less to run, or we refund your fee.',
       metaKeywords:
@@ -47,7 +47,7 @@ const aiAgent: Offer = {
         'Fiji Solutions: a custom AI agent running one business process, live a week after the kickoff workshop',
 
       eyebrow: 'Custom AI agent for one process',
-      title: 'Pick one process. One week from the kickoff workshop, an AI agent runs it.',
+      title: 'A custom AI agent that runs one process, live one week from the kickoff workshop.',
       subhead:
         'You name the process. We map it, build the agent, and hand it over running. One week from the kickoff workshop, and that process costs at least 75% less to run than it does today, or we refund your fee.',
       bullets: [
@@ -216,7 +216,7 @@ const aiAgent: Offer = {
     },
 
     el: {
-      metaTitle: 'Custom AI agent, εβδομάδα από τη συνάντηση | Fiji Solutions',
+      metaTitle: 'Ανάπτυξη AI agent για μία διαδικασία | Fiji Solutions',
       metaDescription:
         'Διάλεξε μία διαδικασία. Χτίζουμε AI agent που την τρέχει, μία εβδομάδα από τη συνάντηση. Κοστίζει τουλάχιστον 75% λιγότερο, αλλιώς επιστρέφουμε την αμοιβή.',
       metaKeywords:
@@ -225,7 +225,7 @@ const aiAgent: Offer = {
         'Fiji Solutions: custom AI agent που τρέχει μία διαδικασία, ζωντανό μία εβδομάδα από την εναρκτήρια συνάντηση',
 
       eyebrow: 'Custom AI agent για μία διαδικασία',
-      title: 'Διάλεξε μία διαδικασία. Μία εβδομάδα από την εναρκτήρια συνάντηση, την τρέχει ένα AI agent.',
+      title: 'Ένα AI agent που τρέχει μία διαδικασία, σε λειτουργία μία εβδομάδα από την εναρκτήρια συνάντηση.',
       subhead:
         'Εσύ ονομάζεις τη διαδικασία. Εμείς τη χαρτογραφούμε, χτίζουμε το agent και στο παραδίδουμε να δουλεύει. Μία εβδομάδα από την εναρκτήρια συνάντηση, και αυτή η διαδικασία κοστίζει τουλάχιστον 75% λιγότερο από σήμερα, αλλιώς σου επιστρέφουμε την αμοιβή.',
       bullets: [

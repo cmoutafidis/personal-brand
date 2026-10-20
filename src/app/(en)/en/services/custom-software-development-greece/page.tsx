@@ -26,7 +26,7 @@ export default function Page() {
     <ServicePage
       lang="en"
       eyebrow={"Custom software Greece"}
-      h1={"The work your team repeats every week, done by software"}
+      h1={"Custom software and process automation for businesses in Greece"}
       lead={"Someone in your business copies the same data into a second system, chases approvals by email, or rebuilds the same file every Monday morning. That is the work we remove. The retyping goes and the job stays."}
       heroCta={"Get the free process audit"}
       outcomesTitle={"What we build"}

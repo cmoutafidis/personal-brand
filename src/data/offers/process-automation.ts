@@ -28,7 +28,7 @@ const processAutomation: Offer = {
   serviceType: 'Business Process Automation',
   copy: {
     en: {
-      metaTitle: 'Automate One Process, 2 Weeks From Kickoff | Fiji Solutions',
+      metaTitle: 'Process Automation for Small Businesses | Fiji Solutions',
       metaDescription:
         'Pick the process eating your week. We automate it in two weeks from the kickoff workshop, guaranteed to cost 75% less to run or we refund your fee.',
       metaKeywords:
@@ -36,7 +36,7 @@ const processAutomation: Offer = {
       ogAlt: 'Fiji Solutions: one business process automated, two weeks from the kickoff workshop',
 
       eyebrow: 'Automate one business process',
-      title: 'Pick the process that eats your week. Two weeks from the kickoff workshop, it runs itself.',
+      title: 'Process automation for small businesses: one process runs on its own, two weeks from the kickoff workshop.',
       subhead:
         'You name one process. We map it, build the automation, and hand it over working. Two weeks from the kickoff workshop, and it costs at least 75% less to run than it does today, or we refund your fee.',
       bullets: [
@@ -207,7 +207,7 @@ const processAutomation: Offer = {
       ogAlt: 'Fiji Solutions: μία διαδικασία αυτοματοποιημένη, δύο εβδομάδες από την εναρκτήρια συνάντηση',
 
       eyebrow: 'Αυτοματοποίηση μίας διαδικασίας',
-      title: 'Διάλεξε τη διαδικασία που σου τρώει την εβδομάδα. Δύο εβδομάδες από την εναρκτήρια συνάντηση, τρέχει μόνη της.',
+      title: 'Αυτοματοποίηση διαδικασίας για τη μικρή σου επιχείρηση: τρέχει μόνη της δύο εβδομάδες από την εναρκτήρια συνάντηση.',
       subhead:
         'Εσύ διαλέγεις μία διαδικασία. Εμείς τη χαρτογραφούμε, χτίζουμε τον αυτοματισμό και στον παραδίδουμε να δουλεύει. Δύο εβδομάδες από την εναρκτήρια συνάντηση, και κοστίζει τουλάχιστον 75% λιγότερο από σήμερα, αλλιώς σου επιστρέφουμε την αμοιβή.',
       bullets: [

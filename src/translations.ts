@@ -149,7 +149,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'projects.code': 'Source Code',
 
     // Services — three, not six. Each one names the manual step it removes.
-    'services.title': 'What we build once the map is done',
+    'services.title': 'What Fiji Solutions builds: custom software, data analysis and Snowflake',
     'services.subtitle': 'Three things. Each one removes work somebody is doing by hand today.',
     'services.software.title': 'Process automation and internal tools',
     'services.software.description': 'The software that removes the retyping: internal tools, connections between systems that do not talk to each other, and automation for the steps someone repeats every week.',
@@ -318,7 +318,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'projects.code': 'Ανοιχτός κώδικας',
 
     // Services
-    'services.title': 'Τι φτιάχνουμε μόλις ετοιμαστεί το πλάνο',
+    'services.title': 'Τι φτιάχνει η Fiji Solutions: εξατομικευμένο λογισμικό, ανάλυση δεδομένων και Snowflake',
     'services.subtitle': 'Τρία πράγματα. Το καθένα αφαιρεί δουλειά που κάνει κάποιος στο χέρι σήμερα.',
     'services.software.title': 'Αυτοματοποίηση διαδικασιών και εσωτερικά εργαλεία',
     'services.software.description': 'Το λογισμικό που κόβει το ξαναγράψιμο: εσωτερικά εργαλεία, συνδέσεις ανάμεσα σε συστήματα που δεν μιλάνε μεταξύ τους, και αυτοματισμοί για τα βήματα που επαναλαμβάνει κάποιος κάθε βδομάδα.',

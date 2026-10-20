@@ -214,6 +214,10 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
    2026-09-30 (G19, G20, D66): the sheet-to-app pages and both homepages state "7 days", anchored
    to the audit call ("after the audit call", «μετά την πρώτη κλήση») in the H1 and in each
    description.
+   2026-10-20 (offer-os `gtm/geo-retrieval-2026-10` G06, his pick "Buyer phrase, no number"): the
+   seven workbook offer titles name the service in the buyer's words and carry no number, so no
+   title says kickoff. The number and its kickoff anchor stay together in each H1, description and
+   ogAlt. A title that brings a number back brings the anchor with it.
 
 7. **Never publish a price.** Not a figure, not a range, not a "from", not a rate card, not a
    deal-size band, in either locale. Pricing is scoped per client against their needs and their

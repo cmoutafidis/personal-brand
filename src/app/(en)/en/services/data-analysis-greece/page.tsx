@@ -26,7 +26,7 @@ export default function Page() {
     <ServicePage
       lang="en"
       eyebrow={"Data analysis Greece"}
-      h1={"Reports that build themselves"}
+      h1={"Data analysis and BI reporting for businesses in Greece"}
       lead={"If a report takes two days to assemble, and two people disagree about the number at the end of it, that number usually has three sources and no owner."}
       heroCta={"Get the free process audit"}
       outcomesTitle={"What we build"}

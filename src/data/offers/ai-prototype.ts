@@ -30,7 +30,7 @@ const aiPrototype: Offer = {
   serviceType: 'Custom Software Development',
   copy: {
     en: {
-      metaTitle: 'AI Prototype, Two Weeks From Kickoff | Fiji Solutions',
+      metaTitle: 'AI Proof of Concept on One Use Case | Fiji Solutions',
       metaDescription:
         'Pick one use case. We build a working AI prototype two weeks from the kickoff workshop, and guarantee at least 75% lower cost, or we refund your fee.',
       metaKeywords:
@@ -38,7 +38,7 @@ const aiPrototype: Offer = {
       ogAlt: 'Fiji Solutions: an AI prototype for one use case, two weeks from the kickoff workshop',
 
       eyebrow: 'AI prototype for one use case',
-      title: 'See what AI is actually worth here, on one use case, two weeks from the kickoff workshop.',
+      title: 'An AI proof of concept on one use case, working two weeks from the kickoff workshop.',
       subhead:
         'You pick the use case. We build a working AI prototype on your data and measure it against what that work costs you today. Two weeks from the kickoff workshop, and at least 75% lower cost, or we refund your fee.',
       bullets: [
@@ -201,7 +201,7 @@ const aiPrototype: Offer = {
     },
 
     el: {
-      metaTitle: 'AI πρωτότυπο, 2 εβδομάδες από τη συνάντηση | Fiji Solutions',
+      metaTitle: 'AI πρωτότυπο για μία περίπτωση χρήσης | Fiji Solutions',
       metaDescription:
         'Μία περίπτωση χρήσης. Χτίζουμε AI πρωτότυπο σε δύο εβδομάδες από τη συνάντηση, με εγγύηση τουλάχιστον 75% χαμηλότερου κόστους ή επιστροφή αμοιβής.',
       metaKeywords:
@@ -209,7 +209,7 @@ const aiPrototype: Offer = {
       ogAlt: 'Fiji Solutions: AI πρωτότυπο για μία περίπτωση χρήσης, δύο εβδομάδες από την εναρκτήρια συνάντηση',
 
       eyebrow: 'AI πρωτότυπο για μία περίπτωση χρήσης',
-      title: 'Δες τι αξίζει στα αλήθεια το AI εδώ, σε μία περίπτωση χρήσης, δύο εβδομάδες από την εναρκτήρια συνάντηση.',
+      title: 'Ένα AI πρωτότυπο που δουλεύει σε μία περίπτωση χρήσης, δύο εβδομάδες από την εναρκτήρια συνάντηση.',
       subhead:
         'Εσύ διαλέγεις την περίπτωση χρήσης. Χτίζουμε ένα AI πρωτότυπο πάνω στα δικά σου δεδομένα και το μετράμε απέναντι σε αυτό που σου κοστίζει σήμερα η ίδια δουλειά. Δύο εβδομάδες από την εναρκτήρια συνάντηση, και τουλάχιστον 75% χαμηλότερο κόστος, αλλιώς σου επιστρέφουμε την αμοιβή.',
       bullets: [
