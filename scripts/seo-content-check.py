@@ -30,8 +30,26 @@ src/types/blog.ts, and to two more rules:
 
 seo-gates takes this file and seo-hosts.txt from main, so a branch cannot loosen either for itself.
 
-    python3 scripts/seo-content-check.py --diff origin/main     check HEAD against the base
-    python3 scripts/seo-content-check.py --selftest             prove every rule goes red
+ROLLBACK MODE (S09, 2026-10-20)
+===============================
+
+A branch named seo/rollback-<slug> is the revert of one merged loop branch (/opt/seo/bin/rollback on the
+VPS). The branch name comes from --branch, or from GITHUB_REF_NAME, which Actions sets on every push. On such
+a branch one more shape passes, the removal of exactly one post and nothing else:
+
+  Fiji        src/data/blog/<slug>.ts deleted, and src/data/blogs.ts loses exactly that file's import line
+              and its one entry line; no other path changes.
+  Peak Code   src/data/blogs.ts loses the whole entries of one id from blogData.de and/or blogData.en,
+              every other entry stays as on main, and public/sitemap.xml loses only the <url> blocks of
+              that post's blog paths; no other path changes.
+
+A post that another post names as its twinSlug is refused: removing one half of a pair would leave the other
+half declaring a page that answers 404. Any other diff on a rollback branch is held to the rules above, so
+the revert of a refresh or of a comment passes when the old version passes them.
+
+    python3 scripts/seo-content-check.py --diff origin/main                  check HEAD against the base
+    python3 scripts/seo-content-check.py --diff origin/main --branch NAME    the same, as branch NAME
+    python3 scripts/seo-content-check.py --selftest                          prove every rule goes red
 """
 import difflib
 import os
@@ -503,6 +521,177 @@ def peak_sitemap(base, head):
                 raise Bad(f'public/sitemap.xml: added line {line!r}')
 
 
+# ---------------------------------------------------------------- rollback mode (S09)
+
+ROLLBACK_PREFIX = 'seo/rollback-'
+FIJI_POST_PATH = re.compile(r'src/data/blog/([a-z0-9]+(?:-[a-z0-9]+)*)\.ts')
+
+
+def twin_of(slug, text):
+    return re.search(r'''\btwinSlug\s*:\s*['"]%s['"]''' % re.escape(slug), text) is not None
+
+
+def fiji_index_removal(base, head, slug):
+    """src/data/blogs.ts of a Fiji rollback: exactly the import of ./blog/<slug> and its entry line go."""
+    a, b = base.splitlines(), head.splitlines()
+    removed = []
+    for op, a1, a2, b1, b2 in difflib.SequenceMatcher(a=a, b=b, autojunk=False).get_opcodes():
+        if op == 'equal':
+            continue
+        if op != 'delete':
+            raise Bad('src/data/blogs.ts: a rollback may only remove lines there')
+        removed += a[a1:a2]
+    imports = [m for m in map(FIJI_IMPORT.fullmatch, removed) if m]
+    entries = [e for e in map(FIJI_ENTRY.fullmatch, removed) if e]
+    if len(removed) != 2 or len(imports) != 1 or len(entries) != 1:
+        raise Bad(f'src/data/blogs.ts: a rollback removes one import line and one entry line, removed {removed}')
+    name = imports[0].group(1)
+    if imports[0].group(2) != slug:
+        raise Bad(f'src/data/blogs.ts: the removed import is ./blog/{imports[0].group(2)}, the deleted file is {slug}')
+    if entries[0].group(1) != name:
+        raise Bad(f'src/data/blogs.ts: the removed entry {entries[0].group(1)} is not the removed import {name}')
+    if re.search(r'\b%s\b' % re.escape(name), head) or f"'./blog/{slug}'" in head:
+        raise Bad(f'src/data/blogs.ts: {name} or ./blog/{slug} is still named there')
+    return name
+
+
+def fiji_rollback(changes, head_posts):
+    """changes: {path: (base_text, head_text)}; head_posts: {path: text} of every src/data/blog/*.ts on HEAD.
+    The slug of the one removed post, or None when the diff deletes no file."""
+    deleted = sorted(p for p, (_, h) in changes.items() if h is None)
+    if not deleted:
+        return None
+    m = FIJI_POST_PATH.fullmatch(deleted[0])
+    if len(deleted) != 1 or not m:
+        raise Bad(f'a rollback deletes exactly one src/data/blog/<slug>.ts, this one deletes {deleted}')
+    path, slug = deleted[0], m.group(1)
+    others = sorted(set(changes) - {path})
+    if others != ['src/data/blogs.ts']:
+        raise Bad(f'{path}: a rollback of it changes src/data/blogs.ts and nothing else, found {others}')
+    base, head = changes['src/data/blogs.ts']
+    if base is None or head is None:
+        raise Bad('src/data/blogs.ts: a rollback keeps the file')
+    fiji_index_removal(base, head, slug)
+    twins = sorted(p for p, t in head_posts.items() if p != path and twin_of(slug, t))
+    if twins:
+        raise Bad(f'{path}: {", ".join(twins)} names {slug} as its twinSlug, so removing it alone would leave '
+                  'a language switch and an hreflang pointing at a missing page; the pair is rolled back by hand')
+    return slug
+
+
+def peak_removal(base, head):
+    """src/data/blogs.ts of a Peak Code rollback. Returns (slug, [locales]) when entries of main are gone,
+    None when none is."""
+    bc, bl = split_entries(base)
+    hc, hl = split_entries(head)
+    lost = {}
+    for loc in bl:
+        head_ids = {entry_id(e[1]) for e in hl.get(loc, [])}
+        for _, lit, _ in bl[loc]:
+            if entry_id(lit) not in head_ids:
+                lost.setdefault(entry_id(lit), []).append((loc, lit))
+    if not lost:
+        return None
+    if bc != hc:
+        raise Bad('src/data/blogs.ts: text outside the blogData entries changed')
+    if set(bl) != set(hl):
+        raise Bad('src/data/blogs.ts: the locales of blogData changed')
+    if len(lost) != 1:
+        raise Bad(f'src/data/blogs.ts: a rollback removes the entries of one id, these are gone: {sorted(lost, key=str)}')
+    gone, where = next(iter(lost.items()))
+    for loc in bl:
+        keep = [lit.strip() for _, lit, _ in bl[loc] if entry_id(lit) != gone]
+        if keep != [lit.strip() for _, lit, _ in hl[loc]]:
+            raise Bad(f'src/data/blogs.ts: blogData.{loc}: a rollback of {gone} removes its entries and changes no other')
+    slugs = set()
+    for loc, lit in where:
+        m = re.search(r"\bslug:\s*'([a-z0-9-]+)'", lit)
+        slugs.add(m.group(1) if m else gone)
+    if len(slugs) != 1:
+        raise Bad(f'src/data/blogs.ts: the entries of {gone} carry the slugs {sorted(slugs)}')
+    slug = slugs.pop()
+    twins = sorted(f'blogData.{loc}[{entry_id(lit)}]' for loc in hl for _, lit, _ in hl[loc] if twin_of(slug, lit))
+    if twins:
+        raise Bad(f'src/data/blogs.ts: {", ".join(twins)} names {slug} as its twinSlug, so removing it alone would '
+                  'leave a language switch and an hreflang pointing at a missing page; the pair is rolled back by hand')
+    return slug, sorted(loc for loc, _ in where)
+
+
+SITEMAP_LOC = re.compile(r'    <loc>https://www\.peakcodeconsulting\.ch((?:/en)?/blog/[a-z0-9]+(?:-[a-z0-9]+)*)</loc>')
+
+
+def sitemap_items(lines):
+    """The sitemap as a list of single lines and whole `  <url>` ... `  </url>` blocks (tuples)."""
+    out, i = [], 0
+    while i < len(lines):
+        if lines[i] != '  <url>':
+            out.append(lines[i])
+            i += 1
+            continue
+        j = i
+        while j < len(lines) and lines[j] != '  </url>':
+            j += 1
+        if j == len(lines):
+            raise Bad('public/sitemap.xml: a <url> block is never closed')
+        out.append(tuple(lines[i:j + 1]))
+        i = j + 1
+    return out
+
+
+def peak_sitemap_removal(base, head, paths):
+    """public/sitemap.xml of a Peak Code rollback: only the whole <url> blocks whose <loc> is one of `paths`
+    go, and every other line stays."""
+    try:
+        ET.fromstring(head.encode('utf-8'))
+    except ET.ParseError as e:
+        raise Bad(f'public/sitemap.xml: not well formed ({e})')
+
+    def loc_path(item):
+        if isinstance(item, tuple):
+            for line in item:
+                m = SITEMAP_LOC.fullmatch(line)
+                if m:
+                    return m.group(1)
+        return None
+    keep = [it for it in sitemap_items(base.splitlines()) if loc_path(it) not in paths]
+    if keep != sitemap_items(head.splitlines()):
+        raise Bad(f'public/sitemap.xml: a rollback removes the <url> blocks of {sorted(paths)} and changes nothing else')
+
+
+def peak_rollback(changes):
+    """The slug of the one removed Peak Code post, or None when no entry of main is gone."""
+    if any(h is None for _, h in changes.values()):
+        raise Bad('a Peak Code rollback never deletes a file')
+    if 'src/data/blogs.ts' not in changes:
+        return None
+    base, head = changes['src/data/blogs.ts']
+    if base is None:
+        raise Bad('src/data/blogs.ts: missing on the base')
+    found = peak_removal(base, head)
+    if found is None:
+        return None
+    slug, locales = found
+    others = sorted(set(changes) - {'src/data/blogs.ts', 'public/sitemap.xml'})
+    if others:
+        raise Bad(f'a rollback of {slug} changes src/data/blogs.ts and public/sitemap.xml only, found {others}')
+    if 'public/sitemap.xml' in changes:
+        sb, sh = changes['public/sitemap.xml']
+        if sb is None:
+            raise Bad('public/sitemap.xml: missing on the base')
+        peak_sitemap_removal(sb, sh, {('/en' if loc == 'en' else '') + f'/blog/{slug}' for loc in locales})
+    return slug
+
+
+def rollback_removal(changes, layout, head_posts):
+    """The removed post's slug when the diff is a well formed removal, None when it removes no post (the normal
+    rules then apply). Raises Bad for a removal of any other shape. head_posts is called only for Fiji."""
+    if layout == 'fiji':
+        if not any(h is None for _, h in changes.values()):
+            return None
+        return fiji_rollback(changes, head_posts())
+    return peak_rollback(changes)
+
+
 # ---------------------------------------------------------------- driver
 
 def read_hosts(path):
@@ -547,10 +736,30 @@ def layout_of(root='.'):
     return 'fiji' if os.path.isdir(os.path.join(root, 'src/data/blog')) else 'peak'
 
 
-def run_diff(base):
+def head_posts():
+    names = git('ls-tree', '-z', '--name-only', 'HEAD', 'src/data/blog/').split('\0')
+    return {n: git_show('HEAD', n) or '' for n in names if n.endswith('.ts')}
+
+
+def run_diff(base, branch=None):
     hosts = read_hosts('scripts/seo-hosts.txt')
-    layout = layout_of()
     names = [n for n in git('diff', '--name-only', '--no-renames', '-z', f'{base}...HEAD').split('\0') if n]
+    # git drops an emptied folder, so a branch that deletes the last post file still reads as Fiji
+    layout = 'fiji' if any(n.startswith('src/data/blog/') for n in names) else layout_of()
+    if branch is None:
+        branch = os.environ.get('GITHUB_REF_NAME', '')
+    if branch.startswith(ROLLBACK_PREFIX):
+        changes = {p: (git_show(base, p), git_show('HEAD', p)) for p in names}
+        try:
+            slug = rollback_removal(changes, layout, head_posts)
+        except Bad as e:
+            print(f'::error::{e}')
+            print(f'seo-content-check: rollback branch {branch}, {len(names)} changed path(s), the removal is refused')
+            return 1
+        if slug:
+            print(f'seo-content-check: rollback branch {branch} removes the post {slug}, {len(names)} changed path(s), 0 refused')
+            return 0
+        print(f'seo-content-check: rollback branch {branch} removes no post, the rules for a changed post apply')
     bad = []
     fiji_new_posts, fiji_imports = set(), {}
     for path in names:
@@ -702,6 +911,49 @@ def selftest():
     expect('sitemap removed url', lambda: peak_sitemap(SITEMAP_BASE, SITEMAP_BASE.replace('    <loc>https://www.peakcodeconsulting.ch/blog/old-post</loc>\n', '')), True)
     expect('sitemap broken xml', lambda: peak_sitemap(SITEMAP_BASE, SITEMAP_BASE.replace('</urlset>', '')), True)
 
+    # rollback mode (S09): the removal of one post passes, every other removal stays red
+    def rb(changes, layout='fiji', posts=None):
+        return lambda: rollback_removal(changes, layout, lambda: posts or {})
+
+    def rb_green(name, changes, layout='fiji', posts=None, want='a-post'):
+        try:
+            got = rollback_removal(changes, layout, lambda: posts or {})
+        except Bad as e:
+            got = f'refused: {e}'
+        if got != want:
+            fails.append(f'{name} ({got})')
+    post_path = 'src/data/blog/a-post.ts'
+    gone = {post_path: (fiji_file(), None), 'src/data/blogs.ts': (idx_ok, idx)}
+    rb_green('rollback fiji removal', gone)
+    rb_green('rollback fiji no deletion', {post_path: (fiji_file(), fiji_file().replace('// facts', '// x'))}, want=None)
+    twin = fiji_file(slug='b-post').replace("tags: ['Tag'],", "tags: ['Tag'], twinSlug: 'a-post',")
+    expect('rollback fiji twin', rb(gone, posts={'src/data/blog/b-post.ts': twin}), True)
+    expect('rollback fiji two files', rb({**gone, 'src/data/blog/b-post.ts': (fiji_file(slug='b-post'), None)}), True)
+    expect('rollback fiji sources.ts', rb({'src/data/blog/sources.ts': ('x', None), 'src/data/blogs.ts': (idx_ok, idx)}), True)
+    expect('rollback fiji other path', rb({**gone, 'src/data/blog/b-post.ts': (fiji_file(slug='b-post'), fiji_file(slug='b-post') + '// x\n')}), True)
+    expect('rollback fiji index kept', rb({post_path: (fiji_file(), None)}), True)
+    expect('rollback fiji index loses more', rb({**gone, 'src/data/blogs.ts': (idx_ok, idx.replace('    a,\n', ''))}), True)
+    expect('rollback fiji index adds', rb({**gone, 'src/data/blogs.ts': (idx_ok, idx.replace('};', '};\n// x'))}), True)
+    other = idx_ok.replace("'./blog/a-post'", "'./blog/c-post'")
+    expect('rollback fiji wrong import', rb({**gone, 'src/data/blogs.ts': (other, idx)}), True)
+    expect('rollback fiji entry kept', rb({**gone, 'src/data/blogs.ts': (idx_ok, idx_ok.replace("import aPost from './blog/a-post';\n", ''))}), True)
+
+    peak_gone = {'src/data/blogs.ts': (peak_new, PEAK_BASE), 'public/sitemap.xml': (sm_ok, SITEMAP_BASE)}
+    rb_green('rollback peak removal', peak_gone, 'peak')
+    rb_green('rollback peak removal, sitemap untouched', {'src/data/blogs.ts': (peak_new, PEAK_BASE)}, 'peak')
+    rb_green('rollback peak refresh revert', {'src/data/blogs.ts': (refresh, PEAK_BASE)}, 'peak', want=None)
+    both = peak_new.replace('  ],\n  en: [', new_entry.replace("'a-post'", "'b-post'") + '  ],\n  en: [')
+    expect('rollback peak two ids', rb({'src/data/blogs.ts': (both, PEAK_BASE)}, 'peak'), True)
+    expect('rollback peak removal and change', rb({'src/data/blogs.ts': (peak_new, PEAK_BASE.replace("'Alt'", "'Alt neu'"))}, 'peak'), True)
+    expect('rollback peak outside changed', rb({'src/data/blogs.ts': (peak_new, PEAK_BASE.replace('const ANN', 'const ANN2'))}, 'peak'), True)
+    expect('rollback peak sitemap loses another block', rb({**peak_gone, 'public/sitemap.xml': (sm_ok, SITEMAP_BASE.replace(SITEMAP_BASE[SITEMAP_BASE.index('  <url>'):SITEMAP_BASE.index('</urlset>')], ''))}, 'peak'), True)
+    expect('rollback peak sitemap loses a line', rb({**peak_gone, 'public/sitemap.xml': (sm_ok, sm_ok.replace('    <priority>0.7</priority>\n', ''))}, 'peak'), True)
+    expect('rollback peak sitemap adds', rb({**peak_gone, 'public/sitemap.xml': (sm_ok, SITEMAP_BASE.replace('2026-09-01', '2026-10-20'))}, 'peak'), True)
+    twin_base = peak_new.replace("id: 'old-post', slug: 'old-post',", "id: 'old-post', slug: 'old-post', twinSlug: 'a-post',")
+    expect('rollback peak twin', rb({'src/data/blogs.ts': (twin_base, PEAK_BASE.replace("id: 'old-post', slug: 'old-post',", "id: 'old-post', slug: 'old-post', twinSlug: 'a-post',"))}, 'peak'), True)
+    expect('rollback peak other path', rb({**peak_gone, 'src/app/page.tsx': ('a', 'b')}, 'peak'), True)
+    expect('rollback peak deleted file', rb({**peak_gone, 'public/robots.txt': ('a', None)}, 'peak'), True)
+
     # the driver end to end, in a throwaway git repo, so --diff itself is proven red and green
     with tempfile.TemporaryDirectory() as d:
         env = dict(os.environ, GIT_AUTHOR_NAME='t', GIT_AUTHOR_EMAIL='t@t', GIT_COMMITTER_NAME='t', GIT_COMMITTER_EMAIL='t@t')
@@ -726,12 +978,47 @@ def selftest():
             import contextlib
             import io
             with contextlib.redirect_stdout(io.StringIO()):
-                if run_diff('main') != 0:
+                if run_diff('main', '') != 0:
                     fails.append('driver green')
                 open('src/data/blog/a-post.ts', 'w').write(fiji_file().replace("'An excerpt.'", 'require("fs")'))
                 sh('git', 'commit', '-qam', 'bad')
-                if run_diff('main') != 1:
+                if run_diff('main', '') != 1:
                     fails.append('driver red')
+                # rollback mode end to end: the good post is merged, then reverted on seo/rollback-a-post
+                sh('git', 'checkout', '-q', 'main')
+                sh('git', 'merge', '-q', '--ff-only', 'seo/a-post~1')
+                sh('git', 'checkout', '-qb', 'seo/rollback-a-post')
+                sh('git', 'revert', '--no-edit', 'HEAD')
+                if run_diff('main', 'seo/rollback-a-post') != 0:
+                    fails.append('driver rollback green')
+                if run_diff('main', 'seo/a-post') != 1:
+                    fails.append('driver removal red outside rollback mode')
+                old_ref = os.environ.get('GITHUB_REF_NAME')
+                os.environ['GITHUB_REF_NAME'] = 'seo/rollback-a-post'
+                try:
+                    if run_diff('main') != 0:
+                        fails.append('driver rollback from GITHUB_REF_NAME')
+                finally:
+                    if old_ref is None:
+                        del os.environ['GITHUB_REF_NAME']
+                    else:
+                        os.environ['GITHUB_REF_NAME'] = old_ref
+                # the revert of a comment and of a refresh pass on a rollback branch, by the rules for a changed post
+                for what, text in (('comment', fiji_file() + '// a comment\n'),
+                                   ('refresh', fiji_file().replace('A title', 'A newer title'))):
+                    sh('git', 'checkout', '-q', 'main')
+                    open('src/data/blog/a-post.ts', 'w').write(text)
+                    sh('git', 'commit', '-qam', what)
+                    sh('git', 'checkout', '-qB', f'seo/rollback-{what}')
+                    sh('git', 'revert', '--no-edit', 'HEAD')
+                    if run_diff('main', f'seo/rollback-{what}') != 0:
+                        fails.append(f'driver rollback of a {what}')
+                # a rollback branch that deletes the post but keeps its import stays red
+                sh('git', 'checkout', '-qB', 'seo/rollback-broken', 'main')
+                sh('git', 'rm', '-q', 'src/data/blog/a-post.ts')
+                sh('git', 'commit', '-qm', 'broken')
+                if run_diff('main', 'seo/rollback-broken') != 1:
+                    fails.append('driver rollback red')
         finally:
             os.chdir(cwd)
 
@@ -747,5 +1034,7 @@ if __name__ == '__main__':
         sys.exit(selftest())
     if len(sys.argv) == 3 and sys.argv[1] == '--diff':
         sys.exit(run_diff(sys.argv[2]))
+    if len(sys.argv) == 5 and sys.argv[1] == '--diff' and sys.argv[3] == '--branch':
+        sys.exit(run_diff(sys.argv[2], sys.argv[4]))
     print(__doc__)
     sys.exit(2)
