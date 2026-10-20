@@ -73,4 +73,3 @@ const post: BlogPost = {
 };
 
 export default post;
-// S09 rollback test: a comment only change by the SEO loop
