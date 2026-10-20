@@ -52,6 +52,7 @@ import appsheetGlideOrADeveloper from './blog/appsheet-glide-or-a-developer';
 import crewScheduleChangeOrderJobTracker from './blog/crew-schedule-change-order-job-tracker-app';
 import jobShopSchedulingWorkOrderQuote from './blog/job-shop-scheduling-work-order-quote-app';
 import onePersonKnowsEverythingBusinessContinuity from './blog/one-person-knows-everything-business-continuity';
+import aiAgentPouPaneDedomenaPelaton from './blog/ai-agent-pou-pane-dedomena-pelaton';
 
 // One file per article in src/data/blog/, the same convention src/data/offers/ uses. Fourteen
 // articles inline in this file was about seven thousand lines and nothing could be reviewed.
@@ -74,6 +75,7 @@ export const blogData: BlogData = {
     googleSearchConsoleTiSouLeei,
     giatiDenEmfanizetaiIIstoselidaStoGoogle,
     kataskeviIstoselidonTiNaZitas,
+    aiAgentPouPaneDedomenaPelaton,
   ],
   en: [
     howMuchDoesItCost,
