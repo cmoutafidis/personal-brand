@@ -10,7 +10,7 @@ export default function StatsStrip({language}: {language: Language}) {
   const stats = HOME[language].stats;
 
   return (
-    <section aria-label={language === 'el' ? 'Με μια ματιά' : 'At a glance'} className="border-y border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900">
+    <section className="border-y border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900">
       <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-6 px-4 py-8 sm:px-6 md:grid-cols-4 lg:px-8">
         {stats.map((s) => (
           <div key={s.figure} className="text-center">

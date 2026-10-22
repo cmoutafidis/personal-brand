@@ -40,7 +40,7 @@ export default function ClosingCta({language}: {language: Language}) {
             {copy.formLine}
             <ChevronDown className="ml-2 h-5 w-5 transition-transform group-open:rotate-180" aria-hidden="true"/>
           </summary>
-          <div className="mt-6 rounded-xl bg-white p-5 text-left shadow-sm dark:bg-gray-800 md:p-6">
+          <div className="mt-6 text-left">
             <ContactForm languageOverride={language} hideTitle compact presetQuestion={HOME_FORM_MARKER}/>
           </div>
         </details>

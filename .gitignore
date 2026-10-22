@@ -46,3 +46,6 @@ next-env.d.ts
 # The Proven Offers workbook is an external swipe file, not site source. Its home is the
 # private offer-os knowledge base, not a website repo.
 *.xlsx
+
+# Python bytecode from the scripts/ checkers
+__pycache__/
