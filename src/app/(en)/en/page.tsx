@@ -2,51 +2,64 @@ import type {Metadata} from 'next';
 import {buildAlternates} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 import Hero from '@/components/Hero';
-import Challenges from '@/components/Challenges';
-import Solutions from '@/components/Solutions';
-import Local from '@/components/Local';
+import StatsStrip from '@/components/StatsStrip';
+import ClientStrip from '@/components/ClientStrip';
+import WhatWeBuild from '@/components/WhatWeBuild';
+import WaysToStart from '@/components/WaysToStart';
 import AtlasHomeSection from '@/components/AtlasHomeSection';
-import SheetToAppFormSection from '@/components/SheetToAppFormSection';
-import Footer from "@/components/Footer";
-import HomeLongForm from '@/components/HomeLongForm';
+import ProjectsGrid from '@/components/ProjectsGrid';
+import ReviewSlot from '@/components/ReviewSlot';
+import HowWeWork from '@/components/HowWeWork';
+import HomeFaq from '@/components/HomeFaq';
 import LatestPostsSection from '@/components/LatestPostsSection';
+import ClosingCta from '@/components/ClosingCta';
+import Local from '@/components/Local';
+import Footer from '@/components/Footer';
 import {blogData} from '@/data/blogs';
-import {homeLongForm} from '@/data/homeLongForm';
-import {jsonLd} from '@/lib/jsonLd';
+import {HOME} from '@/data/home';
 
-// 2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D66): the homepage is the hook
-// for the 7-Day Sheet-to-App Prototype. Every title opens with the 7-day prototype and "pay only
-// if you like it", and each description carries the anchor of the 7 days (the audit call). The
-// brand suffix does not fit under 60 characters, so og:site_name carries it. No figure in any of
-// these strings (D68): the homepage's figures sit in the Solutions box alone.
+// 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G05, PLAN.md §4.1 and §4.2, decisions BR-D3, BR-D6, BR-D7,
+// BR-D8, BR-D22 to BR-D28): the broad home. Fiji Solutions is a custom software company; each offer is one
+// way to start and keeps its own page. Title, description and H1 from offer-os
+// `companies/fiji-solutions/site/03-copy-home.md` through src/data/home.ts. No price anywhere on this page
+// (BR-D24): the prices stay on /offers/sheet-to-app and Atlas.
 //
-// ⚠️ `locale` and `siteName` are declared here because Next replaces the layout's whole
-// `openGraph` object when a page declares its own. `en_US` is what RootShell emits for English.
+// Until this date the page was the hook for the 7-Day Sheet-to-App Prototype (2026-09-30, G20, offer-os
+// gtm/sheet-to-app-rollout D5, D66); that copy now lives on /en/offers/sheet-to-app alone.
+//
+// Section order, PLAN.md §4.1: hero, stats, clients, what we build, ways to start, the Atlas band, projects,
+// the review slot, how we work, FAQ (FAQPage from the same array), latest posts, the closing band, local.
+//
+// ⚠️ `locale` and `siteName` are declared here because Next replaces the layout's whole `openGraph` object
+// when a page declares its own.
+const copy = HOME.en.meta;
+
 export const metadata: Metadata = {
-  title: 'Prototype 7 days after our call. Pay only if you like it',
-  description: 'A prototype of your app 7 days after the audit call, made from the columns of the spreadsheet your team runs on. Pay only if you like it.',
+  title: copy.title,
+  description: copy.description,
+  keywords: copy.keywords,
   alternates: buildAlternates(''),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en',
-    locale: 'en_US',
+    locale: copy.ogLocale,
     siteName: 'Fiji Solutions',
-    title: 'Prototype 7 days after our call. Pay only if you like it',
-    description: 'A prototype of your app 7 days after the audit call, with a screen for each role and sample rows made from your column headers. Pay only if you like it.',
+    title: copy.title,
+    description: copy.description,
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
         width: 1200,
         height: 630,
-        alt: 'Fiji Solutions, Thessaloniki',
+        alt: copy.ogImageAlt,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Prototype 7 days after our call. Pay only if you like it',
-    description: 'A prototype of your app 7 days after the audit call, with a screen for each role and sample rows made from your column headers. Pay only if you like it.',
+    title: copy.title,
+    description: copy.description,
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };
@@ -57,46 +70,23 @@ export default function EnglishHomePage() {
 
   return (
     <>
-      <Hero t={t}/>
-      <Challenges t={t}/>
-      <Solutions t={t} language={language}/>
-      {/* 2026-10-18 (offer-os gtm/atlas/DECISIONS.md AT-D8, AT-D22): the Atlas band, its own section
-          directly after the Sheet-to-App section. */}
+      <Hero language={language}/>
+      <StatsStrip language={language}/>
+      <ClientStrip language={language}/>
+      <WhatWeBuild language={language}/>
+      <WaysToStart language={language}/>
+      {/* The Atlas band (offer-os gtm/atlas AT-D8, AT-D22, no price per AT-D34), moved up to follow
+          "Ways to start" on 2026-10-22 (BR-G05). */}
       <AtlasHomeSection language={language}/>
-      {/* Where we are and the two website offers. The section renders on this page because the
-          address, the phone and the map are true here too, and it gives /en/offers/website-seo
-          and /en/offers/website-google-ads their first inbound internal link. */}
-      <Local t={t} language={language}/>
-      {/* 2026-09-30 (G20, D5): the homepage's own form for the sheet-to-app offer. Both homepage
-          buttons scroll here (#sheet-to-app-form). It takes the slot the audit form held. */}
-      <SheetToAppFormSection language={language}/>
-      {/* The long-form block. VISIBLE, not collapsed: audit §9 item 18 says so and gives the
-          reason. It is also the only route from the home page into twelve of the fourteen Greek
-          articles (the myDATA and accessibility links left the Greek block on 2026-09-30, G20, as
-          compliance text; the blog index and other articles still link them) and into /services/custom-software-development-greece and /services/data-analysis-greece,
-          which are in neither the navigation nor the footer. */}
-      <HomeLongForm copy={homeLongForm.en}/>
-      {/* 2026-10-19 (offer-os gtm/seo-loop-2026-10 S01, O2): the newest English posts, picked by date
-          from blogData.en, plus one link to /en/blog. English homepage only. */}
+      <ProjectsGrid language={language}/>
+      <ReviewSlot language={language}/>
+      <HowWeWork language={language}/>
+      <HomeFaq language={language}/>
+      {/* The newest posts (offer-os gtm/seo-loop-2026-10 S01 needs 3 or more /en/blog/ links here). */}
       <LatestPostsSection posts={blogData.en} language={language}/>
-      {/* FAQPage, built from the SAME array HomeLongForm renders, so the marked-up questions and
-          the visible ones cannot drift. This page had no FAQPage at all before 2026-09-02, while
-          peakcodeconsulting.ch's home page has one. */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: jsonLd({
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            inLanguage: 'en',
-            mainEntity: homeLongForm.en.faqs.map((faq) => ({
-              '@type': 'Question',
-              name: faq.q,
-              acceptedAnswer: {'@type': 'Answer', text: faq.a},
-            })),
-          }),
-        }}
-      />
+      <ClosingCta language={language}/>
+      {/* Where we are and the two website offers, unchanged (see Local.tsx). */}
+      <Local t={t} language={language}/>
       <Footer t={t}/>
     </>
   );

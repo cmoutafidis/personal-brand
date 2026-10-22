@@ -4,6 +4,7 @@ import {Language} from '@/types/language';
 
 // 2026-10-08 (F16, F-D141): the Contact form's message box asks for the column headers, in the
 // words the homepage form already uses (SheetToAppFormSection.tsx), as Charis picked.
+// 2026-10-22 (offer-os broad home BR-G05): that homepage form is deleted; BR-G07 makes this page broad.
 const MESSAGE_PLACEHOLDER: Record<Language, string> = {
   en: 'e.g. Order, Customer, Product, Quantity, Due date, Status, Owner',
   el: 'π.χ. Παραγγελία, Πελάτης, Προϊόν, Ποσότητα, Παράδοση, Κατάσταση, Υπεύθυνος'

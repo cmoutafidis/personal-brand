@@ -24,6 +24,8 @@ import {BOOKING_URL} from '@/lib/booking';
 // 2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5): both homepages stopped rendering
 // this section (presetQuestion "homepage-process-audit") when the homepage became the hook for the
 // sheet-to-app offer; they render SheetToAppFormSection.tsx instead. The audit page renders this.
+// 2026-10-22 (offer-os broad home BR-G05): SheetToAppFormSection.tsx is deleted; both homepages render
+// ClosingCta.tsx, whose general form sends presetQuestion "homepage-general".
 
 // 2026-10-22 (offer-os broad home BR-G04): an alias of BOOKING_URL in src/lib/booking.ts, the one place
 // the link is typed. OfferLanding.tsx imports it under this name.

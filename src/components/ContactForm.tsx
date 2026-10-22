@@ -33,6 +33,8 @@ interface ContactFormProps {
   hideSamplePlaceholders?: boolean;
   /** Sent to GA4 as `offer_slug` on contact_form_submit, e.g. `business-process-audit`. */
   offerSlug?: string;
+  /** Tighter spacing and a three row message box, for the homepages' closing band (2026-10-22, offer-os broad home BR-G05). */
+  compact?: boolean;
 }
 
 export default function ContactForm({
@@ -50,7 +52,8 @@ export default function ContactForm({
   successMessageOverride,
   microcopyUnderButton,
   hideSamplePlaceholders = false,
-  offerSlug
+  offerSlug,
+  compact = false
 }: ContactFormProps = {}) {
   const {language: contextLanguage} = useLanguage();
   const language = languageOverride ?? contextLanguage;
@@ -288,7 +291,7 @@ export default function ContactForm({
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className={compact ? 'space-y-4' : 'space-y-6'}>
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               {nameLabelOverride ?? t('contact.form.name')} *
@@ -362,7 +365,7 @@ export default function ContactForm({
             <textarea
               id="message"
               name="message"
-              rows={4}
+              rows={compact ? 3 : 4}
               value={formData.message}
               onChange={handleInputChange}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"

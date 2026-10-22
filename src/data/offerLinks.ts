@@ -233,6 +233,40 @@ export const OFFER_BLURB: Record<OfferSlug, Record<Language, string>> = {
   }
 };
 
+/**
+ * The "Ways to start" row of both homepages, in its order. Added 2026-10-22 (offer-os
+ * gtm/broad-home-2026-10 BR-G05, PLAN.md §4.3, decision BR-D3). Five offers, each one way to start;
+ * process-automation, ai-agent and website-seo are linked from the "What we build" cards instead
+ * (src/data/services.ts), and Atlas keeps its own band. The link text is the eyebrow, as everywhere in
+ * this graph; the card heading and line live in src/data/home.ts, keyed on these slugs.
+ */
+export type HomeStartSlug =
+  | 'offers/sheet-to-app'
+  | 'offers/software-prototype'
+  | 'offers/ai-prototype'
+  | 'offers/ai-development-sprint'
+  | 'offers/website-google-ads';
+
+export const HOME_START: readonly {slug: HomeStartSlug; offer: LinkedOffer}[] = [
+  {slug: 'offers/sheet-to-app', offer: sheetToApp},
+  {slug: 'offers/software-prototype', offer: softwarePrototype},
+  {slug: 'offers/ai-prototype', offer: aiPrototype},
+  {slug: 'offers/ai-development-sprint', offer: aiDevelopmentSprint},
+  {slug: 'offers/website-google-ads', offer: websiteGoogleAds}
+];
+
+/** The offer each slug names, for a link built from an OfferSlug alone (the "What we build" cards). */
+export const OFFER_BY_SLUG: Record<OfferSlug, LinkedOffer> = {
+  'offers/sheet-to-app': sheetToApp,
+  'offers/software-prototype': softwarePrototype,
+  'offers/ai-prototype': aiPrototype,
+  'offers/process-automation': processAutomation,
+  'offers/ai-agent': aiAgent,
+  'offers/ai-development-sprint': aiDevelopmentSprint,
+  'offers/website-seo': websiteSeo,
+  'offers/website-google-ads': websiteGoogleAds
+};
+
 /** Heading and intro for the two block variants. Shared component, so the locales cannot drift. */
 export type OfferLinksVariant = 'service' | 'website' | 'spreadsheet';
 
