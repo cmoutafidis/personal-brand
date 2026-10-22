@@ -21,6 +21,20 @@ export function isLandingPath(pathname: string | null | undefined): boolean {
   return LANDING_PATHS.includes(path);
 }
 
+// The two audit pages, where every call to action points at the page's own #consultation-form.
+// Added 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G04, decision BR-D9).
+export const AUDIT_PATHS: readonly string[] = ['/en/business-process-audit', '/el/business-process-audit'];
+
+// True where the top banner and the navbar's "Book a free call" button do not render: the
+// single-goal landing pages and the two audit pages (BR-D9). Each of those pages has one
+// destination of its own, and a second booking link would compete with it.
+export function isBookingPromptHiddenPath(pathname: string | null | undefined): boolean {
+  if (!pathname) return false;
+  if (isLandingPath(pathname)) return true;
+  const path = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
+  return AUDIT_PATHS.includes(path);
+}
+
 // The two homepages hide the Vapi voice button in the hero and the Vapi chat bubble. Added
 // 2026-09-30 (G20): the Vapi assistant behind both still pitches the process audit and its
 // Pays-For-Itself Guarantee, and the homepage names one guarantee (offer-os D53). The offer's
@@ -29,7 +43,10 @@ export function isLandingPath(pathname: string | null | undefined): boolean {
 // HOMEPAGE_VOICE_ON to true and both come back on /en and /el.
 // 2026-10-04: the new script is live (Vapi assistant version v5, which also hears and speaks Greek),
 // so both are back on /en and /el.
-export const HOMEPAGE_VOICE_ON = true;
+// 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G04, PLAN.md §4.1 row 2): off again. The broad
+// homepages describe six kinds of work, and the v5 script still pitches the sheet-to-app prototype.
+// BR-G10 makes the script broad, test calls it, and sets this back to true.
+export const HOMEPAGE_VOICE_ON = false;
 
 export const HOMEPAGE_PATHS: readonly string[] = ['/en', '/el'];
 

@@ -8,14 +8,23 @@ import {useTheme} from '@/context/ThemeContext';
 import {useLanguage} from '@/context/LanguageContext';
 import {translations} from '@/translations';
 import LanguageSwitcher from './LanguageSwitcher';
-import {isLandingPath} from '@/lib/landing';
+import TopBanner, {TOP_BANNER_HEIGHT, useTopBanner} from './TopBanner';
+import {isBookingPromptHiddenPath, isLandingPath} from '@/lib/landing';
+import {BOOKING_URL} from '@/lib/booking';
+import {BOOKING_CLICK_EVENT, trackEvent} from '@/utils/gtag';
 
 const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
   const {darkMode, toggleDarkMode} = useTheme();
   const {language} = useLanguage();
   const pathname = usePathname();
+
+  // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G04, BR-D9): the top banner and the header's
+  // "Book a free call" button render on every page except the landing pages and the audit pages.
+  const bookingHidden = isBookingPromptHiddenPath(pathname);
+  const [bannerOpen, closeBanner] = useTopBanner(bookingHidden);
 
   const t = (key: string) => translations[language][key] || key;
 
@@ -26,13 +35,24 @@ const Navbar: React.FC = () => {
       } else {
         setScrolling(false);
       }
+      // Only the first TOP_BANNER_HEIGHT pixels move the header, so later scrolls set the same
+      // value and React skips the render.
+      setScrollY(Math.min(window.scrollY, TOP_BANNER_HEIGHT));
     };
 
-    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, {passive: true});
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  // The header is fixed; the banner above it is in the page flow. While the banner is open, the
+  // header sits right under the part of it still on screen, and at the top once it has scrolled away.
+  const headerTop = bannerOpen ? Math.max(0, TOP_BANNER_HEIGHT - scrollY) : 0;
+
+  const bookingButtonClass =
+    'inline-flex items-center justify-center rounded-lg bg-primary-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600';
 
   // `nav.audit` was added 2026-08-15. Until then /business-process-audit — the only page on this
   // site with a named offer, a named deliverable, a guarantee and a booking link — had ZERO
@@ -48,11 +68,18 @@ const Navbar: React.FC = () => {
   // dated exception to the sentence above. "Atlas" sits directly after "Services", beside the
   // services and outside the services list (the 2026-08-16 no-fourth-nav-service rule is about
   // that list). The menu is five links; no other offer joins it.
+  //
+  // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G04, decision BR-D5, adopted under his "build the
+  // whole plan" answer): Services, Projects, Atlas, About, Contact, then the "Book a free call"
+  // button. "Home" leaves, since the logo links home, and so does the "7-day prototype" link of
+  // F-D132: the site describes six kinds of work, and sheet-to-app is one offer among them, linked
+  // from page bodies. Atlas stays the one offer a menu carries (AT-D8). /projects goes live in BR-G06,
+  // and this branch ships only after it (BR-G08).
   const navLinks = [
-    {name: t('nav.home'), href: `/${language}`},
-    {name: t('nav.offer'), href: `/${language}/offers/sheet-to-app`},
     {name: t('nav.portfolio'), href: `/${language}/portfolio`},
+    {name: t('nav.projects'), href: `/${language}/projects`},
     {name: t('nav.atlas'), href: `/${language}/offers/atlas`},
+    {name: t('nav.about'), href: `/${language}/about`},
     {name: t('nav.contact'), href: `/${language}/contact`},
   ];
 
@@ -99,12 +126,15 @@ const Navbar: React.FC = () => {
   }
 
   return (
+    <>
+    {bannerOpen && <TopBanner language={language} onClose={closeBanner}/>}
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed left-0 right-0 z-50 transition-[background-color,box-shadow] duration-300 ${
         scrolling
           ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md'
           : 'bg-transparent'
       }`}
+      style={{top: headerTop}}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
@@ -123,8 +153,8 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="desktop-nav items-center space-x-8">
-            <div className="flex space-x-6">
+          <div className="desktop-nav items-center space-x-4 xl:space-x-8">
+            <div className="flex space-x-4 xl:space-x-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -149,6 +179,17 @@ const Navbar: React.FC = () => {
                 <Moon className="h-5 w-5 text-gray-700"/>
               )}
             </button>
+            {!bookingHidden && (
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent(BOOKING_CLICK_EVENT, {cta_location: 'header', locale: language})}
+                className={bookingButtonClass}
+              >
+                {t('nav.cta')}
+              </a>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -167,6 +208,8 @@ const Navbar: React.FC = () => {
             </button>
             <button
               onClick={toggleMobileMenu}
+              aria-expanded={mobileMenuOpen}
+              aria-label="Menu"
               className="p-2 rounded-lg text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
             >
               {mobileMenuOpen ? (
@@ -180,7 +223,7 @@ const Navbar: React.FC = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden pt-4 pb-3 px-2">
+          <div className="lg:hidden pt-4 pb-3 px-2 bg-white dark:bg-gray-900 rounded-lg">
             <div className="flex flex-col space-y-3">
               {navLinks.map((link) => (
                 <Link
@@ -194,11 +237,27 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </Link>
               ))}
+              {/* The booking button is the last item, full width (PLAN.md §4.1 row 1). */}
+              {!bookingHidden && (
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => {
+                    trackEvent(BOOKING_CLICK_EVENT, {cta_location: 'header', locale: language});
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`${bookingButtonClass} w-full py-3 text-base`}
+                >
+                  {t('nav.cta')}
+                </a>
+              )}
             </div>
           </div>
         )}
       </nav>
     </header>
+    </>
   );
 };
 

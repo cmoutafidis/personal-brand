@@ -11,8 +11,12 @@ WHAT IS BARRED ON FIJI, his decisions of 2026-10-21 (BR-D26):
   site, profile or copy contract.
 - Printty. His words: "printty no".
 - "The Real World" and TRW. New Era Learning may be shown on Fiji; the program behind it never.
-- AKB, Aargauische, Kantonalbank. The bank is never shown on Fiji (F-D21). It appears on Peak
-  Code only, in its approved sentences, and Peak Code has its own copy of this guard.
+- ~~AKB, Aargauische, Kantonalbank. The bank is never shown on Fiji (F-D21).~~ Dropped 2026-10-22
+  (BR-G04, decision BR-D35). His words: "feel free to use all the company references to both
+  companies", and "just dont mention "Ο Τόπος Μου" on peak code consulting, everything else cross is
+  fine". The bank may now be shown on Fiji, in the approved sentences of BR-D26 only, as text with
+  no logo. Which sentences may ship is a copy contract rule (offer-os
+  companies/fiji-solutions/site/03-copy-home.md), so this guard no longer lists the bank.
 
 CASE SENSITIVE ON PURPOSE. `BusinessProcessAuditLanding.tsx` says "the real world reveals", which
 is plain English and names nobody. A case-insensitive match would fire on it and on every future
@@ -53,9 +57,6 @@ BARRED = [
     ("Printty", r"Printty"),
     ("The Real World", r"The\s+Real\s+World"),
     ("TRW", r"\bTRW\b"),
-    ("AKB", r"\bAKB\b"),
-    ("Aargauische", r"Aargauische"),
-    ("Kantonalbank", r"Kantonalbank"),
 ]
 
 ROOTS = ("src/components", "src/app", "src/data", "src/lib")
@@ -150,8 +151,9 @@ def scan(root="."):
 # --------------------------------------------------------------------------- selftest
 FIXTURES = [
     ("a barred employer in copy is caught", "  title: 'Built at PRODYNA',\n", 1),
-    ("the bank in copy is caught", "  <p>Trusted by Aargauische Kantonalbank</p>\n", 2),
-    ("AKB as a word is caught", "  text: 'Our AKB project',\n", 1),
+    ("the bank in copy passes since BR-D35", "  <p>Trusted by Aargauische Kantonalbank</p>\n", 0),
+    ("AKB as a word passes since BR-D35", "  text: 'Our AKB project',\n", 0),
+    ("a barred former employer in a list is caught", "  ['Deloitte', 'Smiling Machines'],\n", 2),
     ("TRW as a word is caught", "  text: 'Inside TRW',\n", 1),
     ("TRW inside a longer word is not", "  const STRWX = 1;\n", 0),
     ("lower case plain English is not a name", "  text: 'the real world reveals it',\n", 0),

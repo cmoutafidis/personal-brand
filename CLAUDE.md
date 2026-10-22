@@ -3,7 +3,39 @@
 Next.js 15 App Router, Tailwind v3, TypeScript. Two locales, `en` and `el`, both fully
 prerendered. Deployed on Vercel.
 
-## The one thing this site sells
+## What this site sells (2026-10-21)
+
+Added 2026-10-22 by offer-os `gtm/broad-home-2026-10` BR-G04 (decisions BR-D3, BR-D4, BR-D22 to BR-D28 and
+BR-D35 in that folder's `PLAN.md` §2). Charis, 2026-10-21: Fiji builds custom software, apps, CRM style systems,
+automation and AI, and sheet-to-app is one offer he sells through outreach. He then said *"build a whole plan for
+the thing and no need to wait to go live"*. Where a rule further down in this file contradicts this block, this
+block wins, and BR-G07 strikes the rest with dated notes.
+
+- **Fiji Solutions is a broad custom software company.** The sentence every company surface carries: *"Fiji
+  Solutions is a software company in Thessaloniki, Greece. We build custom software, web and mobile apps, business
+  process automation, AI agents, websites and Snowflake data platforms for businesses in Greece and abroad."* Fiji
+  is never described as the spreadsheet company on a broad surface (home, titles, meta, JSON-LD, About, Contact,
+  off-site profiles).
+- **Each offer is one way to start, and keeps its own page.** The 7-day sheet-to-app prototype, the software
+  prototype, the AI prototype, the AI development sprint, process automation, the AI agent, the two website offers
+  and Atlas. The homepages show a six card "What we build" grid (BR-D3) and a "Ways to start" row of five offers.
+- **No price on a broad surface (BR-D24).** His words: *"these prices are for the specific offer"*. The prices
+  stay on `/offers/sheet-to-app` (S12 and the S19 close) and on Atlas. Never on either homepage, About, Contact,
+  `/portfolio`, the projects pages, the top banner, the RootShell strings or any JSON-LD.
+- **Clients may be named** in the client strip and on project pages, as BR-D26 and BR-D35 allow: PAP Center, New
+  Era Learning, Hapimag, Jupiter, Catalytics, Seaflows, Alumil, Aargauische Kantonalbank (its approved sentences
+  only, text only, no logo) and Ο Τόπος Μου. Never PRODYNA, Smiling Machines, Deloitte, Apifon, Printty, "The Real
+  World" or TRW; `scripts/no-barred-names.py` enforces that list. Blog posts never name a client (SL-D4).
+- **The booking link is one constant**, `BOOKING_URL` in `src/lib/booking.ts`, imported by every Calendly link.
+- **The site wide shell** (2026-10-22, BR-G04): a top banner (`src/components/TopBanner.tsx`, hidden on
+  `LANDING_PATHS` and both `business-process-audit` pages, closed for the tab in `sessionStorage`, not sticky), a
+  navbar of Services, Projects, Atlas, About, Contact and a "Book a free call" button (BR-D5), `serviceType` read
+  from `src/data/services.ts` (BR-D4), and `HOMEPAGE_VOICE_ON = false` until the Vapi script is made broad
+  (BR-G10).
+- The copy contract for all of it is offer-os `companies/fiji-solutions/site/03-copy-home.md`. Change a string
+  there first.
+
+## ~~The one thing this site sells~~ (struck 2026-10-22, BR-G04: replaced by the block above)
 
 ~~A **free process audit** → **Build & Run** with a money-back guarantee.
 `/[locale]/business-process-audit` is the page that sells; every primary CTA points at it. The
@@ -24,7 +56,10 @@ their price ladder in the page body, and both homepages publish the same figures
 the how-it-works cards (G20); rule 7 records it and its source.
 
 Until 2026-08-15 that page had **zero internal links** and the site sold six service categories,
-six industries and thirty-two technologies. Do not re-add a service list.
+six industries and thirty-two technologies. ~~Do not re-add a service list.~~ **Struck 2026-10-22 (offer-os
+`gtm/broad-home-2026-10` BR-G04, decision BR-D3):** both homepages carry a six card "What we build" grid, read
+from `src/data/services.ts`, and `/portfolio` renders the same six categories. The industry and technology lists
+stay gone, and the eight offers still stay out of every menu, the footer and `/portfolio` (the rule below).
 
 ### The eight `/offers/*` pages: body links only, never a menu (rule rewritten 2026-09-01)
 
@@ -144,7 +179,7 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 | All UI copy, both locales | `src/translations.ts` (137 keys each, kept at exact parity; 133 until 2026-10-08, when F16 added `nav.offer` and `nav.about`; 135 until 2026-10-18, when Atlas added `nav.atlas`; 136 until 2026-10-21, when the spreadsheet check added `nav.spreadsheetCheck`) |
 | The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
 | The audit form section, its CTA copy and the Calendly URL | `src/components/AuditFormSection.tsx`. Rendered by the offer page, and by the homepage until 2026-09-30 (G20, D5), so its strings live in that file. `AUDIT_CTA` feeds the offer page's five `CtaBlock`s, whose button is an in-page `#consultation-form` anchor. Give each new caller its own `presetQuestion`; it is the only lead-source marker there is. |
-| The sheet-to-app offer page (2026-09-30) | Its own layout, `src/components/SheetToAppLanding.tsx` (nineteen sections from its offer-os contract, sticky mobile bar in `SheetToAppStickyCta.tsx`), copy in `src/data/offers/sheet-to-app.ts`, verbatim from offer-os `offers/fiji-solutions--sheet-to-app/03-copy.md`. Metadata and JSON-LD come from the same `src/lib/offerSchema.ts`. Its booking link is `SHEET_TO_APP_BOOKING_URL` in that data file, the existing 30-minute Calendly event (offer-os D120, 2026-09-30), the same URL as `CALENDLY_URL`. `src/lib/landing.ts` lists the routes whose Navbar is logo-only and which load no Vapi bubble. Since 2026-10-08 (F22 of offer-os `gtm/followups-and-search`, F-D161 to F-D164) S09 carries one `caseStudy` line under each story, linking the shared Gamma case studies of PAP Center and New Era Learning in a new tab (`CASE_STUDY_*_URL` in the data file, each click a `cta_click`); the Greek lines say «(στα αγγλικά)». The AKB case study is never linked from a Fiji page. |
+| The sheet-to-app offer page (2026-09-30) | Its own layout, `src/components/SheetToAppLanding.tsx` (nineteen sections from its offer-os contract, sticky mobile bar in `SheetToAppStickyCta.tsx`), copy in `src/data/offers/sheet-to-app.ts`, verbatim from offer-os `offers/fiji-solutions--sheet-to-app/03-copy.md`. Metadata and JSON-LD come from the same `src/lib/offerSchema.ts`. Its booking link is `SHEET_TO_APP_BOOKING_URL` in that data file, the existing 30-minute Calendly event (offer-os D120, 2026-09-30), the same URL as `CALENDLY_URL`. `src/lib/landing.ts` lists the routes whose Navbar is logo-only and which load no Vapi bubble. Since 2026-10-08 (F22 of offer-os `gtm/followups-and-search`, F-D161 to F-D164) S09 carries one `caseStudy` line under each story, linking the shared Gamma case studies of PAP Center and New Era Learning in a new tab (`CASE_STUDY_*_URL` in the data file, each click a `cta_click`); the Greek lines say «(στα αγγλικά)». The AKB case study is never linked from a Fiji page. 2026-10-22 (offer-os BR-D35): the bank may now be named on Fiji in its approved sentences, as text; the case study stays unlinked. |
 | The homepage hook (2026-09-30, G20) | Both homepages sell the sheet-to-app offer. `hero.*`, `challenges.*` and `solutions.*` in `src/translations.ts`, the body link and limit line in `src/components/Solutions.tsx`, the form in `src/components/SheetToAppFormSection.tsx` (`presetQuestion` `homepage-sheet-to-app`, `offer_slug` `sheet-to-app`, `cta_location` `home-hero`, `home-solutions-box` and `home-form-calendly`), and the long-form ids in `src/data/homeLongForm/`, all verbatim from offer-os `offers/fiji-solutions--sheet-to-app/03-copy-homepage.md`, the Greek `ti-kanoume` p2 included («Το ένα είναι ...» and «Το άλλο είναι ...», recorded in the contract's Findings item 5 on 2026-09-30, so «πρώτ-» stays within the ration of D67). ~~The Vapi voice button in the hero and the Vapi chat bubble are hidden on `/en` and `/el` (2026-09-30, G20): the assistant behind both still pitches the process audit and its guarantee, and the homepage names one guarantee (D53).~~ ~~`HOMEPAGE_VOICE_ON` in `src/lib/landing.ts` brings both back once G23's new assistant script is live in the Vapi dashboard.~~ 2026-10-04: the new script is live in the Vapi dashboard (version v5, Greek and English by voice), and `HOMEPAGE_VOICE_ON` is `true`, so both are back on `/en` and `/el`. |
 | The seven workbook offer pages | One layout, `src/components/OfferLanding.tsx` (the eighth offer, sheet-to-app, has its own layout, in the row above); one bilingual data file per offer in `src/data/offers/`; two thin routes each. Metadata and the Service + FAQPage JSON-LD are derived in `src/lib/offerSchema.ts` from the same object the page renders, so the marked-up FAQ cannot drift from the rendered one. **To add or change an offer, edit its data file.** Each carries its own `questionMarker`, which is the only thing telling its leads from the other seven in the shared inbox. |
 | The about page (2026-10-08, F16) | `src/components/AboutPage.tsx`: copy, metadata and the AboutPage JSON-LD in one file, verbatim from offer-os `offers/fiji-solutions--sheet-to-app/derived/site/F16-COPY.md`; the photo is `public/charis-moutafidis.jpg`, his own, cropped at his word (F-D131). The JSON-LD hangs `image` on the canonical Person reference. The Contact page strings (`contact.title`, `contact.subtitle*`) and its metadata lead with the 7-day prototype from the same file (F-D135); its form sends `offer_slug` `sheet-to-app` and keeps `form_location` `contact`. |
@@ -438,9 +473,12 @@ dropping it.
   `TODO(charis)` that used to sit here is closed. The node carries **no**
   `priceRange` (rule 7), **no** `aggregateRating`/`review` (zero Google reviews), **no**
   `openingHoursSpecification` (the only hours on record are the GBP default "Open 24 hours") and
-  **no** `vatID` (the number on `/legal` is the partner's personal ΑΦΜ). `serviceType` stays at
+  **no** `vatID` (the number on `/legal` is the partner's personal ΑΦΜ). ~~`serviceType` stays at
   three, matching the rendered «Τρία πράγματα» — the two website offers are linked from page
-  bodies, not declared as a fourth and fifth service.
+  bodies, not declared as a fourth and fifth service.~~ **Struck 2026-10-22 (offer-os
+  `gtm/broad-home-2026-10` BR-G04, decision BR-D4):** `serviceType` lists the six `schemaName` values of
+  `src/data/services.ts`, the same six categories the homepages' "What we build" grid renders, so the
+  machine readable list and the visible one still match.
 
 - **Do not write an attribution you cannot source.** No "ratified by", "confirmed by" or
   "approved by Charis" goes into this repo unless he said it in his own words. The €2,400 survived

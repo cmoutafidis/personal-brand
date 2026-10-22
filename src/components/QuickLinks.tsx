@@ -21,6 +21,9 @@ const QuickLinks: React.FC = () => {
     {label: t('nav.home'), href: `/${language}`},
     {label: t('nav.audit'), href: `/${language}/business-process-audit`},
     {label: t('nav.portfolio'), href: `/${language}/portfolio`},
+    // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G04): the projects index, which took over the
+    // footer's old "Projects" column. Its pages name clients; it links no offer.
+    {label: t('footer.projects'), href: `/${language}/projects`},
     // 2026-10-18 (offer-os gtm/atlas/DECISIONS.md AT-D8): Atlas, after Services. The one offer
     // this list carries; the rule below about the other offers stands.
     {label: t('nav.atlas'), href: `/${language}/offers/atlas`},

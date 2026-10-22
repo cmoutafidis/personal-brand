@@ -60,7 +60,7 @@ export type Block =
   | {type: 'skip'; text: string; lead?: string}
   /**
    * A line linking a case study doc (F22, 2026-10-08), opened in a new tab. Each click is a
-   * cta_click with `location` as its cta_location. Only CS1 and CS-NEL, never CS-AKB (F-D21).
+   * cta_click with `location` as its cta_location. Only CS1 and CS-NEL, never CS-AKB (F-D21; since 2026-10-22, BR-D35, the bank may be named in its approved sentences, and this case study stays unlinked).
    */
   | {type: 'caseStudy'; text: string; href: string; location: string};
 

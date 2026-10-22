@@ -32,15 +32,20 @@ import {REPLY_SLA} from '@/lib/offer';
 //     F16-COPY.md` gives them; change them there first.
 //     2026-10-18 (offer-os gtm/atlas/DECISIONS.md AT-D8, AT-D25): `nav.atlas` joins both locales,
 //     "Atlas" in Latin script in Greek too, from offer-os `offers/fiji-solutions--atlas/03-copy.md`.
+//     2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G04): `nav.offer` is deleted, since the navbar
+//     no longer links the 7-day prototype (BR-D5). `nav.projects`, `nav.cta` and `banner.*` join,
+//     and `footer.description` carries the broad sentence, all from offer-os
+//     `companies/fiji-solutions/site/03-copy-home.md`. "30" in `banner.text` is typed there and here,
+//     as the contract gives it. The rest of this header is rewritten in BR-G07.
 
 export const translations: Record<Language, Record<string, string>> = {
   en: {
     // Navigation
     'nav.home': 'Home',
     'nav.audit': 'Process audit',
-    'nav.offer': '7-day prototype',
     'nav.about': 'About',
     'nav.portfolio': 'Services',
+    'nav.projects': 'Projects',
     'nav.atlas': 'Atlas',
     'nav.snowflake': 'Snowflake',
     'nav.blog': 'Blog',
@@ -48,6 +53,12 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.contact': 'Contact',
     'nav.legal': 'Legal',
     'nav.privacy': 'Privacy',
+    'nav.cta': 'Book a free call',
+
+    // Top banner (2026-10-22, broad home BR-G04)
+    'banner.text': 'Free 30-minute call with the engineer who builds your software.',
+    'banner.link': 'Book a time',
+    'banner.close': 'Close',
 
     // Hero Section
     // 2026-09-30 (G20, D5, D66): the homepage is the hook for the 7-Day Sheet-to-App Prototype.
@@ -172,7 +183,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.snowflake.feature4': 'Cost and performance tuning',
 
     // Footer
-    'footer.description': 'We build software around the way your business already works, from a prototype you review to the finished app, and a monthly care plan keeps it running. Thessaloniki, Greece.',
+    'footer.description': 'Fiji Solutions is a software company in Thessaloniki, Greece. We build custom software, apps, automation, AI agents and websites for businesses in Greece and abroad.',
     'footer.partnership': 'Verify our partnership',
     'footer.links': 'Quick Links',
     'footer.projects': 'Projects',
@@ -219,9 +230,9 @@ export const translations: Record<Language, Record<string, string>> = {
     // Navigation
     'nav.home': 'Αρχική',
     'nav.audit': 'Έλεγχος διαδικασιών',
-    'nav.offer': 'Πρωτότυπο σε 7 μέρες',
     'nav.about': 'Ποιοι είμαστε',
     'nav.portfolio': 'Υπηρεσίες',
+    'nav.projects': 'Έργα',
     'nav.atlas': 'Atlas',
     'nav.snowflake': 'Snowflake',
     'nav.blog': 'Blog',
@@ -229,6 +240,12 @@ export const translations: Record<Language, Record<string, string>> = {
     'nav.contact': 'Επικοινωνία',
     'nav.legal': 'Νομικά',
     'nav.privacy': 'Απόρρητο',
+    'nav.cta': 'Κλείσε δωρεάν κλήση',
+
+    // Top banner (2026-10-22, broad home BR-G04)
+    'banner.text': 'Δωρεάν κλήση 30 λεπτών με τον μηχανικό που φτιάχνει το λογισμικό σου.',
+    'banner.link': 'Κλείσε ώρα',
+    'banner.close': 'Κλείσιμο',
 
     // Hero Section
     // Twin of the English above (2026-09-30, G20, D5, D66).
@@ -342,7 +359,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'services.snowflake.feature4': 'Ρύθμιση κόστους και απόδοσης',
 
     // Footer
-    'footer.description': 'Φτιάχνουμε λογισμικό γύρω από τον τρόπο που ήδη δουλεύει η επιχείρησή σου, από το πρωτότυπο ως την τελική εφαρμογή, και το μηνιαίο πλάνο φροντίδας το κρατάει σε λειτουργία. Θεσσαλονίκη.',
+    'footer.description': 'Η Fiji Solutions είναι εταιρεία λογισμικού στη Θεσσαλονίκη. Φτιάχνουμε λογισμικό, εφαρμογές, αυτοματισμούς, AI agents και ιστοσελίδες για επιχειρήσεις στην Ελλάδα και στο εξωτερικό.',
     'footer.partnership': 'Επιβεβαίωσε τη συνεργασία μας',
     'footer.links': 'Γρήγοροι σύνδεσμοι',
     'footer.projects': 'Έργα',

@@ -99,7 +99,9 @@
     display: flex;
 }
 
-@media (min-width: 768px) {
+/* 1024px since 2026-10-22 (offer-os broad home BR-G04): the navbar gained Projects, About and the
+   "Book a free call" button, and the Greek labels do not fit one row below that width. */
+@media (min-width: 1024px) {
     .desktop-nav {
         display: flex;
     }

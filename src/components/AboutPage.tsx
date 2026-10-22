@@ -9,6 +9,7 @@ import {buildAlternates} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 import {ORGANISATION_ID, PERSON_REF} from '@/lib/person';
 import sheetToApp, {SHEET_TO_APP_BOOKING_URL} from '@/data/offers/sheet-to-app';
+import {BOOKING_URL_TEXT} from '@/lib/booking';
 
 // The about page, /en/about and /el/about. Added 2026-10-08 in F16 of offer-os
 // gtm/followups-and-search (PLAN.md F-D130, F-D131): a lead who gets an email from Charis Moutafidis
@@ -18,7 +19,7 @@ import sheetToApp, {SHEET_TO_APP_BOOKING_URL} from '@/data/offers/sheet-to-app';
 // `offers/fiji-solutions--sheet-to-app/derived/site/F16-COPY.md` section 1; change it there first.
 // The facts come from the approved Gamma doc GD1 and the two proof records it names. Rules held:
 // "we", with his facts in the third person (D13); no price (CLAUDE.md rule 7); "7 days" with its
-// anchor (rule 6); AKB on no Fiji page (F-D21); no AWS region (F-D31).
+// anchor (rule 6); AKB on no Fiji page (F-D21, superseded 2026-10-22 by offer-os BR-D35: approved sentences only, text only); no AWS region (F-D31).
 //
 // The photo is his own, cropped out of a group photo at his word (F-D131), metadata stripped.
 
@@ -249,7 +250,7 @@ export default function AboutPage({lang}: {lang: Language}) {
               rel="noopener noreferrer"
               className={linkClass}
             >
-              calendly.com/charis-fijisolutions/30min
+              {BOOKING_URL_TEXT}
             </TrackedLink>
             . {c.offerBefore}
             <Link href={`/${lang}/${sheetToApp.slug}`} className={linkClass}>

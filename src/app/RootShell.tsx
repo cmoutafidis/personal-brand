@@ -11,6 +11,7 @@ import Analytics from '@/components/Analytics';
 import {Language, assistantId, vapiApiKey} from '@/types/language';
 import {PERSON_REF, ORGANISATION_ID} from '@/lib/person';
 import {jsonLd} from '@/lib/jsonLd';
+import {SERVICE_TYPES} from '@/data/services';
 
 // One shell, two root layouts.
 //
@@ -36,11 +37,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const SITE = 'https://www.fijisolutions.net';
 
-// 2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D66): the site-wide defaults
-// state the new positioning, from a prototype to the finished app, and leave room for the rest of
-// what Fiji sells. Copied word for word from offer-os `offers/fiji-solutions--sheet-to-app/
-// 03-copy-homepage.md` section 7. They name no guarantee, no "audit call", no number and no price,
-// since they render on every page and each page states its own terms.
+// 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G04, decision BR-D22): the site-wide defaults
+// carry the broad sentence: a software company in Thessaloniki that builds six kinds of work.
+// Copied word for word from offer-os `companies/fiji-solutions/site/03-copy-home.md`, "RootShell".
+// They name no offer, no guarantee, no number and no price (BR-D24), since they render on every
+// page and each page states its own terms. Until that day they were the sheet-to-app positioning of
+// 2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D66).
 //
 // Live consumers of these strings: `description` is the Organization JSON-LD description below and
 // the default description of the 404 page; `title` is the twitter:title of the six /services/*
@@ -48,18 +50,18 @@ const SITE = 'https://www.fijisolutions.net';
 // page. Every route declares its own <title>. The Greek local title of 2026-09-01 is struck by D66.
 const COPY: Record<Language, { title: string; description: string; ogDescription: string }> = {
   en: {
-    title: 'Fiji Solutions: from a prototype to the finished app',
+    title: 'Fiji Solutions: software company in Thessaloniki, Greece',
     description:
-      'Software company in Thessaloniki. We turn spreadsheets into web apps, starting with a prototype. We also automate processes and work on Snowflake.',
+      'Software company in Thessaloniki, Greece. We build custom software, web and mobile apps, business process automation, AI agents, websites and Snowflake data platforms for businesses in Greece and abroad.',
     ogDescription:
-      'The spreadsheet your team runs on becomes a prototype you review, then the finished app, with a monthly care plan that keeps it running.',
+      'Custom software, web and mobile apps, automation, AI agents and websites, built by a software company in Thessaloniki.',
   },
   el: {
-    title: 'Fiji Solutions: από το πρωτότυπο ως την τελική εφαρμογή',
+    title: 'Fiji Solutions: εταιρεία λογισμικού στη Θεσσαλονίκη',
     description:
-      'Εταιρεία λογισμικού στη Θεσσαλονίκη. Κάνουμε το Excel σου εφαρμογή, ξεκινώντας από πρωτότυπο. Αυτοματοποιούμε διαδικασίες και δουλεύουμε με Snowflake.',
+      'Εταιρεία λογισμικού στη Θεσσαλονίκη. Φτιάχνουμε λογισμικό κατά παραγγελία, διαδικτυακές εφαρμογές και εφαρμογές για κινητά, αυτοματοποίηση διαδικασιών, AI agents, ιστοσελίδες και πλατφόρμες δεδομένων Snowflake για επιχειρήσεις στην Ελλάδα και στο εξωτερικό.',
     ogDescription:
-      'Το Excel της ομάδας σου γίνεται πρωτότυπο για να το εξετάσεις, και μετά τελική εφαρμογή, με μηνιαίο πλάνο φροντίδας που την κρατάει σε λειτουργία.',
+      'Λογισμικό κατά παραγγελία, εφαρμογές, αυτοματισμοί, AI agents και ιστοσελίδες, από εταιρεία λογισμικού στη Θεσσαλονίκη.',
   },
 };
 
@@ -136,10 +138,13 @@ const MAP_URL =
 
 // One ProfessionalService node per locale, with a stable @id so the two never compete.
 // `serviceType` carried 19 entries until 2026-08-15 — a machine-readable version of the same
-// service list the site stopped selling. It stays at the three things the rendered Services
+// service list the site stopped selling. ~~It stays at the three things the rendered Services
 // section sells («Τρία πράγματα», translations.ts). The two website offers are linked from page
 // bodies, not declared as a fourth and fifth service here — taking this to five while the page
-// still says three is the machine-readable/human-readable divergence this comment exists to catch.
+// still says three is the machine-readable/human-readable divergence this comment exists to catch.~~
+// Struck 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G04, decision BR-D4): `serviceType` is the six
+// `schemaName` values of src/data/services.ts, the file the homepages' "What we build" grid and
+// /portfolio render from, so the machine readable list and the visible one still come from one place.
 //
 // ⚠️ `geo` was WRONG from the day it was written and was corrected on 2026-09-01. It read
 // 40.568785, 22.981762 — about 10 km away in Πυλαία, postcode 570 01, a different municipality
@@ -291,11 +296,7 @@ function organisationSchema(lang: Language) {
       {'@type': 'City', name: 'Thessaloniki'},
       {'@type': 'Country', name: 'United States'},
     ],
-    serviceType: [
-      'Business Process Automation',
-      'Custom Software Development',
-      'Snowflake Consulting',
-    ],
+    serviceType: SERVICE_TYPES,
   };
 }
 

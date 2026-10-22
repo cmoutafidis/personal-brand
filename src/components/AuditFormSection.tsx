@@ -3,6 +3,7 @@ import TrackedLink from '@/components/TrackedLink';
 import {BOOKING_CLICK_EVENT} from '@/utils/gtag';
 import {Language} from '@/types/language';
 import {GUARANTEE_WINDOW_MONTHS, REPLY_SLA} from '@/lib/offer';
+import {BOOKING_URL} from '@/lib/booking';
 
 // The audit request form, and the CTA copy that points at it.
 //
@@ -24,7 +25,9 @@ import {GUARANTEE_WINDOW_MONTHS, REPLY_SLA} from '@/lib/offer';
 // this section (presetQuestion "homepage-process-audit") when the homepage became the hook for the
 // sheet-to-app offer; they render SheetToAppFormSection.tsx instead. The audit page renders this.
 
-export const CALENDLY_URL = 'https://calendly.com/charis-fijisolutions/30min';
+// 2026-10-22 (offer-os broad home BR-G04): an alias of BOOKING_URL in src/lib/booking.ts, the one place
+// the link is typed. OfferLanding.tsx imports it under this name.
+export const CALENDLY_URL = BOOKING_URL;
 
 export type CtaCopy = {
   button: string;

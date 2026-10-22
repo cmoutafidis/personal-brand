@@ -1,4 +1,5 @@
 import type {SheetToAppOffer} from '@/components/SheetToAppLanding';
+import {BOOKING_URL} from '@/lib/booking';
 
 // The 7-Day Sheet-to-App Prototype. Built 2026-09-30 in the rollout's goal G19, from the offer-os
 // record `offers/fiji-solutions--sheet-to-app`: every page string below is copied verbatim from
@@ -35,14 +36,17 @@ import type {SheetToAppOffer} from '@/components/SheetToAppLanding';
  * src/components/AuditFormSection.tsx. It is written out here so this data file, which sitemap.ts
  * and offerLinks.ts also load, does not import a component module. If the event ever changes,
  * change both. While this string is empty, the booking line under the form does not render.
+ * 2026-10-22 (offer-os broad home BR-G04): an alias of BOOKING_URL in src/lib/booking.ts, the one place
+ * the link is typed. booking.ts imports nothing, so this data file still loads no component module.
  */
-export const SHEET_TO_APP_BOOKING_URL = 'https://calendly.com/charis-fijisolutions/30min';
+export const SHEET_TO_APP_BOOKING_URL = BOOKING_URL;
 
 /**
  * The two case studies S09 links (2026-10-08, F22, offer-os gtm/followups-and-search/PLAN.md F-D161
  * to F-D164): Gamma docs in the Fiji workspace, shared view-only, copied from offer-os
  * `offers/fiji-solutions--sheet-to-app/derived/gamma/LINKS.md` (CS1, CS-NEL). The AKB case study is
- * never linked from a Fiji page (F-D21). If a doc is renamed in Gamma, its slug changes; the last 15
+ * never linked from a Fiji page (F-D21; since 2026-10-22, BR-D35, the bank may be named in its approved
+ * sentences, and the case study stays unlinked). If a doc is renamed in Gamma, its slug changes; the last 15
  * characters are the doc ID and keep working on their own.
  */
 export const CASE_STUDY_PAP_CENTER_URL = 'https://gamma.app/docs/Case-study-PAP-Center-90ptybbgeeyvct7';
@@ -205,7 +209,7 @@ const sheetToApp: SheetToAppOffer = {
             {type: 'p', text: 'Fiji Solutions is a software company in Thessaloniki. Our founder has more than ten years of experience building software in banking, travel, telecom, health and online education.'},
             {type: 'p', text: 'Fiji Solutions is listed in Snowflake\'s own partner directory as a Snowflake AI Data Cloud Select Partner.'},
             // 2026-10-08 (F16, offer-os gtm/followups-and-search/PLAN.md F-D140): PAP Center named with the
-            // owner's written yes (F-D20), and New Era Learning added (F-D30). AKB stays off every Fiji page (F-D21).
+            // owner's written yes (F-D20), and New Era Learning added (F-D30). AKB stays off this offer page (F-D21; BR-D35 of 2026-10-22 allows its approved sentences elsewhere).
             {type: 'p', text: 'PAP Center, a hair clinic in Thessaloniki, ran on software built in 2000 and feared that software would stop working.'},
             {type: 'p', text: 'We built the clinic a custom CRM, and it still runs today. We have shipped changes to that CRM every week since July 2026, on the platform your finished app runs on.'},
             // 2026-10-08 (F22, F-D161 to F-D164): a line under each story to its shared Gamma case study.
@@ -530,7 +534,7 @@ const sheetToApp: SheetToAppOffer = {
           blocks: [
             {type: 'p', text: 'Ο ιδρυτής μας έχει πάνω από δέκα χρόνια εμπειρία στην κατασκευή λογισμικού, σε τράπεζες, τουρισμό, τηλεπικοινωνίες, υγεία και διαδικτυακή εκπαίδευση.'},
             {type: 'p', text: 'Η Fiji Solutions είναι Snowflake AI Data Cloud Select Partner. Το βλέπεις στον κατάλογο συνεργατών της ίδιας της Snowflake.'},
-            // 2026-10-08 (F16, F-D140): PAP Center named, New Era Learning added; AKB stays off (F-D21).
+            // 2026-10-08 (F16, F-D140): PAP Center named, New Era Learning added; AKB stays off this page (F-D21; BR-D35, 2026-10-22).
             {type: 'p', text: 'Το PAP Center, μια κλινική μαλλιών στη Θεσσαλονίκη, δούλευε με λογισμικό φτιαγμένο το 2000 και φοβόταν μήπως σταματήσει να λειτουργεί. Φτιάξαμε για την κλινική ένα CRM στα μέτρα της, που τρέχει ακόμα και σήμερα. Από τον Ιούλιο του 2026 παραδίδουμε αλλαγές σε αυτό το CRM κάθε βδομάδα, στην πλατφόρμα όπου θα τρέχει και η δική σου τελική εφαρμογή.'},
             // 2026-10-08 (F22): the case studies are in English, so each line says so.
             {type: 'caseStudy', text: 'Διάβασε τη μελέτη περίπτωσης για το PAP Center (στα αγγλικά)', href: CASE_STUDY_PAP_CENTER_URL, location: 's09-case-study-pap-center'},

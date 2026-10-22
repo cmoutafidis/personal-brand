@@ -20,7 +20,11 @@ export default function Footer({t}: FooterProps) {
           <FooterButton/>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        {/* Two columns since 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G04): the third, "Projects",
+            left whole (PLAN.md §4.1 row 15). Its "Fiji Financial Dashboard" link is gone, and the
+            Catalytics link becomes the live link of the catalytics-apps project page (BR-G06), which
+            QuickLinks reaches through its new "Projects" entry. */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <img
@@ -110,31 +114,6 @@ export default function Footer({t}: FooterProps) {
             <QuickLinks/>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4">{t('footer.projects')}</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="https://finance.fijisolutions.net/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Fiji Financial Dashboard
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://catalytics.pro/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Catalytics Pro
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
 
         <div className="border-t border-gray-800 pt-8 text-center">
