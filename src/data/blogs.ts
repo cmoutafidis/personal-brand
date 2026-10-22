@@ -53,6 +53,7 @@ import crewScheduleChangeOrderJobTracker from './blog/crew-schedule-change-order
 import jobShopSchedulingWorkOrderQuote from './blog/job-shop-scheduling-work-order-quote-app';
 import onePersonKnowsEverythingBusinessContinuity from './blog/one-person-knows-everything-business-continuity';
 import aiAgentPouPaneDedomenaPelaton from './blog/ai-agent-pou-pane-dedomena-pelaton';
+import allagiErpILogistikouGiaAytomatopoiisi from './blog/allagi-erp-i-logistikou-gia-aytomatopoiisi';
 
 // One file per article in src/data/blog/, the same convention src/data/offers/ uses. Fourteen
 // articles inline in this file was about seven thousand lines and nothing could be reviewed.
@@ -76,6 +77,7 @@ export const blogData: BlogData = {
     giatiDenEmfanizetaiIIstoselidaStoGoogle,
     kataskeviIstoselidonTiNaZitas,
     aiAgentPouPaneDedomenaPelaton,
+    allagiErpILogistikouGiaAytomatopoiisi,
   ],
   en: [
     howMuchDoesItCost,
