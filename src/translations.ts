@@ -21,20 +21,23 @@ import {REPLY_SLA} from '@/lib/offer';
 //  7. Every commercial number comes from `@/lib/offer` — the durations, the SLA and the
 //     guarantee window. None of them is typed into a string here. There is no price constant,
 //     because no price is published in either locale. Do not add one.
-//     ~~2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D68): one dated exception.~~
-//     (Struck 2026-10-22, broad home BR-G07: the keys it named are deleted, see BR-G05 below.)
+//     ~~2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D68): one dated exception.
 //     The homepage `hero.*`, `challenges.*` and `solutions.*` strings are the sheet-to-app hook
 //     and are copied word for word from offer-os `offers/fiji-solutions--sheet-to-app/
 //     03-copy-homepage.md`. Their numbers (7 days, 30 minutes, 48 hours, 3 to 5 lines, 5 screens,
 //     2 roles, 30 days) and the five dollar figures in `solutions.cta.description` are typed
 //     there, as the landing page's data file types them, so no price constant enters
 //     `@/lib/offer`. To change one, change it in 03-copy-homepage.md first. Every other string in
-//     this file keeps this rule.
-//     ~~2026-10-08 (F16, offer-os gtm/followups-and-search/PLAN.md F-D132, F-D135): `nav.offer` and~~
-//     (Struck 2026-10-22, broad home BR-G07: `nav.offer` is deleted and the contact.* strings are broad.)
+//     this file keeps this rule.~~
+//     (Struck 2026-10-22, broad home BR-G07: every key it named is deleted, see BR-G05 below, and
+//     03-copy-homepage.md is retired.)
+//     ~~2026-10-08 (F16, offer-os gtm/followups-and-search/PLAN.md F-D132, F-D135): `nav.offer` and
 //     `contact.title`, `contact.subtitle1` and `contact.subtitle3` join that exception. They type
 //     "7 days" and "30 minutes" as offer-os `offers/fiji-solutions--sheet-to-app/derived/site/
-//     F16-COPY.md` gives them; change them there first.
+//     F16-COPY.md` gives them; change them there first.~~
+//     (Struck 2026-10-22, broad home BR-G07: `nav.offer` is deleted, and the contact.* strings are broad,
+//     copied from offer-os `companies/fiji-solutions/site/03-copy-home.md`, "Contact", with no "7 days";
+//     change them there first. Their "30" stays an exception, recorded in the BR-G07 entry below.)
 //     2026-10-18 (offer-os gtm/atlas/DECISIONS.md AT-D8, AT-D25): `nav.atlas` joins both locales,
 //     "Atlas" in Latin script in Greek too, from offer-os `offers/fiji-solutions--atlas/03-copy.md`.
 //     2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G04): `nav.offer` is deleted, since the navbar
@@ -50,7 +53,9 @@ import {REPLY_SLA} from '@/lib/offer';
 //     `contact.form.message.placeholder` are broad, and `services.title` and `services.subtitle` name the six
 //     kinds of work, all from offer-os `companies/fiji-solutions/site/03-copy-home.md`, "Contact" and
 //     "Portfolio". "30" in `contact.title` and `contact.subtitle3` is typed as that contract gives it. No key
-//     here carries a price, and since this date no dated exception to this rule is left in this file.
+//     here carries a price. The exceptions to this rule left in this file are the typed "30" (minutes) in
+//     `banner.text` (BR-G04), `contact.title` and `contact.subtitle3` (this entry), each as that contract
+//     gives it; no other number is typed here.
 
 export const translations: Record<Language, Record<string, string>> = {
   en: {
@@ -135,7 +140,8 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Portfolio/Projects
 
-    // Services — three, not six. Each one names the manual step it removes.
+    // Services: the /portfolio heading and line. 2026-10-22 (broad home BR-G07): six kinds of work, from
+    // src/data/services.ts; the three old card keys are deleted.
     'services.title': 'What Fiji Solutions builds',
     'services.subtitle': 'Six kinds of work, for businesses in Greece and abroad.',
 

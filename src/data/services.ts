@@ -8,7 +8,9 @@ import {SERVICE_LABEL, type OfferSlug, type ServiceSlug} from '@/data/offerLinks
 // Three surfaces read it, so they cannot drift apart:
 //   - the JSON-LD `serviceType` in src/app/RootShell.tsx, from `schemaName` (BR-D4);
 //   - the homepages' "What we build" grid (BR-G05);
-//   - the six categories on /portfolio (BR-G07).
+//   - the six categories on /portfolio (BR-G07), service page links only (servicePageLinks below).
+// A fourth reads it since BR-G06: the "See also" links of each project page (relatedOf() in
+// src/components/ProjectPages.tsx), by ServiceKey.
 //
 // The order is the contract's order, and RootShell emits `serviceType` in this order. `schemaName`
 // is a schema.org value, so it stays English in both locales (CLAUDE.md rule 4).
