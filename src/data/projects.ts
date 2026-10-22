@@ -136,7 +136,7 @@ function factsOf(lang: Language, client: string, sector: Record<Language, string
 /** The same string in both locales: a stack or a product name. */
 const both = (s: string): Record<Language, string> => ({en: s, el: s});
 
-const SHIP = '2026-10-22';
+const SHIP = '2026-10-23';
 
 // Each project's sentences, per locale, before the facts strip is assembled.
 type ProjectText = Omit<Project['copy'][Language], 'facts' | 'sector'>;

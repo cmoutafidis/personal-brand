@@ -32,7 +32,8 @@ import {LIVE_PROJECTS} from '@/data/projects';
 // own page.tsx.
 export const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']; lastmod: string }[] = [
   // 2026-09-30 (G20): both homepages became the sheet-to-app hook. Deployed 2026-10-04, so lastmod is that date.
-  {path: '', priority: 1.0, changeFrequency: 'weekly', lastmod: '2026-10-04'},
+  // 2026-10-23 (offer-os gtm/broad-home-2026-10 BR-G08): both homepages became the broad home, deployed that day.
+  {path: '', priority: 1.0, changeFrequency: 'weekly', lastmod: '2026-10-23'},
   // 2026-09-30 (G19): /business-process-audit gained its body link to sheet-to-app, and
   // software-prototype's sibling link now points there. /offers/app-prototype is retired and
   // redirects to /offers/sheet-to-app (next.config.ts), so its row is gone. Set the sheet-to-app
@@ -56,11 +57,11 @@ export const ROUTES: { path: string; priority: number; changeFrequency: Metadata
   // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G06): the old project cards left /portfolio, which now links
   // /projects. BR-G07: its titles and the six categories. Set it to the deploy date with the project rows if
   // BR-G08 lands later.
-  {path: '/portfolio', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-22'},
+  {path: '/portfolio', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-23'},
   // 2026-10-08 (F16, F-D130): the about page, for a lead who checks who sent the email.
-  // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G07): About and Contact made broad. Set both to the deploy
-  // date if BR-G08 lands later.
-  {path: '/about', priority: 0.6, changeFrequency: 'monthly', lastmod: '2026-10-22'},
+  // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G07): About and Contact made broad. Deployed 2026-10-23
+  // (BR-G08), so lastmod is that date.
+  {path: '/about', priority: 0.6, changeFrequency: 'monthly', lastmod: '2026-10-23'},
   {path: '/services/custom-software-development-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-20'},
   {path: '/services/data-analysis-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-20'},
   {path: '/services/snowflake-consulting-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-20'},
@@ -70,9 +71,9 @@ export const ROUTES: { path: string; priority: number; changeFrequency: Metadata
   // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G06): the projects index and one route per project, from
   // src/data/projects.ts, each with that project's own lastmod. Set the dates to the deploy date if BR-G08 lands
   // later.
-  {path: '/projects', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-22'},
+  {path: '/projects', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-23'},
   ...LIVE_PROJECTS.map((p) => ({path: `/projects/${p.slug}`, priority: 0.6, changeFrequency: 'monthly' as const, lastmod: p.lastmod})),
-  {path: '/contact', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-22'},
+  {path: '/contact', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-23'},
   {path: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-10-08'},
   {path: '/legal', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-08-15'},
 ];
