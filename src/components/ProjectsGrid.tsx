@@ -6,8 +6,8 @@ import {HOME_PROJECTS} from '@/data/projects';
 
 // The projects grid of both homepages, `id="projects"`, the target of the hero's second button. Added
 // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G05, PLAN.md §4.1 row 8 and §4.4). The first six projects
-// of src/data/projects.ts by `order`, each with its client and card line, then "All projects". The
-// /[locale]/projects routes arrive in BR-G06, before the deploy.
+// of src/data/projects.ts by `order`, each with its client and card line, then "All projects". Each card links
+// its project page (BR-G06).
 //
 // Server component: `language` comes in as a prop.
 
@@ -31,7 +31,7 @@ export default function ProjectsGrid({language}: {language: Language}) {
                 <h3 className="mb-2 text-lg font-semibold text-gray-950 group-hover:text-primary-600 dark:text-white dark:group-hover:text-primary-400">
                   {p.client.name}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300 lg:text-sm">{p.cardLine[language]}</p>
+                <p className="text-gray-700 dark:text-gray-300 lg:text-sm">{p.copy[language].cardLine}</p>
               </Link>
             </li>
           ))}

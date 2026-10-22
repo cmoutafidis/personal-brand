@@ -27,6 +27,8 @@ export type Service = {
   secondServiceHref?: Record<Language, string>;
   /** The offer this card links, when it has no service page of its own. */
   offerHref?: OfferSlug;
+  /** A project page this card links as well, by its slug in src/data/projects.ts (the apps card, PLAN.md §4.3). */
+  projectSlug?: string;
   schemaName: string;
   copy: Record<Language, {title: string; line: string}>;
 };
@@ -54,8 +56,9 @@ export const SERVICES: readonly Service[] = [
   },
   {
     key: 'apps',
-    // The Catalytics project page joins this card as a second link in BR-G06, once the route exists.
+    // The Catalytics project page is this card's second link (BR-G06, PLAN.md §4.3).
     serviceHref: servicePage('custom-software-development-greece'),
+    projectSlug: 'catalytics-apps',
     schemaName: 'Web and Mobile App Development',
     copy: {
       en: {

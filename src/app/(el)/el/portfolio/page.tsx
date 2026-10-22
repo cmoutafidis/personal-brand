@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import {buildAlternates} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 import Services from '@/components/Services';
-import Projects from '@/components/Projects';
+import PortfolioProjectsLink from '@/components/PortfolioProjectsLink';
 import PortfolioOfferLink from '@/components/PortfolioOfferLink';
 import Footer from "@/components/Footer";
 
@@ -42,7 +42,7 @@ export default function GreekPortfolioPage() {
     <div className="min-h-screen bg-white dark:bg-gray-900 pt-20">
       <Services t={t} lang="el"/>
       <PortfolioOfferLink lang="el"/>
-      <Projects t={t}/>
+      <PortfolioProjectsLink lang="el"/>
       <Footer t={t}/>
     </div>
   );

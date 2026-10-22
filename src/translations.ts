@@ -124,14 +124,6 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.address.city': 'Thessaloniki 54627, Greece',
 
     // Portfolio/Projects
-    'projects.title': 'Software we built and run ourselves',
-    'projects.subtitle': 'Not case studies. Products you can open and click.',
-    'projects.fiji.title': 'Fiji Analytics Dashboard',
-    'projects.fiji.description': 'A financial data platform built on Snowflake AI Data Cloud. We designed it, built it, and run it.',
-    'projects.catalytics.title': 'Catalytics Pro',
-    'projects.catalytics.description': 'Reporting and analytics over live data, built on the same stack we would build yours on.',
-    'projects.checkitout': 'Check it out',
-    'projects.code': 'Source Code',
 
     // Services — three, not six. Each one names the manual step it removes.
     'services.title': 'What Fiji Solutions builds: custom software, data analysis and Snowflake',
@@ -275,14 +267,6 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.address.city': 'Θεσσαλονίκη 54627, Ελλάδα',
 
     // Portfolio/Projects
-    'projects.title': 'Λογισμικό που φτιάξαμε και τρέχουμε μόνοι μας',
-    'projects.subtitle': 'Προϊόντα που μπορείς να ανοίξεις και να πατήσεις.',
-    'projects.fiji.title': 'Fiji Analytics Dashboard',
-    'projects.fiji.description': 'Πλατφόρμα οικονομικών δεδομένων πάνω στο Snowflake AI Data Cloud. Τη σχεδιάσαμε, τη φτιάξαμε και τη λειτουργούμε εμείς.',
-    'projects.catalytics.title': 'Catalytics Pro',
-    'projects.catalytics.description': 'Αναφορές και αναλύσεις πάνω σε ζωντανά δεδομένα, στην ίδια βάση που θα φτιάχναμε και τη δική σου.',
-    'projects.checkitout': 'Δες το',
-    'projects.code': 'Ανοιχτός κώδικας',
 
     // Services
     'services.title': 'Τι φτιάχνει η Fiji Solutions: εξατομικευμένο λογισμικό, ανάλυση δεδομένων και Snowflake',

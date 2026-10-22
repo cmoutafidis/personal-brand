@@ -4,11 +4,13 @@ import type {Language} from '@/types/language';
 import {HOME} from '@/data/home';
 import {SERVICES, type Service} from '@/data/services';
 import {OFFER_BY_SLUG, SERVICE_LABEL, type ServiceSlug} from '@/data/offerLinks';
+import {projectBySlug} from '@/data/projects';
 
 // "What we build" on both homepages: the six cards of src/data/services.ts. Added 2026-10-22 (offer-os
 // gtm/broad-home-2026-10 BR-G05, PLAN.md §4.1 row 5 and §4.3, decision BR-D3). Each card links its service
 // page, with that page's own phrase as anchor text (SERVICE_LABEL), or its offer, with the offer's eyebrow
-// (offerLinks.ts). No anchor text is typed here, and no price.
+// (offerLinks.ts). Since 2026-10-22 (BR-G06) the apps card also links the Catalytics project page, with that
+// page's H1 as anchor text. No anchor text is typed here, and no price.
 //
 // Server component: `language` comes in as a prop.
 
@@ -24,6 +26,8 @@ function linksOf(s: Service, language: Language): CardLink[] {
   if (s.serviceHref) links.push(serviceLink(s.serviceHref, language));
   if (s.secondServiceHref) links.push(serviceLink(s.secondServiceHref, language));
   if (s.offerHref) links.push({href: `/${language}/${s.offerHref}`, label: OFFER_BY_SLUG[s.offerHref].copy[language].eyebrow});
+  const project = s.projectSlug ? projectBySlug(s.projectSlug) : undefined;
+  if (project) links.push({href: `/${language}/projects/${project.slug}`, label: project.copy[language].h1});
   return links;
 }
 

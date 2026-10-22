@@ -1,4 +1,5 @@
 import type {MetadataRoute} from 'next';
+import {LIVE_PROJECTS} from '@/data/projects';
 
 // The route list the sitemap is generated from, moved here from src/app/sitemap.ts on 2026-10-08
 // (F17 of offer-os gtm/followups-and-search) so a page can read its own lastmod. The sheet-to-app
@@ -61,6 +62,11 @@ export const ROUTES: { path: string; priority: number; changeFrequency: Metadata
   // 2026-10-21 (offer-os gtm/seo-loop-2026-10 S14): the spreadsheet check, linked from QuickLinks and
   // from a cta block in the two niche posts (SL-D63). Set lastmod to the deploy date if it lands later.
   {path: '/tools/spreadsheet-check', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-22'},
+  // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G06): the projects index and one route per project, from
+  // src/data/projects.ts, each with that project's own lastmod. Set the dates to the deploy date if BR-G08 lands
+  // later.
+  {path: '/projects', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-22'},
+  ...LIVE_PROJECTS.map((p) => ({path: `/projects/${p.slug}`, priority: 0.6, changeFrequency: 'monthly' as const, lastmod: p.lastmod})),
   {path: '/contact', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-08'},
   {path: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-10-08'},
   {path: '/legal', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-08-15'},

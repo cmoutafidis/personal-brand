@@ -31,6 +31,10 @@ const LOCALELESS = [
   'offers/atlas',
   // 2026-10-21: the spreadsheet check (offer-os gtm/seo-loop-2026-10 S14).
   'tools/spreadsheet-check',
+  // 2026-10-22: the projects index and every project page (offer-os gtm/broad-home-2026-10 BR-G06). One
+  // pattern covers each slug, so a new project needs no line here.
+  'projects',
+  'projects/:slug',
 ];
 
 const nextConfig: NextConfig = {
