@@ -58,6 +58,9 @@ export const ROUTES: { path: string; priority: number; changeFrequency: Metadata
   {path: '/services/custom-software-development-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-20'},
   {path: '/services/data-analysis-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-20'},
   {path: '/services/snowflake-consulting-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-20'},
+  // 2026-10-21 (offer-os gtm/seo-loop-2026-10 S14): the spreadsheet check, linked from QuickLinks and
+  // from a cta block in the two niche posts (SL-D63). Set lastmod to the deploy date if it lands later.
+  {path: '/tools/spreadsheet-check', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-22'},
   {path: '/contact', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-08'},
   {path: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-10-08'},
   {path: '/legal', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-08-15'},

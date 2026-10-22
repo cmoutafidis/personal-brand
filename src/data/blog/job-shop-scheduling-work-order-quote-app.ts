@@ -70,6 +70,7 @@ const post: BlogPost = {
       {q: 'We have outgrown the spreadsheet but we do not want to change how we work. What does the app do?', a: 'It is built around your own sheet and your own columns, so it follows how your shop already runs. You keep your own way of working. The price is set and published on our offer page before anything is built, and you pay only if you like the prototype.'},
     ]},
 
+    {type: 'cta', heading: 'Check your shared spreadsheet first', text: '11 questions about how your team uses its sheet. The result shows what to try in Excel or Google Sheets, where they stop, and what an app built around the sheet adds. Your answers stay in your browser.', label: 'Open the spreadsheet check', href: '/en/tools/spreadsheet-check'},
     {type: 'cta', heading: 'Job schedule or work orders outgrowing the sheet?', text: 'Book a 30-minute call. We look at your columns, talk through what you need, and you get a prototype of your app 7 days later. Pay only if you like it.', label: 'Book a 30-minute call', href: '/en/offers/sheet-to-app'},
   ],
 };

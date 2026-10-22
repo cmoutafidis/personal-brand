@@ -31,6 +31,9 @@ const QuickLinks: React.FC = () => {
     // navbar's four items are the whole menu, and the offer pages are kept out of every menu for
     // the same reason (see CLAUDE.md), save the navbar's one link to sheet-to-app (2026-10-08, F-D132).
     {label: t('nav.blog'), href: `/${language}/blog`},
+    // 2026-10-21 (offer-os gtm/seo-loop-2026-10 S14, SL-D63): the spreadsheet check, a tool page
+    // with no form. It links the sheet-to-app offer from its body; this list still links no offer.
+    {label: t('nav.spreadsheetCheck'), href: `/${language}/tools/spreadsheet-check`},
     {label: t('nav.contact'), href: `/${language}/contact`},
     {label: t('nav.privacy'), href: `/${language}/privacy-policy`},
     {label: t('nav.legal'), href: `/${language}/legal`},

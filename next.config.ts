@@ -29,6 +29,8 @@ const LOCALELESS = [
   'offers/website-google-ads',
   // 2026-10-18: Atlas (offer-os gtm/atlas/DECISIONS.md AT-D8).
   'offers/atlas',
+  // 2026-10-21: the spreadsheet check (offer-os gtm/seo-loop-2026-10 S14).
+  'tools/spreadsheet-check',
 ];
 
 const nextConfig: NextConfig = {

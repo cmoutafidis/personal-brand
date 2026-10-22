@@ -83,6 +83,7 @@ pages — and from nowhere else. The whole graph is one file, `src/data/offerLin
 | both homepages, `Solutions.tsx`, one prose link under the price box (2026-09-30, G20) | sheet-to-app |
 | `/portfolio`, `PortfolioOfferLink.tsx`, one prose link under the three cards (2026-10-08, F16, F-D133) | sheet-to-app |
 | `/about`, `AboutPage.tsx`, one prose link in "Where to start" (2026-10-08, F16, F-D130) | sheet-to-app |
+| `/tools/spreadsheet-check`, `SpreadsheetCheck.tsx`, one body link after the result (2026-10-21, offer-os `gtm/seo-loop-2026-10` S14, SL-D65) | sheet-to-app |
 | the navbar, its second of four links (2026-10-08, F16, F-D132) | sheet-to-app, and only it |
 | the navbar, after "Services", and `QuickLinks`, after "Services" (2026-10-18, offer-os `gtm/atlas/DECISIONS.md` AT-D8) | atlas, and only it |
 | both homepages, `AtlasHomeSection.tsx`, its own band after `Solutions.tsx` (2026-10-18, AT-D22) | atlas |
@@ -140,7 +141,7 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 | What | Where |
 |---|---|
 | Offer economics — durations, SLA, guarantee terms | `src/lib/offer.ts`. **Change the number here, not in copy.** The guarantee's four numbers (window, cure, claim window, answer deadline) live here. **No price constant lives here, or anywhere.** |
-| All UI copy, both locales | `src/translations.ts` (136 keys each, kept at exact parity; 133 until 2026-10-08, when F16 added `nav.offer` and `nav.about`; 135 until 2026-10-18, when Atlas added `nav.atlas`) |
+| All UI copy, both locales | `src/translations.ts` (137 keys each, kept at exact parity; 133 until 2026-10-08, when F16 added `nav.offer` and `nav.about`; 135 until 2026-10-18, when Atlas added `nav.atlas`; 136 until 2026-10-21, when the spreadsheet check added `nav.spreadsheetCheck`) |
 | The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
 | The audit form section, its CTA copy and the Calendly URL | `src/components/AuditFormSection.tsx`. Rendered by the offer page, and by the homepage until 2026-09-30 (G20, D5), so its strings live in that file. `AUDIT_CTA` feeds the offer page's five `CtaBlock`s, whose button is an in-page `#consultation-form` anchor. Give each new caller its own `presetQuestion`; it is the only lead-source marker there is. |
 | The sheet-to-app offer page (2026-09-30) | Its own layout, `src/components/SheetToAppLanding.tsx` (nineteen sections from its offer-os contract, sticky mobile bar in `SheetToAppStickyCta.tsx`), copy in `src/data/offers/sheet-to-app.ts`, verbatim from offer-os `offers/fiji-solutions--sheet-to-app/03-copy.md`. Metadata and JSON-LD come from the same `src/lib/offerSchema.ts`. Its booking link is `SHEET_TO_APP_BOOKING_URL` in that data file, the existing 30-minute Calendly event (offer-os D120, 2026-09-30), the same URL as `CALENDLY_URL`. `src/lib/landing.ts` lists the routes whose Navbar is logo-only and which load no Vapi bubble. Since 2026-10-08 (F22 of offer-os `gtm/followups-and-search`, F-D161 to F-D164) S09 carries one `caseStudy` line under each story, linking the shared Gamma case studies of PAP Center and New Era Learning in a new tab (`CASE_STUDY_*_URL` in the data file, each click a `cta_click`); the Greek lines say «(στα αγγλικά)». The AKB case study is never linked from a Fiji page. |
@@ -154,6 +155,24 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 | GA4 event names, `trackEvent()` | `src/utils/gtag.ts`. Server components send clicks through `src/components/TrackedLink.tsx`. |
 | Sitemap | `src/app/sitemap.ts`, generated from the route list in `src/lib/routes.ts` (moved there 2026-10-08, F17). `routeLastmod()` gives a page its own lastmod: the sheet-to-app pages print it as "Updated <date>" at the page end and emit it as `dateModified`, so bump the lastmod and the page date moves with it. |
 | Site-wide JSON-LD (2026-10-08, F17) | `src/app/RootShell.tsx` emits the ProfessionalService node (`areaServed` Greece, Thessaloniki, United States) and a WebSite node (`#website`, `alternateName` fijisolutions.net). `src/lib/offerSchema.ts` gives every offer page a WebPage node (`isPartOf` the WebSite) with a two-item BreadcrumbList, and `inLanguage` on its FAQPage. The sheet-to-app pages have their own preview images, `public/og/sheet-to-app-en.png` and `-el.png`, whose words are the offer name and the H1, with no price (rule 7). |
+
+## The spreadsheet check under `/tools/*` (added 2026-10-21)
+
+The spreadsheet check, `/en/tools/spreadsheet-check` and `/el/tools/spreadsheet-check` (offer-os
+`gtm/seo-loop-2026-10` S14, SL-D61 to SL-D68), built after the Peak Code migration check of S13. One client
+component, `src/components/SpreadsheetCheck.tsx`, renders both locales from `src/data/tools/spreadsheetCheck.ts`:
+edit the data file, never a twin. Eleven questions about how a team uses its shared Excel or Google Sheets file; the
+result lists each answer's findings in two lanes, "In the sheet you have" (what Microsoft and Google write on their own
+help pages) and "In an app built around your sheet" (our facts, each with its F-fiji id), with no score, no verdict and
+no threshold, since no page we read names one. Answers stay in the browser: no form, no endpoint, no email. The page
+never says "free" or «δωρεάν» (SL-D64). Its one offer link goes to `/offers/sheet-to-app` with the offer's eyebrow
+as anchor text and fires the existing `cta_click` with `cta_location: 'spreadsheet_check'` and `offer_slug:
+'sheet-to-app'`. JSON-LD is one `BreadcrumbList` (`src/lib/spreadsheetCheckPage.ts`), under the GEO rule below. Every
+vendor statement cites a key of `SOURCES` and was checked on 2026-10-21, each locale against the help page in its own
+language where one exists; change one only after its page is read again, and move the "checked on" sentence in
+`SpreadsheetCheck.tsx` with it. Inbound links: `QuickLinks` (`nav.spreadsheetCheck`) and a `cta` block in
+`crew-schedule-change-order-job-tracker-app` and `job-shop-scheduling-work-order-quote-app`. The homepages and the
+sheet-to-app page stay as they are (offer-os `gtm/geo-retrieval-2026-10` GR-D1).
 
 ## AI citation (arXiv 2610.15033)
 
@@ -442,7 +461,7 @@ dropping it.
 
 ```
 npm run dev     # turbopack
-npm run build   # must stay at 44 routes (23 + the 16 /offers/* pages added 2026-08-31 + the 2 /about pages added 2026-10-08 + the /en/blog/[slug] route, which appears once blogData.en has posts, added 2026-10-12, F20 + the 2 /offers/atlas pages added 2026-10-18)
+npm run build   # must stay at 46 routes (23 + the 16 /offers/* pages added 2026-08-31 + the 2 /about pages added 2026-10-08 + the /en/blog/[slug] route, which appears once blogData.en has posts, added 2026-10-12, F20 + the 2 /offers/atlas pages added 2026-10-18 + the 2 /tools/spreadsheet-check pages added 2026-10-21)
 npm run lint
 
 npm run build && python3 scripts/hreflang-parity.py   # AFTER a build, always

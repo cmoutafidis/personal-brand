@@ -70,6 +70,7 @@ const post: BlogPost = {
       {q: 'Do we have to change how we work to use it?', a: 'No. The app is built around your own sheet and your own columns, so it follows how your crew already works.'},
     ]},
 
+    {type: 'cta', heading: 'Check your shared spreadsheet first', text: '11 questions about how your team uses its sheet. The result shows what to try in Excel or Google Sheets, where they stop, and what an app built around the sheet adds. Your answers stay in your browser.', label: 'Open the spreadsheet check', href: '/en/tools/spreadsheet-check'},
     {type: 'cta', heading: 'Crew schedule or change order log outgrowing the sheet?', text: 'Book a 30-minute call. We look at your columns, talk through what you need, and you get a prototype of your app 7 days later. Pay only if you like it.', label: 'Book a 30-minute call', href: '/en/offers/sheet-to-app'},
   ],
 };
