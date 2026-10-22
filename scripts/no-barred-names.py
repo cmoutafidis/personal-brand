@@ -157,9 +157,11 @@ FIXTURES = [
     ("TRW as a word is caught", "  text: 'Inside TRW',\n", 1),
     ("TRW inside a longer word is not", "  const STRWX = 1;\n", 0),
     ("lower case plain English is not a name", "  text: 'the real world reveals it',\n", 0),
-    ("a // comment line is skipped", "  // AKB stays off every Fiji page (F-D21).\n", 0),
-    ("a * comment line is skipped", "   * The AKB case study is Peak Code's.\n", 0),
-    ("a JSX comment line is skipped", "  {/* AKB never here */}\n", 0),
+    # The three comment fixtures name a still barred name, so they fail when comments are read
+    # (they named the bank until 2026-10-22, when BR-D35 took it off this list).
+    ("a // comment line is skipped", "  // PRODYNA stays off every Fiji page.\n", 0),
+    ("a * comment line is skipped", "   * The Deloitte role was employment.\n", 0),
+    ("a JSX comment line is skipped", "  {/* Apifon never here */}\n", 0),
     ("code after a comment on the same line is still code", "  x = 'Printty'; // note\n", 1),
     ("a clean line is clean", "  title: 'Custom software in Thessaloniki',\n", 0),
     ("code after a closed JSX comment is read", "  {/* strip */} <li>Deloitte</li>\n", 1),
@@ -231,6 +233,7 @@ def selftest():
         ("names match nothing", lambda: g.update(BARRED=[("x", r"zzz-not-a-name")])),
         ("case folded", lambda: g.update(BARRED=[(n, "(?i)" + p) for n, p in saved["BARRED"]])),
         ("every line a comment", lambda: g.update(COMMENT_START=("",))),
+        ("comments not skipped", lambda: g.update(COMMENT_START=(), LEADING_CLOSED=re.compile(r"(?!x)x"))),
         ("quote-led lines a comment", lambda: g.update(COMMENT_START=saved["COMMENT_START"] + ("'",))),
         ("closed comments hide code", lambda: g.update(LEADING_CLOSED=re.compile(r"^\s*(\{/\*|/\*).*"))),
         ("allowlist allows everything", lambda: g.update(ALLOW=_AllowAll())),

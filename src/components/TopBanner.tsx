@@ -23,7 +23,8 @@ import type {Language} from '@/types/language';
 //   before hydration, which costs less than a layout shift for everyone else.
 
 /** The banner's height in px. One fixed height at every width, so the header offset is known
- *  before hydration: two lines of text-xs fit on a phone, one line of text-sm from sm up. */
+ *  before hydration: two lines of text-xs fit on a phone (the Greek line measured at 320px wide, which is why the
+ *  left padding is small and the right one clears the 40px close button), one line of text-sm from sm up. */
 export const TOP_BANNER_HEIGHT = 44;
 
 const STORAGE_KEY = 'fiji-top-banner-closed';
@@ -57,7 +58,7 @@ export default function TopBanner({language, onClose}: {language: Language; onCl
 
   return (
     <div
-      className="relative z-[51] flex items-center justify-center bg-primary-600 px-10 text-center text-xs leading-4 text-white sm:text-sm sm:leading-5 dark:bg-primary-700"
+      className="relative z-[51] flex items-center justify-center bg-primary-600 pl-3 pr-11 text-center sm:px-11 text-xs leading-4 text-white sm:text-sm sm:leading-5 dark:bg-primary-700"
       style={{height: TOP_BANNER_HEIGHT}}
     >
       <p>

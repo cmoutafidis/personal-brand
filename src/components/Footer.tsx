@@ -21,7 +21,7 @@ export default function Footer({t}: FooterProps) {
         </div>
 
         {/* Two columns since 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G04): the third, "Projects",
-            left whole (PLAN.md §4.1 row 15). Its "Fiji Financial Dashboard" link is gone, and the
+            left whole (PLAN.md §4.1 row 15). Its finance dashboard link is gone, and the
             Catalytics link becomes the live link of the catalytics-apps project page (BR-G06), which
             QuickLinks reaches through its new "Projects" entry. */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
