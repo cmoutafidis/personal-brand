@@ -110,7 +110,7 @@ DECISIONS = [
                 r"keeps its (promise-led|local) title", r"now goes to the offer",
                 r"the two rungs"],
          ack=[r"2026-09-30", r"sheet-to-app", r"\bd5\b", r"\bd66\b", r"the hook",
-              r"\bstruck\b"]),
+              r"\bstruck\b", r"2026-10-21"]),
     dict(id="sheet-to-app-peak-landing",
          what="On 2026-09-30 Peak Code's 7-Day Sheet-to-App Prototype page, "
               "/angebote/excel-tabelle-als-app and /en/offers/sheet-to-app, became the dated "
@@ -124,7 +124,40 @@ DECISIONS = [
                 r"same rules the pages are", r"exactly two (permitted )?(akb|client-proof)",
                 r"third akb sentence", r"akb reference must not"],
          ack=[r"2026-09-30", r"sheet-to-app", r"\bd83\b", r"\bd85\b", r"\bd91\b",
-              r"\bd92\b"]),
+              r"\bd92\b", r"2026-10-21"]),
+    dict(id="fiji-home-broad-2026-10-21",
+         what="On 2026-10-21 the Fiji homepage, English and Greek, stopped being the hook for the "
+              "7-Day Sheet-to-App Prototype and became the broad home of a custom software "
+              "company (BR-D22, BR-D23, BR-D25). Sheet-to-app is one of several ways to start; "
+              "its form and its prices live on /offers/sheet-to-app only (BR-D24).",
+         where="offer-os gtm/broad-home-2026-10/PLAN.md BR-D22 to BR-D25; Fiji CLAUDE.md",
+         topic=[r"homepage is the hook", r"hook for the 7-day", r"homepage'?s (own )?form",
+                r"homepage-sheet-to-app", r"price box", r"03-copy-homepage"],
+         ack=[r"2026-10-21", r"broad", r"\bstruck\b", r"retired"]),
+    dict(id="peak-home-broad-2026-10-21",
+         what="On 2026-10-21 Peak Code's home, / and /en, was decided to become the broad home "
+              "of a custom software company for Swiss SMEs (BR-D22, BR-D23). The Camunda PATH "
+              "funnel and all its locks move unchanged to /camunda-7-handbuch and "
+              "/en/camunda-7-handbook (BR-D10), and the home lists the offers (BR-D3).",
+         where="offer-os gtm/broad-home-2026-10/PLAN.md BR-D3, BR-D10, BR-D22, BR-D23; Peak Code CLAUDE.md",
+         topic=[r"home page is not an option", r"\b1,199\b",
+                r"home page (is untouched|stays as it is)", r"sells three things",
+                r"do not add a fourth", r"never the navbar, never the footer"],
+         ack=[r"2026-10-21", r"broad home", r"camunda-7-handbuch"]),
+    dict(id="peak-orgs-named-2026-10-21",
+         what="On 2026-10-21 Peak Code may name the organisations its founder built software "
+              "for, under a founder heading (BR-D12, BR-D14, BR-D26). AKB stays limited to its "
+              "approved sentences, and the barred names stay barred.",
+         where="offer-os gtm/broad-home-2026-10/PLAN.md BR-D12, BR-D14, BR-D26",
+         topic=[r"no organisation is named", r"names no client"],
+         ack=[r"2026-10-21", r"unser gründer", r"founder"]),
+    dict(id="review-slot-2026-10-21",
+         what="On 2026-10-21 both homes gained one honest review slot: a placeholder card with no "
+              "stars, quote or avatar until a real review arrives, and no Review or "
+              "AggregateRating markup in any state (BR-D27).",
+         where="offer-os gtm/broad-home-2026-10/PLAN.md BR-D27",
+         topic=[r"no testimonial", r"none is expected", r"no consented review"],
+         ack=[r"2026-10-21", r"review slot", r"placeholder"]),
     dict(id="sheet-to-app-fiji-landing",
          what="On 2026-10-04 Fiji's 7-Day Sheet-to-App Prototype page, /en/offers/sheet-to-app "
               "and /el/offers/sheet-to-app, went live as the dated exception to the site's "
@@ -370,6 +403,16 @@ FIXTURES = [
      "// Google Ads landing page.\n"
      "const a=1;\n"
      "// That channel was dropped on 2026-09-01.\n", ".ts", 1),
+    ("the old homepage form premise without the broad decision is reported",
+     "// The homepage's own form posts to the sheet-to-app inbox.\nconst a=1;\n", ".ts", 1),
+    ("the same premise marked broad on 2026-10-21 is not",
+     "// The homepage's own form left on 2026-10-21; the home is broad now.\nconst a=1;\n",
+     ".ts", 0),
+    ("a Peak no-testimonial premise is reported",
+     "// There is no testimonial and none is expected.\nconst a=1;\n", ".ts", 1),
+    ("a Peak founder-named strip is not",
+     "// No organisation is named here; the founder strip on the home names them.\n"
+     "const a=1;\n", ".ts", 0),
     ("zefix named without the reversal is reported",
      "// The register citation is the zefix permalink.\nconst a=1;\n", ".ts", 1),
 ]
