@@ -5,17 +5,18 @@ import Contact from '@/components/Contact';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  // 2026-10-08 (F16, offer-os gtm/followups-and-search/PLAN.md F-D135): the Contact page leads with
-  // the 7-day prototype. Copy from offer-os offers/fiji-solutions--sheet-to-app/derived/site/F16-COPY.md.
-  title: 'Contact Fiji Solutions: a prototype 7 days after the audit call',
-  description: 'Tell us which spreadsheet your team runs on. A prototype of your app 7 days after the free 30-minute audit call. Pay only if you like it. We reply within one business day.',
-  keywords: 'contact Fiji Solutions, spreadsheet to app, turn spreadsheet into app, software company Thessaloniki',
+  // 2026-10-08 (F16, offer-os gtm/followups-and-search/PLAN.md F-D135): the Contact page led with
+  // the 7-day prototype. 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G07, BR-D22): the title leads
+  // with the action and the page is broad, copy from offer-os companies/fiji-solutions/site/03-copy-home.md,
+  // "Contact"; the spreadsheet keywords string is removed.
+  title: 'Book a free 30-minute call | Fiji Solutions',
+  description: 'Book a free 30-minute call or send us a message about the software, app, automation or website you need. We reply within one business day.',
   alternates: buildAlternates('/contact'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/contact',
-    title: 'Contact Fiji Solutions: a prototype 7 days after the audit call',
-    description: 'Tell us which spreadsheet your team runs on. A prototype of your app 7 days after the free 30-minute audit call. Pay only if you like it. We reply within one business day.',
+    title: 'Book a free 30-minute call | Fiji Solutions',
+    description: 'Book a free 30-minute call or send us a message about the software, app, automation or website you need. We reply within one business day.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -28,8 +29,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Contact Fiji Solutions: a prototype 7 days after the audit call',
-    description: 'Tell us which spreadsheet your team runs on. A prototype of your app 7 days after the free 30-minute audit call. Pay only if you like it. We reply within one business day.',
+    title: 'Book a free 30-minute call | Fiji Solutions',
+    description: 'Book a free 30-minute call or send us a message about the software, app, automation or website you need. We reply within one business day.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

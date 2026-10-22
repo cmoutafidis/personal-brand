@@ -78,7 +78,8 @@ const sheetToApp: SheetToAppOffer = {
       ogAlt: 'Fiji Solutions: a prototype of your app 7 days after the audit call',
 
       // The S01 outcome line. It is also the anchor text of every link to this page (offerLinks.ts
-      // reads `eyebrow` for every offer), as 03-copy-homepage.md asks.
+      // reads `eyebrow` for every offer), as 03-copy-homepage.md asked. That homepage contract is retired
+      // with the broad home of 2026-10-21 (offer-os broad home BR-D22); the rule stands in offerLinks.ts.
       eyebrow: 'The finished app shows where every order or job stands',
       title: 'A prototype 7 days after the audit call. Pay only if you like it.',
       subhead:

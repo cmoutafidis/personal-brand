@@ -9,7 +9,8 @@ Added 2026-10-22 by offer-os `gtm/broad-home-2026-10` BR-G04 (decisions BR-D3, B
 BR-D35 in that folder's `PLAN.md` §2). Charis, 2026-10-21: Fiji builds custom software, apps, CRM style systems,
 automation and AI, and sheet-to-app is one offer he sells through outreach. He then said *"build a whole plan for
 the thing and no need to wait to go live"*. Where a rule further down in this file contradicts this block, this
-block wins, and BR-G07 strikes the rest with dated notes.
+block wins. BR-G07 (2026-10-22) struck or noted the rest with dated notes; a line further down that still reads
+as the hook is history, kept for the record.
 
 - **Fiji Solutions is a broad custom software company.** The sentence every company surface carries: *"Fiji
   Solutions is a software company in Thessaloniki, Greece. We build custom software, web and mobile apps, business
@@ -32,6 +33,12 @@ block wins, and BR-G07 strikes the rest with dated notes.
   navbar of Services, Projects, Atlas, About, Contact and a "Book a free call" button (BR-D5), `serviceType` read
   from `src/data/services.ts` (BR-D4), and `HOMEPAGE_VOICE_ON = false` until the Vapi script is made broad
   (BR-G10).
+- **About, Contact and `/portfolio` are broad** (2026-10-22, BR-G07). About carries the broad intro and links
+  `/projects` and the home's ways to start, and keeps its one sheet-to-app link (F-D130); both H1s are unchanged
+  byte for byte. Contact titles lead with the action ("Book a free 30-minute call"), and its form sends no
+  `offer_slug`. `/portfolio` renders the six categories of `services.ts` with service page links only, then the
+  one `PortfolioOfferLink` and the `/projects` link. The Greek titles of `/el/about` and `/el/portfolio` are his
+  picks of BR-D7.
 - The copy contract for all of it is offer-os `companies/fiji-solutions/site/03-copy-home.md`. Change a string
   there first.
 
@@ -52,8 +59,9 @@ audit, with its own guarantee, and every CTA on that page still points at its ow
 what they need and what their budget is, and the number is agreed in writing with that client.
 There is no list price, no rate card, no entry-offer price. See rule 7.
 **2026-09-30: one dated exception.** `/en/offers/sheet-to-app` and `/el/offers/sheet-to-app` publish
-their price ladder in the page body, and both homepages publish the same figures in one box under
-the how-it-works cards (G20); rule 7 records it and its source.
+their price ladder in the page body, ~~and both homepages publish the same figures in one box under
+the how-it-works cards (G20)~~ (struck 2026-10-22, broad home BR-G05 and BR-G07: the box left with the old
+homepage, BR-D24); rule 7 records it and its source.
 
 Until 2026-08-15 that page had **zero internal links** and the site sold six service categories,
 six industries and thirty-two technologies. ~~Do not re-add a service list.~~ **Struck 2026-10-22 (offer-os
@@ -115,29 +123,34 @@ pages — and from nowhere else. The whole graph is one file, `src/data/offerLin
 | `/business-process-audit`, in a block **after** the form | website-seo, website-google-ads |
 | `/business-process-audit`, in its own block **after** the form (2026-09-30) | sheet-to-app |
 | both homepages, `Local.tsx`, two prose links | website-seo, website-google-ads |
-| both homepages, `Solutions.tsx`, one prose link under the price box (2026-09-30, G20) | sheet-to-app |
-| `/portfolio`, `PortfolioOfferLink.tsx`, one prose link under the three cards (2026-10-08, F16, F-D133) | sheet-to-app |
+| ~~both homepages, `Solutions.tsx`, one prose link under the price box (2026-09-30, G20)~~ removed 2026-10-22 with `Solutions.tsx` (broad home BR-G05) | ~~sheet-to-app~~ |
+| both homepages, `WhatWeBuild.tsx`, the six "What we build" cards (2026-10-22, broad home BR-G05, BR-D3; links in `src/data/services.ts`) | process-automation, ai-agent, website-seo |
+| both homepages, `WaysToStart.tsx`, the "Ways to start" row (2026-10-22, broad home BR-G05; `HOME_START` in `offerLinks.ts`) | sheet-to-app, software-prototype, ai-prototype, ai-development-sprint, website-google-ads |
+| `/portfolio`, `PortfolioOfferLink.tsx`, one prose link under the Services cards (2026-10-08, F16, F-D133; six cards since 2026-10-22, BR-G07) | sheet-to-app |
 | `/about`, `AboutPage.tsx`, one prose link in "Where to start" (2026-10-08, F16, F-D130) | sheet-to-app |
 | `/tools/spreadsheet-check`, `SpreadsheetCheck.tsx`, one body link after the result (2026-10-21, offer-os `gtm/seo-loop-2026-10` S14, SL-D65) | sheet-to-app |
-| ~~the navbar, its second of four links (2026-10-08, F16, F-D132)~~ removed 2026-10-22 on the `broad-home` branch (offer-os BR-D5, BR-G04); BR-G07 rewrites this table | ~~sheet-to-app, and only it~~ |
+| ~~the navbar, its second of four links (2026-10-08, F16, F-D132)~~ removed 2026-10-22 on the `broad-home` branch (offer-os BR-D5, BR-G04) | ~~sheet-to-app, and only it~~ |
 | the navbar, after "Services", and `QuickLinks`, after "Services" (2026-10-18, offer-os `gtm/atlas/DECISIONS.md` AT-D8) | atlas, and only it |
-| both homepages, `AtlasHomeSection.tsx`, its own band after `Solutions.tsx` (2026-10-18, AT-D22) | atlas |
+| both homepages, `AtlasHomeSection.tsx`, its own band (2026-10-18, AT-D22; after "Ways to start" since 2026-10-22, broad home BR-G05) | atlas |
 | the success state of every form, `ContactForm.tsx`, "You need Atlas." (2026-10-18, AT-D9) | atlas |
 | each `/offers/*` page | its parent service page (if any) + its one sibling offer |
 
 **Still forbidden, and this half of the rule did not change.** Not in the footer. Not in `QuickLinks`.
-Not in the three-card `Services` grid on `/portfolio`, this site's one hub. Eight offers in a menu, a
+Not in the `Services` grid on `/portfolio`, this site's one hub (six cards since 2026-10-22, BR-G07, each
+linking its service pages only, through `servicePageLinks()` in `src/data/services.ts`). Eight offers in a menu, a
 footer list or a hub grid **is** the service list, whatever the offers are called.
 **2026-10-08, two dated exceptions, both Charis's picks in F16 of offer-os `gtm/followups-and-search`
 (PLAN.md F-D132, F-D133).** The navbar's second link is the 7-Day Sheet-to-App Prototype, the offer both
 homepages sell ("Swap 'Process audit' for the offer"); the navbar stays four links, "Process audit" moved
 to `QuickLinks`, and **no other offer joins a menu**. `/portfolio` carries one prose link to the same
 offer under the three cards (`src/components/PortfolioOfferLink.tsx`, "Yes, one prose link"); the cards
-stay three.
+stay three. **2026-10-22 (broad home BR-G04, BR-D5, and BR-G07): the navbar link to the prototype is gone**;
+the navbar is Services, Projects, Atlas, About, Contact and the "Book a free call" button, and Atlas is the
+one offer in it. The `/portfolio` cards are six, with service page links only, and the prose link stays.
 **2026-10-18, a third dated exception: Atlas (offer-os `gtm/atlas/DECISIONS.md` AT-D8, Charis: *"Don't put
 this offer into a different offer landing page offer, but it should be somewhere."* and *"everything looks
 good, yes"*).** `/offers/atlas` has a navbar link directly after "Services", outside the services list
-(the navbar is five links), and a `QuickLinks` entry after "Services". It is **not** in `offerLinks.ts`,
+(the navbar is five links, the five of the top block since 2026-10-22), and a `QuickLinks` entry after "Services". It is **not** in `offerLinks.ts`,
 and no offer page body links it; its other inbound links are the homepage band and the thank-you line
 every form shows (AT-D9). No other offer joins a menu. The check, which must print nothing:
 
@@ -145,13 +158,19 @@ every form shows (AT-D9). No other offer joins a menu. The check, which must pri
 grep -rn "offers/\|OfferLinks\|offerLinks\|OFFERS_BY_SERVICE\|WEBSITE_OFFERS" \
   src/components/Footer.tsx src/components/QuickLinks.tsx src/components/Services.tsx \
   "src/app/(en)/en/portfolio/page.tsx" "src/app/(el)/el/portfolio/page.tsx" | grep -v "offers/atlas"
-grep -n "offers/" src/components/Navbar.tsx | grep -v "offers/sheet-to-app\|offers/atlas\|/offers/\* link"
+grep -n "offers/" src/components/Navbar.tsx | grep -v "offers/atlas\|/offers/\* link"
 ```
+(The second grep no longer skips `offers/sheet-to-app`: the navbar dropped that link on 2026-10-22, BR-D5, so
+a line naming it would print now. Rewritten 2026-10-22, broad home BR-G07.)
 
 Three further guards, all in `offerLinks.ts`: every offer has at most **one** parent, so the map is
 a tree and not a mesh; the maps are keyed on literal unions, so a typo, a leading slash or a
 forgotten offer is a compile error rather than a prerender crash; and anchor text is never typed by
 hand — it is `offer.copy[lang].eyebrow`, the destination's own primary keyword.
+
+**2026-10-22 (broad home BR-D3, BR-G07): the paragraph below predates the six categories.** Websites is now
+one of the six cards on both homepages and on `/portfolio`, linked to `website-seo`. There is still no
+`/services/` page for website work, so the two offers keep no parent service page in `OFFERS_BY_SERVICE`.
 
 **`website-seo` and `website-google-ads` have no parent service page, and that is an open question,
 not an oversight.** The site sells three services and none of them is website work; the largest
@@ -176,13 +195,16 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 | What | Where |
 |---|---|
 | Offer economics — durations, SLA, guarantee terms | `src/lib/offer.ts`. **Change the number here, not in copy.** The guarantee's four numbers (window, cure, claim window, answer deadline) live here. **No price constant lives here, or anywhere.** |
-| All UI copy, both locales | `src/translations.ts` (110 keys each, kept at exact parity by `scripts/translation-parity.py`; 118 until 2026-10-22, when broad home BR-G06 deleted the eight `projects.*` keys with `Projects.tsx`, since the project copy is `src/data/projects.ts`; 141 until 2026-10-22, when broad home BR-G05 deleted the 23 `hero.*`, `challenges.*` and `solutions.*` keys of the old homepage, `hero.talk` kept; the homepage copy is `src/data/home.ts`; 137 until 2026-10-22, when broad home BR-G04 deleted `nav.offer` and added `nav.projects`, `nav.cta`, `banner.text`, `banner.link` and `banner.close`; 133 until 2026-10-08, when F16 added `nav.offer` and `nav.about`; 135 until 2026-10-18, when Atlas added `nav.atlas`; 136 until 2026-10-21, when the spreadsheet check added `nav.spreadsheetCheck`) |
+| All UI copy, both locales | `src/translations.ts` (92 keys each, kept at exact parity by `scripts/translation-parity.py`; 110 until 2026-10-22, when broad home BR-G07 deleted the 18 `services.software.*`, `services.data.*` and `services.snowflake.*` keys with the three old `/portfolio` cards, since the six categories are `src/data/services.ts`; 118 until 2026-10-22, when broad home BR-G06 deleted the eight `projects.*` keys with `Projects.tsx`, since the project copy is `src/data/projects.ts`; 141 until 2026-10-22, when broad home BR-G05 deleted the 23 `hero.*`, `challenges.*` and `solutions.*` keys of the old homepage, `hero.talk` kept; the homepage copy is `src/data/home.ts`; 137 until 2026-10-22, when broad home BR-G04 deleted `nav.offer` and added `nav.projects`, `nav.cta`, `banner.text`, `banner.link` and `banner.close`; 133 until 2026-10-08, when F16 added `nav.offer` and `nav.about`; 135 until 2026-10-18, when Atlas added `nav.atlas`; 136 until 2026-10-21, when the spreadsheet check added `nav.spreadsheetCheck`) |
 | The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
 | The audit form section, its CTA copy and the Calendly URL | `src/components/AuditFormSection.tsx`. Rendered by the offer page, and by the homepage until 2026-09-30 (G20, D5), so its strings live in that file. `AUDIT_CTA` feeds the offer page's five `CtaBlock`s, whose button is an in-page `#consultation-form` anchor. Give each new caller its own `presetQuestion`; it is the only lead-source marker there is. |
 | The sheet-to-app offer page (2026-09-30) | Its own layout, `src/components/SheetToAppLanding.tsx` (nineteen sections from its offer-os contract, sticky mobile bar in `SheetToAppStickyCta.tsx`), copy in `src/data/offers/sheet-to-app.ts`, verbatim from offer-os `offers/fiji-solutions--sheet-to-app/03-copy.md`. Metadata and JSON-LD come from the same `src/lib/offerSchema.ts`. Its booking link is `SHEET_TO_APP_BOOKING_URL` in that data file, the existing 30-minute Calendly event (offer-os D120, 2026-09-30), the same URL as `CALENDLY_URL`. `src/lib/landing.ts` lists the routes whose Navbar is logo-only and which load no Vapi bubble. Since 2026-10-08 (F22 of offer-os `gtm/followups-and-search`, F-D161 to F-D164) S09 carries one `caseStudy` line under each story, linking the shared Gamma case studies of PAP Center and New Era Learning in a new tab (`CASE_STUDY_*_URL` in the data file, each click a `cta_click`); the Greek lines say «(στα αγγλικά)». The AKB case study is never linked from a Fiji page. 2026-10-22 (offer-os BR-D35): the bank may now be named on Fiji in its approved sentences, as text; the case study stays unlinked. |
-| ~~The homepage hook (2026-09-30, G20)~~ The broad home (2026-10-22) | **2026-10-22 (offer-os broad home BR-G05): the hook below is retired on the `broad-home` branch.** Both homepages are the broad home of offer-os `gtm/broad-home-2026-10` PLAN.md §4.1: copy in `src/data/home.ts` (typed `Record<Language, HomeCopy>`), sections `Hero`, `StatsStrip`, `ClientStrip` (`src/data/clients.ts`), `WhatWeBuild` (`src/data/services.ts`), `WaysToStart` (`HOME_START` in `offerLinks.ts`, `id="ways-to-start"`), `AtlasHomeSection`, `ProjectsGrid` (`src/data/projects.ts`), `ReviewSlot` (`src/data/reviews.ts`), `HowWeWork`, `HomeFaq` (four ids, FAQPage from the same array), `LatestPostsSection` (both locales, the «Οδηγοί» list on `/el`), `ClosingCta` (`presetQuestion` `homepage-general`, no `offer_slug`) and `Local`. `Challenges.tsx`, `Solutions.tsx`, `SheetToAppFormSection.tsx`, `HomeLongForm.tsx`, `ContactButton.tsx`, `ContactButton2.tsx`, `src/data/homeLongForm/` and their keys are deleted; no price is left on either homepage. BR-G07 rewrites this row. What follows is the record of the hook: ~~Both homepages sell the sheet-to-app offer.~~ `hero.*`, `challenges.*` and `solutions.*` in `src/translations.ts`, the body link and limit line in `src/components/Solutions.tsx`, the form in `src/components/SheetToAppFormSection.tsx` (`presetQuestion` `homepage-sheet-to-app`, `offer_slug` `sheet-to-app`, `cta_location` `home-hero`, `home-solutions-box` and `home-form-calendly`), and the long-form ids in `src/data/homeLongForm/`, all verbatim from offer-os `offers/fiji-solutions--sheet-to-app/03-copy-homepage.md`, the Greek `ti-kanoume` p2 included («Το ένα είναι ...» and «Το άλλο είναι ...», recorded in the contract's Findings item 5 on 2026-09-30, so «πρώτ-» stays within the ration of D67). ~~The Vapi voice button in the hero and the Vapi chat bubble are hidden on `/en` and `/el` (2026-09-30, G20): the assistant behind both still pitches the process audit and its guarantee, and the homepage names one guarantee (D53).~~ ~~`HOMEPAGE_VOICE_ON` in `src/lib/landing.ts` brings both back once G23's new assistant script is live in the Vapi dashboard.~~ 2026-10-04: the new script is live in the Vapi dashboard (version v5, Greek and English by voice), and `HOMEPAGE_VOICE_ON` is `true`, so both are back on `/en` and `/el`. 2026-10-22 (offer-os broad home BR-G04): `false` again until BR-G10 makes the Vapi script broad. |
+| ~~The homepage hook (2026-09-30, G20)~~ The broad home (2026-10-22) | **2026-10-22 (offer-os broad home BR-G05): the hook below is retired on the `broad-home` branch.** Both homepages are the broad home of offer-os `gtm/broad-home-2026-10` PLAN.md §4.1: copy in `src/data/home.ts` (typed `Record<Language, HomeCopy>`), sections `Hero`, `StatsStrip`, `ClientStrip` (`src/data/clients.ts`), `WhatWeBuild` (`src/data/services.ts`), `WaysToStart` (`HOME_START` in `offerLinks.ts`, `id="ways-to-start"`), `AtlasHomeSection`, `ProjectsGrid` (`src/data/projects.ts`), `ReviewSlot` (`src/data/reviews.ts`), `HowWeWork`, `HomeFaq` (four ids, FAQPage from the same array), `LatestPostsSection` (both locales, the «Οδηγοί» list on `/el`), `ClosingCta` (`presetQuestion` `homepage-general`, no `offer_slug`) and `Local`. `Challenges.tsx`, `Solutions.tsx`, `SheetToAppFormSection.tsx`, `HomeLongForm.tsx`, `ContactButton.tsx`, `ContactButton2.tsx`, `src/data/homeLongForm/` and their keys are deleted; no price is left on either homepage. The homepage lead marker is `homepage-general` (`HOME_FORM_MARKER` in `ClosingCta.tsx`); `homepage-sheet-to-app` is retired with the old form, so an inbox filter on it matches nothing new (rewritten 2026-10-22, BR-G07). What follows is the record of the hook: ~~Both homepages sell the sheet-to-app offer.~~ `hero.*`, `challenges.*` and `solutions.*` in `src/translations.ts`, the body link and limit line in `src/components/Solutions.tsx`, the form in `src/components/SheetToAppFormSection.tsx` (`presetQuestion` `homepage-sheet-to-app`, `offer_slug` `sheet-to-app`, `cta_location` `home-hero`, `home-solutions-box` and `home-form-calendly`), and the long-form ids in `src/data/homeLongForm/`, all verbatim from offer-os `offers/fiji-solutions--sheet-to-app/03-copy-homepage.md`, the Greek `ti-kanoume` p2 included («Το ένα είναι ...» and «Το άλλο είναι ...», recorded in the contract's Findings item 5 on 2026-09-30, so «πρώτ-» stays within the ration of D67). ~~The Vapi voice button in the hero and the Vapi chat bubble are hidden on `/en` and `/el` (2026-09-30, G20): the assistant behind both still pitches the process audit and its guarantee, and the homepage names one guarantee (D53).~~ ~~`HOMEPAGE_VOICE_ON` in `src/lib/landing.ts` brings both back once G23's new assistant script is live in the Vapi dashboard.~~ 2026-10-04: the new script is live in the Vapi dashboard (version v5, Greek and English by voice), and `HOMEPAGE_VOICE_ON` is `true`, so both are back on `/en` and `/el`. 2026-10-22 (offer-os broad home BR-G04): `false` again until BR-G10 makes the Vapi script broad. |
 | The seven workbook offer pages | One layout, `src/components/OfferLanding.tsx` (the eighth offer, sheet-to-app, has its own layout, in the row above); one bilingual data file per offer in `src/data/offers/`; two thin routes each. Metadata and the Service + FAQPage JSON-LD are derived in `src/lib/offerSchema.ts` from the same object the page renders, so the marked-up FAQ cannot drift from the rendered one. **To add or change an offer, edit its data file.** Each carries its own `questionMarker`, which is the only thing telling its leads from the other seven in the shared inbox. |
-| The about page (2026-10-08, F16) | `src/components/AboutPage.tsx`: copy, metadata and the AboutPage JSON-LD in one file, verbatim from offer-os `offers/fiji-solutions--sheet-to-app/derived/site/F16-COPY.md`; the photo is `public/charis-moutafidis.jpg`, his own, cropped at his word (F-D131). The JSON-LD hangs `image` on the canonical Person reference. The Contact page strings (`contact.title`, `contact.subtitle*`) and its metadata lead with the 7-day prototype from the same file (F-D135); its form sends `offer_slug` `sheet-to-app` and keeps `form_location` `contact`. |
+| The about page (2026-10-08, F16) | `src/components/AboutPage.tsx`: copy, metadata and the AboutPage JSON-LD in one file; the photo is `public/charis-moutafidis.jpg`, his own, cropped at his word (F-D131). The JSON-LD hangs `image` on the canonical Person reference. **Since 2026-10-22 (broad home BR-G07) the copy is offer-os `companies/fiji-solutions/site/03-copy-home.md`, "About"** (until then `offers/fiji-solutions--sheet-to-app/derived/site/F16-COPY.md`): the broad intro, a link to `/projects`, the booking link, a link to the home's `#ways-to-start`, and the one sheet-to-app link (F-D130); both H1s unchanged byte for byte. The Contact page (`src/app/(en|el)/*/contact/page.tsx`, `contact.title`, `contact.subtitle*`, `contact.form.message.placeholder`) is broad from the same contract, "Contact". ~~It leads with the 7-day prototype (F-D135) and its form sends `offer_slug` `sheet-to-app`.~~ (Struck 2026-10-22, BR-G07.) Its form sends no `offer_slug` and keeps `form_location` `contact`. |
+| The booking link (2026-10-22, broad home BR-G04) | `src/lib/booking.ts`, `BOOKING_URL`: the one Calendly URL. `CALENDLY_URL` (AuditFormSection) and `SHEET_TO_APP_BOOKING_URL` are aliases of it. It imports nothing, so data files can import it. |
+| The six kinds of work (2026-10-22, broad home BR-G04, BR-D3, BR-D4) | `src/data/services.ts`, `SERVICES`: titles and lines per locale, the links of each card, and `schemaName`. Three surfaces read it: `serviceType` in `RootShell.tsx`, the homepages' `WhatWeBuild.tsx` and `/portfolio`'s `Services.tsx` (service page links only, through `servicePageLinks()`). |
+| The top banner (2026-10-22, broad home BR-G04) | `src/components/TopBanner.tsx`, a client component: one line and a "Book a time" link to `BOOKING_URL` (`booking_click`, `cta_location` `top-banner`), closed for the tab in `sessionStorage` inside try/catch, not sticky, hidden on `LANDING_PATHS` and both `business-process-audit` pages (BR-D9), where the navbar's call button hides too. Its copy is `banner.*` in `src/translations.ts`. |
 | Atlas (2026-10-18) | The apply-only top tier, offer-os `offers/fiji-solutions--atlas`, decisions `gtm/atlas/DECISIONS.md` AT-D1 to AT-D32. Layout `src/components/AtlasLanding.tsx`, the two-step form `src/components/AtlasApplicationForm.tsx`, copy in `src/data/offers/atlas.ts`, verbatim from its `03-copy.md`. Both form steps POST through `src/lib/formDelivery.ts`, the endpoint every form uses (AT-D12): step 1 as its own email marked incomplete (`atlas-step1`), step 2 as the complete application (`atlas`, `atlas-not-yet` or `atlas-no`, AT-D23). No reply promise on any Atlas surface (AT-D21), so its form drops the site consent sentence and carries AT-D27's own privacy line above the submit button on both steps ("We use your details to review your application. Privacy policy"). The "You need Atlas." line lives in `ContactForm.tsx` and stays on screen after the success message hides (AT-D9); it shows after the Sheet-to-App forms are sent too (AT-D29), never in a page body. Its two routes render `src/components/AtlasFooter.tsx` (privacy, legal and the copyright line only, 44px tap targets) in place of the shared `Footer`. ~~Its form fires no Google Ads conversion (QA round 1, 2026-10-18).~~ Changed 2026-10-18: the complete send calls `reportConversion()` beside `contact_form_submit`, as `ContactForm` does on every other form, so all forms match; drop it from both in one change. |
 | The projects pages (2026-10-22, broad home BR-G06) | `/[locale]/projects` and `/[locale]/projects/<slug>`, the same slug in both locales, `generateStaticParams` with `dynamicParams = false`. Data in `src/data/projects.ts` (the Project shape of offer-os `gtm/broad-home-2026-10` PLAN.md §9: a `permission` record per project, facts, the three sections, links, `quote: null`, no images until cleared), copied word for word from offer-os `companies/fiji-solutions/site/03-copy-home.md`, "Projects". Layout and metadata in `src/components/ProjectPages.tsx`; no page level JSON-LD. The homepage grid (`HOME_PROJECTS`), the client strip, the "Web and mobile apps" card (`projectSlug` in `services.ts`) and `/portfolio` (`PortfolioProjectsLink.tsx`, in place of the old `Projects.tsx` cards) link them. `src/lib/routes.ts` lists one sitemap route per project from the same data, and `next.config.ts` redirects `/projects` and `/projects/:slug` to `/en`. Ο Τόπος Μου says "on staging" until otoposmou.gr switches. |
 | Form delivery | `src/lib/formDelivery.ts`: the endpoint URL and `sendForm()`. `ContactForm` and the Atlas form both call it. |
@@ -208,7 +230,9 @@ vendor statement cites a key of `SOURCES` and was checked on 2026-10-21, each lo
 language where one exists; change one only after its page is read again, and move the "checked on" sentence in
 `SpreadsheetCheck.tsx` with it. Inbound links: `QuickLinks` (`nav.spreadsheetCheck`) and a `cta` block in
 `crew-schedule-change-order-job-tracker-app` and `job-shop-scheduling-work-order-quote-app`. The homepages and the
-sheet-to-app page stay as they are (offer-os `gtm/geo-retrieval-2026-10` GR-D1).
+sheet-to-app page stay as they are (offer-os `gtm/geo-retrieval-2026-10` GR-D1). 2026-10-22: GR-D1 is lifted for
+the homepages by the broad home plan (offer-os `gtm/broad-home-2026-10` BR-D23); it still binds SEO work on the
+sheet-to-app offer pages.
 
 ## AI citation (arXiv 2610.15033)
 
@@ -224,6 +248,9 @@ and replayed the questions through the engines' APIs. Four rules follow from it 
 3. **Per page markup is frozen as a GEO lever.** No new FAQ markup, schema, summary boxes, speed passes or
    llms.txt to lift one page over its siblings. In the study the first four line up with differences between
    websites only, and it does not study llms.txt. What exists stays: the site-level ProfessionalService and WebSite nodes in `RootShell.tsx` (the Person is a reference to the canonical node on charismoutafidis.com), the per offer FAQPage from `src/lib/offerSchema.ts`, and `src/lib/blogSchema.ts`.
+   2026-10-22 (offer-os broad home BR-D6, BR-G05): the homepages' FAQPage stays, built from the rendered
+   `HomeFaq` array, which keeps four of its existing ids, reworded broad. Three questions left and none was
+   added, so the freeze holds.
 4. **Retrieval is observed.** The plan's question set and runs (`offer-os/gtm/geo-retrieval-2026-10/questions/`
    and `runs/`) record which sub-queries the engines issue and which of our pages come back.
 
@@ -286,15 +313,27 @@ dropping it.
    repo cannot back. A capacity claim and a "dated waitlist" were deleted on 2026-08-15 for
    exactly this reason.
    2026-09-30 (G20): the homepage's limit line, "We take on 3 prototypes a month", is his own
-   (offer-os `gtm/sheet-to-app-rollout/PLAN.md` D75), which is what backs it.
+   (offer-os `gtm/sheet-to-app-rollout/PLAN.md` D75), which is what backs it. It left the homepage with
+   `Solutions.tsx` on 2026-10-22 (broad home BR-G05).
+   **2026-10-22 (offer-os `gtm/broad-home-2026-10` BR-D26, BR-D27, BR-D34, BR-D35): named clients and the
+   review placeholder.** Clients may be named in the client strip, on the projects pages and on About, each
+   with a permission record (`permission` in `src/data/projects.ts`, `src/data/clients.ts`) that names its
+   date and source; his yes for every client of BR-D26 is on file (BR-D34). The proof records behind PAP
+   Center and New Era Learning are in offer-os `companies/fiji-solutions/proof/`. Every project fact on a page
+   is one the contract carries, with no number the record lacks. The homepages' review slot is a placeholder
+   card (`src/data/reviews.ts`, `kind: 'placeholder'`): no stars, no quote, no avatar, no count or average,
+   and no Review or AggregateRating markup in any state, until a real review with its date and source link
+   replaces it (BR-G29).
 
 6. **Speed claims carry their anchor.** The build delivers the first automation within
    `FIRST_FIX_DAYS` days **of the build starting** — not of the reader's first contact, which is
    at least an audit plus a scoping round earlier. Every headline that states the number must
    state the anchor with it.
-   2026-09-30 (G19, G20, D66): the sheet-to-app pages and both homepages state "7 days", anchored
+   2026-09-30 (G19, G20, D66): the sheet-to-app pages and ~~both homepages~~ state "7 days", anchored
    to the audit call ("after the audit call", «μετά την πρώτη κλήση») in the H1 and in each
-   description.
+   description. (Struck 2026-10-22, broad home BR-G05 and BR-G07: the homepages, About and Contact are broad
+   and state no "7 days" in an H1, title or description; About's one sheet-to-app line names "the 7-day
+   prototype" as the offer's name.)
    2026-10-20 (offer-os `gtm/geo-retrieval-2026-10` G06, his pick "Buyer phrase, no number"): the
    seven workbook offer titles name the service in the buyer's words and carry no number, so no
    title says kickoff. The number and its kickoff anchor stay together in each H1, description and
@@ -322,11 +361,17 @@ dropping it.
    *"We can charge 100,000 in Greece, so 100,000 in Fiji Solutions"*, *"100k on whatever currency we
    have"*, and to "From or flat?": *"from"*. `/en/offers/atlas` and `/el/offers/atlas` publish "From USD
    100,000" / «Από 100.000 $» in the hero, the stack total line, the close and the form's budget
-   question, and its stack shows each part's stated value (AT-D18, AT-D20). The homepage Atlas band
-   (`AtlasHomeSection.tsx`) carries the same from-figure once. Never in metadata or JSON-LD
+   question, and its stack shows each part's stated value (AT-D18, AT-D20). ~~The homepage Atlas band
+   (`AtlasHomeSection.tsx`) carries the same from-figure once.~~ Corrected 2026-10-22 (broad home BR-G07):
+   the homepage Atlas band names no price, since AT-D34 of 2026-10-18 moved the figure to after the value
+   stack on the Atlas page, and no surface outside it shows the price. Never in metadata or JSON-LD
    (`offerSchema.ts` emits no `offers` node for it either). No guarantee and no payment terms appear
    on any Atlas surface (AT-D4). Every other page keeps this rule unchanged.
-   **Extended 2026-09-30 (G20) to both homepages, one slot only:** the box under the three
+   ~~**Extended 2026-09-30 (G20) to both homepages, one slot only.**~~ **Struck 2026-10-22 (offer-os
+   `gtm/broad-home-2026-10` BR-D24, BR-G05 and BR-G07): both homepages carry no price.** His words: *"these
+   prices are for the specific offer"*. The two exceptions above, sheet-to-app and Atlas, stay; every other
+   page keeps this rule, About, Contact, `/portfolio`, the projects pages and the top banner included. What
+   the extension said, for the record: the box under the three
    how-it-works cards (`solutions.cta.description` in `src/translations.ts`), as offer-os
    `offers/fiji-solutions--sheet-to-app/03-copy-homepage.md` places the figures (D68: the homepage
    carries the figures in one slot). Never in the homepage hero, metadata, FAQ answers (they feed
@@ -409,7 +454,9 @@ dropping it.
   `src/components/LatestPostsSection.tsx` renders three `BlogCard`s (titles as `h3`, through BlogCard's
   `headingLevel` prop) and one link to `/en/blog`, after `HomeLongForm` on the English homepage only. The
   posts are picked by `publishedAt`, newest first, so a new English post shows up there with no edit. The
-  Greek homepage keeps its prose links in `HomeLongForm`.
+  Greek homepage keeps its prose links in `HomeLongForm`. **2026-10-22 (broad home BR-G05, BR-D8):
+  `HomeLongForm` is gone; `LatestPostsSection` renders on both homepages (prop `'en' | 'el'`), and `/el` adds a
+  short «Οδηγοί» list of Greek posts under it.**
 - **The blog batch broke the one-term-per-concept rule and it is swept (2026-09-02).** Sixteen
   places in six of the fourteen articles inflected a bare English noun as a Greek one — «το site
   σου», «σε άλλα sites», «στο theme σου», «Δικός σου server» — against a rule this repo had already
@@ -465,6 +512,10 @@ dropping it.
   only if you like it.""* Every title and both H1s now open with the 7-day prototype and "Pay only
   if you like it". The Greek title is «Το πρωτότυπό σου σε 7 μέρες. Πληρώνεις μόνο αν σου αρέσει»,
   and Thessaloniki stays in the Greek description and in the Local section.
+  **2026-10-22 (offer-os broad home BR-D7, BR-D28, BR-G04 and BR-G05):** the titles and H1s are broad again.
+  `/el` is titled «Εταιρεία λογισμικού στη Θεσσαλονίκη | Fiji Solutions» (his pick) and `/en` "Custom software
+  company in Thessaloniki | Fiji Solutions"; the H1s are the approved headlines of BR-D28. `/el/about` and
+  `/el/portfolio` carry their own titles (BR-D7), so the three pages do not compete for one phrase.
 
 - **The `geo` in `RootShell.tsx` was wrong by ~10 km and is corrected (2026-09-01).** It pointed at
   Πυλαία, postcode 570 01 — a different municipality from the address on the same schema node. It
@@ -488,7 +539,8 @@ dropping it.
 
 ## Open, and only Charis can close them
 
-- No proof asset exists. One client willing to publish one measured before/after with a date is
+- ~~No proof asset exists.~~ 2026-10-22: named clients and project pages exist (rule 5); no review and no
+  measured result exist yet. One client willing to publish one measured before/after with a date is
   the highest-value thing missing from every page.
 - The ICP is **half named**. The buyer who signs is the owner/founder, and the site now says so
   by symptom: the owner whose business runs on retyped data, late follow-ups, and one person who

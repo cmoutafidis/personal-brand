@@ -8,8 +8,8 @@ import {Language} from '@/types/language';
 import {buildAlternates} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 import {ORGANISATION_ID, PERSON_REF} from '@/lib/person';
-import sheetToApp, {SHEET_TO_APP_BOOKING_URL} from '@/data/offers/sheet-to-app';
-import {BOOKING_URL_TEXT} from '@/lib/booking';
+import sheetToApp from '@/data/offers/sheet-to-app';
+import {BOOKING_URL, BOOKING_URL_TEXT} from '@/lib/booking';
 
 // The about page, /en/about and /el/about. Added 2026-10-08 in F16 of offer-os
 // gtm/followups-and-search (PLAN.md F-D130, F-D131): a lead who gets an email from Charis Moutafidis
@@ -22,6 +22,12 @@ import {BOOKING_URL_TEXT} from '@/lib/booking';
 // anchor (rule 6); AKB on no Fiji page (F-D21, superseded 2026-10-22 by offer-os BR-D35: approved sentences only, text only); no AWS region (F-D31).
 //
 // The photo is his own, cropped out of a group photo at his word (F-D131), metadata stripped.
+//
+// 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G07, decisions BR-D7 and BR-D22): the copy is now offer-os
+// `companies/fiji-solutions/site/03-copy-home.md`, "About"; change it there first. The intro, the meta
+// descriptions, the second founder line and "Where to start" are broad, the /el/about title is his pick of
+// BR-D7, and both H1s are unchanged byte for byte (the /el/about Bing slot). "What we have built" links
+// /projects and "Where to start" links the home's ways to start; the one sheet-to-app link stays (F-D130).
 
 const BASE = 'https://www.fijisolutions.net';
 const PHOTO = '/charis-moutafidis.jpg';
@@ -52,23 +58,27 @@ type AboutCopy = {
   legalLabel: string;
   startH2: string;
   bookBefore: string;
+  builtMore: string;
+  builtMoreLabel: string;
+  waysBefore: string;
+  waysLabel: string;
   offerBefore: string;
 };
 
 const COPY: Record<Language, AboutCopy> = {
   en: {
     metaTitle: 'About Fiji Solutions | Software company in Thessaloniki',
-    metaDescription: 'Fiji Solutions is a software company in Thessaloniki, Greece, founded by Charis Moutafidis. We turn the spreadsheet your business runs on into an app, with a prototype 7 days after the audit call.',
+    metaDescription: 'Fiji Solutions is a software company in Thessaloniki, Greece, founded by Charis Moutafidis. We build custom software, apps, automation, AI agents and websites.',
     photoAlt: 'Charis Moutafidis, founder of Fiji Solutions',
     h1: 'Fiji Solutions is a software company in Thessaloniki, Greece',
     intro: [
-      'We turn the spreadsheet a business runs on into an app. The prototype is ready 7 days after the audit call, and you pay only if you like it.',
+      'We build custom software, web and mobile apps, process automation, AI agents, websites and Snowflake data platforms for businesses in Greece and abroad.',
       'We work with business owners in the United States and in Greece.'
     ],
     founderH2: 'Who started Fiji Solutions',
     founder: [
       'Our founder, Charis Moutafidis, has more than ten years of experience building software in banking, travel, telecom, health and online education.',
-      'From the audit call through the prototype and the build, you talk to the engineer who builds your app.'
+      'From the first call through the build and the launch, you talk directly to the engineer who builds your software.'
     ],
     moreLead: 'More about him: ',
     linkedinLabel: 'his LinkedIn profile',
@@ -87,22 +97,26 @@ const COPY: Record<Language, AboutCopy> = {
     legalBefore: 'The company\'s registration details are on our ',
     legalLabel: 'legal page',
     startH2: 'Where to start',
-    bookBefore: 'Book the free 30-minute audit call: ',
-    offerBefore: 'Everything the finished app includes is on the prototype\'s page: '
+    builtMore: 'Every project we can show is on our projects page: ',
+    builtMoreLabel: 'Projects',
+    bookBefore: 'Book a free 30-minute call: ',
+    waysBefore: 'Or pick one of the ways to start on our home page: ',
+    waysLabel: 'Ways to start',
+    offerBefore: 'If your team runs on a shared spreadsheet, the 7-day prototype has its own page: '
   },
   el: {
-    metaTitle: 'Ποιοι είμαστε | Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη',
-    metaDescription: 'Η Fiji Solutions, που την ίδρυσε ο Χάρης Μουταφίδης, είναι εταιρεία λογισμικού στη Θεσσαλονίκη. Παίρνουμε το Excel με το οποίο δουλεύει η επιχείρησή σου και το κάνουμε εφαρμογή, με πρωτότυπο 7 μέρες μετά την πρώτη κλήση.',
+    metaTitle: 'Σχετικά με τη Fiji Solutions | Ανάπτυξη λογισμικού στη Θεσσαλονίκη',
+    metaDescription: 'Η Fiji Solutions, που την ίδρυσε ο Χάρης Μουταφίδης, είναι εταιρεία λογισμικού στη Θεσσαλονίκη. Φτιάχνουμε λογισμικό, εφαρμογές, αυτοματισμούς, AI agents και ιστοσελίδες.',
     photoAlt: 'Ο Χάρης Μουταφίδης, ιδρυτής της Fiji Solutions',
     h1: 'Η Fiji Solutions είναι εταιρεία λογισμικού στη Θεσσαλονίκη',
     intro: [
-      'Παίρνουμε το Excel με το οποίο δουλεύει μια επιχείρηση και το κάνουμε εφαρμογή. Το πρωτότυπο είναι έτοιμο 7 μέρες μετά την πρώτη κλήση, και πληρώνεις μόνο αν σου αρέσει.',
+      'Φτιάχνουμε λογισμικό κατά παραγγελία, διαδικτυακές εφαρμογές και εφαρμογές για κινητά, αυτοματισμούς, AI agents, ιστοσελίδες και πλατφόρμες δεδομένων Snowflake, για επιχειρήσεις στην Ελλάδα και στο εξωτερικό.',
       'Δουλεύουμε με ιδιοκτήτες επιχειρήσεων στις Ηνωμένες Πολιτείες και στην Ελλάδα.'
     ],
     founderH2: 'Ποιος ίδρυσε τη Fiji Solutions',
     founder: [
       'Ο ιδρυτής μας, ο Χάρης Μουταφίδης, έχει πάνω από δέκα χρόνια εμπειρία στην κατασκευή λογισμικού, σε τράπεζες, τουρισμό, τηλεπικοινωνίες, υγεία και διαδικτυακή εκπαίδευση.',
-      'Από την πρώτη κλήση ως το πρωτότυπο και την τελική εφαρμογή, μιλάς με τον μηχανικό που χτίζει την εφαρμογή σου.'
+      'Από την πρώτη κλήση ως την υλοποίηση και την παράδοση, μιλάς απευθείας με τον μηχανικό που φτιάχνει το λογισμικό σου.'
     ],
     moreLead: 'Περισσότερα για τον ίδιο: ',
     linkedinLabel: 'το προφίλ του στο LinkedIn',
@@ -121,8 +135,12 @@ const COPY: Record<Language, AboutCopy> = {
     legalBefore: 'Τα στοιχεία της εταιρείας είναι στη ',
     legalLabel: 'σελίδα με τα νομικά στοιχεία',
     startH2: 'Από πού ξεκινάς',
-    bookBefore: 'Κλείσε την πρώτη κλήση, 30 λεπτά και δωρεάν: ',
-    offerBefore: 'Όσα περιλαμβάνει η τελική εφαρμογή τα βρίσκεις στη σελίδα του πρωτοτύπου: '
+    builtMore: 'Όλα τα έργα που μπορούμε να δείξουμε είναι στη σελίδα με τα έργα μας: ',
+    builtMoreLabel: 'Έργα',
+    bookBefore: 'Κλείσε δωρεάν κλήση 30 λεπτών: ',
+    waysBefore: 'Ή διάλεξε έναν από τους τρόπους να ξεκινήσεις, στην αρχική μας σελίδα: ',
+    waysLabel: 'Τρόποι να ξεκινήσεις',
+    offerBefore: 'Αν η ομάδα σου δουλεύει πάνω σε ένα κοινό Excel, το πρωτότυπο των 7 ημερών έχει τη δική του σελίδα: '
   }
 };
 
@@ -218,6 +236,11 @@ export default function AboutPage({lang}: {lang: Language}) {
           {c.built.map((p) => (
             <p key={p} className="text-gray-700 dark:text-gray-300 mb-4">{p}</p>
           ))}
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
+            {c.builtMore}
+            <Link href={`/${lang}/projects`} className={linkClass}>{c.builtMoreLabel}</Link>
+            .
+          </p>
         </section>
 
         <section className="mt-12 max-w-3xl">
@@ -244,15 +267,23 @@ export default function AboutPage({lang}: {lang: Language}) {
             {c.bookBefore}
             <TrackedLink
               event={BOOKING_CLICK_EVENT}
-              params={{cta_location: 'about-calendly', locale: lang, offer_slug: 'sheet-to-app'}}
-              href={SHEET_TO_APP_BOOKING_URL}
+              params={{cta_location: 'about-calendly', locale: lang}}
+              href={BOOKING_URL}
               target="_blank"
               rel="noopener noreferrer"
               className={linkClass}
             >
               {BOOKING_URL_TEXT}
             </TrackedLink>
-            . {c.offerBefore}
+            .
+          </p>
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
+            {c.waysBefore}
+            <Link href={`/${lang}#ways-to-start`} className={linkClass}>{c.waysLabel}</Link>
+            .
+          </p>
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
+            {c.offerBefore}
             <Link href={`/${lang}/${sheetToApp.slug}`} className={linkClass}>
               {sheetToApp.copy[lang].eyebrow}
             </Link>

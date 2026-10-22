@@ -1,5 +1,5 @@
 import type {Language} from '@/types/language';
-import type {OfferSlug} from '@/data/offerLinks';
+import {SERVICE_LABEL, type OfferSlug, type ServiceSlug} from '@/data/offerLinks';
 
 // The six kinds of work Fiji sells, in ONE file. Added 2026-10-22 (offer-os gtm/broad-home-2026-10
 // BR-G04, decisions BR-D3 and BR-D4), copied word for word from offer-os
@@ -136,3 +136,12 @@ export const SERVICES: readonly Service[] = [
 
 /** The JSON-LD `serviceType` list, in the order above. */
 export const SERVICE_TYPES: string[] = SERVICES.map((s) => s.schemaName);
+
+/** The service page links of one card, with each page's own phrase as anchor text (SERVICE_LABEL).
+ *  /portfolio renders these and nothing else: offers stay off that page (CLAUDE.md, the eight offers
+ *  rule), so the offer and project links of the homepage cards are left out. Added 2026-10-22 (BR-G07). */
+export function servicePageLinks(s: Service, lang: Language): {href: string; label: string}[] {
+  return [s.serviceHref, s.secondServiceHref]
+    .filter((h): h is Record<Language, string> => h !== undefined)
+    .map((h) => ({href: h[lang], label: SERVICE_LABEL[h[lang].replace(/^\/(en|el)\//, '') as ServiceSlug][lang]}));
+}

@@ -10,6 +10,9 @@ import sheetToApp from '@/data/offers/sheet-to-app';
 // `offers/fiji-solutions--sheet-to-app/derived/site/F16-COPY.md` section 4; the second sentence is
 // the homepage's body link line (Solutions.tsx), and the anchor text is the destination's own
 // `eyebrow`, read from the data file and never typed here (offerLinks.ts rule).
+// 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G07, BR-D3): the Services grid above it has six cards
+// now, linking service pages only, and this stays the one offer link on the page (F16 checks it). Its
+// copy is unchanged, as offer-os companies/fiji-solutions/site/03-copy-home.md, "Portfolio", asks.
 const COPY: Record<Language, {lead: string; before: string; after: string}> = {
   en: {
     lead: 'If your week runs on one shared spreadsheet, start with a prototype of your app 7 days after the audit call, and pay only if you like it.',

@@ -16,7 +16,9 @@ import {ORGANISATION_ID} from '@/lib/person';
 // ⛔ There is deliberately NO `offers` node in the Service schema. This site publishes no price,
 // in copy or in structured data. An `offers` node without a price is also not added: it would be
 // an empty promise to a crawler.
-// ⛔ There is no `aggregateRating` and no `review` node. There is no consented review data.
+// ⛔ There is no `aggregateRating` and no `review` node. There is no consented review data. The
+// homepages' review slot (2026-10-21, offer-os broad home BR-D27) is a placeholder card and carries no
+// Review or AggregateRating markup in any state, so neither does this file.
 //
 // 2026-09-30 (G19): /offers/sheet-to-app is the one page whose BODY publishes prices (the dated
 // exception to CLAUDE.md rule 7, offer-os PLAN.md D68 and D69). Its structured data still carries

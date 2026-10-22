@@ -25,11 +25,16 @@ import websiteGoogleAds from '@/data/offers/website-google-ads';
 //
 // ⛔ THE RULE THAT REPLACED IT. An offer may be linked from the BODY of a page, in prose, and from
 // other offer pages — and from NOWHERE ELSE. Never the navbar, never the footer, never QuickLinks,
-// never /portfolio (which renders the three-card Services grid and is this site's one hub). Eight
+// never /portfolio (which renders the Services grid, six cards since 2026-10-22, and is this site's one hub). Eight
 // offers in a menu, a footer list or a hub grid IS the service list, whatever the offers are called.
 // 2026-10-08 (F16, offer-os gtm/followups-and-search/PLAN.md F-D132, F-D133): two exceptions, both to
 // sheet-to-app only: the navbar's second link (Navbar.tsx) and one prose link on /portfolio
 // (PortfolioOfferLink.tsx). Neither goes through this file. See CLAUDE.md.
+// 2026-10-22 (offer-os gtm/broad-home-2026-10, the broad home decided 2026-10-21, BR-D3 and BR-D5): the
+// navbar link to sheet-to-app is gone (BR-G04). Both homepages now link offers from two body sections, the
+// "What we build" cards (src/data/services.ts) and the "Ways to start" row (HOME_START below). /portfolio
+// renders the six categories of services.ts with service page links only (BR-G07), plus the one
+// PortfolioOfferLink.
 // 2026-10-18 (offer-os gtm/atlas/DECISIONS.md AT-D8): /offers/atlas is linked from the navbar and
 // QuickLinks and is deliberately NOT in this graph: it is never linked from inside another offer's
 // page, and its own page links to no other offer. See CLAUDE.md.

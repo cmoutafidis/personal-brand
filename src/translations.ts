@@ -5,6 +5,9 @@ import {REPLY_SLA} from '@/lib/offer';
 //
 //  1. Say what the reader gets, not what we are. The six-service grid, the 32-technology stack and
 //     the six-industry list were deleted, not rewritten — a service list is the thing to remove.
+//     2026-10-22 (offer-os gtm/broad-home-2026-10 BR-D3, BR-G07): six kinds of work are back as cards on
+//     the homepages and /portfolio, read from src/data/services.ts, each a line of what we build; the
+//     technology and industry lists stay gone. The three old portfolio card keys are deleted.
 //  2. No quality adjectives. "expert", "exceptional", "εξειδικευμένη", "reliable" as a selling
 //     point are all gone. Quality is a must-have, not a differentiator; replace it with a
 //     countable fact or delete the sentence.
@@ -18,7 +21,8 @@ import {REPLY_SLA} from '@/lib/offer';
 //  7. Every commercial number comes from `@/lib/offer` — the durations, the SLA and the
 //     guarantee window. None of them is typed into a string here. There is no price constant,
 //     because no price is published in either locale. Do not add one.
-//     2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D68): one dated exception.
+//     ~~2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D68): one dated exception.~~
+//     (Struck 2026-10-22, broad home BR-G07: the keys it named are deleted, see BR-G05 below.)
 //     The homepage `hero.*`, `challenges.*` and `solutions.*` strings are the sheet-to-app hook
 //     and are copied word for word from offer-os `offers/fiji-solutions--sheet-to-app/
 //     03-copy-homepage.md`. Their numbers (7 days, 30 minutes, 48 hours, 3 to 5 lines, 5 screens,
@@ -26,7 +30,8 @@ import {REPLY_SLA} from '@/lib/offer';
 //     there, as the landing page's data file types them, so no price constant enters
 //     `@/lib/offer`. To change one, change it in 03-copy-homepage.md first. Every other string in
 //     this file keeps this rule.
-//     2026-10-08 (F16, offer-os gtm/followups-and-search/PLAN.md F-D132, F-D135): `nav.offer` and
+//     ~~2026-10-08 (F16, offer-os gtm/followups-and-search/PLAN.md F-D132, F-D135): `nav.offer` and~~
+//     (Struck 2026-10-22, broad home BR-G07: `nav.offer` is deleted and the contact.* strings are broad.)
 //     `contact.title`, `contact.subtitle1` and `contact.subtitle3` join that exception. They type
 //     "7 days" and "30 minutes" as offer-os `offers/fiji-solutions--sheet-to-app/derived/site/
 //     F16-COPY.md` gives them; change them there first.
@@ -36,11 +41,16 @@ import {REPLY_SLA} from '@/lib/offer';
 //     no longer links the 7-day prototype (BR-D5). `nav.projects`, `nav.cta` and `banner.*` join,
 //     and `footer.description` carries the broad sentence, all from offer-os
 //     `companies/fiji-solutions/site/03-copy-home.md`. "30" in `banner.text` is typed there and here,
-//     as the contract gives it. The rest of this header is rewritten in BR-G07.
+//     as the contract gives it.
 //     2026-10-22 (BR-G05): `hero.title`, `hero.cta`, `hero.description1`, `hero.description2`, every
 //     `challenges.*` and every `solutions.*` key are deleted, the priced box with them, so the exception
 //     for those strings above is spent. The broad home's copy is src/data/home.ts. `local.website.description`
 //     is broad in both locales, from the same contract.
+//     2026-10-22 (BR-G07): `contact.title`, `contact.subtitle1`, `contact.subtitle3` and
+//     `contact.form.message.placeholder` are broad, and `services.title` and `services.subtitle` name the six
+//     kinds of work, all from offer-os `companies/fiji-solutions/site/03-copy-home.md`, "Contact" and
+//     "Portfolio". "30" in `contact.title` and `contact.subtitle3` is typed as that contract gives it. No key
+//     here carries a price, and since this date no dated exception to this rule is left in this file.
 
 export const translations: Record<Language, Record<string, string>> = {
   en: {
@@ -86,10 +96,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'local.map': 'See us on the map',
 
     // Contact
-    'contact.title': 'Start with a free 30-minute audit call',
-    'contact.subtitle1': 'Tell us which spreadsheet your team runs on. You get a prototype of your app 7 days after the audit call, and you pay only if you like it.',
+    'contact.title': 'Book a free 30-minute call',
+    'contact.subtitle1': 'Tell us what you want to build: custom software, an app, an automation, an AI agent or a website. You talk directly to the engineer who builds it.',
     'contact.subtitle2': `Fill in the form and we reply within ${REPLY_SLA.en}.`,
-    'contact.subtitle3': 'The audit call is free and takes 30 minutes.',
+    'contact.subtitle3': 'The call is free and takes 30 minutes.',
     'contact.info.title': 'Contact Information',
     'contact.form.title': 'Send a Message',
     'contact.form.name': 'Your Name',
@@ -101,7 +111,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.form.question': 'Question',
     'contact.form.question.placeholder': 'What is your most important question?',
     'contact.form.message': 'Your Message',
-    'contact.form.message.placeholder': 'Which process costs you the most?',
+    'contact.form.message.placeholder': 'What do you want to build?',
     // Required attribution question. It gets its own error string rather than reusing the
     // "<label> is required" pattern, because that pattern would read "How did you hear about
     // us? is required".
@@ -126,26 +136,8 @@ export const translations: Record<Language, Record<string, string>> = {
     // Portfolio/Projects
 
     // Services — three, not six. Each one names the manual step it removes.
-    'services.title': 'What Fiji Solutions builds: custom software, data analysis and Snowflake',
-    'services.subtitle': 'Three things. Each one removes work somebody is doing by hand today.',
-    'services.software.title': 'Process automation and internal tools',
-    'services.software.description': 'The software that removes the retyping: internal tools, connections between systems that do not talk to each other, and automation for the steps someone repeats every week.',
-    'services.software.feature1': 'Systems that pass data to each other',
-    'services.software.feature2': 'Internal tools built around your process',
-    'services.software.feature3': 'Approvals that leave the inbox',
-    'services.software.feature4': 'Scheduled work that runs itself',
-    'services.data.title': 'Reporting and data analysis',
-    'services.data.description': 'The report that takes two days to assemble, rebuilt so that it assembles itself and disagrees with nobody.',
-    'services.data.feature1': 'Reports that build themselves',
-    'services.data.feature2': 'One number, one source',
-    'services.data.feature3': 'Alerts before it costs you',
-    'services.data.feature4': 'History you can query',
-    'services.snowflake.title': 'Snowflake data platform',
-    'services.snowflake.description': 'When the data outgrows spreadsheets: we implement, optimise or migrate to Snowflake AI Data Cloud. We are a Snowflake AI Data Cloud Select Partner.',
-    'services.snowflake.feature1': 'Data warehouse build',
-    'services.snowflake.feature2': 'ETL/ELT pipelines',
-    'services.snowflake.feature3': 'Migration onto Snowflake',
-    'services.snowflake.feature4': 'Cost and performance tuning',
+    'services.title': 'What Fiji Solutions builds',
+    'services.subtitle': 'Six kinds of work, for businesses in Greece and abroad.',
 
     // Footer
     'footer.description': 'Fiji Solutions is a software company in Thessaloniki, Greece. We build custom software, apps, automation, AI agents and websites for businesses in Greece and abroad.',
@@ -232,10 +224,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'local.map': 'Δες μας στον χάρτη',
 
     // Contact
-    'contact.title': 'Ξεκίνα με μια δωρεάν κλήση 30 λεπτών',
-    'contact.subtitle1': 'Πες μας σε ποιο Excel τρέχει η δουλειά της ομάδας σου. 7 μέρες μετά την πρώτη κλήση έχεις ένα πρωτότυπο της εφαρμογής σου, και πληρώνεις μόνο αν σου αρέσει.',
+    'contact.title': 'Κλείσε δωρεάν κλήση 30 λεπτών',
+    'contact.subtitle1': 'Πες μας τι θέλεις να φτιάξεις: λογισμικό κατά παραγγελία, μια εφαρμογή, έναν αυτοματισμό, έναν AI agent ή μια ιστοσελίδα. Μιλάς απευθείας με τον μηχανικό που το φτιάχνει.',
     'contact.subtitle2': `Συμπλήρωσε τη φόρμα και θα σου απαντήσουμε μέσα σε ${REPLY_SLA.el}.`,
-    'contact.subtitle3': 'Η πρώτη κλήση είναι δωρεάν και κρατάει 30 λεπτά.',
+    'contact.subtitle3': 'Η κλήση είναι δωρεάν και κρατάει 30 λεπτά.',
     'contact.info.title': 'Πώς να μας βρεις',
     'contact.form.title': 'Στείλε μας μήνυμα',
     'contact.form.name': 'Το όνομά σου',
@@ -247,7 +239,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'contact.form.question': 'Ερώτηση',
     'contact.form.question.placeholder': 'Ποια είναι η μεγαλύτερη απορία σου;',
     'contact.form.message': 'Το μήνυμά σου',
-    'contact.form.message.placeholder': 'Ποια διαδικασία σου κοστίζει περισσότερο;',
+    'contact.form.message.placeholder': 'Τι θέλεις να φτιάξεις;',
     'contact.form.heardAbout': 'Πώς έμαθες για εμάς;',
     'contact.form.heardAbout.placeholder': 'LinkedIn, Google, σύσταση, συνέδριο...',
     'contact.form.heardAbout.error': 'Πες μας πώς έμαθες για εμάς',
@@ -269,26 +261,8 @@ export const translations: Record<Language, Record<string, string>> = {
     // Portfolio/Projects
 
     // Services
-    'services.title': 'Τι φτιάχνει η Fiji Solutions: εξατομικευμένο λογισμικό, ανάλυση δεδομένων και Snowflake',
-    'services.subtitle': 'Τρία πράγματα. Το καθένα αφαιρεί δουλειά που κάνει κάποιος στο χέρι σήμερα.',
-    'services.software.title': 'Αυτοματοποίηση διαδικασιών και εσωτερικά εργαλεία',
-    'services.software.description': 'Το λογισμικό που κόβει το ξαναγράψιμο: εσωτερικά εργαλεία, συνδέσεις ανάμεσα σε συστήματα που δεν μιλάνε μεταξύ τους, και αυτοματισμοί για τα βήματα που επαναλαμβάνει κάποιος κάθε βδομάδα.',
-    'services.software.feature1': 'Συστήματα που περνάνε στοιχεία το ένα στο άλλο',
-    'services.software.feature2': 'Εργαλεία φτιαγμένα γύρω από τη δική σου διαδικασία',
-    'services.software.feature3': 'Εγκρίσεις που φεύγουν από τα email',
-    'services.software.feature4': 'Εργασίες που τρέχουν μόνες τους',
-    'services.data.title': 'Αναφορές και ανάλυση δεδομένων',
-    'services.data.description': 'Η αναφορά που θέλει δύο μέρες για να ετοιμαστεί, ξαναφτιαγμένη ώστε να ετοιμάζεται μόνη της και να μη διαφωνεί με καμία άλλη.',
-    'services.data.feature1': 'Αναφορές που φτιάχνονται μόνες τους',
-    'services.data.feature2': 'Ένας αριθμός, μία πηγή',
-    'services.data.feature3': 'Ειδοποιήσεις πριν σου κοστίσει',
-    'services.data.feature4': 'Ιστορικό που μπορείς να ρωτήσεις',
-    'services.snowflake.title': 'Πλατφόρμα δεδομένων Snowflake',
-    'services.snowflake.description': 'Όταν τα δεδομένα ξεπερνούν τα υπολογιστικά φύλλα: υλοποιούμε το Snowflake AI Data Cloud, το βελτιστοποιούμε ή μεταφέρουμε πάνω του τα δεδομένα σου. Είμαστε Snowflake AI Data Cloud Select Partner.',
-    'services.snowflake.feature1': 'Κατασκευή αποθήκης δεδομένων',
-    'services.snowflake.feature2': 'Διοχετεύσεις ETL/ELT',
-    'services.snowflake.feature3': 'Μετάβαση στο Snowflake',
-    'services.snowflake.feature4': 'Ρύθμιση κόστους και απόδοσης',
+    'services.title': 'Τι φτιάχνει η Fiji Solutions',
+    'services.subtitle': 'Έξι είδη δουλειάς, για επιχειρήσεις στην Ελλάδα και στο εξωτερικό.',
 
     // Footer
     'footer.description': 'Η Fiji Solutions είναι εταιρεία λογισμικού στη Θεσσαλονίκη. Φτιάχνουμε λογισμικό, εφαρμογές, αυτοματισμούς, AI agents και ιστοσελίδες για επιχειρήσεις στην Ελλάδα και στο εξωτερικό.',

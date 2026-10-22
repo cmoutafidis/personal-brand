@@ -7,15 +7,19 @@ import PortfolioOfferLink from '@/components/PortfolioOfferLink';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Υπηρεσίες: Λογισμικό, Ανάλυση Δεδομένων & Snowflake Ελλάδα',
-  description: 'Τι φτιάχνει η Fiji Solutions: αυτοματοποίηση διαδικασιών και εσωτερικά εργαλεία, αναφορές και ανάλυση δεδομένων, πλατφόρμα δεδομένων Snowflake.',
-  keywords: 'υπηρεσίες λογισμικού Ελλάδα, ανάλυση δεδομένων Ελλάδα, Snowflake consulting Ελλάδα, business intelligence Ελλάδα, εταιρεία λογισμικού Θεσσαλονίκη, data engineering Ελλάδα',
+  // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G07, PLAN.md §4.2, BR-D7): the title is his pick of
+  // 2026-10-22, since this page holds Bing #1 for «εταιρεία λογισμικού Θεσσαλονίκη». The six categories,
+  // copy from offer-os companies/fiji-solutions/site/03-copy-home.md, "Portfolio". The og and twitter titles
+  // are unchanged.
+  title: 'Υπηρεσίες | Εταιρεία λογισμικού Θεσσαλονίκη | Fiji Solutions',
+  description: 'Τι φτιάχνει η Fiji Solutions: λογισμικό κατά παραγγελία, διαδικτυακές εφαρμογές και εφαρμογές για κινητά, αυτοματοποίηση διαδικασιών, AI agents, ιστοσελίδες και πλατφόρμες δεδομένων στη Snowflake.',
+  keywords: 'λογισμικό κατά παραγγελία, εταιρεία λογισμικού Θεσσαλονίκη, εφαρμογές για κινητά, αυτοματοποίηση διαδικασιών, AI agents, κατασκευή ιστοσελίδων, Snowflake',
   alternates: buildAlternates('/portfolio', 'el'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/el/portfolio',
     title: 'Υπηρεσίες | Fiji Solutions',
-    description: 'Αυτοματοποίηση διαδικασιών, αναφορές και ανάλυση δεδομένων, πλατφόρμα Snowflake.',
+    description: 'Τι φτιάχνει η Fiji Solutions: λογισμικό κατά παραγγελία, διαδικτυακές εφαρμογές και εφαρμογές για κινητά, αυτοματοποίηση διαδικασιών, AI agents, ιστοσελίδες και πλατφόρμες δεδομένων στη Snowflake.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -29,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Υπηρεσίες | Fiji Solutions',
-    description: 'Αυτοματοποίηση διαδικασιών, αναφορές και ανάλυση δεδομένων, πλατφόρμα Snowflake.',
+    description: 'Τι φτιάχνει η Fiji Solutions: λογισμικό κατά παραγγελία, διαδικτυακές εφαρμογές και εφαρμογές για κινητά, αυτοματοποίηση διαδικασιών, AI agents, ιστοσελίδες και πλατφόρμες δεδομένων στη Snowflake.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

@@ -7,15 +7,17 @@ import PortfolioOfferLink from '@/components/PortfolioOfferLink';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Services: Custom Software, Data Analysis & Snowflake Greece',
-  description: 'What Fiji Solutions builds: process automation and internal tools, reporting and data analysis, and the Snowflake data platform.',
-  keywords: 'custom software services Greece, data analysis services Greece, Snowflake consulting Greece, business intelligence Greece, software company Thessaloniki, data engineering Greece',
+  // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G07, PLAN.md §4.2): the six categories, copy from offer-os
+  // companies/fiji-solutions/site/03-copy-home.md, "Portfolio". The og and twitter titles are unchanged.
+  title: 'Services: Custom Software, Apps, AI and Snowflake | Fiji',
+  description: 'What Fiji Solutions builds: custom software, web and mobile apps, process automation, AI agents, websites, and data platforms on Snowflake.',
+  keywords: 'custom software Greece, web and mobile apps, process automation, AI agents, website development, Snowflake consulting Greece',
   alternates: buildAlternates('/portfolio'),
   openGraph: {
     type: 'website',
     url: 'https://www.fijisolutions.net/en/portfolio',
     title: 'Services | Fiji Solutions',
-    description: 'Process automation and internal tools, reporting and data analysis, and the Snowflake data platform.',
+    description: 'What Fiji Solutions builds: custom software, web and mobile apps, process automation, AI agents, websites, and data platforms on Snowflake.',
     images: [
       {
         url: 'https://www.fijisolutions.net/fijisolutions.png',
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@fiji_solutions',
     title: 'Services | Fiji Solutions',
-    description: 'Process automation and internal tools, reporting and data analysis, and the Snowflake data platform.',
+    description: 'What Fiji Solutions builds: custom software, web and mobile apps, process automation, AI agents, websites, and data platforms on Snowflake.',
     images: ['https://www.fijisolutions.net/fijisolutions.png'],
   },
 };

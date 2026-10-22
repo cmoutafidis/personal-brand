@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import {Language} from '@/types/language';
-import {BarChart3, Code2, Snowflake} from 'lucide-react';
+import {ArrowRight, Bot, Code2, Globe, Smartphone, Snowflake, Workflow} from 'lucide-react';
+import {SERVICES, servicePageLinks, type ServiceKey} from '@/data/services';
 
 interface ServicesProps {
   t: (key: string) => string;
@@ -10,35 +11,21 @@ interface ServicesProps {
   lang: Language;
 }
 
+// The six kinds of work on /portfolio, from src/data/services.ts, the same titles and lines as the
+// homepages' "What we build" grid. 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G07, BR-D3, PLAN.md
+// §4.2): the three cards of 2026-08-15 became these six. Each card links its service pages only, so
+// custom software and apps link the custom software page, data links the data analysis and Snowflake
+// pages, and the other three carry no link here. The one offer link on the page is PortfolioOfferLink.
+const ICONS: Record<ServiceKey, React.ReactNode> = {
+  'custom-software': <Code2 className="h-8 w-8"/>,
+  apps: <Smartphone className="h-8 w-8"/>,
+  automation: <Workflow className="h-8 w-8"/>,
+  'ai-agents': <Bot className="h-8 w-8"/>,
+  websites: <Globe className="h-8 w-8"/>,
+  data: <Snowflake className="h-8 w-8"/>
+};
+
 const Services: React.FC<ServicesProps> = ({t, lang}) => {
-
-  // Three, not six. The six-card grid (custom software / enterprise / AI / payments /
-  // Snowflake / IT consulting) was the "belly shop" the audit flagged: it read as a list of
-  // categories rather than one thing worth buying. Each card now names the manual work it removes.
-  const services = [
-    {
-      icon: <Code2 className="h-8 w-8"/>,
-      href: `/${lang}/services/custom-software-development-greece`,
-      title: t('services.software.title'),
-      description: t('services.software.description'),
-      features: [t('services.software.feature1'), t('services.software.feature2'), t('services.software.feature3'), t('services.software.feature4')]
-    },
-    {
-      icon: <BarChart3 className="h-8 w-8"/>,
-      href: `/${lang}/services/data-analysis-greece`,
-      title: t('services.data.title'),
-      description: t('services.data.description'),
-      features: [t('services.data.feature1'), t('services.data.feature2'), t('services.data.feature3'), t('services.data.feature4')]
-    },
-    {
-      icon: <Snowflake className="h-8 w-8"/>,
-      href: `/${lang}/services/snowflake-consulting-greece`,
-      title: t('services.snowflake.title'),
-      description: t('services.snowflake.description'),
-      features: [t('services.snowflake.feature1'), t('services.snowflake.feature2'), t('services.snowflake.feature3'), t('services.snowflake.feature4')]
-    }
-  ];
-
   return (
     <section id="services" className="py-16 md:py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -52,25 +39,25 @@ const Services: React.FC<ServicesProps> = ({t, lang}) => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div key={index}
-                 className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden duration-300 p-6 hover:shadow-xl transition-shadow">
+          {SERVICES.map((s) => (
+            <div key={s.key}
+                 className="flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden duration-300 p-6 hover:shadow-xl transition-shadow">
               <div className="text-primary-600 dark:text-primary-400 mb-4">
-                {service.icon}
+                {ICONS[s.key]}
               </div>
               <h2 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
-                <Link href={service.href} className="hover:underline underline-offset-4">
-                  {service.title}
-                </Link>
+                {s.copy[lang].title}
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                {service.description}
+              <p className="flex-1 text-gray-600 dark:text-gray-400 mb-4">
+                {s.copy[lang].line}
               </p>
-              <ul className="space-y-2">
-                {service.features.map((feature, i) => (
-                  <li key={i} className="flex items-center text-gray-700 dark:text-gray-300">
-                    <span className="mr-2 text-primary-600 dark:text-primary-400">•</span>
-                    {feature}
+              <ul className="space-y-1">
+                {servicePageLinks(s, lang).map((l) => (
+                  <li key={l.href}>
+                    <Link href={l.href} className="inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-400">
+                      {l.label}
+                      <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0" aria-hidden="true"/>
+                    </Link>
                   </li>
                 ))}
               </ul>
