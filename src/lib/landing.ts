@@ -46,7 +46,9 @@ export function isBookingPromptHiddenPath(pathname: string | null | undefined): 
 // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G04, PLAN.md §4.1 row 2): off again. The broad
 // homepages describe six kinds of work, and the v5 script still pitches the sheet-to-app prototype.
 // BR-G10 makes the script broad, test calls it, and sets this back to true.
-export const HOMEPAGE_VOICE_ON = false;
+// 2026-10-25 (BR-G10): the broad script is live (Vapi assistant version v7, offer-os
+// companies/fiji-solutions/site/vapi-assistant-script.md), tested by text chat, so both are back on.
+export const HOMEPAGE_VOICE_ON = true;
 
 export const HOMEPAGE_PATHS: readonly string[] = ['/en', '/el'];
 

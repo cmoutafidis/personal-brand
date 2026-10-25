@@ -15,8 +15,8 @@ import {translations} from '@/translations';
 // Calendly event (`booking_click`, `cta_location: 'home-hero'`) and "See our projects" to #projects. One
 // centred column until a screenshot of our own work is cleared (BR-G26).
 //
-// The voice button stays behind HOMEPAGE_VOICE_ON (src/lib/landing.ts), false until BR-G10 makes the Vapi
-// script broad. Server component: `language` comes in as a prop, which keeps both homepages static.
+// The voice button stays behind HOMEPAGE_VOICE_ON (src/lib/landing.ts), true again since 2026-10-25, when BR-G10
+// made the Vapi script broad. Server component: `language` comes in as a prop, which keeps both homepages static.
 
 export const PRIMARY_BUTTON_CLASS =
   'inline-flex items-center justify-center rounded-lg bg-primary-600 px-8 py-4 text-center text-lg font-medium text-white shadow-sm transition-colors hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900';

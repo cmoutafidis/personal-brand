@@ -82,7 +82,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Hero voice button. 2026-10-22 (offer-os broad home BR-G05): the rest of the hero copy, and the
     // `challenges.*` and `solutions.*` keys of the sheet-to-app hook (the homepage's one priced slot), left
     // with the old homepage; the broad hero reads src/data/home.ts. This key stays for the voice button,
-    // hidden until BR-G10 (HOMEPAGE_VOICE_ON).
+    // behind HOMEPAGE_VOICE_ON, on again since 2026-10-25 (BR-G10).
     'hero.talk': "Let's talk now",
 
     // Local — added 2026-09-01. The section exists because the demand data says the site's own
@@ -213,7 +213,7 @@ export const translations: Record<Language, Record<string, string>> = {
     // Hero voice button. 2026-10-22 (offer-os broad home BR-G05): the rest of the hero copy, and the
     // `challenges.*` and `solutions.*` keys of the sheet-to-app hook (the homepage's one priced slot), left
     // with the old homepage; the broad hero reads src/data/home.ts. This key stays for the voice button,
-    // hidden until BR-G10 (HOMEPAGE_VOICE_ON).
+    // behind HOMEPAGE_VOICE_ON, on again since 2026-10-25 (BR-G10).
     'hero.talk': 'Ας μιλήσουμε τώρα',
 
     // Local — βλ. το σχόλιο στο en. Οι δύο σύνδεσμοι είναι οι δύο λέξεις-κλειδιά με μετρημένη ζήτηση,
