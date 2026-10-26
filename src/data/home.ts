@@ -20,7 +20,10 @@ export type HomeFaq = {id: string; q: string; a: string};
 
 export type HomeCopy = {
   meta: {title: string; description: string; keywords: string; ogLocale: string; ogImageAlt: string};
-  hero: {eyebrow: string; h1: string; sub: string; primary: string; secondary: string};
+  // `h1Accent` is the end of `h1`, word for word, drawn in the accent colour (BR-D45); the h1 itself is unchanged.
+  hero: {eyebrow: string; h1: string; h1Accent: string; sub: string; primary: string; secondary: string};
+  // The small label above each section heading (BR-D45, 2026-10-26).
+  labels: {build: string; start: string; projects: string; how: string; faq: string; posts: string; closing: string};
   stats: {figure: string; line: string}[];
   clients: {heading: string; badgeAlt: string};
   build: {heading: string; line: string};
@@ -44,6 +47,7 @@ export const HOME: Record<Language, HomeCopy> = {
     hero: {
       eyebrow: 'Software company in Thessaloniki, Greece',
       h1: 'Custom software, apps and AI for your business, built in Thessaloniki',
+      h1Accent: 'built in Thessaloniki',
       sub: 'Fiji Solutions builds custom software, web and mobile apps, process automation, AI agents, websites and Snowflake data platforms for businesses in Greece and abroad. You talk directly to the engineer who builds it.',
       primary: 'Book a free 30-minute call',
       secondary: 'See our projects',
@@ -54,6 +58,7 @@ export const HOME: Record<Language, HomeCopy> = {
       {figure: 'App Store and Google Play', line: 'apps we built are live on both'},
       {figure: '1 business day', line: 'until our reply'},
     ],
+    labels: {build: 'Services', start: 'Offers', projects: 'Our work', how: 'Process', faq: 'FAQ', posts: 'Blog', closing: 'Contact'},
     clients: {heading: 'Who we have built software for', badgeAlt: 'Snowflake Select Services Partner'},
     build: {heading: 'What we build', line: 'Six kinds of work, for businesses in Greece and abroad.'},
     start: {
@@ -139,6 +144,7 @@ export const HOME: Record<Language, HomeCopy> = {
     hero: {
       eyebrow: 'Εταιρεία λογισμικού στη Θεσσαλονίκη',
       h1: 'Λογισμικό κατά παραγγελία, εφαρμογές και AI για την επιχείρησή σου, από τη Θεσσαλονίκη',
+      h1Accent: 'από τη Θεσσαλονίκη',
       sub: 'Η Fiji Solutions φτιάχνει λογισμικό κατά παραγγελία, διαδικτυακές εφαρμογές και εφαρμογές για κινητά, αυτοματισμούς, AI agents, ιστοσελίδες και πλατφόρμες δεδομένων Snowflake, για επιχειρήσεις στην Ελλάδα και στο εξωτερικό. Μιλάς απευθείας με τον μηχανικό που φτιάχνει το λογισμικό σου.',
       primary: 'Κλείσε δωρεάν κλήση 30 λεπτών',
       secondary: 'Δες τα έργα μας',
@@ -149,6 +155,7 @@ export const HOME: Record<Language, HomeCopy> = {
       {figure: 'App Store και Google Play', line: 'εφαρμογές που φτιάξαμε κυκλοφορούν και στα δύο'},
       {figure: '1 εργάσιμη ημέρα', line: 'ως την απάντησή μας'},
     ],
+    labels: {build: 'Υπηρεσίες', start: 'Προσφορές', projects: 'Η δουλειά μας', how: 'Διαδικασία', faq: 'Ερωτήσεις', posts: 'Blog', closing: 'Επικοινωνία'},
     clients: {heading: 'Για ποιους έχουμε φτιάξει λογισμικό', badgeAlt: 'Snowflake Select Services Partner'},
     build: {heading: 'Τι φτιάχνουμε', line: 'Έξι είδη δουλειάς, για επιχειρήσεις στην Ελλάδα και στο εξωτερικό.'},
     start: {

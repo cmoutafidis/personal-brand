@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import {buildAlternates} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 import Hero from '@/components/Hero';
-import StatsStrip from '@/components/StatsStrip';
+import Reveal from '@/components/Reveal';
 import ClientStrip from '@/components/ClientStrip';
 import WhatWeBuild from '@/components/WhatWeBuild';
 import WaysToStart from '@/components/WaysToStart';
@@ -71,7 +71,6 @@ export default function EnglishHomePage() {
   return (
     <>
       <Hero language={language}/>
-      <StatsStrip language={language}/>
       <ClientStrip language={language}/>
       <WhatWeBuild language={language}/>
       <WaysToStart language={language}/>
@@ -88,6 +87,8 @@ export default function EnglishHomePage() {
       {/* Where we are and the two website offers, unchanged (see Local.tsx). */}
       <Local t={t} language={language}/>
       <Footer t={t}/>
+      {/* Fades the home sections in as they scroll into view (BR-D45). */}
+      <Reveal/>
     </>
   );
 }

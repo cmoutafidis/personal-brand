@@ -58,7 +58,7 @@ export default function TopBanner({language, onClose}: {language: Language; onCl
 
   return (
     <div
-      className="relative z-[51] flex items-center justify-center bg-primary-600 pl-3 pr-11 text-center sm:px-11 text-xs leading-4 text-white sm:text-sm sm:leading-5 dark:bg-primary-700"
+      className="relative z-[51] flex items-center justify-center bg-[#0d1b35] pl-3 pr-11 text-center sm:px-11 text-xs leading-4 text-white sm:text-sm sm:leading-5 dark:bg-gray-950"
       style={{height: TOP_BANNER_HEIGHT}}
     >
       <p>
@@ -77,7 +77,7 @@ export default function TopBanner({language, onClose}: {language: Language; onCl
         type="button"
         onClick={onClose}
         aria-label={t('banner.close')}
-        className="absolute right-1 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full hover:bg-primary-700 dark:hover:bg-primary-800"
+        className="absolute right-1 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full hover:bg-white/10 dark:hover:bg-white/10"
       >
         <X className="h-4 w-4" aria-hidden="true"/>
       </button>

@@ -110,3 +110,50 @@
         display: none;
     }
 }
+
+/* ── The home look of offer-os broad home BR-D45 (2026-10-26), after ignitech.ch ──────────────────────────
+ * The client strip scrolls sideways without end: the list is rendered twice and the track moves by half its
+ * width, then starts over. Edges fade out, a hover pauses it, and with reduced motion the second copy hides and
+ * the first wraps in place.
+ * `[data-reveal]` blocks fade in and rise as they enter the screen. They hide only once Reveal.tsx has put
+ * `reveal-on` on <html>, so a page without JavaScript, and every crawler, sees them at once. */
+@keyframes marquee-half {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.marquee {
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    animation: marquee-half 38s linear infinite;
+    will-change: transform;
+}
+
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+html.reveal-on [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+html.reveal-on [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .marquee { mask-image: none; -webkit-mask-image: none; }
+    .marquee-track { animation: none; width: auto; flex-wrap: wrap; justify-content: center; row-gap: 1.25rem; }
+    .marquee-copy { display: none; }
+    html.reveal-on [data-reveal] { opacity: 1; transform: none; transition: none; }
+}

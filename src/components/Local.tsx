@@ -50,19 +50,19 @@ export default function Local({t, language}: LocalProps) {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50 dark:bg-gray-800/40">
+    <section className="py-14 md:py-[72px] bg-[#f7faff] dark:bg-gray-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-primary-600 dark:text-primary-400">
+        <div className="mb-8">
+          <h2 className="mb-3 text-[1.9rem] font-extrabold leading-[1.1] tracking-[-0.02em] text-gray-950 dark:text-white md:text-[2.5rem]">
             {t('local.title')}
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <p className="max-w-2xl text-lg text-gray-600 dark:text-gray-400">
             {t('local.subtitle')}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200/80 dark:border-gray-700/80 shadow-sm p-6">
+        <div className="grid gap-5 md:grid-cols-2">
+          <div className="rounded-[20px] border-[1.5px] border-gray-200 bg-white p-7 dark:border-gray-700 dark:bg-gray-900">
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 p-3 bg-primary-100 dark:bg-primary-900/30 rounded-full text-primary-600 dark:text-primary-400">
@@ -122,7 +122,7 @@ export default function Local({t, language}: LocalProps) {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-gray-800 rounded-xl border border-gray-200/80 dark:border-gray-700/80 shadow-sm p-6">
+          <div className="rounded-[20px] border-[1.5px] border-gray-200 bg-white p-7 dark:border-gray-700 dark:bg-gray-900">
             <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
               {t('local.website.title')}
             </h3>

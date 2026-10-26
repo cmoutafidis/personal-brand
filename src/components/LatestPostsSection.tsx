@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import {ArrowRight} from 'lucide-react';
 import type {BlogPost} from '@/types/blog';
 import type {Language} from '@/types/language';
 import {HOME} from '@/data/home';
+import SectionHeading, {SECTION_PAD} from '@/components/SectionHeading';
 
 // The "latest posts" band of both homepages.
 //
@@ -35,19 +35,21 @@ export default function LatestPostsSection({posts, language}: { posts: BlogPost[
   const guides = copy.guidesHeading ? posts.filter((p) => !pickedIds.has(p.id)) : [];
 
   return (
-    <section id="latest-posts" className="bg-gray-50 py-12 dark:bg-gray-950">
+    <section id="latest-posts" className={`bg-white dark:bg-gray-900 ${SECTION_PAD}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-6 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-gray-950 dark:text-white md:text-[2rem]">{copy.heading}</h2>
-          <p className="mx-auto max-w-[65ch] text-lg leading-8 text-gray-700 dark:text-gray-300">{copy.line}</p>
-        </div>
+        <SectionHeading
+          label={HOME[language].labels.posts}
+          heading={copy.heading}
+          line={copy.line}
+          link={{href: `/${language}/blog`, label: copy.all}}
+        />
         <ul className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0 md:pb-0">
           {picked.map((post) => (
-            <li key={post.id} className="w-[80%] flex-shrink-0 snap-start rounded-xl md:w-auto border border-gray-200/80 bg-white p-5 dark:border-gray-700/80 dark:bg-gray-800">
-              <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+            <li key={post.id} className="w-[80%] flex-shrink-0 snap-start rounded-[20px] border-[1.5px] border-gray-200 bg-white p-6 transition duration-200 hover:-translate-y-0.5 hover:border-primary-600 hover:shadow-[0_8px_32px_rgba(0,134,255,0.12)] md:w-auto dark:border-gray-700 dark:bg-gray-900 dark:hover:border-primary-400">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.08em] text-primary-700 dark:text-primary-300">
                 {new Date(post.publishedAt).toLocaleDateString(language === 'el' ? 'el-GR' : 'en-US', {year: 'numeric', month: 'long', day: 'numeric'})}
               </p>
-              <h3 className="text-lg font-semibold text-gray-950 dark:text-white">
+              <h3 className="font-display text-lg font-extrabold leading-snug tracking-[-0.01em] text-gray-950 dark:text-white">
                 <Link href={`/${language}/blog/${post.slug}`} className="hover:text-primary-600 dark:hover:text-primary-400">{post.title}</Link>
               </h3>
             </li>
@@ -68,15 +70,6 @@ export default function LatestPostsSection({posts, language}: { posts: BlogPost[
             </ul>
           </div>
         )}
-        <div className="mt-6 text-center">
-          <Link
-            href={`/${language}/blog`}
-            className="inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-400"
-          >
-            {copy.all}
-            <ArrowRight className="ml-2 h-4 w-4"/>
-          </Link>
-        </div>
       </div>
     </section>
   );

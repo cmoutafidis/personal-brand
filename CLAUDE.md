@@ -42,6 +42,13 @@ as the hook is history, kept for the record.
   picks of BR-D7.
 - The copy contract for all of it is offer-os `companies/fiji-solutions/site/03-copy-home.md`. Change a string
   there first.
+- **The home look (2026-10-26, offer-os broad home BR-D45), after ignitech.ch.** His words: *"my websites to look
+  and feel more like https://ignitech.ch"*. Every home section opens with `SectionHeading.tsx` (a small label from
+  `HOME[lang].labels`, a heavy left aligned h2, an optional link at its right); sections alternate white and
+  `#f7faff`; cards are large with a lift on hover; `Reveal.tsx` fades blocks in as they scroll in (hidden only once
+  it has run, so crawlers and no-JS readers see everything). The client strip scrolls without end (`.marquee` in
+  `globals.css`, two copies of the list, the second `aria-hidden`). The hero has two columns, the stats panel on
+  the right. His answers: no photos, keep Plus Jakarta Sans and Inter set heavier.
 
 ## ~~The one thing this site sells~~ (struck 2026-10-22, BR-G04: replaced by the block above)
 

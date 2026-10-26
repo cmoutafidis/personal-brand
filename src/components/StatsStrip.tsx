@@ -6,19 +6,28 @@ import {HOME} from '@/data/home';
 // projects or clients, no rating and no price (BR-D24). Each tile's source is in the offer-os contract;
 // the Snowflake listing was read in his Chrome on 2026-10-22 (SELECT, Fiji Solutions, Greece).
 
+// Since BR-D45 (2026-10-26) the four stats sit in the hero, as a 2x2 panel of cards on the right where
+// ignitech.ch has its photo; Hero.tsx renders this, and the home pages no longer render it on its own.
 export default function StatsStrip({language}: {language: Language}) {
   const stats = HOME[language].stats;
 
   return (
-    <section className="border-y border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900">
-      <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-6 px-4 py-8 sm:px-6 md:grid-cols-4 lg:px-8">
-        {stats.map((s) => (
-          <div key={s.figure} className="text-center">
-            <dt className="text-xl font-bold text-gray-950 dark:text-white md:text-2xl">{s.figure}</dt>
-            <dd className="mt-1 text-sm text-gray-600 dark:text-gray-400">{s.line}</dd>
-          </div>
-        ))}
-      </dl>
-    </section>
+    <dl className="grid grid-cols-2 gap-3 sm:gap-4">
+      {stats.map((s, i) => (
+        <div
+          key={s.figure}
+          className={`flex flex-col justify-between rounded-2xl border p-5 shadow-sm sm:p-6 ${
+            i === 0
+              ? 'border-primary-600 bg-primary-600 text-white shadow-primary-600/20'
+              : 'border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800'
+          }`}
+        >
+          <dt className={`text-xl font-extrabold leading-tight tracking-[-0.02em] font-display md:text-2xl ${i === 0 ? 'text-white' : 'text-gray-950 dark:text-white'}`}>
+            {s.figure}
+          </dt>
+          <dd className={`mt-3 text-sm leading-6 ${i === 0 ? 'text-primary-50' : 'text-gray-600 dark:text-gray-400'}`}>{s.line}</dd>
+        </div>
+      ))}
+    </dl>
   );
 }

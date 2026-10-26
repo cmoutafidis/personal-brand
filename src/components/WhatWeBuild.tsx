@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import {ArrowRight} from 'lucide-react';
+import {ArrowRight, Bot, Code2, Database, Globe, Smartphone, Workflow, type LucideIcon} from 'lucide-react';
+import SectionHeading, {SECTION_PAD} from '@/components/SectionHeading';
 import type {Language} from '@/types/language';
 import {HOME} from '@/data/home';
 import {SERVICES, type Service} from '@/data/services';
@@ -31,33 +32,54 @@ function linksOf(s: Service, language: Language): CardLink[] {
   return links;
 }
 
+// Since BR-D45 (2026-10-26, after ignitech.ch): a labelled heading on the left, and larger cards with an icon
+// tile, a number from 01, a heavier title and a lift on hover. No photos (his answer).
+const ICON: Record<Service['key'], LucideIcon> = {
+  'custom-software': Code2,
+  apps: Smartphone,
+  automation: Workflow,
+  'ai-agents': Bot,
+  websites: Globe,
+  data: Database,
+};
+
 export default function WhatWeBuild({language}: {language: Language}) {
   const copy = HOME[language].build;
 
   return (
-    <section id="what-we-build" className="bg-gray-50 py-12 dark:bg-gray-950">
+    <section id="what-we-build" className={`bg-[#f7faff] dark:bg-gray-950 ${SECTION_PAD}`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mb-6 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-gray-950 dark:text-white md:text-[2rem]">{copy.heading}</h2>
-          <p className="mx-auto max-w-[65ch] text-lg leading-8 text-gray-700 dark:text-gray-300">{copy.line}</p>
-        </div>
-        <ul className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
-          {SERVICES.map((s) => (
-            <li key={s.key} className="flex flex-col rounded-xl border border-gray-200/80 bg-white p-4 sm:p-5 shadow-sm dark:border-gray-700/80 dark:bg-gray-800">
-              <h3 className="mb-2 text-lg font-semibold text-gray-950 dark:text-white">{s.copy[language].title}</h3>
-              <p className="mb-3 flex-1 text-gray-700 dark:text-gray-300 lg:text-sm">{s.copy[language].line}</p>
-              <ul className="space-y-1">
-                {linksOf(s, language).map((l) => (
-                  <li key={l.href}>
-                    <Link href={l.href} className="inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-400">
-                      {l.label}
-                      <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0" aria-hidden="true"/>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
+        <SectionHeading label={HOME[language].labels.build} heading={copy.heading} line={copy.line}/>
+        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {SERVICES.map((s, i) => {
+            const Icon = ICON[s.key];
+            return (
+              <li
+                key={s.key}
+                data-reveal={String((i % 3) * 100)}
+                className="flex flex-col rounded-[20px] border-[1.5px] border-gray-200 bg-white p-6 transition duration-200 hover:-translate-y-0.5 hover:border-primary-600 hover:shadow-[0_8px_32px_rgba(0,134,255,0.12)] dark:border-gray-700 dark:bg-gray-900 dark:hover:border-primary-400"
+              >
+                <div className="mb-4 flex items-center justify-between">
+                  <span className={`flex h-12 w-12 items-center justify-center rounded-xl ${i % 2 ? 'bg-sky-50 text-sky-600 dark:bg-sky-950 dark:text-sky-300' : 'bg-primary-50 text-primary-600 dark:bg-primary-950 dark:text-primary-300'}`}>
+                    <Icon className="h-6 w-6" aria-hidden="true"/>
+                  </span>
+                  <span className="text-xs font-bold text-gray-400" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                </div>
+                <h3 className="mb-3 font-display text-xl font-extrabold tracking-[-0.01em] text-gray-950 dark:text-white">{s.copy[language].title}</h3>
+                <p className="mb-4 flex-1 leading-7 text-gray-600 dark:text-gray-300">{s.copy[language].line}</p>
+                <ul className="space-y-1.5">
+                  {linksOf(s, language).map((l) => (
+                    <li key={l.href}>
+                      <Link href={l.href} className="inline-flex items-center font-semibold text-primary-600 hover:underline dark:text-primary-400">
+                        {l.label}
+                        <ArrowRight className="ml-2 h-4 w-4 flex-shrink-0" aria-hidden="true"/>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>
