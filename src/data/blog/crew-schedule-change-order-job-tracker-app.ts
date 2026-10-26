@@ -6,6 +6,9 @@ import type {BlogPost} from '@/types/blog';
 // No money figure (CLAUDE.md rule 7); the offer page's "What it costs" section (#s12-what-it-costs) carries
 // the prices. No person named; the post speaks as "we" (D13), so author is omitted and schema author falls
 // back to the Organization publisher. The pains are symptoms (OBJECTIONS-AND-PAINS §2, kind H), no survey number.
+// Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-12): the D13 no-byline rule above is replaced; every
+// blog post shows "Charis Moutafidis" as author, linked to the About page. Goal B3 carries it out; until then
+// this post stays without an author field and nobody should cite D13 as a reason to keep it that way.
 const post: BlogPost = {
   id: 'crew-schedule-change-order-job-tracker-app',
   slug: 'crew-schedule-change-order-job-tracker-app',

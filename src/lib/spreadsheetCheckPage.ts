@@ -9,6 +9,11 @@ import {buildAlternates} from '@/lib/alternates';
 // The JSON-LD is a BreadcrumbList and nothing else (SL-D66): the GEO rule in CLAUDE.md freezes new
 // per page markup, and a two item breadcrumb is the node every offer page already carries. No
 // price anywhere, here included (rule 7).
+// Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-13): the freeze on per page markup no longer
+// holds. Fixing broken markup and adding schema types Google itself uses (SoftwareApplication for a
+// tool page, for example) is allowed; nothing is added only for AI tools. Goals C5, C10 and C14 carry
+// it out; until then the BreadcrumbList stays as it is. The no price line above still holds: this
+// tool is not an offer with a set price (D-08).
 
 const SITE = 'https://www.fijisolutions.net';
 const PATH = '/tools/spreadsheet-check';

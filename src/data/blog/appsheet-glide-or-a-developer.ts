@@ -5,6 +5,9 @@ import type {BlogPost} from '@/types/blog';
 // No money figure. The "Is AppSheet enough, or do I need a developer?" question lives on the offer page FAQ
 // only, so its FAQPage schema sits on one URL (review finding, F-D176). Vendor claims carry a sources block.
 // No person is named; the post speaks as "we" (D13), so author is omitted.
+// Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-12, replaces D13): every blog post shows
+// "Charis Moutafidis" as author, linked to the About page. Goal B3 carries it out; until then the
+// author field stays omitted here and this comment no longer states a standing rule.
 const post: BlogPost = {
   id: 'appsheet-glide-or-a-developer',
   slug: 'appsheet-glide-or-a-developer',

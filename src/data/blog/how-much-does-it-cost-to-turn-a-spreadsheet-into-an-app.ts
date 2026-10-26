@@ -3,8 +3,11 @@ import type {BlogPost} from '@/types/blog';
 // The first English blog post. Written for F20 of offer-os gtm/followups-and-search (F-D173, F-D176),
 // from the approved draft in offer-os offers/fiji-solutions--sheet-to-app/derived/articles/ARTICLE-COST.md.
 // No money figure appears: the prices live on the offer page, and this post links its "What it costs"
-// section (#s12-what-it-costs) for them (CLAUDE.md rule 7, F-D173). No person is named; the post speaks as
-// "we" (D13), so author is omitted and the schema author falls back to the Organization publisher.
+// section (#s12-what-it-costs) for them (CLAUDE.md rule 7, F-D173). ~~No person is named;~~ the post speaks as
+// "we" ~~(D13), so author is omitted and the schema author falls back to the Organization publisher.~~
+// Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-12, replacing D13): every blog post shows
+// "Charis Moutafidis" as author, linked to the About page. Goal B3 carries it out; until then this post
+// has no author field and the schema author still falls back to the Organization publisher.
 const post: BlogPost = {
   id: 'how-much-does-it-cost-to-turn-a-spreadsheet-into-an-app',
   slug: 'how-much-does-it-cost-to-turn-a-spreadsheet-into-an-app',

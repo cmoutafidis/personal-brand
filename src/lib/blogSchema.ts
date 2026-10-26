@@ -13,6 +13,10 @@ import type {BlogFaqBlock, BlogPost, BlogSourcesBlock} from '@/types/blog';
 // translation gets a self-referencing hreflang set: claiming an `en` twin that does not exist
 // points Google at a URL that 404s.
 // ⛔ No price anywhere, in copy or structured data (CLAUDE.md rule 7). No rating, no review.
+// Note 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): the site-wide "no price anywhere" rule is
+// retired for offers with a set price, which now show it in the visitor's currency. Blog posts are
+// not priced offers, so for this file nothing changes: posts and cost posts carry no figures, and a
+// cost post links to the priced offer where one exists (goal D9).
 
 const SITE = 'https://www.fijisolutions.net';
 
@@ -94,6 +98,10 @@ export function blogPostSchema(post: BlogPost, lang: Language) {
       // identifier a parser reads two different people across the twenty-six articles. One `@id`
       // merges them, and the four name spellings live once, in `alternateName` on the node at
       // charismoutafidis.com.
+      //
+      // 2026-10-26 (seo-plan-2026-10 D-12): every post on both company sites shows Charis Moutafidis
+      // as author, linked to the About page; goal B3 carries it out, including the spelling on Greek
+      // posts. Until then the posts with no `post.author` fall back to the publisher below.
       author: post.author ? {...PERSON_REF, worksFor: {'@id': ORGANISATION_ID}} : publisher,
       publisher,
       keywords: post.tags.join(', '),

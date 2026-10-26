@@ -11,6 +11,9 @@ import {OFFER_NEXT_COPY, PARENT_SERVICE, SERVICE_LABEL, SIBLING_OFFER, type Offe
 // 2026-09-30: /offers/sheet-to-app is the exception. Its contract is a different page, so it renders
 // through src/components/SheetToAppLanding.tsx and publishes its prices by a dated exception to
 // CLAUDE.md rule 7. The rule below still holds for every page this component renders.
+// 2026-10-26 (seo-plan-2026-10 D-08): the blanket no-price rule is retired for offers that have a
+// set price. Those show it, in the visitor's currency (euros on Greek pages). Sheet-to-app is no
+// longer the only page that may carry a price. Offers without a set price stay without figures.
 //
 // These pages WERE Google Ads landing pages. Ads was dropped on 2026-09-01 and organic search is
 // now the only way in, so each page carries a body link up to its parent service page and across
@@ -29,10 +32,17 @@ import {OFFER_NEXT_COPY, PARENT_SERVICE, SERVICE_LABEL, SIBLING_OFFER, type Offe
 // should handle price: "Do not mention price." That is the same rule as CLAUDE.md rule 7 and it is
 // not relaxed here just because the workbook these offers came from calls them "cheap offers".
 // There is no price field on OfferCopy on purpose. Adding one is the wrong fix.
+// 2026-10-26 (seo-plan-2026-10 D-08): this now holds only while an offer has no set price. None
+// of the workbook offers rendered here has one today (offer.yaml amount null), so no price shows.
+// If one of them gets a set price, it must show it, in euros on Greek pages, and adding a price
+// field for that offer is then the right fix.
 //
 // ⛔ NO RESULTS CLAIM APPEARS EITHER. `proof/` in the offer-os knowledge base holds nothing for
 // Fiji except the Snowflake partnership. The 75% on some of these pages is a GUARANTEE with a
 // refund behind it, not a measurement of past work, and the copy must keep saying so.
+// 2026-10-26 (seo-plan-2026-10 D-09): `proof/` now also holds the PAP Center and New Era Learning
+// case studies, and every client shown on the sites approved being named. Neither records a
+// measured result, so no results claim still appears; goal D4 decides what these pages show.
 
 export type LeadItem = {
   lead: string;

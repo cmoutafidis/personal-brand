@@ -12,11 +12,15 @@ import {BOOKING_URL} from '@/lib/booking';
 // it. So this offer renders through src/components/SheetToAppLanding.tsx and keeps OfferLanding's
 // graph contract: `slug` and `copy[lang].eyebrow` are what offerLinks.ts reads.
 //
-// PRICES. This offer's two pages publish the whole price ladder, in dollars, in "What it costs"
-// (S12) and in the close (S19) only. That is the dated exception to CLAUDE.md rule 7, recorded
-// there on 2026-09-30 (offer-os PLAN.md D68 and D69). No price goes in the hero, in any FAQ answer
+// PRICES. This offer's two pages publish the whole price ladder, ~~in dollars,~~ in "What it costs"
+// (S12) and in the close (S19) only. ~~That is the dated exception to CLAUDE.md rule 7, recorded
+// there on 2026-09-30 (offer-os PLAN.md D68 and D69).~~ No price goes in the hero, in any FAQ answer
 // (the FAQ feeds the FAQPage JSON-LD) or in any metadata or JSON-LD. No key in this file may be
 // named `price`: G19's check reads the built HTML for that string.
+// Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): every offer with a set price shows it,
+// so this is the normal case for a priced offer, not an exception; the price is shown in the visitor's
+// currency, euros on the Greek page. Goal C5 (Fiji ONP-5) carries out the euro change; until then the
+// Greek strings stay as 03-copy.md writes them. The hero, FAQ, metadata and JSON-LD limits above still hold.
 //
 // SPEED ANCHOR (rule 6). "7 days" is anchored to the audit call («την πρώτη κλήση») in the H1 and
 // the description of both locales. The Greek title cannot fit the anchor under 60 characters, so it

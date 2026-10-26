@@ -161,7 +161,10 @@ const MAP_URL =
 // ⛔ Do not reconcile them and do not raise it again unless somebody establishes where Κτίριο Γ1 is.
 // STATE-2026-09-03.md §45.
 //
-// ⛔ No `priceRange`. Rule 7: no price on any surface, and structured data is a surface.
+// ⛔ No `priceRange`. ~~Rule 7: no price on any surface, and structured data is a surface.~~
+// Superseded 2026-10-26 (seo-plan-2026-10 D-08): offers with a set price now show it on their
+// pages, so "no price on any surface" is retired as the reason. `priceRange` still stays off this
+// site-wide node, because no price in the site-wide JSON-LD (BR-D24) is a separate rule D-08 leaves alone.
 // ⛔ No `aggregateRating` and no `review`. Both profiles have zero Google reviews
 //    (offer-os/gtm/baseline-2026-09-01.md); marking one up would be fabricated.
 // ⛔ No `openingHoursSpecification`. The only hours anywhere say "Open 24 hours", which is the
@@ -219,9 +222,14 @@ function organisationSchema(lang: Language) {
     // The Snowflake entry was added 2026-09-02 after a citation audit found it: it is the single
     // most authoritative inbound link either company has, it is a real accreditation (AI Data Cloud
     // Select Partner) that belongs to Fiji and to Fiji alone, and until now the relationship was
-    // one-way. This makes it reciprocal. It must NEVER appear on a Peak Code surface — that company
-    // holds no accreditation of any kind, and the identical badge file sitting unused in the Peak
-    // Code repo is a copy of Fiji's by accident.
+    // one-way. This makes it reciprocal. It must NEVER appear on a Peak Code surface ~~— that company~~
+    // ~~holds no accreditation of any kind, and the identical badge file sitting unused in the Peak~~
+    // ~~Code repo is a copy of Fiji's by accident.~~
+    // Superseded 2026-10-26 (seo-plan-2026-10 D-11, replacing BR-D35 and the Snowflake wording of
+    // BR-D26): the struck reason no longer holds. Peak Code's site now says "we are partnered with
+    // Snowflake" and never names or links Fiji Solutions, and neither company's site names or links
+    // the other. This Fiji partner listing URL names Fiji, so it still stays off Peak Code under
+    // D-11. Goal B1 carries out the site change.
     //
     // ✅ CORRECTED 2026-09-06. This block used to say, in the present tense, that two entries here
     // publish an address that is not this company's, the old Pylaia address the JSON-LD `geo` above

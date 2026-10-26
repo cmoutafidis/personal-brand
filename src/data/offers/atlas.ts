@@ -15,12 +15,20 @@ import type {Language} from '@/types/language';
 // (the first price on the page), then the bonuses and `totalLine`. The price appears again in the
 // S19 subhead and the form's budget question. The hero carries no price, and no surface outside the Atlas page
 // shows it: the homepage band, the metadata and the JSON-LD are all price-free.
+// Superseded in part 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): a priced offer showing its
+// price is no longer an exception for this offer only, every offer with a set price keeps showing it.
+// The Greek page must show the price in euros, not «100.000 $». Goal C5 (Fiji ONP-5) carries out the
+// euro change in 03-copy.md first; until then the dollar strings below stay as the approved copy.
+// The hero, homepage band, metadata and JSON-LD rules above are not addressed by D-08 and still hold.
 // The stack values (AT-D18, AT-D20) are the approved "Page (rounded down)" figures of offer-os
 // `gtm/atlas/VALUE-STACK-2026-10-18.md`; their dated value bases live in offer.yaml, not here.
 //
 // NOT ON ANY SURFACE, BY DECISION: a guarantee or payment terms (AT-D4); a capacity, scarcity or
 // deadline line (AT-D17 keeps the one-project-at-a-time rule internal); a reply promise or a
 // response time, in any locale or success state (AT-D21); a client name (AT-D19).
+// 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-09): every client shown on the sites approved being
+// named, and case studies and proof blocks may name them; goal D4 decides what this offer shows.
+// The AT-D19 lock above holds on this page until then.
 //
 // NAMES. The stack item names are the English canonical names on both locales (AT-D24), and the
 // Greek page writes the brand as Latin "Atlas", neuter, «το Atlas» (AT-D25).
@@ -181,6 +189,9 @@ export const ATLAS_STEP2: AtlasQuestion[] = [
   },
   {
     // Asked here only and never shown on the page (AT-D10).
+    // 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): Greek pages show amounts in euros, so the
+    // Greek budget question above and the «εκατ. $» revenue bands below change to euros in goal
+    // C5 (Fiji ONP-5), in 03-copy.md first. Until then the dollar strings stay as approved copy.
     id: 'revenue',
     type: 'select',
     required: true,
@@ -527,6 +538,8 @@ const atlas: AtlasOffer = {
       // The Greek amounts keep the plain space before «$» that 03-copy.md writes, so every string
       // here stays byte-identical to the approved copy (AT-D26). The layout keeps the value cells
       // from wrapping instead (whitespace-nowrap in AtlasLanding.tsx). No hero price (AT-D34).
+      // Superseded in part 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): Greek pages show prices
+      // in euros, so the «$» amounts change in goal C5 (Fiji ONP-5), in 03-copy.md first.
       button: 'Κάνε αίτηση για το Atlas',
       diagramCenter: 'Atlas',
       diagramBoxes: ['Πωλήσεις', 'Λογιστήριο', 'Αποθήκη', 'Εξυπηρέτηση'],

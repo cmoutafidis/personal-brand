@@ -25,10 +25,15 @@ import {offerLastmod} from '@/lib/offerSchema';
 // ..., s18-cta-1 to s18-cta-4), and the form section is `sheet-to-app-form`, the page's one
 // destination (D59). Every button is an in-page link to it.
 //
-// PRICES. This page is the dated exception to CLAUDE.md rule 7 (2026-09-30): the body publishes
+// PRICES. ~~This page is the dated exception to CLAUDE.md rule 7 (2026-09-30):~~ the body publishes
 // the price ladder in S12 and in the S19 close, as the approved 03-copy.md writes it (D79, G15a).
 // D68 keeps every figure out of the hero, the FAQ and the emails. Nothing here adds a figure anywhere
 // else, and the JSON-LD built in lib/offerSchema.ts carries none.
+// Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): every offer with a set price shows it,
+// so this page is the normal case for a priced offer, not an exception; the price is shown in the
+// visitor's currency, euros on the Greek page. Goal C5 (Fiji ONP-5) carries out the euro change; until
+// then the Greek strings stay as 03-copy.md writes them. The hero, FAQ, email and JSON-LD limits above
+// still hold.
 //
 // ATTENTION RATIO. Navbar renders a logo-only header on this route and the Vapi chat bubble does
 // not load (src/lib/landing.ts). The body links nowhere except its own anchors, the public mailto

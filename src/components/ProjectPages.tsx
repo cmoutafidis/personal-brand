@@ -17,11 +17,15 @@ import {OFFER_BY_SLUG, SERVICE_LABEL, type ServiceSlug} from '@/data/offerLinks'
 // copies offer-os `companies/fiji-solutions/site/03-copy-home.md`, "Projects", word for word. Metadata is built
 // here from the same object the page renders, so the title, description and H1 cannot drift apart.
 //
-// No page level JSON-LD (PLAN.md §4.4 and the GEO rule 3 in CLAUDE.md): the site-level nodes in RootShell stay
+// No page level JSON-LD (PLAN.md §4.4 and ~~the GEO rule 3 in CLAUDE.md~~): the site-level nodes in RootShell stay
 // the only ones. No price, no rating, no count of clients. The gallery renders the project's cleared `images`,
 // those marked `mockData: true` or `publicPage: true` (BR-G26; the first, Seaflows, since 2026-10-26). The quote
 // slot renders `quote` word for word with its author, role, date and source link once BR-G29 sets one, with no
 // stars and no Review markup (BR-D27); it renders nothing today.
+//
+// Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-13): the GEO rule 3 struck above was the per page
+// markup freeze, which D-13 narrows: fix broken markup, fix slow pages, and add schema types Google itself
+// uses, such as BreadcrumbList and Article images, to project pages; nothing is added only for AI tools. Goals C5, C10 and C14 carry it out; until then the page renders no page level JSON-LD.
 //
 // Server components: `lang` comes in as a prop.
 

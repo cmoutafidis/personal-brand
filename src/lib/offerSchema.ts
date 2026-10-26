@@ -13,15 +13,20 @@ import {ORGANISATION_ID} from '@/lib/person';
 // chances for the marked-up FAQ to drift away from the rendered one. Both are derived here
 // instead, from the same object the page renders.
 //
-// ⛔ There is deliberately NO `offers` node in the Service schema. This site publishes no price,
-// in copy or in structured data. An `offers` node without a price is also not added: it would be
+// ⛔ There is deliberately NO `offers` node in the Service schema. ~~This site publishes no price,~~
+// ~~in copy or in structured data.~~ Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): an
+// offer with a set price shows it in its body, in the visitor's currency (euros on Greek pages), and
+// offers without a set price stay without figures. The structured data still carries no price and
+// no `offers` node. An `offers` node without a price is also not added: it would be
 // an empty promise to a crawler.
 // ⛔ There is no `aggregateRating` and no `review` node. There is no consented review data. The
 // homepages' review slot (2026-10-21, offer-os broad home BR-D27) is a placeholder card and carries no
 // Review or AggregateRating markup in any state, so neither does this file.
 //
-// 2026-09-30 (G19): /offers/sheet-to-app is the one page whose BODY publishes prices (the dated
-// exception to CLAUDE.md rule 7, offer-os PLAN.md D68 and D69). Its structured data still carries
+// 2026-09-30 (G19): /offers/sheet-to-app is ~~the one page whose BODY publishes prices (the dated~~
+// ~~exception to CLAUDE.md rule 7, offer-os PLAN.md D68 and D69)~~. Superseded 2026-10-26 (offer-os
+// gtm/seo-plan-2026-10 D-08): every offer with a set price shows it in its body (Atlas already does,
+// see note 8), so sheet-to-app is no longer the only one. Its structured data still carries
 // none: no `offers` node, no price, and its FAQ answers, which feed the FAQPage node, hold no figure.
 // Three changes that day, for G19 step 2:
 //  1. `siteName` is re-declared in openGraph. Next replaces the layout's whole openGraph object when
@@ -44,8 +49,9 @@ import {ORGANISATION_ID} from '@/lib/person';
 // 2026-10-18 (offer-os gtm/atlas/DECISIONS.md): /offers/atlas is built through both functions.
 //  8. `metaKeywords` is optional and the FAQPage node is emitted only when the page has an FAQ.
 //    Atlas has neither. Its body publishes "Atlas starts from USD 100,000" after the value stack
-//    (AT-D2, the dated exception to CLAUDE.md rule 7, placed by AT-D34); its structured data carries
-//    no `offers` node and no price.
+//    (AT-D2, ~~the dated exception to CLAUDE.md rule 7,~~ placed by AT-D34); its structured data carries
+//    no `offers` node and no price. Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): a set
+//    price is no longer an exception to rule 7, every offer with a set price shows it in its body.
 
 /** The fields metadata and JSON-LD are built from. Every `Offer` and `SheetToAppOffer` fits it. */
 export type OfferSchemaSource = {

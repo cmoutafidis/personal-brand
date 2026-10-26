@@ -63,13 +63,16 @@ both homepage buttons scroll to the homepage's own form (`#sheet-to-app-form`,
 links `/offers/sheet-to-app` once. `/[locale]/business-process-audit` still sells the free process
 audit, with its own guarantee, and every CTA on that page still points at its own form.
 
-**No price appears anywhere on this site.** Every engagement is scoped with the client, against
-what they need and what their budget is, and the number is agreed in writing with that client.
-There is no list price, no rate card, no entry-offer price. See rule 7.
+~~**No price appears anywhere on this site.** Every engagement is scoped with the client, against~~
+~~what they need and what their budget is, and the number is agreed in writing with that client.~~
+~~There is no list price, no rate card, no entry-offer price.~~ See rule 7.
 **2026-09-30: one dated exception.** `/en/offers/sheet-to-app` and `/el/offers/sheet-to-app` publish
 their price ladder in the page body, ~~and both homepages publish the same figures in one box under
 the how-it-works cards (G20)~~ (struck 2026-10-22, broad home BR-G05 and BR-G07: the box left with the old
 homepage, BR-D24); rule 7 records it and its source.
+Superseded 2026-10-26 (offer-os seo-plan-2026-10 D-08): every offer with a set price shows it on its own page,
+in the visitor's currency (euros on Greek pages); today that is sheet-to-app and Atlas. Offers without a set
+price, the broad surfaces (BR-D24) and the cost posts stay without figures.
 
 Until 2026-08-15 that page had **zero internal links** and the site sold six service categories,
 six industries and thirty-two technologies. ~~Do not re-add a service list.~~ **Struck 2026-10-22 (offer-os
@@ -193,7 +196,9 @@ publishing or not. ~~The audit is still the offer the site leads with,~~ (struck
 the homepage leads with the sheet-to-app offer) every primary CTA on the audit page still points
 at `#consultation-form`, and the audit-page block renders **after** the form so it costs nothing.
 
-Every rule below applies to them without exception. In particular: **no price** (rule 7), and the
+Every rule below applies to them without exception. In particular: ~~**no price** (rule 7)~~ (superseded
+2026-10-26, offer-os seo-plan-2026-10 D-08: an offer with a set price shows it on its page, in the visitor's
+currency; an offer without one shows no figure, rule 7), and the
 **75% on five of the eight pages is a guarantee with a refund behind it**, settled against a
 baseline measured with the client before work starts. It is not a claim about past results, and
 rule 5 still forbids one. (Six until 2026-09-30: app-prototype carried the 75% limb and retired
@@ -203,7 +208,7 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 
 | What | Where |
 |---|---|
-| Offer economics — durations, SLA, guarantee terms | `src/lib/offer.ts`. **Change the number here, not in copy.** The guarantee's four numbers (window, cure, claim window, answer deadline) live here. **No price constant lives here, or anywhere.** |
+| Offer economics — durations, SLA, guarantee terms | `src/lib/offer.ts`. **Change the number here, not in copy.** The guarantee's four numbers (window, cure, claim window, answer deadline) live here. **No price constant lives here~~, or anywhere~~.** Superseded 2026-10-26 (offer-os seo-plan-2026-10 D-08): an offer with a set price shows it on its own page, so its figure lives in that offer's own data file (for example `src/data/offers/atlas.ts`), never in `offer.ts`; an offer without a set price carries no figure. |
 | All UI copy, both locales | `src/translations.ts` (92 keys each, kept at exact parity by `scripts/translation-parity.py`; 110 until 2026-10-22, when broad home BR-G07 deleted the 18 `services.software.*`, `services.data.*` and `services.snowflake.*` keys with the three old `/portfolio` cards, since the six categories are `src/data/services.ts`; 118 until 2026-10-22, when broad home BR-G06 deleted the eight `projects.*` keys with `Projects.tsx`, since the project copy is `src/data/projects.ts`; 141 until 2026-10-22, when broad home BR-G05 deleted the 23 `hero.*`, `challenges.*` and `solutions.*` keys of the old homepage, `hero.talk` kept; the homepage copy is `src/data/home.ts`; 137 until 2026-10-22, when broad home BR-G04 deleted `nav.offer` and added `nav.projects`, `nav.cta`, `banner.text`, `banner.link` and `banner.close`; 133 until 2026-10-08, when F16 added `nav.offer` and `nav.about`; 135 until 2026-10-18, when Atlas added `nav.atlas`; 136 until 2026-10-21, when the spreadsheet check added `nav.spreadsheetCheck`) |
 | The offer page's own copy | `src/components/BusinessProcessAuditLanding.tsx`, a `Record<Language, LandingCopy>` inside the component |
 | The audit form section, its CTA copy and the Calendly URL | `src/components/AuditFormSection.tsx`. Rendered by the offer page, and by the homepage until 2026-09-30 (G20, D5), so its strings live in that file. `AUDIT_CTA` feeds the offer page's five `CtaBlock`s, whose button is an in-page `#consultation-form` anchor. Give each new caller its own `presetQuestion`; it is the only lead-source marker there is. |
@@ -215,7 +220,7 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 | The six kinds of work (2026-10-22, broad home BR-G04, BR-D3, BR-D4) | `src/data/services.ts`, `SERVICES`: titles and lines per locale, the links of each card, and `schemaName`. Four surfaces read it: `serviceType` in `RootShell.tsx`, the homepages' `WhatWeBuild.tsx`, `/portfolio`'s `Services.tsx` (service page links only, through `servicePageLinks()`), and the "See also" links of each project page (`relatedOf()` in `ProjectPages.tsx`, by `ServiceKey`), so a change to a card's links moves those too. |
 | The top banner (2026-10-22, broad home BR-G04) | `src/components/TopBanner.tsx`, a client component: one line and a "Book a time" link to `BOOKING_URL` (`booking_click`, `cta_location` `top-banner`), closed for the tab in `sessionStorage` inside try/catch, not sticky, hidden on `LANDING_PATHS` and both `business-process-audit` pages (BR-D9), where the navbar's call button hides too. Its copy is `banner.*` in `src/translations.ts`. |
 | Atlas (2026-10-18) | The apply-only top tier, offer-os `offers/fiji-solutions--atlas`, decisions `gtm/atlas/DECISIONS.md` AT-D1 to AT-D32. Layout `src/components/AtlasLanding.tsx`, the two-step form `src/components/AtlasApplicationForm.tsx`, copy in `src/data/offers/atlas.ts`, verbatim from its `03-copy.md`. Both form steps POST through `src/lib/formDelivery.ts`, the endpoint every form uses (AT-D12): step 1 as its own email marked incomplete (`atlas-step1`), step 2 as the complete application (`atlas`, `atlas-not-yet` or `atlas-no`, AT-D23). No reply promise on any Atlas surface (AT-D21), so its form drops the site consent sentence and carries AT-D27's own privacy line above the submit button on both steps ("We use your details to review your application. Privacy policy"). The "You need Atlas." line lives in `ContactForm.tsx` and stays on screen after the success message hides (AT-D9); it shows after the Sheet-to-App forms are sent too (AT-D29), never in a page body. Its two routes render `src/components/AtlasFooter.tsx` (privacy, legal and the copyright line only, 44px tap targets) in place of the shared `Footer`. ~~Its form fires no Google Ads conversion (QA round 1, 2026-10-18).~~ Changed 2026-10-18: the complete send calls `reportConversion()` beside `contact_form_submit`, as `ContactForm` does on every other form, so all forms match; drop it from both in one change. |
-| The projects pages (2026-10-22, broad home BR-G06) | `/[locale]/projects` and `/[locale]/projects/<slug>`, the same slug in both locales, `generateStaticParams` with `dynamicParams = false`. Data in `src/data/projects.ts` (the Project shape of offer-os `gtm/broad-home-2026-10` PLAN.md §9: a `permission` record per project, facts, the three sections, links, `quote: null`, no images until cleared), copied word for word from offer-os `companies/fiji-solutions/site/03-copy-home.md`, "Projects". Layout and metadata in `src/components/ProjectPages.tsx`; no page level JSON-LD. The homepage grid (`HOME_PROJECTS`), the client strip, the "Web and mobile apps" card (`projectSlug` in `services.ts`) and `/portfolio` (`PortfolioProjectsLink.tsx`, in place of the old `Projects.tsx` cards) link them. `src/lib/routes.ts` lists one sitemap route per project from the same data, and `next.config.ts` redirects `/projects` and `/projects/:slug` to `/en`. Ο Τόπος Μου says "on staging" until otoposmou.gr switches. |
+| The projects pages (2026-10-22, broad home BR-G06) | `/[locale]/projects` and `/[locale]/projects/<slug>`, the same slug in both locales, `generateStaticParams` with `dynamicParams = false`. Data in `src/data/projects.ts` (the Project shape of offer-os `gtm/broad-home-2026-10` PLAN.md §9: a `permission` record per project, facts, the three sections, links, `quote: null`, no images until cleared), copied word for word from offer-os `companies/fiji-solutions/site/03-copy-home.md`, "Projects". Layout and metadata in `src/components/ProjectPages.tsx`; no page level JSON-LD (2026-10-26, offer-os seo-plan-2026-10 D-13: this describes the pages as built; D-13 narrows the GEO freeze, so Google-used types such as BreadcrumbList may now be added here, while FAQ markup and anything AI-only stay out; goals C5, C10 and C14 decide). The homepage grid (`HOME_PROJECTS`), the client strip, the "Web and mobile apps" card (`projectSlug` in `services.ts`) and `/portfolio` (`PortfolioProjectsLink.tsx`, in place of the old `Projects.tsx` cards) link them. `src/lib/routes.ts` lists one sitemap route per project from the same data, and `next.config.ts` redirects `/projects` and `/projects/:slug` to `/en`. Ο Τόπος Μου says "on staging" until otoposmou.gr switches. |
 | Form delivery | `src/lib/formDelivery.ts`: the endpoint URL and `sendForm()`. `ContactForm` and the Atlas form both call it. |
 | Canonical + hreflang | `src/lib/alternates.ts` — `buildAlternates(path, lang)` |
 | Consent gate | `src/lib/useConsent.ts` + `src/components/Analytics.tsx` |
@@ -254,12 +259,16 @@ and replayed the questions through the engines' APIs. Four rules follow from it 
 2. **One page per distinct question.** The engines rewrite every question into new sub-queries on every answer
    and rank pages by match in meaning, so each page that answers its own question is one more chance to be
    retrieved. The study did not test near-identical pages, so every page answers a question of its own.
-3. **Per page markup is frozen as a GEO lever.** No new FAQ markup, schema, summary boxes, speed passes or
-   llms.txt to lift one page over its siblings. In the study the first four line up with differences between
+3. ~~**Per page markup is frozen as a GEO lever.** No new FAQ markup, schema, summary boxes, speed passes or~~
+   ~~llms.txt to lift one page over its siblings.~~ (Narrowed 2026-10-26, D-13, see the note at the end of this item.) In the study the first four line up with differences between
    websites only, and it does not study llms.txt. What exists stays: the site-level ProfessionalService and WebSite nodes in `RootShell.tsx` (the Person is a reference to the canonical node on charismoutafidis.com), the per offer FAQPage from `src/lib/offerSchema.ts`, and `src/lib/blogSchema.ts`.
    2026-10-22 (offer-os broad home BR-D6, BR-G05): the homepages' FAQPage stays, built from the rendered
    `HomeFaq` array, which keeps four of its existing ids, reworded broad. Three questions left and none was
-   added, so the freeze holds.
+   added, ~~so the freeze holds~~.
+   Superseded 2026-10-26 (offer-os seo-plan-2026-10 D-13): the freeze is narrowed. Fix broken markup, add
+   schema types Google itself uses (BreadcrumbList, Article images, SoftwareApplication and similar) and fix slow
+   pages; nothing is added only for AI tools (no llms.txt and similar), and no FAQ markup or summary boxes are
+   added as a GEO lever. Goals C5, C10 and C14 of that plan carry it out.
 4. **Retrieval is observed.** The plan's question set and runs (`offer-os/gtm/geo-retrieval-2026-10/questions/`
    and `runs/`) record which sub-queries the engines issue and which of our pages come back.
 
@@ -316,8 +325,12 @@ dropping it.
    Note «πλάνο» now names two things, the deliverable and «πλάνο φροντίδας». The second always
    carries «φροντίδας». Keep it that way.
 
-5. **No claim without arithmetic behind it.** `proof/` in the offer-os knowledge base is empty:
-   there are no case studies, no testimonials, no measured client results, no certifications.
+5. **No claim without arithmetic behind it.** `proof/` in the offer-os knowledge base ~~is empty:~~
+   there are ~~no case studies,~~ no testimonials, no measured client results, no certifications.
+   Superseded 2026-10-26 (offer-os seo-plan-2026-10 D-09): `proof/` now holds the PAP Center and New Era
+   Learning case studies (neither records a measured number) and the client logo record; every client shown on the sites approved being named,
+   and case studies and proof blocks may name them. The rest of this rule stands: no figure, outcome or
+   capacity number the repo cannot back.
    Do not publish a percentage, an outcome figure, a client name or a capacity number that the
    repo cannot back. A capacity claim and a "dated waitlist" were deleted on 2026-08-15 for
    exactly this reason.
@@ -355,15 +368,23 @@ dropping it.
    title says kickoff. The number and its kickoff anchor stay together in each H1, description and
    ogAlt. A title that brings a number back brings the anchor with it.
 
-7. **Never publish a price.** Not a figure, not a range, not a "from", not a rate card, not a
-   deal-size band, in either locale. Pricing is scoped per client against their needs and their
-   budget, and agreed in writing with that client. The page may say *that* the price is agreed in
-   writing before anything is built; it may never say what it is. If a number is needed for a
+7. ~~**Never publish a price.** Not a figure, not a range, not a "from", not a rate card, not a~~
+   ~~deal-size band, in either locale. Pricing is scoped per client against their needs and their~~
+   ~~budget, and agreed in writing with that client. The page may say *that* the price is agreed in~~
+   ~~writing before anything is built; it may never say what it is.~~ If a number is needed for a
    constant, that is a sign the copy is wrong, not that `offer.ts` needs a new export.
-   **Dated exception, 2026-09-30, for two pages only: `/en/offers/sheet-to-app` and
+   **Superseded 2026-10-26 (offer-os seo-plan-2026-10 D-08): an offer with a set price keeps showing it,
+   in the visitor's currency (euros on Greek pages).** The struck words still hold for every offer without
+   a set price, for the broad surfaces (BR-D24: homepages, About, Contact, `/portfolio`, the projects
+   pages, the top banner) and for the cost posts, which link the priced offer instead. The sub-rules
+   below (on the sheet-to-app pages never in the hero or an FAQ answer; on every page never in metadata or JSON-LD; no price constant in `offer.ts`) are not
+   touched by D-08 and stay. Goal C5 of that plan (Fiji ONP-5) moves the `/el` figures to euros; until
+   then the Greek pages show the dollar figures as they are.
+   **Dated exception, 2026-09-30, ~~for two pages only~~: `/en/offers/sheet-to-app` and
    `/el/offers/sheet-to-app`.** Charis, 2026-09-27, in his words: *"If you want to make the prices
    public and the whole plan public on the website, you can do that if you want."* Asked whether the
-   prices go on the Fiji pages, he picked "The whole ladder". The figures are his, in dollars
+   prices go on the Fiji pages, he picked "The whole ladder". The figures are his, ~~in dollars~~
+   (superseded 2026-10-26, D-08: in dollars on `/en`, in euros on `/el`, goal C5)
    (PLAN.md D69). Source:
    offer-os `gtm/sheet-to-app-rollout/PLAN.md` D68 and D69. D68 names a "What it costs" section
    (S12) and no figure in the hero. The close (S19) also carries figures, because that offer's
@@ -371,22 +392,26 @@ dropping it.
    the FAQ and every email, so S19 stands as approved. D68 also sets that the figures are re-confirmed with
    Charis after the dry runs, before the deploy (a row of the ship-day table). On those two pages the
    prices appear in the body only, exactly as their `03-copy.md` gives them: never in the hero, in an FAQ answer, in metadata or in any JSON-LD (`offerSchema.ts` still
-   emits no `offers` node and no price). Every other page on the site keeps this rule unchanged, and
+   emits no `offers` node and no price). ~~Every other page on the site keeps this rule unchanged,~~
+   (superseded 2026-10-26, D-08: every other page without a set price keeps it) and
    still no price constant lives in `offer.ts`.
    **Dated exception, 2026-10-18, for Atlas only (offer-os `gtm/atlas/DECISIONS.md` AT-D2).** Charis:
    *"We can charge 100,000 in Greece, so 100,000 in Fiji Solutions"*, *"100k on whatever currency we
    have"*, and to "From or flat?": *"from"*. `/en/offers/atlas` and `/el/offers/atlas` publish "From USD
-   100,000" / «Από 100.000 $» in the hero, the stack total line, the close and the form's budget
+   100,000" / «Από 100.000 $» (2026-10-26, offer-os seo-plan-2026-10 D-08: the Greek page is to show the figure in euros;
+   goal C5 carries it out, until then the dollar figure stays as it is) in the hero, the stack total line, the close and the form's budget
    question, and its stack shows each part's stated value (AT-D18, AT-D20). ~~The homepage Atlas band
    (`AtlasHomeSection.tsx`) carries the same from-figure once.~~ Corrected 2026-10-22 (broad home BR-G07):
    the homepage Atlas band names no price, since AT-D34 of 2026-10-18 moved the figure to after the value
    stack on the Atlas page, and no surface outside it shows the price. Never in metadata or JSON-LD
    (`offerSchema.ts` emits no `offers` node for it either). No guarantee and no payment terms appear
-   on any Atlas surface (AT-D4). Every other page keeps this rule unchanged.
+   on any Atlas surface (AT-D4). ~~Every other page keeps this rule unchanged.~~ Superseded 2026-10-26
+   (offer-os seo-plan-2026-10 D-08): every other page without a set price keeps this rule; a priced offer
+   shows its price.
    ~~**Extended 2026-09-30 (G20) to both homepages, one slot only.**~~ **Struck 2026-10-22 (offer-os
    `gtm/broad-home-2026-10` BR-D24, BR-G05 and BR-G07): both homepages carry no price.** His words: *"these
-   prices are for the specific offer"*. The two exceptions above, sheet-to-app and Atlas, stay; every other
-   page keeps this rule, About, Contact, `/portfolio`, the projects pages and the top banner included. What
+   prices are for the specific offer"*. The two exceptions above, sheet-to-app and Atlas, stay; ~~every other~~
+   ~~page keeps this rule~~ (superseded 2026-10-26, D-08: every page without a set price keeps this rule), About, Contact, `/portfolio`, the projects pages and the top banner included. What
    the extension said, for the record: the box under the three
    how-it-works cards (`solutions.cta.description` in `src/translations.ts`), as offer-os
    `offers/fiji-solutions--sheet-to-app/03-copy-homepage.md` places the figures (D68: the homepage

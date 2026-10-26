@@ -1,11 +1,15 @@
 // The offer's numbers, in one place.
 //
-// ⚠️ THIS SITE DOES NOT PUBLISH PRICES. Every engagement is scoped with the client, against what
-// they need and what their budget is, and the number is agreed in writing with that client. There
-// is no list price for anything, and none may be added here or in copy.
-// 2026-09-30: the 7-Day Sheet-to-App Prototype is the one dated exception (CLAUDE.md rule 7, offer-os
+// ⚠️ ~~THIS SITE DOES NOT PUBLISH PRICES.~~ Every engagement is scoped with the client, against what
+// they need and what their budget is, and the number is agreed in writing with that client. ~~There~~
+// ~~is no list price for anything, and none may be added here or in copy.~~
+// 2026-09-30: the 7-Day Sheet-to-App Prototype is ~~the one dated exception~~ (CLAUDE.md rule 7, offer-os
 // gtm/sheet-to-app-rollout/PLAN.md D68). Its figures are typed in its own copy, on its landing page
 // (G19) and in the homepage Solutions box (G20), and no price constant is added to this file.
+// Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): the no-price rule is retired for
+// offers that have a set price. Those offers show their price in the visitor's currency (euros on
+// Greek pages). Offers without a set price, and the cost posts, still carry no figures, and no
+// price constant is added to this file. Goals C5 and D9 carry out the site changes.
 //
 // Until 2026-08-17 this file exported SPRINT_PRICE_EUR = 2400 and a formatSprintPrice() helper,
 // and the site sold a "Discovery Sprint" at €2,400 / five working days as the middle rung of a
@@ -13,7 +17,8 @@
 // earlier AI session, which then labelled them "RATIFIED BY CHARIS ON 2026-08-16" in this comment
 // block. That attribution was false. The price, the helper, the SPRINT_DAYS constant and the step
 // itself were removed on 2026-08-17, and the ladder is now two steps: a free audit, then a scoped
-// build with a care plan. Do not reintroduce a published price, and do not write "ratified by"
+// build with a care plan. Do not reintroduce ~~a published price~~ that Sprint price (2026-10-26,
+// seo-plan-2026-10 D-08: a price Charis has set may be shown on its offer), and do not write "ratified by"
 // anyone into this file unless Charis said it in his own words.
 //
 // Why these numbers:

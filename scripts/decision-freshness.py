@@ -111,6 +111,11 @@ DECISIONS = [
                 r"the two rungs"],
          ack=[r"2026-09-30", r"sheet-to-app", r"\bd5\b", r"\bd66\b", r"the hook",
               r"\bstruck\b", r"2026-10-21"]),
+    # 2026-10-26 (seo-plan-2026-10 D-08): the "both rules stand for every other page" half of
+    # this entry's text is out of date for prices. Every offer with a set price now shows it,
+    # in the visitor's currency; offers without a set price and the cost posts stay without
+    # figures. The AKB half stands (BR-D26). The text below is unchanged until the guard is
+    # updated with the site change (goals C5 and D9 own it).
     dict(id="sheet-to-app-peak-landing",
          what="On 2026-09-30 Peak Code's 7-Day Sheet-to-App Prototype page, "
               "/angebote/excel-tabelle-als-app and /en/offers/sheet-to-app, became the dated "
@@ -125,6 +130,10 @@ DECISIONS = [
                 r"third akb sentence", r"akb reference must not"],
          ack=[r"2026-09-30", r"sheet-to-app", r"\bd83\b", r"\bd85\b", r"\bd91\b",
               r"\bd92\b", r"2026-10-21"]),
+    # 2026-10-26 (seo-plan-2026-10 D-08): "its prices live on /offers/sheet-to-app only" is about
+    # sheet-to-app's own prices and is not a rule for other offers. Every offer with a set price shows it on its own
+    # page; the broad home itself stays without figures. The text below is unchanged until the
+    # guard is updated with the site change (goals C5 and D9 own it).
     dict(id="fiji-home-broad-2026-10-21",
          what="On 2026-10-21 the Fiji homepage, English and Greek, stopped being the hook for the "
               "7-Day Sheet-to-App Prototype and became the broad home of a custom software "
@@ -158,6 +167,12 @@ DECISIONS = [
          where="offer-os gtm/broad-home-2026-10/PLAN.md BR-D27",
          topic=[r"no testimonial", r"none is expected", r"no consented review"],
          ack=[r"2026-10-21", r"review slot", r"placeholder"]),
+    # 2026-10-26 (seo-plan-2026-10 D-08): "the rule stands for every other Fiji offer" is out of
+    # date. Every offer with a set price now shows it, in euros on Greek pages, not dollars;
+    # offers without a set price and the cost posts stay without figures, and cost posts link to
+    # the priced offer. The hero, FAQ and JSON-LD sub-rules are not addressed by D-08. The text
+    # below is unchanged until the guard is updated with the site change (goals C5, Fiji ONP-5,
+    # and D9 own it).
     dict(id="sheet-to-app-fiji-landing",
          what="On 2026-10-04 Fiji's 7-Day Sheet-to-App Prototype page, /en/offers/sheet-to-app "
               "and /el/offers/sheet-to-app, went live as the dated exception to the site's "
