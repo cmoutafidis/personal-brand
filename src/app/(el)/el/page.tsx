@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import {buildAlternates} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 import Hero from '@/components/Hero';
+import StatsStrip from '@/components/StatsStrip';
 import Reveal from '@/components/Reveal';
 import ClientStrip from '@/components/ClientStrip';
 import WhatWeBuild from '@/components/WhatWeBuild';
@@ -71,6 +72,7 @@ export default function GreekHomePage() {
   return (
     <>
       <Hero language={language}/>
+      <StatsStrip language={language}/>
       <ClientStrip language={language}/>
       <WhatWeBuild language={language}/>
       <WaysToStart language={language}/>

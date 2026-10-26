@@ -6,28 +6,22 @@ import {HOME} from '@/data/home';
 // projects or clients, no rating and no price (BR-D24). Each tile's source is in the offer-os contract;
 // the Snowflake listing was read in his Chrome on 2026-10-22 (SELECT, Fiji Solutions, Greece).
 
-// Since BR-D45 (2026-10-26) the four stats sit in the hero, as a 2x2 panel of cards on the right where
-// ignitech.ch has its photo; Hero.tsx renders this, and the home pages no longer render it on its own.
+// Since BR-D45 (2026-10-26) the strip takes the shape of ignitech.ch's stats bar, in the same place, right under
+// the hero: one centred row, each figure heavy and blue over a small uppercase line, thin dividers between them.
+// For a few hours that day it sat in the hero as a 2x2 panel; he asked for the hero in one column again.
 export default function StatsStrip({language}: {language: Language}) {
   const stats = HOME[language].stats;
 
   return (
-    <dl className="grid grid-cols-2 gap-3 sm:gap-4">
-      {stats.map((s, i) => (
-        <div
-          key={s.figure}
-          className={`flex flex-col justify-between rounded-2xl border p-5 shadow-sm sm:p-6 ${
-            i === 0
-              ? 'border-primary-600 bg-primary-600 text-white shadow-primary-600/20'
-              : 'border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800'
-          }`}
-        >
-          <dt className={`text-xl font-extrabold leading-tight tracking-[-0.02em] font-display md:text-2xl ${i === 0 ? 'text-white' : 'text-gray-950 dark:text-white'}`}>
-            {s.figure}
-          </dt>
-          <dd className={`mt-3 text-sm leading-6 ${i === 0 ? 'text-primary-50' : 'text-gray-600 dark:text-gray-400'}`}>{s.line}</dd>
-        </div>
-      ))}
-    </dl>
+    <section className="border-b border-gray-200 bg-white py-7 dark:border-gray-800 dark:bg-gray-900">
+      <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-y-6 px-4 sm:px-6 md:flex md:items-stretch md:justify-center lg:px-8">
+        {stats.map((s, i) => (
+          <div key={s.figure} className={`flex flex-col items-center px-4 text-center md:flex-1 md:self-stretch md:justify-center md:px-6 ${i > 0 ? 'md:border-l md:border-gray-200 md:dark:border-gray-700' : ''}`}>
+            <dt className="font-display text-[1.35rem] font-extrabold leading-tight tracking-[-0.01em] text-primary-600 dark:text-primary-400 lg:text-[1.6rem]">{s.figure}</dt>
+            <dd className="mt-1.5 text-xs font-semibold uppercase tracking-[0.04em] text-gray-500 dark:text-gray-400">{s.line}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
   );
 }

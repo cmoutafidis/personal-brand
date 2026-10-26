@@ -47,8 +47,8 @@ as the hook is history, kept for the record.
   `HOME[lang].labels`, a heavy left aligned h2, an optional link at its right); sections alternate white and
   `#f7faff`; cards are large with a lift on hover; `Reveal.tsx` fades blocks in as they scroll in (hidden only once
   it has run, so crawlers and no-JS readers see everything). The client strip scrolls without end (`.marquee` in
-  `globals.css`, two copies of the list, the second `aria-hidden`). The hero has two columns, the stats panel on
-  the right. His answers: no photos, keep Plus Jakarta Sans and Inter set heavier.
+  `globals.css`, two copies of the list, the second `aria-hidden`). The hero is one centred column (his answer, the same
+  day) and the stats follow it as a bar, where IgniTech has its stats bar. His answers: no photos, keep Plus Jakarta Sans and Inter set heavier.
 
 ## ~~The one thing this site sells~~ (struck 2026-10-22, BR-G04: replaced by the block above)
 
