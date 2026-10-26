@@ -113,7 +113,7 @@
 
 /* ── The home look of offer-os broad home BR-D45 (2026-10-26), after ignitech.ch ──────────────────────────
  * The client strip scrolls sideways without end: the list is rendered twice and the track moves by half its
- * width, then starts over. Edges fade out, a hover pauses it, and with reduced motion the second copy hides and
+ * width, then starts over. Edges fade out, it keeps moving under the pointer (his ask, 2026-10-26), and with reduced motion the second copy hides and
  * the first wraps in place.
  * `[data-reveal]` blocks fade in and rise as they enter the screen. They hide only once Reveal.tsx has put
  * `reveal-on` on <html>, so a page without JavaScript, and every crawler, sees them at once. */
@@ -136,9 +136,6 @@
     will-change: transform;
 }
 
-.marquee:hover .marquee-track {
-    animation-play-state: paused;
-}
 
 html.reveal-on [data-reveal] {
     opacity: 0;

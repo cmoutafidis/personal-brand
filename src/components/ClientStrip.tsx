@@ -13,7 +13,7 @@ import {CLIENTS, PARTNER_BADGE} from '@/data/clients';
 // Server component: `language` comes in as a prop.
 
 // Since BR-D45 (2026-10-26, after ignitech.ch) the row scrolls sideways without end, 38 seconds a loop, logos at
-// 48px in their own colours, edges fading out, a hover pausing it (CSS in globals.css). The list renders twice;
+// 48px in their own colours, edges fading out, moving on under the pointer (CSS in globals.css). The list renders twice;
 // the second copy is hidden from screen readers and from the tab order, and with reduced motion it is not shown.
 function Items({language, copy}: {language: Language; copy: boolean}) {
   const text = HOME[language].clients;
