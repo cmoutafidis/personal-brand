@@ -33,7 +33,9 @@ import {LIVE_PROJECTS} from '@/data/projects';
 export const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']; lastmod: string }[] = [
   // 2026-09-30 (G20): both homepages became the sheet-to-app hook. Deployed 2026-10-04, so lastmod is that date.
   // 2026-10-23 (offer-os gtm/broad-home-2026-10 BR-G08): both homepages became the broad home, deployed that day.
-  {path: '', priority: 1.0, changeFrequency: 'weekly', lastmod: '2026-10-23'},
+  // 2026-10-26 (BR-G25): the client strip shows the cleared logos, and the review card left both homepages (his
+  // answer that day).
+  {path: '', priority: 1.0, changeFrequency: 'weekly', lastmod: '2026-10-26'},
   // 2026-09-30 (G19): /business-process-audit gained its body link to sheet-to-app, and
   // software-prototype's sibling link now points there. /offers/app-prototype is retired and
   // redirects to /offers/sheet-to-app (next.config.ts), so its row is gone. Set the sheet-to-app
@@ -71,7 +73,8 @@ export const ROUTES: { path: string; priority: number; changeFrequency: Metadata
   // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G06): the projects index and one route per project, from
   // src/data/projects.ts, each with that project's own lastmod. Set the dates to the deploy date if BR-G08 lands
   // later.
-  {path: '/projects', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-23'},
+  // 2026-10-26 (BR-G25): the index gains Hapimag (part BR-G28); Seaflows gains its screenshot (part BR-G26).
+  {path: '/projects', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-26'},
   ...LIVE_PROJECTS.map((p) => ({path: `/projects/${p.slug}`, priority: 0.6, changeFrequency: 'monthly' as const, lastmod: p.lastmod})),
   {path: '/contact', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-23'},
   {path: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly', lastmod: '2026-10-08'},

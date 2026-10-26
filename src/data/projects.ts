@@ -12,10 +12,13 @@ import type {ServiceKey} from '@/data/services';
 // never appear out of this file. Facts only: each line traces to the source the contract names under it, and no
 // line carries a price (BR-D24), a count of clients or a rating.
 //
-// `images` stays empty until a screenshot with mock data only is cleared (BR-G26), `quote` stays null until a
-// real review or quote arrives with consent (BR-G29), and no logo is set until BR-G25. Ο Τόπος Μου says "on
-// staging" until its production site switches (read 2026-10-22: otoposmou.gr still runs the old Joomla site).
-// Hapimag has no page until he gives the project wording (BR-G28).
+// `images` holds cleared screenshots only (BR-G26): a screen with mock data only (`mockData: true`), or a public
+// page of the client's own site that shows no client data, no person and no price (`publicPage: true`, checked
+// before commit and logged in offer-os). The first is the Seaflows home, captured 2026-10-26 with the owner's yes
+// (BR-D34). `quote` stays null until a real review or quote arrives with consent (BR-G29). The client logos live in
+// src/data/clients.ts (BR-G25). Ο Τόπος Μου says "on staging" until its production site switches (read
+// 2026-10-22: otoposmou.gr still runs the old Joomla site). Hapimag's page is written from his context of
+// 2026-10-22 (BR-G28, offer-os BR-D34), never in his words, and never names the employer of that time.
 //
 // `lastmod` is the ship date; set it to the deploy date if BR-G08 lands on a later day (src/lib/routes.ts reads it).
 
@@ -39,7 +42,7 @@ export type Project = {
   relatedOffer?: OfferSlug;
   /** ISO months, only dates on file. `end` for work that has finished. */
   period?: {start: string; live?: string; end?: string};
-  images: {src: string; alt: Record<Language, string>; mockData: boolean}[];
+  images: {src: string; alt: Record<Language, string>; mockData: boolean; publicPage?: boolean}[];
   /** Public places to see the work. `liveLabel` replaces the host name as the live link's text; `more` holds any
    *  further link with its own label (Jupiter's Rust SDK). */
   links: {
@@ -427,11 +430,21 @@ export const PROJECTS: readonly Project[] = [
     homeCard: false,
     attribution: 'company',
     client: {name: 'Seaflows'},
-    permission: {kind: 'his-decision', date: '2026-10-21', source: 'His decision, the name now; logo and screenshot after the owner\'s yes (BR-D21, BR-D34)', scope: ['name']},
+    permission: {kind: 'his-decision', date: '2026-10-22', source: 'His decision, the name (BR-D21); the owner\'s yes for logo and screenshot (BR-D34)', scope: ['name', 'logo', 'screenshot']},
     services: ['websites'],
     relatedOffer: 'offers/website-seo',
     period: {start: '2026-09'},
-    images: [],
+    images: [
+      {
+        src: '/screenshots/seaflows-direct-booking-en.webp',
+        alt: {
+          en: 'The Seaflows home page: three apartments fifty metres from the sea, with a form to check which are free',
+          el: 'Η αρχική σελίδα της Seaflows: τρία διαμερίσματα πενήντα μέτρα από τη θάλασσα, με φόρμα για να δεις ποια είναι ελεύθερα',
+        },
+        mockData: false,
+        publicPage: true,
+      },
+    ],
     links: {live: 'https://seaflows.gr'},
     sector: {en: 'Holiday rentals', el: 'Τουριστικά καταλύματα'},
     factSource: 'WHO-WE-WORKED-WITH.md and the Seaflows project brief; seaflows.gr returns 200, read 2026-10-22',
@@ -460,7 +473,47 @@ export const PROJECTS: readonly Project[] = [
       },
     },
     quote: null,
-    lastmod: SHIP,
+    lastmod: '2026-10-26',
+  }),
+  project({
+    slug: 'hapimag-online-platform',
+    status: 'live',
+    order: 8,
+    homeCard: false,
+    attribution: 'company',
+    client: {name: 'Hapimag'},
+    permission: {kind: 'his-decision', date: '2026-10-22', source: 'His decision (BR-D26) and his context of 2026-10-22 (BR-D34), written in our words; the employer of that time is never named', scope: ['name', 'logo']},
+    services: ['custom-software'],
+    images: [],
+    links: {live: 'https://www.hapimag.com'},
+    sector: {en: 'Holidays', el: 'Διακοπές'},
+    factSource: 'His context of 2026-10-22 (offer-os BR-D34); hapimag.com, read 2026-10-26',
+    facts: [
+      {key: 'location', value: {en: 'Switzerland', el: 'Ελβετία'}, source: 'hapimag.com, read 2026-10-26'},
+      {key: 'status', value: {en: 'Live', el: 'Σε λειτουργία'}, source: 'hapimag.com, read 2026-10-26'},
+    ],
+    text: {
+      en: {
+        metaTitle: 'Hapimag: work on its online platform | Fiji Solutions',
+        metaDescription: 'Hapimag, a Swiss holiday company, runs most of its offer through hapimag.com. We helped build that platform.',
+        h1: 'Hapimag: work on the online platform at hapimag.com',
+        cardLine: 'Hapimag runs most of its offer through hapimag.com, a platform we helped build.',
+        situation: ['Hapimag is a Swiss holiday company. Most of its offer runs through its online platform, hapimag.com.'],
+        built: ['We helped Hapimag build that platform.'],
+        result: ['The platform is live at hapimag.com.'],
+      },
+      el: {
+        metaTitle: 'Hapimag: δουλειά στη διαδικτυακή της πλατφόρμα | Fiji Solutions',
+        metaDescription: 'Τα περισσότερα από όσα προσφέρει η Hapimag, μια ελβετική εταιρεία διακοπών, περνούν από το hapimag.com. Βοηθήσαμε να χτιστεί αυτή η πλατφόρμα.',
+        h1: 'Hapimag: δουλειά στη διαδικτυακή πλατφόρμα hapimag.com',
+        cardLine: 'Τα περισσότερα από όσα προσφέρει η Hapimag περνούν από το hapimag.com, μια πλατφόρμα που βοηθήσαμε να χτιστεί.',
+        situation: ['Η Hapimag είναι ελβετική εταιρεία διακοπών. Τα περισσότερα από όσα προσφέρει περνούν από τη διαδικτυακή της πλατφόρμα, το hapimag.com.'],
+        built: ['Βοηθήσαμε τη Hapimag να χτίσει αυτή την πλατφόρμα.'],
+        result: ['Η πλατφόρμα λειτουργεί στο hapimag.com.'],
+      },
+    },
+    quote: null,
+    lastmod: '2026-10-26',
   }),
 ];
 

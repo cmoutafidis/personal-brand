@@ -18,10 +18,10 @@ import {OFFER_BY_SLUG, SERVICE_LABEL, type ServiceSlug} from '@/data/offerLinks'
 // here from the same object the page renders, so the title, description and H1 cannot drift apart.
 //
 // No page level JSON-LD (PLAN.md §4.4 and the GEO rule 3 in CLAUDE.md): the site-level nodes in RootShell stay
-// the only ones. No price, no rating, no count of clients. Two slots wait on data: the gallery renders the
-// project's `images` marked `mockData: true` (BR-G26 clears them), and the quote slot renders `quote` word for word
-// with its author, role, date and source link once BR-G29 sets one, with no stars and no Review markup (BR-D27).
-// Both render nothing today.
+// the only ones. No price, no rating, no count of clients. The gallery renders the project's cleared `images`,
+// those marked `mockData: true` or `publicPage: true` (BR-G26; the first, Seaflows, since 2026-10-26). The quote
+// slot renders `quote` word for word with its author, role, date and source link once BR-G29 sets one, with no
+// stars and no Review markup (BR-D27); it renders nothing today.
 //
 // Server components: `lang` comes in as a prop.
 
@@ -140,7 +140,7 @@ export function ProjectDetail({lang, project: p}: {lang: Language; project: Proj
   const pc = p.copy[lang];
   const links = linksOf(p, lang);
   const related = relatedOf(p, lang);
-  const gallery = p.images.filter((img) => img.mockData);
+  const gallery = p.images.filter((img) => img.mockData || img.publicPage);
   const sections: {heading: string; body: string[]}[] = [
     {heading: c.situation, body: pc.situation},
     {heading: c.built, body: pc.built},
@@ -166,9 +166,9 @@ export function ProjectDetail({lang, project: p}: {lang: Language; project: Proj
         </dl>
 
         {gallery.length > 0 && (
-          <div className="mb-10 grid gap-4 sm:grid-cols-2">
+          <div className={`mb-10 grid gap-4 ${gallery.length > 1 ? 'sm:grid-cols-2' : ''}`}>
             {gallery.map((img) => (
-              <Image key={img.src} src={img.src} alt={img.alt[lang]} width={1200} height={750} sizes="(min-width: 640px) 50vw, 100vw" className="h-auto w-full rounded-xl border border-gray-200/80 dark:border-gray-700/80"/>
+              <Image key={img.src} src={img.src} alt={img.alt[lang]} width={1200} height={750} sizes={gallery.length > 1 ? '(min-width: 640px) 50vw, 100vw' : '(min-width: 896px) 896px, 100vw'} className="h-auto w-full rounded-xl border border-gray-200/80 dark:border-gray-700/80"/>
             ))}
           </div>
         )}

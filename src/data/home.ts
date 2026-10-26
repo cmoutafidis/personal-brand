@@ -26,7 +26,6 @@ export type HomeCopy = {
   build: {heading: string; line: string};
   start: {heading: string; line: string; cards: Record<HomeStartSlug, {heading: string; line: string}>};
   projects: {heading: string; line: string; all: string};
-  review: {heading: string; line: string; link: string};
   how: {heading: string; steps: {title: string; line: string}[]};
   faq: {heading: string; items: HomeFaq[]};
   posts: {heading: string; line: string; all: string; guidesHeading?: string; guidesLine?: string};
@@ -84,11 +83,6 @@ export const HOME: Record<Language, HomeCopy> = {
       },
     },
     projects: {heading: 'Projects', line: 'Software we built for businesses in Greece and abroad.', all: 'All projects'},
-    review: {
-      heading: 'Our first Google review is on its way',
-      line: 'Worked with us? Tell other business owners how it went.',
-      link: 'Write a review on Google',
-    },
     how: {
       heading: 'How we work',
       steps: [
@@ -184,11 +178,6 @@ export const HOME: Record<Language, HomeCopy> = {
       },
     },
     projects: {heading: 'Έργα', line: 'Λογισμικό που φτιάξαμε για επιχειρήσεις στην Ελλάδα και στο εξωτερικό.', all: 'Όλα τα έργα'},
-    review: {
-      heading: 'Η πρώτη μας κριτική στη Google έρχεται',
-      line: 'Συνεργάστηκες μαζί μας; Πες σε άλλους επιχειρηματίες πώς πήγε.',
-      link: 'Γράψε κριτική στη Google',
-    },
     how: {
       heading: 'Πώς δουλεύουμε',
       steps: [
