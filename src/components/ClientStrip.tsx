@@ -13,7 +13,7 @@ import {CLIENTS, PARTNER_BADGE} from '@/data/clients';
 // Server component: `language` comes in as a prop.
 
 // Since BR-D45 (2026-10-26, after ignitech.ch) the row scrolls sideways without end, 38 seconds a loop, logos at
-// 48px in greyscale that take their own colours on hover (his ask, 2026-10-26), edges fading out, a hover pausing it (CSS in globals.css). The list renders twice;
+// 48px in their own colours, edges fading out, a hover pausing it (CSS in globals.css). The list renders twice;
 // the second copy is hidden from screen readers and from the tab order, and with reduced motion it is not shown.
 function Items({language, copy}: {language: Language; copy: boolean}) {
   const text = HOME[language].clients;
@@ -26,10 +26,10 @@ function Items({language, copy}: {language: Language; copy: boolean}) {
         const mark = c.logo ? (
           <>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.logo.src} alt={copy || c.logo.withName ? '' : c.name} width={c.logo.width} height={c.logo.height} className={`h-12 w-auto max-w-[180px] object-contain opacity-60 grayscale transition duration-300 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0 ${c.logo.darkSrc ? 'dark:hidden' : ''}`}/>
+            <img src={c.logo.src} alt={copy || c.logo.withName ? '' : c.name} width={c.logo.width} height={c.logo.height} className={`h-12 w-auto max-w-[180px] object-contain transition-transform duration-200 group-hover:scale-105 ${c.logo.darkSrc ? 'dark:hidden' : ''}`}/>
             {c.logo.darkSrc && (
               /* eslint-disable-next-line @next/next/no-img-element */
-              <img src={c.logo.darkSrc} alt={copy || c.logo.withName ? '' : c.name} width={c.logo.width} height={c.logo.height} className="hidden h-12 w-auto max-w-[180px] object-contain opacity-60 grayscale transition duration-300 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0 dark:block"/>
+              <img src={c.logo.darkSrc} alt={copy || c.logo.withName ? '' : c.name} width={c.logo.width} height={c.logo.height} className="hidden h-12 w-auto max-w-[180px] object-contain transition-transform duration-200 group-hover:scale-105 dark:block"/>
             )}
             {c.logo.withName && <span className={nameClass}>{c.name}</span>}
           </>
@@ -51,7 +51,7 @@ function Items({language, copy}: {language: Language; copy: boolean}) {
       <li className="flex h-16 flex-shrink-0 items-center">
         <a href={PARTNER_BADGE.href} target="_blank" rel="noopener noreferrer" className="group" {...tab}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={PARTNER_BADGE.src} alt={copy ? '' : text.badgeAlt} className="h-14 w-auto opacity-60 grayscale transition duration-300 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0"/>
+          <img src={PARTNER_BADGE.src} alt={copy ? '' : text.badgeAlt} className="h-14 w-auto transition-transform duration-200 group-hover:scale-105"/>
         </a>
       </li>
     </ul>
