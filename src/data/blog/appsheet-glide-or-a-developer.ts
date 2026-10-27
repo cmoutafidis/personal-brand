@@ -4,10 +4,13 @@ import type {BlogPost} from '@/types/blog';
 // from the approved draft in offer-os offers/fiji-solutions--sheet-to-app/derived/articles/ARTICLE-TOOLS.md.
 // No money figure. The "Is AppSheet enough, or do I need a developer?" question lives on the offer page FAQ
 // only, so its FAQPage schema sits on one URL (review finding, F-D176). Vendor claims carry a sources block.
-// No person is named; the post speaks as "we" (D13), so author is omitted.
+// ~~No person is named;~~ the post speaks as "we" ~~(D13), so author is omitted.~~
 // Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-12, replaces D13): every blog post shows
-// "Charis Moutafidis" as author, linked to the About page. Goal B3 carries it out; until then the
-// author field stays omitted here and this comment no longer states a standing rule.
+// "Charis Moutafidis" as author, linked to the About page. ~~Goal B3 carries it out; until then the~~
+// ~~author field stays omitted here~~ and this comment no longer states a standing rule.
+// Done 2026-10-27 (seo-plan-2026-10 B3, D-12, D-27, D-28, C-21): the byline, the author box after the body
+// and the Article JSON-LD author come from BLOG_AUTHOR in src/lib/person.ts, "Charis Moutafidis" linked to
+// /en/about; this file's `author` field is no longer read.
 const post: BlogPost = {
   id: 'appsheet-glide-or-a-developer',
   slug: 'appsheet-glide-or-a-developer',

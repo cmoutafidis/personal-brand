@@ -6,8 +6,11 @@ import type {BlogPost} from '@/types/blog';
 // section (#s12-what-it-costs) for them (CLAUDE.md rule 7, F-D173). ~~No person is named;~~ the post speaks as
 // "we" ~~(D13), so author is omitted and the schema author falls back to the Organization publisher.~~
 // Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-12, replacing D13): every blog post shows
-// "Charis Moutafidis" as author, linked to the About page. Goal B3 carries it out; until then this post
-// has no author field and the schema author still falls back to the Organization publisher.
+// "Charis Moutafidis" as author, linked to the About page. ~~Goal B3 carries it out; until then this post~~
+// ~~has no author field and the schema author still falls back to the Organization publisher.~~
+// Done 2026-10-27 (seo-plan-2026-10 B3, D-12, D-27, D-28, C-21): the byline, the author box after the body
+// and the Article JSON-LD author come from BLOG_AUTHOR in src/lib/person.ts, "Charis Moutafidis" linked to
+// /en/about; this file's `author` field is no longer read.
 const post: BlogPost = {
   id: 'how-much-does-it-cost-to-turn-a-spreadsheet-into-an-app',
   slug: 'how-much-does-it-cost-to-turn-a-spreadsheet-into-an-app',

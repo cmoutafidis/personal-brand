@@ -4,11 +4,14 @@ import type {BlogPost} from '@/types/blog';
 // (F-D177 blog posts, F-D178 English only, F-D179 generic and linking the offer page with no client named),
 // from the approved draft in offer-os offers/fiji-solutions--sheet-to-app/derived/articles/ARTICLE-NICHE-SHOPS.md.
 // No money figure (CLAUDE.md rule 7); the offer page's "What it costs" section (#s12-what-it-costs) carries
-// the prices. No person named; the post speaks as "we" (D13), so author is omitted and schema author falls
-// back to the Organization publisher. The pains are symptoms (OBJECTIONS-AND-PAINS §2, kind H), no survey number.
+// the prices. ~~No person named;~~ the post speaks as "we" ~~(D13), so author is omitted and schema author falls~~
+// ~~back to the Organization publisher.~~ The pains are symptoms (OBJECTIONS-AND-PAINS §2, kind H), no survey number.
 // Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-12): the D13 no-byline rule above is replaced; every
-// blog post shows "Charis Moutafidis" as author, linked to the About page. Goal B3 carries it out; until then
-// this post stays without an author field and nobody should cite D13 as a reason to keep it that way.
+// blog post shows "Charis Moutafidis" as author, linked to the About page. ~~Goal B3 carries it out; until then~~
+// ~~this post stays without an author field and~~ nobody should cite D13 as a reason to keep it that way.
+// Done 2026-10-27 (seo-plan-2026-10 B3, D-12, D-27, D-28, C-21): the byline, the author box after the body
+// and the Article JSON-LD author come from BLOG_AUTHOR in src/lib/person.ts, "Charis Moutafidis" linked to
+// /en/about; this file's `author` field is no longer read.
 const post: BlogPost = {
   id: 'job-shop-scheduling-work-order-quote-app',
   slug: 'job-shop-scheduling-work-order-quote-app',
