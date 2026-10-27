@@ -132,9 +132,10 @@ const LEGAL_NAME: Record<Language, string> = {
 };
 
 // A Maps search URL built from the published address. It carries no coordinates, so it cannot
-// drift the way `geo` did.
+// drift the way `geo` did. Since 2026-10-27 it also names the verified Business Profile's place id
+// (offer-os gtm/seo-plan-2026-10 B9, LOC-8), so it opens that profile and not a free text search result.
 const MAP_URL =
-  'https://www.google.com/maps/search/?api=1&query=Fiji%20Solutions%2C%20Nikiforou%20Ouranou%2015%2C%20Thessaloniki%2054627';
+  'https://www.google.com/maps/search/?api=1&query=Fiji%20Solutions%2C%20Nikiforou%20Ouranou%2015%2C%20Thessaloniki%2054627&query_place_id=ChIJix6dwQk_qBQRnjn4-xWS2RI';
 
 // One ProfessionalService node per locale, with a stable @id so the two never compete.
 // `serviceType` carried 19 entries until 2026-08-15 — a machine-readable version of the same
@@ -167,8 +168,13 @@ const MAP_URL =
 // site-wide node, because no price in the site-wide JSON-LD (BR-D24) is a separate rule D-08 leaves alone.
 // ⛔ No `aggregateRating` and no `review`. Both profiles have zero Google reviews
 //    (offer-os/gtm/baseline-2026-09-01.md); marking one up would be fabricated.
-// ⛔ No `openingHoursSpecification`. The only hours anywhere say "Open 24 hours", which is the
-//    Google Business Profile default and not a claim anyone made. TODO(charis).
+// ~~⛔ No `openingHoursSpecification`. The only hours anywhere say "Open 24 hours", which is the~~
+// ~~   Google Business Profile default and not a claim anyone made. TODO(charis).~~
+// ✅ CLOSED 2026-10-27 (offer-os gtm/seo-plan-2026-10 D-35, B9 LOC-6): he answered that he is available
+//    24/7 and that "Open 24 hours" is what he has been writing everywhere, so it is a claim he made. The
+//    Business Profile keeps "Open 24 hours" and `openingHoursSpecification` below mirrors it, all seven
+//    days 00:00 to 23:59 (schema.org's way of saying open all day). OpenStreetMap still carries no
+//    hours, since there it means an open office door.
 // ⛔ No `vatID`. The tax number on /legal is the PARTNER's personal ΑΦΜ, filed under «Εταίρος».
 function organisationSchema(lang: Language) {
   return {
@@ -208,6 +214,12 @@ function organisationSchema(lang: Language) {
       longitude: '22.912267',
     },
     hasMap: MAP_URL,
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '00:00',
+      closes: '23:59',
+    },
     identifier: {
       '@type': 'PropertyValue',
       propertyID: 'GEMI',
@@ -285,6 +297,9 @@ function organisationSchema(lang: Language) {
       'https://www.linkedin.com/company/fijisolutionsnet/',
       'https://www.instagram.com/fijisolutionsnet/',
       'https://www.snowflake.com/en/why-snowflake/partners/all-partners/fiji-solutions/',
+      // The verified Google Business Profile, by its cid (feature id 0x12d99215fbf8399e, place id
+      // ChIJix6dwQk_qBQRnjn4-xWS2RI). Added 2026-10-27, offer-os gtm/seo-plan-2026-10 B9 (AI-1).
+      'https://maps.google.com/?cid=1358277385748232606',
     ],
     // ⚠️ TikTok is DELIBERATELY ABSENT. `social-media-content/brands/fiji-solutions/targets.json`
     // records the handle `fiji.solutions`, but the publisher's own config gates TikTok off

@@ -36,6 +36,9 @@ const LINKEDIN = 'https://www.linkedin.com/in/charalampos-moutafidis-71330414a/'
 // until 2026-10-27.
 const PERSONAL_SITE: Record<Language, string> = {en: 'https://charismoutafidis.com/', el: 'https://charismoutafidis.com/el'};
 const SNOWFLAKE_LISTING = 'https://www.snowflake.com/en/why-snowflake/partners/all-partners/fiji-solutions/';
+// The public ΓΕΜΗ record, which names the chamber Fiji belongs to (Επαγγελματικό Επιμελητήριο Θεσσαλονίκης, Τμήμα
+// Υπηρεσιών). The chamber publishes no member list of its own (offer-os gtm/seo-plan-2026-10 B9, D-46).
+const GEMI_RECORD = 'https://publicity.businessportal.gr/company/185101306000';
 
 type AboutCopy = {
   metaTitle: string;
@@ -53,6 +56,8 @@ type AboutCopy = {
   checkH2: string;
   snowflake: string;
   snowflakeLabel: string;
+  chamber: string;
+  chamberLabel: string;
   officeLead: string;
   phoneLead: string;
   emailLead: string;
@@ -93,6 +98,8 @@ const COPY: Record<Language, AboutCopy> = {
     checkH2: 'How to check us',
     snowflake: 'Snowflake lists Fiji Solutions in its own partner directory as a Snowflake AI Data Cloud Select Partner: ',
     snowflakeLabel: 'the listing',
+    chamber: 'We are a member of the Thessaloniki Professional Chamber (Επαγγελματικό Επιμελητήριο Θεσσαλονίκης), as our entry in the Greek business registry shows: ',
+    chamberLabel: 'the ΓΕΜΗ record',
     officeLead: 'Our office is at ',
     phoneLead: 'Phone ',
     emailLead: ', email ',
@@ -131,6 +138,8 @@ const COPY: Record<Language, AboutCopy> = {
     checkH2: 'Πώς μπορείς να μας ελέγξεις',
     snowflake: 'Η Snowflake μάς έχει στον δικό της κατάλογο συνεργατών ως Snowflake AI Data Cloud Select Partner: ',
     snowflakeLabel: 'η καταχώριση',
+    chamber: 'Είμαστε μέλος του Επαγγελματικού Επιμελητηρίου Θεσσαλονίκης, όπως δείχνει η εγγραφή μας στο ΓΕΜΗ: ',
+    chamberLabel: 'η καταχώριση στο ΓΕΜΗ',
     officeLead: 'Το γραφείο μας είναι στη ',
     phoneLead: 'Τηλέφωνο ',
     emailLead: ', email ',
@@ -250,6 +259,11 @@ export default function AboutPage({lang}: {lang: Language}) {
           <p className="text-gray-700 dark:text-gray-300 mb-4">
             {c.snowflake}
             <a href={SNOWFLAKE_LISTING} target="_blank" rel="noopener noreferrer" className={linkClass}>{c.snowflakeLabel}</a>
+            .
+          </p>
+          <p className="text-gray-700 dark:text-gray-300 mb-4">
+            {c.chamber}
+            <a href={GEMI_RECORD} target="_blank" rel="noopener noreferrer" className={linkClass}>{c.chamberLabel}</a>
             .
           </p>
           <p className="text-gray-700 dark:text-gray-300 mb-4">

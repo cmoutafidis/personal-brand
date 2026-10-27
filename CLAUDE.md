@@ -572,8 +572,11 @@ dropping it.
   names. ✅ **Confirmed against the Google Business Profile pin on 2026-09-01** — 40.643639,
   22.912267 lands on Porto Center at Νικηφόρου Ουρανού and matches the profile address, so the
   `TODO(charis)` that used to sit here is closed. The node carries **no**
-  `priceRange` (rule 7), **no** `aggregateRating`/`review` (zero Google reviews), **no**
-  `openingHoursSpecification` (the only hours on record are the GBP default "Open 24 hours") and
+  `priceRange` (rule 7), **no** `aggregateRating`/`review` (zero Google reviews), ~~**no**
+  `openingHoursSpecification` (the only hours on record are the GBP default "Open 24 hours")~~
+  (closed 2026-10-27, offer-os `gtm/seo-plan-2026-10` D-35 and B9: he is available 24/7, so the node now
+  carries `openingHoursSpecification` for all seven days 00:00 to 23:59, mirroring the profile's "Open 24
+  hours", and its `sameAs` holds the Business Profile's cid URL) and
   **no** `vatID` (the number on `/legal` is the partner's personal ΑΦΜ). ~~`serviceType` stays at
   three, matching the rendered «Τρία πράγματα» — the two website offers are linked from page
   bodies, not declared as a fourth and fifth service.~~ **Struck 2026-10-22 (offer-os
