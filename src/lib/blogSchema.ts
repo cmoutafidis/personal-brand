@@ -1,5 +1,5 @@
 import type {Metadata} from 'next';
-import {PERSON_REF, ORGANISATION_ID} from '@/lib/person';
+import {BLOG_AUTHOR, PERSON_REF, ORGANISATION_ID} from '@/lib/person';
 import type {Language} from '@/types/language';
 import type {BlogFaqBlock, BlogPost, BlogSourcesBlock} from '@/types/blog';
 
@@ -40,7 +40,7 @@ export function buildBlogPostMetadata(post: BlogPost, lang: Language): Metadata 
     title,
     description: post.excerpt,
     keywords: `${post.tags.join(', ')}, Fiji Solutions`,
-    authors: [{name: post.author ?? 'Fiji Solutions'}],
+    authors: [{name: BLOG_AUTHOR[lang].name, url: `${SITE}${BLOG_AUTHOR[lang].aboutHref}`}],
     alternates: {canonical: url, languages},
     openGraph: {
       type: 'article',
@@ -92,17 +92,14 @@ export function blogPostSchema(post: BlogPost, lang: Language) {
       dateModified: post.updatedAt ?? post.publishedAt,
       // ⚠️ THE AUTHOR IS THE CANONICAL PERSON NODE, NOT `post.author`.
       //
-      // `post.author` is the RENDERED byline and stays «Χαράλαμπος Μουταφίδης» on every Greek
-      // article — that is the right name to print in Greek. It must not be the identity in the
-      // markup: the German sibling site signs "Charalampos Moutafidis", and with no shared
-      // identifier a parser reads two different people across the twenty-six articles. One `@id`
-      // merges them, and the four name spellings live once, in `alternateName` on the node at
-      // charismoutafidis.com.
+      // One `@id` merges this author with the node at charismoutafidis.com, which carries the four
+      // name spellings in `alternateName`; the sibling company's posts reference the same `@id`.
+      // `name` is the byline the page prints in this locale (BLOG_AUTHOR), so the markup and the
+      // visible author agree: "Charis Moutafidis" in English, «Χάρης Μουταφίδης» in Greek.
       //
-      // 2026-10-26 (seo-plan-2026-10 D-12): every post on both company sites shows Charis Moutafidis
-      // as author, linked to the About page; goal B3 carries it out, including the spelling on Greek
-      // posts. Until then the posts with no `post.author` fall back to the publisher below.
-      author: post.author ? {...PERSON_REF, worksFor: {'@id': ORGANISATION_ID}} : publisher,
+      // Since 2026-10-27 (seo-plan-2026-10 B3, D-12, D-27) every post is signed; there is no
+      // company fallback any more.
+      author: {...PERSON_REF, name: BLOG_AUTHOR[lang].name, worksFor: {'@id': ORGANISATION_ID}},
       publisher,
       keywords: post.tags.join(', '),
       articleSection: post.tags[0],

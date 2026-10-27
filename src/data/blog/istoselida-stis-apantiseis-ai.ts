@@ -48,7 +48,7 @@ const post: BlogPost = {
   title: 'Η ιστοσελίδα σου στις απαντήσεις της τεχνητής νοημοσύνης: τι είναι μετρήσιμο και τι μάρκετινγκ',
   metaTitle: 'Google AI Mode: η ιστοσελίδα σου στις απαντήσεις AI',
   excerpt: 'Ποιοι crawlers υπάρχουν, τι μετράει το Search Console και ποια υποερωτήματα τρέχουν το ChatGPT, το Gemini και το Perplexity για να βρουν σελίδες.',
-  author: 'Χαράλαμπος Μουταφίδης',
+  author: 'Χάρης Μουταφίδης',
   publishedAt: '2026-09-02',
   updatedAt: '2026-10-20',
   readingTime: 23,

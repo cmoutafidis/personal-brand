@@ -51,7 +51,7 @@ const post: BlogPost = {
   title: 'Το προφίλ της επιχείρησής σου στην Google: τι ελέγχεις εσύ και τι όχι',
   metaTitle: 'Google Business Profile (Google My Business): τι ελέγχεις',
   excerpt: 'Ποια στοιχεία του προφίλ σου είναι δική σου δήλωση, ποια τα γράφουν οι πελάτες και ποια τα αλλάζει η Google μόνη της. Με τα λόγια της ίδιας.',
-  author: 'Χαράλαμπος Μουταφίδης',
+  author: 'Χάρης Μουταφίδης',
   publishedAt: '2026-09-02',
   updatedAt: '2026-09-02',
   readingTime: 29,

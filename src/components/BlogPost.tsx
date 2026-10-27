@@ -2,6 +2,7 @@ import Link from 'next/link';
 import {ArrowLeft, Calendar, CheckCircle2, Clock, Tag, User} from 'lucide-react';
 import type {Language} from '@/types/language';
 import type {BlogInline, BlogPost as BlogPostType} from '@/types/blog';
+import {BLOG_AUTHOR} from '@/lib/person';
 
 // Renders a post's typed body. The post's title is the page's only <h1>; every block here emits
 // h2/h3 or lower.
@@ -38,6 +39,13 @@ export default function BlogPost({post, language}: { post: BlogPostType; languag
   const publishedLabel = language === 'el' ? 'Δημοσιεύτηκε' : 'Published';
   const checkedLabel = language === 'el' ? 'Έλεγχος στοιχείων' : 'Last checked';
   const fmt = (d: string) => new Date(d).toLocaleDateString(locale, {year: 'numeric', month: 'long', day: 'numeric'});
+  // The byline and the author box come from BLOG_AUTHOR, not post.author (seo-plan-2026-10 B3).
+  const author = BLOG_AUTHOR[language];
+  const authorLink = (
+    <Link href={author.aboutHref} rel="author" className="underline underline-offset-2 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+      {author.name}
+    </Link>
+  );
 
   return (
     <article className="py-16 md:py-24">
@@ -55,9 +63,7 @@ export default function BlogPost({post, language}: { post: BlogPostType; languag
             {post.title}
           </h1>
           <div className="mb-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-gray-600 dark:text-gray-400">
-            {post.author ? (
-              <div className="flex items-center gap-2"><User className="h-4 w-4"/><span>{post.author}</span></div>
-            ) : null}
+            <div className="flex items-center gap-2"><User className="h-4 w-4"/><span>{authorLink}</span></div>
             <div className="flex items-center gap-2">
               <Calendar className="h-4 w-4"/>
               <span>{publishedLabel} <time dateTime={post.publishedAt}>{fmt(post.publishedAt)}</time></span>
@@ -168,6 +174,19 @@ export default function BlogPost({post, language}: { post: BlogPostType; languag
             }
           })}
         </div>
+
+        <aside className="mt-12 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/60 p-6 text-base leading-relaxed text-gray-700 dark:text-gray-300">
+          <p>
+            <strong className="font-semibold text-gray-900 dark:text-white">{authorLink} ({author.formalName})</strong>
+            {author.bioJoins ? <> {author.bio}</> : null}
+          </p>
+          {author.bioJoins ? null : <p className="mt-1">{author.bio}</p>}
+          <p className="mt-3">
+            <a href={author.moreHref} className="text-primary-600 dark:text-primary-400 underline underline-offset-2 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+              {author.moreLabel}
+            </a>
+          </p>
+        </aside>
       </div>
     </article>
   );

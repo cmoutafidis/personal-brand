@@ -35,6 +35,9 @@ export interface BlogPost {
   /** Also the meta description and the card text. Keep under ~155 characters. */
   excerpt: string;
   body: BlogBlock[];
+  /** NOT rendered. The byline, author box and Article author come from BLOG_AUTHOR in
+   *  src/lib/person.ts (offer-os seo-plan-2026-10 B3), the same on every post of a locale. The field
+   *  stays optional so older files and the SEO loop's content check keep passing. */
   author?: string;
   publishedAt: string;
   /**
