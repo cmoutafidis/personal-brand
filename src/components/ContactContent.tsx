@@ -24,6 +24,17 @@ export default function ContactContent({t, element}: ContactContentProps) {
         <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           {t('contact.subtitle3')}
         </p>
+        {/* 2026-10-27 (offer-os gtm/seo-plan-2026-10 B2, D-23): the first call page on charismoutafidis.com. */}
+        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          {t('contact.firstCall.before')}
+          <a
+            href={t('contact.firstCall.href')}
+            className="font-medium text-primary-600 dark:text-primary-400 underline underline-offset-4 hover:no-underline"
+          >
+            charismoutafidis.com
+          </a>
+          {t('contact.firstCall.after')}
+        </p>
       </div>
 
       <div>

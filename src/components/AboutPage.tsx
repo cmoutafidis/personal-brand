@@ -32,7 +32,9 @@ import {BOOKING_URL, BOOKING_URL_TEXT} from '@/lib/booking';
 const BASE = 'https://www.fijisolutions.net';
 const PHOTO = '/charis-moutafidis.jpg';
 const LINKEDIN = 'https://www.linkedin.com/in/charalampos-moutafidis-71330414a/';
-const PERSONAL_SITE = 'https://charismoutafidis.com/';
+// The personal site in the page's locale (offer-os gtm/seo-plan-2026-10 B2, D-23); /el/about linked the English home
+// until 2026-10-27.
+const PERSONAL_SITE: Record<Language, string> = {en: 'https://charismoutafidis.com/', el: 'https://charismoutafidis.com/el'};
 const SNOWFLAKE_LISTING = 'https://www.snowflake.com/en/why-snowflake/partners/all-partners/fiji-solutions/';
 
 type AboutCopy = {
@@ -223,7 +225,7 @@ export default function AboutPage({lang}: {lang: Language}) {
             ))}
             <p className="text-gray-700 dark:text-gray-300 mb-4">
               {c.moreLead}
-              <a href={PERSONAL_SITE} className={linkClass}>charismoutafidis.com</a>
+              <a href={PERSONAL_SITE[lang]} className={linkClass}>charismoutafidis.com</a>
               {c.and}
               <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className={linkClass}>{c.linkedinLabel}</a>
               .
