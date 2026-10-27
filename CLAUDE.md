@@ -27,6 +27,14 @@ as the hook is history, kept for the record.
   Era Learning, Hapimag, Jupiter, Catalytics, Seaflows, Alumil, Aargauische Kantonalbank (its approved sentences
   only, text only, no logo) and Ο Τόπος Μου. Never PRODYNA, Smiling Machines, Deloitte, Apifon, Printty, "The Real
   World" or TRW; `scripts/no-barred-names.py` enforces that list. Blog posts never name a client (SL-D4).
+- **This site never names or links Peak Code Consulting** (offer-os `gtm/seo-plan-2026-10` D-11, 2026-10-26;
+  carried out 2026-10-27 in B1). Fiji Solutions and Peak Code Consulting never name or link each other on their
+  sites; they may still show the same clients and case studies, and only charismoutafidis.com names both. The
+  founder sentence that said his work went through Fiji Solutions, Peak Code Consulting and earlier jobs was
+  deleted on 2026-10-27 from the home FAQ, the business-process-audit founder text and the Atlas founder line,
+  in both locales, at his word ("remove all those sentences, I dont like them"). Do not write it back in any
+  form. `scripts/no-barred-names.py` bars "Peak Code" and `peakcode` in code; the "everything else cross is
+  fine" half of BR-D35 no longer holds between the two company sites.
 - **The booking link is one constant**, `BOOKING_URL` in `src/lib/booking.ts`, imported by every Calendly link.
 - **The site wide shell** (2026-10-22, BR-G04): a top banner (`src/components/TopBanner.tsx`, hidden on
   `LANDING_PATHS` and both `business-process-audit` pages, closed for the tab in `sessionStorage`, not sticky), a

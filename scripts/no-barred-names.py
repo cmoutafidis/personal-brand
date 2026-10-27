@@ -17,6 +17,12 @@ WHAT IS BARRED ON FIJI, his decisions of 2026-10-21 (BR-D26):
   fine". The bank may now be shown on Fiji, in the approved sentences of BR-D26 only, as text with
   no logo. Which sentences may ship is a copy contract rule (offer-os
   companies/fiji-solutions/site/03-copy-home.md), so this guard no longer lists the bank.
+  ~~"everything else cross is fine"~~ no longer holds between the two company sites: superseded
+  2026-10-26 by D-11, carried out 2026-10-27 (seo-plan-2026-10 B1), next item.
+- Peak Code Consulting, by name or domain (added 2026-10-27, offer-os gtm/seo-plan-2026-10 B1, his decision
+  D-11 of 2026-10-26): Fiji Solutions and Peak Code Consulting never name or link each other on their sites.
+  Both may still show the same clients and case studies. charismoutafidis.com may name both; this guard does
+  not read it. Matched as "Peak Code" with any whitespace or none, PEAK CODE, and the domain stem peakcode.
 
 CASE SENSITIVE ON PURPOSE. `BusinessProcessAuditLanding.tsx` says "the real world reveals", which
 is plain English and names nobody. A case-insensitive match would fire on it and on every future
@@ -57,6 +63,8 @@ BARRED = [
     ("Printty", r"Printty"),
     ("The Real World", r"The\s+Real\s+World"),
     ("TRW", r"\bTRW\b"),
+    # D-11 (seo-plan-2026-10 B1, 2026-10-27). No inline flag: the selftest's case sabotage prefixes one.
+    ("Peak Code Consulting (D-11)", r"Peak\s*Code|PEAK\s*CODE|peakcode"),
 ]
 
 ROOTS = ("src/components", "src/app", "src/data", "src/lib")
@@ -71,7 +79,16 @@ LEADING_CLOSED = re.compile(r"^\s*(\{/\*.*?\*/\}|/\*.*?\*/)")
 # (file, SHA-1 of the whole line without its newline) -> why it is correct as written. The path is
 # part of the key, so an allowlisted line copied into another file fails there.
 # Empty on 2026-10-21: every hit on main was a comment line.
-ALLOW = {}
+ALLOW = {
+    # line 389, added 2026-10-27 (seo-plan-2026-10 B1): the record of his decision, which never renders.
+    ("src/data/projects.ts", "77b57b75c7fc30412b091119b36776de9d2fbb1e"):
+        "permission.source of the archive client: records his BR-D35 answer word for word; not rendered (B1 live check)",
+    # lines 71 and 80, added 2026-10-27 (B1): inner lines of two multi-line JSX comments, which never ship.
+    ("src/components/Footer.tsx", "12581f86572a963c4d0e46dd74f850a4dca212a2"):
+        "inside the GitHub link comment of the footer; a source comment",
+    ("src/components/Footer.tsx", "98fd0775a8449e6ebaca62cb90ba86b7f667f71e"):
+        "inside the X link comment of the footer; a source comment",
+}
 
 
 def sha1(line):
@@ -168,6 +185,12 @@ FIXTURES = [
     ("code after a closed block comment is read", "  /* note */ title: 'Built at PRODYNA',\n", 1),
     ("a line led by a string is read", "    'Apifon',\n", 1),
     ("a name split by a no-break space is caught", "  name: 'Smiling\u00a0Machines',\n", 1),
+    ("Peak Code Consulting in copy is caught (D-11)", "  a: 'Some of it through Peak Code Consulting',\n", 1),
+    ("Peak Code without a space is caught (D-11)", "  a: 'PeakCode in Aarau',\n", 1),
+    ("the Peak domain is caught (D-11)", "  href: 'https://www.peakcodeconsulting.ch',\n", 1),
+    ("PEAK CODE in capitals is caught (D-11)", "  label: 'PEAK CODE',\n", 1),
+    ("a comment naming Peak Code is skipped", "  // Peak Code never links this site.\n", 0),
+    ("plain English peak is not a name", "  text: 'at peak season the code runs',\n", 0),
 ]
 
 

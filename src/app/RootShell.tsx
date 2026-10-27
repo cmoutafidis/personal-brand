@@ -226,10 +226,15 @@ function organisationSchema(lang: Language) {
     // ~~holds no accreditation of any kind, and the identical badge file sitting unused in the Peak~~
     // ~~Code repo is a copy of Fiji's by accident.~~
     // Superseded 2026-10-26 (seo-plan-2026-10 D-11, replacing BR-D35 and the Snowflake wording of
-    // BR-D26): the struck reason no longer holds. Peak Code's site now says "we are partnered with
-    // Snowflake" and never names or links Fiji Solutions, and neither company's site names or links
-    // the other. This Fiji partner listing URL names Fiji, so it still stays off Peak Code under
-    // D-11. Goal B1 carries out the site change.
+    // BR-D26): the struck reason no longer holds. ~~Peak Code's site now says "we are partnered with~~
+    // ~~Snowflake" and~~ Peak Code's site never names or links Fiji Solutions, and neither company's
+    // site names or links the other. This Fiji partner listing URL names Fiji, so it still stays off
+    // Peak Code under D-11. ~~Goal B1 carries out the site change.~~
+    // Done 2026-10-27 (seo-plan-2026-10 B1): at his answer ("just the icon of snowflake
+    // partnership") Peak Code shows the Snowflake partner badge image alone in its home client
+    // strip, with no caption and no partner sentence, and nowhere else (no JSON-LD, no `sameAs`).
+    // Every sentence naming the other company left both sites ("remove all those sentences"), and
+    // each repo's scripts/no-barred-names.py now bars the other company's name.
     //
     // ✅ CORRECTED 2026-09-06. This block used to say, in the present tense, that two entries here
     // publish an address that is not this company's, the old Pylaia address the JSON-LD `geo` above

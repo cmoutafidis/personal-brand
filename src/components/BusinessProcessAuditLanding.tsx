@@ -349,7 +349,7 @@ const copy: Record<Language, LandingCopy> = {
       'Software engineer; founder and administrator of Fiji Solutions IKE, Thessaloniki.',
       'Fiji Solutions is a Snowflake AI Data Cloud Select Partner, listed in Snowflake’s official partner directory. Select is one of the tiers of the partner network, alongside Registered, Premier and Elite. That status belongs to the company.',
       'Builder of Fiji Analytics Dashboard and Catalytics Pro: live products you can open right now.',
-      'More than ten years of work across five sectors: banking, travel, telecommunications, health and online education. Some of it through Fiji Solutions, some through Peak Code Consulting, my Swiss company, and some in earlier jobs as a developer. Those sectors are my own working history.'
+      'More than ten years of work across five sectors: banking, travel, telecommunications, health and online education. Those sectors are my own working history.'
     ],
     bioClosing: [
       'When you book an audit, you talk to me. I’m the same person who scopes the work, builds the software, and stands behind the guarantee. No account managers, no handoffs, no telephone game between sales and delivery.',
@@ -637,7 +637,7 @@ const copy: Record<Language, LandingCopy> = {
       'Μηχανικός λογισμικού· ιδρυτής και διαχειριστής της Fiji Solutions ΙΚΕ, Θεσσαλονίκη.',
       'Η Fiji Solutions είναι Snowflake AI Data Cloud Select Partner, καταχωρισμένη στον επίσημο κατάλογο συνεργατών της Snowflake. Το Select είναι μία από τις βαθμίδες του δικτύου συνεργατών, μαζί με τις Registered, Premier και Elite. Η ιδιότητα αυτή ανήκει στην εταιρεία.',
       'Δημιουργός του Fiji Analytics Dashboard και του Catalytics Pro: ζωντανά προϊόντα που μπορείς να ανοίξεις τώρα.',
-      'Πάνω από δέκα χρόνια σε πέντε κλάδους: τράπεζες, τουρισμό, τηλεπικοινωνίες, υγεία και διαδικτυακή εκπαίδευση. Ένα μέρος της δουλειάς έγινε μέσω της Fiji Solutions, ένα μέρος μέσω της Peak Code Consulting, της ελβετικής μου εταιρείας, και ένα μέρος σε παλιότερες δουλειές μου ως προγραμματιστή. Οι κλάδοι αυτοί είναι η δική μου διαδρομή.'
+      'Πάνω από δέκα χρόνια σε πέντε κλάδους: τράπεζες, τουρισμό, τηλεπικοινωνίες, υγεία και διαδικτυακή εκπαίδευση. Οι κλάδοι αυτοί είναι η δική μου διαδρομή.'
     ],
     bioClosing: [
       'Όταν κλείνεις έναν έλεγχο, μιλάς με εμένα. Είμαι ο ίδιος άνθρωπος που σχεδιάζει τη δουλειά, χτίζει το λογισμικό και στέκεται πίσω από την εγγύηση. Χωρίς υπεύθυνους πελατών, χωρίς ενδιάμεσους, χωρίς «χαλασμένο τηλέφωνο» ανάμεσα σε πωλήσεις και υλοποίηση.',

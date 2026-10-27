@@ -497,7 +497,7 @@ const atlas: AtlasOffer = {
       method: 'Built around how your company already works, one department at a time.',
       // TODO(charis) 19 (03-copy.md): does this line read as you want under F-D22/F-D30?
       founder: [
-        'Our founder has been a software engineer for more than ten years. That work went through Fiji Solutions, Peak Code Consulting and earlier jobs.',
+        'Our founder has been a software engineer for more than ten years.',
         'He has worked in five sectors: banking, travel, telecommunications, health and online education.'
       ],
       closeSubhead: 'Everything in one system, from USD 100,000.',
@@ -637,7 +637,7 @@ const atlas: AtlasOffer = {
       method: 'Χτίζεται γύρω από τον τρόπο που ήδη δουλεύει η επιχείρησή σου, ένα τμήμα τη φορά.',
       // TODO(charis) 19 (03-copy.md), as en.
       founder: [
-        'Ο ιδρυτής μας είναι μηχανικός λογισμικού εδώ και πάνω από δέκα χρόνια. Η δουλειά του έγινε μέσω της Fiji Solutions, της Peak Code Consulting και παλιότερων θέσεων.',
+        'Ο ιδρυτής μας είναι μηχανικός λογισμικού εδώ και πάνω από δέκα χρόνια.',
         'Έχει δουλέψει σε πέντε κλάδους: τράπεζες, τουρισμό, τηλεπικοινωνίες, υγεία και διαδικτυακή εκπαίδευση.'
       ],
       closeSubhead: 'Όλα σε ένα σύστημα, από 100.000 $.',

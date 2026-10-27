@@ -113,7 +113,7 @@ export const HOME: Record<Language, HomeCopy> = {
         {
           id: 'poios-kanei-ti-douleia',
           q: 'Who actually does the work?',
-          a: 'Our founder, Charis Moutafidis. He has worked as a software engineer for more than ten years. Those years cover five sectors: banking, travel, telecommunications, health and online education. Some of that work went through Fiji Solutions, some through Peak Code Consulting, his Swiss company, and some in earlier jobs as a developer. Those sectors describe his own working history.',
+          a: 'Our founder, Charis Moutafidis. He has worked as a software engineer for more than ten years. Those years cover five sectors: banking, travel, telecommunications, health and online education. Those sectors describe his own working history.',
         },
         {
           id: 'poios-echei-ton-kodika',
@@ -210,7 +210,7 @@ export const HOME: Record<Language, HomeCopy> = {
         {
           id: 'poios-kanei-ti-douleia',
           q: 'Ποιος θα κάνει τελικά τη δουλειά;',
-          a: 'Ο ιδρυτής μας, ο Χάρης Μουταφίδης. Δουλεύει πάνω από δέκα χρόνια ως μηχανικός λογισμικού. Μέσα σε αυτά τα χρόνια έχει δουλέψει σε πέντε κλάδους: τράπεζες, τουρισμό, τηλεπικοινωνίες, υγεία και διαδικτυακή εκπαίδευση. Ένα μέρος της δουλειάς έγινε μέσω της Fiji Solutions, ένα μέρος μέσω της Peak Code Consulting, της ελβετικής του εταιρείας, και ένα μέρος σε παλιότερες δουλειές του ως προγραμματιστή. Οι κλάδοι αυτοί περιγράφουν τη διαδρομή του Χάρη.',
+          a: 'Ο ιδρυτής μας, ο Χάρης Μουταφίδης. Δουλεύει πάνω από δέκα χρόνια ως μηχανικός λογισμικού. Μέσα σε αυτά τα χρόνια έχει δουλέψει σε πέντε κλάδους: τράπεζες, τουρισμό, τηλεπικοινωνίες, υγεία και διαδικτυακή εκπαίδευση. Οι κλάδοι αυτοί περιγράφουν τη διαδρομή του Χάρη.',
         },
         {
           id: 'poios-echei-ton-kodika',
