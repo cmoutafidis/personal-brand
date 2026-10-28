@@ -47,7 +47,10 @@ export default function Hero({language}: {language: Language}) {
     <section id="hero" className="relative overflow-hidden border-b border-gray-200 dark:border-gray-800">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white to-[#f4f8ff] dark:from-gray-900 dark:to-gray-950"></div>
       <div className="mx-auto max-w-7xl px-4 pb-14 pt-28 sm:px-6 md:pt-32 lg:px-8 lg:pb-16">
-        <div className="mx-auto max-w-5xl text-center" data-reveal="">
+        {/* No `data-reveal` here (2026-10-28, offer-os seo-plan-2026-10 C2, PERF-1): BR-D45 fades blocks in as they
+            scroll in, and the hero is on screen from the start. Hidden after hydration and faded back, its sub line
+            painted a second time about 0.9 s in, which Lighthouse took as the phone LCP of /el (4.9 s in 2 of 5 runs). */}
+        <div className="mx-auto max-w-5xl text-center">
           <p className="mb-6 flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.1em] text-primary-700 dark:text-primary-300">
             <span className="inline-block h-0.5 w-[18px] rounded bg-primary-600 dark:bg-primary-400" aria-hidden="true"/>
             {copy.eyebrow}
