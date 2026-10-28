@@ -1,6 +1,6 @@
 import type {Metadata} from 'next';
 import type {Language} from '@/types/language';
-import {buildAlternates} from '@/lib/alternates';
+import {buildAlternates, defaultOgImage} from '@/lib/alternates';
 
 // Metadata and JSON-LD of the spreadsheet check, /en/tools/spreadsheet-check and
 // /el/tools/spreadsheet-check (offer-os gtm/seo-loop-2026-10 S14). The page itself is
@@ -36,7 +36,7 @@ const META: Record<Language, {title: string; description: string; name: string}>
 export function spreadsheetCheckMetadata(lang: Language): Metadata {
   const m = META[lang];
   const url = `${SITE}/${lang}${PATH}`;
-  const image = `${SITE}/fijisolutions.png`;
+  const image = defaultOgImage(lang);
   return {
     title: m.title,
     description: m.description,

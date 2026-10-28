@@ -11,13 +11,14 @@ export const metadata: Metadata = {
   keywords: 'δωρεάν έλεγχος διαδικασιών, βελτιστοποίηση διαδικασιών, αυτοματοποίηση διαδικασιών, εξατομικευμένο λογισμικό Ελλάδα, εγγύηση απόσβεσης',
   alternates: buildAlternates('/business-process-audit', 'el'),
   openGraph: {
+    locale: 'el_GR',
     type: 'website',
     title: 'Δωρεάν έλεγχος διαδικασιών | Fiji Solutions',
     description: 'Βρες τα σημεία που σου κοστίζουν χρήματα και λύσε τα με εξατομικευμένο λογισμικό που καλύπτεται από την Εγγύηση Απόσβεσης.',
     url: 'https://www.fijisolutions.net/el/business-process-audit',
     images: [
       {
-        url: 'https://www.fijisolutions.net/fijisolutions.png',
+        url: 'https://www.fijisolutions.net/og/fiji-solutions-el.png',
         width: 1200,
         height: 630,
         alt: 'Fiji Solutions: Δωρεάν ανάλυση επιχειρηματικών διαδικασιών και custom AI software',
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     site: '@fiji_solutions',
     title: 'Δωρεάν έλεγχος διαδικασιών | Fiji Solutions',
     description: 'Βρες από πού φεύγουν τα χρήματα στις διαδικασίες σου και κλείσε τη διαρροή, με Εγγύηση Απόσβεσης.',
-    images: ['https://www.fijisolutions.net/fijisolutions.png'],
+    images: ['https://www.fijisolutions.net/og/fiji-solutions-el.png'],
   },
 };
 

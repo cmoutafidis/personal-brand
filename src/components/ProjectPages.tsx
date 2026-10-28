@@ -5,7 +5,7 @@ import {ArrowLeft, ArrowRight, ExternalLink} from 'lucide-react';
 import type {Language} from '@/types/language';
 import TrackedLink from '@/components/TrackedLink';
 import {PRIMARY_BUTTON_CLASS} from '@/components/Hero';
-import {buildAlternates} from '@/lib/alternates';
+import {buildAlternates, defaultOgImage, ogLocale} from '@/lib/alternates';
 import {BOOKING_URL} from '@/lib/booking';
 import {BOOKING_CLICK_EVENT} from '@/utils/gtag';
 import {LIVE_PROJECTS, PROJECTS_COPY, type Project} from '@/data/projects';
@@ -30,7 +30,6 @@ import {OFFER_BY_SLUG, SERVICE_LABEL, type ServiceSlug} from '@/data/offerLinks'
 // Server components: `lang` comes in as a prop.
 
 const BASE = 'https://www.fijisolutions.net';
-const OG_IMAGE = `${BASE}/fijisolutions.png`;
 
 function metadataFor(lang: Language, path: string, title: string, description: string): Metadata {
   return {
@@ -42,14 +41,15 @@ function metadataFor(lang: Language, path: string, title: string, description: s
       url: `${BASE}/${lang}${path}`,
       title,
       description,
-      images: [{url: OG_IMAGE, width: 1200, height: 630, alt: title}],
+      locale: ogLocale(lang),
+      images: [{url: defaultOgImage(lang), width: 1200, height: 630, alt: title}],
     },
     twitter: {
       card: 'summary_large_image',
       site: '@fiji_solutions',
       title,
       description,
-      images: [OG_IMAGE],
+      images: [defaultOgImage(lang)],
     },
   };
 }
@@ -171,8 +171,9 @@ export function ProjectDetail({lang, project: p}: {lang: Language; project: Proj
 
         {gallery.length > 0 && (
           <div className={`mb-10 grid gap-4 ${gallery.length > 1 ? 'sm:grid-cols-2' : ''}`}>
-            {gallery.map((img) => (
-              <Image key={img.src} src={img.src} alt={img.alt[lang]} width={1200} height={750} sizes={gallery.length > 1 ? '(min-width: 640px) 50vw, 100vw' : '(min-width: 896px) 896px, 100vw'} className="h-auto w-full rounded-xl border border-gray-200/80 dark:border-gray-700/80"/>
+            {/* The first image is the page's largest paint, so it loads eagerly at high priority (C1, IMG-3, 2026-10-28). */}
+            {gallery.map((img, i) => (
+              <Image key={img.src} src={img.src} alt={img.alt[lang]} width={1200} height={750} priority={i === 0} fetchPriority={i === 0 ? 'high' : undefined} sizes={gallery.length > 1 ? '(min-width: 640px) 50vw, 100vw' : '(min-width: 896px) 896px, 100vw'} className="h-auto w-full rounded-xl border border-gray-200/80 dark:border-gray-700/80"/>
             ))}
           </div>
         )}

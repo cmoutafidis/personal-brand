@@ -13,11 +13,12 @@ export const metadata: Metadata = {
   keywords: "Snowflake Ελλάδα, Snowflake partner Ελλάδα, μετάβαση σε Snowflake, αποθήκη δεδομένων, ETL ELT, μηχανική δεδομένων Ελλάδα",
   alternates: buildAlternates(path, 'el'),
   openGraph: {
+    locale: 'el_GR',
     type: 'website',
     url: `${siteUrl}/el${path}`,
     title: "Snowflake Consulting Ελλάδα | Select Partner | Fiji Solutions",
     description: "Υλοποίηση, μετάβαση και ρύθμιση Snowflake AI Data Cloud. Είμαστε Snowflake AI Data Cloud Select Partner.",
-    images: [{url: `${siteUrl}/fijisolutions.png`, width: 1200, height: 630, alt: "Snowflake Consulting Ελλάδα"}],
+    images: [{url: `${siteUrl}/og/fiji-solutions-el.png`, width: 1200, height: 630, alt: "Snowflake Consulting Ελλάδα"}],
   },
 };
 

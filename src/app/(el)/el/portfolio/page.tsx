@@ -16,13 +16,14 @@ export const metadata: Metadata = {
   keywords: 'λογισμικό κατά παραγγελία, εταιρεία λογισμικού Θεσσαλονίκη, εφαρμογές για κινητά, αυτοματοποίηση διαδικασιών, AI agents, κατασκευή ιστοσελίδων, Snowflake',
   alternates: buildAlternates('/portfolio', 'el'),
   openGraph: {
+    locale: 'el_GR',
     type: 'website',
     url: 'https://www.fijisolutions.net/el/portfolio',
     title: 'Υπηρεσίες | Fiji Solutions',
     description: 'Τι φτιάχνει η Fiji Solutions: λογισμικό κατά παραγγελία, διαδικτυακές εφαρμογές και εφαρμογές για κινητά, αυτοματοποίηση διαδικασιών, AI agents, ιστοσελίδες και πλατφόρμες δεδομένων στη Snowflake.',
     images: [
       {
-        url: 'https://www.fijisolutions.net/fijisolutions.png',
+        url: 'https://www.fijisolutions.net/og/fiji-solutions-el.png',
         width: 1200,
         height: 630,
         alt: 'Fiji Solutions Portfolio: Καινοτόμα έργα ανάπτυξης λογισμικού από τη Θεσσαλονίκη που ειδικεύεται σε web development, λύσεις AI και Snowflake AI Data Cloud data engineering',
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     site: '@fiji_solutions',
     title: 'Υπηρεσίες | Fiji Solutions',
     description: 'Τι φτιάχνει η Fiji Solutions: λογισμικό κατά παραγγελία, διαδικτυακές εφαρμογές και εφαρμογές για κινητά, αυτοματοποίηση διαδικασιών, AI agents, ιστοσελίδες και πλατφόρμες δεδομένων στη Snowflake.',
-    images: ['https://www.fijisolutions.net/fijisolutions.png'],
+    images: ['https://www.fijisolutions.net/og/fiji-solutions-el.png'],
   },
 };
 

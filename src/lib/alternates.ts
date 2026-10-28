@@ -46,3 +46,27 @@ export function hreflangMap(path: string): Record<string, string> {
     'x-default': `${SITE}/en${path}`,
   };
 }
+
+/**
+ * The site's default share card for one locale: `public/og/fiji-solutions-<lang>.png`, 1200x630, the live home H1.
+ * Added 2026-10-28 (offer-os gtm/seo-plan-2026-10 C1, SCH-1, D-65). It replaced `/fijisolutions.png`, a screenshot
+ * of the retired hero ("We help your business grow online"), which every page without its own card shared. That
+ * file stays in `public/` so old shares keep their image; nothing on the site points at it any more. An offer with
+ * its own card (`ogImage` in its data file) keeps that card.
+ */
+export function defaultOgImage(lang: Language): string {
+  return `${SITE}/og/fiji-solutions-${lang}.png`;
+}
+
+/** The OpenGraph locale for one language (TECH-5, 2026-10-28). */
+export function ogLocale(lang: Language): string {
+  return lang === 'el' ? 'el_GR' : 'en_US';
+}
+
+/** The company logo as schema.org ImageObject: the moustache, 1250x1250 (SCH-1, 2026-10-28). */
+export const LOGO_IMAGE_OBJECT = {
+  '@type': 'ImageObject',
+  url: `${SITE}/fiji_solutions.png`,
+  width: 1250,
+  height: 1250,
+} as const;

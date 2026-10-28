@@ -13,13 +13,14 @@ export const metadata: Metadata = {
   description: 'Book a free 30-minute call or send us a message about the software, app, automation or website you need. We reply within one business day.',
   alternates: buildAlternates('/contact'),
   openGraph: {
+    locale: 'en_US',
     type: 'website',
     url: 'https://www.fijisolutions.net/en/contact',
     title: 'Book a free 30-minute call | Fiji Solutions',
     description: 'Book a free 30-minute call or send us a message about the software, app, automation or website you need. We reply within one business day.',
     images: [
       {
-        url: 'https://www.fijisolutions.net/fijisolutions.png',
+        url: 'https://www.fijisolutions.net/og/fiji-solutions-en.png',
         width: 1200,
         height: 630,
         alt: 'Contact Fiji Solutions, software company in Thessaloniki',
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     site: '@fiji_solutions',
     title: 'Book a free 30-minute call | Fiji Solutions',
     description: 'Book a free 30-minute call or send us a message about the software, app, automation or website you need. We reply within one business day.',
-    images: ['https://www.fijisolutions.net/fijisolutions.png'],
+    images: ['https://www.fijisolutions.net/og/fiji-solutions-en.png'],
   },
 };
 

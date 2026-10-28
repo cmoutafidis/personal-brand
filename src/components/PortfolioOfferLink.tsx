@@ -13,15 +13,17 @@ import sheetToApp from '@/data/offers/sheet-to-app';
 // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G07, BR-D3): the Services grid above it has six cards
 // now, linking service pages only, and this stays the one offer link on the page (F16 checks it). Its
 // copy is unchanged, as offer-os companies/fiji-solutions/site/03-copy-home.md, "Portfolio", asks.
+// 2026-10-28 (offer-os gtm/seo-plan-2026-10 C1, C-32): `before` was reworded in both locales to introduce the new
+// anchor (ONP-3, D-64); it read "Everything the finished app includes is on the prototype's page: ".
 const COPY: Record<Language, {lead: string; before: string; after: string}> = {
   en: {
     lead: 'If your week runs on one shared spreadsheet, start with a prototype of your app 7 days after the audit call, and pay only if you like it.',
-    before: 'Everything the finished app includes is on the prototype\'s page: ',
+    before: 'The prototype has its own page: ',
     after: '.'
   },
   el: {
     lead: 'Αν η δουλειά της ομάδας σου τρέχει σε ένα κοινό Excel, ξεκίνα με ένα πρωτότυπο της εφαρμογής σου 7 μέρες μετά την πρώτη κλήση, και πληρώνεις μόνο αν σου αρέσει.',
-    before: 'Όσα περιλαμβάνει η τελική εφαρμογή τα βρίσκεις στη σελίδα του πρωτοτύπου: ',
+    before: 'Το πρωτότυπο έχει τη δική του σελίδα: ',
     after: '.'
   }
 };

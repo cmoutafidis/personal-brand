@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import {BLOG_AUTHOR, PERSON_REF, ORGANISATION_ID} from '@/lib/person';
 import type {Language} from '@/types/language';
+import {defaultOgImage, LOGO_IMAGE_OBJECT} from '@/lib/alternates';
 import type {BlogFaqBlock, BlogPost, BlogSourcesBlock} from '@/types/blog';
 
 // Metadata and JSON-LD for blog posts, derived from the post object the page renders.
@@ -52,14 +53,14 @@ export function buildBlogPostMetadata(post: BlogPost, lang: Language): Metadata 
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
       tags: post.tags,
-      images: [{url: `${SITE}/fijisolutions.png`, width: 1200, height: 630, alt: post.title}],
+      images: [{url: defaultOgImage(lang), width: 1200, height: 630, alt: post.title}],
     },
     twitter: {
       card: 'summary_large_image',
       site: '@fiji_solutions',
       title: post.title,
       description: post.excerpt,
-      images: [`${SITE}/fijisolutions.png`],
+      images: [defaultOgImage(lang)],
     },
   };
 }
@@ -77,7 +78,7 @@ export function blogPostSchema(post: BlogPost, lang: Language) {
     '@id': ORGANISATION_ID,
     name: 'Fiji Solutions',
     url: SITE,
-    logo: {'@type': 'ImageObject', url: `${SITE}/fijisolutions.png`},
+    logo: LOGO_IMAGE_OBJECT,
   };
 
   const graph: Record<string, unknown>[] = [

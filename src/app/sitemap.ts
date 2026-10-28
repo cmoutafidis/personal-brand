@@ -42,19 +42,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     });
   }
+  // 2026-10-28 (offer-os gtm/seo-plan-2026-10 C1, TECH-4): each index's lastmod is the newest post date across BOTH
+  // locales, since each index is one page in two languages. They were fixed strings ('2026-09-01', '2026-10-12') and
+  // fell behind every post the blog loop added.
+  const newestPost = [...blogData.el, ...blogData.en]
+    .map((p) => p.updatedAt ?? p.publishedAt)
+    .reduce((a, b) => (b > a ? b : a));
   // The two blog index pages ARE twins and use buildAlternates('/blog', ...), so each page head declares
   // en, el and x-default. These sitemap entries carry the same map, or the parity gate goes red on a set
   // mismatch. hreflangMap is already the one shared source the ROUTES loop below uses.
   entries.push({
     url: `${SITE}/el/blog`,
-    lastModified: '2026-09-01',
+    lastModified: newestPost,
     changeFrequency: 'weekly',
     priority: 0.6,
     alternates: {languages: hreflangMap('/blog')},
   });
   entries.push({
     url: `${SITE}/en/blog`,
-    lastModified: '2026-10-12',
+    lastModified: newestPost,
     changeFrequency: 'weekly',
     priority: 0.6,
     alternates: {languages: hreflangMap('/blog')},

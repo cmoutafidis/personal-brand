@@ -32,14 +32,22 @@ export const useLanguage = () => useContext(LanguageContext);
  * not among them.
  *
  * ⚠️ THE GREEK BLOG HAS NO ENGLISH TWIN and a naive prefix swap sends readers to a 404.
- * blogData.en is empty, /en/blog is noindex, and /en/blog/<greek-slug> answers 404, verified live.
+ * ~~blogData.en is empty, /en/blog is noindex, and /en/blog/<greek-slug> answers 404, verified live.
  * So a Greek article maps to /en, not to /en/blog: the English blog index is an empty noindex page
  * reading "No blog posts available yet", which is a worse destination than the home page. That is
- * the same call the sibling repo made on 2026-09-01.
+ * the same call the sibling repo made on 2026-09-01.~~
+ * Superseded 2026-10-28 (offer-os gtm/seo-plan-2026-10 C1, TECH-1 and TECH-3): blogData.en has posts and
+ * /en/blog is indexable, so an article maps to the other language's blog index. See the note below.
  */
+//
+// 2026-10-28 (offer-os gtm/seo-plan-2026-10 C1, TECH-1 and TECH-3): No post has a twin in the other language (no `twinSlug` is set), so an article in one language maps to
+// the other language's blog index: /el/blog/<slug> to /en/blog, and /en/blog/<slug> to /el/blog. Until this date
+// the English articles swapped their prefix to /el/blog/<english-slug>, a 404 on all five. The two index pages swap
+// prefixes as every other route does. If a post gains a `twinSlug`, resolve it here first.
 export function localeTarget(pathname: string, lang: Language): string {
   if (pathname === `/${lang}` || pathname.startsWith(`/${lang}/`)) return pathname;
-  if (lang === 'en' && pathname.startsWith('/el/blog')) return '/en';
+  if (lang === 'en' && pathname.startsWith('/el/blog/')) return '/en/blog';
+  if (lang === 'el' && pathname.startsWith('/en/blog/')) return '/el/blog';
   if (pathname.startsWith('/el/') || pathname.startsWith('/en/')) return `/${lang}${pathname.slice(3)}`;
   if (pathname === '/el' || pathname === '/en') return `/${lang}`;
   return `/${lang}${pathname === '/' ? '' : pathname}`;

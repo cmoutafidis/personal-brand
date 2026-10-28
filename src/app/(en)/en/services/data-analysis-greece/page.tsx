@@ -13,11 +13,12 @@ export const metadata: Metadata = {
   keywords: "data analysis services Greece, business intelligence Greece, BI dashboards Greece, analytics consulting Greece, KPI dashboards Greece, reporting automation Greece",
   alternates: buildAlternates(path),
   openGraph: {
+    locale: 'en_US',
     type: 'website',
     url: `${siteUrl}/en${path}`,
     title: "Data Analysis Services Greece | BI Dashboards | Fiji Solutions",
     description: "If a report takes two days to assemble and two people disagree about the number at the end, we rebuild the pipeline so it assembles itself.",
-    images: [{url: `${siteUrl}/fijisolutions.png`, width: 1200, height: 630, alt: "Data Analysis Services Greece"}],
+    images: [{url: `${siteUrl}/og/fiji-solutions-en.png`, width: 1200, height: 630, alt: "Data Analysis Services Greece"}],
   },
 };
 

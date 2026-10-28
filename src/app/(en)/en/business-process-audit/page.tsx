@@ -11,13 +11,14 @@ export const metadata: Metadata = {
   keywords: 'free business process audit, workflow optimisation Greece, business process automation, custom software Greece, internal operations fix, AI software solutions',
   alternates: buildAlternates('/business-process-audit'),
   openGraph: {
+    locale: 'en_US',
     type: 'website',
     title: 'Free Business Process Audit | Fiji Solutions',
     description: 'Find the workflow bottlenecks costing your business money and fix them with custom software backed by the Pays-For-Itself Guarantee.',
     url: 'https://www.fijisolutions.net/en/business-process-audit',
     images: [
       {
-        url: 'https://www.fijisolutions.net/fijisolutions.png',
+        url: 'https://www.fijisolutions.net/og/fiji-solutions-en.png',
         width: 1200,
         height: 630,
         alt: 'Fiji Solutions: Free business process audit and custom AI software solutions',
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     site: '@fiji_solutions',
     title: 'Free Business Process Audit | Fiji Solutions',
     description: 'Find the money leaks in your workflows and fix them with custom software backed by the Pays-For-Itself Guarantee.',
-    images: ['https://www.fijisolutions.net/fijisolutions.png'],
+    images: ['https://www.fijisolutions.net/og/fiji-solutions-en.png'],
   },
 };
 

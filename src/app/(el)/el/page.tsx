@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     description: copy.description,
     images: [
       {
-        url: 'https://www.fijisolutions.net/fijisolutions.png',
+        url: 'https://www.fijisolutions.net/og/fiji-solutions-el.png',
         width: 1200,
         height: 630,
         alt: copy.ogImageAlt,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     site: '@fiji_solutions',
     title: copy.title,
     description: copy.description,
-    images: ['https://www.fijisolutions.net/fijisolutions.png'],
+    images: ['https://www.fijisolutions.net/og/fiji-solutions-el.png'],
   },
 };
 

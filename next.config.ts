@@ -35,16 +35,30 @@ const LOCALELESS = [
   // pattern covers each slug, so a new project needs no line here.
   'projects',
   'projects/:slug',
+  // 2026-10-28 (offer-os gtm/seo-plan-2026-10 C1, TECH-3): the blog index; it went to /el/blog until blogData.en had posts.
+  'blog',
 ];
 
 const nextConfig: NextConfig = {
   async redirects() {
     return [
       {source: '/', destination: '/en', permanent: true},
-      // The one locale-less path that does NOT go to /en. The blog is Greek-only for now and
-      // /en/blog is an empty noindex page, so the English default would land a reader on nothing.
-      // Move this into LOCALELESS the day blogData.en has posts.
-      {source: '/blog', destination: '/el/blog', permanent: true},
+      // ~~The one locale-less path that does NOT go to /en.~~ 2026-10-28 (offer-os gtm/seo-plan-2026-10 C1, TECH-3):
+      // blogData.en has had posts since 2026-10-12, so /blog moved into LOCALELESS and goes to /en/blog like every
+      // other locale-less path.
+      // Retired blog URLs with crawl history (C1, TECH-8): each goes to its closest live page in one hop.
+      {
+        source: '/el/blog/i-epichirisi-sou-chanei-pelates-choris-google-prototipa',
+        destination: '/el/blog/giati-den-emfanizetai-i-istoselida-sto-google',
+        permanent: true,
+      },
+      {source: '/el/blog/auto-sou-kostizei-perissotera-xrimata-apo-osa-nomizeis', destination: '/el/blog', permanent: true},
+      {source: '/en/blog/this-is-costing-you-more-money-than-you-think', destination: '/en/blog', permanent: true},
+      {
+        source: '/en/blog/your-business-is-losing-customers-without-google-visibility',
+        destination: '/en/blog',
+        permanent: true,
+      },
       // The retired App Prototype (offer-os PLAN.md D51, 2026-09-27; shipped with G19). Its page
       // promised a two-week app on its own terms, which the 7-day sheet-to-app offer replaces.
       // Each URL goes to its locale's sheet-to-app page in one hop.

@@ -13,13 +13,14 @@ export const metadata: Metadata = {
   description: 'Κλείσε δωρεάν κλήση 30 λεπτών ή στείλε μας μήνυμα για το λογισμικό, την εφαρμογή, τον αυτοματισμό ή την ιστοσελίδα που χρειάζεσαι. Απαντάμε μέσα σε μία εργάσιμη ημέρα.',
   alternates: buildAlternates('/contact', 'el'),
   openGraph: {
+    locale: 'el_GR',
     type: 'website',
     url: 'https://www.fijisolutions.net/el/contact',
     title: 'Κλείσε δωρεάν κλήση 30 λεπτών | Fiji Solutions',
     description: 'Κλείσε δωρεάν κλήση 30 λεπτών ή στείλε μας μήνυμα για το λογισμικό, την εφαρμογή, τον αυτοματισμό ή την ιστοσελίδα που χρειάζεσαι. Απαντάμε μέσα σε μία εργάσιμη ημέρα.',
     images: [
       {
-        url: 'https://www.fijisolutions.net/fijisolutions.png',
+        url: 'https://www.fijisolutions.net/og/fiji-solutions-el.png',
         width: 1200,
         height: 630,
         alt: 'Επικοινωνία με τη Fiji Solutions, εταιρεία λογισμικού στη Θεσσαλονίκη',
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     site: '@fiji_solutions',
     title: 'Κλείσε δωρεάν κλήση 30 λεπτών | Fiji Solutions',
     description: 'Κλείσε δωρεάν κλήση 30 λεπτών ή στείλε μας μήνυμα για το λογισμικό, την εφαρμογή, τον αυτοματισμό ή την ιστοσελίδα που χρειάζεσαι. Απαντάμε μέσα σε μία εργάσιμη ημέρα.',
-    images: ['https://www.fijisolutions.net/fijisolutions.png'],
+    images: ['https://www.fijisolutions.net/og/fiji-solutions-el.png'],
   },
 };
 

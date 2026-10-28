@@ -84,7 +84,9 @@ const sheetToApp: SheetToAppOffer = {
       // The S01 outcome line. It is also the anchor text of every link to this page (offerLinks.ts
       // reads `eyebrow` for every offer), as 03-copy-homepage.md asked. That homepage contract is retired
       // with the broad home of 2026-10-21 (offer-os broad home BR-D22); the rule stands in offerLinks.ts.
-      eyebrow: 'The finished app shows where every order or job stands',
+      // 2026-10-28 (offer-os gtm/seo-plan-2026-10 C1, ONP-3, D-64): the page's own keyword, since this line is the
+      // anchor text of every link here. It read 'The finished app shows where every order or job stands'.
+      eyebrow: 'Turn your Excel spreadsheet into an app',
       title: 'A prototype 7 days after the audit call. Pay only if you like it.',
       subhead:
         'The Column-First Build starts from your spreadsheet\'s column headers. On a free 30-minute audit call, we talk through what you need.',
@@ -415,7 +417,8 @@ const sheetToApp: SheetToAppOffer = {
       ogAlt: 'Fiji Solutions: πρωτότυπο της εφαρμογής σου 7 μέρες μετά την πρώτη κλήση',
 
       // The S01 outcome line, and the anchor text of every link to this page (see the en note).
-      eyebrow: 'Κάθε παραγγελία και κάθε δουλειά σε μία οθόνη',
+      // 2026-10-28 (C1, ONP-3, D-64): it read «Κάθε παραγγελία και κάθε δουλειά σε μία οθόνη».
+      eyebrow: 'Το Excel σου γίνεται εφαρμογή',
       title: 'Πρωτότυπο της εφαρμογής σου 7 μέρες μετά την πρώτη κλήση. Πληρώνεις μόνο αν σου αρέσει.',
       subhead:
         'Δουλεύουμε με τη μέθοδο «Πρώτα οι στήλες»: μας στέλνεις τα ονόματα των στηλών του Excel σου. Στην πρώτη κλήση, 30 λεπτά και δωρεάν, συζητάμε τι χρειάζεσαι.',

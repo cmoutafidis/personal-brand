@@ -13,11 +13,12 @@ export const metadata: Metadata = {
   keywords: "custom software development Greece, business process automation Greece, internal tools Greece, system integration Greece, workflow automation Greece, software company Thessaloniki",
   alternates: buildAlternates(path),
   openGraph: {
+    locale: 'en_US',
     type: 'website',
     url: `${siteUrl}/en${path}`,
     title: "Custom Software Development Greece | Process Automation | Fiji Solutions",
     description: "We build the internal tools, system connections and automations that remove work your team repeats every week.",
-    images: [{url: `${siteUrl}/fijisolutions.png`, width: 1200, height: 630, alt: "Custom Software Development Greece"}],
+    images: [{url: `${siteUrl}/og/fiji-solutions-en.png`, width: 1200, height: 630, alt: "Custom Software Development Greece"}],
   },
 };
 

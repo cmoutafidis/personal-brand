@@ -10,13 +10,14 @@ export const metadata: Metadata = {
   keywords: 'Fiji Solutions legal, Fiji Solutions company registration, software company Thessaloniki legal, GEMI registration Greece, business registration Thessaloniki, legal information software company, corporate details Fiji Solutions, IT consulting legal details, custom software development legal, company law Greece',
   alternates: buildAlternates('/legal'),
   openGraph: {
+    locale: 'en_US',
     type: 'website',
     url: 'https://www.fijisolutions.net/en/legal',
     title: 'Legal Information',
     description: 'Official legal information & company registration details for Fiji Solutions. GEMI number, corporate details & business registration info.',
     images: [
       {
-        url: 'https://www.fijisolutions.net/fijisolutions.png',
+        url: 'https://www.fijisolutions.net/og/fiji-solutions-en.png',
         width: 1200,
         height: 630,
         alt: 'Fiji Solutions Legal Information: Registered Software Company in Thessaloniki specializing in IT consulting and custom software development',
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     site: '@fiji_solutions',
     title: 'Legal Information',
     description: 'Official legal information & company registration details for Fiji Solutions. GEMI number, corporate details & business registration info.',
-    images: ['https://www.fijisolutions.net/fijisolutions.png'],
+    images: ['https://www.fijisolutions.net/og/fiji-solutions-en.png'],
   },
 };
 

@@ -12,6 +12,7 @@ import {Language, assistantId, vapiApiKey} from '@/types/language';
 import {PERSON_REF, ORGANISATION_ID} from '@/lib/person';
 import {jsonLd} from '@/lib/jsonLd';
 import {SERVICE_TYPES} from '@/data/services';
+import {defaultOgImage, LOGO_IMAGE_OBJECT} from '@/lib/alternates';
 
 // One shell, two root layouts.
 //
@@ -86,7 +87,7 @@ export function buildRootMetadata(lang: Language): Metadata {
       locale: lang === 'el' ? 'el_GR' : 'en_US',
       images: [
         {
-          url: `${SITE}/fijisolutions.png`,
+          url: defaultOgImage(lang),
           width: 1200,
           height: 630,
           alt: 'Fiji Solutions',
@@ -99,7 +100,7 @@ export function buildRootMetadata(lang: Language): Metadata {
       site: '@fiji_solutions',
       title: c.title,
       description: c.ogDescription,
-      images: [`${SITE}/fijisolutions.png`],
+      images: [defaultOgImage(lang)],
     },
   };
 }
@@ -143,7 +144,8 @@ const MAP_URL =
 // section sells («Τρία πράγματα», translations.ts). The two website offers are linked from page
 // bodies, not declared as a fourth and fifth service here — taking this to five while the page
 // still says three is the machine-readable/human-readable divergence this comment exists to catch.~~
-// Struck 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G04, decision BR-D4): `serviceType` is the six
+// Struck 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G04, decision BR-D4): `serviceType` (renamed `knowsAbout`
+// 2026-10-28, SCH-2) is the six
 // `schemaName` values of src/data/services.ts, the file the homepages' "What we build" grid and
 // /portfolio render from, so the machine readable list and the visible one still come from one place.
 //
@@ -196,8 +198,10 @@ function organisationSchema(lang: Language) {
     // Solutions SINGLE MEMBER PRIVATE COMPANY (IKE)" are the same registered name in two scripts,
     // both true, and both are the form the respective registry-facing surfaces use.
     url: SITE,
-    logo: `${SITE}/fijisolutions.png`,
-    image: `${SITE}/fijisolutions.png`,
+    // 2026-10-28 (offer-os gtm/seo-plan-2026-10 C1, SCH-1): the moustache logo as an ImageObject. Both fields read
+    // the retired hero screenshot until then, so Google had a screenshot of text as the company logo.
+    logo: LOGO_IMAGE_OBJECT,
+    image: LOGO_IMAGE_OBJECT,
     telephone: '+30 231 107 0108',
     email: 'info@fijisolutions.net',
     address: {
@@ -324,7 +328,9 @@ function organisationSchema(lang: Language) {
       {'@type': 'City', name: 'Thessaloniki'},
       {'@type': 'Country', name: 'United States'},
     ],
-    serviceType: SERVICE_TYPES,
+    // 2026-10-28 (offer-os gtm/seo-plan-2026-10 C1, SCH-2): `knowsAbout`, not `serviceType`. schema.org defines
+    // serviceType on Service, not on ProfessionalService; the offer pages keep Service.serviceType.
+    knowsAbout: SERVICE_TYPES,
   };
 }
 

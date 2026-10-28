@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: 'Πρακτικά κείμενα για ιστοσελίδες και αναζήτηση, με πηγή και ημερομηνία.',
     locale: 'el_GR',
     siteName: 'Fiji Solutions',
-    images: [{url: `${siteUrl}/fijisolutions.png`, width: 1200, height: 630, alt: 'Fiji Solutions'}],
+    images: [{url: `${siteUrl}/og/fiji-solutions-el.png`, width: 1200, height: 630, alt: 'Fiji Solutions'}],
   },
 };
 

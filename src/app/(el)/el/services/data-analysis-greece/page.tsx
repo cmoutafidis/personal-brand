@@ -13,11 +13,12 @@ export const metadata: Metadata = {
   keywords: "ανάλυση δεδομένων Ελλάδα, επιχειρηματική ευφυΐα, BI Ελλάδα, αυτοματοποίηση αναφορών, δείκτες απόδοσης, Snowflake Ελλάδα",
   alternates: buildAlternates(path, 'el'),
   openGraph: {
+    locale: 'el_GR',
     type: 'website',
     url: `${siteUrl}/el${path}`,
     title: "Ανάλυση Δεδομένων Ελλάδα | Αναφορές & BI | Fiji Solutions",
     description: "Αν μια αναφορά θέλει δύο μέρες για να ετοιμαστεί και στο τέλος δύο άνθρωποι διαφωνούν για τον αριθμό, ξαναφτιάχνουμε τη διαδρομή ώστε να ετοιμάζεται μόνη της.",
-    images: [{url: `${siteUrl}/fijisolutions.png`, width: 1200, height: 630, alt: "Ανάλυση Δεδομένων Ελλάδα"}],
+    images: [{url: `${siteUrl}/og/fiji-solutions-el.png`, width: 1200, height: 630, alt: "Ανάλυση Δεδομένων Ελλάδα"}],
   },
 };
 

@@ -1,7 +1,7 @@
 import type {Metadata} from 'next';
 import type {Faq} from '@/components/OfferLanding';
 import {Language} from '@/types/language';
-import {buildAlternates} from '@/lib/alternates';
+import {buildAlternates, defaultOgImage} from '@/lib/alternates';
 import {routeLastmod} from '@/lib/routes';
 import {ORGANISATION_ID} from '@/lib/person';
 
@@ -42,7 +42,7 @@ import {ORGANISATION_ID} from '@/lib/person';
 //    blogSchema.ts names it, then the offer). There is no /offers index page, so the trail has no middle item. The trail is JSON-LD
 //    only; nothing changes on screen.
 //  5. The FAQPage carries `inLanguage`.
-//  6. An offer that sets `ogImage` gets its own preview image; the rest keep fijisolutions.png.
+//  6. An offer that sets `ogImage` gets its own preview image; the rest get the site card, defaultOgImage(lang).
 //  7. An offer that sets `showUpdated` prints "Updated <date>" at the page end and its WebPage node
 //    carries `dateModified`, both read from its sitemap lastmod (src/lib/routes.ts), so the three
 //    agree. Only sheet-to-app sets it.
@@ -59,7 +59,7 @@ export type OfferSchemaSource = {
   serviceType: string;
   /** schema.org areaServed country names per locale. Omitted: Greece. */
   areaServed?: Record<Language, string[]>;
-  /** Site-relative path of the offer's own 1200x630 preview image per locale. Omitted: fijisolutions.png. */
+  /** Site-relative path of the offer's own 1200x630 preview image per locale. Omitted: the site card, defaultOgImage(lang). */
   ogImage?: Record<Language, string>;
   /** The page prints its sitemap lastmod as a visible date; the WebPage node carries it as dateModified. */
   showUpdated?: boolean;
@@ -82,7 +82,7 @@ export function offerLastmod(offer: Pick<OfferSchemaSource, 'slug'>): string {
 export function buildOfferMetadata(offer: OfferSchemaSource, lang: Language): Metadata {
   const c = offer.copy[lang];
   const url = `${SITE}/${lang}/${offer.slug}`;
-  const image = `${SITE}${offer.ogImage?.[lang] ?? '/fijisolutions.png'}`;
+  const image = offer.ogImage?.[lang] ? `${SITE}${offer.ogImage[lang]}` : defaultOgImage(lang);
 
   return {
     title: c.metaTitle,

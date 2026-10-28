@@ -14,13 +14,14 @@ export const metadata: Metadata = {
   keywords: 'custom software Greece, web and mobile apps, process automation, AI agents, website development, Snowflake consulting Greece',
   alternates: buildAlternates('/portfolio'),
   openGraph: {
+    locale: 'en_US',
     type: 'website',
     url: 'https://www.fijisolutions.net/en/portfolio',
     title: 'Services | Fiji Solutions',
     description: 'What Fiji Solutions builds: custom software, web and mobile apps, process automation, AI agents, websites, and data platforms on Snowflake.',
     images: [
       {
-        url: 'https://www.fijisolutions.net/fijisolutions.png',
+        url: 'https://www.fijisolutions.net/og/fiji-solutions-en.png',
         width: 1200,
         height: 630,
         alt: 'Fiji Solutions Portfolio: Innovative software development projects from Thessaloniki specializing in web development, AI solutions, and Snowflake AI Data Cloud data engineering',
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
     site: '@fiji_solutions',
     title: 'Services | Fiji Solutions',
     description: 'What Fiji Solutions builds: custom software, web and mobile apps, process automation, AI agents, websites, and data platforms on Snowflake.',
-    images: ['https://www.fijisolutions.net/fijisolutions.png'],
+    images: ['https://www.fijisolutions.net/og/fiji-solutions-en.png'],
   },
 };
 

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import TrackedLink from '@/components/TrackedLink';
 import {BOOKING_CLICK_EVENT} from '@/utils/gtag';
 import {Language} from '@/types/language';
-import {buildAlternates} from '@/lib/alternates';
+import {buildAlternates, ogLocale} from '@/lib/alternates';
 import {createTranslationFunction} from '@/translations';
 import {ORGANISATION_ID, PERSON_REF} from '@/lib/person';
 import sheetToApp from '@/data/offers/sheet-to-app';
@@ -164,6 +164,7 @@ export function aboutMetadata(lang: Language): Metadata {
     alternates: buildAlternates('/about', lang),
     openGraph: {
       type: 'profile',
+      locale: ogLocale(lang),
       url,
       title: c.metaTitle,
       description: c.metaDescription,

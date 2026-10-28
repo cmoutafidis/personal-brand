@@ -13,11 +13,12 @@ export const metadata: Metadata = {
   keywords: "Snowflake consulting Greece, Snowflake partner Greece, Snowflake migration Greece, data warehouse Greece, ETL ELT Greece, data engineering Greece",
   alternates: buildAlternates(path),
   openGraph: {
+    locale: 'en_US',
     type: 'website',
     url: `${siteUrl}/en${path}`,
     title: "Snowflake Consulting Greece | Select Partner | Fiji Solutions",
     description: "Snowflake AI Data Cloud implementation, migration and tuning. We are a Snowflake AI Data Cloud Select Partner.",
-    images: [{url: `${siteUrl}/fijisolutions.png`, width: 1200, height: 630, alt: "Snowflake Consulting Greece"}],
+    images: [{url: `${siteUrl}/og/fiji-solutions-en.png`, width: 1200, height: 630, alt: "Snowflake Consulting Greece"}],
   },
 };
 

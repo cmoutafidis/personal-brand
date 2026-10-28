@@ -82,9 +82,9 @@ export default function ContactForm({
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
   // The Atlas line (offer-os gtm/atlas/DECISIONS.md AT-D9). Set on the first success and never
-  // cleared, so it stays on screen after the success message above it hides at 5 seconds.
+  // cleared, so it stays on screen after the success message above it hides. Since 2026-10-28 (AI-3) that
+  // happens when the reader starts a new message, not after 5 seconds.
   const [showAtlasLine, setShowAtlasLine] = useState(false);
-  const hideTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   // Spam screening, added 2026-10-08. `website` carries a honeypot nobody sees (its input is named `leave_empty`, a name password managers do not fill), and `elapsed_ms` is how
   // long the form was on screen before the submit; the endpoint drops a filled honeypot or a submit
@@ -93,12 +93,6 @@ export default function ContactForm({
   const shownAt = useRef(0);
   useEffect(() => {
     shownAt.current = performance.now();
-  }, []);
-
-  useEffect(() => () => {
-    if (hideTimer.current) {
-      clearTimeout(hideTimer.current);
-    }
   }, []);
 
   // Handle input changes
@@ -112,6 +106,10 @@ export default function ContactForm({
     // Clear error when user starts typing
     if (submitError) {
       setSubmitError('');
+    }
+    // A new message starts: the last success message goes (AI-3).
+    if (submitSuccess) {
+      setSubmitSuccess(false);
     }
   };
 
@@ -223,13 +221,9 @@ export default function ContactForm({
         heardAbout: ''
       });
 
-      // Auto-hide success message after 5 seconds
-      if (hideTimer.current) {
-        clearTimeout(hideTimer.current);
-      }
-      hideTimer.current = setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
+      // The success message stays until the reader starts a new message (handleInputChange) or leaves.
+      // It hid after 5 seconds until 2026-10-28 (offer-os gtm/seo-plan-2026-10 C1, AI-3), so a reader who
+      // looked away never saw that the message went through.
 
     } catch (error) {
       console.error('Form submission error:', error);
@@ -267,7 +261,8 @@ export default function ContactForm({
             Every form on the site renders this component, so this one block covers all of them,
             the Sheet-to-App forms included: AT-D29 confirms the line there, because it opens with
             the qualifier, and it renders after a send only, never in a page body (AT-D8 holds).
-            It sits outside the auto-hidden success message, so it stays long enough to click.
+            It sits outside the success message, which hides once the reader starts a new message (AI-3,
+            2026-10-28), so it stays on screen to click.
             Copy verbatim from offer-os offers/fiji-solutions--atlas/03-copy.md. */}
         {showAtlasLine && (
           <p className="mb-6 text-base leading-7 text-gray-700 dark:text-gray-300">
@@ -291,7 +286,10 @@ export default function ContactForm({
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className={compact ? 'space-y-4' : 'space-y-6'}>
+        {/* noValidate: the fields carry `required` and `autoComplete` for autofill, assistive tech and agents (C1, AI-2,
+            2026-10-28), but validateForm stays the one that speaks, in the page's language and with each offer's own
+            wording. Without it the browser's bubble, in the browser's language, would block the submit first. */}
+        <form noValidate onSubmit={handleSubmit} className={compact ? 'space-y-4' : 'space-y-6'}>
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               {nameLabelOverride ?? t('contact.form.name')} *
@@ -300,6 +298,8 @@ export default function ContactForm({
               type="text"
               id="name"
               name="name"
+              autoComplete="name"
+              required
               value={formData.name}
               onChange={handleInputChange}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -316,6 +316,8 @@ export default function ContactForm({
               type="email"
               id="email"
               name="email"
+              autoComplete="email"
+              required
               value={formData.email}
               onChange={handleInputChange}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -332,6 +334,8 @@ export default function ContactForm({
               type="text"
               id="company"
               name="company"
+              autoComplete="organization"
+              required
               value={formData.company}
               onChange={handleInputChange}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
@@ -348,6 +352,7 @@ export default function ContactForm({
               <textarea
                 id="question"
                 name="question"
+                required
                 rows={1}
                 value={formData.question}
                 onChange={handleInputChange}
@@ -365,6 +370,7 @@ export default function ContactForm({
             <textarea
               id="message"
               name="message"
+              required={!messageOptional}
               rows={compact ? 3 : 4}
               value={formData.message}
               onChange={handleInputChange}
@@ -386,6 +392,7 @@ export default function ContactForm({
               type="text"
               id="heardAbout"
               name="heardAbout"
+              required
               value={formData.heardAbout}
               onChange={handleInputChange}
               className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"

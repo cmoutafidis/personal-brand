@@ -13,11 +13,12 @@ export const metadata: Metadata = {
   keywords: "εξατομικευμένο λογισμικό Ελλάδα, αυτοματοποίηση διαδικασιών, εσωτερικά εργαλεία, διασύνδεση συστημάτων, εταιρεία λογισμικού Θεσσαλονίκη",
   alternates: buildAlternates(path, 'el'),
   openGraph: {
+    locale: 'el_GR',
     type: 'website',
     url: `${siteUrl}/el${path}`,
     title: "Εξατομικευμένο Λογισμικό Ελλάδα | Αυτοματοποίηση Διαδικασιών | Fiji Solutions",
     description: "Φτιάχνουμε τα εσωτερικά εργαλεία, τις συνδέσεις συστημάτων και τους αυτοματισμούς που αφαιρούν δουλειά την οποία η ομάδα σου επαναλαμβάνει κάθε βδομάδα.",
-    images: [{url: `${siteUrl}/fijisolutions.png`, width: 1200, height: 630, alt: "Εξατομικευμένο Λογισμικό Ελλάδα"}],
+    images: [{url: `${siteUrl}/og/fiji-solutions-el.png`, width: 1200, height: 630, alt: "Εξατομικευμένο Λογισμικό Ελλάδα"}],
   },
 };
 
