@@ -1,5 +1,4 @@
 import type {Metadata, Viewport} from 'next';
-import {Inter, Plus_Jakarta_Sans} from 'next/font/google';
 import './globals.css';
 import {ThemeProvider} from '@/context/ThemeContext';
 import {LanguageProvider} from '@/context/LanguageContext';
@@ -24,17 +23,9 @@ import {defaultOgImage, LOGO_IMAGE_OBJECT} from '@/lib/alternates';
 // Before 2026-08-15 the root layout hardcoded `lang="en"`, so every Greek page on the site
 // declared itself English to Google and to screen readers. Do not collapse these back into one.
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ['latin', 'latin-ext'],
-  variable: '--font-plus-jakarta-sans',
-  display: 'swap',
-});
+// The two web fonts are declared in each root layout, not here (2026-10-28, offer-os seo-plan-2026-10 C2,
+// PERF-1): next/font preloads every subset a font asks for on every page that imports it, and only the
+// Greek tree needs Inter's Greek file. The layout hands their variable classes in as `fonts`.
 
 const SITE = 'https://www.fijisolutions.net';
 
@@ -354,13 +345,15 @@ function websiteSchema() {
 
 export default function RootShell({
   lang,
+  fonts,
   children,
 }: {
   lang: Language;
+  fonts: string;
   children: React.ReactNode;
 }) {
   return (
-    <html lang={lang} className={`${inter.variable} ${plusJakartaSans.variable}`}>
+    <html lang={lang} className={fonts}>
     <head>
       <link rel="preconnect" href="https://fonts.googleapis.com"/>
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>

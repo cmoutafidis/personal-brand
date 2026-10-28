@@ -52,7 +52,9 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-plus-jakarta-sans)', 'system-ui', 'sans-serif'],
+        // Inter after Plus Jakarta Sans gives Greek headings Inter, not Arial (2026-10-28, offer-os
+        // seo-plan-2026-10 C2, ONP-10). English pages never reach it: their Jakarta variable ends in its fallback.
+        display: ['var(--font-plus-jakarta-sans)', 'var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       keyframes: {
         wave: {
