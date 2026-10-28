@@ -224,8 +224,9 @@ export default function AboutPage({lang}: {lang: Language}) {
             alt={c.photoAlt}
             width={800}
             height={1000}
-            sizes="(min-width: 768px) 360px, 100vw"
+            sizes="(min-width: 1024px) 372px, (min-width: 768px) calc(40vw - 32px), min(100vw - 32px, 384px)"
             priority
+            fetchPriority="high"
             className="w-full max-w-sm rounded-xl shadow-md"
           />
           <div>

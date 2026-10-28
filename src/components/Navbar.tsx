@@ -101,8 +101,11 @@ const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <img
-              src="/fiji_solutions.png"
-              alt="Fiji Solutions Logo"
+              src="/fiji-solutions-logo.webp"
+              alt=""
+              width={32}
+              height={32}
+              decoding="async"
               className="h-8 w-8 object-contain"
             />
             <span className="text-xl font-bold text-gray-900 dark:text-white">
@@ -143,8 +146,11 @@ const Navbar: React.FC = () => {
             className="flex items-center space-x-2"
           >
             <img
-              src="/fiji_solutions.png"
-              alt="Fiji Solutions Logo"
+              src="/fiji-solutions-logo.webp"
+              alt=""
+              width={32}
+              height={32}
+              decoding="async"
               className="h-8 w-8 object-contain"
             />
             <span className="text-xl font-bold text-gray-900 dark:text-white">

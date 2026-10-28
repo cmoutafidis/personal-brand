@@ -2,6 +2,7 @@ import React from 'react';
 import {Facebook, Linkedin} from 'lucide-react';
 import FooterButton from "@/components/FooterButton";
 import QuickLinks from "@/components/QuickLinks";
+import {PARTNER_BADGE} from "@/data/clients";
 
 interface FooterProps {
   t: (key: string) => string;
@@ -27,9 +28,15 @@ export default function Footer({t}: FooterProps) {
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div>
             <div className="flex items-center space-x-2 mb-4">
+              {/* 2026-10-28 (offer-os gtm/seo-plan-2026-10 C4, IMG-1): a 96 px WebP, 2.5 KB, for the 32 px slot. The
+                  1250 px fiji_solutions.png (48 KB) stays as the schema logo. alt="" since the name is beside it. */}
               <img
-                src="/fiji_solutions.png"
-                alt="Fiji Solutions Logo"
+                src="/fiji-solutions-logo.webp"
+                alt=""
+                width={32}
+                height={32}
+                loading="lazy"
+                decoding="async"
                 className="h-8 w-8 object-contain"
               />
               <span className="text-xl font-bold">Fiji Solutions</span>
@@ -47,8 +54,12 @@ export default function Footer({t}: FooterProps) {
                 aria-label="Verify this partnership in Snowflake's partner directory"
               >
                 <img
-                  src="/Services_Partner_Badge_Select.svg"
+                  src={PARTNER_BADGE.src}
                   alt="Snowflake AI Data Cloud Select Partner Badge"
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                  decoding="async"
                   className="h-16 w-auto"
                 />
               </a>

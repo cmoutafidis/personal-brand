@@ -39,10 +39,34 @@ const LOCALELESS = [
   'blog',
 ];
 
+// 2026-10-28 (offer-os gtm/seo-plan-2026-10 C4, PERF-7): files in public/ were served with max-age=0, so a repeat
+// visitor revalidated the logo, badge and client logos on every page. These get a week in the browser and a day
+// of stale-while-revalidate. A file that changes gets a new name, as the badge did, or waits out the week.
+// Hashed /_next/static files already get a year from Next. Keep this list in step with public/.
+const STATIC_CACHE = 'public, max-age=604800, stale-while-revalidate=86400';
+const STATIC_PATHS = [
+  '/clients/:path*',
+  '/screenshots/:path*',
+  '/og/:path*',
+  '/fiji-solutions-logo.webp',
+  '/fiji_solutions.png',
+  '/fijisolutions.png',
+  '/snowflake-select-partner-badge.svg',
+  '/charis-moutafidis.jpg',
+  '/favicon.png',
+];
+
 const nextConfig: NextConfig = {
+  // PERF-7: AVIF first where the browser takes it, and optimised images kept 31 days instead of 60 seconds.
+  images: {formats: ['image/avif', 'image/webp'], minimumCacheTTL: 2678400},
+  async headers() {
+    return STATIC_PATHS.map((source) => ({source, headers: [{key: 'Cache-Control', value: STATIC_CACHE}]}));
+  },
   async redirects() {
     return [
       {source: '/', destination: '/en', permanent: true},
+      // C4, IMG-8 (2026-10-28): the badge was renamed to a lowercase, hyphenated name.
+      {source: '/Services_Partner_Badge_Select.svg', destination: '/snowflake-select-partner-badge.svg', permanent: true},
       // ~~The one locale-less path that does NOT go to /en.~~ 2026-10-28 (offer-os gtm/seo-plan-2026-10 C1, TECH-3):
       // blogData.en has had posts since 2026-10-12, so /blog moved into LOCALELESS and goes to /en/blog like every
       // other locale-less path.

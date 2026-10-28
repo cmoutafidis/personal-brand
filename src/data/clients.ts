@@ -63,6 +63,8 @@ export const CLIENTS: readonly Client[] = [
     id: 'seaflows',
     name: 'Seaflows',
     projectSlug: 'seaflows-direct-booking',
+    // 2026-10-28 (C4, IMG-4): the file is 276x152, was 400x220, enough for 3x screens in the strip's 48 px tall slot.
+    // width and height below give only the aspect ratio; CSS sets the size.
     logo: {src: '/clients/seaflows.webp', width: 73, height: 40},
     permission: {date: '2026-10-21', source: 'His decision, name now (offer-os BR-D21, BR-D26)', logo: true, logoDate: '2026-10-22', logoSource: 'His yes for every client he named, 2026-10-22 (offer-os BR-D34)'},
   },
@@ -86,8 +88,12 @@ export const CLIENTS: readonly Client[] = [
   },
 ];
 
-/** The partner item after the names: the Snowflake Select badge (company.md partner record). */
+/**
+ * The partner item after the names: the Snowflake Select badge (company.md partner record). Renamed from
+ * `/Services_Partner_Badge_Select.svg` and run through svgo 2026-10-28 (offer-os gtm/seo-plan-2026-10 C4, IMG-2,
+ * IMG-8): 122 KB -> 32 KB, pixel-identical at 128 and 512 px. next.config.ts redirects the old path.
+ */
 export const PARTNER_BADGE = {
-  src: '/Services_Partner_Badge_Select.svg',
+  src: '/snowflake-select-partner-badge.svg',
   href: 'https://www.snowflake.com/en/why-snowflake/partners/all-partners/fiji-solutions/',
 } as const;

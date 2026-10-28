@@ -15,6 +15,9 @@ import {CLIENTS, PARTNER_BADGE} from '@/data/clients';
 // Since BR-D45 (2026-10-26, after ignitech.ch) the row scrolls sideways without end, 38 seconds a loop, logos at
 // 48px in their own colours, edges fading out, moving on under the pointer (CSS in globals.css). The list renders twice;
 // the second copy is hidden from screen readers and from the tab order, and with reduced motion it is not shown.
+// 2026-10-28 (offer-os gtm/seo-plan-2026-10 C4, IMG-4, IMG-2): every image here is lazy. Eager ones each got a
+// preload in the page head (13 on each home, the hidden dark variants among them); a lazy dark variant is never
+// fetched while it is display:none, and the strip sits below the first phone screen.
 function Items({language, copy}: {language: Language; copy: boolean}) {
   const text = HOME[language].clients;
   const nameClass = 'whitespace-nowrap font-display text-xl font-bold text-gray-500 transition-colors group-hover:text-primary-600 dark:text-gray-400 dark:group-hover:text-primary-400';
@@ -26,10 +29,10 @@ function Items({language, copy}: {language: Language; copy: boolean}) {
         const mark = c.logo ? (
           <>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.logo.src} alt={copy || c.logo.withName ? '' : c.name} width={c.logo.width} height={c.logo.height} className={`h-12 w-auto max-w-[180px] object-contain transition-transform duration-200 group-hover:scale-105 ${c.logo.darkSrc ? 'dark:hidden' : ''}`}/>
+            <img src={c.logo.src} alt={copy || c.logo.withName ? '' : c.name} width={c.logo.width} height={c.logo.height} loading="lazy" decoding="async" className={`h-12 w-auto max-w-[180px] object-contain transition-transform duration-200 group-hover:scale-105 ${c.logo.darkSrc ? 'dark:hidden' : ''}`}/>
             {c.logo.darkSrc && (
               /* eslint-disable-next-line @next/next/no-img-element */
-              <img src={c.logo.darkSrc} alt={copy || c.logo.withName ? '' : c.name} width={c.logo.width} height={c.logo.height} className="hidden h-12 w-auto max-w-[180px] object-contain transition-transform duration-200 group-hover:scale-105 dark:block"/>
+              <img src={c.logo.darkSrc} alt={copy || c.logo.withName ? '' : c.name} width={c.logo.width} height={c.logo.height} loading="lazy" decoding="async" className="hidden h-12 w-auto max-w-[180px] object-contain transition-transform duration-200 group-hover:scale-105 dark:block"/>
             )}
             {c.logo.withName && <span className={nameClass}>{c.name}</span>}
           </>
@@ -51,7 +54,7 @@ function Items({language, copy}: {language: Language; copy: boolean}) {
       <li className="flex h-16 flex-shrink-0 items-center">
         <a href={PARTNER_BADGE.href} target="_blank" rel="noopener noreferrer" className="group" {...tab}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={PARTNER_BADGE.src} alt={copy ? '' : text.badgeAlt} className="h-14 w-auto transition-transform duration-200 group-hover:scale-105"/>
+          <img src={PARTNER_BADGE.src} alt={copy ? '' : text.badgeAlt} width={56} height={56} loading="lazy" decoding="async" className="h-14 w-auto transition-transform duration-200 group-hover:scale-105"/>
         </a>
       </li>
     </ul>

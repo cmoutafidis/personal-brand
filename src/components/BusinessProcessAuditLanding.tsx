@@ -4,6 +4,7 @@ import OfferLinks from '@/components/OfferLinks';
 import TrackedLink from '@/components/TrackedLink';
 import {CTA_CLICK_EVENT} from '@/utils/gtag';
 import {SPREADSHEET_OFFERS, WEBSITE_OFFERS} from '@/data/offerLinks';
+import {PARTNER_BADGE} from '@/data/clients';
 import {Language} from '@/types/language';
 import {
   AUDIT_CALL_MINUTES,
@@ -839,7 +840,7 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
               <div key={card.title} className="rounded-xl bg-gray-50 p-6 shadow-md dark:bg-gray-800">
                 {card.badge && (
                   <Image
-                    src="/Services_Partner_Badge_Select.svg"
+                    src={PARTNER_BADGE.src}
                     alt="Snowflake AI Data Cloud Select Partner badge"
                     width={96}
                     height={96}
