@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import Vapi from '@vapi-ai/web';
+import React, { useState, useEffect, useRef } from 'react';
+import type Vapi from '@vapi-ai/web';
 import { PhoneOff, Mic } from 'lucide-react';
 import {useLanguage} from "@/context/LanguageContext";
 import {createTranslationFunction} from "@/translations";
@@ -22,14 +22,29 @@ const VapiWidget: React.FC<VapiWidgetProps> = ({
   const {language} = useLanguage();
 
   const t = createTranslationFunction(language);
-  const [vapi, setVapi] = useState<Vapi | null>(null);
+  // The Vapi Web SDK is imported on the first press of the button, not with the page (PERF-5,
+  // offer-os seo-plan-2026-10 C3, 2026-10-28). Before that it was bundled into 24 pages, the project
+  // pages included, which import a class constant from Hero.tsx.
+  const vapiRef = useRef<Vapi | null>(null);
+  // False once the button has unmounted, so an import that resolves after the visitor has left
+  // never starts a call with no button to end it.
+  const mountedRef = useRef(false);
   const [isConnected, setIsConnected] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const vapiInstance = new Vapi(apiKey);
-    setVapi(vapiInstance);
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+      vapiRef.current?.stop();
+      vapiRef.current = null;
+    };
+  }, [apiKey]);
+
+  const createVapi = async (): Promise<Vapi> => {
+    const {default: VapiClient} = await import('@vapi-ai/web');
+    const vapiInstance = new VapiClient(apiKey);
 
     // Event listeners
     vapiInstance.on('call-start', () => {
@@ -89,22 +104,26 @@ const VapiWidget: React.FC<VapiWidgetProps> = ({
       setIsConnected(false);
     });
 
-    return () => {
-      vapiInstance?.stop();
-    };
-  }, [apiKey]);
+    return vapiInstance;
+  };
 
-  const startCall = () => {
-    if (vapi) {
-      setIsLoading(true);
-      vapi.start(assistantId);
+  const startCall = async () => {
+    setIsLoading(true);
+    try {
+      if (!vapiRef.current) {
+        const vapiInstance = await createVapi();
+        if (!mountedRef.current) return;
+        vapiRef.current = vapiInstance;
+      }
+      vapiRef.current.start(assistantId);
+    } catch (error) {
+      console.error('Vapi failed to load:', error);
+      setIsLoading(false);
     }
   };
 
   const endCall = () => {
-    if (vapi) {
-      vapi.stop();
-    }
+    vapiRef.current?.stop();
   };
 
   if (isLoading) {

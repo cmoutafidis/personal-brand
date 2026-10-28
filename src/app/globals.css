@@ -154,3 +154,25 @@ html.reveal-on [data-reveal].is-visible {
     .marquee-copy { display: none; }
     html.reveal-on [data-reveal] { opacity: 1; transform: none; transition: none; }
 }
+
+/* While the cookie bar is open, the Vapi chat bubble sits above it, so it never covers Accept
+   (ONP-1; offer-os seo-plan-2026-10 C3, D-66, 2026-10-28). The widget sets bottom: 1.5rem inline
+   on its fixed wrapper, hence !important. CookieConsent.tsx sets the attribute and --consent-h. */
+html[data-consent-open] vapi-widget .vapi-widget-wrapper > div[style*="position: fixed"] {
+    bottom: calc(var(--consent-h, 0px) + 0.75rem) !important;
+}
+
+/* The open chat panel is a fixed 28rem by 40rem, so on a phone it ran 97 px off the left edge (seen
+   2026-10-28 on the live site, Vapi 0.1.1 and 0.1.2 alike). It never grows past the screen height
+   (less the cookie bar while it is open), and on narrow screens it fits the width inside the
+   widget's own 1.5rem margins (offer-os seo-plan-2026-10 C3, C-37). */
+vapi-widget .vapi-widget-wrapper > div[style*="position: fixed"] > div[style*="width: 28rem"] {
+    max-height: calc(100vh - 3rem - var(--consent-h, 0px)) !important;
+    max-height: calc(100dvh - 3rem - var(--consent-h, 0px)) !important;
+}
+
+@media (max-width: 31rem) {
+    vapi-widget .vapi-widget-wrapper > div[style*="position: fixed"] > div[style*="width: 28rem"] {
+        width: calc(100vw - 3rem) !important;
+    }
+}
