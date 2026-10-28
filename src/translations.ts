@@ -23,8 +23,9 @@ import {REPLY_SLA} from '@/lib/offer';
 //     ~~because no price is published in either locale. Do not add one.~~
 //     Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): the no-price rule is retired for
 //     offers that have a set price. Those keep showing it, in the visitor's currency (euros on Greek
-//     pages). Offers without a set price and the cost posts stay without figures. Goals C5 and D9
-//     carry out the site changes; until then add no price here outside those goals.
+//     pages). Offers without a set price and the cost posts stay without figures. Goals ~~C5 and~~ D9
+//     carry out the site changes (C5 done 2026-10-28, D-68, D-71: euros on the Greek pages);
+//     until then add no price here outside those goals.
 //     ~~2026-09-30 (G20, offer-os gtm/sheet-to-app-rollout/PLAN.md D5, D68): one dated exception.
 //     The homepage `hero.*`, `challenges.*` and `solutions.*` strings are the sheet-to-app hook
 //     and are copied word for word from offer-os `offers/fiji-solutions--sheet-to-app/

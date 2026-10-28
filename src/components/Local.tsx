@@ -39,8 +39,8 @@ interface LocalProps {
 }
 
 // A Google Maps search URL built from the published address. It carries no coordinates, so unlike
-// a `geo` node it cannot silently point at the wrong municipality.
-const MAP_URL =
+// a `geo` node it cannot silently point at the wrong municipality. The footer links it too (C5, LOC-4).
+export const MAP_URL =
   'https://www.google.com/maps/search/?api=1&query=Fiji%20Solutions%2C%20Nikiforou%20Ouranou%2015%2C%20Thessaloniki%2054627&query_place_id=ChIJix6dwQk_qBQRnjn4-xWS2RI';
 
 export default function Local({t, language}: LocalProps) {

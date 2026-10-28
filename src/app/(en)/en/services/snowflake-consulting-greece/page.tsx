@@ -36,6 +36,7 @@ export default function Page() {
       closingBody={"Send us the bill and the heaviest query. That is usually enough to say where the money is going."}
       closingCta={"Get the free process audit"}
       offers={OFFERS_BY_SERVICE['services/snowflake-consulting-greece']}
+      path={path}
       schema={{
         '@context': 'https://schema.org',
         '@type': 'Service',

@@ -36,6 +36,7 @@ export default function Page() {
       closingBody={"Γι’ αυτό υπάρχει ο έλεγχος. Τριάντα λεπτά σε μια κλήση, και μετά γραπτό πλάνο με τις τρεις διαδικασίες που σου κοστίζουν περισσότερο, σε ώρες και σε ευρώ."}
       closingCta={"Κλείσε δωρεάν έλεγχο διαδικασιών"}
       offers={OFFERS_BY_SERVICE['services/custom-software-development-greece']}
+      path={path}
       schema={{
         '@context': 'https://schema.org',
         '@type': 'Service',

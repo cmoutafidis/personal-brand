@@ -43,13 +43,14 @@ const QuickLinks: React.FC = () => {
   ];
 
   return (
-    <ul className="space-y-2">
+    // 2026-10-28 (offer-os gtm/seo-plan-2026-10 C5, ONP-8): each link is 44 px tall for a thumb; they were 20.
+    <ul>
       {links.map((link) => (
         <li key={link.href}>
           <Link
             href={link.href}
             onClick={scrollToTop}
-            className="text-gray-400 hover:text-white transition-colors cursor-pointer"
+            className="inline-flex min-h-[44px] items-center text-gray-400 hover:text-white transition-colors cursor-pointer"
           >
             {link.label}
           </Link>

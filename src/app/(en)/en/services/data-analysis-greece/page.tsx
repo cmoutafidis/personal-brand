@@ -36,6 +36,7 @@ export default function Page() {
       closingBody={"We will tell you what it costs to keep assembling it, and what it would take to stop. In writing, within a week of the call."}
       closingCta={"Get the free process audit"}
       offers={OFFERS_BY_SERVICE['services/data-analysis-greece']}
+      path={path}
       schema={{
         '@context': 'https://schema.org',
         '@type': 'Service',

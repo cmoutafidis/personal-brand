@@ -225,22 +225,28 @@ export default function OfferLanding({offer, language}: {offer: Offer; language:
         <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-primary-200/60 blur-3xl dark:bg-primary-900/30"/>
         <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-secondary-200/60 blur-3xl dark:bg-secondary-900/30"/>
 
-        <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-32 sm:px-6 lg:px-8 lg:pt-36">
+        <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-28 sm:px-6 lg:px-8 lg:pt-36">
           <div className="mx-auto max-w-4xl text-center">
             {/* LOAD-BEARING. The only above-the-fold instance of the page's exact primary keyword.
                 The H1 is a result promise, which cannot also carry the keyword without reading
                 like a category page. Deleting this eyebrow costs the paid and organic channels
                 their keyword match with no visible symptom on the page. */}
-            <p className="mb-6 text-sm font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-400 sm:mb-6">
               {c.eyebrow}
             </p>
-            <h1 className="mb-8 text-4xl font-bold leading-tight text-gray-950 dark:text-white md:text-5xl lg:text-6xl">
+            <h1 className="mb-6 text-3xl font-bold leading-tight text-gray-950 dark:text-white sm:mb-8 sm:text-4xl md:text-5xl lg:text-6xl">
               {c.title}
             </h1>
-            <p className="mx-auto mb-10 max-w-3xl text-lg leading-8 text-gray-700 dark:text-gray-300 md:text-xl">
+            <p className="mx-auto mb-8 max-w-3xl text-base leading-7 text-gray-700 dark:text-gray-300 sm:mb-10 sm:text-lg sm:leading-8 md:text-xl">
               {c.subhead}
             </p>
-            <ul className="mx-auto mb-10 max-w-2xl space-y-4 text-left">
+            {/* ONP-2 (2026-10-28, offer-os gtm/seo-plan-2026-10 C5, D-69): the button sits right under the subhead,
+                before the bullets. Below them it was off the first phone screen. Under 640 px the eyebrow, H1 and
+                subhead are a step smaller and closer, so the button clears the cookie bar on a 375 x 812 screen. */}
+            <div className="mb-10">
+              <CtaButton label={c.ctaButton} callout={c.ctaCallout} location="hero" offerSlug={offerSlug} language={language}/>
+            </div>
+            <ul className="mx-auto max-w-2xl space-y-4 text-left">
               {c.bullets.map((bullet) => (
                 <li key={bullet.lead} className="flex items-start gap-3">
                   <Check/>
@@ -251,7 +257,6 @@ export default function OfferLanding({offer, language}: {offer: Offer; language:
                 </li>
               ))}
             </ul>
-            <CtaButton label={c.ctaButton} callout={c.ctaCallout} location="hero" offerSlug={offerSlug} language={language}/>
           </div>
         </div>
       </section>

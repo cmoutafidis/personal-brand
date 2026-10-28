@@ -56,11 +56,28 @@ const STATIC_PATHS = [
   '/favicon.png',
 ];
 
+// 2026-10-28 (offer-os gtm/seo-plan-2026-10 C5, TECH-6): three security headers on every response. No
+// Content-Security-Policy: the chat widget loads from unpkg.com and calls Vapi, GA4 and the Meta pixel load
+// on consent, and a CSP that misses one host breaks it silently. SAMEORIGIN, not DENY, so the site can still
+// frame its own pages.
+const SECURITY_HEADERS = [
+  {key: 'X-Content-Type-Options', value: 'nosniff'},
+  {key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin'},
+  {key: 'X-Frame-Options', value: 'SAMEORIGIN'},
+];
+
 const nextConfig: NextConfig = {
+  // TECH-2 (C5, 2026-10-28): a URL that matches no route rendered Next's bare default 404, because both root
+  // layouts sit in route groups and (en)/not-found.tsx only serves notFound() calls inside (en). This
+  // renders src/app/global-not-found.tsx for those URLs instead.
+  experimental: {globalNotFound: true},
   // PERF-7: AVIF first where the browser takes it, and optimised images kept 31 days instead of 60 seconds.
   images: {formats: ['image/avif', 'image/webp'], minimumCacheTTL: 2678400},
   async headers() {
-    return STATIC_PATHS.map((source) => ({source, headers: [{key: 'Cache-Control', value: STATIC_CACHE}]}));
+    return [
+      {source: '/:path*', headers: SECURITY_HEADERS},
+      ...STATIC_PATHS.map((source) => ({source, headers: [{key: 'Cache-Control', value: STATIC_CACHE}]})),
+    ];
   },
   async redirects() {
     return [

@@ -105,6 +105,10 @@ export function blogPostSchema(post: BlogPost, lang: Language) {
       keywords: post.tags.join(', '),
       articleSection: post.tags[0],
       isAccessibleForFree: true,
+      // SCH-3 (2026-10-28, offer-os gtm/seo-plan-2026-10 C5): Google wants an image on every Article, at least
+      // 1200 px wide. No post has its own picture yet (IMG-6, D10), so each carries its locale's share card,
+      // 1200x630, the same image as its og:image above.
+      image: {'@type': 'ImageObject', url: defaultOgImage(lang), width: 1200, height: 630},
       ...(sources
         ? {citation: sources.items.map((s) => ({'@type': 'CreativeWork', name: s.label, url: s.url}))}
         : {}),

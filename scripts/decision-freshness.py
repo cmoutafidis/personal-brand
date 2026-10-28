@@ -167,22 +167,21 @@ DECISIONS = [
          where="offer-os gtm/broad-home-2026-10/PLAN.md BR-D27",
          topic=[r"no testimonial", r"none is expected", r"no consented review"],
          ack=[r"2026-10-21", r"review slot", r"placeholder"]),
-    # 2026-10-26 (seo-plan-2026-10 D-08): "the rule stands for every other Fiji offer" is out of
-    # date. Every offer with a set price now shows it, in euros on Greek pages, not dollars;
-    # offers without a set price and the cost posts stay without figures, and cost posts link to
-    # the priced offer. The hero, FAQ and JSON-LD sub-rules are not addressed by D-08. The text
-    # below is unchanged until the guard is updated with the site change (goals C5, Fiji ONP-5,
-    # and D9 own it).
+    # 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08) retired the no-price rule for every offer with a set
+    # price; 2026-10-28 (C5, Fiji ONP-5, D-68, D-71) put the euros on the Greek pages. The `what` text says so.
     dict(id="sheet-to-app-fiji-landing",
          what="On 2026-10-04 Fiji's 7-Day Sheet-to-App Prototype page, /en/offers/sheet-to-app "
-              "and /el/offers/sheet-to-app, went live as the dated exception to the site's "
-              "no-price rule: it publishes its dollar ladder in 'What it costs' (D68, D69), "
-              "with no figure in the hero, the FAQ or the JSON-LD. It took the retired App "
-              "Prototype's place (D51). The rule stands for every other Fiji offer.",
-         where="offer-os gtm/sheet-to-app-rollout/PLAN.md D51, D68, D69; Fiji CLAUDE.md rule 7",
+              "and /el/offers/sheet-to-app, went live publishing its price ladder in 'What it "
+              "costs' (D68, D69), with no figure in the hero, the FAQ or the JSON-LD. It took the "
+              "retired App Prototype's place (D51). Since 2026-10-26 (seo-plan-2026-10 D-08) every "
+              "offer with a set price shows it in the visitor's currency: dollars on /en, and since "
+              "2026-10-28 the same numbers in euros on /el (D-68; Atlas too, D-71). Offers without "
+              "a set price and the cost posts show no figure.",
+         where="offer-os gtm/sheet-to-app-rollout/PLAN.md D51, D68, D69; gtm/seo-plan-2026-10 D-08, D-68, D-71",
+         # 2026-10-26 (seo-plan-2026-10 D-08): the topics are phrasings of the retired rule, so the check flags them.
          topic=[r"no price appears anywhere", r"never publish a price", r"no list price",
                 r"no rate card", r"fiji publishes no price"],
-         ack=[r"2026-09-30", r"2026-10-04", r"sheet-to-app", r"\bd68\b", r"\bd69\b"]),
+         ack=[r"2026-09-30", r"2026-10-04", r"sheet-to-app", r"\bd68\b", r"\bd69\b", r"\bd-08\b"]),
 ]
 
 # --------------------------------------------------------------------------- allowlist

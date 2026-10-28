@@ -34,8 +34,35 @@ export type ServicePageContent = {
    * page passes an empty array on purpose — see offerLinks.ts.
    */
   offers?: LinkedOffer[];
+  /** The route without its locale, e.g. `/services/data-analysis-greece`. Builds the Service node's url and @id. */
+  path: string;
   schema: Record<string, unknown>;
 };
+
+const SITE = 'https://www.fijisolutions.net';
+
+// The page's JSON-LD: the Service node the page passes, given a url and an @id, and a BreadcrumbList
+// (2026-10-28, offer-os gtm/seo-plan-2026-10 C5, SCH-4). Without @id the node could not be referenced, and
+// without url nothing tied it to this page. Two items, since there is no services index page.
+function serviceSchema(c: ServicePageContent) {
+  const url = `${SITE}/${c.lang}${c.path}`;
+  const service: Record<string, unknown> = {...c.schema};
+  delete service['@context'];
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {...service, '@id': `${url}#service`, url},
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${url}#breadcrumb`,
+        itemListElement: [
+          {'@type': 'ListItem', position: 1, name: c.lang === 'el' ? 'Αρχική' : 'Home', item: `${SITE}/${c.lang}`},
+          {'@type': 'ListItem', position: 2, name: c.schema.name, item: url},
+        ],
+      },
+    ],
+  };
+}
 
 export default function ServicePage(c: ServicePageContent) {
   const t = createTranslationFunction(c.lang);
@@ -43,7 +70,7 @@ export default function ServicePage(c: ServicePageContent) {
 
   return (
     <div className="min-h-screen bg-white pt-20 dark:bg-gray-900">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: jsonLd(c.schema)}}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: jsonLd(serviceSchema(c))}}/>
 
       <section className="bg-gradient-to-br from-primary-50 to-secondary-50 py-20 dark:from-gray-900 dark:to-gray-800">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

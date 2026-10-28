@@ -31,8 +31,8 @@ import {offerLastmod} from '@/lib/offerSchema';
 // else, and the JSON-LD built in lib/offerSchema.ts carries none.
 // Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): every offer with a set price shows it,
 // so this page is the normal case for a priced offer, not an exception; the price is shown in the
-// visitor's currency, euros on the Greek page. Goal C5 (Fiji ONP-5) carries out the euro change; until
-// then the Greek strings stay as 03-copy.md writes them. The hero, FAQ, email and JSON-LD limits above
+// visitor's currency, euros on the Greek page. ~~Goal C5 (Fiji ONP-5) carries out the euro change; until
+// then the Greek strings stay as 03-copy.md writes them.~~ Done 2026-10-28 (C5, D-68): same numbers in euros. The hero, FAQ, email and JSON-LD limits above
 // still hold.
 //
 // ATTENTION RATIO. Navbar renders a logo-only header on this route and the Vapi chat bubble does

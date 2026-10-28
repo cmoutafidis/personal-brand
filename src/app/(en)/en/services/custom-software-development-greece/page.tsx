@@ -36,6 +36,7 @@ export default function Page() {
       closingBody={"That is what the audit is for. Thirty minutes on a call, then a written map of the three processes costing you the most, in hours and euros."}
       closingCta={"Get the free process audit"}
       offers={OFFERS_BY_SERVICE['services/custom-software-development-greece']}
+      path={path}
       schema={{
         '@context': 'https://schema.org',
         '@type': 'Service',

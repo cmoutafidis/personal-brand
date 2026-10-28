@@ -19,8 +19,10 @@ import {BOOKING_URL} from '@/lib/booking';
 // named `price`: G19's check reads the built HTML for that string.
 // Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): every offer with a set price shows it,
 // so this is the normal case for a priced offer, not an exception; the price is shown in the visitor's
-// currency, euros on the Greek page. Goal C5 (Fiji ONP-5) carries out the euro change; until then the
-// Greek strings stay as 03-copy.md writes them. The hero, FAQ, metadata and JSON-LD limits above still hold.
+// currency, euros on the Greek page. ~~Goal C5 (Fiji ONP-5) carries out the euro change; until then the
+// Greek strings stay as 03-copy.md writes them.~~ Done 2026-10-28 (C5, ONP-5, D-68): the Greek page shows the
+// same numbers in euros, 2.000 €, 7.000 €, 400 € and 990 € a month; the English page keeps dollars. The
+// hero, FAQ, metadata and JSON-LD limits above still hold.
 //
 // SPEED ANCHOR (rule 6). "7 days" is anchored to the audit call («την πρώτη κλήση») in the H1 and
 // the description of both locales. The Greek title cannot fit the anchor under 60 characters, so it
@@ -603,8 +605,8 @@ const sheetToApp: SheetToAppOffer = {
               head: ['Βήμα', 'Τιμή', 'Πότε πληρώνεις'],
               rowHeaders: true,
               rows: [
-                ['Το πρωτότυπο σε 7 μέρες', '2.000 $', 'Όταν πεις ναι την 7η μέρα. Αν δεν σου αρέσει, τίποτα.'],
-                ['Η τελική εφαρμογή', '7.000 $ συνολικά', 'Αν ξεκινήσει μέσα σε 30 μέρες από την 7η μέρα, τα 2.000 $ του πρωτοτύπου μετράνε, οπότε μένουν 5.000 $. Τα πληρώνεις όταν πεις ναι στην παράδοση.']
+                ['Το πρωτότυπο σε 7 μέρες', '2.000 €', 'Όταν πεις ναι την 7η μέρα. Αν δεν σου αρέσει, τίποτα.'],
+                ['Η τελική εφαρμογή', '7.000 € συνολικά', 'Αν ξεκινήσει μέσα σε 30 μέρες από την 7η μέρα, τα 2.000 € του πρωτοτύπου μετράνε, οπότε μένουν 5.000 €. Τα πληρώνεις όταν πεις ναι στην παράδοση.']
               ]
             },
             {type: 'p', text: 'Αναλαμβάνουμε 3 πρωτότυπα τον μήνα, για να έχει το καθένα όλη μας την προσοχή. Ξεκινάμε με αυτές τις τιμές, και θα ανεβαίνουν όσο μεγαλώνει η ομάδα μας.'},
@@ -613,7 +615,7 @@ const sheetToApp: SheetToAppOffer = {
               type: 'cards',
               cards: [
                 {
-                  title: 'Care, 400 $ τον μήνα',
+                  title: 'Care, 400 € τον μήνα',
                   items: [
                     'Φιλοξενία στην πλατφόρμα μας στο AWS, ταυτόχρονα σε περισσότερους από έναν υπολογιστές: αν πέσει ένας, η εφαρμογή σου μένει ανοιχτή.',
                     'Χωριστό περιβάλλον δοκιμών: κάθε αλλαγή δοκιμάζεται πριν μπει σε λειτουργία.',
@@ -626,7 +628,7 @@ const sheetToApp: SheetToAppOffer = {
                   ]
                 },
                 {
-                  title: 'Care Plus, 990 $ τον μήνα',
+                  title: 'Care Plus, 990 € τον μήνα',
                   items: [
                     'Ό,τι έχει το Care, και έως 10 ώρες τον μήνα για αλλαγές και προσθήκες.',
                     'Μία κλήση μίας ώρας κάθε βδομάδα.',
@@ -703,7 +705,7 @@ const sheetToApp: SheetToAppOffer = {
           blocks: [
             {type: 'p', text: 'Μας στέλνεις τα ονόματα των στηλών του Excel σου. Στην πρώτη κλήση των 30 λεπτών συζητάμε τι χρειάζεσαι, και γράφουμε μαζί τα 3 έως 5 σημεία του πρωτοτύπου.'},
             {type: 'p', text: 'Έτσι, 7 μέρες μετά, έχεις το πρωτότυπο της εφαρμογής σου, με μια οθόνη για κάθε ρόλο. Στη συνάντηση της 7ης μέρας το εξετάζεις και αποφασίζεις.'},
-            {type: 'p', text: 'Το πρωτότυπο κοστίζει 2.000 $ και πληρώνεις μόνο αν σου αρέσει. Αν συνεχίσεις, η τελική εφαρμογή έρχεται περίπου τρεις βδομάδες αργότερα, και στην παράδοσή της ισχύει ο ίδιος κανόνας.'},
+            {type: 'p', text: 'Το πρωτότυπο κοστίζει 2.000 € και πληρώνεις μόνο αν σου αρέσει. Αν συνεχίσεις, η τελική εφαρμογή έρχεται περίπου τρεις βδομάδες αργότερα, και στην παράδοσή της ισχύει ο ίδιος κανόνας.'},
             {type: 'p', text: 'Το επόμενο βήμα: επικόλλησε τα ονόματα των στηλών σου στη φόρμα παρακάτω και διάλεξε ώρα για την πρώτη κλήση.'}
           ]
         }

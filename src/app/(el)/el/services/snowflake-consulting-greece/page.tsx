@@ -36,6 +36,7 @@ export default function Page() {
       closingBody={"Στείλε μας τον λογαριασμό και το βαρύτερο ερώτημα. Συνήθως αυτό αρκεί για να πούμε πού πάνε τα χρήματα."}
       closingCta={"Κλείσε δωρεάν έλεγχο διαδικασιών"}
       offers={OFFERS_BY_SERVICE['services/snowflake-consulting-greece']}
+      path={path}
       schema={{
         '@context': 'https://schema.org',
         '@type': 'Service',

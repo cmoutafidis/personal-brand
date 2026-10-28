@@ -17,8 +17,9 @@ import type {Language} from '@/types/language';
 // shows it: the homepage band, the metadata and the JSON-LD are all price-free.
 // Superseded in part 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): a priced offer showing its
 // price is no longer an exception for this offer only, every offer with a set price keeps showing it.
-// The Greek page must show the price in euros, not «100.000 $». Goal C5 (Fiji ONP-5) carries out the
-// euro change in 03-copy.md first; until then the dollar strings below stay as the approved copy.
+// The Greek page must show the price in euros, not «100.000 $». ~~Goal C5 (Fiji ONP-5) carries out the
+// euro change in 03-copy.md first; until then the dollar strings below stay as the approved copy.~~ Done
+// 2026-10-28 (C5, ONP-5, D-71): every Greek amount keeps its number with € for $ (100.000 €), 03-copy.md first.
 // The hero, homepage band, metadata and JSON-LD rules above are not addressed by D-08 and still hold.
 // The stack values (AT-D18, AT-D20) are the approved "Page (rounded down)" figures of offer-os
 // `gtm/atlas/VALUE-STACK-2026-10-18.md`; their dated value bases live in offer.yaml, not here.
@@ -177,7 +178,7 @@ export const ATLAS_STEP2: AtlasQuestion[] = [
     required: true,
     label: {
       en: 'Atlas starts from USD 100,000. Is a project of that size within your budget?',
-      el: 'Το Atlas ξεκινά από 100.000 $. Ένα έργο αυτού του μεγέθους χωράει στον προϋπολογισμό σου;'
+      el: 'Το Atlas ξεκινά από 100.000 €. Ένα έργο αυτού του μεγέθους χωράει στον προϋπολογισμό σου;'
     },
     options: {en: ['Yes', 'Not yet', 'No'], el: ['Ναι', 'Όχι ακόμα', 'Όχι']}
   },
@@ -191,7 +192,8 @@ export const ATLAS_STEP2: AtlasQuestion[] = [
     // Asked here only and never shown on the page (AT-D10).
     // 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): Greek pages show amounts in euros, so the
     // Greek budget question above and the «εκατ. $» revenue bands below change to euros in goal
-    // C5 (Fiji ONP-5), in 03-copy.md first. Until then the dollar strings stay as approved copy.
+    // C5 (Fiji ONP-5), in 03-copy.md first. ~~Until then the dollar strings stay as approved copy.~~
+    // Done 2026-10-28 (C5, D-71): same numbers, «εκατ. €».
     id: 'revenue',
     type: 'select',
     required: true,
@@ -199,11 +201,11 @@ export const ATLAS_STEP2: AtlasQuestion[] = [
     options: {
       en: ['Under USD 1M', 'USD 1M to under 3M', 'USD 3M to under 5M', 'USD 5M to under 10M', 'USD 10M or more'],
       el: [
-        'Κάτω από 1 εκατ. $',
-        '1 έως κάτω από 3 εκατ. $',
-        '3 έως κάτω από 5 εκατ. $',
-        '5 έως κάτω από 10 εκατ. $',
-        '10 εκατ. $ και πάνω'
+        'Κάτω από 1 εκατ. €',
+        '1 έως κάτω από 3 εκατ. €',
+        '3 έως κάτω από 5 εκατ. €',
+        '5 έως κάτω από 10 εκατ. €',
+        '10 εκατ. € και πάνω'
       ]
     }
   },
@@ -535,11 +537,11 @@ const atlas: AtlasOffer = {
       title: 'Το Atlas βάζει όλη την επιχείρησή σου σε ένα σύστημα.',
       subhead:
         'CRM, ERP, τιμολόγηση, λογιστική, κρατήσεις, αυτοματισμοί και βάση γνώσης. Όλα τα τμήματα έχουν τα ίδια στοιχεία πελατών, παραγγελιών και λογιστηρίου.',
-      // The Greek amounts keep the plain space before «$» that 03-copy.md writes, so every string
+      // The Greek amounts keep the plain space before the sign (« $», « €» since D-71) that 03-copy.md writes, so every string
       // here stays byte-identical to the approved copy (AT-D26). The layout keeps the value cells
       // from wrapping instead (whitespace-nowrap in AtlasLanding.tsx). No hero price (AT-D34).
       // Superseded in part 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): Greek pages show prices
-      // in euros, so the «$» amounts change in goal C5 (Fiji ONP-5), in 03-copy.md first.
+      // in euros, so the «$» amounts change in goal C5 (Fiji ONP-5), in 03-copy.md first. Done 2026-10-28 (D-71).
       button: 'Κάνε αίτηση για το Atlas',
       diagramCenter: 'Atlas',
       diagramBoxes: ['Πωλήσεις', 'Λογιστήριο', 'Αποθήκη', 'Εξυπηρέτηση'],
@@ -577,58 +579,58 @@ const atlas: AtlasOffer = {
         },
       ],
       stackIntro: 'Αυτά είναι όλα όσα περιλαμβάνει το Atlas. Δίπλα σε κάθε μέρος γράφει πόσο θα κόστιζε αν το αγόραζες χωριστά.',
-      stackSubhead: '8 βασικά μέρη, αξίας 452.000 $.',
+      stackSubhead: '8 βασικά μέρη, αξίας 452.000 €.',
       stackHead: ['Μέρος', 'Αξία', 'Τι κάνει για σένα'],
       stackRows: [
-        ['The Atlas Audit', '54.000 $', 'Πριν χτιστεί οτιδήποτε, μαθαίνουμε πώς δουλεύει κάθε τμήμα σου.'],
-        ['The 12-Month Atlas Plan', '16.000 $', 'Τι αλλάζει, με ποια σειρά, πότε και με τι κόστος.'],
+        ['The Atlas Audit', '54.000 €', 'Πριν χτιστεί οτιδήποτε, μαθαίνουμε πώς δουλεύει κάθε τμήμα σου.'],
+        ['The 12-Month Atlas Plan', '16.000 €', 'Τι αλλάζει, με ποια σειρά, πότε και με τι κόστος.'],
         [
           'The Atlas Core (CRM, ERP, invoicing, accounting, booking)',
-          '110.000 $',
+          '110.000 €',
           'Πελάτες, πωλήσεις, απόθεμα, παραγγελίες, τιμολόγια, λογιστική και κρατήσεις, κοινά για όλα τα τμήματα.'
         ],
         [
           'The Atlas Connections',
-          '95.000 $',
+          '95.000 €',
           'Η τράπεζα, το myDATA και το ηλεκτρονικό σου κατάστημα συνδέονται με το σύστημα. Κανείς δεν ξαναπερνά αυτά τα νούμερα με το χέρι.'
         ],
         [
           'The Atlas Automation Engine',
-          '35.000 $',
+          '35.000 €',
           'Η καθημερινή χειροκίνητη δουλειά της ομάδας σου σε πολλά συστήματα γίνεται μόνη της.'
         ],
         [
           'The Atlas Internal Apps',
-          '55.000 $',
+          '55.000 €',
           'Κάθε ρόλος δουλεύει σε εφαρμογή φτιαγμένη για τον τρόπο που τρέχει η επιχείρησή σου.'
         ],
-        ['The Atlas Knowledge Base', '60.000 $', 'Κάθε τμήμα ρωτά με απλά λόγια και απαντούν τα δικά σου έγγραφα.'],
+        ['The Atlas Knowledge Base', '60.000 €', 'Κάθε τμήμα ρωτά με απλά λόγια και απαντούν τα δικά σου έγγραφα.'],
         [
           'The Atlas Data Move',
-          '27.000 $',
+          '27.000 €',
           'Τα Excel και τα παλιά αρχεία πολλών χρόνων περνούν καθαρά, ελεγμένα και χωρίς διπλές εγγραφές.'
         ]
       ],
-      coreTotalLine: 'Αξία βασικών μερών: 452.000 $.',
+      coreTotalLine: 'Αξία βασικών μερών: 452.000 €.',
       bonusSubhead: 'Επιπλέον, κάθε έργο Atlas έχει τέσσερα μπόνους.',
       bonusHead: ['Μπόνους', 'Αξία', 'Τι κάνει για σένα'],
       bonusRows: [
         [
           'The Atlas Care Year',
-          '27.000 $',
+          '27.000 €',
           'Για έναν χρόνο μετά την παράδοση, κρατάμε κάθε σύστημα και αυτοματισμό σε λειτουργία, υπό παρακολούθηση.'
         ],
-        ['The Atlas Academy', '7.000 $', 'Εκπαιδεύουμε την ομάδα σου να δουλεύει στο νέο σύστημα.'],
+        ['The Atlas Academy', '7.000 €', 'Εκπαιδεύουμε την ομάδα σου να δουλεύει στο νέο σύστημα.'],
         [
           'The Atlas AI Assistant',
-          '13.000 $',
+          '13.000 €',
           'Ένας AI agent αναλαμβάνει την πιο φορτωμένη επαναλαμβανόμενη δουλειά σου, όπως τις συνηθισμένες ερωτήσεις πελατών.'
         ],
-        ['The Atlas Handover Pack', '5.000 $', 'Είναι δικά σου: πλήρης τεκμηρίωση και ο πηγαίος κώδικας που γράφουμε.']
+        ['The Atlas Handover Pack', '5.000 €', 'Είναι δικά σου: πλήρης τεκμηρίωση και ο πηγαίος κώδικας που γράφουμε.']
       ],
-      bonusTotal: ['Αξία μπόνους', '52.000 $'],
-      totalLine: 'Συνολική αξία: 504.000 $.',
-      priceReveal: 'Το Atlas ξεκινά από 100.000 $.',
+      bonusTotal: ['Αξία μπόνους', '52.000 €'],
+      totalLine: 'Συνολική αξία: 504.000 €.',
+      priceReveal: 'Το Atlas ξεκινά από 100.000 €.',
       // TODO(charis) 17 (03-copy.md): approve this basis wording, or remove the line.
       basisLine: 'Κάθε αξία βγαίνει από δημοσιευμένες τιμές και κόστη της αγοράς. Η έρευνα έγινε τον Οκτώβριο του 2026.',
       cta1Line: 'Η αίτηση έχει δύο βήματα, σε μία φόρμα.',
@@ -640,7 +642,7 @@ const atlas: AtlasOffer = {
         'Ο ιδρυτής μας είναι μηχανικός λογισμικού εδώ και πάνω από δέκα χρόνια.',
         'Έχει δουλέψει σε πέντε κλάδους: τράπεζες, τουρισμό, τηλεπικοινωνίες, υγεία και διαδικτυακή εκπαίδευση.'
       ],
-      closeSubhead: 'Όλα σε ένα σύστημα, από 100.000 $.',
+      closeSubhead: 'Όλα σε ένα σύστημα, από 100.000 €.',
       closeText: [
         'Το Atlas περιλαμβάνει τη χαρτογράφηση, το πλάνο, το κεντρικό σύστημα, τις συνδέσεις και τους αυτοματισμούς.',
         'Έχει επίσης τις εφαρμογές, τη βάση γνώσης, τη μεταφορά δεδομένων και τέσσερα μπόνους. Συμπλήρωσε τη φόρμα παρακάτω.'

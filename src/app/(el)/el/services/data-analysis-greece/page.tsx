@@ -36,6 +36,7 @@ export default function Page() {
       closingBody={"Θα σου πούμε τι κοστίζει να συνεχίσει να ετοιμάζεται έτσι και τι χρειάζεται για να σταματήσει. Γραπτά, μέσα σε μία εβδομάδα από την κλήση."}
       closingCta={"Κλείσε δωρεάν έλεγχο διαδικασιών"}
       offers={OFFERS_BY_SERVICE['services/data-analysis-greece']}
+      path={path}
       schema={{
         '@context': 'https://schema.org',
         '@type': 'Service',

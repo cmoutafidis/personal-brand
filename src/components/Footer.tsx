@@ -3,6 +3,7 @@ import {Facebook, Linkedin} from 'lucide-react';
 import FooterButton from "@/components/FooterButton";
 import QuickLinks from "@/components/QuickLinks";
 import {PARTNER_BADGE} from "@/data/clients";
+import {MAP_URL} from "@/components/Local";
 
 interface FooterProps {
   t: (key: string) => string;
@@ -44,6 +45,26 @@ export default function Footer({t}: FooterProps) {
             <p className="text-gray-400 mb-4">
               {t('footer.description')}
             </p>
+            {/* Name, address and phone on every page (2026-10-28, offer-os gtm/seo-plan-2026-10 C5, LOC-4), in the
+                words of the contact page and the Business Profile. The links get 44 px of height for a thumb (ONP-8). */}
+            <address className="mb-4 not-italic text-gray-400">
+              <span className="block font-semibold text-gray-300">Fiji Solutions</span>
+              <span className="block">{t('contact.address.street')}</span>
+              <span className="block">{t('contact.address.city')}</span>
+              <span className="flex flex-wrap gap-x-6">
+                <a href="tel:+302311070108" className="inline-flex min-h-[44px] items-center transition-colors hover:text-white">
+                  +30 231 107 0108
+                </a>
+                <a
+                  href={MAP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[44px] items-center underline-offset-4 transition-colors hover:text-white hover:underline"
+                >
+                  {t('local.map')}
+                </a>
+              </span>
+            </address>
             <div className="mb-4">
               <p className="text-sm text-gray-500 mb-2">{t('footer.partnership')}</p>
               <a
@@ -64,7 +85,7 @@ export default function Footer({t}: FooterProps) {
                 />
               </a>
             </div>
-            <div className="flex space-x-4">
+            <div className="-ml-3 flex gap-1">
               {/* ⛔ THE PERSONAL GITHUB LINK WAS REMOVED 2026-09-05 AND IT DOES NOT COME BACK.
                   His instruction, verbatim: "this github is personal It is correct as it is. It
                   should only link with my personal website. Same as X, it should only link with my
@@ -103,7 +124,7 @@ export default function Footer({t}: FooterProps) {
                 href="https://www.facebook.com/fijisolutions/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="inline-flex p-3 text-gray-400 hover:text-white transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5"/>
@@ -112,7 +133,7 @@ export default function Footer({t}: FooterProps) {
                 href="https://linkedin.com/company/fijisolutionsnet"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="inline-flex p-3 text-gray-400 hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5"/>

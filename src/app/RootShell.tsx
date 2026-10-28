@@ -64,7 +64,9 @@ export function buildRootMetadata(lang: Language): Metadata {
     title: c.title,
     description: c.description,
     authors: [{name: 'Fiji Solutions'}],
-    robots: 'index, follow',
+    // max-image-preview:large (2026-10-28, offer-os gtm/seo-plan-2026-10 C5, IMG-6): lets Google show a large image
+    // preview in results and Discover. Pages that set their own robots (the 404s) replace this whole line.
+    robots: 'index, follow, max-image-preview:large',
     manifest: '/site.webmanifest',
     icons: {
       icon: '/favicon.png',

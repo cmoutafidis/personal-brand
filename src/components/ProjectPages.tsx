@@ -8,6 +8,7 @@ import {PRIMARY_BUTTON_CLASS} from '@/components/Hero';
 import {buildAlternates, defaultOgImage, ogLocale} from '@/lib/alternates';
 import {BOOKING_URL} from '@/lib/booking';
 import {BOOKING_CLICK_EVENT} from '@/utils/gtag';
+import {jsonLd} from '@/lib/jsonLd';
 import {LIVE_PROJECTS, PROJECTS_COPY, type Project} from '@/data/projects';
 import {SERVICES} from '@/data/services';
 import {OFFER_BY_SLUG, SERVICE_LABEL, type ServiceSlug} from '@/data/offerLinks';
@@ -25,7 +26,9 @@ import {OFFER_BY_SLUG, SERVICE_LABEL, type ServiceSlug} from '@/data/offerLinks'
 //
 // Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-13): the GEO rule 3 struck above was the per page
 // markup freeze, which D-13 narrows: fix broken markup, fix slow pages, and add schema types Google itself
-// uses, such as BreadcrumbList and Article images, to project pages; nothing is added only for AI tools. Goals C5, C10 and C14 carry it out; until then the page renders no page level JSON-LD.
+// uses, such as BreadcrumbList and Article images, to project pages; nothing is added only for AI tools. Goals C5, C10 and C14 carry it out; ~~until then the page renders no page level JSON-LD.~~
+// Done 2026-10-28 (C5, SCH-5): each project page carries a BreadcrumbList, Home > Projects > the project, and
+// nothing else (D-13: CreativeWork is used by no Google feature). The index page stays without page level JSON-LD.
 //
 // Server components: `lang` comes in as a prop.
 
@@ -139,6 +142,21 @@ function formatDate(iso: string, lang: Language): string {
   });
 }
 
+// SCH-5 (C5, 2026-10-28): Home > Projects > the project, the trail the page's own back link shows.
+function projectBreadcrumb(lang: Language, p: Project) {
+  const url = `${BASE}/${lang}/projects/${p.slug}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    '@id': `${url}#breadcrumb`,
+    itemListElement: [
+      {'@type': 'ListItem', position: 1, name: lang === 'el' ? 'Αρχική' : 'Home', item: `${BASE}/${lang}`},
+      {'@type': 'ListItem', position: 2, name: lang === 'el' ? 'Έργα' : 'Projects', item: `${BASE}/${lang}/projects`},
+      {'@type': 'ListItem', position: 3, name: p.copy[lang].h1, item: url},
+    ],
+  };
+}
+
 export function ProjectDetail({lang, project: p}: {lang: Language; project: Project}) {
   const c = PROJECTS_COPY[lang];
   const pc = p.copy[lang];
@@ -153,6 +171,7 @@ export function ProjectDetail({lang, project: p}: {lang: Language; project: Proj
 
   return (
     <div className="min-h-screen bg-white pb-16 pt-28 dark:bg-gray-900 md:pb-24">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: jsonLd(projectBreadcrumb(lang, p))}}/>
       <article className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <Link href={`/${lang}/projects`} className="mb-6 inline-flex items-center font-medium text-primary-600 hover:underline dark:text-primary-400">
           <ArrowLeft className="mr-2 h-4 w-4" aria-hidden="true"/>
