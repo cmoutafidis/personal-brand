@@ -15,7 +15,8 @@ export interface BlogListBlock {type: 'list'; ordered?: boolean; items: BlogInli
 export type BlogCell = BlogInline[];
 export interface BlogTableBlock {type: 'table'; caption: string; head: string[]; rows: BlogCell[][]}
 export interface BlogNoteBlock {type: 'note'; text: BlogInline[]}
-/** Rendered as a Q&A section AND emitted as FAQPage from this same array. Never write a second copy. */
+/** Rendered as a Q&A section AND emitted as FAQPage from this same array. Never write a second copy.
+ *  2026-10-28 (offer-os gtm/seo-plan-2026-10 C10): the FAQPage half only for the posts in src/lib/faqFreeze.ts. */
 export interface BlogFaqBlock {type: 'faq'; heading: string; items: {q: string; a: string}[]}
 /** Rendered as a numbered source list AND emitted as schema.org `citation` from the same array. */
 export interface BlogSourcesBlock {type: 'sources'; heading: string; items: {label: string; url: string}[]}

@@ -3,6 +3,7 @@ import {BLOG_AUTHOR, PERSON_REF, ORGANISATION_ID} from '@/lib/person';
 import type {Language} from '@/types/language';
 import {defaultOgImage, LOGO_IMAGE_OBJECT} from '@/lib/alternates';
 import type {BlogFaqBlock, BlogPost, BlogSourcesBlock} from '@/types/blog';
+import {blogFaqPageAllowed} from '@/lib/faqFreeze';
 
 // Metadata and JSON-LD for blog posts, derived from the post object the page renders.
 //
@@ -123,7 +124,10 @@ export function blogPostSchema(post: BlogPost, lang: Language) {
     },
   ];
 
-  if (faq) {
+  // 2026-10-28 (offer-os gtm/seo-plan-2026-10 C10): only a post that carried this node on 2026-10-28
+  // keeps it (src/lib/faqFreeze.ts). Every other post, the SEO loop's new ones included, still renders
+  // its FAQ block in BlogPost.tsx and gets no FAQPage node.
+  if (faq && faq.items.length > 0 && blogFaqPageAllowed(post.slug, lang)) {
     graph.push({
       '@type': 'FAQPage',
       inLanguage: lang,

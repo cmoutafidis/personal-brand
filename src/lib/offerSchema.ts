@@ -4,6 +4,7 @@ import {Language} from '@/types/language';
 import {buildAlternates, defaultOgImage} from '@/lib/alternates';
 import {routeLastmod} from '@/lib/routes';
 import {ORGANISATION_ID} from '@/lib/person';
+import {offerFaqPageAllowed} from '@/lib/faqFreeze';
 
 // Metadata and JSON-LD for the front-end offer pages, derived from the offer data file.
 //
@@ -52,6 +53,9 @@ import {ORGANISATION_ID} from '@/lib/person';
 //    (AT-D2, ~~the dated exception to CLAUDE.md rule 7,~~ placed by AT-D34); its structured data carries
 //    no `offers` node and no price. Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): a set
 //    price is no longer an exception to rule 7, every offer with a set price shows it in its body.
+// 2026-10-28 (offer-os gtm/seo-plan-2026-10 C10):
+//  9. The FAQPage node is frozen: emitted only for the offers listed in src/lib/faqFreeze.ts, the
+//    eight that carried one that day. The FAQ section itself still renders on every offer that has one.
 
 /** The fields metadata and JSON-LD are built from. Every `Offer` and `SheetToAppOffer` fits it. */
 export type OfferSchemaSource = {
@@ -163,7 +167,9 @@ export function offerSchema(offer: OfferSchemaSource, lang: Language) {
       // present on the page, and a hand-written second copy drifts within one commit. A page with
       // no FAQ (/offers/atlas, 2026-10-18: its 02-architecture.md drops S15) emits no FAQPage node,
       // since an empty one would mark up questions that are not there.
-      ...(c.faqs.length > 0
+      // 2026-10-28 (offer-os gtm/seo-plan-2026-10 C10): and only an offer that carried this node on
+      // 2026-10-28 keeps it (src/lib/faqFreeze.ts). A new offer renders its FAQ and gets no FAQPage.
+      ...(c.faqs.length > 0 && offerFaqPageAllowed(offer.slug, lang)
         ? [
             {
               '@type': 'FAQPage',

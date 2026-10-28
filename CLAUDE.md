@@ -279,7 +279,9 @@ and replayed the questions through the engines' APIs. Four rules follow from it 
    pages; nothing is added only for AI tools (no llms.txt and similar), and no FAQ markup or summary boxes are
    added as a GEO lever. ~~Goals C5, C10 and C14 of that plan carry it out.~~ Done for this site 2026-10-28
    (seo-plan-2026-10 C5, D-70): BreadcrumbList on project pages, url, @id and BreadcrumbList on Service nodes,
-   an image on Article nodes, WebApplication on the spreadsheet check. Goals C10 and C14 are still open.
+   an image on Article nodes, WebApplication on the spreadsheet check. ~~Goals C10 and C14 are still open.~~ C10 done
+   2026-10-28: new FAQPage nodes are blocked in code, the blog and offer helpers emit one only for the pages listed in
+   `src/lib/faqFreeze.ts` (the pages that had one that day; never add an entry). C14 is the personal site's goal.
 4. **Retrieval is observed.** The plan's question set and runs (`offer-os/gtm/geo-retrieval-2026-10/questions/`
    and `runs/`) record which sub-queries the engines issue and which of our pages come back.
 
