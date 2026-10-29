@@ -23,8 +23,9 @@ import type {BlogData} from '@/types/blog';
 //   - No price, no range, no "from" — ~~anywhere, ever (CLAUDE.md rule 7).~~
 //     Superseded 2026-10-26 (seo-plan-2026-10 D-08): the blanket rule is retired for offers with a
 //     set price, which show it in the visitor's currency. Blog posts, including the cost posts, still
-//     carry no figures; cost posts link to the priced offer where one exists. Goal D9 carries out the
-//     links; until then a session keeps every post free of figures.
+//     carry no figures; cost posts link to the priced offer where one exists. ~~Goal D9 carries out the~~
+//     ~~links; until then a session keeps every post free of figures.~~ Done 2026-10-29 (seo-plan-2026-10 D9):
+//     the English cost post links #s12-what-it-costs on sheet-to-app, the Greek one /el/offers/website-seo.
 //   - No ranking promise. Google itself says there is no guarantee, and the article quotes it.
 //   - Every claim about how search works is quoted from Google's own documentation with a URL.
 //   - Greek: informal εσύ, the apostrophe is U+2019, one term per concept («ιστοσελίδα»,

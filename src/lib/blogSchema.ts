@@ -18,7 +18,7 @@ import {blogFaqPageAllowed} from '@/lib/faqFreeze';
 // Note 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-08): the site-wide "no price anywhere" rule is
 // retired for offers with a set price, which now show it in the visitor's currency. Blog posts are
 // not priced offers, so for this file nothing changes: posts and cost posts carry no figures, and a
-// cost post links to the priced offer where one exists (goal D9).
+// cost post links to the priced offer where one exists (goal D9, done 2026-10-29).
 
 const SITE = 'https://www.fijisolutions.net';
 
