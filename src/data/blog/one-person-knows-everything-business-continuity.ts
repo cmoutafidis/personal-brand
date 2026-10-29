@@ -5,8 +5,8 @@ import type {BlogPost} from '@/types/blog';
 const post: BlogPost = {
   id: 'one-person-knows-everything-business-continuity',
   slug: 'one-person-knows-everything-business-continuity',
-  title: 'How Do I Keep My Company Running When the One Person Who Knows Everything Goes on Holiday?',
-  metaTitle: 'Keep Your Company Running on Holiday | Fiji Solutions',
+  title: 'How do I keep my company running when the one person who knows everything goes on holiday?',
+  metaTitle: 'Keep your company running on holiday | Fiji Solutions',
   excerpt: 'Write down what your key person knows, find which process to fix first, and let it run without them.',
   publishedAt: '2026-10-20',
   updatedAt: '2026-10-20',
@@ -44,7 +44,7 @@ const post: BlogPost = {
         'If you do this task yourself for long enough, or watch one of your team do it, you will see the same thing: the task and the person who handles it become hard to separate.',
       ],
     },
-    {type: 'heading', text: 'What Actually Breaks When That Person Goes on Holiday'},
+    {type: 'heading', text: 'What actually breaks when that person goes on holiday'},
     {
       type: 'paragraph',
       text: [
@@ -63,7 +63,7 @@ const post: BlogPost = {
         'The work stalls a piece at a time, wherever the next unwritten step happens to be, and it starts again only when the person is back or someone reconstructs the step from scratch.',
       ],
     },
-    {type: 'heading', text: 'Turning What They Know Into Written Steps Anyone Can Follow'},
+    {type: 'heading', text: 'Turning what they know into written steps anyone can follow'},
     {
       type: 'paragraph',
       text: [

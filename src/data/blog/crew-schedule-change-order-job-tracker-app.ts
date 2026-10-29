@@ -12,68 +12,84 @@ import type {BlogPost} from '@/types/blog';
 // Done 2026-10-27 (seo-plan-2026-10 B3, D-12, D-27, D-28, C-21): the byline, the author box after the body
 // and the Article JSON-LD author come from BLOG_AUTHOR in src/lib/person.ts, "Charis Moutafidis" linked to
 // /en/about; this file's `author` field is no longer read.
+// Rewritten 2026-10-29 (offer-os gtm/seo-plan-2026-10 D9, CONT-8, D-113): its own example sheet, a made-up
+// subcontractor change order log (CO no., GC ref., Job, Change, Requested by, Status, Backup) presented as a
+// typical sheet and never a client's, the ways it breaks named from those columns, and every paragraph,
+// heading and FAQ answer it shared with job-shop-scheduling-work-order-quote-app.ts rewritten; the old
+// sheet-versus-app table is dropped. No client, no figure. The two cta blocks are unchanged standard blocks.
 const post: BlogPost = {
   id: 'crew-schedule-change-order-job-tracker-app',
   slug: 'crew-schedule-change-order-job-tracker-app',
   title: 'Crew schedules, change orders and job tracking: when the spreadsheet stops keeping up',
   metaTitle: 'Crew schedule and change order apps | Fiji Solutions',
-  excerpt: 'When your crew schedule, change order log and job tracker outgrow a shared spreadsheet, here is what an app does instead, and how it gets built.',
+  excerpt: 'Your crew schedule, change order log and job tracker share one spreadsheet. Here is where that sheet breaks, and what an app built from its columns does.',
   publishedAt: '2026-10-12',
-  updatedAt: '2026-10-12',
-  readingTime: 4, // round(bodyWords / 140); body is ~500 words
+  updatedAt: '2026-10-29',
+  readingTime: 6, // round(bodyWords / 140); body is ~890 words with the two cta blocks, ~800 without (2026-10-29)
   tags: ['Spreadsheet to app', 'Construction'],
   body: [
     {type: 'paragraph', text: [
-      'If you run a construction subcontracting business, chances are a shared spreadsheet runs a lot of it: the crew schedule, the change order log, the job tracker, often an Excel or Google Sheets template you started from. It worked when there were a few crews and a few jobs. Past a certain size it starts to cost you. This page is about when a crew schedule template or a change order log stops keeping up, and what an app built from that same sheet does instead.',
+      'A construction subcontractor can run its whole week from one shared spreadsheet. One tab holds the crew schedule, one holds the change order log, and one tracks every job. That works while the crews are few. As crews and jobs grow, the gaps between the field and the office show up in the sheet. Below you will find an example sheet, the places it breaks, and what those columns become in an app.',
     ]},
 
-    {type: 'heading', text: 'Where the spreadsheet starts to hurt'},
-    {type: 'paragraph', text: ['You may recognise some of these.']},
-    {type: 'list', items: [
-      ['The foremen call the office to find out where they are going tomorrow.'],
-      ['A change order gets approved on site and never makes it into the log.'],
-      ['There are three versions of the crew sheet and nobody is sure which one is right.'],
-      ['Somebody sorted one column and broke the whole thing.'],
-      ['You cannot see where every job stands without calling around.'],
-    ]},
+    {type: 'heading', text: 'An example sheet from a subcontractor’s office'},
     {type: 'paragraph', text: [
-      'None of these is a spreadsheet fault. A grid of cells, even a well-built Excel template, cannot give a growing crew roles, a phone screen and a record of who changed what. That is the point where an app earns its keep.',
+      'Here is the change order tab of an example sheet for a subcontractor. The entries are made up. Its columns follow trade usage. There is your own CO number and the number the general contractor (GC) gives the same change. Then come who asked for it, its status and the backup that proves it.',
     ]},
-
-    {type: 'heading', text: 'What the app does instead'},
-    {type: 'subheading', text: 'Your crew schedule'},
-    {type: 'paragraph', text: [
-      'Each foreman opens today’s schedule in a phone browser and sees their own crew and their own jobs. One schedule is the live one, so the office stops fielding calls about where people are going. A change made in the office shows on the foreman’s phone the next time they open it.',
-    ]},
-    {type: 'subheading', text: 'Your change order log'},
-    {type: 'paragraph', text: [
-      'The app gives you a screen for logging a change order where the work happens, with a status on each one: raised, sent to the GC, approved, on the pay application. A change approved out on the job gets entered on the spot, so it stops living in somebody’s notes and missing the log.',
-    ]},
-    {type: 'subheading', text: 'Your job tracker'},
-    {type: 'paragraph', text: [
-      'One screen lists every job and the stage it is at, so you can see twenty jobs at once and a couple of weeks out without calling around. Each person sees the view that fits their role, and the owner sees all of it.',
-    ]},
-
-    {type: 'table', caption: 'The crew schedule, change order log and job tracker, in the sheet and in the app',
-      head: ['', 'In the shared spreadsheet', 'In the app'],
+    {type: 'table', caption: 'An example change order log for a subcontractor: the columns, with made-up entries',
+      head: ['CO no.', 'GC ref.', 'Job', 'Change', 'Requested by', 'Status', 'Backup'],
       rows: [
-        [['Crew schedule'], ['Foremen call the office to find out where they are tomorrow.'], ['Each foreman opens today’s schedule on their phone.']],
-        [['Change order log'], ['A change order approved on site never makes the log.'], ['The change order is logged on site with its status, so it stops sitting in someone’s notes.']],
-        [['Job tracker'], ['You call around to see where every job stands.'], ['One screen lists every job and its stage.']],
+        [['CO-011'], ['PCO-23'], ['Clinic fit-out'], ['Add blocking for wall-mounted monitors in the exam rooms'], ['GC superintendent'], ['Approved'], ['Signed CO, photos']],
+        [['CO-012'], ['Awaiting'], ['School gym'], ['Move door frames to match the revised drawing'], ['Architect'], ['Pending'], ['Revised drawing']],
+        [['CO-013'], ['Awaiting'], ['Apartment block, east wing'], ['Extra coat in the stairwells, agreed on site'], ['GC superintendent'], ['Verbal only'], ['Photos on the foreman’s phone']],
+        [['CO-014'], ['PCO-31'], ['Office tenant floor'], ['Drop the soffit in reception'], ['Owner'], ['Rejected'], ['Email thread']],
       ],
     },
-
-    {type: 'heading', text: 'How it gets built'},
     {type: 'paragraph', text: [
-      'We start from the column headers you already use and build a prototype of your app 7 days after a 30-minute call. You look at it, and you pay only if you like it. The finished app follows on the same terms, with a screen for each role, real logins, and your live data moved across while the old sheet keeps running until the crew trusts the app. The price of the prototype and of the finished app is set and published on our offer page, and you can read the figures stage by stage in ',
+      'The crew schedule tab carries the date, the job, the foreman, the crew and notes such as a permit or an inspection. The job tracker tab carries the GC, the superintendent, the phase and the open change orders.',
+    ]},
+
+    {type: 'heading', text: 'How this sheet breaks on a job'},
+    {type: 'paragraph', text: ['Each of these starts with one column.']},
+    {type: 'list', items: [
+      ['The Status column still says Pending after the superintendent approved the change on site.'],
+      ['The GC ref. stays blank. The GC’s number arrived by email at the office, and nobody copied it into the row.'],
+      ['The Backup column points at photos on one foreman’s phone. The pay application goes out without them.'],
+      ['The office moves a crew in the schedule tab at night. The foreman works from a screenshot taken that afternoon, and the crew drives to the wrong site.'],
+      ['The phase column in the job tracker gets updated on Fridays, so by Wednesday it describes last week.'],
+    ]},
+    {type: 'paragraph', text: [
+      'Each break sits where the field meets the office. Changes happen on site, and the sheet lives on the office computer. Anyone can edit any row, with no clear record of who changed a status.',
+    ]},
+
+    {type: 'heading', text: 'The same three tabs, built as an app'},
+    {type: 'subheading', text: 'The crew schedule'},
+    {type: 'paragraph', text: [
+      'Each foreman signs in from a phone browser and sees tomorrow’s job, crew and site notes. When the office moves a crew, the foreman sees the move the next time the screen opens.',
+    ]},
+    {type: 'subheading', text: 'The change order log'},
+    {type: 'paragraph', text: [
+      'The foreman raises a change from the job, with the photos on the same record. Its status moves from raised to sent to the GC, approved and on the pay application. The GC ref. has its own field, and a change still waiting for one shows up on the office’s list.',
+    ]},
+    {type: 'subheading', text: 'The job tracker'},
+    {type: 'paragraph', text: [
+      'One list shows every job with its GC, its superintendent, its phase and its open change orders. The owner sees all of them. Each foreman sees the jobs on their own schedule.',
+    ]},
+
+    {type: 'heading', text: 'How we build it from your sheet'},
+    {type: 'paragraph', text: [
+      'It begins with a 30-minute call about your sheet, its tabs and its column headers. A prototype of your app, built on those columns, is ready 7 days after the call. You pay for the prototype only if you like it. On the same terms, we then build the finished app. Foremen, office staff and the owner each get a screen of their own and a real login. Your live data moves across, and the old sheet stays in use until your crews trust the app.',
+    ]},
+    {type: 'paragraph', text: [
+      'Both prices, for the prototype and for the finished app, are fixed and public on our offer page. The section ',
       {text: 'What it costs', href: '/en/offers/sheet-to-app#s12-what-it-costs'},
-      '.',
+      ' lists them stage by stage.',
     ]},
 
     {type: 'faq', heading: 'Common questions', items: [
-      {q: 'Can you turn my crew schedule Google Sheet into an app my foremen can open on their phones?', a: 'Yes. We build from the column headers you already use, so the schedule your foremen see matches the one you keep. They open it in a phone browser, with nothing to install.'},
-      {q: 'What about change orders that get approved out on the job?', a: 'The app has a screen for logging a change order where the work happens, with a status on each one, so an approved change gets entered on the spot and does not sit in somebody’s notes and miss the log.'},
-      {q: 'Do we have to change how we work to use it?', a: 'No. The app is built around your own sheet and your own columns, so it follows how your crew already works.'},
+      {q: 'Can you turn my crew schedule Google Sheet into an app my foremen can open on their phones?', a: 'Yes. The app takes its fields from the columns your schedule has now, so your foremen see the same dates, jobs and crews you keep. They open it in the browser on their phone, with nothing to install.'},
+      {q: 'What about change orders that get approved out on the job?', a: 'The foreman logs the change on the job, from the phone, at the moment it is agreed. It gets a status and its photos straight away, so the office sees it the same day.'},
+      {q: 'Do we have to change how we work to use it?', a: 'No. The screens follow your own tabs and columns, so your crews keep the routine they have today.'},
     ]},
 
     {type: 'cta', heading: 'Check your shared spreadsheet first', text: '11 questions about how your team uses its sheet. The result shows what to try in Excel or Google Sheets, where they stop, and what an app built around the sheet adds. Your answers stay in your browser.', label: 'Open the spreadsheet check', href: '/en/tools/spreadsheet-check'},

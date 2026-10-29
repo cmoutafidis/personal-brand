@@ -5,16 +5,16 @@ import LegalContent from './LegalContent';
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: 'Νομικές Πληροφορίες Εταιρεία Λογισμικού Θεσσαλονίκη | Fiji Solutions',
-  description: 'Επίσημες νομικές πληροφορίες εταιρεία λογισμικού Θεσσαλονίκη Fiji Solutions. Αριθμός ΓΕΜΗ, εταιρικά στοιχεία & πληροφορίες εγγραφής IT συμβουλευτικής.',
+  title: 'Νομικές πληροφορίες | Fiji Solutions',
+  description: 'Τα νομικά στοιχεία της Fiji Solutions: επωνυμία, διεύθυνση έδρας, αριθμός ΓΕΜΗ, εταιρικό κεφάλαιο, εταίρος και διαχειριστής.',
   keywords: 'εταιρεία λογισμικού, εταιρεία λογισμικού Θεσσαλονίκη, Fiji Solutions νομικά, Fiji Solutions εγγραφή εταιρείας, εταιρεία λογισμικού Θεσσαλονίκη νομικά, ΓΕΜΗ εγγραφή Ελλάδα, επιχειρηματική εγγραφή Θεσσαλονίκη, νομικές πληροφορίες εταιρεία λογισμικού, εταιρικά στοιχεία Fiji Solutions, IT συμβουλευτική νομικά στοιχεία, ανάπτυξη λογισμικού νομικά',
   alternates: buildAlternates('/legal', 'el'),
   openGraph: {
     locale: 'el_GR',
     type: 'website',
     url: 'https://www.fijisolutions.net/el/legal',
-    title: 'Νομικές Πληροφορίες',
-    description: 'Επίσημες νομικές πληροφορίες & στοιχεία εγγραφής εταιρείας για τη Fiji Solutions. Αριθμός ΓΕΜΗ, εταιρικά στοιχεία & πληροφορίες εγγραφής.',
+    title: 'Νομικές πληροφορίες',
+    description: 'Τα νομικά στοιχεία της Fiji Solutions: επωνυμία, διεύθυνση έδρας, αριθμός ΓΕΜΗ, εταιρικό κεφάλαιο, εταίρος και διαχειριστής.',
     images: [
       {
         url: 'https://www.fijisolutions.net/og/fiji-solutions-el.png',
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@fiji_solutions',
-    title: 'Νομικές Πληροφορίες',
-    description: 'Επίσημες νομικές πληροφορίες & στοιχεία εγγραφής εταιρείας για τη Fiji Solutions. Αριθμός ΓΕΜΗ, εταιρικά στοιχεία & πληροφορίες εγγραφής.',
+    title: 'Νομικές πληροφορίες',
+    description: 'Τα νομικά στοιχεία της Fiji Solutions: επωνυμία, διεύθυνση έδρας, αριθμός ΓΕΜΗ, εταιρικό κεφάλαιο, εταίρος και διαχειριστής.',
     images: ['https://www.fijisolutions.net/og/fiji-solutions-el.png'],
   },
 };
