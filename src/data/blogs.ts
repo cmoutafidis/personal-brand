@@ -58,6 +58,7 @@ import jobShopSchedulingWorkOrderQuote from './blog/job-shop-scheduling-work-ord
 import onePersonKnowsEverythingBusinessContinuity from './blog/one-person-knows-everything-business-continuity';
 import aiAgentPouPaneDedomenaPelaton from './blog/ai-agent-pou-pane-dedomena-pelaton';
 import allagiErpILogistikouGiaAytomatopoiisi from './blog/allagi-erp-i-logistikou-gia-aytomatopoiisi';
+import automateProcessWithoutReplacingErp from './blog/automate-process-without-replacing-erp';
 
 // One file per article in src/data/blog/, the same convention src/data/offers/ uses. Fourteen
 // articles inline in this file was about seven thousand lines and nothing could be reviewed.
@@ -89,5 +90,6 @@ export const blogData: BlogData = {
     crewScheduleChangeOrderJobTracker,
     jobShopSchedulingWorkOrderQuote,
     onePersonKnowsEverythingBusinessContinuity,
+    automateProcessWithoutReplacingErp,
   ],
 };
