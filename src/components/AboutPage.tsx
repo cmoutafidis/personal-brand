@@ -92,8 +92,8 @@ const COPY: Record<Language, AboutCopy> = {
     and: ' and ',
     builtH2: 'What we have built',
     built: [
-      'PAP Center, a hair clinic in Thessaloniki, ran on software built in 2000 and feared it would stop working. We built the clinic a custom CRM. We started in July 2026 and have shipped changes every week since. It went live in September 2026, and the staff use it every day.',
-      'New Era Learning is an online learning platform. We helped build the platform and built a Snowflake data setup that extracts their data into customer and revenue insights.'
+      'PAP Center, a hair-loss and hair prosthetics centre in Thessaloniki, ran on an old program built for Windows XP that no longer worked properly on current Windows, and feared it would stop working. We built the centre a custom CRM. We started in July 2026 and have shipped changes every week since. It went live in September 2026, and the staff use it every day.',
+      'New Era Learning is an online education company in the United Arab Emirates. We helped build its learning platform and built a Snowflake data setup that turns its data into customer and revenue insights.'
     ],
     checkH2: 'How to check us',
     snowflake: 'Snowflake lists Fiji Solutions in its own partner directory as a Snowflake AI Data Cloud Select Partner: ',
@@ -132,8 +132,8 @@ const COPY: Record<Language, AboutCopy> = {
     and: ' και ',
     builtH2: 'Τι έχουμε φτιάξει',
     built: [
-      'Το PAP Center, μια κλινική μαλλιών στη Θεσσαλονίκη, δούλευε με λογισμικό φτιαγμένο το 2000 και φοβόταν μήπως σταματήσει να λειτουργεί. Φτιάξαμε για την κλινική ένα CRM στα μέτρα της. Ξεκινήσαμε τον Ιούλιο του 2026 και από τότε παραδίδουμε αλλαγές κάθε βδομάδα. Μπήκε σε λειτουργία τον Σεπτέμβριο του 2026, και το προσωπικό το χρησιμοποιεί κάθε μέρα.',
-      'Το New Era Learning είναι πλατφόρμα διαδικτυακής εκπαίδευσης. Βοηθήσαμε να χτιστεί η πλατφόρμα και στήσαμε στη Snowflake ένα σύστημα που μετατρέπει τα δεδομένα της πλατφόρμας σε εικόνα για τους πελάτες και τα έσοδά της.'
+      'Το PAP Center, ένα κέντρο τριχόπτωσης και προσθετικής μαλλιών στη Θεσσαλονίκη, δούλευε με ένα παλιό πρόγραμμα φτιαγμένο για Windows XP, που δεν λειτουργούσε πια σωστά στα σημερινά Windows, και φοβόταν μήπως σταματήσει να λειτουργεί. Φτιάξαμε για το κέντρο ένα CRM στα μέτρα του. Ξεκινήσαμε τον Ιούλιο του 2026 και από τότε παραδίδουμε αλλαγές κάθε βδομάδα. Μπήκε σε λειτουργία τον Σεπτέμβριο του 2026, και το προσωπικό το χρησιμοποιεί κάθε μέρα.',
+      'Η New Era Learning είναι εταιρεία διαδικτυακής εκπαίδευσης στα Ηνωμένα Αραβικά Εμιράτα. Βοηθήσαμε να χτιστεί η πλατφόρμα μάθησής της και στήσαμε στη Snowflake ένα σύστημα που μετατρέπει τα δεδομένα της σε εικόνα για τους πελάτες και τα έσοδά της.'
     ],
     checkH2: 'Πώς μπορείς να μας ελέγξεις',
     snowflake: 'Η Snowflake μάς έχει στον δικό της κατάλογο συνεργατών ως Snowflake AI Data Cloud Select Partner: ',

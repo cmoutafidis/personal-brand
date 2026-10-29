@@ -162,7 +162,7 @@ export function ProjectDetail({lang, project: p}: {lang: Language; project: Proj
   const pc = p.copy[lang];
   const links = linksOf(p, lang);
   const related = relatedOf(p, lang);
-  const gallery = p.images.filter((img) => img.mockData || img.publicPage);
+  const gallery = p.images.filter((img) => (img.mockData || img.publicPage) && (!img.locale || img.locale === lang));
   const sections: {heading: string; body: string[]}[] = [
     {heading: c.situation, body: pc.situation},
     {heading: c.built, body: pc.built},

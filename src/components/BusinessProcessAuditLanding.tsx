@@ -180,10 +180,10 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         title: 'Software you can click',
-        body: 'Products we designed, built, and run ourselves. Try them.',
+        body: 'Software we built that is live today. Try it.',
         links: [
           {label: 'Fiji Analytics Dashboard', href: 'https://finance.fijisolutions.net'},
-          {label: 'Catalytics Pro', href: 'https://catalytics.pro'}
+          {label: 'Catalytics', href: 'https://catalytics.pro'}
         ]
       },
       {
@@ -195,7 +195,7 @@ const copy: Record<Language, LandingCopy> = {
         body: 'Agreed in writing, per client, before we build. Details below.'
       }
     ],
-    trustClosing: 'When we do publish client results, they’ll be real, measured, and named. Until then, we’d rather show you less and have all of it be true.',
+    trustClosing: 'Our client projects are named on our projects page, with what we built and where each one stands today. We publish a client result only once it has been measured.',
     offerTitle: 'The Internal Operations Fix: how it works',
     offerIntro: 'A done-for-you engagement in two steps. The target and the price are agreed in writing before anything gets built.',
     offerSteps: [
@@ -349,7 +349,7 @@ const copy: Record<Language, LandingCopy> = {
     bioBullets: [
       'Software engineer; founder and administrator of Fiji Solutions IKE, Thessaloniki.',
       'Fiji Solutions is a Snowflake AI Data Cloud Select Partner, listed in Snowflake’s official partner directory. Select is one of the tiers of the partner network, alongside Registered, Premier and Elite. That status belongs to the company.',
-      'Builder of Fiji Analytics Dashboard and Catalytics Pro: live products you can open right now.',
+      'Builder of Fiji Analytics Dashboard and, with a partner, of the Catalytics apps: live software you can open right now.',
       'More than ten years of work across five sectors: banking, travel, telecommunications, health and online education. Those sectors are my own working history.'
     ],
     bioClosing: [
@@ -468,10 +468,10 @@ const copy: Record<Language, LandingCopy> = {
       },
       {
         title: 'Λογισμικό που μπορείς να δοκιμάσεις',
-        body: 'Προϊόντα που σχεδιάσαμε, χτίσαμε και λειτουργούμε οι ίδιοι. Δοκίμασέ τα.',
+        body: 'Λογισμικό που φτιάξαμε και λειτουργεί σήμερα. Δοκίμασέ το.',
         links: [
           {label: 'Fiji Analytics Dashboard', href: 'https://finance.fijisolutions.net'},
-          {label: 'Catalytics Pro', href: 'https://catalytics.pro'}
+          {label: 'Catalytics', href: 'https://catalytics.pro'}
         ]
       },
       {
@@ -483,7 +483,7 @@ const copy: Record<Language, LandingCopy> = {
         body: 'Συμφωνείται γραπτά, ανά πελάτη, πριν χτίσουμε οτιδήποτε. Λεπτομέρειες παρακάτω.'
       }
     ],
-    trustClosing: 'Όταν δημοσιεύσουμε αποτελέσματα πελατών, θα είναι αληθινά, μετρημένα και επώνυμα. Μέχρι τότε, προτιμάμε να δείχνουμε λιγότερα και όλα να είναι αλήθεια.',
+    trustClosing: 'Τα έργα μας για πελάτες είναι επώνυμα στη σελίδα με τα έργα μας, μαζί με το τι φτιάξαμε και πού βρίσκεται το καθένα σήμερα. Δημοσιεύουμε αποτέλεσμα πελάτη μόνο όταν έχει μετρηθεί.',
     offerTitle: 'Πώς λειτουργεί η συνεργασία',
     offerIntro: 'Μια συνεργασία σε δύο βήματα, όπου τη δουλειά τη σηκώνουμε εμείς. Ο στόχος και η τιμή συμφωνούνται γραπτά πριν χτιστεί οτιδήποτε.',
     offerSteps: [
@@ -637,7 +637,7 @@ const copy: Record<Language, LandingCopy> = {
     bioBullets: [
       'Μηχανικός λογισμικού· ιδρυτής και διαχειριστής της Fiji Solutions ΙΚΕ, Θεσσαλονίκη.',
       'Η Fiji Solutions είναι Snowflake AI Data Cloud Select Partner, καταχωρισμένη στον επίσημο κατάλογο συνεργατών της Snowflake. Το Select είναι μία από τις βαθμίδες του δικτύου συνεργατών, μαζί με τις Registered, Premier και Elite. Η ιδιότητα αυτή ανήκει στην εταιρεία.',
-      'Δημιουργός του Fiji Analytics Dashboard και του Catalytics Pro: ζωντανά προϊόντα που μπορείς να ανοίξεις τώρα.',
+      'Δημιουργός του Fiji Analytics Dashboard και, μαζί με έναν συνεργάτη, των εφαρμογών του Catalytics: ζωντανό λογισμικό που μπορείς να ανοίξεις τώρα.',
       'Πάνω από δέκα χρόνια σε πέντε κλάδους: τράπεζες, τουρισμό, τηλεπικοινωνίες, υγεία και διαδικτυακή εκπαίδευση. Οι κλάδοι αυτοί είναι η δική μου διαδρομή.'
     ],
     bioClosing: [
