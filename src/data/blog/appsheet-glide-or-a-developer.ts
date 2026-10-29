@@ -18,8 +18,8 @@ const post: BlogPost = {
   metaTitle: 'AppSheet, Glide or a developer? | Fiji Solutions',
   excerpt: 'Three ways to turn a shared spreadsheet into an app: a no-code tool, a developer, or a service that builds it for you. When each one fits.',
   publishedAt: '2026-10-12',
-  updatedAt: '2026-10-12',
-  readingTime: 5, // round(bodyWords / 140); body is ~644 words
+  updatedAt: '2026-10-29',
+  readingTime: 7, // round(bodyWords / 140); body is ~1028 words since the D5 table (2026-10-29)
   tags: ['Spreadsheet to app', 'No-code tools'],
   body: [
     {type: 'paragraph', text: [
@@ -62,6 +62,21 @@ const post: BlogPost = {
       ['You want it built for you, at a set price, and you want to try it before you pay: a service like ours.'],
     ]},
 
+    // CONT-9 (2026-10-29, offer-os gtm/seo-plan-2026-10 D5): the comparison matrix the results page for this query
+    // carries. No money figure (D-08): the cost row names the model, and our column links the priced offer.
+    {type: 'paragraph', text: [
+      'An agency is a fourth route. Here is how all four compare.',
+    ]},
+    {type: 'table', caption: 'Four ways to turn a spreadsheet into an app.', head: ['Compared on', 'No-code tool', 'Freelancer', 'Agency', 'Our fixed-price service'], rows: [
+      [[{text: 'Cost model', strong: true}], ['A monthly subscription, often priced per user'], ['By the hour or by the project, moving with the scope'], ['A project fee for the build, often with a monthly retainer for support'], ['A set price for each stage, published before you start. You pay only if you like it. After delivery, a care plan is billed monthly. ', {text: 'What it costs', href: '/en/offers/sheet-to-app#s12-what-it-costs'}]],
+      [[{text: 'Who builds', strong: true}], ['You, or whoever on your team takes it on'], ['The developer. You carry the project, from deciding what goes in to testing that it works.'], ['A team, with a process behind it'], ['We do, and you talk to the engineer who builds your app']],
+      [[{text: 'Who maintains', strong: true}], ['The person who built it. When they leave, the app tends to stall.'], ['Set by your agreement: ask in writing who keeps it running, before the work starts'], ['Often the agency, on a monthly retainer'], ['We do, on a monthly care plan: hosting on AWS, backups and security updates. Or, once the app is paid, you take the code and host it yourself.']],
+      [[{text: 'Logins and roles', strong: true}], ['Real logins, where each person sees only their own screen, get hard to do and harder to maintain'], ['Built to your brief. Real accounts add work.'], ['Built to your brief. Real accounts add work.'], ['A screen for each role in the prototype. In the finished app, each person logs in to their own screen.']],
+      [[{text: 'Integrations', strong: true}], ['Custom links to your accounting or email get hard to do and harder to maintain'], ['Built to your brief. Each connection adds to the price.'], ['Built to your brief. Each connection adds to the price.'], ['In the finished app, the connections we agree on the audit call, such as your accounting and email']],
+      [[{text: 'Code ownership', strong: true}], ['Ask the vendor what you can take with you if you leave'], ['Set by your contract: ask for it in writing'], ['Set by your contract: ask for it in writing'], ['Yours on request once the app is paid, with a spreadsheet export']],
+      [[{text: 'How long it takes', strong: true}], ['Fast to start, and it can be faster for something simple'], ['Moves with the scope'], ['Can run for months on something large'], ['A prototype 7 days after the 30-minute audit call, once your column headers arrive. The finished app about three weeks after you go ahead.']],
+    ]},
+
     {type: 'faq', heading: 'Common questions', items: [
       {q: 'What is the difference between Glide and AppSheet?', a: 'Both turn a sheet into an app without code. Glide leans toward clean, simple apps that are quick to stand up. AppSheet goes deeper on data rules and logic and ties in closely with Google Sheets. For a small team either can work, and the better test is which one the person building it finds easier.'},
       {q: 'Can I move from a no-code tool to a real app later?', a: 'Yes. You can start in a no-code tool and move to a built app once the work outgrows it. We can take your sheet, and what you learned from the no-code version, and build the app around your own columns.'},
@@ -69,6 +84,7 @@ const post: BlogPost = {
 
     {type: 'sources', heading: 'Sources', items: [
       {label: 'AppSheet, product site', url: 'https://about.appsheet.com/'},
+      {label: 'AppSheet, pricing', url: 'https://about.appsheet.com/pricing/'},
       {label: 'Glide, product site', url: 'https://www.glideapps.com/'},
       {label: 'Softr, product site', url: 'https://www.softr.io/'},
       {label: 'Airtable, product site', url: 'https://www.airtable.com/'},
