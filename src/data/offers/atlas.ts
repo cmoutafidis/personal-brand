@@ -28,8 +28,9 @@ import type {Language} from '@/types/language';
 // deadline line (AT-D17 keeps the one-project-at-a-time rule internal); a reply promise or a
 // response time, in any locale or success state (AT-D21); a client name (AT-D19).
 // 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-09): every client shown on the sites approved being
-// named, and case studies and proof blocks may name them; goal D4 decides what this offer shows.
-// The AT-D19 lock above holds on this page until then.
+// named, and case studies and proof blocks may name them; ~~goal D4 decides what this offer shows.
+// The AT-D19 lock above holds on this page until then.~~ Decided 2026-10-29 (seo-plan-2026-10 D4, C-64, as
+// D-92 for Peak): no "Work we have done" block and no client name here; AT-D19 stands.
 //
 // NAMES. The stack item names are the English canonical names on both locales (AT-D24), and the
 // Greek page writes the brand as Latin "Atlas", neuter, «το Atlas» (AT-D25).

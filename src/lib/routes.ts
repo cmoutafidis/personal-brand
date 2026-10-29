@@ -30,6 +30,9 @@ import {LIVE_PROJECTS} from '@/data/projects';
 // The page content lives in components, so the date is the component's, not the route
 // file's: the homepage and the audit page both move with 73ec38d (2026-08-30), not with their
 // own page.tsx.
+// 2026-10-29 (offer-os gtm/seo-plan-2026-10 D4, CONT-3): the twelve offer, audit and service routes that gained the
+// "Work we have done" block or, on sheet-to-app, the on-site case study links. The rows' own older notes below
+// date their earlier changes. Set these to the deploy date if the deploy lands on a later day.
 export const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']; lastmod: string }[] = [
   // 2026-09-30 (G20): both homepages became the sheet-to-app hook. Deployed 2026-10-04, so lastmod is that date.
   // 2026-10-23 (offer-os gtm/broad-home-2026-10 BR-G08): both homepages became the broad home, deployed that day.
@@ -40,18 +43,18 @@ export const ROUTES: { path: string; priority: number; changeFrequency: Metadata
   // software-prototype's sibling link now points there. /offers/app-prototype is retired and
   // redirects to /offers/sheet-to-app (next.config.ts), so its row is gone. Set the sheet-to-app
   // lastmod to the deploy date if the deploy lands on a later day.
-  {path: '/business-process-audit', priority: 0.9, changeFrequency: 'weekly', lastmod: '2026-09-30'},
+  {path: '/business-process-audit', priority: 0.9, changeFrequency: 'weekly', lastmod: '2026-10-29'},
   // 2026-10-08 (F16): S09 names PAP Center and New Era Learning, the FAQ gains the US line.
-  {path: '/offers/sheet-to-app', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-08'},
+  {path: '/offers/sheet-to-app', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-29'},
   // 2026-10-20 (offer-os gtm/geo-retrieval-2026-10 G06): titles and H1s of seven workbook offers, the three
   // service H1s and the services page H1 now name the service in the buyer's words.
-  {path: '/offers/software-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-20'},
-  {path: '/offers/ai-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-20'},
-  {path: '/offers/process-automation', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-20'},
-  {path: '/offers/ai-agent', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-20'},
-  {path: '/offers/ai-development-sprint', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-20'},
-  {path: '/offers/website-seo', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-20'},
-  {path: '/offers/website-google-ads', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-20'},
+  {path: '/offers/software-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-29'},
+  {path: '/offers/ai-prototype', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-29'},
+  {path: '/offers/process-automation', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-29'},
+  {path: '/offers/ai-agent', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-29'},
+  {path: '/offers/ai-development-sprint', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-29'},
+  {path: '/offers/website-seo', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-29'},
+  {path: '/offers/website-google-ads', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-29'},
   // 2026-10-18 (offer-os gtm/atlas/DECISIONS.md): Atlas, the apply-only top tier. Linked from the
   // navbar, QuickLinks, both homepages and every form's thank-you line (AT-D8, AT-D9). Set lastmod
   // to the deploy date if the deploy lands on a later day.
@@ -64,9 +67,9 @@ export const ROUTES: { path: string; priority: number; changeFrequency: Metadata
   // 2026-10-22 (offer-os gtm/broad-home-2026-10 BR-G07): About and Contact made broad. Deployed 2026-10-23
   // (BR-G08), so lastmod is that date.
   {path: '/about', priority: 0.6, changeFrequency: 'monthly', lastmod: '2026-10-23'},
-  {path: '/services/custom-software-development-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-20'},
-  {path: '/services/data-analysis-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-20'},
-  {path: '/services/snowflake-consulting-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-20'},
+  {path: '/services/custom-software-development-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-29'},
+  {path: '/services/data-analysis-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-29'},
+  {path: '/services/snowflake-consulting-greece', priority: 0.8, changeFrequency: 'monthly', lastmod: '2026-10-29'},
   // 2026-10-21 (offer-os gtm/seo-loop-2026-10 S14): the spreadsheet check, linked from QuickLinks and
   // from a cta block in the two niche posts (SL-D63). Set lastmod to the deploy date if it lands later.
   {path: '/tools/spreadsheet-check', priority: 0.7, changeFrequency: 'monthly', lastmod: '2026-10-22'},

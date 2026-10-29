@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import AuditFormSection, {AUDIT_CTA, CtaCopy} from '@/components/AuditFormSection';
 import OfferLinks from '@/components/OfferLinks';
+import WorkDone from '@/components/WorkDone';
 import TrackedLink from '@/components/TrackedLink';
 import {CTA_CLICK_EVENT} from '@/utils/gtag';
 import {SPREADSHEET_OFFERS, WEBSITE_OFFERS} from '@/data/offerLinks';
@@ -1115,6 +1116,10 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
       {/* 15. Final CTA + form. The section itself lives in AuditFormSection.tsx, which the homepage
           also rendered until 2026-09-30 (G20, D5: the homepage now has its own sheet-to-app form). */}
       <AuditFormSection language={language}/>
+
+      {/* 15b. Work we have done (2026-10-29, offer-os gtm/seo-plan-2026-10 D4, CONT-3): two project pages. After the
+          form, like the offer links below, so the audit stays this page's one conversion. */}
+      <WorkDone page="business-process-audit" lang={language}/>
 
       {/* 15a. Added 2026-09-30 (G19): the body link to /offers/sheet-to-app, which that offer's
           record names among its in-links (offer.yaml seo.internal_links_from). After the form,

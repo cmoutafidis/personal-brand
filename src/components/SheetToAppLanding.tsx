@@ -40,7 +40,8 @@ import {offerLastmod} from '@/lib/offerSchema';
 // address, the privacy link inside the form, the Calendly booking line under the form, the offer
 // graph's foot nav below the form, and (2026-10-08, F22, offer-os
 // gtm/followups-and-search/PLAN.md F-D161 to F-D164) the two case study lines in S09, each to its
-// shared Gamma doc in a new tab, so the offer page stays open behind it. The footer stays, for the
+// shared Gamma doc in a new tab, so the offer page stays open behind it (since 2026-10-29, seo-plan-2026-10 D4:
+// to the project page on this site, still in a new tab). The footer stays, for the
 // privacy-policy link.
 
 export type Block =

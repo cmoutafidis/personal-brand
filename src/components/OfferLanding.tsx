@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
+import WorkDone from '@/components/WorkDone';
 import TrackedLink from '@/components/TrackedLink';
 import {BOOKING_CLICK_EVENT, CTA_CLICK_EVENT} from '@/utils/gtag';
 import {Language} from '@/types/language';
 import {REPLY_SLA} from '@/lib/offer';
 import {CALENDLY_URL} from '@/components/AuditFormSection';
 import {OFFER_NEXT_COPY, PARENT_SERVICE, SERVICE_LABEL, SIBLING_OFFER, type OfferSlug} from '@/data/offerLinks';
+import type {WorkDonePage} from '@/data/workDone';
 
 // One component, every front-end offer page from the workbook.
 // 2026-09-30: /offers/sheet-to-app is the exception. Its contract is a different page, so it renders
@@ -42,7 +44,9 @@ import {OFFER_NEXT_COPY, PARENT_SERVICE, SERVICE_LABEL, SIBLING_OFFER, type Offe
 // refund behind it, not a measurement of past work, and the copy must keep saying so.
 // 2026-10-26 (seo-plan-2026-10 D-09): `proof/` now also holds the PAP Center and New Era Learning
 // case studies, and every client shown on the sites approved being named. Neither records a
-// measured result, so no results claim still appears; goal D4 decides what these pages show.
+// measured result, so no results claim still appears; ~~goal D4 decides what these pages show.~~
+// 2026-10-29 (D4, CONT-3): decided. Each page links its closest project pages in a "Work we have done" block
+// after the form (src/components/WorkDone.tsx). The projects state what was built, never a measured result.
 
 export type LeadItem = {
   lead: string;
@@ -512,6 +516,11 @@ export default function OfferLanding({offer, language}: {offer: Offer; language:
           </div>
         </div>
       </section>
+
+      {/* Work we have done (2026-10-29, offer-os gtm/seo-plan-2026-10 D4, CONT-3): the closest project pages. After
+          the form, like the foot nav below, because each offer's attention ratio keeps every body link under the form
+          (offer.yaml attention_ratio_notes). */}
+      <WorkDone page={offer.slug as WorkDonePage} lang={language}/>
 
       {/* Where this offer sits. Added 2026-09-01.
           Until then an offer page was very nearly a crawl dead end: nothing linked in, and the

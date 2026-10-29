@@ -4,7 +4,8 @@ import Footer from '@/components/Footer';
 import {createTranslationFunction} from '@/translations';
 import {Language} from '@/types/language';
 import OfferLinks from '@/components/OfferLinks';
-import type {LinkedOffer} from '@/data/offerLinks';
+import WorkDone from '@/components/WorkDone';
+import type {LinkedOffer, ServiceSlug} from '@/data/offerLinks';
 import {jsonLd} from '@/lib/jsonLd';
 
 // One skeleton for all six service pages.
@@ -103,6 +104,9 @@ export default function ServicePage(c: ServicePageContent) {
           </div>
         </div>
       </section>
+
+      {/* The projects that show this service (2026-10-29, offer-os gtm/seo-plan-2026-10 D4, CONT-3). */}
+      <WorkDone page={c.path.slice(1) as ServiceSlug} lang={c.lang}/>
 
       {/* Added 2026-09-01, when Google Ads was dropped and organic became the whole strategy.
           Until then the /offers/* pages were orphans on purpose, because they arrived by paid

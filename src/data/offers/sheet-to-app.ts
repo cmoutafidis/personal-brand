@@ -49,14 +49,17 @@ export const SHEET_TO_APP_BOOKING_URL = BOOKING_URL;
 
 /**
  * The two case studies S09 links (2026-10-08, F22, offer-os gtm/followups-and-search/PLAN.md F-D161
- * to F-D164): Gamma docs in the Fiji workspace, shared view-only, copied from offer-os
+ * to F-D164): until 2026-10-29, Gamma docs in the Fiji workspace, shared view-only, copied from offer-os
  * `offers/fiji-solutions--sheet-to-app/derived/gamma/LINKS.md` (CS1, CS-NEL). The AKB case study is
  * never linked from a Fiji page (F-D21; since 2026-10-22, BR-D35, the bank may be named in its approved
  * sentences, and the case study stays unlinked). If a doc is renamed in Gamma, its slug changes; the last 15
  * characters are the doc ID and keep working on their own.
+ * 2026-10-29 (offer-os gtm/seo-plan-2026-10 D4, audit CONT-3): the two lines point at the project pages on this
+ * site instead, in the reader's locale, since D2 rewrote both pages from the D1 facts. The Gamma docs stay shared
+ * and are no longer linked from the site. The new tab stays, so the offer page still stays open behind it.
  */
-export const CASE_STUDY_PAP_CENTER_URL = 'https://gamma.app/docs/Case-study-PAP-Center-90ptybbgeeyvct7';
-export const CASE_STUDY_NEW_ERA_LEARNING_URL = 'https://gamma.app/docs/Case-study-New-Era-Learning-wxkt0z0q2c523an';
+export const CASE_STUDY_PAP_CENTER_PATH = {en: '/en/projects/pap-center-crm', el: '/el/projects/pap-center-crm'} as const;
+export const CASE_STUDY_NEW_ERA_LEARNING_PATH = {en: '/en/projects/new-era-learning-platform', el: '/el/projects/new-era-learning-platform'} as const;
 
 const sheetToApp: SheetToAppOffer = {
   slug: 'offers/sheet-to-app',
@@ -221,10 +224,10 @@ const sheetToApp: SheetToAppOffer = {
             // owner's written yes (F-D20), and New Era Learning added (F-D30). AKB stays off this offer page (F-D21; BR-D35 of 2026-10-22 allows its approved sentences elsewhere).
             {type: 'p', text: 'PAP Center, a hair-loss and hair prosthetics centre in Thessaloniki, ran on an old program built for Windows XP and feared that program would stop working.'},
             {type: 'p', text: 'We built the centre a custom CRM, and it still runs today. We have shipped changes to that CRM every week since July 2026, on the platform your finished app runs on.'},
-            // 2026-10-08 (F22, F-D161 to F-D164): a line under each story to its shared Gamma case study.
-            {type: 'caseStudy', text: 'Read the PAP Center case study', href: CASE_STUDY_PAP_CENTER_URL, location: 's09-case-study-pap-center'},
+            // 2026-10-08 (F22, F-D161 to F-D164): a line under each story to its case study (on this site since D4, 2026-10-29).
+            {type: 'caseStudy', text: 'Read the PAP Center case study', href: CASE_STUDY_PAP_CENTER_PATH.en, location: 's09-case-study-pap-center'},
             {type: 'p', text: 'New Era Learning is an online education company in the United Arab Emirates. We helped build its learning platform and built a Snowflake data setup that turns its data into customer and revenue insights.'},
-            {type: 'caseStudy', text: 'Read the New Era Learning case study', href: CASE_STUDY_NEW_ERA_LEARNING_URL, location: 's09-case-study-new-era-learning'},
+            {type: 'caseStudy', text: 'Read the New Era Learning case study', href: CASE_STUDY_NEW_ERA_LEARNING_PATH.en, location: 's09-case-study-new-era-learning'},
             {type: 'p', text: 'From the audit call through the prototype and the build, you talk to the engineer who builds your app.'}
           ]
         },
@@ -546,10 +549,11 @@ const sheetToApp: SheetToAppOffer = {
             {type: 'p', text: 'Η Fiji Solutions είναι Snowflake AI Data Cloud Select Partner. Το βλέπεις στον κατάλογο συνεργατών της ίδιας της Snowflake.'},
             // 2026-10-08 (F16, F-D140): PAP Center named, New Era Learning added; AKB stays off this page (F-D21; BR-D35, 2026-10-22).
             {type: 'p', text: 'Το PAP Center, ένα κέντρο τριχόπτωσης και προσθετικής μαλλιών στη Θεσσαλονίκη, δούλευε με ένα παλιό πρόγραμμα φτιαγμένο για Windows XP, που δεν λειτουργούσε πια σωστά στα σημερινά Windows, και φοβόταν μήπως σταματήσει να λειτουργεί. Φτιάξαμε για το κέντρο ένα CRM στα μέτρα του, που τρέχει ακόμα και σήμερα. Από τον Ιούλιο του 2026 παραδίδουμε αλλαγές σε αυτό το CRM κάθε βδομάδα, στην πλατφόρμα όπου θα τρέχει και η δική σου τελική εφαρμογή.'},
-            // 2026-10-08 (F22): the case studies are in English, so each line says so.
-            {type: 'caseStudy', text: 'Διάβασε τη μελέτη περίπτωσης για το PAP Center (στα αγγλικά)', href: CASE_STUDY_PAP_CENTER_URL, location: 's09-case-study-pap-center'},
+            // 2026-10-08 (F22): the case studies were in English, so each line said so. 2026-10-29 (D4): they are the
+            // Greek project pages now, so the note «(στα αγγλικά)» is gone.
+            {type: 'caseStudy', text: 'Διάβασε τη μελέτη περίπτωσης για το PAP Center', href: CASE_STUDY_PAP_CENTER_PATH.el, location: 's09-case-study-pap-center'},
             {type: 'p', text: 'Η New Era Learning είναι εταιρεία διαδικτυακής εκπαίδευσης στα Ηνωμένα Αραβικά Εμιράτα. Βοηθήσαμε να χτιστεί η πλατφόρμα μάθησής της και στήσαμε στη Snowflake ένα σύστημα που μετατρέπει τα δεδομένα της σε εικόνα για τους πελάτες και τα έσοδά της.'},
-            {type: 'caseStudy', text: 'Διάβασε τη μελέτη περίπτωσης για το New Era Learning (στα αγγλικά)', href: CASE_STUDY_NEW_ERA_LEARNING_URL, location: 's09-case-study-new-era-learning'},
+            {type: 'caseStudy', text: 'Διάβασε τη μελέτη περίπτωσης για το New Era Learning', href: CASE_STUDY_NEW_ERA_LEARNING_PATH.el, location: 's09-case-study-new-era-learning'},
             {type: 'p', text: 'Από την πρώτη κλήση ως το πρωτότυπο και την τελική εφαρμογή, μιλάς με τον μηχανικό που χτίζει την εφαρμογή σου.'}
           ]
         },
