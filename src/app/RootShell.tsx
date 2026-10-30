@@ -297,13 +297,18 @@ function organisationSchema(lang: Language) {
       // The verified Google Business Profile, by its cid (feature id 0x12d99215fbf8399e, place id
       // ChIJix6dwQk_qBQRnjn4-xWS2RI). Added 2026-10-27, offer-os gtm/seo-plan-2026-10 B9 (AI-1).
       'https://maps.google.com/?cid=1358277385748232606',
+      // The YouTube channel @fijisolutions, by its canonical channel URL. Created 2026-10-28 for the
+      // content month (social-media-content sprint C-D18); looked at 2026-10-30, title "Fiji Solutions".
+      // Added 2026-10-30, offer-os gtm/seo-plan-2026-10 D14 (AI-4).
+      'https://www.youtube.com/channel/UCWnllCZ_-Z5bd5-zTsW4B6g',
     ],
     // ⚠️ TikTok is DELIBERATELY ABSENT. `social-media-content/brands/fiji-solutions/targets.json`
     // records the handle `fiji.solutions`, but the publisher's own config gates TikTok off
     // ("absent, and must stay absent for now") and the account could not be verified — tiktok.com is
     // blocked by the Chrome extension's site permissions. A `sameAs` entry is an identity claim, so
-    // it goes in only after somebody has looked at the profile. Same for YouTube, which has no
-    // channel recorded at all.
+    // it goes in only after somebody has looked at the profile. ~~Same for YouTube, which has no
+    // channel recorded at all.~~ 2026-10-30 (seo-plan D14): YouTube now has a channel, looked at, and
+    // it is in the list above.
     // Instagram @fijisolutionsnet WAS verified on 2026-09-02: real, 5 posts, bio "We help
     // businesses grow online", and it already links back to www.fijisolutions.net.
     // ⚠️ @fijisolutions (no "net") is NOT this company — it is a Brazilian fintech with 11K
