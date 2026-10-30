@@ -5,6 +5,7 @@ import {createTranslationFunction} from '@/translations';
 import {Language} from '@/types/language';
 import OfferLinks from '@/components/OfferLinks';
 import WorkDone from '@/components/WorkDone';
+import ReviewSlot from '@/components/ReviewSlot';
 import type {LinkedOffer, ServiceSlug} from '@/data/offerLinks';
 import {jsonLd} from '@/lib/jsonLd';
 import {BOOKING_URL} from '@/lib/booking';
@@ -168,6 +169,8 @@ export default function ServicePage(c: ServicePageContent) {
 
       {/* The projects that show this service (2026-10-29, offer-os gtm/seo-plan-2026-10 D4, CONT-3). */}
       <WorkDone page={c.path.slice(1) as ServiceSlug} lang={c.lang}/>
+      {/* The reviews about those projects (2026-10-30, seo-plan-2026-10 D13, D-129, CONT-6); nothing until one exists. */}
+      <ReviewSlot language={c.lang} page={c.path.slice(1) as ServiceSlug}/>
 
       <section className="bg-gray-50 py-16 dark:bg-gray-800 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

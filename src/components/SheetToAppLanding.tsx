@@ -3,12 +3,14 @@ import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
 import TrackedLink from '@/components/TrackedLink';
 import SheetToAppStickyCta from '@/components/SheetToAppStickyCta';
+import ReviewSlot from '@/components/ReviewSlot';
 import type {Faq} from '@/components/OfferLanding';
 import {BOOKING_CLICK_EVENT, CTA_CLICK_EVENT} from '@/utils/gtag';
 import {Language} from '@/types/language';
 import {OFFER_NEXT_COPY, PARENT_SERVICE, SERVICE_LABEL, SIBLING_OFFER, type OfferSlug} from '@/data/offerLinks';
 import {SHEET_TO_APP_BOOKING_URL} from '@/data/offers/sheet-to-app';
 import {offerLastmod} from '@/lib/offerSchema';
+import {formatIsoDate} from '@/lib/formatDate';
 
 // The layout of the 7-Day Sheet-to-App Prototype page, /en/offers/sheet-to-app and
 // /el/offers/sheet-to-app. Built 2026-09-30 in G19.
@@ -42,7 +44,9 @@ import {offerLastmod} from '@/lib/offerSchema';
 // gtm/followups-and-search/PLAN.md F-D161 to F-D164) the two case study lines in S09, each to its
 // shared Gamma doc in a new tab, so the offer page stays open behind it (since 2026-10-29, seo-plan-2026-10 D4:
 // to the project page on this site, still in a new tab). The footer stays, for the
-// privacy-policy link.
+// privacy-policy link. 2026-10-30 (seo-plan-2026-10 D13, D-129): the review slot, between the form
+// and the foot nav, once a review names one of the S09 projects; a Google review's card links its
+// source on Google in a new tab. Nothing renders there until then.
 
 export type Block =
   /** A paragraph. `lead` renders bold before the text. */
@@ -128,15 +132,6 @@ export type SheetToAppOffer = {
 
 const FORM_ID = 'sheet-to-app-form';
 
-/** An ISO date as "8 October 2026" or «8 Οκτωβρίου 2026», read in UTC so the build machine's zone cannot shift it. */
-function formatUpdated(iso: string, language: Language): string {
-  return new Date(`${iso}T00:00:00Z`).toLocaleDateString(language === 'el' ? 'el-GR' : 'en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    timeZone: 'UTC',
-  });
-}
 const STACK_ID = 's07-offer-stack';
 const HERO_ID = 's01-hero';
 const CONTACT_EMAIL = 'info@fijisolutions.net';
@@ -548,6 +543,13 @@ export default function SheetToAppLanding({offer, language}: {offer: SheetToAppO
         </div>
       </section>
 
+      {/* The reviews about the two projects S09 links (2026-10-30, offer-os gtm/seo-plan-2026-10 D13, D-129, CONT-6).
+          Below the form, not after S09: a Google review's card carries an off-site source link, and every body link
+          but the S09 case study lines sits below the form (ATTENTION RATIO above). It is also outside the nineteen
+          sections of the 03-copy.md contract, which has no row for it. ReviewSlot reads the S09 case study lines,
+          and renders nothing until a review in src/data/reviews.ts names one of their projects. */}
+      <ReviewSlot language={language} page="offers/sheet-to-app"/>
+
       {/* Where this offer sits: the offer graph's foot nav, below the form (02-architecture.md,
           Attention ratio), up to the parent service and across to the one sibling, both from
           src/data/offerLinks.ts. A body nav at the foot of this page, below the form. */}
@@ -578,7 +580,7 @@ export default function SheetToAppLanding({offer, language}: {offer: SheetToAppO
             WebPage node emits as dateModified, so the sitemap, this line and the JSON-LD agree. */}
         <p className="mx-auto mt-8 max-w-[65ch] px-4 text-sm leading-6 text-gray-600 dark:text-gray-400 sm:px-6">
           {c.updatedLabel}{' '}
-          <time dateTime={updated}>{formatUpdated(updated, language)}</time>
+          <time dateTime={updated}>{formatIsoDate(updated, language)}</time>
         </p>
       </section>
 

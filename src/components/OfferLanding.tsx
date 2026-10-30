@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
 import WorkDone from '@/components/WorkDone';
+import ReviewSlot from '@/components/ReviewSlot';
 import TrackedLink from '@/components/TrackedLink';
 import {BOOKING_CLICK_EVENT, CTA_CLICK_EVENT} from '@/utils/gtag';
 import {Language} from '@/types/language';
@@ -521,6 +522,10 @@ export default function OfferLanding({offer, language}: {offer: Offer; language:
           the form, like the foot nav below, because each offer's attention ratio keeps every body link under the form
           (offer.yaml attention_ratio_notes). */}
       <WorkDone page={offer.slug as WorkDonePage} lang={language}/>
+
+      {/* The reviews about those projects (2026-10-30, offer-os gtm/seo-plan-2026-10 D13, D-129, CONT-6). Renders
+          nothing until a review in src/data/reviews.ts names one of them. */}
+      <ReviewSlot language={language} page={offer.slug as WorkDonePage}/>
 
       {/* Where this offer sits. Added 2026-09-01.
           Until then an offer page was very nearly a crawl dead end: nothing linked in, and the

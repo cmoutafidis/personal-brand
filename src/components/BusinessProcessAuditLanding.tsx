@@ -2,6 +2,7 @@ import Image from 'next/image';
 import AuditFormSection, {AUDIT_CTA, CtaCopy} from '@/components/AuditFormSection';
 import OfferLinks from '@/components/OfferLinks';
 import WorkDone from '@/components/WorkDone';
+import ReviewSlot from '@/components/ReviewSlot';
 import TrackedLink from '@/components/TrackedLink';
 import {CTA_CLICK_EVENT} from '@/utils/gtag';
 import {SPREADSHEET_OFFERS, WEBSITE_OFFERS} from '@/data/offerLinks';
@@ -1120,6 +1121,10 @@ export default function BusinessProcessAuditLanding({language}: BusinessProcessA
       {/* 15b. Work we have done (2026-10-29, offer-os gtm/seo-plan-2026-10 D4, CONT-3): two project pages. After the
           form, like the offer links below, so the audit stays this page's one conversion. */}
       <WorkDone page="business-process-audit" lang={language}/>
+
+      {/* 15b, continued. The reviews about those two projects (2026-10-30, offer-os gtm/seo-plan-2026-10 D13, D-129, CONT-6).
+          Renders nothing until a review in src/data/reviews.ts names one of them. */}
+      <ReviewSlot language={language} page="business-process-audit"/>
 
       {/* 15a. Added 2026-09-30 (G19): the body link to /offers/sheet-to-app, which that offer's
           record names among its in-links (offer.yaml seo.internal_links_from). After the form,

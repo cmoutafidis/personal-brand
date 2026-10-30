@@ -15,7 +15,9 @@ import type {ServiceKey} from '@/data/services';
 // `images` holds cleared screenshots only (BR-G26): a screen with mock data only (`mockData: true`), or a public
 // page of the client's own site that shows no client data, no person and no price (`publicPage: true`, checked
 // before commit and logged in offer-os). The first is the Seaflows home, captured 2026-10-26 with the owner's yes
-// (BR-D34). `quote` stays null until a real review or quote arrives with consent (BR-G29). The client logos live in
+// (BR-D34). ~~`quote` stays null until a real review or quote arrives with consent (BR-G29).~~ 2026-10-30 (offer-os
+// gtm/seo-plan-2026-10 D13, D-129): the `quote` field left this file; a project's review is an entry in
+// src/data/reviews.ts that names its slug in `project`, and its page shows it from there. The client logos live in
 // src/data/clients.ts (BR-G25). Ο Τόπος Μου says "on staging" until its production site switches (read
 // 2026-10-22: otoposmou.gr still runs the old Joomla site). Hapimag's page is written from his context of
 // 2026-10-22 (BR-G28, offer-os BR-D34), never in his words, and never names the employer of that time.
@@ -70,7 +72,6 @@ export type Project = {
     result: string[];
     facts: Fact[];
   }>;
-  quote: null | {text: string; author: string; role: string; date: string; source: 'google' | 'written' | 'video'; url?: string};
   lastmod: string;
 };
 
@@ -243,7 +244,6 @@ export const PROJECTS: readonly Project[] = [
         ],
       },
     },
-    quote: null,
     lastmod: D2_SHIP,
   }),
   project({
@@ -319,7 +319,6 @@ export const PROJECTS: readonly Project[] = [
         ],
       },
     },
-    quote: null,
     lastmod: D2_SHIP,
   }),
   project({
@@ -388,7 +387,6 @@ export const PROJECTS: readonly Project[] = [
         ],
       },
     },
-    quote: null,
     lastmod: D2_SHIP,
   }),
   project({
@@ -463,7 +461,6 @@ export const PROJECTS: readonly Project[] = [
         ],
       },
     },
-    quote: null,
     lastmod: D2_SHIP,
   }),
   project({
@@ -535,7 +532,6 @@ export const PROJECTS: readonly Project[] = [
         ],
       },
     },
-    quote: null,
     lastmod: D2_SHIP,
   }),
   project({
@@ -610,7 +606,6 @@ export const PROJECTS: readonly Project[] = [
         ],
       },
     },
-    quote: null,
     lastmod: D2_SHIP,
   }),
   project({
@@ -704,7 +699,6 @@ export const PROJECTS: readonly Project[] = [
         result: ['Η ιστοσελίδα λειτουργεί στο seaflows.gr, στα ελληνικά και στα αγγλικά. Οι επισκέπτες μπορούν να ψάξουν ημερομηνίες, να δουν τα τρία διαμερίσματα και να διαβάσουν για την περιοχή και τους όρους κράτησης.'],
       },
     },
-    quote: null,
     lastmod: D2_SHIP,
   }),
   project({
@@ -768,7 +762,6 @@ export const PROJECTS: readonly Project[] = [
         result: ['Η πλατφόρμα λειτουργεί στο hapimag.com, όπως ελέγξαμε στις 29 Οκτωβρίου 2026. Μέσα από αυτήν τα μέλη κλείνουν διαμερίσματα για τις διακοπές τους, και οι σελίδες των θερέτρων είναι ανοιχτές σε όλους.'],
       },
     },
-    quote: null,
     lastmod: D2_SHIP,
   }),
 ];

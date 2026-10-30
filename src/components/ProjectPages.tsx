@@ -9,6 +9,8 @@ import {buildAlternates, defaultOgImage, ogLocale} from '@/lib/alternates';
 import {BOOKING_URL} from '@/lib/booking';
 import {BOOKING_CLICK_EVENT} from '@/utils/gtag';
 import {jsonLd} from '@/lib/jsonLd';
+import {formatIsoDate} from '@/lib/formatDate';
+import {ReviewCard, reviewsOfProject} from '@/components/ReviewSlot';
 import {LIVE_PROJECTS, PROJECTS_COPY, type Project} from '@/data/projects';
 import {SERVICES} from '@/data/services';
 import {OFFER_BY_SLUG, SERVICE_LABEL, type ServiceSlug} from '@/data/offerLinks';
@@ -20,9 +22,12 @@ import {OFFER_BY_SLUG, SERVICE_LABEL, type ServiceSlug} from '@/data/offerLinks'
 //
 // No page level JSON-LD (PLAN.md §4.4 and ~~the GEO rule 3 in CLAUDE.md~~): the site-level nodes in RootShell stay
 // the only ones. No price, no rating, no count of clients. The gallery renders the project's cleared `images`,
-// those marked `mockData: true` or `publicPage: true` (BR-G26; the first, Seaflows, since 2026-10-26). The quote
+// those marked `mockData: true` or `publicPage: true` (BR-G26; the first, Seaflows, since 2026-10-26). ~~The quote
 // slot renders `quote` word for word with its author, role, date and source link once BR-G29 sets one, with no
-// stars and no Review markup (BR-D27); it renders nothing today.
+// stars and no Review markup (BR-D27); it renders nothing today.~~ 2026-10-30 (offer-os gtm/seo-plan-2026-10 D13,
+// D-129): the quote slot renders the reviews in src/data/reviews.ts whose `project` is this page's slug, through
+// ReviewCard (ReviewSlot.tsx), the same card the homes, offer and service pages show, with no stars and no Review
+// markup (BR-D27); `quote` left projects.ts. It renders nothing today: there is no review yet.
 //
 // Superseded 2026-10-26 (offer-os gtm/seo-plan-2026-10 D-13): the GEO rule 3 struck above was the per page
 // markup freeze, which D-13 narrows: fix broken markup, fix slow pages, and add schema types Google itself
@@ -133,15 +138,6 @@ function relatedOf(p: Project, lang: Language): PageLink[] {
   return out;
 }
 
-function formatDate(iso: string, lang: Language): string {
-  return new Date(`${iso}T00:00:00Z`).toLocaleDateString(lang === 'el' ? 'el-GR' : 'en-GB', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timeZone: 'UTC',
-  });
-}
-
 // SCH-5 (C5, 2026-10-28): Home > Projects > the project, the trail the page's own back link shows.
 function projectBreadcrumb(lang: Language, p: Project) {
   const url = `${BASE}/${lang}/projects/${p.slug}`;
@@ -162,6 +158,7 @@ export function ProjectDetail({lang, project: p}: {lang: Language; project: Proj
   const pc = p.copy[lang];
   const links = linksOf(p, lang);
   const related = relatedOf(p, lang);
+  const reviews = reviewsOfProject(p.slug);
   const gallery = p.images.filter((img) => (img.mockData || img.publicPage) && (!img.locale || img.locale === lang));
   const sections: {heading: string; body: string[]}[] = [
     {heading: c.situation, body: pc.situation},
@@ -206,21 +203,12 @@ export function ProjectDetail({lang, project: p}: {lang: Language; project: Proj
           </section>
         ))}
 
-        {p.quote && (
-          <figure className="mb-10 rounded-xl border border-gray-200/80 bg-gray-50 p-6 dark:border-gray-700/80 dark:bg-gray-800">
-            <blockquote className="mb-4 text-lg text-gray-800 dark:text-gray-200">{p.quote.text}</blockquote>
-            <figcaption className="text-sm text-gray-600 dark:text-gray-400">
-              {p.quote.author}, {p.quote.role}, <time dateTime={p.quote.date}>{formatDate(p.quote.date, lang)}</time>
-              {p.quote.url && (
-                <>
-                  {', '}
-                  <a href={p.quote.url} target="_blank" rel="noopener noreferrer" className="font-medium text-primary-600 hover:underline dark:text-primary-400">
-                    {new URL(p.quote.url).host}
-                  </a>
-                </>
-              )}
-            </figcaption>
-          </figure>
+        {reviews.length > 0 && (
+          <div className="mb-10 grid gap-6">
+            {reviews.map((r, i) => (
+              <ReviewCard key={`${i}-${r.kind}-${r.date}`} review={r} lang={lang}/>
+            ))}
+          </div>
         )}
 
         {links.length > 0 && (
@@ -271,7 +259,7 @@ export function ProjectDetail({lang, project: p}: {lang: Language; project: Proj
         </section>
 
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          {c.updated}: <time dateTime={p.lastmod}>{formatDate(p.lastmod, lang)}</time>
+          {c.updated}: <time dateTime={p.lastmod}>{formatIsoDate(p.lastmod, lang)}</time>
         </p>
       </article>
     </div>
