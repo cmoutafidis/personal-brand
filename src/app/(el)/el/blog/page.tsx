@@ -11,16 +11,18 @@ const siteUrl = 'https://www.fijisolutions.net';
 // too (F20 of offer-os gtm/followups-and-search), so /en/blog is indexable and this page uses
 // buildAlternates('/blog', 'el'), which names en, el and x-default. Before that, this block omitted en
 // because /en/blog was an empty noindex page the sitemap did not list.
+// 2026-10-30 (offer-os seo-plan-2026-10 D12, audit CONT-5, D-124): the H1, intro and description name the full
+// range the home lists, not websites and search alone; the dated-source sentence stays.
 export const metadata: Metadata = {
-  title: 'Blog: ιστοσελίδες και αναζήτηση | Fiji Solutions',
-  description: 'Πρακτικά κείμενα για ιστοσελίδες, αναζήτηση και ό,τι αξίζει να συμφωνηθεί γραπτά. Κάθε ισχυρισμός για την Google με πηγή και ημερομηνία.',
-  keywords: 'κατασκευή ιστοσελίδων, προώθηση ιστοσελίδων, αναζήτηση Google, Θεσσαλονίκη, Fiji Solutions',
+  title: 'Blog: λογισμικό, αυτοματισμοί, AI και ιστοσελίδες | Fiji Solutions',
+  description: 'Οδηγοί για λογισμικό κατά παραγγελία, εφαρμογές, αυτοματισμούς, AI agents, ιστοσελίδες και πλατφόρμες δεδομένων Snowflake. Κάθε ισχυρισμός για την Google με πηγή και ημερομηνία.',
+  keywords: 'λογισμικό κατά παραγγελία, εφαρμογές, αυτοματοποίηση διαδικασιών, AI agents, κατασκευή ιστοσελίδων, Snowflake, Θεσσαλονίκη, Fiji Solutions',
   alternates: buildAlternates('/blog', 'el'),
   openGraph: {
     type: 'website',
     url: `${siteUrl}/el/blog`,
-    title: 'Blog: ιστοσελίδες και αναζήτηση',
-    description: 'Πρακτικά κείμενα για ιστοσελίδες και αναζήτηση, με πηγή και ημερομηνία.',
+    title: 'Blog: λογισμικό, αυτοματισμοί, AI και ιστοσελίδες',
+    description: 'Οδηγοί για λογισμικό, εφαρμογές, αυτοματισμούς, AI agents, ιστοσελίδες και Snowflake.',
     locale: 'el_GR',
     siteName: 'Fiji Solutions',
     images: [{url: `${siteUrl}/og/fiji-solutions-el.png`, width: 1200, height: 630, alt: 'Fiji Solutions'}],
@@ -36,10 +38,10 @@ export default function Page() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 md:mb-16 text-center">
             <h1 className="mb-4 text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
-              Ιστοσελίδες και αναζήτηση, χωρίς υποσχέσεις
+              Οδηγοί για λογισμικό, αυτοματισμούς, AI και ιστοσελίδες
             </h1>
             <p className="mx-auto max-w-2xl text-xl text-gray-600 dark:text-gray-400">
-              Κείμενα για το πώς δουλεύει πραγματικά η αναζήτηση και τι αξίζει να συμφωνείς γραπτά. Κάθε ισχυρισμός για την Google παραπέμπει στη δική της τεκμηρίωση, με ημερομηνία.
+              Πρακτικοί οδηγοί για λογισμικό κατά παραγγελία, εφαρμογές, αυτοματισμούς, AI agents, ιστοσελίδες και πλατφόρμες δεδομένων Snowflake. Κάθε ισχυρισμός για την Google παραπέμπει στη δική της τεκμηρίωση, με ημερομηνία.
             </p>
           </div>
           <BlogList posts={blogData.el} language="el" emptyMessage="Δεν υπάρχουν ακόμη κείμενα."/>
