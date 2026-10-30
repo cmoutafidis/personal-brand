@@ -57,6 +57,7 @@ const post: BlogPost = {
   updatedAt: '2026-09-06',
   readingTime: 32,
   tags: ['E-shop', 'Ιστοσελίδες', 'Λογισμικό'],
+  hero: 'prosvasimotita-istoselidon-eshop-poios-apantaei',
   body: [
     {type: 'paragraph', text: [
       'Υπάρχει ένα κείμενο που λέει ότι μια σειρά υπηρεσίες προς καταναλωτές πρέπει να είναι προσβάσιμες, και οι ',
@@ -168,6 +169,7 @@ const post: BlogPost = {
     ]},
 
     {type: 'heading', text: 'Πού μπαίνει το WCAG, και πού σταματά η νομική του αξία'},
+    {type: 'figure', figure: 'prosvasimotita-istoselidon-eshop-tekmirio-en-301-549'},
     {type: 'paragraph', text: [
       'Το ευρωπαϊκό τεχνικό πρότυπο για την προσβασιμότητα στην πληροφορική είναι το EN 301 549. Η έκδοση V3.2.1 γράφει: «Conformance with W3C Web Content Accessibility Guidelines (WCAG 2.1) Level AA is equivalent to conforming with all of clauses 9.1 to 9.4 […]» (',
       {text: 'EN 301 549 V3.2.1', href: ETSI},

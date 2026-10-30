@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 880">
+  <rect width="720" height="880" fill="#fff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect x="24" y="24" width="672" height="96" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="360" y="64" text-anchor="middle" font-size="28" font-weight="700" fill="#0f172a">1. Επαλήθευση επιχείρησης</text>
+  <text x="360" y="100" text-anchor="middle" font-size="24" fill="#475569">χωρίς αυτήν δεν αλλάζεις τίποτα</text>
+  <line x1="360" y1="120" x2="360" y2="146" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="24" y="148" width="672" height="96" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="360" y="188" text-anchor="middle" font-size="28" font-weight="700" fill="#0f172a">2. Κάνεις την αλλαγή</text>
+  <text x="360" y="224" text-anchor="middle" font-size="24" fill="#475569">π.χ. τηλέφωνο, όνομα, διεύθυνση</text>
+  <line x1="360" y1="244" x2="360" y2="270" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="24" y="272" width="672" height="96" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="360" y="312" text-anchor="middle" font-size="28" font-weight="700" fill="#0f172a">3. Έλεγχος από τη Google</text>
+  <text x="360" y="348" text-anchor="middle" font-size="24" fill="#475569">πριν βγει στον αέρα</text>
+
+  <path d="M60,368 V675" fill="none" stroke="#334155" stroke-width="3"/>
+  <line x1="60" y1="444" x2="108" y2="444" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="60" y1="552" x2="108" y2="552" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="60" y1="675" x2="108" y2="675" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="110" y="400" width="586" height="88" rx="14" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <text x="134" y="438" font-size="26" font-weight="700" fill="#15803d">Περνά</text>
+  <text x="134" y="472" font-size="24" fill="#0f172a">συνήθως έως 10 λεπτά</text>
+
+  <rect x="110" y="508" width="586" height="88" rx="14" fill="#fef3c7" stroke="#b45309" stroke-width="3"/>
+  <text x="134" y="546" font-size="26" font-weight="700" fill="#b45309">Αργεί</text>
+  <text x="134" y="580" font-size="24" fill="#0f172a">μερικές φορές έως 30 ημέρες</text>
+
+  <rect x="110" y="616" width="586" height="118" rx="14" fill="#fee2e2" stroke="#b91c1c" stroke-width="3"/>
+  <text x="134" y="654" font-size="26" font-weight="700" fill="#b91c1c">Δεν εγκρίνεται</text>
+  <text x="134" y="688" font-size="24" fill="#0f172a">αν η Google δεν μπορεί<tspan x="134" dy="30">να επιβεβαιώσει την ακρίβεια</tspan></text>
+
+  <rect x="24" y="760" width="672" height="96" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="360" y="800" text-anchor="middle" font-size="24" font-weight="600" fill="#0f172a">Αν αλλάζεις διεύθυνση ή όνομα, βοηθάει να έχει</text>
+  <text x="360" y="834" text-anchor="middle" font-size="24" fill="#475569">αλλάξει ήδη σε ιστοσελίδα, τιμολόγιο, πρόσοψη</text>
+</svg>

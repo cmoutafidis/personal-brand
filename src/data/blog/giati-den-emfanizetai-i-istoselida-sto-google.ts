@@ -28,6 +28,7 @@ const post: BlogPost = {
   updatedAt: '2026-09-02',
   readingTime: 9,
   tags: ['Ιστοσελίδες', 'Αναζήτηση', 'Θεσσαλονίκη'],
+  hero: 'giati-den-emfanizetai-i-istoselida-sto-google-tria-stadia',
   body: [
     { type: 'paragraph', text: [
       'Έφτιαξες μια ιστοσελίδα, είναι στον αέρα, και όταν γράφεις στην Google αυτό που κάνεις δεν τη βρίσκεις πουθενά. Αυτό δεν σημαίνει ότι κάτι χάλασε. Σημαίνει ότι κάπου στα ',

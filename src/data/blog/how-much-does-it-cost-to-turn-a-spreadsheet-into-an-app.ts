@@ -21,6 +21,7 @@ const post: BlogPost = {
   updatedAt: '2026-10-12',
   readingTime: 6, // round(bodyWords / 140); body is ~783 words
   tags: ['Spreadsheet to app', 'Pricing'],
+  hero: 'how-much-does-it-cost-to-turn-a-spreadsheet-into-an-app-what-moves-the-price',
   body: [
     {type: 'paragraph', text: [
       'If your team runs on a shared spreadsheet and you want it to become a real app, the first question is usually what that costs. The honest answer is that it depends on a handful of things, and the way you are charged changes a lot with who builds it. This page walks through what moves the price and the ways you will be asked to pay, so you can read any quote you get with clear eyes.',

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 596">
+  <rect width="720" height="596" fill="#fff"/>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#334155"/></marker></defs>
+  <rect x="18" y="18" width="684" height="64" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="360" y="58" text-anchor="middle" font-size="24" fill="#0f172a">Το CSV κρατάει διευθύνσεις εικόνων, όχι εικόνες</text>
+  <text x="183" y="134" text-anchor="middle" font-size="28" font-weight="700" fill="#b91c1c">Ανάποδη σειρά</text>
+  <text x="537" y="134" text-anchor="middle" font-size="28" font-weight="700" fill="#15803d">Σωστή σειρά</text>
+  <!-- left -->
+  <rect x="18" y="156" width="330" height="64" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="183" y="196" text-anchor="middle" font-size="24" fill="#0f172a">1. Εξάγω CSV</text>
+  <line x1="183" y1="220" x2="183" y2="250" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="18" y="252" width="330" height="96" rx="14" fill="#fff" stroke="#b91c1c" stroke-width="3"/>
+  <text x="183" y="308" text-anchor="middle" font-size="24" fill="#0f172a">2. Κλείνω το παλιό</text>
+  <line x1="183" y1="348" x2="183" y2="378" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="18" y="380" width="330" height="64" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="183" y="420" text-anchor="middle" font-size="24" fill="#0f172a">3. Ανεβάζω στο νέο</text>
+  <line x1="183" y1="444" x2="183" y2="474" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="18" y="476" width="330" height="96" rx="14" fill="#fee2e2" stroke="#b91c1c" stroke-width="3"/>
+  <text x="183" y="516" text-anchor="middle" font-size="24" font-weight="600" fill="#b91c1c">Χάνονται όλες<tspan x="183" dy="1.2em">οι φωτογραφίες</tspan></text>
+  <!-- right -->
+  <rect x="372" y="156" width="330" height="64" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="537" y="196" text-anchor="middle" font-size="24" fill="#0f172a">1. Εξάγω CSV</text>
+  <line x1="537" y1="220" x2="537" y2="250" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="372" y="252" width="330" height="96" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="537" y="292" text-anchor="middle" font-size="24" fill="#0f172a">2. Ανεβάζω στο νέο,<tspan x="537" dy="1.2em">με το παλιό δημόσιο</tspan></text>
+  <line x1="537" y1="348" x2="537" y2="378" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="372" y="380" width="330" height="64" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="537" y="420" text-anchor="middle" font-size="24" fill="#0f172a">3. Κλείνω το παλιό</text>
+  <line x1="537" y1="444" x2="537" y2="474" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="372" y="476" width="330" height="96" rx="14" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <text x="537" y="516" text-anchor="middle" font-size="24" font-weight="600" fill="#15803d">Οι εικόνες<tspan x="537" dy="1.2em">ξαναδημιουργούνται</tspan></text>
+</svg>

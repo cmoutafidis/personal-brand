@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560">
+<rect width="720" height="560" fill="#fff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#334155"/></marker></defs>
+<text x="360" y="52" text-anchor="middle" font-size="30" font-weight="700" fill="#0f172a">E-shop: 5 αποφάσεις πριν τον κώδικα</text>
+<g font-size="24" fill="#0f172a">
+<rect x="24" y="84" width="420" height="64" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+<circle cx="62" cy="116" r="20" fill="#0086ff"/><text x="62" y="124" text-anchor="middle" font-weight="700" fill="#fff">1</text>
+<text x="98" y="124">Τι βγαίνει από το σύστημα</text>
+<rect x="24" y="162" width="420" height="64" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+<circle cx="62" cy="194" r="20" fill="#0086ff"/><text x="62" y="202" text-anchor="middle" font-weight="700" fill="#fff">2</text>
+<text x="98" y="202">Ο πάροχος πληρωμών</text>
+<rect x="24" y="240" width="420" height="64" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+<circle cx="62" cy="272" r="20" fill="#0086ff"/><text x="62" y="280" text-anchor="middle" font-weight="700" fill="#fff">3</text>
+<text x="98" y="280">Μεταφορικά, επιστροφές</text>
+<rect x="24" y="318" width="420" height="64" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+<circle cx="62" cy="350" r="20" fill="#0086ff"/><text x="62" y="358" text-anchor="middle" font-weight="700" fill="#fff">4</text>
+<text x="98" y="358">Ποιος κρατά τα δεδομένα</text>
+<rect x="24" y="396" width="420" height="64" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+<circle cx="62" cy="428" r="20" fill="#0086ff"/><text x="62" y="436" text-anchor="middle" font-weight="700" fill="#fff">5</text>
+<text x="98" y="436" font-weight="700">Η ημέρα που θα φύγεις</text>
+</g>
+<g stroke="#334155" stroke-width="3" fill="none">
+<path d="M444 428H474V116"/>
+<path d="M474 116H448" marker-end="url(#a)"/>
+<path d="M474 194H448" marker-end="url(#a)"/>
+<path d="M474 272H448" marker-end="url(#a)"/>
+<path d="M474 350H448" marker-end="url(#a)"/>
+</g>
+<text font-size="24" fill="#0f172a" x="494" y="210">Η 5η ορίζει<tspan x="494" dy="1.25em">πόσο κοστίζει</tspan><tspan x="494" dy="1.25em">να αλλάξεις</tspan><tspan x="494" dy="1.25em">τις άλλες 4</tspan></text>
+<text x="360" y="516" text-anchor="middle" font-size="24" fill="#475569">Καμία δεν αφορά την εμφάνιση του καταστήματος</text>
+</svg>

@@ -42,6 +42,7 @@ const post: BlogPost = {
   updatedAt: '2026-09-02',
   readingTime: 30,
   tags: ['Αναζήτηση', 'Ιστοσελίδες', 'Ανάθεση έργου'],
+  hero: 'ti-einai-to-seo-epilexima',
   body: [
     {type: 'paragraph', text: [
       'Το «SEO» σημαίνει διαφορετικό πράγμα ανάλογα με το ποιος τη λέει τη λέξη. Στην τεκμηρίωση της Google έχει έναν συγκεκριμένο, γραμμένο ορισμό. Και μέσα εκεί ',

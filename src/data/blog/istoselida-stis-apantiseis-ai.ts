@@ -53,6 +53,7 @@ const post: BlogPost = {
   updatedAt: '2026-10-20',
   readingTime: 23,
   tags: ['Αναζήτηση', 'Ιστοσελίδες', 'Ανάθεση έργου'],
+  hero: 'istoselida-stis-apantiseis-ai-metrisimo-marketingk',
   body: [
     {type: 'paragraph', text: [
       'Πουλιέται καινούργια υπηρεσία με καινούργια ονόματα: «AI ορατότητα», «GEO», «βελτιστοποίηση για τις απαντήσεις της τεχνητής νοημοσύνης». Το θέμα υπάρχει πραγματικά. Απλώς μέσα του έχουν μπερδευτεί ',
@@ -109,6 +110,7 @@ const post: BlogPost = {
     ]},
 
     {type: 'heading', text: 'Τι βρήκε μια μελέτη για το πώς διαλέγουν πηγές το ChatGPT, το Gemini και το Perplexity'},
+    {type: 'figure', figure: 'istoselida-stis-apantiseis-ai-ypoerotimata'},
     {type: 'note', text: [
       {text: 'Προσθήκη: 20 Οκτωβρίου 2026.', strong: true},
       ' Αυτή η ενότητα στηρίζεται σε μια ερευνητική εργασία που δημοσιεύτηκε στις 10 Οκτωβρίου 2026. Οι παραθέσεις είναι αυτούσιες από την περίληψή της, στα αγγλικά όπως και οι υπόλοιπες.',

@@ -4,6 +4,7 @@ import type {Language} from '@/types/language';
 import {defaultOgImage, LOGO_IMAGE_OBJECT} from '@/lib/alternates';
 import type {BlogFaqBlock, BlogPost, BlogSourcesBlock} from '@/types/blog';
 import {blogFaqPageAllowed} from '@/lib/faqFreeze';
+import {blogFigure, figureCard, figureImage} from '@/lib/blogFigures';
 
 // Metadata and JSON-LD for blog posts, derived from the post object the page renders.
 //
@@ -54,14 +55,17 @@ export function buildBlogPostMetadata(post: BlogPost, lang: Language): Metadata 
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
       tags: post.tags,
-      images: [{url: defaultOgImage(lang), width: 1200, height: 630, alt: post.title}],
+      // D10 (D-116): a post with a hero shares its diagram's card instead of the locale's generic one.
+      images: [post.hero
+        ? {url: figureCard(post.hero), width: 1200, height: 630, alt: blogFigure(post.hero).alt}
+        : {url: defaultOgImage(lang), width: 1200, height: 630, alt: post.title}],
     },
     twitter: {
       card: 'summary_large_image',
       site: '@fiji_solutions',
       title: post.title,
       description: post.excerpt,
-      images: [defaultOgImage(lang)],
+      images: [post.hero ? figureCard(post.hero) : defaultOgImage(lang)],
     },
   };
 }
@@ -107,9 +111,14 @@ export function blogPostSchema(post: BlogPost, lang: Language) {
       articleSection: post.tags[0],
       isAccessibleForFree: true,
       // SCH-3 (2026-10-28, offer-os gtm/seo-plan-2026-10 C5): Google wants an image on every Article, at least
-      // 1200 px wide. No post has its own picture yet (IMG-6, D10), so each carries its locale's share card,
-      // 1200x630, the same image as its og:image above.
-      image: {'@type': 'ImageObject', url: defaultOgImage(lang), width: 1200, height: 630},
+      // 1200 px wide. The first is the same 1200x630 card as the og:image above: since D10 (2026-10-30, IMG-6,
+      // D-116) the hero diagram's own card where the post has one, else the locale's share card. The diagrams
+      // themselves follow, so Google can pick a picture that is about the post.
+      image: [
+        {'@type': 'ImageObject', url: post.hero ? figureCard(post.hero) : defaultOgImage(lang), width: 1200, height: 630},
+        ...(post.hero ? [figureImage(post.hero)] : []),
+        ...post.body.flatMap((b) => (b.type === 'figure' ? [figureImage(b.figure)] : [])),
+      ],
       ...(sources
         ? {citation: sources.items.map((s) => ({'@type': 'CreativeWork', name: s.label, url: s.url}))}
         : {}),

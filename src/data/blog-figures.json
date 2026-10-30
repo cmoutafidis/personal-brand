@@ -1,0 +1,250 @@
+{
+  "istoselida-stis-apantiseis-ai-metrisimo-marketingk": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1112,
+    "alt": "Δύο στήλες. Τεκμηριωμένο, γραμμένο και μετρήσιμο: ποιοι crawlers περνούν, ποιον διακόπτη κλείνει ποιο αρχείο, τι μετρούν Search Console και Bing Webmaster Tools. Μάρκετινγκ: «Θα σε αναφέρει το ChatGPT» και άλλες υποσχέσεις.",
+    "caption": "Ό,τι γράφει η τεκμηρίωση ελέγχεται και μετριέται· η εμφάνιση στις AI απαντήσεις δεν την εγγυάται κανείς, ούτε η Google.",
+    "use": "a post separating what is documented and measurable about AI search visibility from what agencies promise"
+  },
+  "istoselida-stis-apantiseis-ai-ypoerotimata": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1880,
+    "alt": "Ροή: ερώτηση του χρήστη, το ChatGPT την ξαναγράφει σε υποερωτήματα που σπάνια είναι ίδια με της Google ή του Bing, η δική του αναζήτηση φέρνει σελίδες, αναφέρει μόνο αυτές. Από κάτω: 32% η αναζήτηση, 2,8% οι ιδιότητες της σελίδας.",
+    "caption": "Το ChatGPT αναφέρει μόνο ό,τι φέρνει η δική του αναζήτηση, και αυτή εξηγεί πολύ περισσότερα από τις ιδιότητες της σελίδας.",
+    "use": "a post explaining how ChatGPT rewrites a question into sub-queries and cites only the pages its own search retrieved"
+  },
+  "google-search-console-ti-sou-leei-prin-meta-to-klik": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1080,
+    "alt": "Η διαδρομή Αναζήτηση στην Google, Κλικ, Η ιστοσελίδα σου. Το Search Console καλύπτει ό,τι γίνεται πριν από το κλικ (εμφανίσεις, ερωτήματα, κλικ), το Google Analytics ό,τι γίνεται μετά (σελίδες, παραμονή, ενέργειες).",
+    "caption": "Το κλικ χωρίζει τα δύο εργαλεία: «γιατί δεν έρχεται κόσμος» ρωτάς το Search Console, «γιατί δεν αγοράζει» το Analytics.",
+    "use": "a post explaining what Google Search Console measures versus Google Analytics (before and after the click)"
+  },
+  "google-search-console-ti-sou-leei-pote-metrithikan": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1680,
+    "alt": "Χρονογραμμή από «16 μήνες πίσω» έως «Σήμερα»: Ιστορικό 16 μηνών, μετά τα πιο πρόσφατα δεδομένα που μπορεί να είναι προκαταρκτικά, και τέλος 2 έως 3 ημέρες που δεν φαίνονται ακόμα. Οι μέρες μετρούν σε ώρα Ειρηνικού (PT).",
+    "caption": "Οι τελευταίες μέρες στο γράφημα είτε λείπουν είτε μπορεί να αλλάξουν, και μετρούν σε ώρα Ειρηνικού, όχι σε ώρα Ελλάδας.",
+    "use": "a post explaining Search Console data freshness, time lag, the 16-month history and the Pacific Time day boundary"
+  },
+  "prosvasimotita-istoselidon-eshop-poios-apantaei": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1120,
+    "alt": "Διάγραμμα: Οδηγία (ΕΕ) 2019/882 και ν. 4994/2022, υπηρεσίες μετά τις 28 Ιουνίου 2025. Δύο ερωτήσεις και ο κώδικας: υπηρεσία ηλεκτρονικού εμπορίου; ο δικηγόρος. Απαλλαγή πολύ μικρών; ο λογιστής. Alt, label, lang, focus: HTML και CSS.",
+    "caption": "Το αν σε αφορά το απαντούν ο δικηγόρος και ο λογιστής· το τι αλλάζει είναι δουλειά στο HTML και το CSS.",
+    "use": "a post on whether the European Accessibility Act applies to a Greek website or e-shop and who answers which question"
+  },
+  "prosvasimotita-istoselidon-eshop-tekmirio-en-301-549": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1600,
+    "alt": "Δύο στήλες: WCAG 2.1 AA στο EN 301 549 V3.2.1, εναρμονισμένο για την Οδηγία 2016/2102, Αύγουστος 2021· WCAG 2.2 στο V4.1.1 για την 2019/882, χωρίς παραπομπή στην Επίσημη Εφημερίδα έως 6 Σεπτεμβρίου 2026. Τεκμήριο για την 2019/882: κανένα.",
+    "caption": "Το τεκμήριο συμμόρφωσης έρχεται από τη δημοσίευση της παραπομπής στην Επίσημη Εφημερίδα, όχι από την έκδοση του WCAG ή από ένα audit.",
+    "use": "a post explaining how WCAG, EN 301 549 versions and the Official Journal relate to presumption of conformity under the European Accessibility Act"
+  },
+  "mydata-ilektroniki-timologisi-logismiko-treis-dromoi": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1120,
+    "alt": "Από το «Το σύστημά σου», που δεν αλλάζει απαραίτητα, ξεκινούν τρεις δρόμοι προς το myDATA της ΑΑΔΕ (REST API): 1 μέσω παρόχου, 2 μέσω του προγράμματός σου, 3 από δικό σου σύστημα, ο καθένας με ό,τι αναλαμβάνεις.",
+    "caption": "Το σύστημά σου δεν χρειάζεται απαραίτητα να αλλάξει· η απόφαση είναι ποιος δρόμος το συνδέει με το myDATA.",
+    "use": "a Greek post on how a business's software connects to myDATA or e-invoicing (provider, existing ERP, or own system)"
+  },
+  "mydata-ilektroniki-timologisi-logismiko-stroseis-epikyrosis": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1400,
+    "alt": "Ένα αρχείο XML περνάει με τη σειρά από τέσσερις στρώσεις επικύρωσης: Σύνταξη, Πρότυπο EN 16931, CIUS γενικοί κανόνες, CIUS κανόνες χώρας του πωλητή (BT-40). Σε κάθε στρώση μπορεί να κοπεί με ένα «όχι»· μόνο μετά και τις τέσσερις περνάει επικύρωση.",
+    "caption": "Έγκυρο XML δεν σημαίνει συμμόρφωση: υπάρχουν τέσσερα διαφορετικά «όχι», με τέσσερις διορθώσεις.",
+    "use": "a post explaining Peppol BIS Billing 3.0 or EN 16931 validation layers"
+  },
+  "proothisi-istoselidon-ti-agorazeis-ti-menei": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1112,
+    "alt": "Διάγραμμα: η «Προώθηση ιστοσελίδων», ένα όνομα για τέσσερις δουλειές. Τη μέρα που σταματάς να πληρώνεις, οι πληρωμένες επισκέψεις σταματούν, ενώ σελίδες, κείμενα και ιστορικό μετρήσεων μένουν, μόνο αν οι λογαριασμοί είναι στο όνομά σου.",
+    "caption": "Ό,τι αγόρασες ως ροή σταματά με τη δαπάνη· ό,τι χτίστηκε μένει, αρκεί να είναι γραμμένο στο δικό σου όνομα.",
+    "use": "a post explaining what a business keeps from paid versus organic marketing work after it stops paying a provider"
+  },
+  "proothisi-istoselidon-ti-agorazeis-search-console-paradosi": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1376,
+    "alt": "Διάγραμμα για το Search Console στο τέλος συνεργασίας. Λάθος: μόνο διαγράφεις τον πάροχο, το token μένει και ξανα-επαληθεύεται. Σωστά: 1 επαληθεύεσαι εσύ, 2 βγάζεις το token του. Προσοχή: το token μπορεί να το χρησιμοποιούν κι άλλες υπηρεσίες.",
+    "caption": "Η διαγραφή του παρόχου δεν αρκεί: πρώτα επαληθεύεσαι εσύ και μετά βγάζεις το token του από την ιστοσελίδα.",
+    "use": "a post explaining how to remove a former agency or provider from Google Search Console at handover"
+  },
+  "poso-kostizei-mia-istoselida-efapax-epanalamvanomena": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1120,
+    "alt": "Δύο στήλες χωρισμένες από τη στιγμή που η ιστοσελίδα βγαίνει στον αέρα: Εφάπαξ (σχεδιασμός, κατασκευή, κείμενα) σταματά εκεί, Επαναλαμβανόμενα (όνομα χώρου, φιλοξενία, άδειες, συνδρομές, χρέωση ανά συναλλαγή, συντήρηση) συνεχίζουν.",
+    "caption": "Μια προσφορά συγκρίνεται μόνο όταν γράφει χωριστά τι σταματά στην παράδοση και τι πληρώνεις ξανά μετά.",
+    "use": "a post about what a website quote covers and which costs are one-off versus recurring"
+  },
+  "poso-kostizei-mia-istoselida-onoma-xorou-kyklos": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1520,
+    "alt": "Ροή του ονόματος χώρου: δήλωση καταχώρησης με τέλος από τον καταχωρητή, εκχώρηση δύο ετών, λήξη. Η ανανέωση, χρεώσιμη πράξη, γυρίζει στην εκχώρηση. Χωρίς ανανέωση, μετά από 15 ημέρες το όνομα διατίθεται σε οποιονδήποτε.",
+    "caption": "Το domain ξαναπληρώνεται σε κάθε λήξη, και αν η ανανέωση χαθεί, σε 15 ημέρες η διεύθυνση δεν είναι πια δική σου.",
+    "use": "a post explaining how a .gr or .ελ domain is registered, renewed and lost"
+  },
+  "wordpress-shopify-i-diko-sou-ti-kratas": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1008,
+    "alt": "Τρεις στήλες για το τι κρατάς αν φύγεις. Συνδρομή (SaaS): αντίγραφα δεδομένων, χωρίς το ίδιο το σύστημα. Άδεια ανοιχτού κώδικα: κώδικας, αρχεία, βάση δεδομένων. Δικό σου: τα πάντα, μαζί με την ευθύνη τους.",
+    "caption": "Το μοντέλο που διαλέγεις ορίζει τι παίρνεις μαζί σου την ημέρα που φεύγεις, και πόση ευθύνη κουβαλάς.",
+    "use": "a post comparing SaaS, open-source licensed and self-hosted website or shop platforms by what you keep when you leave"
+  },
+  "wordpress-shopify-i-diko-sou-seira-eikones": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1192,
+    "alt": "Δύο σειρές βημάτων για μετακόμιση καταστήματος. Ανάποδη: εξάγω CSV, κλείνω το παλιό, ανεβάζω στο νέο, χάνονται οι φωτογραφίες. Σωστή: εξάγω CSV, ανεβάζω στο νέο με το παλιό δημόσιο, κλείνω το παλιό, οι εικόνες ξαναδημιουργούνται.",
+    "caption": "Κλείσε το παλιό κατάστημα τελευταίο, γιατί οι εικόνες ξαναδημιουργούνται μόνο όσο είναι δημόσια προσβάσιμες.",
+    "use": "a post explaining store or site migration order, where exports hold image addresses rather than the images"
+  },
+  "profil-epicheirisis-google-poios-grafei": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1128,
+    "alt": "Τέσσερις πηγές τροφοδοτούν το προφίλ σου: εσύ (όνομα, κατηγορία, διεύθυνση, τηλέφωνο, ωράριο), οι πελάτες σου (κριτικές, βαθμολογία, φωτογραφίες), οι χρήστες του Maps με προτάσεις αλλαγής και η ίδια η Google.",
+    "caption": "Το προφίλ σου είναι σύνθεση: μόνο ένα από τα τέσσερα κομμάτια του το γράφεις εσύ.",
+    "use": "a post explaining who can write or change the information on a Google Business Profile"
+  },
+  "profil-epicheirisis-google-allagi-elegchos": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1760,
+    "alt": "Τρία βήματα: επαλήθευση, η αλλαγή σου, έλεγχος από τη Google. Τρεις εκβάσεις: περνά συνήθως έως 10 λεπτά, αργεί έως 30 ημέρες, ή δεν εγκρίνεται. Για διεύθυνση ή όνομα, άλλαξέ τα πρώτα σε ιστοσελίδα, τιμολόγιο, πρόσοψη.",
+    "caption": "Μια σωστή αλλαγή μπορεί να μην περάσει, γι’ αυτό για διεύθυνση ή όνομα άλλαξε πρώτα ιστοσελίδα, τιμολόγιο και πρόσοψη.",
+    "use": "a post explaining what happens after a business edits its Google Business Profile"
+  },
+  "kataskevi-istoselidon-thessaloniki-profil": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1120,
+    "alt": "Η ιστοσελίδα σου (σαρώνεται) και άλλες πηγές ταΐζουν το Επιχειρηματικό προφίλ, που εμφανίζεται στα τοπικά αποτελέσματα στους Χάρτες και στην Αναζήτηση. Αυτά κρίνονται κυρίως με συνάφεια, απόσταση και δημοτικότητα.",
+    "caption": "Στα τοπικά αποτελέσματα εμφανίζεται το προφίλ, και η ιστοσελίδα δουλεύει ως μία από τις πηγές που το ταΐζουν.",
+    "use": "a post explaining how a business website feeds the Google Business Profile and how local results are judged"
+  },
+  "kataskevi-istoselidon-thessaloniki-apostasi": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1160,
+    "alt": "Παράδειγμα: δύο πελάτες, Α και Β, στην ίδια γειτονιά ψάχνουν «υδραυλικός» από κινητό. Για τον Α πιο κοντά είναι η Επιχείρηση 1, για τον Β η Επιχείρηση 2.",
+    "caption": "Δεν υπάρχει ένα σημείο αναφοράς για όλη την πόλη: η απόσταση μετριέται από τον καθένα που ψάχνει.",
+    "use": "a post explaining that local search distance is measured from each searcher, not from a city centre"
+  },
+  "kataskevi-eshop-apofaseis-pente-apofaseis": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1120,
+    "alt": "Πέντε αριθμημένες αποφάσεις για ένα e-shop πριν τον κώδικα: τι βγαίνει από το σύστημα, πάροχος πληρωμών, μεταφορικά και επιστροφές, ποιος κρατά τα δεδομένα, η ημέρα που θα φύγεις. Βέλη από την 5η δείχνουν στις άλλες τέσσερις.",
+    "caption": "Η εμφάνιση δεν είναι στη λίστα, και η απόφαση για την έξοδο ορίζει πόσο κοστίζει να αλλάξεις όλες τις άλλες.",
+    "use": "a post about choosing or commissioning an e-shop that needs the five pre-build decisions in one picture"
+  },
+  "kataskevi-eshop-apofaseis-ypeythynos-ektelountes": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1660,
+    "alt": "Πάνω το πλαίσιο «Υπεύθυνος: εσύ». Από κάτω οι εκτελούντες: πλατφόρμα, φιλοξενία, newsletter, μεταφορική, κάθε πρόσθετο. Στη λήξη (άρθρο 28) διαγραφή ή επιστροφή, χωρίς να ορίζεται η μορφή των δεδομένων.",
+    "caption": "Ο νόμος σου εξασφαλίζει ότι τα δεδομένα επιστρέφονται, όχι σε ποια μορφή ούτε πόσο εύκολα τα διαβάζει το επόμενο σύστημα.",
+    "use": "a post explaining GDPR controller and processor roles for a small online shop and what the Article 28 exit clause does and does not promise"
+  },
+  "google-ads-kai-organiki-anazitisi-dyo-systimata": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1120,
+    "alt": "Η ίδια αναζήτηση οδηγεί σε δύο χωριστά κουτιά: Διαφήμιση (δημοπρασία σε κάθε αναζήτηση, πληρώνεις μόνο όταν αλληλεπιδρά κάποιος, έχει διακόπτη) και Οργανικό (δωρεάν καταχώριση, η θέση δεν αγοράζεται, χωρίς διακόπτη), χωρισμένα μεταξύ τους.",
+    "caption": "Η διαφήμιση δεν ανεβάζει την οργανική θέση και η διακοπή της δεν τη ρίχνει, γιατί είναι δύο συστήματα που δεν επικοινωνούν.",
+    "use": "a post explaining that paid search ads and organic Google rankings are separate systems that do not affect each other"
+  },
+  "google-ads-kai-organiki-anazitisi-dimoprasia": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1680,
+    "alt": "Ροή της δημοπρασίας: κάθε αναζήτηση, κατάταξη διαφήμισης (Ad Rank) από προσφορά, ποιότητα, όρια και άλλα, 1ος υπολογισμός για τα ελάχιστα όρια (όχι: δεν εμφανίζεται), 2ος υπολογισμός για τη θέση, και χρέωση μόνο όταν αλληλεπιδρά κάποιος.",
+    "caption": "Η προσφορά είναι ένας παράγοντας ανάμεσα σε πολλούς, και πληρώνεις το ελάχιστο που χρειάζεται, όχι τη μέγιστη προσφορά.",
+    "use": "a post explaining how the Google Ads auction decides whether and where an ad shows and what the advertiser actually pays when someone interacts with the ad"
+  },
+  "ti-einai-to-seo-epilexima": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1104,
+    "alt": "Όσα ελέγχεις (οι λέξεις της σελίδας, 3 τεχνικές απαιτήσεις, δομημένα δεδομένα, sitemap) σε κάνουν «Επιλέξιμο». Από εκεί αποφασίζει λογισμικό για ευρετηρίαση, τίτλο, απόσπασμα και θέση, μαζί με όσα δεν σου ανήκουν.",
+    "caption": "Η καλύτερη δουλειά σε ό,τι ελέγχεις σε φέρνει ως το «επιλέξιμος», και δεν υπάρχει επόμενο σκαλί που να το ανεβαίνεις εσύ.",
+    "use": "a post explaining what SEO can and cannot deliver, or why no one can guarantee a ranking on Google"
+  },
+  "ai-agent-pou-pane-dedomena-pelaton-diadromi": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1160,
+    "alt": "Διάγραμμα: δύο συστήματα που επιτρέπεις, ημερολόγιο και φάκελος παραγγελιών, οδηγούν στον AI agent σε AWS, με λογαριασμούς, prompts και κανόνες δικά σου. Στον πάροχο μοντέλου φτάνει μόνο ό,τι συμφωνήθηκε γραπτά, χωρίς εκπαίδευση μοντέλου.",
+    "caption": "Ο agent βλέπει μόνο ό,τι του επιτρέπεις, και στον πάροχο μοντέλου φτάνει μόνο ό,τι έχει συμφωνηθεί γραπτά.",
+    "use": "a post explaining where customer data goes when a business runs an AI agent (access scope, hosting, model provider, no training)"
+  },
+  "kataskevi-istoselidon-ti-na-zitas-dyo-kateuthynseis": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1088,
+    "alt": "Δύο στήλες τροφοδοτούν μια γραπτή συμφωνία πριν ξεκινήσει η δουλειά. Ζητάς εσύ: domain, πρόσβαση διαχειριστή, γραπτό αντικείμενο, ημερομηνία και κανόνας παύσης, παράδοση. Ζητά ο κατασκευαστής: άνθρωπο που αποφασίζει, υλικό, απαντήσεις, συνάντηση.",
+    "caption": "Η λίστα δουλεύει και προς τις δύο κατευθύνσεις, και κοστίζει μηδέν μόνο αν γραφτεί στην αρχή.",
+    "use": "a post about what to agree in writing with a web builder before a website project starts, from both sides"
+  },
+  "allagi-erp-i-logistikou-gia-aytomatopoiisi-syndesi": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1096,
+    "alt": "Ροή από πάνω προς τα κάτω: παραγγελία, παραστατικό ή αίτηση πελάτη περνά από το ERP ή λογιστικό, που μένει όπως το ξέρεις. Πριν, κάποιος αντιγράφει στοιχεία με το χέρι. Τώρα το κάνει μόνη της η αυτοματοποίηση, ως το email, το excel ή την καρτέλα.",
+    "caption": "Δεν αλλάζεις ERP ή λογιστικό: η αυτοματοποίηση αντικαθιστά μόνο το βήμα που σήμερα γίνεται με το χέρι.",
+    "use": "a post explaining that process automation connects existing ERP or accounting software instead of replacing it"
+  },
+  "giati-den-emfanizetai-i-istoselida-sto-google-tria-stadia": {
+    "lang": "el",
+    "width": 1440,
+    "height": 1120,
+    "alt": "Τρία στάδια στη σειρά μέχρι το αποτέλεσμα αναζήτησης: 1. Ανίχνευση, σε βρίσκει; (έλεγχος site:, ξεχασμένο noindex), 2. Ευρετηρίαση, την κρατάει; (καμία εγγύηση), 3. Προβολή, τη δείχνει; (ο τίτλος της σελίδας).",
+    "caption": "Η σελίδα περνάει τα τρία στάδια με τη σειρά, και αν κολλήσει σε ένα, η δουλειά στο επόμενο δεν φαίνεται.",
+    "use": "a post explaining why a website does not appear in Google: the crawl, index and serve stages and what to check at each"
+  },
+  "one-person-knows-everything-business-continuity-two-paths": {
+    "lang": "en",
+    "width": 1440,
+    "height": 1088,
+    "alt": "Your key person goes on holiday, and two paths follow. Steps live only in their head: every unwritten step becomes a question with no one to ask, and work stalls. Steps written down: stable processes run by themselves and the company carries on.",
+    "caption": "What decides whether work stops on holiday is whether the steps live in one head or are written down where anyone can follow them.",
+    "use": "a post about key-person dependency, process documentation or business continuity for a small business"
+  },
+  "automate-process-without-replacing-erp-between-tools": {
+    "lang": "en",
+    "width": 1440,
+    "height": 1040,
+    "alt": "Diagram: the problem is a person reading something in one place and typing it into another. A form, a spreadsheet and an inbox feed an automation that goes where that retyping happens, and your accounting software or ERP stays where it is.",
+    "caption": "The automation goes where someone retypes data between tools, so the ERP or accounting software you already run stays in place.",
+    "use": "a post explaining that process automation connects existing tools instead of replacing the ERP or accounting software"
+  },
+  "appsheet-glide-or-a-developer-three-routes": {
+    "lang": "en",
+    "width": 1440,
+    "height": 1112,
+    "alt": "Decision diagram, who should build your app: someone in-house building a simple app leads to a no-code tool such as AppSheet or Glide; a tight brief you run yourself, to a freelancer; a set price, tried before you pay, to a build service.",
+    "caption": "The right route depends on who will build and run the app, not on the tool.",
+    "use": "a post helping a small business owner choose between a no-code tool, a freelance developer and a build service for a business app"
+  },
+  "how-much-does-it-cost-to-turn-a-spreadsheet-into-an-app-what-moves-the-price": {
+    "lang": "en",
+    "width": 1440,
+    "height": 1112,
+    "alt": "What will our app cost? The build (sized by screens and roles, jobs, connections, real data, logins) plus a monthly running cost (hosting, backups, updates, changes) lead to a good quote once someone has seen your columns and how you work.",
+    "caption": "You pay for the build and a running cost each month, and a good quote comes after someone has seen your columns and heard how you work.",
+    "use": "a post about what a custom business app or spreadsheet-to-app build costs, build cost versus running cost"
+  }
+}

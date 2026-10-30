@@ -12,6 +12,7 @@ const post: BlogPost = {
   updatedAt: '2026-10-29',
   readingTime: 4,
   tags: ['process automation', 'ERP', 'accounting software', 'business automation'],
+  hero: 'automate-process-without-replacing-erp-between-tools',
   body: [
     {type: 'paragraph', text: ['No. Automating a process does not mean replacing your accounting software or your ERP.']},
     {

@@ -237,6 +237,18 @@ that day. Sheet-to-app's guarantee is "Pay only if you like it" and carries no p
 | Sitemap | `src/app/sitemap.ts`, generated from the route list in `src/lib/routes.ts` (moved there 2026-10-08, F17). `routeLastmod()` gives a page its own lastmod: the sheet-to-app pages print it as "Updated <date>" at the page end and emit it as `dateModified`, so bump the lastmod and the page date moves with it. |
 | Site-wide JSON-LD (2026-10-08, F17) | `src/app/RootShell.tsx` emits the ProfessionalService node (`areaServed` Greece, Thessaloniki, United States) and a WebSite node (`#website`, `alternateName` fijisolutions.net). `src/lib/offerSchema.ts` gives every offer page a WebPage node (`isPartOf` the WebSite) with a two-item BreadcrumbList, and `inLanguage` on its FAQPage. The sheet-to-app pages have their own preview images, `public/og/sheet-to-app-en.png` and `-el.png`, whose words are the offer name and the H1, with no price (rule 7). |
 
+### Diagrams in posts (2026-10-30, offer-os `gtm/seo-plan-2026-10` D10, AI-4, IMG-6, D-115 to D-118)
+
+A post shows diagrams by id: its main one as `hero: '<id>'` (rendered under the title; its 1200x630 card
+`public/blog/figures/<id>.og.jpg` is the post's og:image and first Article image, D-116) and others as
+`{type: 'figure', figure: '<id>'}` blocks. Language, size, alt text, caption and a `use` line for the SEO loop live once
+in `src/data/blog-figures.json`; the SVG source is `design/blog-figures/<id>.svg`, rendered to `public/blog/figures/`
+by offer-os `gtm/seo-plan-2026-10/plan/bin/d10-render.py` (`--og` for a hero's card). Rules for a new one:
+`plan/data/evidence/D10/STYLE.md` there. Every post has a hero except the two English trade posts
+(`crew-schedule-change-order-job-tracker-app`, `job-shop-scheduling-work-order-quote-app`), left to the Sheet-to-App
+rework's G5 (D-117). The loop may place a listed diagram but never sets `hero`; `scripts/seo-content-check.py` refuses
+an id not in the JSON.
+
 ## The spreadsheet check under `/tools/*` (added 2026-10-21)
 
 The spreadsheet check, `/en/tools/spreadsheet-check` and `/el/tools/spreadsheet-check` (offer-os

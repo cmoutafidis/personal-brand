@@ -56,6 +56,7 @@ const post: BlogPost = {
   updatedAt: '2026-09-02',
   readingTime: 29,
   tags: ['Αναζήτηση', 'Ιστοσελίδες', 'Ανάθεση έργου'],
+  hero: 'profil-epicheirisis-google-poios-grafei',
   body: [
     { type: 'paragraph', text: [
       'Το προφίλ της επιχείρησής σου στην Google δεν είναι φόρμα που συμπληρώνεις. Είναι ',
@@ -112,6 +113,7 @@ const post: BlogPost = {
     ]},
 
     { type: 'heading', text: 'Οι δικές σου αλλαγές δεν βγαίνουν κατευθείαν στον αέρα' },
+    {type: 'figure', figure: 'profil-epicheirisis-google-allagi-elegchos'},
     { type: 'paragraph', text: [
       'Όποιος μπαίνει για να διορθώσει ένα τηλέφωνο εκπλήσσεται που το τηλέφωνο δεν αλλάζει αμέσως. Η Google ελέγχει τις αλλαγές σου πριν τις εφαρμόσει, και δημοσιεύει τους χρόνους: «Edits usually take up to 10 minutes to review, but sometimes it can take up to 30 days.» (',
       {text: 'τι γίνεται με τις αλλαγές σου', href: GBP_EDITS},

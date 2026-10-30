@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 760">
+  <rect width="720" height="760" fill="#fff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- registration -->
+  <rect x="140" y="24" width="556" height="108" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="418" y="66" font-size="28" font-weight="700" fill="#0f172a" text-anchor="middle">Δήλωση καταχώρησης</text>
+  <text x="418" y="104" font-size="24" fill="#475569" text-anchor="middle">τέλος: το ορίζει ο καταχωρητής</text>
+  <line x1="418" y1="132" x2="418" y2="170" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- assignment -->
+  <rect x="140" y="174" width="556" height="108" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="418" y="216" font-size="28" font-weight="700" fill="#0f172a" text-anchor="middle">Εκχώρηση: δύο (2) έτη</text>
+  <text x="418" y="254" font-size="24" fill="#475569" text-anchor="middle">.gr ή .ελ, από την κατάθεση</text>
+  <line x1="418" y1="282" x2="418" y2="320" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- expiry -->
+  <rect x="140" y="324" width="556" height="76" rx="14" fill="#fef3c7" stroke="#b45309" stroke-width="3"/>
+  <text x="418" y="372" font-size="28" font-weight="700" fill="#0f172a" text-anchor="middle">Λήξη του ονόματος</text>
+
+  <!-- split -->
+  <path d="M240 400 L240 428 L200 428 L200 456" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M536 400 L536 456" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- renew -->
+  <rect x="48" y="460" width="304" height="108" rx="14" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <text x="200" y="502" font-size="28" font-weight="700" fill="#0f172a" text-anchor="middle">Ανανέωση</text>
+  <text x="200" y="540" font-size="24" fill="#0f172a" text-anchor="middle">χρεώσιμη πράξη</text>
+  <path d="M84 460 L84 228 L136 228" fill="none" stroke="#15803d" stroke-width="3" marker-end="url(#a)"/>
+
+  <!-- no renewal -->
+  <rect x="376" y="460" width="320" height="76" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="536" y="508" font-size="28" font-weight="700" fill="#0f172a" text-anchor="middle">Χωρίς ανανέωση</text>
+  <line x1="536" y1="536" x2="536" y2="586" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="376" y="590" width="320" height="146" rx="14" fill="#fee2e2" stroke="#b91c1c" stroke-width="3"/>
+  <text x="536" y="634" font-size="28" font-weight="700" fill="#0f172a" text-anchor="middle">Μετά από 15 ημέρες</text>
+  <text x="536" y="674" font-size="24" fill="#0f172a" text-anchor="middle">το όνομα διατίθεται<tspan x="536" dy="1.25em">σε οποιονδήποτε</tspan></text>
+</svg>

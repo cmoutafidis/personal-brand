@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 840">
+  <rect width="720" height="840" fill="#fff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- time axis, top = oldest, bottom = today -->
+  <text x="32" y="48" font-size="24" font-weight="700" fill="#0f172a">16 μήνες πίσω</text>
+  <line x1="64" y1="72" x2="64" y2="232" stroke="#0086ff" stroke-width="10" stroke-linecap="round"/>
+  <line x1="64" y1="252" x2="64" y2="432" stroke="#b45309" stroke-width="10" stroke-linecap="round"/>
+  <line x1="64" y1="452" x2="64" y2="572" stroke="#94a3b8" stroke-width="6" stroke-dasharray="12 8"/>
+  <line x1="64" y1="578" x2="64" y2="610" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <text x="32" y="648" font-size="28" font-weight="700" fill="#0f172a">Σήμερα</text>
+
+  <!-- history -->
+  <line x1="72" y1="152" x2="128" y2="152" stroke="#0086ff" stroke-width="3"/>
+  <rect x="128" y="76" width="568" height="152" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="152" y="118" font-size="28" font-weight="700" fill="#0f172a">Ιστορικό</text>
+  <text x="152" y="160" font-size="24" fill="#0f172a">Κρατά δεδομένα των<tspan x="152" dy="1.25em">τελευταίων 16 μηνών.</tspan></text>
+
+  <!-- preliminary -->
+  <line x1="72" y1="342" x2="128" y2="342" stroke="#b45309" stroke-width="3"/>
+  <rect x="128" y="252" width="568" height="180" rx="14" fill="#fef3c7" stroke="#b45309" stroke-width="3"/>
+  <text x="152" y="294" font-size="28" font-weight="700" fill="#0f172a">Τα πιο πρόσφατα</text>
+  <text x="152" y="336" font-size="24" fill="#0f172a">Μερικές φορές προκαταρκτικά:<tspan x="152" dy="1.25em">μπορεί να αλλάξουν</tspan><tspan x="152" dy="1.25em">τις επόμενες ώρες.</tspan></text>
+
+  <!-- lag -->
+  <line x1="72" y1="512" x2="128" y2="512" stroke="#94a3b8" stroke-width="3"/>
+  <rect x="128" y="452" width="568" height="120" rx="14" fill="#fff" stroke="#94a3b8" stroke-width="3" stroke-dasharray="10 8"/>
+  <text x="152" y="494" font-size="28" font-weight="700" fill="#0f172a">Δεν φαίνονται ακόμα</text>
+  <text x="152" y="536" font-size="24" fill="#0f172a">Συνήθως 2 έως 3 ημέρες.</text>
+
+  <!-- time zone -->
+  <rect x="24" y="680" width="672" height="136" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="48" y="722" font-size="28" font-weight="700" fill="#0f172a">Ώρα Ειρηνικού (PT)</text>
+  <text x="48" y="764" font-size="24" fill="#0f172a">Η «χθεσινή» μέρα της αναφοράς<tspan x="48" dy="1.25em">δεν είναι η δική σου χθεσινή.</tspan></text>
+</svg>

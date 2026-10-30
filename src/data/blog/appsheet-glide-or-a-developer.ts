@@ -21,6 +21,7 @@ const post: BlogPost = {
   updatedAt: '2026-10-29',
   readingTime: 7, // round(bodyWords / 140); body is ~1028 words since the D5 table (2026-10-29)
   tags: ['Spreadsheet to app', 'No-code tools'],
+  hero: 'appsheet-glide-or-a-developer-three-routes',
   body: [
     {type: 'paragraph', text: [
       'When a shared spreadsheet has outgrown itself, you have three realistic ways to turn it into an app: build it yourself in a no-code tool, hire a developer, or use a service that builds it for you. Each one is the right call for a different kind of owner. Here is how to tell which one is yours.',

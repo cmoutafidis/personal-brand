@@ -35,6 +35,7 @@ const post: BlogPost = {
   updatedAt: '2026-09-02',
   readingTime: 31,
   tags: ['Ιστοσελίδες', 'Αναζήτηση', 'Ανάθεση έργου'],
+  hero: 'proothisi-istoselidon-ti-agorazeis-ti-menei',
   body: [
     { type: 'paragraph', text: [
       'Η «προώθηση ιστοσελίδων» δεν είναι μία υπηρεσία. Είναι ',
@@ -191,6 +192,7 @@ const post: BlogPost = {
       'Αν αφαιρεθούν όλοι οι επαληθευμένοι ιδιοκτήτες, χάνουν την πρόσβαση και οι υπόλοιποι μετά από περίοδο χάριτος, ενώ τα δεδομένα συνεχίζουν να συλλέγονται χωρίς να τα βλέπει κανείς. Το χειρότερο σενάριο εδώ δεν είναι μήνυμα λάθους· είναι σιωπή.',
     ]},
     { type: 'subheading', text: 'Το σημείο που το χάνουν όλοι στην παράδοση' },
+    {type: 'figure', figure: 'proothisi-istoselidon-ti-agorazeis-search-console-paradosi'},
     { type: 'paragraph', text: [
       'Όταν τελειώνει μια συνεργασία, το προφανές είναι να διαγράψεις τον πάροχο. Δεν αρκεί: «When you remove an owner from a Search Console property, that owner cannot access the property any more, but their verification tokens are not deleted or revoked. As long as a user\'s verification token remains for a property, a deleted owner can re-verify ownership of the property.» (',
       {text: 'Managing owners, users, and permissions', href: SC_OWNERS},

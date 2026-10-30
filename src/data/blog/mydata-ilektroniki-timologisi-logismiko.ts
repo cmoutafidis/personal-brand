@@ -46,6 +46,7 @@ const post: BlogPost = {
   updatedAt: '2026-09-02',
   readingTime: 32,
   tags: ['Λογισμικό', 'E-shop', 'Ανάθεση έργου'],
+  hero: 'mydata-ilektroniki-timologisi-logismiko-treis-dromoi',
   body: [
     { type: 'paragraph', text: [
       'Το myDATA και η ηλεκτρονική τιμολόγηση συζητιούνται σχεδόν πάντα ως θέμα συμμόρφωσης: ποιος είναι υπόχρεος, από πότε, με τι συνέπεια. Από αυτά, εδώ ',
@@ -280,6 +281,7 @@ const post: BlogPost = {
     ]},
 
     { type: 'heading', text: 'Γιατί το «βγάζω XML» δεν σημαίνει «συμμορφώνομαι»' },
+    {type: 'figure', figure: 'mydata-ilektroniki-timologisi-logismiko-stroseis-epikyrosis'},
     { type: 'paragraph', text: [
       'Είναι η πιο συχνή παρανόηση, και τη διαψεύδει η ίδια η προδιαγραφή. Η επικύρωση γίνεται σε στρώσεις, με αυτή τη σειρά: «Validation of syntax… Validation against EN 16931… CIUS - General rules… CIUS - Country qualified validation rules». Η τελευταία ενεργοποιείται από τη χώρα του πωλητή: «The rule is triggered by the given country code of the seller (BT-40).»',
     ]},

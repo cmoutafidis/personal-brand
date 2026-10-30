@@ -58,6 +58,7 @@ const post: BlogPost = {
   updatedAt: '2026-09-02',
   readingTime: 35,
   tags: ['Αναζήτηση', 'Ιστοσελίδες', 'Ανάθεση έργου'],
+  hero: 'google-search-console-ti-sou-leei-prin-meta-to-klik',
   body: [
     {type: 'paragraph', text: [
       'Σχεδόν κάθε ερώτηση για την παρουσία σου στην Google απαντιέται με γνώμη: «θέλει δουλειά το SEO», «είναι ο ανταγωνισμός», «δεν σε αγαπάει ο αλγόριθμος». Υπάρχει όμως ένα εργαλείο που απαντά με δεδομένα, δεν κοστίζει τίποτα, και το δικαιούσαι επειδή απλώς η ιστοσελίδα είναι δική σου: ',
@@ -212,6 +213,7 @@ const post: BlogPost = {
     ]},
 
     {type: 'heading', text: 'Πότε μετρήθηκαν αυτά; Ώρα, καθυστέρηση και ιστορικό'},
+    {type: 'figure', figure: 'google-search-console-ti-sou-leei-pote-metrithikan'},
     {type: 'paragraph', text: [
       'Η αναφορά δεν μετράει στη δική σου ώρα, και δεν αλλάζει: ',
       {text: '«Time zones: In all views (except the 24-hour view), the Performance report tracks and labels daily data in Pacific Time (PT).»', href: SC_PERF_DISCREP},

@@ -11,6 +11,7 @@ const post: BlogPost = {
   updatedAt: '2026-09-02',
   readingTime: 25,
   tags: ['E-shop', 'Ιστοσελίδες', 'Ανάθεση έργου'],
+  hero: 'kataskevi-eshop-apofaseis-pente-apofaseis',
   body: [
     { type: 'paragraph', text: [
       'Οι συζητήσεις για ένα καινούργιο e-shop ξεκινούν σχεδόν πάντα από την εμφάνιση. Οι αποφάσεις όμως που θα σε δεσμεύσουν για χρόνια δεν βρίσκονται εκεί. Είναι ',
@@ -171,6 +172,7 @@ const post: BlogPost = {
     ]},
 
     { type: 'heading', text: 'Απόφαση 4: ποιος κρατά τα δεδομένα των πελατών σου' },
+    {type: 'figure', figure: 'kataskevi-eshop-apofaseis-ypeythynos-ektelountes'},
     { type: 'paragraph', text: [
       'Αυτή είναι η απόφαση που σχεδόν ποτέ δεν συζητιέται πριν την κατασκευή, και η μόνη με νομικό όνομα. Ο GDPR ορίζει τον ',
       {text: 'υπεύθυνο επεξεργασίας', href: 'https://gdpr-info.eu/art-4-gdpr/'},

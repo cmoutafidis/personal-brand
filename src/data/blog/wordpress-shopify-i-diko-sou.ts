@@ -46,6 +46,7 @@ const post: BlogPost = {
   updatedAt: '2026-09-02',
   readingTime: 29,
   tags: ['Ιστοσελίδες', 'E-shop', 'Ανάθεση έργου'],
+  hero: 'wordpress-shopify-i-diko-sou-ti-kratas',
   body: [
     { type: 'paragraph', text: [
       'Η ερώτηση που ακούγεται παντού είναι «WordPress ή Shopify;». Δεν είναι λάθος ερώτηση επειδή δεν έχει απάντηση, αλλά επειδή δεν κρίνεται την πρώτη μέρα, που όλα δουλεύουν και όλα σου αρέσουν. Κρίνεται την ημέρα που θα θελήσεις να αλλάξεις. Και τότε μετράει ένα πράγμα: ',
@@ -161,6 +162,7 @@ const post: BlogPost = {
     ]},
 
     { type: 'subheading', text: 'Ο κατάλογος φεύγει, οι φωτογραφίες όχι, και η σειρά μετράει' },
+    {type: 'figure', figure: 'wordpress-shopify-i-diko-sou-seira-eikones'},
     { type: 'paragraph', text: [
       'Πρώτο: «When you export your products, the images associated with each product aren\'t included in the CSV file.» Το αρχείο περιέχει διευθύνσεις εικόνων, όχι εικόνες, ακριβώς όπως το WXR. Δεύτερο, και εδώ γίνεται επικίνδυνο: «If you import the products to a new store, then the product images are generated only if they remain viewable on a publicly accessible website.» Οι εικόνες δηλαδή ξαναδημιουργούνται ',
       {text: 'μόνο όσο το παλιό κατάστημα είναι ζωντανό και δημόσιο', strong: true},

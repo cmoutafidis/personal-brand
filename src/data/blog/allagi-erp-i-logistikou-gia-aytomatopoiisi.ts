@@ -12,6 +12,7 @@ const post: BlogPost = {
   updatedAt: '2026-10-22',
   readingTime: 4,
   tags: ['αυτοματοποίηση διαδικασιών', 'ERP', 'λογιστικό πρόγραμμα', 'ψηφιακός μετασχηματισμός'],
+  hero: 'allagi-erp-i-logistikou-gia-aytomatopoiisi-syndesi',
   body: [
     {
       type: 'paragraph',

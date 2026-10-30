@@ -22,6 +22,7 @@ const post: BlogPost = {
   updatedAt: '2026-09-01',
   readingTime: 5,
   tags: ['Ιστοσελίδες', 'Ανάθεση έργου', 'Θεσσαλονίκη'],
+  hero: 'kataskevi-istoselidon-ti-na-zitas-dyo-kateuthynseis',
   body: [
     { type: 'paragraph', text: [
       'Οι περισσότερες κακές εμπειρίες με την κατασκευή μιας ιστοσελίδας δεν είναι θέμα ικανότητας. Είναι θέμα πραγμάτων που ',

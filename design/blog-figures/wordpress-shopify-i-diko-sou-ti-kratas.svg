@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 504">
+  <rect width="720" height="504" fill="#fff"/>
+  <text x="360" y="48" text-anchor="middle" font-size="30" font-weight="700" fill="#0f172a">Τι κρατάς αν φύγεις</text>
+  <line x1="18" y1="400" x2="702" y2="400" stroke="#cbd5e1" stroke-width="3"/>
+  <!-- SaaS -->
+  <rect x="24" y="194" width="200" height="90" rx="14" fill="#fee2e2" stroke="#b91c1c" stroke-width="3" stroke-dasharray="10 8"/>
+  <text x="124" y="231" text-anchor="middle" font-size="24" fill="#b91c1c">Χωρίς το ίδιο<tspan x="124" dy="1.2em">το σύστημα</tspan></text>
+  <rect x="24" y="310" width="200" height="90" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="124" y="347" text-anchor="middle" font-size="24" fill="#0f172a">Αντίγραφα<tspan x="124" dy="1.2em">δεδομένων</tspan></text>
+  <!-- License -->
+  <rect x="260" y="174" width="200" height="60" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="360" y="213" text-anchor="middle" font-size="24" fill="#0f172a">Κώδικας</text>
+  <rect x="260" y="242" width="200" height="60" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="360" y="281" text-anchor="middle" font-size="24" fill="#0f172a">Αρχεία</text>
+  <rect x="260" y="310" width="200" height="90" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="360" y="347" text-anchor="middle" font-size="24" fill="#0f172a">Βάση<tspan x="360" dy="1.2em">δεδομένων</tspan></text>
+  <!-- Own -->
+  <rect x="496" y="98" width="200" height="104" rx="14" fill="#fef3c7" stroke="#b45309" stroke-width="3"/>
+  <text x="596" y="137" text-anchor="middle" font-size="24" fill="#b45309">Μαζί με την<tspan x="596" dy="1.2em">ευθύνη τους</tspan></text>
+  <rect x="496" y="210" width="200" height="190" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="596" y="314" text-anchor="middle" font-size="28" font-weight="700" fill="#0f172a">Τα πάντα</text>
+  <!-- labels -->
+  <text x="124" y="444" text-anchor="middle" font-size="26" font-weight="700" fill="#0f172a">Συνδρομή</text>
+  <text x="124" y="476" text-anchor="middle" font-size="24" fill="#475569">(SaaS)</text>
+  <text x="360" y="444" text-anchor="middle" font-size="26" font-weight="700" fill="#0f172a">Άδεια ανοιχτού</text>
+  <text x="360" y="476" text-anchor="middle" font-size="24" fill="#475569">κώδικα</text>
+  <text x="596" y="444" text-anchor="middle" font-size="26" font-weight="700" fill="#0f172a">Δικό σου</text>
+  <text x="596" y="476" text-anchor="middle" font-size="24" fill="#475569">(αυτοφιλοξενία)</text>
+</svg>

@@ -52,6 +52,7 @@ the revert of a refresh or of a comment passes when the old version passes them.
     python3 scripts/seo-content-check.py --selftest                          prove every rule goes red
 """
 import difflib
+import json
 import os
 import re
 import subprocess
@@ -61,7 +62,7 @@ import unicodedata
 import xml.etree.ElementTree as ET
 
 POST_KEYS = {'id', 'slug', 'title', 'metaTitle', 'excerpt', 'body', 'author', 'publishedAt', 'updatedAt',
-             'readingTime', 'tags', 'twinSlug'}
+             'readingTime', 'tags', 'twinSlug', 'hero'}
 POST_REQUIRED = {'id', 'slug', 'title', 'excerpt', 'body', 'publishedAt', 'readingTime', 'tags'}
 SLUG = re.compile(r'[a-z0-9]+(?:-[a-z0-9]+)*')
 DATE = re.compile(r'\d{4}-\d{2}-\d{2}')
@@ -270,7 +271,19 @@ BLOCK_KEYS = {
     'faq': ({'type', 'heading', 'items'}, set()),
     'sources': ({'type', 'heading', 'items'}, set()),
     'cta': ({'type', 'heading', 'text', 'label', 'href'}, set()),
+    'figure': ({'type', 'figure'}, set()),
 }
+
+# 2026-10-30 (offer-os gtm/seo-plan-2026-10 D10): a figure block, and Fiji's post-level `hero`, name a diagram by
+# id. The id must be in src/data/blog-figures.json, which a loop branch cannot change (the seo-gates allowlist),
+# so a post can only show a diagram a person drew and reviewed. Peak's BlogPost type has no `hero`; tsc refuses
+# one there. Read once by run_diff; the selftest sets it.
+FIGURES = set()
+
+
+def check_figure(fid, where):
+    if not isinstance(fid, str) or fid not in FIGURES:
+        raise Bad(f'{where}: figure {fid!r} is not in src/data/blog-figures.json')
 
 
 def check_block(b, where, hosts):
@@ -326,6 +339,8 @@ def check_block(b, where, hosts):
         for k in ('heading', 'text', 'label'):
             check_string(b[k], where)
         check_link(b['href'], where, hosts)
+    elif t == 'figure':
+        check_figure(b['figure'], where)
 
 
 def check_post(p, hosts, where='post'):
@@ -351,6 +366,8 @@ def check_post(p, hosts, where='post'):
         raise Bad(f'{where}: tags')
     for t in p['tags']:
         check_string(t, f'{where}.tags')
+    if 'hero' in p:
+        check_figure(p['hero'], f'{where}.hero')
     if not isinstance(p['body'], list) or not p['body']:
         raise Bad(f'{where}: body')
     for n, b in enumerate(p['body']):
@@ -741,8 +758,16 @@ def head_posts():
     return {n: git_show('HEAD', n) or '' for n in names if n.endswith('.ts')}
 
 
+def read_figures(path):
+    if not os.path.exists(path):
+        return set()
+    with open(path, encoding='utf-8') as f:
+        return set(json.load(f))
+
+
 def run_diff(base, branch=None):
     hosts = read_hosts('scripts/seo-hosts.txt')
+    FIGURES.update(read_figures('src/data/blog-figures.json'))
     names = [n for n in git('diff', '--name-only', '--no-renames', '-z', f'{base}...HEAD').split('\0') if n]
     # git drops an emptied folder, so a branch that deletes the last post file still reads as Fiji
     layout = 'fiji' if any(n.startswith('src/data/blog/') for n in names) else layout_of()
@@ -868,6 +893,13 @@ def selftest():
     expect('U+2029 in a comment', lambda: fiji_post_file(fiji_file().replace('// facts: F-fiji-001', '// x\u2029fetch(1)'), 'src/data/blog/a-post.ts', HOSTS), True)
     expect('CR in a comment', lambda: fiji_post_file(fiji_file().replace('// facts: F-fiji-001', '// x\rfetch(1)'), 'src/data/blog/a-post.ts', HOSTS), True)
     expect('zero width space', fp(GOOD_POST.replace('A title', 'A ti\u200btle')), True)
+    FIGURES.add('a-diagram')
+    fig = "{type: 'figure', figure: 'a-diagram'}, {type: 'list'"
+    expect('figure block', fp(GOOD_POST.replace("{type: 'list'", fig, 1)), False)
+    expect('figure not in the list', fp(GOOD_POST.replace("{type: 'list'", fig.replace('a-diagram', 'b-diagram'), 1)), True)
+    expect('figure extra key', fp(GOOD_POST.replace("{type: 'list'", fig.replace("'a-diagram'}", "'a-diagram', src: '/x.webp'}"), 1)), True)
+    expect('hero', fp(GOOD_POST.replace("tags: ['Tag'],", "tags: ['Tag'], hero: 'a-diagram',")), False)
+    expect('hero not in the list', fp(GOOD_POST.replace("tags: ['Tag'],", "tags: ['Tag'], hero: 'b-diagram',")), True)
     expect('soft hyphen', fp(GOOD_POST.replace('A title', 'A ti\u00adtle')), True)
     expect('no-break space', fp(GOOD_POST.replace('A title', 'A\u00a0title')), True)
     expect('Cyrillic look-alike', fp(GOOD_POST.replace('A title', 'A titl\u0435')), True)

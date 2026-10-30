@@ -43,6 +43,7 @@ const post: BlogPost = {
   updatedAt: '2026-09-02',
   readingTime: 20,
   tags: ['Αναζήτηση', 'Ιστοσελίδες', 'E-shop'],
+  hero: 'google-ads-kai-organiki-anazitisi-dyo-systimata',
   body: [
     { type: 'paragraph', text: [
       'Στην ίδια οθόνη εμφανίζονται δύο πράγματα που μοιάζουν ίδια και δεν είναι: οι διαφημίσεις και τα οργανικά αποτελέσματα. Τα λάθη ξεκινάνε από την υπόθεση ότι πρόκειται για ',
@@ -130,6 +131,7 @@ const post: BlogPost = {
     ]},
 
     { type: 'heading', text: 'Πώς προκύπτει το κόστος: η δημοπρασία, βήμα βήμα' },
+    {type: 'figure', figure: 'google-ads-kai-organiki-anazitisi-dimoprasia'},
     { type: 'paragraph', text: [
       'Η ερώτηση «πόσο κοστίζει το Google Ads» δεν έχει απάντηση σε νούμερο. Δεν την έχει ούτε η Google. Έχει όμως πλήρη απάντηση σε ',
       {text: 'μοντέλο', strong: true},

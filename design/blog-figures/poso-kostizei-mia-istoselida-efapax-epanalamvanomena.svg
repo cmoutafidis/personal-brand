@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560">
+  <rect width="720" height="560" fill="#fff"/>
+
+  <!-- launch moment -->
+  <line x1="332" y1="96" x2="332" y2="536" stroke="#334155" stroke-width="3" stroke-dasharray="10 8"/>
+  <rect x="162" y="24" width="340" height="64" rx="32" fill="#0086ff"/>
+  <text x="332" y="66" font-size="28" font-weight="700" fill="#fff" text-anchor="middle">Βγαίνει στον αέρα</text>
+
+  <!-- one-off -->
+  <rect x="24" y="112" width="284" height="96" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="166" y="152" font-size="30" font-weight="700" fill="#0f172a" text-anchor="middle">Εφάπαξ</text>
+  <text x="166" y="188" font-size="24" fill="#475569" text-anchor="middle">σταματά εδώ</text>
+
+  <rect x="24" y="228" width="284" height="52" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="166" y="263" font-size="24" fill="#0f172a" text-anchor="middle">Σχεδιασμός</text>
+  <rect x="24" y="292" width="284" height="52" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="166" y="327" font-size="24" fill="#0f172a" text-anchor="middle">Κατασκευή</text>
+  <rect x="24" y="356" width="284" height="52" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="166" y="391" font-size="24" fill="#0f172a" text-anchor="middle">Κείμενα</text>
+
+  <text x="166" y="462" font-size="24" font-weight="600" fill="#475569" text-anchor="middle">Το ποσό της προσφοράς<tspan x="166" dy="1.25em">είναι η είσοδος.</tspan></text>
+
+  <!-- recurring -->
+  <rect x="356" y="112" width="340" height="96" rx="14" fill="#fef3c7" stroke="#b45309" stroke-width="3"/>
+  <text x="526" y="152" font-size="28" font-weight="700" fill="#0f172a" text-anchor="middle">Επαναλαμβανόμενα</text>
+  <text x="526" y="188" font-size="24" fill="#475569" text-anchor="middle">συνεχίζουν μετά</text>
+
+  <rect x="356" y="228" width="340" height="52" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="526" y="263" font-size="24" fill="#0f172a" text-anchor="middle">Όνομα χώρου</text>
+  <rect x="356" y="292" width="340" height="52" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="526" y="327" font-size="24" fill="#0f172a" text-anchor="middle">Φιλοξενία</text>
+  <rect x="356" y="356" width="340" height="52" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="526" y="391" font-size="24" fill="#0f172a" text-anchor="middle">Άδειες, συνδρομές</text>
+  <rect x="356" y="420" width="340" height="52" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="526" y="455" font-size="24" fill="#0f172a" text-anchor="middle">Χρέωση ανά συναλλαγή</text>
+  <rect x="356" y="484" width="340" height="52" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="526" y="519" font-size="24" fill="#0f172a" text-anchor="middle">Συντήρηση</text>
+</svg>

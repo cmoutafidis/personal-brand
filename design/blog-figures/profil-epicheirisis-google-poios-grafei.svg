@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 564">
+  <rect width="720" height="564" fill="#fff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <text x="360" y="40" text-anchor="middle" font-size="28" font-weight="700" fill="#0f172a">Ποιος γράφει το προφίλ σου</text>
+
+  <rect x="24" y="64" width="324" height="150" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="186" y="102" text-anchor="middle" font-size="28" font-weight="700" fill="#0f172a">Εσύ</text>
+  <text x="186" y="138" text-anchor="middle" font-size="24" fill="#475569">όνομα, κατηγορία,<tspan x="186" dy="30">διεύθυνση, τηλέφωνο,</tspan><tspan x="186" dy="30">ωράριο</tspan></text>
+
+  <rect x="372" y="64" width="324" height="150" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="534" y="102" text-anchor="middle" font-size="28" font-weight="700" fill="#0f172a">Οι πελάτες σου</text>
+  <text x="534" y="138" text-anchor="middle" font-size="24" fill="#475569">κριτικές, βαθμολογία,<tspan x="534" dy="30">φωτογραφίες</tspan></text>
+
+  <line x1="186" y1="214" x2="186" y2="252" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="534" y1="214" x2="534" y2="252" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="100" y="254" width="520" height="100" rx="14" fill="#0086ff" stroke="#0086ff" stroke-width="3"/>
+  <text x="360" y="296" text-anchor="middle" font-size="30" font-weight="700" fill="#fff">Το προφίλ σου</text>
+  <text x="360" y="332" text-anchor="middle" font-size="24" font-weight="600" fill="#fff">σύνθεση, όχι φόρμα</text>
+
+  <line x1="186" y1="394" x2="186" y2="356" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="534" y1="394" x2="534" y2="356" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+
+  <rect x="24" y="394" width="324" height="150" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="186" y="432" text-anchor="middle" font-size="28" font-weight="700" fill="#0f172a">Χρήστες του Maps</text>
+  <text x="186" y="468" text-anchor="middle" font-size="24" fill="#475569">προτείνουν αλλαγή<tspan x="186" dy="30">στα στοιχεία σου</tspan><tspan x="186" dy="30">και στο ωράριο</tspan></text>
+
+  <rect x="372" y="394" width="324" height="150" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="534" y="432" text-anchor="middle" font-size="28" font-weight="700" fill="#0f172a">Η ίδια η Google</text>
+  <text x="534" y="468" text-anchor="middle" font-size="24" fill="#475569">αυτόματη ενημέρωση,<tspan x="534" dy="30">σύνδεσμοι υπηρεσιών,</tspan><tspan x="534" dy="30">προειδοποίηση αργίας</tspan></text>
+</svg>

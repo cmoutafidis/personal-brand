@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 552">
+  <rect width="720" height="552" fill="#fff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- A: you control -->
+  <rect x="24" y="24" width="340" height="200" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="44" y="66" font-size="28" font-weight="700" fill="#0f172a">Ελέγχεις</text>
+  <text x="44" y="104" font-size="24" fill="#0f172a">οι λέξεις της σελίδας
+    <tspan x="44" dy="1.33em">3 τεχνικές απαιτήσεις</tspan>
+    <tspan x="44" dy="1.33em">δομημένα δεδομένα</tspan>
+    <tspan x="44" dy="1.33em">sitemap</tspan>
+  </text>
+
+  <!-- B: eligible -->
+  <rect x="424" y="64" width="272" height="120" rx="14" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <text x="560" y="114" font-size="30" font-weight="700" fill="#15803d" text-anchor="middle">Επιλέξιμος</text>
+  <text x="560" y="152" font-size="24" fill="#0f172a" text-anchor="middle">«eligible»</text>
+  <line x1="364" y1="124" x2="422" y2="124" stroke="#334155" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- barrier -->
+  <text x="24" y="262" font-size="24" font-weight="600" fill="#b91c1c">Δεν υπάρχει επόμενο σκαλί
+    <tspan x="24" dy="1.25em">που να το ανεβαίνεις εσύ</tspan>
+  </text>
+  <line x1="24" y1="314" x2="696" y2="314" stroke="#b91c1c" stroke-width="3" stroke-dasharray="10 8"/>
+  <line x1="560" y1="184" x2="560" y2="340" stroke="#334155" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- C: not yours -->
+  <rect x="24" y="342" width="340" height="186" rx="14" fill="#fee2e2" stroke="#b91c1c" stroke-width="3"/>
+  <text x="44" y="382" font-size="28" font-weight="700" fill="#b91c1c">Δεν σου ανήκει</text>
+  <text x="44" y="418" font-size="24" fill="#0f172a">ο ανταγωνισμός
+    <tspan x="44" dy="1.25em">ο αλγόριθμος</tspan>
+    <tspan x="44" dy="1.25em">ο άνθρωπος που ψάχνει</tspan>
+    <tspan x="44" dy="1.25em">η ζήτηση</tspan>
+  </text>
+
+  <!-- D: software decides -->
+  <rect x="424" y="342" width="272" height="186" rx="14" fill="#fff" stroke="#334155" stroke-width="3"/>
+  <text x="444" y="382" font-size="28" font-weight="700" fill="#0f172a">Λογισμικό</text>
+  <text x="444" y="414" font-size="24" fill="#475569">αποφασίζει:</text>
+  <text x="444" y="452" font-size="24" fill="#0f172a">ευρετηρίαση
+    <tspan x="444" dy="1.25em">τίτλος, απόσπασμα</tspan>
+    <tspan x="444" dy="1.25em">θέση</tspan>
+  </text>
+  <line x1="364" y1="435" x2="422" y2="435" stroke="#334155" stroke-width="3" marker-end="url(#arr)"/>
+</svg>

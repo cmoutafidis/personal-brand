@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 580">
+  <rect width="720" height="580" fill="#fff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <text x="360" y="46" text-anchor="middle" font-size="30" font-weight="700" fill="#0f172a">Πού πάνε τα δεδομένα των πελατών σου</text>
+  <text x="360" y="92" text-anchor="middle" font-size="24" fill="#475569">Μόνο τα συστήματα που επιτρέπεις, π.χ.:</text>
+  <!-- systems -->
+  <rect x="32" y="112" width="316" height="70" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="190" y="156" text-anchor="middle" font-size="24" fill="#0f172a">Ημερολόγιο</text>
+  <rect x="372" y="112" width="316" height="70" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="530" y="156" text-anchor="middle" font-size="24" fill="#0f172a">Φάκελος παραγγελιών</text>
+  <line x1="190" y1="182" x2="190" y2="232" stroke="#334155" stroke-width="3" marker-end="url(#arr)"/>
+  <line x1="530" y1="182" x2="530" y2="232" stroke="#334155" stroke-width="3" marker-end="url(#arr)"/>
+  <!-- agent -->
+  <rect x="40" y="236" width="640" height="120" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="360" y="284" text-anchor="middle" font-size="30" font-weight="700" fill="#0f172a">AI agent σε AWS</text>
+  <text x="360" y="326" text-anchor="middle" font-size="24" fill="#0f172a">Λογαριασμοί, prompts, κανόνες: δικά σου</text>
+  <line x1="190" y1="356" x2="190" y2="406" stroke="#334155" stroke-width="3" marker-end="url(#arr)"/>
+  <!-- provider -->
+  <rect x="40" y="410" width="300" height="140" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="190" y="452" text-anchor="middle" font-size="26" font-weight="700" fill="#0f172a">Πάροχος μοντέλου</text>
+  <text x="190" y="492" text-anchor="middle" font-size="24" fill="#0f172a">φτάνει μόνο ό,τι<tspan x="190" dy="1.2em">συμφωνήθηκε γραπτά</tspan></text>
+  <!-- no training -->
+  <rect x="380" y="410" width="300" height="140" rx="14" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <text x="530" y="452" text-anchor="middle" font-size="26" font-weight="700" fill="#15803d">Καμία εκπαίδευση</text>
+  <text x="530" y="492" text-anchor="middle" font-size="24" fill="#15803d">μοντέλου στα<tspan x="530" dy="1.2em">δεδομένα σου</tspan></text>
+</svg>

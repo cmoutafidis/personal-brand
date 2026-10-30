@@ -12,6 +12,7 @@ const post: BlogPost = {
   updatedAt: '2026-10-20',
   readingTime: 5,
   tags: ['AI agent', 'δεδομένα πελατών', 'GDPR', 'AWS'],
+  hero: 'ai-agent-pou-pane-dedomena-pelaton-diadromi',
   body: [
     {
       type: 'paragraph',

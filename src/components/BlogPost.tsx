@@ -1,8 +1,10 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import {ArrowLeft, Calendar, CheckCircle2, Clock, Tag, User} from 'lucide-react';
 import type {Language} from '@/types/language';
 import type {BlogInline, BlogPost as BlogPostType} from '@/types/blog';
 import {BLOG_AUTHOR} from '@/lib/person';
+import {blogFigure, figureSrc} from '@/lib/blogFigures';
 
 // Renders a post's typed body. The post's title is the page's only <h1>; every block here emits
 // h2/h3 or lower.
@@ -29,6 +31,21 @@ function Inline({parts}: { parts: BlogInline[] }) {
         return <span key={i}>{part.text}</span>;
       })}
     </>
+  );
+}
+
+/** A diagram (D10). The white card keeps its colours readable in dark mode; the caption sits under it. The hero
+ *  loads first, since it is the first thing under the title. */
+function Figure({id, hero = false}: { id: string; hero?: boolean }) {
+  const f = blogFigure(id);
+  return (
+    <figure className={hero ? 'mb-10' : 'my-8'}>
+      <div className="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 bg-white p-2 sm:p-4">
+        <Image src={figureSrc(id)} alt={f.alt} width={f.width} height={f.height} sizes="(min-width: 768px) 704px, 100vw"
+               className="h-auto w-full" priority={hero}/>
+      </div>
+      <figcaption className="mt-2 break-words text-sm text-gray-500 dark:text-gray-400">{f.caption}</figcaption>
+    </figure>
   );
 }
 
@@ -86,6 +103,8 @@ export default function BlogPost({post, language}: { post: BlogPostType; languag
             ))}
           </div>
         </header>
+
+        {post.hero ? <Figure id={post.hero} hero/> : null}
 
         <div className="space-y-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
           {post.body.map((block, i) => {
@@ -161,6 +180,8 @@ export default function BlogPost({post, language}: { post: BlogPostType; languag
                     </ol>
                   </section>
                 );
+              case 'figure':
+                return <Figure key={i} id={block.figure}/>;
               case 'cta':
                 return (
                   <div key={i} className="my-10 rounded-xl border border-primary-200 dark:border-primary-800 bg-primary-50 dark:bg-primary-900/20 p-6">

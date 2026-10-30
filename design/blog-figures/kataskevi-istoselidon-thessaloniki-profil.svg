@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560">
+  <rect width="720" height="560" fill="#fff"/>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <rect x="40" y="24" width="290" height="96" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="185" y="64" text-anchor="middle" font-size="28" font-weight="700" fill="#0f172a">Η ιστοσελίδα σου</text>
+  <text x="185" y="100" text-anchor="middle" font-size="24" fill="#475569">σαρώνεται</text>
+  <rect x="390" y="24" width="290" height="96" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="535" y="64" text-anchor="middle" font-size="28" font-weight="700" fill="#0f172a">Άλλες πηγές</text>
+  <text x="535" y="100" text-anchor="middle" font-size="24" fill="#475569">πλήθος πηγών</text>
+  <path d="M185,120 L292,180" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+  <path d="M535,120 L428,180" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+  <text x="222" y="166" text-anchor="end" font-size="26" font-weight="700" fill="#0086ff">ταΐζει</text>
+  <rect x="150" y="184" width="420" height="80" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="360" y="234" text-anchor="middle" font-size="28" font-weight="700" fill="#0f172a">Επιχειρηματικό προφίλ</text>
+  <path d="M360,264 L360,320" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+  <rect x="110" y="324" width="500" height="100" rx="14" fill="#fff" stroke="#0086ff" stroke-width="3"/>
+  <text x="360" y="366" text-anchor="middle" font-size="30" font-weight="700" fill="#0f172a">Τοπικά αποτελέσματα</text>
+  <text x="360" y="402" text-anchor="middle" font-size="24" fill="#475569">στους Χάρτες και στην Αναζήτηση</text>
+  <text x="360" y="464" text-anchor="middle" font-size="24" fill="#475569">κρίνονται κυρίως με</text>
+  <rect x="30" y="480" width="200" height="56" rx="14" fill="#edfaff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="130" y="517" text-anchor="middle" font-size="24" font-weight="600" fill="#0f172a">Συνάφεια</text>
+  <rect x="260" y="480" width="200" height="56" rx="14" fill="#edfaff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="360" y="517" text-anchor="middle" font-size="24" font-weight="600" fill="#0f172a">Απόσταση</text>
+  <rect x="490" y="480" width="200" height="56" rx="14" fill="#edfaff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="590" y="517" text-anchor="middle" font-size="24" font-weight="600" fill="#0f172a">Δημοτικότητα</text>
+</svg>

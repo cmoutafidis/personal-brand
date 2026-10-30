@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520">
+  <rect width="720" height="520" fill="#fff"/>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+  <!-- the problem -->
+  <rect x="100" y="16" width="520" height="104" rx="14" fill="#fee2e2" stroke="#b91c1c" stroke-width="3"/>
+  <text x="360" y="50" text-anchor="middle" font-size="26" font-weight="700" fill="#b91c1c">The problem</text>
+  <text x="360" y="83" text-anchor="middle" font-size="24" fill="#0f172a">A person reads something in one place<tspan x="360" dy="1.2em">and types it into another</tspan></text>
+  <!-- the tools -->
+  <rect x="100" y="140" width="520" height="64" rx="14" fill="#fff" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="360" y="180" text-anchor="middle" font-size="24" fill="#0f172a">A form, a spreadsheet, an inbox</text>
+  <line x1="360" y1="204" x2="360" y2="232" stroke="#334155" stroke-width="3" marker-end="url(#ar)"/>
+  <!-- the automation -->
+  <rect x="100" y="236" width="520" height="112" rx="14" fill="#edfaff" stroke="#0086ff" stroke-width="3"/>
+  <text x="360" y="274" text-anchor="middle" font-size="30" font-weight="700" fill="#0086ff">Automation</text>
+  <text x="360" y="308" text-anchor="middle" font-size="24" fill="#0f172a">goes where that retyping<tspan x="360" dy="1.2em">happens, so your tools talk</tspan></text>
+  <line x1="360" y1="348" x2="360" y2="376" stroke="#334155" stroke-width="3" marker-end="url(#ar)"/>
+  <!-- the ERP stays -->
+  <rect x="100" y="380" width="520" height="122" rx="14" fill="#dcfce7" stroke="#15803d" stroke-width="3"/>
+  <text x="360" y="416" text-anchor="middle" font-size="28" font-weight="700" fill="#0f172a">Your accounting<tspan x="360" dy="1.15em">software or ERP</tspan></text>
+  <text x="360" y="484" text-anchor="middle" font-size="24" font-weight="600" fill="#15803d">stays exactly where it is</text>
+</svg>

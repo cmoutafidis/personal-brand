@@ -49,6 +49,7 @@ const post: BlogPost = {
   updatedAt: '2026-09-02',
   readingTime: 29,
   tags: ['Ιστοσελίδες', 'Αναζήτηση', 'Θεσσαλονίκη'],
+  hero: 'kataskevi-istoselidon-thessaloniki-profil',
   body: [
     { type: 'paragraph', text: [
       'Όταν οι πελάτες σου είναι άνθρωποι που μπορούν να έρθουν στο κατάστημα ή να σε φωνάξουν σπίτι τους, αλλάζει κάτι πιο βαθύ από το κείμενο της αρχικής σελίδας. Ένα μεγάλο κομμάτι της αναζήτησης παύει να κρίνεται με τα κριτήρια που ξέρεις. Τα ',
@@ -117,6 +118,7 @@ const post: BlogPost = {
     ]},
 
     { type: 'heading', text: 'Η απόσταση μετριέται από τον πελάτη, όχι από το κέντρο της πόλης' },
+    {type: 'figure', figure: 'kataskevi-istoselidon-thessaloniki-apostasi'},
     { type: 'paragraph', text: [
       'Είναι το σημείο που παρεξηγείται περισσότερο από κάθε άλλο. Η Google γράφει: «Distance refers to how far each business is from the customer who’s searching. If a customer doesn’t share where they are, Google uses what it knows about their location.» (',
       {text: 'Tips to improve your local ranking', href: G_LOCAL},

@@ -21,10 +21,12 @@ export interface BlogFaqBlock {type: 'faq'; heading: string; items: {q: string; 
 /** Rendered as a numbered source list AND emitted as schema.org `citation` from the same array. */
 export interface BlogSourcesBlock {type: 'sources'; heading: string; items: {label: string; url: string}[]}
 export interface BlogCtaBlock {type: 'cta'; heading: string; text: string; label: string; href: string}
+/** A diagram from src/data/blog-figures.json, named by id; its file, size, alt text and caption live there (D10). */
+export interface BlogFigureBlock {type: 'figure'; figure: string}
 
 export type BlogBlock =
   | BlogHeadingBlock | BlogSubheadingBlock | BlogParagraphBlock | BlogListBlock
-  | BlogTableBlock | BlogNoteBlock | BlogFaqBlock | BlogSourcesBlock | BlogCtaBlock;
+  | BlogTableBlock | BlogNoteBlock | BlogFaqBlock | BlogSourcesBlock | BlogCtaBlock | BlogFigureBlock;
 
 export interface BlogPost {
   id: string;
@@ -50,6 +52,12 @@ export interface BlogPost {
   tags: string[];
   /** The other locale's slug, when a translation exists. Absent => hreflang is self-referencing. */
   twinSlug?: string;
+  /**
+   * The post's main diagram, an id in src/data/blog-figures.json (offer-os seo-plan-2026-10 D10, D-116). Shown under
+   * the title, and its 1200x630 card is the post's share image and first Article image. Absent => the locale's
+   * generic share card.
+   */
+  hero?: string;
 }
 
 export type BlogData = Record<Language, BlogPost[]>;

@@ -12,6 +12,7 @@ const post: BlogPost = {
   updatedAt: '2026-10-20',
   readingTime: 6,
   tags: ['business continuity', 'process documentation', 'process automation', 'small business'],
+  hero: 'one-person-knows-everything-business-continuity-two-paths',
   body: [
     {
       type: 'paragraph',
